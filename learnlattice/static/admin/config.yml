@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/learnlattice  # CHANGE THIS
+  repo: briscorey/learnlattice  # CHANGE THIS
   branch: main
 
 media_folder: "static/uploads"
