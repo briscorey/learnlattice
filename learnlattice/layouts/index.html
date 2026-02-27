@@ -1,0 +1,109 @@
+{{ define "main" }}
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-eyebrow">Middle School Math &amp; Science</div>
+  <h1>Where concepts <em>connect</em> and curiosity grows</h1>
+  <p>{{ .Site.Params.description }}</p>
+  <div class="hero-actions">
+    <a href="/resources/" class="btn-primary">
+      Browse Resources
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <a href="/about/" class="btn-secondary">For Teachers</a>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+{{ $resourceCount := len (where .Site.RegularPages "Section" "resources") }}
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">{{ $resourceCount }}+</span>
+    <span class="stat-label">Downloadable<br>resources</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Subject<br>areas</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <span class="stat-num">MYP</span>
+    <span class="stat-label">Framework<br>aligned</span>
+  </div>
+</div>
+
+<!-- ─── SUBJECTS ─── -->
+<section class="section reveal">
+  <div class="section-header">
+    <h2 class="section-title">Browse by Subject</h2>
+    <a href="/resources/" class="section-link">
+      View all
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="subjects-grid">
+    {{ $subjects := slice
+      (dict "name" "Mathematics" "slug" "mathematics" "icon" "📐" "desc" "Number, algebra, geometry, statistics & probability" "color" "teal")
+      (dict "name" "Science" "slug" "science" "icon" "🔬" "desc" "Biology, physics, and integrated science topics" "color" "sky")
+      (dict "name" "Earth Science" "slug" "earth-science" "icon" "🌍" "desc" "Earthquakes, volcanoes, plate tectonics & climate" "color" "amber")
+      (dict "name" "Chemistry" "slug" "chemistry" "icon" "⚗️" "desc" "Elements, compounds, mixtures & separation techniques" "color" "rose")
+    }}
+    {{ range $subjects }}
+      {{ $count := len (where (where $.Site.RegularPages "Section" "resources") ".Params.subjects" "intersect" (slice .name)) }}
+      <a class="subject-card" data-color="{{ .color }}" href="/subjects/{{ .slug }}/">
+        <div class="subject-icon">{{ .icon }}</div>
+        <h3>{{ .name }}</h3>
+        <p>{{ .desc }}</p>
+        <div class="subject-count">{{ $count }} resources</div>
+      </a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ─── LATEST RESOURCES ─── -->
+<section class="section reveal">
+  <div class="section-header">
+    <h2 class="section-title">Latest Resources</h2>
+    <a href="/resources/" class="section-link">
+      See all resources
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="resources-grid">
+    {{ range first 6 (where .Site.RegularPages "Section" "resources") }}
+      {{ partial "resource-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+<!-- ─── POPULAR TOPICS ─── -->
+{{ with .Site.Taxonomies.tags }}
+<section class="section reveal">
+  <div class="section-header">
+    <h2 class="section-title">Popular Topics</h2>
+  </div>
+  <div class="topics-wrap">
+    {{ range .ByCount }}
+      <a class="topic-pill" href="{{ .Page.RelPermalink }}">
+        {{ .Page.Title }} <span class="count">{{ .Count }}</span>
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- ─── FEATURED BANNER ─── -->
+<div class="featured-banner reveal">
+  <div class="featured-inner">
+    <div class="featured-text">
+      <h2>Built for inquiry-based classrooms</h2>
+      <p>Every resource is designed with Understanding by Design principles. Provoke thinking first, then build conceptual understanding through guided investigation.</p>
+    </div>
+    <a href="/about/" class="btn-amber">Learn Our Approach →</a>
+  </div>
+</div>
+
+{{ end }}

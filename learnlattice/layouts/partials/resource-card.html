@@ -1,0 +1,32 @@
+{{ $colorMap := dict "mathematics" "teal" "science" "sky" "earth-science" "amber" "chemistry" "rose" }}
+{{ $subject := "" }}
+{{ $subjectLabel := "" }}
+{{ $resourceType := "" }}
+{{ range .Params.subjects }}
+  {{ $subject = . | urlize }}
+  {{ $subjectLabel = . }}
+{{ end }}
+{{ range .Params.resource_types }}
+  {{ $resourceType = . }}
+{{ end }}
+{{ $thumbColor := index $colorMap $subject | default "teal" }}
+
+<a class="resource-card" href="{{ .RelPermalink }}">
+  <div class="resource-thumb {{ $thumbColor }}-bg">
+    {{ with .Params.formula }}<div class="formula">{{ . }}</div>{{ end }}
+    {{ with $subjectLabel }}<span class="resource-thumb-label">{{ . }}</span>{{ end }}
+    {{ with $resourceType }}<span class="resource-thumb-type">{{ . }}</span>{{ end }}
+  </div>
+  <div class="resource-body">
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Summary }}</p>
+    <div class="resource-meta">
+      {{ range .Params.year_levels }}
+        <span class="resource-tag">{{ . }}</span>
+      {{ end }}
+      {{ range .Params.tags }}
+        <span class="resource-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</a>
