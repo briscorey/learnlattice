@@ -29,6 +29,44 @@
     </div>
   </div>
 
+  <!-- At a Glance -->
+  <div class="at-a-glance">
+    <h3 class="at-a-glance-heading">At a Glance</h3>
+    <dl class="at-a-glance-grid">
+      {{ with index .Params.subjects 0 }}
+      <div class="at-a-glance-item">
+        <dt><span aria-hidden="true">📖</span> Subject</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+      {{ with index .Params.year_levels 0 }}
+      <div class="at-a-glance-item">
+        <dt><span aria-hidden="true">🎓</span> Year Level</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+      {{ with index .Params.resource_types 0 }}
+      <div class="at-a-glance-item">
+        <dt><span aria-hidden="true">📋</span> Type</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+      {{ with .Params.formula }}
+      <div class="at-a-glance-item">
+        <dt><span aria-hidden="true">🧮</span> Key Formula / Concept</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+    {{ if .Params.tags }}
+    <div class="at-a-glance-tags">
+      {{ range .Params.tags }}
+        <a class="at-a-glance-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
   {{ with .Params.download_url }}
   <div class="download-box">
     <div class="download-box-info">
