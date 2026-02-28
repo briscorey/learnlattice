@@ -59,7 +59,9 @@
 
 <section class="section">
   {{ $pages := .RegularPages.ByDate.Reverse }}
-  {{ if and .IsSection (gt (len .Pages) 0) }}
+  {{ if and (eq .Section "year-levels") (ne .Title "BC Curriculum Grades 6-9") }}
+    {{ $pages = where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title) }}
+  {{ else if and .IsSection (gt (len .Pages) 0) }}
     {{ $pages = .Pages.ByDate.Reverse }}
   {{ end }}
 
