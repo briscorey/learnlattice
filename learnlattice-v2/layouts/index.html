@@ -28,16 +28,37 @@
   (dict "title" "Investigation Packs" "url" "/resource-types/investigation-pack/" "copy" "Guided inquiry packs and evidence tasks.")
   (dict "title" "Topic Pathways" "url" "/#topic-pathways" "copy" "Browse by concept instead of by subject.")
 }}
+{{ $startLinks := slice
+  (dict "title" "MYP Mathematics" "url" "/subjects/mathematics/")
+  (dict "title" "MYP Science" "url" "/subjects/science/")
+  (dict "title" "BC Curriculum" "url" "/year-levels/")
+  (dict "title" "All Resources" "url" "/resources/")
+}}
 
-<section class="home-minimal-hero">
-  <div class="page-header page-header-compact">
-    <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
-    <h1>{{ $home.hero_title }}</h1>
-    <p>{{ .Site.Params.description }}</p>
-    <div class="hero-actions">
-      <a href="{{ $home.hero_primary_url }}" class="btn-primary">{{ $home.hero_primary_label }}</a>
-      <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
+<section class="ka-home-hero">
+  <div class="ka-home-shell">
+    <div class="ka-home-copy">
+      <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
+      <h1>{{ $home.hero_title }}</h1>
+      <p>{{ .Site.Params.description }}</p>
+      <div class="hero-actions">
+        <a href="{{ $home.hero_primary_url }}" class="btn-primary">{{ $home.hero_primary_label }}</a>
+        <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
+      </div>
     </div>
+
+    <aside class="ka-start-panel">
+      <h2>{{ $home.hero_panel_title }}</h2>
+      <p>{{ $home.hero_panel_copy }}</p>
+      <div class="ka-start-links">
+        {{ range $startLinks }}
+        <a class="ka-start-link" href="{{ .url }}">
+          <span>{{ .title }}</span>
+          <span>→</span>
+        </a>
+        {{ end }}
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -61,52 +82,60 @@
 <section class="section reveal">
   <div class="section-header">
     <div>
-      <h2 class="section-title">{{ $home.myp_math_title }}</h2>
-      <p class="section-subtitle">{{ $home.myp_math_subtitle }}</p>
+      <h2 class="section-title">{{ $home.programs_title }}</h2>
+      <p class="section-subtitle">{{ $home.programs_subtitle }}</p>
     </div>
   </div>
-  <div class="simple-link-grid simple-link-grid-compact">
-    {{ range $mathLinks }}
-      <a class="simple-link-card" href="{{ .url }}">
-        <h3>{{ .title }}</h3>
-        <p>{{ .copy }}</p>
-      </a>
-    {{ end }}
-  </div>
-</section>
 
-<section class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">{{ $home.myp_science_title }}</h2>
-      <p class="section-subtitle">{{ $home.myp_science_subtitle }}</p>
-    </div>
-  </div>
-  <div class="simple-link-grid">
-    {{ range $scienceLinks }}
-      <a class="simple-link-card" href="{{ .url }}">
-        <h3>{{ .title }}</h3>
-        <p>{{ .copy }}</p>
-      </a>
-    {{ end }}
-  </div>
-</section>
+  <div class="ka-program-grid">
+    <article class="ka-program-card">
+      <div class="ka-program-top">
+        <span class="ka-program-kicker">MYP</span>
+        <h3>{{ $home.myp_math_title }}</h3>
+        <p>{{ $home.myp_math_subtitle }}</p>
+      </div>
+      <div class="ka-link-list">
+        {{ range $mathLinks }}
+        <a class="ka-list-link" href="{{ .url }}">
+          <span>{{ .title }}</span>
+          <small>{{ .copy }}</small>
+        </a>
+        {{ end }}
+      </div>
+    </article>
 
-<section class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">{{ $home.grades_title }}</h2>
-      <p class="section-subtitle">{{ $home.grades_subtitle }}</p>
-    </div>
-  </div>
-  <div class="simple-link-grid simple-link-grid-compact">
-    {{ range $gradeLinks }}
-      {{ $count := len (where $resources "Params.year_levels" "intersect" (slice .title)) }}
-      <a class="simple-link-card" href="{{ .url }}">
-        <h3>{{ .title }}</h3>
-        <p>{{ $count }} resources</p>
-      </a>
-    {{ end }}
+    <article class="ka-program-card">
+      <div class="ka-program-top">
+        <span class="ka-program-kicker">MYP</span>
+        <h3>{{ $home.myp_science_title }}</h3>
+        <p>{{ $home.myp_science_subtitle }}</p>
+      </div>
+      <div class="ka-link-list">
+        {{ range $scienceLinks }}
+        <a class="ka-list-link" href="{{ .url }}">
+          <span>{{ .title }}</span>
+          <small>{{ .copy }}</small>
+        </a>
+        {{ end }}
+      </div>
+    </article>
+
+    <article class="ka-program-card">
+      <div class="ka-program-top">
+        <span class="ka-program-kicker">BC</span>
+        <h3>{{ $home.grades_title }}</h3>
+        <p>{{ $home.grades_subtitle }}</p>
+      </div>
+      <div class="ka-link-list">
+        {{ range $gradeLinks }}
+        {{ $count := len (where $resources "Params.year_levels" "intersect" (slice .title)) }}
+        <a class="ka-list-link" href="{{ .url }}">
+          <span>{{ .title }}</span>
+          <small>{{ $count }} resources</small>
+        </a>
+        {{ end }}
+      </div>
+    </article>
   </div>
 </section>
 
@@ -117,12 +146,12 @@
       <p class="section-subtitle">{{ $home.browse_subtitle }}</p>
     </div>
   </div>
-  <div class="simple-link-grid">
+  <div class="ka-compact-grid">
     {{ range $browseLinks }}
-      <a class="simple-link-card" href="{{ .url }}">
-        <h3>{{ .title }}</h3>
-        <p>{{ .copy }}</p>
-      </a>
+    <a class="simple-link-card" href="{{ .url }}">
+      <h3>{{ .title }}</h3>
+      <p>{{ .copy }}</p>
+    </a>
     {{ end }}
   </div>
 </section>
@@ -136,9 +165,30 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
-  <div class="resources-grid">
+  <div class="resource-list resource-list-home">
     {{ range first 6 $resources }}
-      {{ partial "resource-card.html" . }}
+      {{ $subject := "" }}
+      {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+      {{ $resourceType := "" }}
+      {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+      <a class="resource-list-item" href="{{ .RelPermalink }}">
+        <div class="resource-list-main">
+          <div class="resource-list-top">
+            {{ with $subject }}<span class="resource-list-label">{{ . }}</span>{{ end }}
+            {{ with $resourceType }}<span class="resource-list-type">{{ . }}</span>{{ end }}
+          </div>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description | default .Summary }}</p>
+        </div>
+        <div class="resource-list-meta">
+          {{ range first 2 .Params.year_levels }}
+            <span class="resource-tag">{{ . }}</span>
+          {{ end }}
+          {{ range first 2 .Params.tags }}
+            <span class="resource-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </a>
     {{ end }}
   </div>
 </section>
@@ -150,7 +200,7 @@
     <h2 class="section-title">{{ $home.topics_title }}</h2>
   </div>
   <div class="topics-wrap">
-    {{ range .Site.Taxonomies.tags.ByCount }}
+    {{ range first 18 .Site.Taxonomies.tags.ByCount }}
       <a class="topic-pill" href="{{ .Page.RelPermalink }}">
         {{ .Page.Title }} <span class="count">{{ .Count }}</span>
       </a>
@@ -158,24 +208,5 @@
   </div>
 </section>
 {{ end }}
-
-<div id="topic-pathways">
-{{ partial "topic-pathways.html" (dict
-  "page" .
-  "showAll" true
-  "headline" $home.pathways_title
-  "copy" $home.pathways_copy
-) }}
-</div>
-
-<div class="featured-banner reveal">
-  <div class="featured-inner">
-    <div class="featured-text">
-      <h2>{{ $home.featured_title }}</h2>
-      <p>{{ $home.featured_copy }}</p>
-    </div>
-    <a href="{{ $home.featured_link_url }}" class="btn-amber">{{ $home.featured_link_label }}</a>
-  </div>
-</div>
 
 {{ end }}

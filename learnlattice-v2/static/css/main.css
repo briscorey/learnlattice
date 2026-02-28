@@ -354,6 +354,166 @@ nav {
   padding-bottom: 24px;
 }
 
+.ka-home-hero {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 48px 24px;
+}
+
+.ka-home-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.ka-home-copy h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.ka-home-copy p {
+  max-width: 640px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+}
+
+.ka-start-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.ka-start-panel h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.ka-start-panel p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  margin-bottom: 18px;
+}
+
+.ka-start-links {
+  display: grid;
+  gap: 10px;
+}
+
+.ka-start-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ka-start-link:hover {
+  border-color: var(--teal);
+  background: var(--teal-wash);
+}
+
+.ka-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ka-program-card {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.ka-program-top h3 {
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.ka-program-top p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+.ka-program-kicker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--teal-wash);
+  color: var(--teal-deep);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ka-link-list {
+  display: grid;
+  gap: 10px;
+}
+
+.ka-list-link {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.ka-list-link:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ka-list-link span {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.ka-list-link small {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.ka-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
 .hero-video-card {
   position: relative;
   overflow: hidden;
@@ -969,6 +1129,10 @@ nav {
 .resource-list {
   display: grid;
   gap: 12px;
+}
+
+.resource-list-home {
+  gap: 10px;
 }
 
 .resource-list-item {
@@ -1723,6 +1887,10 @@ footer {
   nav { padding: 0 24px; }
   .hero-layout { grid-template-columns: 1fr; }
   .hero-video-card { min-height: 420px; }
+  .ka-home-hero { padding: 48px 24px 24px; }
+  .ka-home-shell { grid-template-columns: 1fr; }
+  .ka-program-grid,
+  .ka-compact-grid { grid-template-columns: 1fr; }
   .simple-link-grid,
   .simple-link-grid-compact { grid-template-columns: repeat(2, 1fr); }
   .grade-spotlight-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1800,6 +1968,7 @@ footer {
   }
   .hero { padding: 60px 24px 48px; }
   .hero-layout { gap: 24px; }
+  .ka-home-hero { padding: 40px 24px 16px; }
   .hero h1 { max-width: 100%; }
   .hero p { max-width: 100%; }
   .hero-actions { flex-direction: column; align-items: stretch; }
@@ -1808,6 +1977,7 @@ footer {
   .stats { padding: 0 24px 48px; flex-wrap: wrap; gap: 24px; }
   .section { padding: 0 24px 48px; }
   .section-header { align-items: flex-start; gap: 16px; flex-direction: column; }
+  .ka-program-card { padding: 20px; }
   .simple-link-grid,
   .simple-link-grid-compact { grid-template-columns: 1fr; }
   .grade-spotlight-grid { grid-template-columns: 1fr; }
