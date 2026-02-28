@@ -1,3 +1,10 @@
+{{ $featuredSubjects := .Site.Params.featured_subjects }}
+{{ $resourceTypes := slice
+  (dict "title" "Unit Plans" "label" "Unit Plan" "url" "/resource-types/unit-plan/")
+  (dict "title" "Worksheets" "label" "Worksheet" "url" "/resource-types/worksheet/")
+  (dict "title" "Lab Activities" "label" "Lab Activity" "url" "/resource-types/lab-activity/")
+  (dict "title" "Investigation Packs" "label" "Investigation Pack" "url" "/resource-types/investigation-pack/")
+}}
 <footer>
   <div class="footer-inner">
     <div>
@@ -26,17 +33,18 @@
     <div class="footer-links">
       <div class="footer-col">
         <h4>Subjects</h4>
-        <a href="/subjects/mathematics/">Mathematics</a>
-        <a href="/subjects/science/">Sciences</a>
-        <a href="/subjects/earth-science/">Earth Science</a>
-        <a href="/subjects/chemistry/">Chemistry</a>
+        {{ range $featuredSubjects }}
+        <a href="{{ .url }}">{{ .title }}</a>
+        {{ end }}
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="/resource-types/unit-plan/">Unit Plans</a>
-        <a href="/resource-types/worksheet/">Worksheets</a>
-        <a href="/resource-types/lab-activity/">Lab Activities</a>
-        <a href="/resource-types/assessment/">Assessments</a>
+        {{ range $resourceTypes }}
+          {{ $count := len (where (where $.Site.RegularPages "Section" "resources") "Params.resource_types" "intersect" (slice .label)) }}
+          {{ if gt $count 0 }}
+        <a href="{{ .url }}">{{ .title }}</a>
+          {{ end }}
+        {{ end }}
       </div>
       <div class="footer-col">
         <h4>About</h4>
