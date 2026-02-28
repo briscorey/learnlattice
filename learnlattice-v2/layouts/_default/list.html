@@ -31,6 +31,18 @@
     {{ end }}
   </div>
 </section>
+{{ else if and .IsNode (eq .Data.Singular "year_level") }}
+<section class="page-hero page-hero-subject" data-color="teal">
+  <div class="page-hero-copy">
+    <div class="page-hero-kicker">BC Curriculum Collection</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    <div class="page-hero-note">Browse grade-level unit plans alongside companion worksheets, labs, and inquiry packs connected to MYP criteria.</div>
+  </div>
+  <div class="page-hero-media">
+    <img src="/img/topics/mathematics.svg" alt="{{ .Title }} curriculum artwork">
+  </div>
+</section>
 {{ else }}
 <div class="page-header">
   <h1>{{ .Title }}</h1>

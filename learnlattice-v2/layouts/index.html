@@ -1,6 +1,13 @@
 {{ define "main" }}
 {{ $featuredSubjects := .Site.Params.featured_subjects }}
 {{ $home := .Site.Params.home }}
+{{ $resources := where .Site.RegularPages "Section" "resources" }}
+{{ $gradeSpotlights := slice
+  (dict "title" "BC Grade 6" "url" "/year-levels/bc-grade-6/" "copy" "Body systems, mixtures, force and motion, solar system, number flexibility, fractions, algebraic thinking, and data.")
+  (dict "title" "BC Grade 7" "url" "/year-levels/bc-grade-7/" "copy" "Ecosystems, dynamic crust, electromagnetism, rational numbers, proportional reasoning, geometry, and probability.")
+  (dict "title" "BC Grade 8" "url" "/year-levels/bc-grade-8/" "copy" "Cells, optics, matter cycling, tectonic theory, linear relations, exponents, transformations, and data analysis.")
+  (dict "title" "BC Grade 9" "url" "/year-levels/bc-grade-9/" "copy" "Cell division, electricity, atomic theory, stars, algebraic generalization, similarity, inference, and financial literacy.")
+}}
 {{ $subjectLookup := newScratch }}
 {{ range $featuredSubjects }}
   {{ $subjectLookup.Set (lower .title) . }}
@@ -95,6 +102,35 @@
   </div>
 </section>
 
+<!-- BC CURRICULUM -->
+<section class="section reveal">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">{{ $home.grades_title }}</h2>
+      <p class="section-subtitle">{{ $home.grades_subtitle }}</p>
+    </div>
+    <a href="{{ $home.grades_link_url }}" class="section-link">
+      {{ $home.grades_link_label }}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="grade-spotlight-grid">
+    {{ range $gradeSpotlights }}
+      {{ $count := len (where $resources "Params.year_levels" "intersect" (slice .title)) }}
+      <a class="grade-spotlight-card" href="{{ .url }}">
+        <div class="grade-spotlight-top">
+          <span class="grade-spotlight-kicker">BC Curriculum</span>
+          <span class="grade-spotlight-count">{{ $count }} {{ if eq $count 1 }}resource{{ else }}resources{{ end }}</span>
+        </div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .copy }}</p>
+        <span class="grade-spotlight-cta">Open {{ .title }}</span>
+      </a>
+    {{ end }}
+  </div>
+</section>
+
 <!-- QUICK START -->
 <section class="section reveal">
   <div class="section-header">
@@ -123,7 +159,6 @@
 </section>
 
 <!-- LATEST RESOURCES -->
-{{ $resources := where .Site.RegularPages "Section" "resources" }}
 {{ if $resources }}
 <section class="section reveal">
   <div class="section-header">

@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+
+<section class="section">
+  <div class="taxonomy-grid">
+    {{ range .Data.Terms.Alphabetical }}
+      {{ $page := .Page }}
+      <a class="taxonomy-card" href="{{ $page.RelPermalink }}">
+        <div class="taxonomy-card-count">{{ .Count }} resources</div>
+        <h2>{{ $page.Title }}</h2>
+        <p>{{ $page.Description | default "Browse this collection of inquiry-based resources." }}</p>
+      </a>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}
