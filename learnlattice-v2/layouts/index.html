@@ -49,8 +49,7 @@
 
   <div class="subjects-grid">
     {{ range $featuredSubjects }}
-      {{ $subjectPages := index $.Site.Taxonomies.subjects .key }}
-      {{ $resourceCount := len $subjectPages }}
+      {{ $resourceCount := len (where (where $.Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .title)) }}
       <a class="subject-card" data-color="{{ .color }}" href="{{ .url }}">
         <div class="subject-icon">{{ .icon }}</div>
         <h3>{{ .title }}</h3>
