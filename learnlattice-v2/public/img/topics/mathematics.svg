@@ -1,0 +1,29 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mathBg" x1="120" y1="40" x2="820" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#042F2E"/>
+      <stop offset="0.55" stop-color="#0D9488"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <radialGradient id="mathGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(690 160) rotate(137.642) scale(260 196)">
+      <stop stop-color="#CCFBF1" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#CCFBF1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="720" rx="44" fill="url(#mathBg)"/>
+  <rect x="48" y="48" width="864" height="624" rx="32" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18"/>
+  <circle cx="688" cy="168" r="240" fill="url(#mathGlow)"/>
+  <path d="M120 565C196 469 265 425 357 399C449 373 536 389 635 345C716 309 771 249 830 164" stroke="white" stroke-opacity="0.24" stroke-width="16" stroke-linecap="round"/>
+  <path d="M124 514C184 438 262 392 340 378C428 362 506 381 604 332C702 283 779 199 828 122" stroke="#CCFBF1" stroke-opacity="0.68" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="124" cy="515" r="18" fill="#CCFBF1"/>
+  <circle cx="340" cy="378" r="14" fill="#CCFBF1"/>
+  <circle cx="604" cy="332" r="14" fill="#CCFBF1"/>
+  <circle cx="828" cy="122" r="18" fill="#CCFBF1"/>
+  <rect x="126" y="96" width="250" height="138" rx="22" fill="#052E2B" fill-opacity="0.54" stroke="white" stroke-opacity="0.16"/>
+  <text x="154" y="152" fill="#CCFBF1" font-family="JetBrains Mono, monospace" font-size="36">y = mx + b</text>
+  <text x="154" y="198" fill="#E6FAF6" font-family="JetBrains Mono, monospace" font-size="24">pattern -> graph -> model</text>
+  <rect x="538" y="406" width="272" height="168" rx="26" fill="white" fill-opacity="0.10" stroke="white" stroke-opacity="0.2"/>
+  <path d="M584 534L640 470L692 498L756 434" stroke="#F0FDFA" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M582 470V536H760" stroke="white" stroke-opacity="0.5" stroke-width="8" stroke-linecap="round"/>
+  <text x="112" y="634" fill="white" font-family="DM Serif Display, serif" font-size="74">Mathematics</text>
+</svg>

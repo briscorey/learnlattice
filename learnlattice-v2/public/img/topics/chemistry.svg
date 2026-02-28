@@ -1,0 +1,22 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chemBg" x1="116" y1="40" x2="834" y2="676" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A041D"/>
+      <stop offset="0.54" stop-color="#E11D48"/>
+      <stop offset="1" stop-color="#FBCFE8"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" rx="44" fill="url(#chemBg)"/>
+  <rect x="52" y="52" width="856" height="616" rx="32" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18"/>
+  <path d="M230 164V278L160 424C145 455 167 492 206 492H342C381 492 403 455 388 424L318 278V164" fill="#FFF1F2" fill-opacity="0.22" stroke="white" stroke-opacity="0.52" stroke-width="10"/>
+  <path d="M190 432C208 386 228 364 254 364C281 364 305 391 330 432" fill="#FB7185" fill-opacity="0.72"/>
+  <path d="M578 152V252L512 434C497 473 525 512 569 512H725C769 512 797 473 782 434L716 252V152" fill="#FFF1F2" fill-opacity="0.18" stroke="white" stroke-opacity="0.48" stroke-width="10"/>
+  <path d="M548 440C576 387 606 362 644 362C682 362 714 392 744 440" fill="#F9A8D4" fill-opacity="0.74"/>
+  <circle cx="446" cy="238" r="18" fill="#FFF1F2"/>
+  <circle cx="494" cy="196" r="12" fill="#FFE4E6"/>
+  <circle cx="528" cy="250" r="10" fill="#FFE4E6"/>
+  <circle cx="460" cy="292" r="10" fill="#FFE4E6"/>
+  <path d="M445 239L492 198L528 250L460 292Z" stroke="white" stroke-opacity="0.38" stroke-width="4"/>
+  <text x="120" y="144" fill="#FFE4E6" font-family="JetBrains Mono, monospace" font-size="30">mixtures • rates • neutralisation</text>
+  <text x="112" y="650" fill="white" font-family="DM Serif Display, serif" font-size="74">Chemistry</text>
+</svg>

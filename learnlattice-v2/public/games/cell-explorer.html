@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cell Explorer — LearnLattice</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05080f;
+    --cell-bg: #080e1a;
+    --membrane: #1de3c8;
+    --nucleus-col: #7c6cfc;
+    --mito-col: #ff6b6b;
+    --er-col: #4ecdc4;
+    --golgi-col: #ffd93d;
+    --ribosome-col: #a8edea;
+    --lysosome-col: #ee5a24;
+    --vacuole-col: #a29bfe;
+    --centrosome-col: #fd79a8;
+    --panel-bg: rgba(8, 14, 26, 0.97);
+    --border: rgba(29, 227, 200, 0.25);
+    --text: #e8f4f2;
+    --muted: #7a9e9b;
+    --accent: #1de3c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(5, 8, 15, 0.9);
+    flex-shrink: 0;
+    gap: 12px;
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-title h1 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+
+  .header-title span {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ── MODE TABS ── */
+  .mode-tabs {
+    display: flex;
+    gap: 6px;
+  }
+
+  .mode-tab {
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .mode-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+
+  .mode-tab:hover:not(.active) {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── SCORE ── */
+  .quiz-score {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    display: none;
+    background: rgba(29, 227, 200, 0.08);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 8px;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .game-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ── CANVAS ── */
+  #cellCanvas {
+    flex: 1;
+    display: block;
+    cursor: default;
+  }
+
+  /* ── INFO PANEL ── */
+  .info-panel {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--panel-bg);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .info-panel.hidden {
+    transform: translateX(300px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .panel-glow {
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .panel-content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .panel-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 30px;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  .panel-empty-icon {
+    font-size: 48px;
+    opacity: 0.5;
+  }
+
+  .panel-empty p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .organelle-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .organelle-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .organelle-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .organelle-latin {
+    font-size: 11px;
+    font-family: 'Space Mono', monospace;
+    color: var(--muted);
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  .info-section {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .info-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .info-text {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #c8deda;
+  }
+
+  .analogy-box {
+    background: rgba(29, 227, 200, 0.06);
+    border: 1px solid rgba(29, 227, 200, 0.2);
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .fact-box {
+    background: rgba(255, 107, 107, 0.06);
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .fact-label {
+    color: #ff6b6b;
+  }
+
+  /* ── QUIZ UI ── */
+  .quiz-panel {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .quiz-question {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .quiz-question h3 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .quiz-question p {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .quiz-options {
+    padding: 16px;
+    display: grid;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .quiz-option {
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.02);
+    color: var(--text);
+    transition: all 0.2s;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: left;
+  }
+
+  .quiz-option:hover:not(.answered) {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(29, 227, 200, 0.06);
+  }
+
+  .quiz-option.correct {
+    border-color: #00b894;
+    background: rgba(0, 184, 148, 0.12);
+    color: #00b894;
+  }
+
+  .quiz-option.wrong {
+    border-color: #d63031;
+    background: rgba(214, 48, 49, 0.12);
+    color: #d63031;
+  }
+
+  .quiz-option.reveal {
+    border-color: #00b894;
+    background: rgba(0, 184, 148, 0.08);
+    color: #00b894;
+  }
+
+  .quiz-feedback {
+    padding: 14px 16px;
+    margin: 0 16px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: none;
+  }
+
+  .quiz-feedback.correct {
+    background: rgba(0, 184, 148, 0.12);
+    border: 1px solid rgba(0, 184, 148, 0.3);
+    color: #55efc4;
+    display: block;
+  }
+
+  .quiz-feedback.wrong {
+    background: rgba(214, 48, 49, 0.12);
+    border: 1px solid rgba(214, 48, 49, 0.3);
+    color: #ff7675;
+    display: block;
+  }
+
+  .quiz-next {
+    margin: 0 16px 16px;
+    padding: 12px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: opacity 0.2s;
+  }
+
+  .quiz-next:hover { opacity: 0.88; }
+
+  .quiz-complete {
+    padding: 30px 20px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .quiz-complete-score {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    line-height: 1;
+  }
+
+  .quiz-complete h3 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .quiz-complete p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 220px;
+  }
+
+  .btn-restart {
+    padding: 12px 24px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+  }
+  .btn-restart:hover { opacity: 0.85; }
+
+  /* ── BUILD MODE ── */
+  .build-sidebar {
+    display: none;
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--panel-bg);
+    border-right: 1px solid var(--border);
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .build-sidebar-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .build-sidebar-header h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .build-sidebar-header p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  .build-parts {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .build-part {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: grab;
+    background: rgba(255,255,255,0.02);
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .build-part:hover {
+    border-color: var(--accent);
+    background: rgba(29, 227, 200, 0.05);
+  }
+
+  .build-part.placed {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .build-part-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .build-part-name {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .build-progress {
+    padding: 14px 16px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .build-progress-label {
+    font-size: 11px;
+    font-family: 'Space Mono', monospace;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .build-progress-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .build-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .build-info-panel {
+    display: none;
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: rgba(8, 14, 26, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+    text-align: center;
+    pointer-events: none;
+    backdrop-filter: blur(12px);
+  }
+
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .toast.success { border-color: rgba(0, 184, 148, 0.5); color: #55efc4; }
+  .toast.error { border-color: rgba(214, 48, 49, 0.5); color: #ff7675; }
+  .toast.info { border-color: rgba(29, 227, 200, 0.3); }
+
+  /* ── DRAG GHOST ── */
+  #dragGhost {
+    position: fixed;
+    pointer-events: none;
+    display: none;
+    z-index: 9999;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--bg);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">
+    <h1>🔬 Cell Explorer</h1>
+    <span>Animal Cell · Interactive</span>
+  </div>
+  <div class="mode-tabs">
+    <button class="mode-tab active" onclick="setMode('explore')">Explore</button>
+    <button class="mode-tab" onclick="setMode('quiz')">Quiz</button>
+    <button class="mode-tab" onclick="setMode('build')">Build</button>
+  </div>
+  <div class="quiz-score" id="quizScore">Score: 0 / 10</div>
+</header>
+
+<div class="game-area">
+  <!-- Build sidebar -->
+  <div class="build-sidebar" id="buildSidebar">
+    <div class="build-sidebar-header">
+      <h3>Organelle Bank</h3>
+      <p>Drag parts onto the cell to build it</p>
+    </div>
+    <div class="build-parts" id="buildParts"></div>
+    <div class="build-progress">
+      <div class="build-progress-label" id="buildProgressLabel">0 / 8 placed</div>
+      <div class="build-progress-bar">
+        <div class="build-progress-fill" id="buildProgressFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas -->
+  <canvas id="cellCanvas"></canvas>
+
+  <!-- Info panel (Explore mode) -->
+  <div class="info-panel" id="infoPanel">
+    <div class="panel-glow" id="panelGlow"></div>
+    <div class="panel-empty" id="panelEmpty">
+      <div class="panel-empty-icon">👆</div>
+      <p>Click any organelle to learn what it does and why it matters</p>
+      <p style="font-size:11px; margin-top:8px; font-family: 'Space Mono', monospace; opacity:0.5;">hover to highlight · click to select</p>
+    </div>
+    <div class="panel-content" id="panelContent" style="display:none"></div>
+  </div>
+
+  <!-- Quiz panel -->
+  <div class="quiz-panel" id="quizPanel">
+    <div class="panel-glow" id="quizGlow" style="background: #7c6cfc;"></div>
+    <div class="quiz-question" id="quizQuestion">
+      <h3 id="quizQuestionText">Which organelle is highlighted?</h3>
+      <p id="quizProgress">Question 1 of 10</p>
+    </div>
+    <div class="quiz-options" id="quizOptions"></div>
+    <div class="quiz-feedback" id="quizFeedback"></div>
+    <button class="quiz-next" id="quizNext" onclick="nextQuestion()">Next →</button>
+    <div class="quiz-complete" id="quizComplete">
+      <div class="quiz-complete-score" id="quizFinalScore">8/10</div>
+      <h3 id="quizResultTitle">Great work!</h3>
+      <p id="quizResultMsg">You're becoming a cell expert. Keep exploring to master every organelle.</p>
+      <button class="btn-restart" onclick="startQuiz()">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- Drag ghost -->
+<div id="dragGhost"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════
+const ORGANELLES = {
+  membrane: {
+    name: 'Cell Membrane',
+    latin: 'Membrana cellularis',
+    emoji: '🔵',
+    color: '#1de3c8',
+    function: 'Controls what enters and exits the cell. It acts as a selective barrier, allowing nutrients in and waste out while keeping harmful substances outside.',
+    analogy: '🏠 Like the walls and doors of a house — it defines the boundary and controls who can come in or go out.',
+    fact: '⚡ The cell membrane is only about 8 nanometres thick — you could stack 10,000 of them in the thickness of a single sheet of paper!',
+    buildRequired: true,
+  },
+  nucleus: {
+    name: 'Nucleus',
+    latin: 'Nucleus',
+    emoji: '🟣',
+    color: '#7c6cfc',
+    function: 'The control centre of the cell. Contains DNA, which carries the genetic instructions for building proteins and directing all cellular activities.',
+    analogy: '🧠 Like the brain of the cell — it stores the master plan (DNA) and sends instructions to every other part.',
+    fact: '⚡ Your nucleus contains about 2 metres of DNA, coiled tightly into a space just 6 micrometres wide — like fitting a football pitch inside a marble!',
+    buildRequired: true,
+  },
+  mitochondria: {
+    name: 'Mitochondria',
+    latin: 'Mitochondria',
+    emoji: '🔴',
+    color: '#ff6b6b',
+    function: 'Produces ATP (adenosine triphosphate) — the energy currency of the cell — through cellular respiration. Every movement, thought, and heartbeat requires ATP.',
+    analogy: '⚡ Like the power station of the cell — it converts fuel (glucose + oxygen) into usable energy (ATP).',
+    fact: '⚡ Mitochondria have their own DNA, separate from the nucleus. Scientists believe they were once free-living bacteria that were absorbed by larger cells billions of years ago!',
+    buildRequired: true,
+  },
+  rough_er: {
+    name: 'Rough ER',
+    latin: 'Reticulum endoplasmaticum granulosum',
+    emoji: '🔷',
+    color: '#4ecdc4',
+    function: 'Rough Endoplasmic Reticulum — a network of membranes studded with ribosomes. It manufactures and folds proteins destined to be secreted or sent to other organelles.',
+    analogy: '🏭 Like a protein factory with a conveyor belt — ribosomes on its surface build proteins, which are then processed and shipped out.',
+    fact: '⚡ If you unfolded all the ER in a single liver cell, it would cover a tennis court! The "rough" comes from the bumpy ribosomes covering its surface.',
+    buildRequired: true,
+  },
+  golgi: {
+    name: 'Golgi Apparatus',
+    latin: 'Apparatus Golgi',
+    emoji: '🟡',
+    color: '#ffd93d',
+    function: 'Receives proteins from the ER, modifies, sorts, and packages them into vesicles for transport to their final destination inside or outside the cell.',
+    analogy: '📮 Like the post office of the cell — it receives packages (proteins), adds address labels, and ships them to the correct destination.',
+    fact: '⚡ Discovered by Italian scientist Camillo Golgi in 1898. For decades, scientists thought his discovery was just an artefact of his staining technique — he won the Nobel Prize in 1906.',
+    buildRequired: true,
+  },
+  ribosome: {
+    name: 'Ribosomes',
+    latin: 'Ribosomata',
+    emoji: '⚪',
+    color: '#a8edea',
+    function: 'Tiny machines that read messenger RNA (mRNA) and build proteins by linking amino acids in the correct order. Found free in the cytoplasm or attached to the Rough ER.',
+    analogy: '🖨️ Like a 3D printer for proteins — they read the DNA blueprint (via mRNA) and assemble proteins one amino acid at a time.',
+    fact: '⚡ Your cells contain millions of ribosomes. They are so tiny that 10 million could fit on the full stop at the end of this sentence.',
+    buildRequired: false,
+  },
+  lysosome: {
+    name: 'Lysosome',
+    latin: 'Lysosomat',
+    emoji: '🟠',
+    color: '#ee5a24',
+    function: 'Contains powerful digestive enzymes that break down waste materials, worn-out organelles, and foreign invaders like bacteria. Maintains cellular cleanliness.',
+    analogy: '🗑️ Like the cell\'s stomach and recycling bin — it digests and breaks down materials the cell wants to destroy or recycle.',
+    fact: '⚡ Lysosomes are so acidic (pH 4.5–5) they would digest the cell itself if their membrane broke. This actually happens in a controlled way during programmed cell death (apoptosis).',
+    buildRequired: true,
+  },
+  vacuole: {
+    name: 'Vacuole',
+    latin: 'Vacuolum',
+    emoji: '🔵',
+    color: '#a29bfe',
+    function: 'Storage organelle that holds water, nutrients, and waste products. In animal cells, vacuoles are small and temporary. Plant cells have one large central vacuole.',
+    analogy: '🪣 Like a storage tank or balloon — it holds water and materials the cell needs, and helps regulate the cell\'s water balance.',
+    fact: '⚡ Plant cell vacuoles can take up 90% of the cell\'s total volume! This is why plants wilt when dehydrated — their vacuoles deflate like a flat balloon.',
+    buildRequired: false,
+  },
+  centrosome: {
+    name: 'Centrosome',
+    latin: 'Centrosoma',
+    emoji: '🌸',
+    color: '#fd79a8',
+    function: 'Organises cell division by forming the spindle fibres that pull chromosomes apart. Essential for creating two identical daughter cells during mitosis.',
+    analogy: '📐 Like the cell division manager — it builds the rope-and-pulley system that ensures each new cell gets a complete set of chromosomes.',
+    fact: '⚡ The centrosome contains two centrioles arranged at right angles to each other. It starts duplicating before a cell divides so each daughter cell inherits one.',
+    buildRequired: true,
+  },
+  cytoplasm: {
+    name: 'Cytoplasm',
+    latin: 'Cytoplasma',
+    emoji: '💧',
+    color: '#74b9ff',
+    function: 'The jelly-like fluid (cytosol) that fills the cell and surrounds all organelles. Allows molecules to move around and provides the medium for chemical reactions.',
+    analogy: '🌊 Like the sea inside the cell — all the organelles float and move through it, and chemical reactions happen within it.',
+    fact: '⚡ Cytoplasm is not still — it constantly streams in a process called cytoplasmic streaming. It\'s like a slow-motion whirlpool happening inside every cell, all the time.',
+    buildRequired: false,
+  },
+};
+
+const BUILD_REQUIRED = Object.entries(ORGANELLES)
+  .filter(([k, v]) => v.buildRequired)
+  .map(([k]) => k);
+
+// ══════════════════════════════════════════
+// CANVAS SETUP
+// ══════════════════════════════════════════
+const canvas = document.getElementById('cellCanvas');
+const ctx = canvas.getContext('2d');
+
+let W, H, cX, cY, cellR, innerR;
+let mode = 'explore';
+let hoveredOrganelle = null;
+let selectedOrganelle = null;
+let animFrame = 0;
+let organellePositions = {};
+let quizState = {};
+let buildState = {};
+let dragState = { active: false, part: null };
+
+// Cached particle arrays (reset on resize)
+let cytoParticles = null;
+let ribosomePositions = null;
+
+function resize() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+  cX = W / 2;
+  cY = H / 2;
+  cellR = Math.min(W, H) * 0.38;
+  innerR = cellR * 0.88;
+  computePositions();
+  cytoParticles = null;
+  ribosomePositions = null;
+}
+
+function computePositions() {
+  const r = innerR;
+  organellePositions = {
+    membrane:     { x: cX, y: cY },
+    cytoplasm:    { x: cX, y: cY },
+    nucleus:      { x: cX - r * 0.05, y: cY + r * 0.02, rx: r * 0.28, ry: r * 0.26 },
+    mitochondria: [
+      { x: cX + r * 0.38, y: cY - r * 0.18, angle: 0.6,  len: r * 0.22, wid: r * 0.09 },
+      { x: cX + r * 0.22, y: cY + r * 0.42, angle: -0.3, len: r * 0.20, wid: r * 0.085 },
+      { x: cX - r * 0.42, y: cY + r * 0.22, angle: 2.0,  len: r * 0.18, wid: r * 0.08 },
+    ],
+    rough_er:     { x: cX - r * 0.28, y: cY - r * 0.12 },
+    golgi:        { x: cX + r * 0.10, y: cY - r * 0.38 },
+    lysosome: [
+      { x: cX + r * 0.52, y: cY + r * 0.35, r: r * 0.065 },
+      { x: cX - r * 0.50, y: cY - r * 0.38, r: r * 0.055 },
+      { x: cX + r * 0.14, y: cY + r * 0.55, r: r * 0.060 },
+    ],
+    vacuole:      { x: cX - r * 0.20, y: cY + r * 0.38, r: r * 0.11 },
+    centrosome:   { x: cX + r * 0.32, y: cY + r * 0.05, r: r * 0.06 },
+  };
+}
+
+// ══════════════════════════════════════════
+// MAIN DRAW LOOP
+// ══════════════════════════════════════════
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  drawGrid();
+
+  // Cell cytoplasm fill
+  ctx.save();
+  ctx.beginPath();
+  ctx.ellipse(cX, cY, cellR, cellR * 0.75, 0, 0, Math.PI * 2);
+  const cytoGrad = ctx.createRadialGradient(cX, cY - 40, 10, cX, cY, cellR);
+  cytoGrad.addColorStop(0, 'rgba(10,25,50,0.85)');
+  cytoGrad.addColorStop(1, 'rgba(5,12,28,0.92)');
+  ctx.fillStyle = cytoGrad;
+  ctx.fill();
+  ctx.restore();
+
+  if (mode === 'build') {
+    drawBuildMode();
+  } else {
+    drawAllOrganelles();
+  }
+
+  drawMembrane();
+  animFrame++;
+  requestAnimationFrame(draw);
+}
+
+function drawGrid() {
+  ctx.save();
+  ctx.strokeStyle = 'rgba(29,227,200,0.05)';
+  ctx.lineWidth = 0.5;
+  for (let x = 0; x < W; x += 40) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y < H; y += 40) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// DRAW ALL ORGANELLES (explore + quiz)
+// ══════════════════════════════════════════
+function drawAllOrganelles() {
+  const p = organellePositions;
+
+  // Cytoplasm (glow when active, particles always)
+  drawCytoplasm();
+
+  // Rough ER
+  drawER(p.rough_er,
+    hoveredOrganelle === 'rough_er',
+    selectedOrganelle === 'rough_er',
+    quizHL('rough_er'));
+
+  // Golgi
+  drawGolgi(p.golgi,
+    hoveredOrganelle === 'golgi',
+    selectedOrganelle === 'golgi',
+    quizHL('golgi'));
+
+  // Mitochondria
+  p.mitochondria.forEach((m, i) =>
+    drawMitochondrion(m,
+      hoveredOrganelle === 'mitochondria',
+      selectedOrganelle === 'mitochondria',
+      quizHL('mitochondria'), i));
+
+  // Ribosomes
+  drawRibosomes(
+    hoveredOrganelle === 'ribosome',
+    selectedOrganelle === 'ribosome',
+    quizHL('ribosome'));
+
+  // Vacuole
+  drawCircleOrganelle(p.vacuole, ORGANELLES.vacuole.color, 'vacuole');
+
+  // Lysosomes — show label on the middle one (index 1 = left side, most visible)
+  p.lysosome.forEach((l, i) =>
+    drawCircleOrganelle(l, ORGANELLES.lysosome.color, 'lysosome', i === 1));
+
+  // Centrosome
+  drawCentrosome(p.centrosome,
+    hoveredOrganelle === 'centrosome',
+    selectedOrganelle === 'centrosome',
+    quizHL('centrosome'));
+
+  // Nucleus on top of ER/Golgi
+  drawNucleus(p.nucleus,
+    hoveredOrganelle === 'nucleus',
+    selectedOrganelle === 'nucleus',
+    quizHL('nucleus'));
+}
+
+function quizHL(id) {
+  return mode === 'quiz' && quizState.highlighted === id && !quizState.answered;
+}
+
+// ══════════════════════════════════════════
+// CYTOPLASM (particles + glow when active)
+// ══════════════════════════════════════════
+function drawCytoplasm() {
+  const hovActive = hoveredOrganelle === 'cytoplasm';
+  const selActive = selectedOrganelle === 'cytoplasm';
+  const qActive   = quizHL('cytoplasm');
+  const active = hovActive || selActive || qActive;
+
+  // Initialise particles once
+  if (!cytoParticles) {
+    cytoParticles = [];
+    for (let i = 0; i < 45; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const dist  = Math.random() * innerR * 0.80;
+      cytoParticles.push({
+        angle, dist,
+        speed: (Math.random() - 0.5) * 0.003,
+        size:  Math.random() * 1.8 + 0.4,
+        alpha: Math.random() * 0.3 + 0.1,
+      });
+    }
+  }
+
+  ctx.save();
+
+  // Glow ring when active
+  if (active) {
+    ctx.beginPath();
+    ctx.ellipse(cX, cY, innerR * 0.82, innerR * 0.82 * 0.75, 0, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(116,185,255,0.35)';
+    ctx.lineWidth = 18;
+    ctx.shadowColor = '#74b9ff';
+    ctx.shadowBlur = 30;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+
+  // Drifting particles
+  cytoParticles.forEach(p => {
+    p.angle += p.speed;
+    const px = cX + Math.cos(p.angle) * p.dist;
+    const py = cY + Math.sin(p.angle) * p.dist * 0.75;
+    ctx.beginPath();
+    ctx.arc(px, py, active ? p.size * 1.8 : p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(116,185,255,${active ? p.alpha * 2.5 : p.alpha})`;
+    ctx.fill();
+  });
+
+  if (active) {
+    drawLabel(cX, cY + innerR * 0.55, 'Cytoplasm', '#74b9ff');
+  }
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// CELL MEMBRANE
+// ══════════════════════════════════════════
+function drawMembrane() {
+  const hovered = hoveredOrganelle === 'membrane' || selectedOrganelle === 'membrane';
+  const qActive  = quizHL('membrane');
+  const active   = hovered || qActive;
+  const pulse    = Math.sin(animFrame * 0.02) * 0.15 + 0.85;
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.ellipse(cX, cY, cellR, cellR * 0.75, 0, 0, Math.PI * 2);
+
+  if (active) { ctx.shadowColor = '#1de3c8'; ctx.shadowBlur = 30; }
+
+  // Outer glow ring
+  ctx.strokeStyle = `rgba(29,227,200,${active ? 0.22 : 0.06})`;
+  ctx.lineWidth = 14;
+  ctx.stroke();
+
+  // Main stroke
+  ctx.shadowBlur = active ? 20 : 0;
+  ctx.strokeStyle = `rgba(29,227,200,${active ? 1 : 0.6 * pulse})`;
+  ctx.lineWidth   = active ? 3.5 : 2;
+  ctx.stroke();
+  ctx.restore();
+
+  if (active) drawLabel(cX, cY - cellR * 0.75 - 14, 'Cell Membrane', '#1de3c8');
+}
+
+// ══════════════════════════════════════════
+// NUCLEUS
+// ══════════════════════════════════════════
+function drawNucleus(pos, hov, sel, quiz) {
+  const active = hov || sel || quiz;
+  const pulse  = Math.sin(animFrame * 0.025) * 0.1 + 0.9;
+
+  ctx.save();
+  if (active) { ctx.shadowColor = '#7c6cfc'; ctx.shadowBlur = 30; }
+
+  // Fill
+  const nGrad = ctx.createRadialGradient(
+    pos.x - pos.rx * 0.2, pos.y - pos.ry * 0.2, 4,
+    pos.x, pos.y, pos.rx);
+  nGrad.addColorStop(0, 'rgba(150,130,255,0.35)');
+  nGrad.addColorStop(0.6, 'rgba(100,80,220,0.20)');
+  nGrad.addColorStop(1, 'rgba(60,40,160,0.10)');
+
+  ctx.beginPath();
+  ctx.ellipse(pos.x, pos.y, pos.rx, pos.ry, 0, 0, Math.PI * 2);
+  ctx.fillStyle = nGrad;
+  ctx.fill();
+
+  ctx.strokeStyle = `rgba(124,108,252,${active ? 1 : 0.75 * pulse})`;
+  ctx.lineWidth   = active ? 2.5 : 1.8;
+  ctx.stroke();
+
+  // Nuclear pores
+  ctx.shadowBlur = 0;
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.arc(pos.x + Math.cos(a) * pos.rx,
+            pos.y + Math.sin(a) * pos.ry, 3, 0, Math.PI * 2);
+    ctx.fillStyle = active ? '#7c6cfc' : 'rgba(124,108,252,0.55)';
+    ctx.fill();
+  }
+
+  // Nucleolus
+  const nolX = pos.x + pos.rx * 0.18;
+  const nolY = pos.y - pos.ry * 0.12;
+  ctx.beginPath();
+  ctx.ellipse(nolX, nolY, pos.rx * 0.36, pos.ry * 0.30, 0.3, 0, Math.PI * 2);
+  ctx.fillStyle   = 'rgba(180,160,255,0.45)';
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(180,160,255,0.7)';
+  ctx.lineWidth   = 1.2;
+  ctx.stroke();
+
+  if (active) {
+    drawLabel(pos.x, pos.y - pos.ry - 14, 'Nucleus', '#7c6cfc');
+    ctx.fillStyle = 'rgba(180,160,255,0.65)';
+    ctx.font = '10px Space Grotesk';
+    ctx.textAlign = 'center';
+    ctx.fillText('nucleolus ↑', nolX, nolY + pos.ry * 0.5);
+  }
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// MITOCHONDRIA
+// ══════════════════════════════════════════
+function drawMitochondrion(m, hov, sel, quiz, idx) {
+  const active = hov || sel || quiz;
+  const pulse  = Math.sin(animFrame * 0.03 + idx * 1.2) * 0.12 + 0.88;
+
+  ctx.save();
+  ctx.translate(m.x, m.y);
+  ctx.rotate(m.angle);
+  if (active) { ctx.shadowColor = '#ff6b6b'; ctx.shadowBlur = 20; }
+
+  // Outer membrane
+  ctx.beginPath();
+  rrect(-m.len / 2, -m.wid / 2, m.len, m.wid, m.wid / 2);
+  const mGrad = ctx.createLinearGradient(-m.len / 2, 0, m.len / 2, 0);
+  mGrad.addColorStop(0,   'rgba(255,107,107,0.15)');
+  mGrad.addColorStop(0.5, 'rgba(255,107,107,0.28)');
+  mGrad.addColorStop(1,   'rgba(255,107,107,0.15)');
+  ctx.fillStyle   = mGrad;
+  ctx.fill();
+  ctx.strokeStyle = `rgba(255,107,107,${active ? 1 : 0.7 * pulse})`;
+  ctx.lineWidth   = active ? 2 : 1.5;
+  ctx.stroke();
+
+  // Cristae
+  ctx.shadowBlur = 0;
+  for (let i = 0; i < 4; i++) {
+    const cx2 = -m.len / 2 + m.len * (i + 1) / 5;
+    ctx.beginPath();
+    ctx.moveTo(cx2, -m.wid / 2 + 4);
+    ctx.bezierCurveTo(cx2 - 3, 0, cx2 + 3, 0, cx2, m.wid / 2 - 4);
+    ctx.strokeStyle = `rgba(255,150,150,${active ? 0.7 : 0.35})`;
+    ctx.lineWidth   = 1.2;
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  if (active && idx === 0) drawLabel(m.x, m.y - m.wid * 2, 'Mitochondrion', '#ff6b6b');
+}
+
+// ══════════════════════════════════════════
+// ROUGH ER
+// ══════════════════════════════════════════
+function drawER(pos, hov, sel, quiz) {
+  const active = hov || sel || quiz;
+  const pulse  = Math.sin(animFrame * 0.022) * 0.1 + 0.9;
+
+  ctx.save();
+  if (active) { ctx.shadowColor = '#4ecdc4'; ctx.shadowBlur = 18; }
+
+  const layers = 4;
+  const startY = pos.y - layers * 9;
+  for (let i = 0; i < layers; i++) {
+    const ly = startY + i * 18;
+    const lw = 90 + i * 4;
+
+    // Wavy membrane line
+    ctx.beginPath();
+    ctx.moveTo(pos.x - lw / 2, ly);
+    for (let t = 0; t <= 1; t += 0.02) {
+      ctx.lineTo(
+        pos.x - lw / 2 + t * lw,
+        ly + Math.sin(t * Math.PI * 3 + animFrame * 0.04) * 4);
+    }
+    ctx.strokeStyle = `rgba(78,205,196,${active ? 0.9 : 0.55 * pulse})`;
+    ctx.lineWidth   = active ? 2 : 1.5;
+    ctx.stroke();
+
+    // Ribosome dots on surface
+    ctx.shadowBlur = 0;
+    for (let j = 0; j < 8; j++) {
+      const rx = pos.x - lw / 2 + (j + 0.5) * (lw / 8);
+      const ry = ly + Math.sin((j / 8) * Math.PI * 3 + animFrame * 0.04) * 4 - 4;
+      ctx.beginPath();
+      ctx.arc(rx, ry, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = active ? '#a8edea' : 'rgba(168,237,234,0.5)';
+      ctx.fill();
+    }
+  }
+
+  if (active) drawLabel(pos.x, startY - 14, 'Rough ER', '#4ecdc4');
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// GOLGI APPARATUS
+// ══════════════════════════════════════════
+function drawGolgi(pos, hov, sel, quiz) {
+  const active = hov || sel || quiz;
+  const pulse  = Math.sin(animFrame * 0.018 + 1) * 0.12 + 0.88;
+
+  ctx.save();
+  if (active) { ctx.shadowColor = '#ffd93d'; ctx.shadowBlur = 20; }
+
+  const stacks = 5;
+  for (let i = 0; i < stacks; i++) {
+    const ly  = pos.y - (stacks / 2 - i) * 12;
+    const lw  = 70 - Math.abs(stacks / 2 - i) * 10;
+    const cur = (stacks / 2 - i) * 6;
+
+    ctx.beginPath();
+    ctx.moveTo(pos.x - lw / 2, ly);
+    ctx.bezierCurveTo(
+      pos.x - lw / 4, ly + cur,
+      pos.x + lw / 4, ly + cur,
+      pos.x + lw / 2, ly);
+    ctx.strokeStyle = `rgba(255,217,61,${active ? 0.9 : 0.6 * pulse})`;
+    ctx.lineWidth   = active ? 7 : 5;
+    ctx.lineCap     = 'round';
+    ctx.stroke();
+  }
+
+  // Budding vesicle
+  ctx.shadowBlur = 0;
+  const vOff = Math.sin(animFrame * 0.04) * 4;
+  const lastY = pos.y + (stacks / 2) * 12 - stacks * 12 + (stacks - 1) * 12;
+  const lastW = 70 - Math.abs(stacks / 2 - (stacks - 1)) * 10;
+  ctx.beginPath();
+  ctx.arc(pos.x + lastW / 2 + 10 + vOff, pos.y + 24, 6, 0, Math.PI * 2);
+  ctx.fillStyle   = 'rgba(255,217,61,0.35)';
+  ctx.fill();
+  ctx.strokeStyle = `rgba(255,217,61,${active ? 0.8 : 0.5})`;
+  ctx.lineWidth   = 1.5;
+  ctx.stroke();
+
+  if (active) drawLabel(pos.x, pos.y - stacks * 7 - 14, 'Golgi Apparatus', '#ffd93d');
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// RIBOSOMES
+// ══════════════════════════════════════════
+function drawRibosomes(hov, sel, quiz) {
+  if (!ribosomePositions) {
+    const seed = [
+      { x: 0.55, y: -0.22 }, { x: 0.60, y: 0.08 }, { x: 0.44, y: 0.50 },
+      { x: -0.30, y: 0.58 }, { x: -0.60, y: 0.10 }, { x: -0.55, y: -0.30 },
+      { x: 0.10, y: -0.55 }, { x: -0.15, y: 0.65 }, { x: 0.65, y: -0.45 },
+      { x: -0.48, y: -0.55 }, { x: 0.30, y: 0.65 }, { x: -0.70, y: -0.12 },
+    ];
+    ribosomePositions = seed.map(s => ({
+      x: cX + s.x * innerR * 0.72,
+      y: cY + s.y * innerR * 0.72 * 0.75,
+    }));
+  }
+
+  const active = hov || sel || quiz;
+  ctx.save();
+  if (active) { ctx.shadowColor = '#a8edea'; ctx.shadowBlur = 10; }
+
+  ribosomePositions.forEach((r, i) => {
+    const pulse = Math.sin(animFrame * 0.05 + i * 0.7) * 0.2 + 0.8;
+    ctx.beginPath();
+    ctx.arc(r.x, r.y, active ? 4 : 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(168,237,234,${active ? 0.9 : 0.45 * pulse})`;
+    ctx.fill();
+    if (active) {
+      ctx.beginPath();
+      ctx.arc(r.x + 3, r.y + 1, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(168,237,234,0.5)';
+      ctx.fill();
+    }
+  });
+
+  if (active && ribosomePositions.length) {
+    ctx.shadowBlur = 0;
+    drawLabel(ribosomePositions[3].x, ribosomePositions[3].y - 14, 'Ribosomes', '#a8edea');
+  }
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// CIRCLE ORGANELLES (vacuole, lysosomes)
+// ══════════════════════════════════════════
+function drawCircleOrganelle(pos, color, id, showLabel = true) {
+  const hov    = hoveredOrganelle  === id;
+  const sel    = selectedOrganelle === id;
+  const quiz   = quizHL(id);
+  const active = hov || sel || quiz;
+  const pulse  = Math.sin(animFrame * 0.03 + pos.x * 0.01) * 0.12 + 0.88;
+
+  const r2 = parseInt(color.slice(1, 3), 16);
+  const g2 = parseInt(color.slice(3, 5), 16);
+  const b2 = parseInt(color.slice(5, 7), 16);
+
+  ctx.save();
+  if (active) { ctx.shadowColor = color; ctx.shadowBlur = 20; }
+
+  ctx.beginPath();
+  ctx.arc(pos.x, pos.y, pos.r, 0, Math.PI * 2);
+  ctx.fillStyle   = `rgba(${r2},${g2},${b2},${active ? 0.35 : 0.18 * pulse})`;
+  ctx.fill();
+  ctx.strokeStyle = `rgba(${r2},${g2},${b2},${active ? 1 : 0.6 * pulse})`;
+  ctx.lineWidth   = active ? 2 : 1.5;
+  ctx.stroke();
+
+  if (active && showLabel) {
+    ctx.shadowBlur = 0;
+    drawLabel(pos.x, pos.y - pos.r - 10, ORGANELLES[id].name, color);
+  }
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// CENTROSOME
+// ══════════════════════════════════════════
+function drawCentrosome(pos, hov, sel, quiz) {
+  const active = hov || sel || quiz;
+  ctx.save();
+  if (active) { ctx.shadowColor = '#fd79a8'; ctx.shadowBlur = 20; }
+
+  [[1, 0], [0, 1]].forEach(([dx, dy]) => {
+    ctx.beginPath();
+    ctx.moveTo(pos.x - dx * pos.r * 1.2, pos.y - dy * pos.r * 1.2);
+    ctx.lineTo(pos.x + dx * pos.r * 1.2, pos.y + dy * pos.r * 1.2);
+    ctx.strokeStyle = `rgba(253,121,168,${active ? 0.9 : 0.55})`;
+    ctx.lineWidth   = active ? 4 : 3;
+    ctx.lineCap     = 'round';
+    ctx.stroke();
+
+    for (let j = -1; j <= 1; j += 0.5) {
+      ctx.beginPath();
+      ctx.arc(pos.x + dx * pos.r * j, pos.y + dy * pos.r * j, 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(253,121,168,${active ? 0.9 : 0.5})`;
+      ctx.fill();
+    }
+  });
+
+  if (active) {
+    ctx.shadowBlur = 0;
+    drawLabel(pos.x + pos.r + 14, pos.y, 'Centrosome', '#fd79a8');
+  }
+  ctx.restore();
+}
+
+// ══════════════════════════════════════════
+// BUILD MODE DRAWING
+// ══════════════════════════════════════════
+function drawBuildMode() {
+  const placed = buildState.placed || {};
+  const p = organellePositions;
+
+  // Always draw cytoplasm particles (dim if nothing placed yet)
+  ctx.save();
+  ctx.globalAlpha = Object.keys(placed).length > 0 ? 0.5 : 0.2;
+  drawCytoplasm();
+  ctx.globalAlpha = 1;
+  ctx.restore();
+
+  // Draw each required organelle — full if placed, ghost+indicator if not
+  BUILD_REQUIRED.forEach(id => {
+    if (id === 'membrane') return; // drawn by main loop always
+    if (placed[id]) {
+      drawOrganelleById(id);
+    } else {
+      ctx.save();
+      ctx.globalAlpha = 0.12;
+      drawOrganelleById(id);
+      ctx.globalAlpha = 1;
+      ctx.restore();
+      drawDropZone(id);
+    }
+  });
+
+  // Ribosomes & vacuole: always shown faintly
+  ctx.save();
+  ctx.globalAlpha = placed.nucleus ? 0.6 : 0.2;
+  drawRibosomes(false, false, false);
+  drawCircleOrganelle(p.vacuole, ORGANELLES.vacuole.color, 'vacuole', false);
+  ctx.globalAlpha = 1;
+  ctx.restore();
+}
+
+function drawOrganelleById(id) {
+  const p = organellePositions;
+  switch (id) {
+    case 'nucleus':      drawNucleus(p.nucleus, false, false, false); break;
+    case 'mitochondria': p.mitochondria.forEach((m, i) => drawMitochondrion(m, false, false, false, i)); break;
+    case 'rough_er':     drawER(p.rough_er, false, false, false); break;
+    case 'golgi':        drawGolgi(p.golgi, false, false, false); break;
+    case 'lysosome':     p.lysosome.forEach((l, i) => drawCircleOrganelle(l, ORGANELLES.lysosome.color, 'lysosome', false)); break;
+    case 'centrosome':   drawCentrosome(p.centrosome, false, false, false); break;
+    // membrane handled by main draw loop
+  }
+}
+
+function drawDropZone(id) {
+  const p = organellePositions;
+  let cx2, cy2, cr;
+  switch (id) {
+    case 'nucleus':      cx2 = p.nucleus.x;          cy2 = p.nucleus.y;          cr = p.nucleus.rx * 1.2; break;
+    case 'mitochondria': cx2 = p.mitochondria[0].x;  cy2 = p.mitochondria[0].y;  cr = p.mitochondria[0].len * 0.65; break;
+    case 'rough_er':     cx2 = p.rough_er.x;         cy2 = p.rough_er.y;         cr = 56; break;
+    case 'golgi':        cx2 = p.golgi.x;            cy2 = p.golgi.y;            cr = 46; break;
+    case 'lysosome':     cx2 = p.lysosome[0].x;      cy2 = p.lysosome[0].y;      cr = p.lysosome[0].r * 1.6; break;
+    case 'centrosome':   cx2 = p.centrosome.x;       cy2 = p.centrosome.y;       cr = 24; break;
+    default: return;
+  }
+  ctx.save();
+  ctx.setLineDash([5, 5]);
+  ctx.strokeStyle = `rgba(${hexToRGB(ORGANELLES[id].color)},0.5)`;
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.arc(cx2, cy2, cr, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.restore();
+}
+
+// Draw dashed ring around membrane edge in build mode
+function drawMembraneDropZone() {
+  ctx.save();
+  ctx.setLineDash([6, 6]);
+  ctx.strokeStyle = 'rgba(29,227,200,0.4)';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.ellipse(cX, cY, cellR + 10, (cellR + 10) * 0.75, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function hexToRGB(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `${r},${g},${b}`;
+}
+
+// ══════════════════════════════════════════
+// HIT TESTING
+// ══════════════════════════════════════════
+function getOrganelleAt(mx, my) {
+  const p = organellePositions;
+
+  // Nucleus
+  const ndx = (mx - p.nucleus.x) / p.nucleus.rx;
+  const ndy = (my - p.nucleus.y) / p.nucleus.ry;
+  if (ndx * ndx + ndy * ndy < 1) return 'nucleus';
+
+  // Mitochondria
+  for (const m of p.mitochondria) {
+    const lx =  (mx - m.x) * Math.cos(-m.angle) - (my - m.y) * Math.sin(-m.angle);
+    const ly =  (mx - m.x) * Math.sin(-m.angle) + (my - m.y) * Math.cos(-m.angle);
+    if (Math.abs(lx) < m.len / 2 && Math.abs(ly) < m.wid / 2) return 'mitochondria';
+  }
+
+  // Golgi
+  if (Math.abs(mx - p.golgi.x) < 50 && Math.abs(my - p.golgi.y) < 42) return 'golgi';
+
+  // Rough ER
+  if (Math.abs(mx - p.rough_er.x) < 56 && Math.abs(my - p.rough_er.y) < 46) return 'rough_er';
+
+  // Lysosomes
+  for (const l of p.lysosome)
+    if (Math.hypot(mx - l.x, my - l.y) < l.r + 8) return 'lysosome';
+
+  // Vacuole
+  if (Math.hypot(mx - p.vacuole.x, my - p.vacuole.y) < p.vacuole.r + 8) return 'vacuole';
+
+  // Centrosome
+  if (Math.hypot(mx - p.centrosome.x, my - p.centrosome.y) < p.centrosome.r + 16) return 'centrosome';
+
+  // Ribosomes
+  if (ribosomePositions)
+    for (const r of ribosomePositions)
+      if (Math.hypot(mx - r.x, my - r.y) < 12) return 'ribosome';
+
+  // Cytoplasm (inside membrane, not over anything)
+  const cdx = (mx - cX) / cellR;
+  const cdy = (my - cY) / (cellR * 0.75);
+  if (cdx * cdx + cdy * cdy < 0.84) return 'cytoplasm';
+
+  // Membrane edge
+  if (cdx * cdx + cdy * cdy < 1.15) return 'membrane';
+
+  return null;
+}
+
+// ══════════════════════════════════════════
+// BUILD DROP TARGET
+// ══════════════════════════════════════════
+function getBuildDropTarget(mx, my) {
+  const p = organellePositions;
+  const placed = buildState.placed || {};
+
+  const targets = [
+    { id: 'nucleus',      cx: p.nucleus.x,         cy: p.nucleus.y,         cr: p.nucleus.rx * 1.4 },
+    { id: 'mitochondria', cx: p.mitochondria[0].x, cy: p.mitochondria[0].y, cr: p.mitochondria[0].len * 0.8 },
+    { id: 'rough_er',     cx: p.rough_er.x,        cy: p.rough_er.y,        cr: 68 },
+    { id: 'golgi',        cx: p.golgi.x,           cy: p.golgi.y,           cr: 58 },
+    { id: 'lysosome',     cx: p.lysosome[0].x,     cy: p.lysosome[0].y,     cr: 42 },
+    { id: 'centrosome',   cx: p.centrosome.x,      cy: p.centrosome.y,      cr: 32 },
+    { id: 'membrane',     cx: cX,                  cy: cY,                  cr: cellR, onEdge: true },
+  ];
+
+  for (const t of targets) {
+    if (placed[t.id]) continue;
+    const dist = Math.hypot(mx - t.cx, my - t.cy);
+    if (t.onEdge) {
+      if (dist > cellR * 0.72 && dist < cellR * 1.30) return t.id;
+    } else {
+      if (dist < t.cr) return t.id;
+    }
+  }
+
+  const cdx = (mx - cX) / cellR, cdy = (my - cY) / (cellR * 0.75);
+  if (cdx * cdx + cdy * cdy < 1) return 'inside_cell';
+  return null;
+}
+
+// ══════════════════════════════════════════
+// INFO PANEL
+// ══════════════════════════════════════════
+function showPanel(id) {
+  const org = ORGANELLES[id];
+  if (!org) { clearPanel(); return; }
+
+  document.getElementById('panelEmpty').style.display = 'none';
+  const content = document.getElementById('panelContent');
+  content.style.display = 'flex';
+  document.getElementById('panelGlow').style.background = org.color;
+
+  content.innerHTML = `
+    <div class="organelle-header">
+      <div class="organelle-icon" style="background:${org.color}22;border:1.5px solid ${org.color}44">
+        <span>${org.emoji}</span>
+      </div>
+      <div>
+        <div class="organelle-name" style="color:${org.color}">${org.name}</div>
+        <div class="organelle-latin">${org.latin}</div>
+      </div>
+    </div>
+    <div class="info-section">
+      <div class="info-label">Function</div>
+      <div class="info-text">${org.function}</div>
+    </div>
+    <div class="analogy-box">
+      <div class="info-label">City Analogy</div>
+      <div class="info-text">${org.analogy}</div>
+    </div>
+    <div class="fact-box">
+      <div class="info-label fact-label">Wow Factor</div>
+      <div class="info-text">${org.fact}</div>
+    </div>
+  `;
+}
+
+function clearPanel() {
+  document.getElementById('panelEmpty').style.display = 'flex';
+  document.getElementById('panelContent').style.display = 'none';
+  document.getElementById('panelGlow').style.background = 'var(--accent)';
+}
+
+// ══════════════════════════════════════════
+// UTILITY: LABEL + ROUNDED RECT
+// ══════════════════════════════════════════
+function drawLabel(x, y, text, color) {
+  ctx.save();
+  ctx.font = 'bold 12px "Space Grotesk"';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = color;
+  ctx.shadowColor = color;
+  ctx.shadowBlur = 8;
+  ctx.fillText(text, x, y);
+  ctx.restore();
+}
+
+function rrect(x, y, w, h, r) {
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+}
+
+// ══════════════════════════════════════════
+// MODE SWITCHING
+// ══════════════════════════════════════════
+function setMode(m) {
+  mode = m;
+  hoveredOrganelle = null;
+  selectedOrganelle = null;
+
+  document.querySelectorAll('.mode-tab').forEach((t, i) =>
+    t.classList.toggle('active', ['explore', 'quiz', 'build'][i] === m));
+
+  const infoPanel   = document.getElementById('infoPanel');
+  const quizPanel   = document.getElementById('quizPanel');
+  const buildSidebar = document.getElementById('buildSidebar');
+  const scoreEl     = document.getElementById('quizScore');
+
+  infoPanel.style.display    = m === 'explore' ? 'flex' : 'none';
+  infoPanel.classList.toggle('hidden', m !== 'explore');
+  quizPanel.style.display    = m === 'quiz'    ? 'flex' : 'none';
+  buildSidebar.style.display = m === 'build'   ? 'flex' : 'none';
+  scoreEl.style.display      = m === 'quiz'    ? 'block' : 'none';
+
+  if (m === 'explore') clearPanel();
+  if (m === 'quiz')    startQuiz();
+  if (m === 'build')   startBuild();
+}
+
+// ══════════════════════════════════════════
+// QUIZ MODE
+// ══════════════════════════════════════════
+const QUIZ_ORGANELLES = ['nucleus','mitochondria','rough_er','golgi','ribosome',
+                         'lysosome','vacuole','centrosome','membrane','cytoplasm'];
+
+function startQuiz() {
+  quizState = {
+    questions:   shuffle([...QUIZ_ORGANELLES]).slice(0, 10),
+    current:     0,
+    score:       0,
+    highlighted: null,
+    answered:    false,
+  };
+  document.getElementById('quizComplete').style.display  = 'none';
+  document.getElementById('quizQuestion').style.display  = 'block';
+  document.getElementById('quizOptions').style.display   = 'grid';
+  updateScore();
+  showQuestion();
+}
+
+function showQuestion() {
+  if (quizState.current >= quizState.questions.length) { showQuizComplete(); return; }
+
+  const correctId = quizState.questions[quizState.current];
+  quizState.highlighted = correctId;
+  quizState.answered    = false;
+
+  document.getElementById('quizQuestionText').textContent = 'Which organelle is glowing?';
+  document.getElementById('quizProgress').textContent = `Question ${quizState.current + 1} of ${quizState.questions.length}`;
+  document.getElementById('quizFeedback').className    = 'quiz-feedback';
+  document.getElementById('quizFeedback').style.display = 'none';
+  document.getElementById('quizNext').style.display    = 'none';
+
+  const wrong   = shuffle(QUIZ_ORGANELLES.filter(id => id !== correctId)).slice(0, 3);
+  const options = shuffle([correctId, ...wrong]);
+
+  const container = document.getElementById('quizOptions');
+  container.innerHTML = '';
+  options.forEach(id => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.textContent = ORGANELLES[id].name;
+    btn.onclick = () => answerQuiz(id, correctId, btn);
+    container.appendChild(btn);
+  });
+}
+
+function answerQuiz(chosen, correct, btn) {
+  if (quizState.answered) return;
+  quizState.answered = true;
+  const right = chosen === correct;
+  if (right) quizState.score++;
+  updateScore();
+
+  document.querySelectorAll('.quiz-option').forEach(b => {
+    b.classList.add('answered');
+    if (b.textContent === ORGANELLES[correct].name)
+      b.classList.add(right && b === btn ? 'correct' : 'reveal');
+    else if (b === btn && !right)
+      b.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('quizFeedback');
+  fb.className = `quiz-feedback ${right ? 'correct' : 'wrong'}`;
+  fb.textContent = right
+    ? `✓ Correct! ${ORGANELLES[correct].analogy}`
+    : `✗ That's the ${ORGANELLES[chosen].name}. The glowing one is the ${ORGANELLES[correct].name}.`;
+  fb.style.display = 'block';
+  document.getElementById('quizNext').style.display = 'block';
+}
+
+function nextQuestion() {
+  quizState.current++;
+  quizState.highlighted = null;
+  showQuestion();
+}
+
+function updateScore() {
+  document.getElementById('quizScore').textContent =
+    `Score: ${quizState.score} / ${quizState.questions ? quizState.questions.length : 10}`;
+}
+
+function showQuizComplete() {
+  quizState.highlighted = null;
+  document.getElementById('quizQuestion').style.display  = 'none';
+  document.getElementById('quizOptions').style.display   = 'none';
+  document.getElementById('quizFeedback').style.display  = 'none';
+  document.getElementById('quizNext').style.display      = 'none';
+
+  const s = quizState.score, t = quizState.questions.length, p = s / t;
+  document.getElementById('quizFinalScore').textContent = `${s}/${t}`;
+  document.getElementById('quizResultTitle').textContent =
+    p >= 0.9 ? '🏆 Cell Master!' : p >= 0.7 ? '⭐ Great Work!' :
+    p >= 0.5 ? '📚 Keep Studying!' : '🔬 Back to Explore!';
+  document.getElementById('quizResultMsg').textContent =
+    p >= 0.9 ? 'Exceptional! You know every organelle and what it does.' :
+    p >= 0.7 ? 'You know most of the cell. Review the ones you missed in Explore mode.' :
+    p >= 0.5 ? 'A good start! Click Explore and read each organelle\'s function again.' :
+    'Spend time in Explore mode clicking each organelle, then come back and try again!';
+  document.getElementById('quizComplete').style.display = 'flex';
+}
+
+// ══════════════════════════════════════════
+// BUILD MODE
+// ══════════════════════════════════════════
+function startBuild() {
+  buildState = { placed: {} };
+  renderBuildSidebar();
+  updateBuildProgress();
+}
+
+function renderBuildSidebar() {
+  const container = document.getElementById('buildParts');
+  container.innerHTML = '';
+  BUILD_REQUIRED.forEach(id => {
+    const org = ORGANELLES[id];
+    const div = document.createElement('div');
+    div.className = 'build-part' + (buildState.placed[id] ? ' placed' : '');
+    div.setAttribute('data-id', id);
+    div.innerHTML = `
+      <div class="build-part-dot" style="background:${org.color}"></div>
+      <div class="build-part-name">${org.name}</div>
+    `;
+    div.addEventListener('mousedown', startDrag);
+    div.addEventListener('touchstart', startDragTouch, { passive: false });
+    container.appendChild(div);
+  });
+}
+
+function startDrag(e) {
+  const id = e.currentTarget.getAttribute('data-id');
+  if (buildState.placed[id]) return;
+  dragState = { active: true, part: id };
+  showGhost(id, e.clientX, e.clientY);
+  e.preventDefault();
+}
+
+function startDragTouch(e) {
+  const id = e.currentTarget.getAttribute('data-id');
+  if (buildState.placed[id]) return;
+  const t = e.touches[0];
+  dragState = { active: true, part: id };
+  showGhost(id, t.clientX, t.clientY);
+  e.preventDefault();
+}
+
+function showGhost(id, x, y) {
+  const g = document.getElementById('dragGhost');
+  g.textContent = ORGANELLES[id].name;
+  g.style.background = ORGANELLES[id].color;
+  g.style.display = 'block';
+  g.style.left = x + 'px';
+  g.style.top  = y + 'px';
+}
+
+document.addEventListener('mousemove', e => {
+  if (!dragState.active) return;
+  const g = document.getElementById('dragGhost');
+  g.style.left = e.clientX + 'px';
+  g.style.top  = e.clientY + 'px';
+});
+
+document.addEventListener('touchmove', e => {
+  if (!dragState.active) return;
+  const t = e.touches[0];
+  const g = document.getElementById('dragGhost');
+  g.style.left = t.clientX + 'px';
+  g.style.top  = t.clientY + 'px';
+  e.preventDefault();
+}, { passive: false });
+
+document.addEventListener('mouseup', e => {
+  if (!dragState.active) return;
+  handleDrop(e.clientX, e.clientY);
+});
+
+document.addEventListener('touchend', e => {
+  if (!dragState.active) return;
+  const t = e.changedTouches[0];
+  handleDrop(t.clientX, t.clientY);
+});
+
+function handleDrop(clientX, clientY) {
+  document.getElementById('dragGhost').style.display = 'none';
+  const rect = canvas.getBoundingClientRect();
+  const mx = clientX - rect.left;
+  const my = clientY - rect.top;
+  const target = getBuildDropTarget(mx, my);
+  const part   = dragState.part;
+  dragState = { active: false };
+
+  if (!target) {
+    showToast('Drop it inside the cell!', 'error'); return;
+  }
+  if (target === 'inside_cell') {
+    showToast('Look for the coloured dashed ring — that\'s where it goes!', 'info'); return;
+  }
+  if (target === part) {
+    buildState.placed[part] = true;
+    renderBuildSidebar();
+    updateBuildProgress();
+    showToast(`✓ ${ORGANELLES[part].name} placed! ${ORGANELLES[part].analogy}`, 'success');
+  } else if (ORGANELLES[target]) {
+    showToast(`That spot belongs to the ${ORGANELLES[target].name}. Try a different area!`, 'error');
+  } else {
+    showToast(`Not quite — try dropping closer to the glowing outline!`, 'error');
+  }
+}
+
+function updateBuildProgress() {
+  const placed = Object.keys(buildState.placed).length;
+  const total  = BUILD_REQUIRED.length;
+  document.getElementById('buildProgressLabel').textContent = `${placed} / ${total} placed`;
+  document.getElementById('buildProgressFill').style.width  = `${(placed / total) * 100}%`;
+  if (placed === total) setTimeout(() => showToast('🎉 Cell complete! You built a full animal cell!', 'success'), 300);
+}
+
+// ══════════════════════════════════════════
+// EVENTS
+// ══════════════════════════════════════════
+canvas.addEventListener('mousemove', e => {
+  if (mode === 'build') return;
+  const rect = canvas.getBoundingClientRect();
+  hoveredOrganelle = getOrganelleAt(e.clientX - rect.left, e.clientY - rect.top);
+  canvas.style.cursor = (hoveredOrganelle && mode === 'explore') ? 'pointer' : 'default';
+});
+
+canvas.addEventListener('click', e => {
+  if (mode !== 'explore') return;
+  const rect = canvas.getBoundingClientRect();
+  const hit  = getOrganelleAt(e.clientX - rect.left, e.clientY - rect.top);
+  if (hit) { selectedOrganelle = hit; showPanel(hit); }
+  else      { selectedOrganelle = null; clearPanel(); }
+});
+
+canvas.addEventListener('mouseleave', () => { hoveredOrganelle = null; });
+
+// ══════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════
+let toastTimer;
+function showToast(msg, type = 'info') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `toast ${type} show`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
+}
+
+// ══════════════════════════════════════════
+// UTILS
+// ══════════════════════════════════════════
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+window.addEventListener('resize', resize);
+resize();
+draw();
+</script>
+</body>
+</html>

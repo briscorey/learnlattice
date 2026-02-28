@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $allPages := .Pages.ByDate.Reverse }}
 
-{{ /* Collect unique subjects and types for filter buttons */ }}
+{{- /* Collect unique subjects and types for filter buttons */ -}}
 {{ $subjects := slice }}
 {{ $types := slice }}
 {{ range $allPages }}

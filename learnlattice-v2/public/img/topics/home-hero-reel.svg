@@ -1,0 +1,38 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="reelBg" x1="98" y1="34" x2="850" y2="684" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#052E2B"/>
+      <stop offset="0.35" stop-color="#0D9488"/>
+      <stop offset="0.7" stop-color="#0284C7"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" rx="44" fill="url(#reelBg)"/>
+  <rect x="44" y="44" width="872" height="632" rx="34" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18"/>
+  <g opacity="0.72">
+    <rect x="84" y="96" width="228" height="166" rx="22" fill="#052E2B" fill-opacity="0.55"/>
+    <rect x="366" y="78" width="218" height="186" rx="22" fill="#082F49" fill-opacity="0.52"/>
+    <rect x="632" y="114" width="246" height="152" rx="22" fill="#4A041D" fill-opacity="0.48"/>
+    <rect x="118" y="316" width="224" height="176" rx="22" fill="#78350F" fill-opacity="0.46"/>
+    <rect x="394" y="320" width="214" height="156" rx="22" fill="#064E3B" fill-opacity="0.42"/>
+    <rect x="650" y="334" width="180" height="164" rx="22" fill="#1E1B4B" fill-opacity="0.52"/>
+  </g>
+  <g fill="#ECFEFF" opacity="0.9">
+    <circle cx="150" cy="162" r="12"/>
+    <circle cx="184" cy="136" r="8"/>
+    <circle cx="212" cy="182" r="8"/>
+    <circle cx="240" cy="146" r="6"/>
+    <circle cx="468" cy="164" r="44"/>
+    <circle cx="708" cy="184" r="38"/>
+  </g>
+  <path d="M402 443C458 385 531 356 610 356" stroke="#ECFEFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M690 410C720 382 751 366 792 360" stroke="#FEF3C7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M166 418L232 365L286 402" stroke="#FFF7ED" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M457 170C495 130 537 128 565 170" stroke="#E0F2FE" stroke-width="8" stroke-linecap="round"/>
+  <g>
+    <circle cx="480" cy="572" r="74" fill="white" fill-opacity="0.16"/>
+    <polygon points="456,533 537,572 456,611" fill="white"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="scale" values="1;1.03;1" dur="4s" repeatCount="indefinite"/>
+  </g>
+  <text x="94" y="616" fill="white" font-family="DM Serif Display, serif" font-size="78">Curiosity in motion</text>
+</svg>
