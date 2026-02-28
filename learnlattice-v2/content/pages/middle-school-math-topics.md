@@ -1,14 +1,14 @@
 ---
 title: "Middle School Math Topics"
-description: "A middle school mathematics topic map inspired by Khan Academy's 6th-8th grade course structure, connected to LearnLattice resources."
+description: "A middle school mathematics topic map for Grades 6-8, connected to LearnLattice resources."
 url: "/middle-school-math-topics/"
 ---
 
-This page uses **Khan Academy's middle school math course grouping** as a browsing scaffold and then points you into the matching LearnLattice collections.
+This page uses a clear middle school mathematics topic map and then points you into the matching LearnLattice collections.
 
 ## Grade 6 Topics {#grade-6}
 
-Khan Academy groups Grade 6 mathematics around:
+Grade 6 mathematics is organised here around:
 
 - Ratios, rates, and percentages
 - Arithmetic operations
@@ -28,7 +28,7 @@ Start in LearnLattice:
 
 ## Grade 7 Topics {#grade-7}
 
-Khan Academy groups Grade 7 mathematics around:
+Grade 7 mathematics is organised here around:
 
 - Negative numbers: addition and subtraction
 - Negative numbers: multiplication and division
@@ -47,7 +47,7 @@ Start in LearnLattice:
 
 ## Grade 8 Topics {#grade-8}
 
-Khan Academy groups Grade 8 mathematics around:
+Grade 8 mathematics is organised here around:
 
 - Numbers and operations
 - Solving equations with one unknown
@@ -66,7 +66,7 @@ Start in LearnLattice:
 
 ## Pre-algebra Bridge {#pre-algebra}
 
-Khan Academy also uses **pre-algebra** as a bridge into formal algebraic reasoning. On LearnLattice, the closest entry points are:
+**Pre-algebra** is a useful bridge into formal algebraic reasoning. On LearnLattice, the closest entry points are:
 
 - [MYP Mathematics](/subjects/mathematics/)
 - [BC Grade 8 Linear Relationships and Graphs Unit](/resources/bc-grade-8-linear-relationships-and-graphs-unit/)
@@ -74,7 +74,7 @@ Khan Academy also uses **pre-algebra** as a bridge into formal algebraic reasoni
 
 ## Algebra Basics {#algebra-basics}
 
-Khan Academy's **algebra basics** path is a useful next step once students are ready for more formal symbolic work.
+**Algebra basics** is a useful next step once students are ready for more formal symbolic work.
 
 Start in LearnLattice:
 

@@ -1,14 +1,14 @@
 ---
 title: "Middle School Science Topics"
-description: "A middle school science topic map inspired by Khan Academy's middle school science course structure, connected to LearnLattice resources."
+description: "A middle school science topic map connected to LearnLattice resources."
 url: "/middle-school-science-topics/"
 ---
 
-This page uses **Khan Academy's middle school science course structure** as a browsing scaffold and then points you into the matching LearnLattice collections.
+This page uses a middle school science topic map and then points you into the matching LearnLattice collections.
 
 ## Middle School Biology {#biology}
 
-Khan Academy currently offers a dedicated **middle school biology** pathway.
+This topic map includes a dedicated **middle school biology** pathway.
 
 Start in LearnLattice:
 
@@ -19,7 +19,7 @@ Start in LearnLattice:
 
 ## Middle School Earth and Space Science {#earth-space}
 
-Khan Academy currently offers a dedicated **middle school Earth and space science** pathway.
+This topic map includes a dedicated **middle school Earth and space science** pathway.
 
 Start in LearnLattice:
 
@@ -30,7 +30,7 @@ Start in LearnLattice:
 
 ## Middle School Physics {#physics}
 
-Khan Academy currently offers a dedicated **middle school physics** pathway.
+This topic map includes a dedicated **middle school physics** pathway.
 
 Start in LearnLattice:
 
@@ -41,7 +41,7 @@ Start in LearnLattice:
 
 ## Middle School Chemistry {#chemistry}
 
-Khan Academy currently offers a dedicated **middle school chemistry** pathway.
+This topic map includes a dedicated **middle school chemistry** pathway.
 
 Start in LearnLattice:
 
@@ -52,7 +52,7 @@ Start in LearnLattice:
 
 ## Cross-course Inquiry Routes {#inquiry-routes}
 
-Khan Academy separates science by course; LearnLattice also gives you inquiry routes that cut across them:
+LearnLattice also gives you inquiry routes that cut across those science topics:
 
 - [MYP Science](/subjects/science/)
 - [Topic Pathways on the homepage](/#topic-pathways)

@@ -27,7 +27,7 @@ summaryLength = 30
     [[params.nav_dropdowns.items]]
       title = "Middle School Topic Map"
       url = "/middle-school-math-topics/"
-      description = "Browse Khan-inspired middle school math topics."
+      description = "Browse the middle school math topic map."
     [[params.nav_dropdowns.items]]
       title = "Mathematics"
       url = "/subjects/mathematics/"
@@ -46,7 +46,7 @@ summaryLength = 30
     [[params.nav_dropdowns.items]]
       title = "Middle School Topic Map"
       url = "/middle-school-science-topics/"
-      description = "Browse Khan-inspired middle school science topics."
+      description = "Browse the middle school science topic map."
     [[params.nav_dropdowns.items]]
       title = "Biology"
       url = "/subjects/biology/"
