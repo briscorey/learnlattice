@@ -1,0 +1,31 @@
+{{ $subject := "general" }}
+{{ $subjectLabel := "" }}
+{{ $resourceType := "" }}
+{{ with .Params.subjects }}{{ $subject = index . 0 | urlize }}{{ $subjectLabel = index . 0 }}{{ end }}
+{{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+
+{{ $thumbColor := "teal" }}
+{{ if eq $subject "mathematics" }}{{ $thumbColor = "teal" }}{{ end }}
+{{ if eq $subject "science" }}{{ $thumbColor = "sky" }}{{ end }}
+{{ if eq $subject "earth-science" }}{{ $thumbColor = "amber" }}{{ end }}
+{{ if eq $subject "chemistry" }}{{ $thumbColor = "rose" }}{{ end }}
+
+<a class="resource-card" href="{{ .RelPermalink }}">
+  <div class="resource-thumb {{ $thumbColor }}-bg">
+    {{ with .Params.formula }}<div class="formula">{{ . }}</div>{{ end }}
+    {{ with $subjectLabel }}<span class="resource-thumb-label">{{ . }}</span>{{ end }}
+    {{ with $resourceType }}<span class="resource-thumb-type">{{ . }}</span>{{ end }}
+  </div>
+  <div class="resource-body">
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Description | default .Summary }}</p>
+    <div class="resource-meta">
+      {{ range .Params.year_levels }}
+        <span class="resource-tag">{{ . }}</span>
+      {{ end }}
+      {{ range .Params.tags }}
+        <span class="resource-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</a>

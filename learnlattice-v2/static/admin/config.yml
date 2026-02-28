@@ -1,0 +1,81 @@
+backend:
+  name: github
+  repo: briscorey/learnlattice
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "resources"
+    label: "Resources"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "Subject"
+        name: "subjects"
+        widget: "select"
+        multiple: true
+        options:
+          - "Mathematics"
+          - "Science"
+          - "Earth Science"
+          - "Chemistry"
+      - label: "Year Level"
+        name: "year_levels"
+        widget: "select"
+        multiple: true
+        options:
+          - "MYP Year 1"
+          - "MYP Year 2"
+          - "MYP Year 3"
+          - "MYP Year 4"
+          - "MYP Year 5"
+      - label: "Resource Type"
+        name: "resource_types"
+        widget: "select"
+        multiple: true
+        options:
+          - "Unit Plan"
+          - "Worksheet"
+          - "Lab Activity"
+          - "Assessment"
+          - "Lesson Plan"
+          - "Game"
+          - "Reference"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Add topic tags like: Algebra, Fractions, Volcanoes, etc."
+      - label: "Formula (displayed on card)"
+        name: "formula"
+        widget: "string"
+        required: false
+        hint: "Short formula or text shown on the resource card thumbnail"
+      - label: "Download File"
+        name: "download_url"
+        widget: "file"
+        required: false
+        hint: "Upload a PDF, DOCX, or other file for download"
+      - label: "Download Label"
+        name: "download_label"
+        widget: "string"
+        required: false
+        default: "PDF document"
+        hint: "Description of the download file"
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

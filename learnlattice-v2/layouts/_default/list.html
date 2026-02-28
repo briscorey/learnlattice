@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+
+<section class="section">
+  {{ $pages := .Pages }}
+  {{ if .IsSection }}
+    {{ $pages = .Pages.ByDate.Reverse }}
+  {{ end }}
+
+  {{ if $pages }}
+  <div class="resources-grid">
+    {{ range $pages }}
+      {{ if eq .Section "resources" }}
+        {{ partial "resource-card.html" . }}
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <p style="color: var(--ink-muted); font-weight: 300;">No resources found in this category yet. Check back soon!</p>
+  {{ end }}
+</section>
+
+{{ end }}

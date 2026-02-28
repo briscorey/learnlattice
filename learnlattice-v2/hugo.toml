@@ -1,0 +1,47 @@
+baseURL = "https://learnlattice.org"
+languageCode = "en-us"
+title = "LearnLattice"
+paginate = 12
+summaryLength = 30
+
+[params]
+  description = "Free, inquiry-driven resources for MYP mathematics and science. Built by a teacher, for teachers and students."
+
+[taxonomies]
+  tag = "tags"
+  subject = "subjects"
+  year_level = "year-levels"
+  resource_type = "resource-types"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Mathematics"
+    url = "/subjects/mathematics/"
+    weight = 2
+  [[menu.main]]
+    name = "Science"
+    url = "/subjects/science/"
+    weight = 3
+  [[menu.main]]
+    name = "Resources"
+    url = "/resources/"
+    weight = 4
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
