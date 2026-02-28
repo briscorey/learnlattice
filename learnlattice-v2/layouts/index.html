@@ -2,17 +2,20 @@
 {{ $home := .Site.Params.home }}
 {{ $resources := where .Site.RegularPages "Section" "resources" }}
 {{ $mathLinks := slice
-  (dict "title" "All MYP Mathematics" "url" "/subjects/mathematics/" "copy" "Browse the full MYP mathematics collection.")
-  (dict "title" "Algebra" "url" "/tags/algebra/" "copy" "Patterns, equations, and linear relationships.")
-  (dict "title" "Criterion D" "url" "/tags/criterion-d/" "copy" "Real-world mathematical application tasks.")
+  (dict "title" "Middle School Topic Map" "url" "/middle-school-math-topics/" "copy" "Khan-inspired Grade 6-8 topic guide.")
+  (dict "title" "Grade 6 topics" "url" "/middle-school-math-topics/#grade-6" "copy" "Ratios, arithmetic, variables, geometry, and data.")
+  (dict "title" "Grade 7 topics" "url" "/middle-school-math-topics/#grade-7" "copy" "Proportional reasoning, equations, geometry, and probability.")
+  (dict "title" "Grade 8 topics" "url" "/middle-school-math-topics/#grade-8" "copy" "Equations, functions, transformations, and data.")
+  (dict "title" "Pre-algebra bridge" "url" "/middle-school-math-topics/#pre-algebra" "copy" "A transition into formal algebra.")
+  (dict "title" "Algebra basics" "url" "/middle-school-math-topics/#algebra-basics" "copy" "Early symbolic reasoning and generalisation.")
 }}
 {{ $scienceLinks := slice
-  (dict "title" "All MYP Science" "url" "/subjects/science/" "copy" "Browse the full MYP science collection.")
-  (dict "title" "Biology" "url" "/subjects/biology/" "copy" "Cells, systems, and living processes.")
-  (dict "title" "Ecology" "url" "/subjects/ecology/" "copy" "Ecosystems, biodiversity, and fieldwork.")
-  (dict "title" "Space Science" "url" "/subjects/space-science/" "copy" "Astronomy, models, and planetary systems.")
-  (dict "title" "Earth Science" "url" "/subjects/earth-science/" "copy" "Tectonics, earthquakes, and Earth systems.")
-  (dict "title" "Chemistry" "url" "/subjects/chemistry/" "copy" "Particles, mixtures, and reactions.")
+  (dict "title" "Middle School Topic Map" "url" "/middle-school-science-topics/" "copy" "Khan-inspired middle school science guide.")
+  (dict "title" "Biology" "url" "/middle-school-science-topics/#biology" "copy" "Cells, life processes, and continuity of life.")
+  (dict "title" "Earth and space science" "url" "/middle-school-science-topics/#earth-space" "copy" "Tectonics, Earth systems, and astronomy.")
+  (dict "title" "Physics" "url" "/middle-school-science-topics/#physics" "copy" "Forces, motion, circuits, and energy.")
+  (dict "title" "Chemistry" "url" "/middle-school-science-topics/#chemistry" "copy" "Matter, particles, mixtures, and reactions.")
+  (dict "title" "Inquiry routes" "url" "/middle-school-science-topics/#inquiry-routes" "copy" "Cross-course investigation and criteria links.")
 }}
 {{ $gradeLinks := slice
   (dict "title" "BC Grade 6" "url" "/year-levels/bc-grade-6/")
