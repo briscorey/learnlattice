@@ -1,9 +1,42 @@
 {{ define "main" }}
+{{ $featuredSubjects := .Site.Params.featured_subjects }}
+{{ $subjectLookup := newScratch }}
+{{ range $featuredSubjects }}
+  {{ $subjectLookup.Set (lower .title) . }}
+{{ end }}
+{{ $subjectMeta := dict }}
+{{ if and .IsNode (eq .Data.Singular "subject") }}
+  {{ with $subjectLookup.Get (lower .Title) }}
+    {{ $subjectMeta = . }}
+  {{ end }}
+{{ end }}
 
+{{ if and $subjectMeta (gt (len $subjectMeta) 0) }}
+<section class="page-hero page-hero-subject" data-color="{{ index $subjectMeta "color" }}">
+  <div class="page-hero-copy">
+    <div class="page-hero-kicker">Subject Collection</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    {{ with index $subjectMeta "audience" }}<div class="page-hero-note">{{ . }}</div>{{ end }}
+  </div>
+  <div class="page-hero-media">
+    {{ with index $subjectMeta "video" }}
+    <video class="page-hero-video" autoplay muted loop playsinline poster="{{ index $subjectMeta "poster" }}">
+      <source src="{{ . }}" type="video/mp4">
+    </video>
+    {{ else }}
+      {{ with index $subjectMeta "image" }}
+      <img src="{{ . }}" alt="{{ $.Title }} subject artwork">
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ else }}
 <div class="page-header">
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
 </div>
+{{ end }}
 
 {{ partial "topic-pathways.html" (dict
   "page" .
