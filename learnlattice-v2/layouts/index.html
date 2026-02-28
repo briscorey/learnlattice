@@ -23,21 +23,22 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-video-card">
+      <a class="hero-video-card" href="{{ $home.subjects_link_url }}">
         <div class="hero-video-label">{{ $home.hero_media_label }}</div>
         <img src="{{ $home.hero_panel_image }}" alt="Illustrated preview reel spanning multiple LearnLattice topics">
         <div class="hero-video-copy">
           <span class="hero-video-kicker">{{ $home.hero_kicker }}</span>
           <h2>{{ $home.hero_panel_title }}</h2>
           <p>{{ $home.hero_panel_copy }}</p>
+          <span class="hero-video-cta">Browse subject pathways</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- STATS -->
-<div class="stats">
+<div class="stats reveal">
   <div class="stat">
     <span class="stat-num">{{ len (where .Site.RegularPages "Section" "resources") }}+</span>
     <span class="stat-label">Downloadable<br>resources</span>
@@ -91,6 +92,33 @@
         </div>
       </a>
     {{ end }}
+  </div>
+</section>
+
+<!-- QUICK START -->
+<section class="section reveal">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Start Here</h2>
+      <p class="section-subtitle">Three quick routes into the library, depending on how you like to plan.</p>
+    </div>
+  </div>
+  <div class="quick-start-grid">
+    <a class="quick-start-card" href="/resources/">
+      <span class="quick-start-label">Browse the whole collection</span>
+      <h3>See every resource in one place</h3>
+      <p>Best for teachers who already know the unit or skill they want to target.</p>
+    </a>
+    <a class="quick-start-card" href="/subjects/biology/">
+      <span class="quick-start-label">Browse by subject</span>
+      <h3>Jump straight into a content area</h3>
+      <p>Use the subject pages when you want the fastest route into biology, ecology, space science, and more.</p>
+    </a>
+    <a class="quick-start-card" href="/#topic-pathways">
+      <span class="quick-start-label">Browse by concept</span>
+      <h3>Follow topic pathways and tags</h3>
+      <p>Useful when you are planning around a theme, concept, or inquiry question instead of a single worksheet.</p>
+    </a>
   </div>
 </section>
 
