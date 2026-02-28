@@ -475,7 +475,7 @@ summaryLength = 30
       unsafe = true
 
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "JSON"]
   section = ["HTML"]
   taxonomy = ["HTML"]
   term = ["HTML"]

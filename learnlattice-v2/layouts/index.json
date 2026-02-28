@@ -1,0 +1,9 @@
+{{- $pages := where .Site.RegularPages "Section" "resources" -}}
+{{- $games := where .Site.RegularPages "Section" "games" -}}
+{{- $all := $pages | append $games -}}
+[
+{{- range $i, $p := $all -}}
+{{- if $i }},{{ end }}
+{"title":{{ $p.Title | jsonify }},"url":{{ $p.RelPermalink | jsonify }},"description":{{ ($p.Description | default $p.Summary) | jsonify }},"subjects":{{ $p.Params.subjects | jsonify }},"tags":{{ $p.Params.tags | jsonify }},"year_levels":{{ $p.Params.year_levels | jsonify }},"resource_types":{{ $p.Params.resource_types | jsonify }}}
+{{- end }}
+]
