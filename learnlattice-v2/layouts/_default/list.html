@@ -58,6 +58,26 @@
 ) }}
 
 <section class="section">
+  {{ if and (eq .Section "year-levels") (eq .Title "BC Curriculum Grades 6-9") }}
+  {{ $gradePages := slice
+    (.Site.GetPage "/year-levels/bc-grade-6")
+    (.Site.GetPage "/year-levels/bc-grade-7")
+    (.Site.GetPage "/year-levels/bc-grade-8")
+    (.Site.GetPage "/year-levels/bc-grade-9")
+  }}
+  <div class="taxonomy-grid">
+    {{ range $gradePages }}
+      {{ if . }}
+      {{ $count := len (where (where $.Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title)) }}
+      <a class="taxonomy-card" href="{{ .RelPermalink }}">
+        <div class="taxonomy-card-count">{{ $count }} resources</div>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description | default "Browse this collection of inquiry-based resources." }}</p>
+      </a>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ else }}
   {{ $pages := .RegularPages.ByDate.Reverse }}
   {{ if and (eq .Section "year-levels") (ne .Title "BC Curriculum Grades 6-9") }}
     {{ $pages = where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title) }}
@@ -75,6 +95,7 @@
   </div>
   {{ else }}
   <p style="color: var(--ink-muted); font-weight: 300;">No resources found in this category yet. Check back soon!</p>
+  {{ end }}
   {{ end }}
 </section>
 
