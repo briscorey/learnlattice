@@ -1,0 +1,105 @@
+{{ define "main" }}
+
+{{ $games := where .Site.RegularPages "Params.resource_types" "intersect" (slice "Interactive Game") }}
+
+<div class="page-header">
+  <div class="games-page-eyebrow">🎮 Interactive</div>
+  <h1>Games &amp; Simulations</h1>
+  <p>Curriculum-aligned games for MYP and BC Grades 6–9. Explore, quiz yourself, and build — all in the browser, no login needed.</p>
+</div>
+
+<section class="section">
+
+  {{ if $games }}
+  <div class="games-grid">
+    {{ range $games }}
+    {{ $subject := "" }}
+    {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+
+    {{ $accentColor := "#0D9488" }}
+    {{ if eq $subject "Biology" }}{{ $accentColor = "#0284C7" }}{{ end }}
+    {{ if eq $subject "Chemistry" }}{{ $accentColor = "#e11d48" }}{{ end }}
+    {{ if eq $subject "Physics" }}{{ $accentColor = "#0284C7" }}{{ end }}
+    {{ if eq $subject "Mathematics" }}{{ $accentColor = "#0D9488" }}{{ end }}
+    {{ if eq $subject "Earth Science" }}{{ $accentColor = "#d97706" }}{{ end }}
+
+    <a class="game-card" href="{{ .RelPermalink }}" style="--accent: {{ $accentColor }}">
+      <div class="game-card-screen">
+        <div class="game-card-screen-inner">
+          <div class="game-card-icon">🎮</div>
+          <div class="game-card-play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Play now
+          </div>
+        </div>
+        {{ with $subject }}
+        <span class="game-card-subject">{{ . }}</span>
+        {{ end }}
+      </div>
+      <div class="game-card-body">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description | default .Summary }}</p>
+        <div class="game-card-tags">
+          {{ range first 3 .Params.tags }}
+          <span class="resource-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        <div class="game-card-meta">
+          {{ range first 2 .Params.year_levels }}
+          <span class="game-card-level">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  {{ else }}
+  <div class="games-empty">
+    <div class="games-empty-icon">🎮</div>
+    <h2>More games coming soon</h2>
+    <p>New interactive games are being built. Check back soon or explore the full resource library in the meantime.</p>
+    <a href="/resources/" class="btn-primary">Browse all resources →</a>
+  </div>
+  {{ end }}
+
+  <div class="games-coming-soon reveal">
+    <h2>Coming next</h2>
+    <p>More interactive games are in development. Planned topics include:</p>
+    <div class="games-upcoming-grid">
+      <div class="games-upcoming-item">
+        <span class="games-upcoming-icon">⚡</span>
+        <span class="games-upcoming-name">Circuit Builder</span>
+        <span class="games-upcoming-subject">Physics</span>
+      </div>
+      <div class="games-upcoming-item">
+        <span class="games-upcoming-icon">🧬</span>
+        <span class="games-upcoming-name">DNA &amp; Genetics Simulator</span>
+        <span class="games-upcoming-subject">Biology</span>
+      </div>
+      <div class="games-upcoming-item">
+        <span class="games-upcoming-icon">🌋</span>
+        <span class="games-upcoming-name">Plate Tectonics Explorer</span>
+        <span class="games-upcoming-subject">Earth Science</span>
+      </div>
+      <div class="games-upcoming-item">
+        <span class="games-upcoming-icon">📐</span>
+        <span class="games-upcoming-name">Geometry Transformer</span>
+        <span class="games-upcoming-subject">Mathematics</span>
+      </div>
+      <div class="games-upcoming-item">
+        <span class="games-upcoming-icon">⚗️</span>
+        <span class="games-upcoming-name">Reaction Rate Lab</span>
+        <span class="games-upcoming-subject">Chemistry</span>
+      </div>
+      <div class="games-upcoming-item">
+        <span class="games-upcoming-icon">🪐</span>
+        <span class="games-upcoming-name">Solar System Scale</span>
+        <span class="games-upcoming-subject">Space Science</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{ end }}

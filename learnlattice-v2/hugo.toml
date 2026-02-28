@@ -92,6 +92,21 @@ summaryLength = 30
       description = "Atomic theory, circuits, statistics, and finance."
 
   [[params.nav_dropdowns]]
+    key = "games"
+    [[params.nav_dropdowns.items]]
+      title = "All Games"
+      url = "/games/"
+      description = "Browse every interactive game and simulation."
+    [[params.nav_dropdowns.items]]
+      title = "Cell Explorer"
+      url = "/resources/cell-explorer-game/"
+      description = "Explore, quiz, and build an animal cell."
+    [[params.nav_dropdowns.items]]
+      title = "Coming Soon"
+      url = "/games/"
+      description = "Circuit builder, genetics, tectonics, and more."
+
+  [[params.nav_dropdowns]]
     key = "resources"
     [[params.nav_dropdowns.items]]
       title = "All Resources"
@@ -434,20 +449,25 @@ summaryLength = 30
     url = "/subjects/science/"
     weight = 3
   [[menu.main]]
+    name = "Games"
+    identifier = "games"
+    url = "/games/"
+    weight = 4
+  [[menu.main]]
     name = "BC Curriculum"
     identifier = "bc-curriculum"
     url = "/year-levels/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "Resources"
     identifier = "resources"
     url = "/resources/"
-    weight = 5
+    weight = 6
   [[menu.main]]
     name = "About"
     identifier = "about"
     url = "/about/"
-    weight = 6
+    weight = 7
 
 [markup]
   [markup.goldmark]

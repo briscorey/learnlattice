@@ -25,6 +25,7 @@
 }}
 {{ $browseLinks := slice
   (dict "title" "All Resources" "url" "/resources/" "copy" "Open the full resource library.")
+  (dict "title" "🎮 Games" "url" "/games/" "copy" "Interactive simulations and quizzes.")
   (dict "title" "Unit Plans" "url" "/resource-types/unit-plan/" "copy" "Longer inquiry sequences and full units.")
   (dict "title" "Worksheets" "url" "/resource-types/worksheet/" "copy" "Structured practice and reflection.")
   (dict "title" "Lab Activities" "url" "/resource-types/lab-activity/" "copy" "Practical investigations and experiments.")
@@ -34,6 +35,7 @@
 {{ $startLinks := slice
   (dict "title" "MYP Mathematics" "url" "/subjects/mathematics/")
   (dict "title" "MYP Science" "url" "/subjects/science/")
+  (dict "title" "🎮 Games" "url" "/games/")
   (dict "title" "BC Curriculum" "url" "/year-levels/")
   (dict "title" "All Resources" "url" "/resources/")
 }}
@@ -110,6 +112,13 @@
         <span class="student-subject-text">
           <span class="student-subject-name">Science</span>
           <span class="student-subject-blurb">Biology, chemistry, physics &amp; earth</span>
+        </span>
+      </a>
+      <a href="/games/" class="student-subject-tile student-subject-tile--games">
+        <span class="student-subject-icon" aria-hidden="true">🎮</span>
+        <span class="student-subject-text">
+          <span class="student-subject-name">Games</span>
+          <span class="student-subject-blurb">Interactive simulations &amp; quizzes</span>
         </span>
       </a>
       <a href="/resources/" class="student-subject-tile">

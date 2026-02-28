@@ -1,19 +1,68 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+{{ $allPages := .Pages.ByDate.Reverse }}
+
+{{ /* Collect unique subjects and types for filter buttons */ }}
+{{ $subjects := slice }}
+{{ $types := slice }}
+{{ range $allPages }}
+  {{ range .Params.subjects }}
+    {{ if not (in $subjects .) }}{{ $subjects = $subjects | append . }}{{ end }}
+  {{ end }}
+  {{ range .Params.resource_types }}
+    {{ if not (in $types .) }}{{ $types = $types | append . }}{{ end }}
+  {{ end }}
+{{ end }}
 
 <div class="page-header">
-  <h1>{{ .Title | default "All Resources" }}</h1>
-  <p>Browse the full library in a compact list. Open any title for the full unit, lab, worksheet, or investigation pack.</p>
+  <h1>All Resources</h1>
+  <p>{{ len $allPages }} resources across MYP Mathematics, Science, and BC Curriculum — worksheets, unit plans, labs, and investigations.</p>
 </div>
 
 <section class="section">
-  <div class="resource-list">
-    {{ range $paginator.Pages }}
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">Subject</span>
+      <div class="filter-pills" id="subjectFilters">
+        <button class="filter-pill active" data-filter="subject" data-value="all" onclick="applyFilter('subject','all',this)">All</button>
+        {{ range $subjects | sort }}
+        <button class="filter-pill" data-filter="subject" data-value="{{ . | urlize }}" onclick="applyFilter('subject','{{ . | urlize }}',this)">{{ . }}</button>
+        {{ end }}
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Type</span>
+      <div class="filter-pills" id="typeFilters">
+        <button class="filter-pill active" data-filter="type" data-value="all" onclick="applyFilter('type','all',this)">All</button>
+        {{ range $types | sort }}
+        <button class="filter-pill" data-filter="type" data-value="{{ . | urlize }}" onclick="applyFilter('type','{{ . | urlize }}',this)">{{ . }}</button>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-count" id="filterCount">Showing all {{ len $allPages }} resources</div>
+
+  <!-- Resource list -->
+  <div class="resource-list" id="resourceList">
+    {{ range $allPages }}
       {{ $subject := "" }}
-      {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+      {{ $subjectSlug := "" }}
+      {{ with .Params.subjects }}
+        {{ $subject = index . 0 }}
+        {{ $subjectSlug = index . 0 | urlize }}
+      {{ end }}
       {{ $resourceType := "" }}
-      {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
-      <a class="resource-list-item" href="{{ .RelPermalink }}">
+      {{ $typeSlug := "" }}
+      {{ with .Params.resource_types }}
+        {{ $resourceType = index . 0 }}
+        {{ $typeSlug = index . 0 | urlize }}
+      {{ end }}
+      <a class="resource-list-item"
+         href="{{ .RelPermalink }}"
+         data-subject="{{ $subjectSlug }}"
+         data-type="{{ $typeSlug }}">
         <div class="resource-list-main">
           <div class="resource-list-top">
             {{ with $subject }}<span class="resource-list-label">{{ . }}</span>{{ end }}
@@ -26,7 +75,7 @@
           {{ range first 2 .Params.year_levels }}
             <span class="resource-tag">{{ . }}</span>
           {{ end }}
-          {{ range first 3 .Params.tags }}
+          {{ range first 2 .Params.tags }}
             <span class="resource-tag">{{ . }}</span>
           {{ end }}
         </div>
@@ -34,16 +83,69 @@
     {{ end }}
   </div>
 
-  {{ if gt (len $paginator.Pagers) 1 }}
-  <div style="text-align: center; padding: 40px 0;">
-    {{ if $paginator.HasPrev }}
-      <a href="{{ $paginator.Prev.URL }}" class="btn-secondary" style="margin-right: 12px;">← Previous</a>
-    {{ end }}
-    {{ if $paginator.HasNext }}
-      <a href="{{ $paginator.Next.URL }}" class="btn-secondary">Next →</a>
-    {{ end }}
+  <div class="filter-empty" id="filterEmpty" style="display:none">
+    <p>No resources match those filters. <button onclick="resetFilters()" class="filter-reset-link">Clear filters</button></p>
   </div>
-  {{ end }}
+
 </section>
+
+<script>
+var activeSubject = 'all';
+var activeType = 'all';
+
+function applyFilter(dimension, value, btn) {
+  if (dimension === 'subject') activeSubject = value;
+  if (dimension === 'type') activeType = value;
+
+  // Update button states
+  document.querySelectorAll('[data-filter="' + dimension + '"]').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+
+  filterList();
+}
+
+function filterList() {
+  var items = document.querySelectorAll('#resourceList .resource-list-item');
+  var visible = 0;
+
+  items.forEach(function(item) {
+    var subjectMatch = activeSubject === 'all' || item.getAttribute('data-subject') === activeSubject;
+    var typeMatch = activeType === 'all' || item.getAttribute('data-type') === activeType;
+    if (subjectMatch && typeMatch) {
+      item.style.display = '';
+      visible++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  var countEl = document.getElementById('filterCount');
+  var emptyEl = document.getElementById('filterEmpty');
+  var total = items.length;
+
+  if (visible === 0) {
+    countEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+  } else {
+    emptyEl.style.display = 'none';
+    countEl.style.display = 'block';
+    countEl.textContent = visible === total
+      ? 'Showing all ' + total + ' resources'
+      : 'Showing ' + visible + ' of ' + total + ' resources';
+  }
+}
+
+function resetFilters() {
+  activeSubject = 'all';
+  activeType = 'all';
+  document.querySelectorAll('.filter-pill').forEach(function(b) {
+    b.classList.remove('active');
+    if (b.getAttribute('data-value') === 'all') b.classList.add('active');
+  });
+  filterList();
+}
+</script>
 
 {{ end }}
