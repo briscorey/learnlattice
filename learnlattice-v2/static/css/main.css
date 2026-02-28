@@ -321,10 +321,10 @@ nav {
 
 .hero-video-copy p {
   margin-bottom: 0;
-  max-width: 440px;
+  max-width: 400px;
   color: rgba(255,255,255,0.78);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.65;
   font-weight: 300;
 }
 
@@ -489,7 +489,7 @@ nav {
   position: relative;
   overflow: hidden;
   display: grid;
-  min-height: 420px;
+  min-height: 370px;
 }
 
 .subject-card:hover {
@@ -514,7 +514,7 @@ nav {
 
 .subject-media {
   position: relative;
-  min-height: 210px;
+  min-height: 190px;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(240,245,243,0.55) 0%, rgba(255,255,255,0.85) 100%);
 }
@@ -526,24 +526,14 @@ nav {
   transition: transform 0.45s ease;
 }
 
-.subject-media-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .subject-card:hover .subject-media img {
   transform: scale(1.05);
 }
 
-.subject-card:hover .subject-media-video {
-  transform: scale(1.03);
-}
-
 .subject-body {
   display: grid;
-  gap: 14px;
-  padding: 20px 22px 22px;
+  gap: 12px;
+  padding: 18px 20px 20px;
 }
 
 .subject-meta {
@@ -580,15 +570,15 @@ nav {
 
 .subject-card h3 {
   font-family: 'DM Serif Display', serif;
-  font-size: 30px;
+  font-size: 26px;
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
 .subject-card p {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--ink-muted);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 300;
 }
 
@@ -605,6 +595,7 @@ nav {
   font-size: 11px;
   color: var(--ink-muted);
   letter-spacing: 0.05em;
+  max-width: 180px;
 }
 
 .subject-cta {

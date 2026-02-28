@@ -25,13 +25,7 @@
     <div class="hero-visual">
       <div class="hero-video-card">
         <div class="hero-video-label">{{ $home.hero_media_label }}</div>
-        {{ if $home.hero_panel_video }}
-        <video class="hero-video-asset" autoplay muted loop playsinline poster="{{ $home.hero_panel_poster }}">
-          <source src="{{ $home.hero_panel_video }}" type="video/mp4">
-        </video>
-        {{ else }}
         <img src="{{ $home.hero_panel_image }}" alt="Illustrated preview reel spanning multiple LearnLattice topics">
-        {{ end }}
         <div class="hero-video-copy">
           <span class="hero-video-kicker">{{ $home.hero_kicker }}</span>
           <h2>{{ $home.hero_panel_title }}</h2>
@@ -79,23 +73,19 @@
       {{ $subjectTitle := .title }}
       <a class="subject-card" data-color="{{ .color }}" href="{{ .url }}">
         <div class="subject-media">
-          {{ if .video }}
-          <video class="subject-media-video" autoplay muted loop playsinline poster="{{ .poster }}">
-            <source src="{{ .video }}" type="video/mp4">
-          </video>
-          {{ else if .image }}
+          {{ if .image }}
           <img src="{{ .image }}" alt="{{ $subjectTitle }} subject artwork">
           {{ end }}
         </div>
         <div class="subject-body">
           <div class="subject-meta">
             <div class="subject-icon">{{ .icon }}</div>
-            <span class="subject-audience">{{ .audience }}</span>
+            <span class="subject-audience">{{ $resourceCount }} {{ if eq $resourceCount 1 }}resource{{ else }}resources{{ end }}</span>
           </div>
           <h3>{{ .title }}</h3>
           <p>{{ .description }}</p>
           <div class="subject-footer">
-            <div class="subject-count">{{ $resourceCount }} {{ if eq $resourceCount 1 }}resource{{ else }}resources{{ end }}</div>
+            <div class="subject-count">{{ .audience }}</div>
             <span class="subject-cta">Open {{ .title }}</span>
           </div>
         </div>
