@@ -102,6 +102,10 @@ summaryLength = 30
       url = "/resources/cell-explorer-game/"
       description = "Explore, quiz, and build an animal cell."
     [[params.nav_dropdowns.items]]
+      title = "Prime Maze"
+      url = "/prime-composite-maze/"
+      description = "Navigate a 3D maze collecting prime and composite numbers."
+    [[params.nav_dropdowns.items]]
       title = "Coming Soon"
       url = "/games/"
       description = "Circuit builder, genetics, tectonics, and more."

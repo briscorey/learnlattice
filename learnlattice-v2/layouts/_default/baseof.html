@@ -8,8 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
+  {{ block "head" . }}{{ end }}
 </head>
-<body>
+<body{{ with .Params.body_class }} class="{{ . }}"{{ end }}>
   <div class="lattice-bg"></div>
   {{ partial "header.html" . }}
   <main>
@@ -239,5 +240,6 @@
     window.triggerSearch = function(term) { input.value = term; run(term); input.focus(); };
   })();
   </script>
+  {{ block "scripts" . }}{{ end }}
 </body>
 </html>

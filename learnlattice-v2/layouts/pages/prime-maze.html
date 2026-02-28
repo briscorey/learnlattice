@@ -1,0 +1,131 @@
+{{ define "head" }}
+<link rel="stylesheet" href="/css/prime-maze.css">
+{{ end }}
+
+{{ define "main" }}
+<section class="prime-maze-hero">
+  <div class="prime-maze-shell">
+    <div class="prime-maze-copy reveal visible">
+      <span class="prime-maze-eyebrow">3D Math Game</span>
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </div>
+    <div class="prime-maze-intro-card reveal visible">
+      <h2>How to play</h2>
+      <ul>
+        <li>Move with <strong>WASD</strong>, arrow keys, or the touch controls.</li>
+        <li>Collect the correct numbers, grab the key cubes, sprint with <strong>Shift</strong>, and use power cubes to stay ahead.</li>
+        <li>Patrol bots roam fixed routes, ambushers cut toward where you are heading, and sprinters rush you when you get too close.</li>
+        <li>Gold coin trails add score, but cracked trap doors can dump you back to the start pad.</li>
+        <li>The final fortress wakes a boss golem, so the last scaffold ends as a full escape chase.</li>
+        <li>If an enemy or trap catches you, you lose a shield unless a temporary barrier pickup is active.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="prime-maze-stage-wrap">
+  <div class="prime-maze-shell">
+    <div class="prime-maze-stage">
+      <div class="prime-maze-viewport">
+        <div class="prime-maze-canvas-shell">
+          <canvas id="prime-maze-canvas" aria-label="3D prime and composite maze"></canvas>
+          <div class="prime-maze-screen-flash" aria-hidden="true"></div>
+          <div class="prime-maze-canvas-overlay">
+            <div class="prime-maze-overlay-chip" id="maze-banner">Collect the target numbers to unlock the portal.</div>
+            <p id="maze-mini-feedback">The maze is loading.</p>
+          </div>
+        </div>
+
+        <div class="prime-maze-touchpad" id="maze-touchpad" aria-label="Touch controls">
+          <button type="button" data-move="up">Forward</button>
+          <div class="prime-maze-touchpad-row">
+            <button type="button" data-move="left">Left</button>
+            <button type="button" data-move="down">Back</button>
+            <button type="button" data-move="right">Right</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="prime-maze-sidebar">
+        <section class="prime-maze-card prime-maze-card-accent">
+          <div class="prime-maze-card-top">
+            <span class="prime-maze-kicker" id="maze-scaffold">Scaffold 1</span>
+            <span class="prime-maze-rule" id="maze-target-kind">Prime focus</span>
+          </div>
+          <h2 id="maze-level-title">Prime Path</h2>
+          <p id="maze-objective">Collect the correct numbers to open the exit.</p>
+          <p class="prime-maze-support" id="maze-support">Prime numbers have exactly two factors: 1 and the number itself.</p>
+        </section>
+
+        <section class="prime-maze-card">
+          <div class="prime-maze-stats">
+            <div class="prime-maze-stat">
+              <span>Shields</span>
+              <strong id="maze-lives">3</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Time</span>
+              <strong id="maze-time">00:00</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Score</span>
+              <strong id="maze-score">0</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Power</span>
+              <strong id="maze-boost">None</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Keys</span>
+              <strong id="maze-keys">0/0</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Threats</span>
+              <strong id="maze-streak">0</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Correct</span>
+              <strong id="maze-correct">0</strong>
+            </div>
+            <div class="prime-maze-stat">
+              <span>Goal</span>
+              <strong id="maze-goal">0</strong>
+            </div>
+          </div>
+          <div class="prime-maze-progress-track" aria-hidden="true">
+            <div class="prime-maze-progress-bar" id="maze-progress-bar"></div>
+          </div>
+          <p class="prime-maze-progress-text" id="maze-progress-text">Find the correct numbers in the maze.</p>
+        </section>
+
+        <section class="prime-maze-card">
+          <h3>Coach feedback</h3>
+          <p class="prime-maze-feedback prime-maze-feedback-info" id="maze-feedback">The portal stays locked until you collect every correct number in the level.</p>
+          <div class="prime-maze-actions">
+            <button type="button" class="prime-maze-button prime-maze-button-secondary" id="maze-reset">Restart level</button>
+            <button type="button" class="prime-maze-button" id="maze-next" disabled>Finish the maze first</button>
+          </div>
+        </section>
+
+        <section class="prime-maze-card">
+          <h3>Levels</h3>
+          <div class="prime-maze-level-picker" id="maze-level-picker"></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="prime-maze-notes">
+  <div class="prime-maze-shell">
+    <article class="prime-maze-notes-card">
+      {{ .Content }}
+    </article>
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script type="module" src="/js/prime-maze-game.js"></script>
+{{ end }}
