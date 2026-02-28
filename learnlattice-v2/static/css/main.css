@@ -1865,67 +1865,6 @@ footer {
   font-weight: 300;
 }
 
-/* ─── READABILITY IMPROVEMENTS ─── */
-body {
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-.resource-content {
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 720px;
-}
-
-.resource-content h2 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-top: 40px;
-  margin-bottom: 12px;
-}
-
-.resource-content h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-top: 28px;
-  margin-bottom: 10px;
-}
-
-.resource-content p {
-  margin-bottom: 16px;
-  color: var(--ink-light);
-}
-
-.resource-content ul,
-.resource-content ol {
-  margin: 0 0 18px 1.4em;
-  color: var(--ink-light);
-}
-
-.resource-content li {
-  margin-bottom: 8px;
-  line-height: 1.7;
-}
-
-.resource-content blockquote {
-  border-left: 3px solid var(--teal);
-  margin: 24px 0;
-  padding: 14px 20px;
-  background: var(--teal-wash);
-  border-radius: 0 10px 10px 0;
-  color: var(--ink);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.resource-content blockquote strong {
-  color: var(--teal-deep);
-}
-
 /* ─── STUDENT ENTRY SECTION ─── */
 .student-entry {
   position: relative;
@@ -2076,13 +2015,18 @@ body {
   flex-shrink: 0;
 }
 
+.student-subject-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
 .student-subject-name {
   font-size: 15px;
   font-weight: 700;
   color: var(--ink);
   display: block;
   line-height: 1.2;
-  margin-bottom: 3px;
 }
 
 .student-subject-blurb {
