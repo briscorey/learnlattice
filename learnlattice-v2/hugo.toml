@@ -10,10 +10,15 @@ summaryLength = 30
   [params.home]
     hero_eyebrow = "Middle School Math & Science"
     hero_title = "Where concepts <em>connect</em> and curiosity grows"
+    hero_kicker = "Visual inquiry pathways"
     hero_primary_label = "Browse Resources"
     hero_primary_url = "/resources/"
     hero_secondary_label = "For Teachers"
     hero_secondary_url = "/about/"
+    hero_panel_image = "/img/topics/home-hero-reel.svg"
+    hero_panel_title = "A homepage that feels like an invitation"
+    hero_panel_copy = "Students get visual hooks. Teachers get quick routes into units, labs, and investigations."
+    hero_media_label = "Featured motion reel"
     subjects_title = "Browse by Subject"
     subjects_subtitle = "The library now branches into dedicated biology, ecology, and space science areas, alongside the original math, earth science, and chemistry collections."
     subjects_link_label = "View all"
@@ -36,6 +41,8 @@ summaryLength = 30
     icon = "📐"
     url = "/subjects/mathematics/"
     description = "Number, algebra, geometry, statistics & probability"
+    image = "/img/topics/mathematics.svg"
+    audience = "Pattern hunts, graph stories, and modelling"
 
   [[params.featured_subjects]]
     title = "Biology"
@@ -44,6 +51,8 @@ summaryLength = 30
     icon = "🧬"
     url = "/subjects/biology/"
     description = "Cells, transport, respiration, and adaptation in living systems"
+    image = "/img/topics/biology.svg"
+    audience = "Microscopy, systems, and living processes"
 
   [[params.featured_subjects]]
     title = "Ecology"
@@ -52,6 +61,8 @@ summaryLength = 30
     icon = "🌿"
     url = "/subjects/ecology/"
     description = "Food webs, biodiversity, fieldwork, climate, and systems stability"
+    image = "/img/topics/ecology.svg"
+    audience = "Fieldwork, habitats, and evidence-rich debate"
 
   [[params.featured_subjects]]
     title = "Space Science"
@@ -60,6 +71,8 @@ summaryLength = 30
     icon = "🪐"
     url = "/subjects/space-science/"
     description = "Orbits, phases, gravity, seasons, and planetary evidence"
+    image = "/img/topics/space-science.svg"
+    audience = "Models, sky patterns, and scale thinking"
 
   [[params.featured_subjects]]
     title = "Earth Science"
@@ -68,6 +81,8 @@ summaryLength = 30
     icon = "🌍"
     url = "/subjects/earth-science/"
     description = "Earthquakes, volcanoes, plate tectonics & climate"
+    image = "/img/topics/earth-science.svg"
+    audience = "Seismic evidence and Earth systems"
 
   [[params.featured_subjects]]
     title = "Chemistry"
@@ -76,6 +91,8 @@ summaryLength = 30
     icon = "⚗️"
     url = "/subjects/chemistry/"
     description = "Mixtures, reactions, acids and bases, and particle-based reasoning"
+    image = "/img/topics/chemistry.svg"
+    audience = "Labs, particles, and visible change"
 
   [[params.topic_pathways]]
     title = "Linear Relationships"

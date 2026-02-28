@@ -4,15 +4,31 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
-  <h1>{{ $home.hero_title | safeHTML }}</h1>
-  <p>{{ .Site.Params.description }}</p>
-  <div class="hero-actions">
-    <a href="{{ $home.hero_primary_url }}" class="btn-primary">
-      {{ $home.hero_primary_label }}
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-    <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
+  <div class="hero-layout">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
+      <h1>{{ $home.hero_title | safeHTML }}</h1>
+      <p>{{ .Site.Params.description }}</p>
+      <div class="hero-actions">
+        <a href="{{ $home.hero_primary_url }}" class="btn-primary">
+          {{ $home.hero_primary_label }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-video-card">
+        <div class="hero-video-label">{{ $home.hero_media_label }}</div>
+        <img src="{{ $home.hero_panel_image }}" alt="Illustrated preview reel spanning multiple LearnLattice topics">
+        <div class="hero-video-copy">
+          <span class="hero-video-kicker">{{ $home.hero_kicker }}</span>
+          <h2>{{ $home.hero_panel_title }}</h2>
+          <p>{{ $home.hero_panel_copy }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -50,11 +66,25 @@
   <div class="subjects-grid">
     {{ range $featuredSubjects }}
       {{ $resourceCount := len (where (where $.Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .title)) }}
+      {{ $subjectTitle := .title }}
       <a class="subject-card" data-color="{{ .color }}" href="{{ .url }}">
-        <div class="subject-icon">{{ .icon }}</div>
-        <h3>{{ .title }}</h3>
-        <p>{{ .description }}</p>
-        <div class="subject-count">{{ $resourceCount }} {{ if eq $resourceCount 1 }}resource{{ else }}resources{{ end }}</div>
+        {{ with .image }}
+        <div class="subject-media">
+          <img src="{{ . }}" alt="{{ $subjectTitle }} subject artwork">
+        </div>
+        {{ end }}
+        <div class="subject-body">
+          <div class="subject-meta">
+            <div class="subject-icon">{{ .icon }}</div>
+            <span class="subject-audience">{{ .audience }}</span>
+          </div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+          <div class="subject-footer">
+            <div class="subject-count">{{ $resourceCount }} {{ if eq $resourceCount 1 }}resource{{ else }}resources{{ end }}</div>
+            <span class="subject-cta">Open {{ .title }}</span>
+          </div>
+        </div>
       </a>
     {{ end }}
   </div>
