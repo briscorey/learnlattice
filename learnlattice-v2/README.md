@@ -1,6 +1,6 @@
 # LearnLattice — Deployment Guide
 
-Your site is built with Hugo + Decap CMS, hosted on Cloudflare Pages.
+Your site is built with Hugo and deployed on Cloudflare Pages. A Decap CMS admin UI is included, but GitHub authentication for `/admin` requires a separate OAuth gateway and is not provided by Cloudflare Pages on its own.
 
 ---
 
@@ -60,43 +60,53 @@ Cloudflare will build and deploy your site. It'll give you a `*.pages.dev` URL.
 
 Your site will be live at https://learnlattice.org
 
-## Step 6: Set Up Decap CMS Authentication
+## Step 6: Decide How You Want to Manage Content
 
-For the admin dashboard at learnlattice.org/admin to work, you need GitHub OAuth:
+### Option A: Git-first workflow
 
-1. Go to github.com → **Settings** → **Developer settings** → **OAuth Apps** → **New OAuth App**
-2. Fill in:
-   - **Application name:** LearnLattice CMS
-   - **Homepage URL:** https://learnlattice.org
-   - **Authorization callback URL:** https://api.netlify.com/auth/done
-3. Copy the **Client ID** and **Client Secret**
-4. Go to app.netlify.com (create a free account if needed)
-5. Create a new site (just connect the same GitHub repo)
-6. Go to **Site settings** → **Identity** → **Enable Identity**
-7. Go to **Site settings** → **Access control** → **OAuth** → **Install provider**
-8. Select GitHub and paste your Client ID and Client Secret
+This is the simplest setup and is the one fully supported by the current deployment.
 
-Now go to `https://learnlattice.org/admin` — you'll be able to log in with GitHub.
+1. Edit Markdown files in `content/resources/`
+2. Commit and push to GitHub
+3. Cloudflare Pages rebuilds automatically
+
+### Option B: Keep Decap CMS at `/admin`
+
+The current admin config uses the `github` backend. That means the UI can load on Cloudflare Pages, but login will not work unless you add a separate OAuth gateway for Decap.
+
+You need all of the following:
+1. A GitHub OAuth app
+2. A Decap-compatible auth gateway service
+3. The gateway URL wired into the Decap config
+
+Important:
+- Netlify Identity instructions do **not** apply to this Cloudflare Pages deployment
+- Cloudflare Pages does not provide Decap auth for GitHub automatically
+- If you do not set up an OAuth gateway, `/admin` should be treated as a static shell only
+
+If you want a browser-based CMS on Cloudflare, plan that explicitly as a separate integration task.
 
 ---
 
 ## How to Publish Content
 
-1. Go to `https://learnlattice.org/admin`
-2. Log in with your GitHub account
-3. Click **Resources** → **New Resource**
-4. Fill in the fields:
-   - **Title** — name of the resource
-   - **Subject** — Mathematics, Science, Earth Science, or Chemistry
-   - **Year Level** — MYP Year 1-5
-   - **Resource Type** — Unit Plan, Worksheet, Lab Activity, etc.
-   - **Tags** — topic tags (Algebra, Fractions, Volcanoes, etc.)
-   - **Formula** — short text shown on the card thumbnail (optional)
-   - **Download File** — upload a PDF or other file
-   - **Body** — write the resource description in Markdown
-5. Click **Publish**
+### Recommended: edit content in Git
 
-Cloudflare Pages will automatically rebuild and deploy the site (takes ~30 seconds).
+1. Add or edit Markdown files in `content/resources/`
+2. Use the existing front matter structure from nearby resources
+3. Commit and push to `main`
+4. Cloudflare Pages rebuilds automatically
+
+### If you later wire up Decap auth
+
+The resource editor should use:
+- **Subject** — Mathematics, Science, Biology, Ecology, Space Science, Earth Science, or Chemistry
+- **Year Level** — MYP Year 1-5
+- **Resource Type** — Unit Plan, Worksheet, Lab Activity, etc.
+- **Tags** — topic tags such as Algebra, Cells, Ecology, Space Science, or Reaction Rates
+- **Formula** — short text shown on the card thumbnail
+- **Download File** — optional file upload
+- **Body** — Markdown content
 
 ---
 
@@ -114,7 +124,7 @@ learnlattice/
 │   ├── resources/         # Resource-specific templates
 │   └── partials/          # Reusable components
 ├── static/
-│   ├── admin/             # Decap CMS dashboard
+│   ├── admin/             # Decap CMS UI shell (auth gateway not included)
 │   └── uploads/           # Uploaded files (PDFs, images)
 └── archetypes/            # Templates for new content
 ```
@@ -131,6 +141,13 @@ If you want to preview changes locally:
 
 ---
 
+## Notes
+
+- Production domain: `learnlattice.org`
+- Cloudflare Pages project: `learnlattice`
+- GitHub repo currently connected to Pages: `briscorey/learnlattice`
+- Pages build root: `learnlattice-v2`
+
 ## Need Help?
 
-Bring this project back to Claude and ask for changes. The theme can be modified by editing the files in `layouts/` and `assets/css/main.css`.
+Bring this project back here and ask for changes. The theme is primarily controlled by `layouts/`, `static/css/main.css`, and `hugo.toml`.

@@ -23,6 +23,9 @@ collections:
         options:
           - "Mathematics"
           - "Science"
+          - "Biology"
+          - "Ecology"
+          - "Space Science"
           - "Earth Science"
           - "Chemistry"
       - label: "Year Level"
@@ -51,7 +54,7 @@ collections:
         name: "tags"
         widget: "list"
         required: false
-        hint: "Add topic tags like: Algebra, Fractions, Volcanoes, etc."
+        hint: "Add topic tags like: Algebra, Cells, Ecology, Space Science, Reaction Rates, etc."
       - label: "Formula (displayed on card)"
         name: "formula"
         widget: "string"
