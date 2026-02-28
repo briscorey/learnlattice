@@ -966,6 +966,83 @@ nav {
   transform: translateY(-4px);
 }
 
+.resource-list {
+  display: grid;
+  gap: 12px;
+}
+
+.resource-list-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-card);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.resource-list-item:hover {
+  border-color: var(--teal);
+  background: var(--teal-wash);
+  transform: translateY(-1px);
+}
+
+.resource-list-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.resource-list-label,
+.resource-list-type {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resource-list-label {
+  background: var(--teal-wash);
+  color: var(--teal-deep);
+  font-weight: 600;
+}
+
+.resource-list-type {
+  background: var(--surface-warm);
+  color: var(--ink-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.resource-list-main h2 {
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.resource-list-main p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.resource-list-meta {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .resource-thumb {
   height: 180px;
   position: relative;
@@ -1653,6 +1730,8 @@ footer {
   .page-hero { grid-template-columns: 1fr; }
   .subjects-grid { grid-template-columns: repeat(2, 1fr); }
   .resources-grid { grid-template-columns: repeat(2, 1fr); }
+  .resource-list-item { grid-template-columns: 1fr; }
+  .resource-list-meta { justify-content: flex-start; }
   .topic-pathways-grid { grid-template-columns: 1fr; }
 }
 
@@ -1739,6 +1818,7 @@ footer {
   .subject-card h3 { font-size: 26px; }
   .subject-footer { align-items: flex-start; flex-direction: column; }
   .resources-grid { grid-template-columns: 1fr; }
+  .resource-list-item { padding: 16px; }
   .pathway-card { padding: 22px; }
   .pathway-card-top { align-items: flex-start; flex-direction: column; }
   .featured-banner { padding: 0 24px; }

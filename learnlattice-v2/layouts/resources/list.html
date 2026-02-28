@@ -1,24 +1,46 @@
 {{ define "main" }}
+{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
 
 <div class="page-header">
   <h1>{{ .Title | default "All Resources" }}</h1>
-  <p>Browse our complete library of math and science resources for middle school.</p>
+  <p>Browse the full library in a compact list. Open any title for the full unit, lab, worksheet, or investigation pack.</p>
 </div>
 
 <section class="section">
-  <div class="resources-grid">
-    {{ range .Pages.ByDate.Reverse }}
-      {{ partial "resource-card.html" . }}
+  <div class="resource-list">
+    {{ range $paginator.Pages }}
+      {{ $subject := "" }}
+      {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+      {{ $resourceType := "" }}
+      {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+      <a class="resource-list-item" href="{{ .RelPermalink }}">
+        <div class="resource-list-main">
+          <div class="resource-list-top">
+            {{ with $subject }}<span class="resource-list-label">{{ . }}</span>{{ end }}
+            {{ with $resourceType }}<span class="resource-list-type">{{ . }}</span>{{ end }}
+          </div>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description | default .Summary }}</p>
+        </div>
+        <div class="resource-list-meta">
+          {{ range first 2 .Params.year_levels }}
+            <span class="resource-tag">{{ . }}</span>
+          {{ end }}
+          {{ range first 3 .Params.tags }}
+            <span class="resource-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </a>
     {{ end }}
   </div>
 
-  {{ if gt (len .Paginator.Pagers) 1 }}
+  {{ if gt (len $paginator.Pagers) 1 }}
   <div style="text-align: center; padding: 40px 0;">
-    {{ if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}" class="btn-secondary" style="margin-right: 12px;">← Previous</a>
+    {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="btn-secondary" style="margin-right: 12px;">← Previous</a>
     {{ end }}
-    {{ if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}" class="btn-secondary">Next →</a>
+    {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="btn-secondary">Next →</a>
     {{ end }}
   </div>
   {{ end }}
