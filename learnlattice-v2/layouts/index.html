@@ -1,164 +1,132 @@
 {{ define "main" }}
-{{ $featuredSubjects := .Site.Params.featured_subjects }}
 {{ $home := .Site.Params.home }}
 {{ $resources := where .Site.RegularPages "Section" "resources" }}
-{{ $gradeSpotlights := slice
-  (dict "title" "BC Grade 6" "url" "/year-levels/bc-grade-6/" "copy" "Body systems, mixtures, force and motion, solar system, number flexibility, fractions, algebraic thinking, and data.")
-  (dict "title" "BC Grade 7" "url" "/year-levels/bc-grade-7/" "copy" "Ecosystems, dynamic crust, electromagnetism, rational numbers, proportional reasoning, geometry, and probability.")
-  (dict "title" "BC Grade 8" "url" "/year-levels/bc-grade-8/" "copy" "Cells, optics, matter cycling, tectonic theory, linear relations, exponents, transformations, and data analysis.")
-  (dict "title" "BC Grade 9" "url" "/year-levels/bc-grade-9/" "copy" "Cell division, electricity, atomic theory, stars, algebraic generalization, similarity, inference, and financial literacy.")
+{{ $mathLinks := slice
+  (dict "title" "All MYP Mathematics" "url" "/subjects/mathematics/" "copy" "Browse the full MYP mathematics collection.")
+  (dict "title" "Algebra" "url" "/tags/algebra/" "copy" "Patterns, equations, and linear relationships.")
+  (dict "title" "Criterion D" "url" "/tags/criterion-d/" "copy" "Real-world mathematical application tasks.")
 }}
-{{ $subjectLookup := newScratch }}
-{{ range $featuredSubjects }}
-  {{ $subjectLookup.Set (lower .title) . }}
-{{ end }}
+{{ $scienceLinks := slice
+  (dict "title" "All MYP Science" "url" "/subjects/science/" "copy" "Browse the full MYP science collection.")
+  (dict "title" "Biology" "url" "/subjects/biology/" "copy" "Cells, systems, and living processes.")
+  (dict "title" "Ecology" "url" "/subjects/ecology/" "copy" "Ecosystems, biodiversity, and fieldwork.")
+  (dict "title" "Space Science" "url" "/subjects/space-science/" "copy" "Astronomy, models, and planetary systems.")
+  (dict "title" "Earth Science" "url" "/subjects/earth-science/" "copy" "Tectonics, earthquakes, and Earth systems.")
+  (dict "title" "Chemistry" "url" "/subjects/chemistry/" "copy" "Particles, mixtures, and reactions.")
+}}
+{{ $gradeLinks := slice
+  (dict "title" "BC Grade 6" "url" "/year-levels/bc-grade-6/")
+  (dict "title" "BC Grade 7" "url" "/year-levels/bc-grade-7/")
+  (dict "title" "BC Grade 8" "url" "/year-levels/bc-grade-8/")
+  (dict "title" "BC Grade 9" "url" "/year-levels/bc-grade-9/")
+}}
+{{ $browseLinks := slice
+  (dict "title" "All Resources" "url" "/resources/" "copy" "Open the full resource library.")
+  (dict "title" "Unit Plans" "url" "/resource-types/unit-plan/" "copy" "Longer inquiry sequences and full units.")
+  (dict "title" "Worksheets" "url" "/resource-types/worksheet/" "copy" "Structured practice and reflection.")
+  (dict "title" "Lab Activities" "url" "/resource-types/lab-activity/" "copy" "Practical investigations and experiments.")
+  (dict "title" "Investigation Packs" "url" "/resource-types/investigation-pack/" "copy" "Guided inquiry packs and evidence tasks.")
+  (dict "title" "Topic Pathways" "url" "/#topic-pathways" "copy" "Browse by concept instead of by subject.")
+}}
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-layout">
-    <div class="hero-copy">
-      <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
-      <h1>{{ $home.hero_title | safeHTML }}</h1>
-      <p>{{ .Site.Params.description }}</p>
-      <div class="hero-actions">
-        <a href="{{ $home.hero_primary_url }}" class="btn-primary">
-          {{ $home.hero_primary_label }}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <a class="hero-video-card" href="{{ $home.subjects_link_url }}">
-        <div class="hero-video-label">{{ $home.hero_media_label }}</div>
-        <img src="{{ $home.hero_panel_image }}" alt="Illustrated preview reel spanning multiple LearnLattice topics">
-        <div class="hero-video-copy">
-          <span class="hero-video-kicker">{{ $home.hero_kicker }}</span>
-          <h2>{{ $home.hero_panel_title }}</h2>
-          <p>{{ $home.hero_panel_copy }}</p>
-          <span class="hero-video-cta">Browse subject pathways</span>
-        </div>
-      </a>
+<section class="home-minimal-hero">
+  <div class="page-header page-header-compact">
+    <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
+    <h1>{{ $home.hero_title }}</h1>
+    <p>{{ .Site.Params.description }}</p>
+    <div class="hero-actions">
+      <a href="{{ $home.hero_primary_url }}" class="btn-primary">{{ $home.hero_primary_label }}</a>
+      <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats reveal">
   <div class="stat">
-    <span class="stat-num">{{ len (where .Site.RegularPages "Section" "resources") }}+</span>
+    <span class="stat-num">{{ len $resources }}+</span>
     <span class="stat-label">Downloadable<br>resources</span>
   </div>
   <div class="stat-divider"></div>
   <div class="stat">
-    <span class="stat-num">{{ len $featuredSubjects }}</span>
-    <span class="stat-label">Subject<br>areas</span>
+    <span class="stat-num">6</span>
+    <span class="stat-label">MYP subject<br>branches</span>
   </div>
   <div class="stat-divider"></div>
   <div class="stat">
-    <span class="stat-num">MYP</span>
-    <span class="stat-label">Framework<br>aligned</span>
+    <span class="stat-num">4</span>
+    <span class="stat-label">BC grade<br>collections</span>
   </div>
 </div>
 
-<!-- SUBJECTS -->
 <section class="section reveal">
   <div class="section-header">
     <div>
-      <h2 class="section-title">{{ $home.subjects_title }}</h2>
-      <p class="section-subtitle">{{ $home.subjects_subtitle }}</p>
+      <h2 class="section-title">{{ $home.myp_math_title }}</h2>
+      <p class="section-subtitle">{{ $home.myp_math_subtitle }}</p>
     </div>
-    <a href="{{ $home.subjects_link_url }}" class="section-link">
-      {{ $home.subjects_link_label }}
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
   </div>
-
-  <div class="subjects-grid">
-    {{ range $featuredSubjects }}
-      {{ $resourceCount := len (where (where $.Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .title)) }}
-      {{ $subjectTitle := .title }}
-      <a class="subject-card" data-color="{{ .color }}" href="{{ .url }}">
-        <div class="subject-media">
-          {{ if .image }}
-          <img src="{{ .image }}" alt="{{ $subjectTitle }} subject artwork">
-          {{ end }}
-        </div>
-        <div class="subject-body">
-          <div class="subject-meta">
-            <div class="subject-icon">{{ .icon }}</div>
-            <span class="subject-audience">{{ $resourceCount }} {{ if eq $resourceCount 1 }}resource{{ else }}resources{{ end }}</span>
-          </div>
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-          <div class="subject-footer">
-            <div class="subject-count">{{ .audience }}</div>
-            <span class="subject-cta">Open {{ .title }}</span>
-          </div>
-        </div>
+  <div class="simple-link-grid simple-link-grid-compact">
+    {{ range $mathLinks }}
+      <a class="simple-link-card" href="{{ .url }}">
+        <h3>{{ .title }}</h3>
+        <p>{{ .copy }}</p>
       </a>
     {{ end }}
   </div>
 </section>
 
-<!-- BC CURRICULUM -->
+<section class="section reveal">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">{{ $home.myp_science_title }}</h2>
+      <p class="section-subtitle">{{ $home.myp_science_subtitle }}</p>
+    </div>
+  </div>
+  <div class="simple-link-grid">
+    {{ range $scienceLinks }}
+      <a class="simple-link-card" href="{{ .url }}">
+        <h3>{{ .title }}</h3>
+        <p>{{ .copy }}</p>
+      </a>
+    {{ end }}
+  </div>
+</section>
+
 <section class="section reveal">
   <div class="section-header">
     <div>
       <h2 class="section-title">{{ $home.grades_title }}</h2>
       <p class="section-subtitle">{{ $home.grades_subtitle }}</p>
     </div>
-    <a href="{{ $home.grades_link_url }}" class="section-link">
-      {{ $home.grades_link_label }}
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
   </div>
-
-  <div class="grade-spotlight-grid">
-    {{ range $gradeSpotlights }}
+  <div class="simple-link-grid simple-link-grid-compact">
+    {{ range $gradeLinks }}
       {{ $count := len (where $resources "Params.year_levels" "intersect" (slice .title)) }}
-      <a class="grade-spotlight-card" href="{{ .url }}">
-        <div class="grade-spotlight-top">
-          <span class="grade-spotlight-kicker">BC Curriculum</span>
-          <span class="grade-spotlight-count">{{ $count }} {{ if eq $count 1 }}resource{{ else }}resources{{ end }}</span>
-        </div>
+      <a class="simple-link-card" href="{{ .url }}">
         <h3>{{ .title }}</h3>
-        <p>{{ .copy }}</p>
-        <span class="grade-spotlight-cta">Open {{ .title }}</span>
+        <p>{{ $count }} resources</p>
       </a>
     {{ end }}
   </div>
 </section>
 
-<!-- QUICK START -->
 <section class="section reveal">
   <div class="section-header">
     <div>
-      <h2 class="section-title">Start Here</h2>
-      <p class="section-subtitle">Three quick routes into the library, depending on how you like to plan.</p>
+      <h2 class="section-title">{{ $home.browse_title }}</h2>
+      <p class="section-subtitle">{{ $home.browse_subtitle }}</p>
     </div>
   </div>
-  <div class="quick-start-grid">
-    <a class="quick-start-card" href="/resources/">
-      <span class="quick-start-label">Browse the whole collection</span>
-      <h3>See every resource in one place</h3>
-      <p>Best for teachers who already know the unit or skill they want to target.</p>
-    </a>
-    <a class="quick-start-card" href="/subjects/biology/">
-      <span class="quick-start-label">Browse by subject</span>
-      <h3>Jump straight into a content area</h3>
-      <p>Use the subject pages when you want the fastest route into biology, ecology, space science, and more.</p>
-    </a>
-    <a class="quick-start-card" href="/#topic-pathways">
-      <span class="quick-start-label">Browse by concept</span>
-      <h3>Follow topic pathways and tags</h3>
-      <p>Useful when you are planning around a theme, concept, or inquiry question instead of a single worksheet.</p>
-    </a>
+  <div class="simple-link-grid">
+    {{ range $browseLinks }}
+      <a class="simple-link-card" href="{{ .url }}">
+        <h3>{{ .title }}</h3>
+        <p>{{ .copy }}</p>
+      </a>
+    {{ end }}
   </div>
 </section>
 
-<!-- LATEST RESOURCES -->
 {{ if $resources }}
 <section class="section reveal">
   <div class="section-header">
@@ -168,7 +136,6 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
-
   <div class="resources-grid">
     {{ range first 6 $resources }}
       {{ partial "resource-card.html" . }}
@@ -177,7 +144,6 @@
 </section>
 {{ end }}
 
-<!-- POPULAR TOPICS -->
 {{ if .Site.Taxonomies.tags }}
 <section class="section reveal" id="popular-topics">
   <div class="section-header">
@@ -193,7 +159,6 @@
 </section>
 {{ end }}
 
-<!-- TOPIC PATHWAYS -->
 <div id="topic-pathways">
 {{ partial "topic-pathways.html" (dict
   "page" .
@@ -203,7 +168,6 @@
 ) }}
 </div>
 
-<!-- FEATURED BANNER -->
 <div class="featured-banner reveal">
   <div class="featured-inner">
     <div class="featured-text">
