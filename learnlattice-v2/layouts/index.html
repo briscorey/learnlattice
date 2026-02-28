@@ -116,7 +116,7 @@
 
 <!-- POPULAR TOPICS -->
 {{ if .Site.Taxonomies.tags }}
-<section class="section reveal">
+<section class="section reveal" id="popular-topics">
   <div class="section-header">
     <h2 class="section-title">{{ $home.topics_title }}</h2>
   </div>
@@ -131,12 +131,14 @@
 {{ end }}
 
 <!-- TOPIC PATHWAYS -->
+<div id="topic-pathways">
 {{ partial "topic-pathways.html" (dict
   "page" .
   "showAll" true
   "headline" $home.pathways_title
   "copy" $home.pathways_copy
 ) }}
+</div>
 
 <!-- FEATURED BANNER -->
 <div class="featured-banner reveal">

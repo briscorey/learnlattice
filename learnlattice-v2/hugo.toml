@@ -7,6 +7,89 @@ summaryLength = 30
 [params]
   description = "Free, inquiry-driven resources for MYP mathematics and science. Built by a teacher, for teachers and students."
 
+  [[params.nav_dropdowns]]
+    key = "home"
+    [[params.nav_dropdowns.items]]
+      title = "Latest Resources"
+      url = "/resources/"
+      description = "Start with the newest units and investigations."
+    [[params.nav_dropdowns.items]]
+      title = "Topic Pathways"
+      url = "/#topic-pathways"
+      description = "Browse the site through connected concept branches."
+    [[params.nav_dropdowns.items]]
+      title = "Popular Topics"
+      url = "/#popular-topics"
+      description = "Jump into the most-used tags and classroom ideas."
+
+  [[params.nav_dropdowns]]
+    key = "mathematics"
+    [[params.nav_dropdowns.items]]
+      title = "Mathematics"
+      url = "/subjects/mathematics/"
+      description = "Browse all mathematics resources."
+    [[params.nav_dropdowns.items]]
+      title = "Algebra"
+      url = "/tags/algebra/"
+      description = "Linear models, patterns, and equation thinking."
+    [[params.nav_dropdowns.items]]
+      title = "Criterion D"
+      url = "/tags/criterion-d/"
+      description = "Apply mathematics in real-world contexts."
+
+  [[params.nav_dropdowns]]
+    key = "science"
+    [[params.nav_dropdowns.items]]
+      title = "Biology"
+      url = "/subjects/biology/"
+      description = "Cells, transport, respiration, and adaptation."
+    [[params.nav_dropdowns.items]]
+      title = "Ecology"
+      url = "/subjects/ecology/"
+      description = "Fieldwork, biodiversity, and ecosystems."
+    [[params.nav_dropdowns.items]]
+      title = "Space Science"
+      url = "/subjects/space-science/"
+      description = "Orbits, phases, gravity, and planetary systems."
+    [[params.nav_dropdowns.items]]
+      title = "Earth Science"
+      url = "/subjects/earth-science/"
+      description = "Tectonics, earthquakes, and earth systems."
+    [[params.nav_dropdowns.items]]
+      title = "Chemistry"
+      url = "/subjects/chemistry/"
+      description = "Labs, reactions, particles, and mixtures."
+
+  [[params.nav_dropdowns]]
+    key = "resources"
+    [[params.nav_dropdowns.items]]
+      title = "All Resources"
+      url = "/resources/"
+      description = "See the full teaching library."
+    [[params.nav_dropdowns.items]]
+      title = "Unit Plans"
+      url = "/resource-types/unit-plan/"
+      description = "Longer inquiry sequences and full units."
+    [[params.nav_dropdowns.items]]
+      title = "Lab Activities"
+      url = "/resource-types/lab-activity/"
+      description = "Hands-on practical investigations."
+    [[params.nav_dropdowns.items]]
+      title = "Worksheets"
+      url = "/resource-types/worksheet/"
+      description = "Structured practice and guided inquiry sheets."
+
+  [[params.nav_dropdowns]]
+    key = "about"
+    [[params.nav_dropdowns.items]]
+      title = "Our Approach"
+      url = "/about/"
+      description = "Understand the inquiry design philosophy."
+    [[params.nav_dropdowns.items]]
+      title = "For Teachers"
+      url = "/about/#for-teachers"
+      description = "See how to use the materials in class."
+
   [params.home]
     hero_eyebrow = "Middle School Math & Science"
     hero_title = "Where concepts <em>connect</em> and curiosity grows"
@@ -301,22 +384,27 @@ summaryLength = 30
 [menu]
   [[menu.main]]
     name = "Home"
+    identifier = "home"
     url = "/"
     weight = 1
   [[menu.main]]
     name = "Mathematics"
+    identifier = "mathematics"
     url = "/subjects/mathematics/"
     weight = 2
   [[menu.main]]
     name = "Science"
+    identifier = "science"
     url = "/subjects/science/"
     weight = 3
   [[menu.main]]
     name = "Resources"
+    identifier = "resources"
     url = "/resources/"
     weight = 4
   [[menu.main]]
     name = "About"
+    identifier = "about"
     url = "/about/"
     weight = 5
 

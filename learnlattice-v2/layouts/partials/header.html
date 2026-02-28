@@ -1,3 +1,8 @@
+{{ $dropdowns := newScratch }}
+{{ range .Site.Params.nav_dropdowns }}
+  {{ $dropdowns.Set .key .items }}
+{{ end }}
+
 <nav>
   <a class="nav-brand" href="/">
     {{ partial "logo.html" . }}
@@ -6,10 +11,24 @@
 
   <ul class="nav-links">
     {{ range .Site.Menus.main }}
-    <li>
-      <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>
+    {{ $items := $dropdowns.Get .Identifier }}
+    <li class="nav-item{{ if $items }} has-dropdown{{ end }}">
+      <a href="{{ .URL }}" class="nav-link{{ if or ($.IsMenuCurrent "main" .) (eq $.RelPermalink .URL) }} active{{ end }}">
         {{ .Name }}
+        {{ if $items }}
+        <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+        {{ end }}
       </a>
+      {{ if $items }}
+      <div class="nav-dropdown">
+        {{ range $items }}
+        <a class="nav-dropdown-item" href="{{ .url }}">
+          <span class="nav-dropdown-title">{{ .title }}</span>
+          {{ with .description }}<span class="nav-dropdown-copy">{{ . }}</span>{{ end }}
+        </a>
+        {{ end }}
+      </div>
+      {{ end }}
     </li>
     {{ end }}
   </ul>
