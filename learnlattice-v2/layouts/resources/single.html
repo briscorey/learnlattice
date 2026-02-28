@@ -60,7 +60,7 @@
     </dl>
     {{ if .Params.tags }}
     <div class="at-a-glance-tags">
-      {{ range .Params.tags }}
+      {{ range first 6 .Params.tags }}
         <a class="at-a-glance-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
       {{ end }}
     </div>

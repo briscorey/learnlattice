@@ -1326,6 +1326,7 @@ nav {
   max-width: 780px;
   margin: 0 auto;
   padding: 60px 24px 80px;
+  overflow-x: hidden;
 }
 
 .resource-single-header {
@@ -1373,6 +1374,7 @@ nav {
   color: var(--ink-light);
 }
 
+
 .resource-content h2 {
   font-family: 'DM Serif Display', serif;
   font-size: 28px;
@@ -1416,6 +1418,88 @@ nav {
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-style: italic;
   color: var(--ink-light);
+}
+
+.resource-content hr {
+  border: none;
+  border-top: 1.5px solid var(--border);
+  margin: 36px 0;
+}
+
+.resource-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.resource-content thead tr {
+  background: var(--teal-wash);
+}
+
+.resource-content th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+.resource-content td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-light);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.resource-content tr:last-child td {
+  border-bottom: none;
+}
+
+.resource-content tbody tr:nth-child(even) {
+  background: var(--surface-warm);
+}
+
+.resource-content tbody tr:hover {
+  background: var(--teal-wash);
+}
+
+.resource-content code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 2px 6px;
+  color: var(--teal-deep);
+}
+
+.resource-content pre {
+  background: #f0f5f3;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  overflow-x: auto;
+  margin: 20px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.resource-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
 }
 
 /* Download box */
@@ -2256,4 +2340,7 @@ footer {
   .resource-single { padding: 40px 20px 60px; }
   .resource-single-header h1 { font-size: 30px; }
   .download-box { flex-direction: column; text-align: center; }
+  .resource-content table { font-size: 13px; }
+  .resource-content th,
+  .resource-content td { padding: 9px 12px; }
 }

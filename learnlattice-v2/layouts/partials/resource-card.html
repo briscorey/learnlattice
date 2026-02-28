@@ -8,6 +8,7 @@
 {{ if eq $subject "mathematics" }}{{ $thumbColor = "teal" }}{{ end }}
 {{ if eq $subject "science" }}{{ $thumbColor = "sky" }}{{ end }}
 {{ if eq $subject "biology" }}{{ $thumbColor = "sky" }}{{ end }}
+{{ if eq $subject "physics" }}{{ $thumbColor = "sky" }}{{ end }}
 {{ if eq $subject "ecology" }}{{ $thumbColor = "teal" }}{{ end }}
 {{ if eq $subject "space-science" }}{{ $thumbColor = "amber" }}{{ end }}
 {{ if eq $subject "earth-science" }}{{ $thumbColor = "amber" }}{{ end }}
@@ -26,7 +27,7 @@
       {{ range .Params.year_levels }}
         <span class="resource-tag">{{ . }}</span>
       {{ end }}
-      {{ range .Params.tags }}
+      {{ range first 3 .Params.tags }}
         <span class="resource-tag">{{ . }}</span>
       {{ end }}
     </div>
