@@ -60,6 +60,13 @@
   {{ end }}
 </article>
 
+{{ partial "topic-pathways.html" (dict
+  "page" .
+  "mode" "compact"
+  "headline" "Where This Resource Branches"
+  "copy" "This resource sits inside larger topic pathways. Use these branch links to extend the lesson into adjacent concepts and inquiry routes."
+) }}
+
 <!-- Related Resources -->
 {{ $related := .Site.RegularPages.Related . | first 3 }}
 {{ if $related }}

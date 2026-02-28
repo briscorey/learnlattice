@@ -1,16 +1,18 @@
 {{ define "main" }}
+{{ $featuredSubjects := .Site.Params.featured_subjects }}
+{{ $home := .Site.Params.home }}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Middle School Math &amp; Science</div>
-  <h1>Where concepts <em>connect</em> and curiosity grows</h1>
+  <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
+  <h1>{{ $home.hero_title | safeHTML }}</h1>
   <p>{{ .Site.Params.description }}</p>
   <div class="hero-actions">
-    <a href="/resources/" class="btn-primary">
-      Browse Resources
+    <a href="{{ $home.hero_primary_url }}" class="btn-primary">
+      {{ $home.hero_primary_label }}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
-    <a href="/about/" class="btn-secondary">For Teachers</a>
+    <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
   </div>
 </section>
 
@@ -22,7 +24,7 @@
   </div>
   <div class="stat-divider"></div>
   <div class="stat">
-    <span class="stat-num">4</span>
+    <span class="stat-num">{{ len $featuredSubjects }}</span>
     <span class="stat-label">Subject<br>areas</span>
   </div>
   <div class="stat-divider"></div>
@@ -35,34 +37,27 @@
 <!-- SUBJECTS -->
 <section class="section reveal">
   <div class="section-header">
-    <h2 class="section-title">Browse by Subject</h2>
-    <a href="/resources/" class="section-link">
-      View all
+    <div>
+      <h2 class="section-title">{{ $home.subjects_title }}</h2>
+      <p class="section-subtitle">{{ $home.subjects_subtitle }}</p>
+    </div>
+    <a href="{{ $home.subjects_link_url }}" class="section-link">
+      {{ $home.subjects_link_label }}
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
 
   <div class="subjects-grid">
-    <a class="subject-card" data-color="teal" href="/subjects/mathematics/">
-      <div class="subject-icon">📐</div>
-      <h3>Mathematics</h3>
-      <p>Number, algebra, geometry, statistics &amp; probability</p>
-    </a>
-    <a class="subject-card" data-color="sky" href="/subjects/science/">
-      <div class="subject-icon">🔬</div>
-      <h3>Science</h3>
-      <p>Biology, physics, and integrated science topics</p>
-    </a>
-    <a class="subject-card" data-color="amber" href="/subjects/earth-science/">
-      <div class="subject-icon">🌍</div>
-      <h3>Earth Science</h3>
-      <p>Earthquakes, volcanoes, plate tectonics &amp; climate</p>
-    </a>
-    <a class="subject-card" data-color="rose" href="/subjects/chemistry/">
-      <div class="subject-icon">⚗️</div>
-      <h3>Chemistry</h3>
-      <p>Elements, compounds, mixtures &amp; separation techniques</p>
-    </a>
+    {{ range $featuredSubjects }}
+      {{ $subjectPages := index $.Site.Taxonomies.subjects .key }}
+      {{ $resourceCount := len $subjectPages }}
+      <a class="subject-card" data-color="{{ .color }}" href="{{ .url }}">
+        <div class="subject-icon">{{ .icon }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <div class="subject-count">{{ $resourceCount }} {{ if eq $resourceCount 1 }}resource{{ else }}resources{{ end }}</div>
+      </a>
+    {{ end }}
   </div>
 </section>
 
@@ -71,9 +66,9 @@
 {{ if $resources }}
 <section class="section reveal">
   <div class="section-header">
-    <h2 class="section-title">Latest Resources</h2>
-    <a href="/resources/" class="section-link">
-      See all resources
+    <h2 class="section-title">{{ $home.latest_title }}</h2>
+    <a href="{{ $home.latest_link_url }}" class="section-link">
+      {{ $home.latest_link_label }}
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
@@ -90,7 +85,7 @@
 {{ if .Site.Taxonomies.tags }}
 <section class="section reveal">
   <div class="section-header">
-    <h2 class="section-title">Popular Topics</h2>
+    <h2 class="section-title">{{ $home.topics_title }}</h2>
   </div>
   <div class="topics-wrap">
     {{ range .Site.Taxonomies.tags.ByCount }}
@@ -102,14 +97,22 @@
 </section>
 {{ end }}
 
+<!-- TOPIC PATHWAYS -->
+{{ partial "topic-pathways.html" (dict
+  "page" .
+  "showAll" true
+  "headline" $home.pathways_title
+  "copy" $home.pathways_copy
+) }}
+
 <!-- FEATURED BANNER -->
 <div class="featured-banner reveal">
   <div class="featured-inner">
     <div class="featured-text">
-      <h2>Built for inquiry-based classrooms</h2>
-      <p>Every resource is designed with Understanding by Design principles. Provoke thinking first, then build conceptual understanding through guided investigation.</p>
+      <h2>{{ $home.featured_title }}</h2>
+      <p>{{ $home.featured_copy }}</p>
     </div>
-    <a href="/about/" class="btn-amber">Learn Our Approach →</a>
+    <a href="{{ $home.featured_link_url }}" class="btn-amber">{{ $home.featured_link_label }}</a>
   </div>
 </div>
 

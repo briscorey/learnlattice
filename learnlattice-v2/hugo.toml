@@ -7,6 +7,260 @@ summaryLength = 30
 [params]
   description = "Free, inquiry-driven resources for MYP mathematics and science. Built by a teacher, for teachers and students."
 
+  [params.home]
+    hero_eyebrow = "Middle School Math & Science"
+    hero_title = "Where concepts <em>connect</em> and curiosity grows"
+    hero_primary_label = "Browse Resources"
+    hero_primary_url = "/resources/"
+    hero_secondary_label = "For Teachers"
+    hero_secondary_url = "/about/"
+    subjects_title = "Browse by Subject"
+    subjects_subtitle = "The library now branches into dedicated biology, ecology, and space science areas, alongside the original math, earth science, and chemistry collections."
+    subjects_link_label = "View all"
+    subjects_link_url = "/resources/"
+    latest_title = "Latest Resources"
+    latest_link_label = "See all resources"
+    latest_link_url = "/resources/"
+    topics_title = "Popular Topics"
+    pathways_title = "Topic Pathways"
+    pathways_copy = "Each topic now opens into multiple branches so teachers can build lessons through concepts, investigations, and assessment moves."
+    featured_title = "Built for inquiry-based classrooms"
+    featured_copy = "Every resource is designed with Understanding by Design principles. Provoke thinking first, then build conceptual understanding through guided investigation."
+    featured_link_label = "Learn Our Approach →"
+    featured_link_url = "/about/"
+
+  [[params.featured_subjects]]
+    title = "Mathematics"
+    key = "mathematics"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/mathematics/"
+    description = "Number, algebra, geometry, statistics & probability"
+
+  [[params.featured_subjects]]
+    title = "Biology"
+    key = "biology"
+    color = "sky"
+    icon = "🧬"
+    url = "/subjects/biology/"
+    description = "Cells, transport, respiration, and adaptation in living systems"
+
+  [[params.featured_subjects]]
+    title = "Ecology"
+    key = "ecology"
+    color = "teal"
+    icon = "🌿"
+    url = "/subjects/ecology/"
+    description = "Food webs, biodiversity, fieldwork, climate, and systems stability"
+
+  [[params.featured_subjects]]
+    title = "Space Science"
+    key = "space-science"
+    color = "amber"
+    icon = "🪐"
+    url = "/subjects/space-science/"
+    description = "Orbits, phases, gravity, seasons, and planetary evidence"
+
+  [[params.featured_subjects]]
+    title = "Earth Science"
+    key = "earth-science"
+    color = "amber"
+    icon = "🌍"
+    url = "/subjects/earth-science/"
+    description = "Earthquakes, volcanoes, plate tectonics & climate"
+
+  [[params.featured_subjects]]
+    title = "Chemistry"
+    key = "chemistry"
+    color = "rose"
+    icon = "⚗️"
+    url = "/subjects/chemistry/"
+    description = "Mixtures, reactions, acids and bases, and particle-based reasoning"
+
+  [[params.topic_pathways]]
+    title = "Linear Relationships"
+    subject = "Mathematics"
+    color = "teal"
+    summary = "Students move from noticing regularity to modelling real systems with equations, graphs, and rate-of-change arguments."
+    url = "/tags/algebra/"
+    terms = ["Algebra", "Mathematics", "Criterion D"]
+
+    [[params.topic_pathways.branches]]
+      title = "Pattern to Rule"
+      detail = "Generalise tables and visual growth patterns into linear rules."
+      url = "/resources/linear-relationships-inquiry-unit/"
+
+    [[params.topic_pathways.branches]]
+      title = "Graph Stories"
+      detail = "Interpret slope and intercept through journeys, costs, and changing quantities."
+      url = "/subjects/mathematics/"
+
+    [[params.topic_pathways.branches]]
+      title = "Model Critique"
+      detail = "Compare competing equations and decide which one best fits a context."
+      url = "/tags/criterion-d/"
+
+  [[params.topic_pathways]]
+    title = "Earthquake Systems"
+    subject = "Earth Science"
+    color = "amber"
+    summary = "Learners trace how pressure, plate movement, and seismic evidence combine into a connected earth-systems explanation."
+    url = "/tags/plate-tectonics/"
+    terms = ["Plate Tectonics", "Volcanoes", "Earth Science", "Criterion B"]
+
+    [[params.topic_pathways.branches]]
+      title = "Boundary Types"
+      detail = "Map convergent, divergent, and transform boundaries to surface events."
+      url = "/resources/earthquake-mechanics-investigation/"
+
+    [[params.topic_pathways.branches]]
+      title = "Wave Evidence"
+      detail = "Use P-wave and S-wave timing gaps to locate unseen epicentres."
+      url = "/tags/criterion-b/"
+
+    [[params.topic_pathways.branches]]
+      title = "Risk and Prediction"
+      detail = "Evaluate which warning signals are useful, weak, or misleading."
+      url = "/subjects/earth-science/"
+
+  [[params.topic_pathways]]
+    title = "Separation of Mixtures"
+    subject = "Chemistry"
+    color = "rose"
+    summary = "Each branch builds from simple physical sorting to evidence-based choices about which separation method fits a mixture."
+    url = "/tags/mixtures/"
+    terms = ["Mixtures", "Chemistry", "Chemical Reactions", "Criterion C"]
+
+    [[params.topic_pathways.branches]]
+      title = "Observable Properties"
+      detail = "Use solubility, particle size, and boiling point as decision criteria."
+      url = "/resources/separation-techniques-lab-series/"
+
+    [[params.topic_pathways.branches]]
+      title = "Technique Selection"
+      detail = "Choose between filtration, distillation, and chromatography with justification."
+      url = "/subjects/chemistry/"
+
+    [[params.topic_pathways.branches]]
+      title = "Lab Reliability"
+      detail = "Analyse contamination, yield loss, and procedural errors in practical work."
+      url = "/tags/criterion-c/"
+
+  [[params.topic_pathways]]
+    title = "Scientific Inquiry"
+    subject = "Science"
+    color = "sky"
+    summary = "A cross-disciplinary pathway focused on asking sharper questions, designing investigations, and defending claims with evidence."
+    url = "/subjects/science/"
+    terms = ["Science", "Criterion B", "Criterion C", "Criterion D"]
+
+    [[params.topic_pathways.branches]]
+      title = "Question Design"
+      detail = "Turn broad curiosities into measurable, testable inquiry questions."
+      url = "/tags/criterion-b/"
+
+    [[params.topic_pathways.branches]]
+      title = "Evidence Handling"
+      detail = "Sort raw observations into patterns, anomalies, and usable conclusions."
+      url = "/resources/earthquake-mechanics-investigation/"
+
+    [[params.topic_pathways.branches]]
+      title = "Argument Building"
+      detail = "Support claims with data, model limitations, and counterexamples."
+      url = "/resources/separation-techniques-lab-series/"
+
+  [[params.topic_pathways]]
+    title = "Cell Systems"
+    subject = "Biology"
+    color = "sky"
+    summary = "Students connect cell structure, transport, and energy transfer to explain how living systems stay stable and responsive."
+    url = "/tags/biology/"
+    terms = ["Biology", "Cells", "Homeostasis", "Science", "Criterion B", "Criterion C"]
+
+    [[params.topic_pathways.branches]]
+      title = "Cell Structure"
+      detail = "Compare specialised cells and link organelles to function."
+      url = "/resources/cell-systems-and-microscopy-inquiry/"
+
+    [[params.topic_pathways.branches]]
+      title = "Membrane Transport"
+      detail = "Model diffusion, osmosis, and active transport using observable evidence."
+      url = "/tags/homeostasis/"
+
+    [[params.topic_pathways.branches]]
+      title = "Energy in Cells"
+      detail = "Trace how respiration and photosynthesis support system balance."
+      url = "/subjects/science/"
+
+  [[params.topic_pathways]]
+    title = "Ecology Networks"
+    subject = "Ecology"
+    color = "teal"
+    summary = "Food webs, population data, and human impact studies branch into a wider systems view of ecosystems."
+    url = "/tags/ecology/"
+    terms = ["Ecology", "Ecosystems", "Biodiversity", "Science", "Criterion D"]
+
+    [[params.topic_pathways.branches]]
+      title = "Energy Flow"
+      detail = "Track biomass and energy losses through trophic levels and food webs."
+      url = "/resources/ecosystem-energy-and-biodiversity-study/"
+
+    [[params.topic_pathways.branches]]
+      title = "Field Data"
+      detail = "Use quadrats, transects, and sampling choices to study habitats."
+      url = "/tags/biodiversity/"
+
+    [[params.topic_pathways.branches]]
+      title = "Human Impact"
+      detail = "Evaluate how land use and climate pressure reshape ecosystem stability."
+      url = "/subjects/science/"
+
+  [[params.topic_pathways]]
+    title = "Space Science"
+    subject = "Space Science"
+    color = "amber"
+    summary = "Orbital motion, scale models, and observation evidence branch into explanations for seasons, phases, and solar-system patterns."
+    url = "/tags/space-science/"
+    terms = ["Space Science", "Astronomy", "Forces", "Science", "Criterion B", "Criterion D"]
+
+    [[params.topic_pathways.branches]]
+      title = "Orbit and Gravity"
+      detail = "Explain motion in space using balanced force and gravitational attraction."
+      url = "/resources/orbits-seasons-and-scale-models-unit/"
+
+    [[params.topic_pathways.branches]]
+      title = "Cycles and Patterns"
+      detail = "Connect phases, eclipses, and seasons to predictable system geometry."
+      url = "/tags/astronomy/"
+
+    [[params.topic_pathways.branches]]
+      title = "Scale and Evidence"
+      detail = "Use models to reason about distances too large to experience directly."
+      url = "/subjects/science/"
+
+  [[params.topic_pathways]]
+    title = "Chemical Change"
+    subject = "Chemistry"
+    color = "rose"
+    summary = "Students branch from particle models into reaction evidence, conservation of matter, and practical decision-making in the lab."
+    url = "/tags/chemical-change/"
+    terms = ["Chemistry", "Chemical Change", "Reactions", "Particles", "Criterion C", "Criterion D"]
+
+    [[params.topic_pathways.branches]]
+      title = "Particle Collisions"
+      detail = "Use particle diagrams to explain why reactions happen and speed up."
+      url = "/resources/particle-model-and-chemical-change-unit/"
+
+    [[params.topic_pathways.branches]]
+      title = "Reaction Evidence"
+      detail = "Interpret gas, temperature, precipitate, and colour changes as evidence."
+      url = "/tags/chemical-reactions/"
+
+    [[params.topic_pathways.branches]]
+      title = "Conservation Reasoning"
+      detail = "Balance symbolic equations with mass data from practical experiments."
+      url = "/subjects/chemistry/"
+
 [taxonomies]
   tag = "tags"
   subject = "subjects"

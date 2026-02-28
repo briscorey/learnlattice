@@ -5,6 +5,13 @@
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
 </div>
 
+{{ partial "topic-pathways.html" (dict
+  "page" .
+  "mode" "compact"
+  "headline" "Topic Branches"
+  "copy" "These branches expand this topic into connected investigations, modelling moves, and assessment pathways."
+) }}
+
 <section class="section">
   {{ $pages := .Pages }}
   {{ if .IsSection }}

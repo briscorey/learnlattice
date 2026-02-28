@@ -361,10 +361,19 @@ nav {
 
 .section-link:hover { gap: 10px; }
 
+.section-subtitle {
+  margin-top: 10px;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  font-weight: 300;
+}
+
 /* ─── SUBJECT CARDS ─── */
 .subjects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -730,6 +739,150 @@ nav {
   margin-left: 6px;
 }
 
+/* ─── TOPIC PATHWAYS ─── */
+.topic-pathways-header {
+  align-items: flex-end;
+}
+
+.topic-pathways-shell.compact {
+  padding-top: 8px;
+}
+
+.topic-pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.topic-pathways-grid.compact {
+  grid-template-columns: 1fr;
+}
+
+.pathway-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(240,245,243,0.9) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.pathway-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+}
+
+.pathway-card[data-color="teal"]::before { background: linear-gradient(90deg, #0f766e 0%, #2dd4bf 100%); }
+.pathway-card[data-color="sky"]::before { background: linear-gradient(90deg, #0369a1 0%, #7dd3fc 100%); }
+.pathway-card[data-color="amber"]::before { background: linear-gradient(90deg, #b45309 0%, #fbbf24 100%); }
+.pathway-card[data-color="rose"]::before { background: linear-gradient(90deg, #be123c 0%, #fda4af 100%); }
+
+.pathway-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.pathway-subject,
+.pathway-branch-count {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pathway-subject {
+  background: var(--surface-card);
+  color: var(--ink-light);
+  border: 1px solid var(--border);
+  font-weight: 600;
+}
+
+.pathway-branch-count {
+  background: var(--surface-warm);
+  color: var(--ink-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.pathway-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.pathway-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: 22px;
+}
+
+.pathway-branches {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pathway-branch {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(176,206,198,0.75);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.pathway-branch:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal-bright);
+}
+
+.branch-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.branch-detail {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.pathway-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.pathway-link:hover {
+  gap: 12px;
+}
+
+.topic-pathways-grid.compact .pathway-card {
+  padding: 24px;
+}
+
+.topic-pathways-grid.compact .pathway-card h3 {
+  font-size: 24px;
+}
+
 /* ─── FEATURED BANNER ─── */
 .featured-banner {
   position: relative;
@@ -912,6 +1065,7 @@ footer {
 @media (max-width: 1024px) {
   .subjects-grid { grid-template-columns: repeat(2, 1fr); }
   .resources-grid { grid-template-columns: repeat(2, 1fr); }
+  .topic-pathways-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -921,8 +1075,11 @@ footer {
   .hero { padding: 60px 24px 48px; }
   .stats { padding: 0 24px 48px; flex-wrap: wrap; gap: 24px; }
   .section { padding: 0 24px 48px; }
+  .section-header { align-items: flex-start; gap: 16px; flex-direction: column; }
   .subjects-grid { grid-template-columns: 1fr; }
   .resources-grid { grid-template-columns: 1fr; }
+  .pathway-card { padding: 22px; }
+  .pathway-card-top { align-items: flex-start; flex-direction: column; }
   .featured-banner { padding: 0 24px; }
   .featured-inner { flex-direction: column; padding: 40px 32px; text-align: center; }
   .featured-text p { max-width: 100%; }

@@ -1,0 +1,96 @@
+{{ $page := .page }}
+{{ $mode := .mode | default "default" }}
+{{ $headline := .headline | default "Connected Pathways" }}
+{{ $copy := .copy | default "Follow the linked branches that connect this page to larger topic pathways across the site." }}
+{{ $showAll := .showAll | default false }}
+
+{{ $pageTitle := lower $page.Title }}
+{{ $pageLink := $page.RelPermalink }}
+{{ $subjects := slice }}
+{{ $tags := slice }}
+
+{{ with $page.Params.subjects }}
+  {{ range . }}
+    {{ $subjects = $subjects | append (lower .) }}
+  {{ end }}
+{{ end }}
+
+{{ with $page.Params.tags }}
+  {{ range . }}
+    {{ $tags = $tags | append (lower .) }}
+  {{ end }}
+{{ end }}
+
+{{ $matched := newScratch }}
+{{ $matched.Set "items" (slice) }}
+
+{{ range $page.Site.Params.topic_pathways }}
+  {{ $isMatch := false }}
+
+  {{ if $showAll }}
+    {{ $isMatch = true }}
+  {{ end }}
+
+  {{ if or (eq (lower .title) $pageTitle) (eq (lower .subject) $pageTitle) (eq .url $pageLink) }}
+    {{ $isMatch = true }}
+  {{ end }}
+
+  {{ if not $isMatch }}
+    {{ with .terms }}
+      {{ range . }}
+        {{ $term := lower . }}
+        {{ if or (eq $term $pageTitle) (in $subjects $term) (in $tags $term) }}
+          {{ $isMatch = true }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $isMatch }}
+    {{ $matched.Add "items" (slice .) }}
+  {{ end }}
+{{ end }}
+
+{{ $items := $matched.Get "items" }}
+{{ if gt (len $items) 0 }}
+<section class="section reveal topic-pathways-shell{{ if eq $mode "compact" }} compact{{ end }}">
+  <div class="section-header topic-pathways-header">
+    <div>
+      <h2 class="section-title">{{ $headline }}</h2>
+      <p class="section-subtitle">{{ $copy }}</p>
+    </div>
+  </div>
+
+  <div class="topic-pathways-grid{{ if eq $mode "compact" }} compact{{ end }}">
+    {{ range $items }}
+      <article class="pathway-card" data-color="{{ .color }}">
+        <div class="pathway-card-top">
+          <span class="pathway-subject">{{ .subject }}</span>
+          {{ with .branches }}
+            <span class="pathway-branch-count">{{ len . }} branches</span>
+          {{ end }}
+        </div>
+
+        <h3>{{ .title }}</h3>
+        <p>{{ .summary }}</p>
+
+        {{ with .branches }}
+        <div class="pathway-branches">
+          {{ range . }}
+            <a class="pathway-branch" href="{{ .url }}">
+              <span class="branch-title">{{ .title }}</span>
+              <span class="branch-detail">{{ .detail }}</span>
+            </a>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <a class="pathway-link" href="{{ .url }}">
+          Explore topic
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
