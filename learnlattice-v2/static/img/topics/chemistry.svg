@@ -1,22 +1,104 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="chemBg" x1="116" y1="40" x2="834" y2="676" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4A041D"/>
-      <stop offset="0.54" stop-color="#E11D48"/>
-      <stop offset="1" stop-color="#FBCFE8"/>
+    <linearGradient id="chem-bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#110820"/>
+      <stop offset="50%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#0d0618"/>
     </linearGradient>
+    <radialGradient id="chem-glow1" cx="60%" cy="42%" r="45%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chem-glow2" cx="28%" cy="65%" r="38%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="960" height="720" rx="44" fill="url(#chemBg)"/>
-  <rect x="52" y="52" width="856" height="616" rx="32" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18"/>
-  <path d="M230 164V278L160 424C145 455 167 492 206 492H342C381 492 403 455 388 424L318 278V164" fill="#FFF1F2" fill-opacity="0.22" stroke="white" stroke-opacity="0.52" stroke-width="10"/>
-  <path d="M190 432C208 386 228 364 254 364C281 364 305 391 330 432" fill="#FB7185" fill-opacity="0.72"/>
-  <path d="M578 152V252L512 434C497 473 525 512 569 512H725C769 512 797 473 782 434L716 252V152" fill="#FFF1F2" fill-opacity="0.18" stroke="white" stroke-opacity="0.48" stroke-width="10"/>
-  <path d="M548 440C576 387 606 362 644 362C682 362 714 392 744 440" fill="#F9A8D4" fill-opacity="0.74"/>
-  <circle cx="446" cy="238" r="18" fill="#FFF1F2"/>
-  <circle cx="494" cy="196" r="12" fill="#FFE4E6"/>
-  <circle cx="528" cy="250" r="10" fill="#FFE4E6"/>
-  <circle cx="460" cy="292" r="10" fill="#FFE4E6"/>
-  <path d="M445 239L492 198L528 250L460 292Z" stroke="white" stroke-opacity="0.38" stroke-width="4"/>
-  <text x="120" y="144" fill="#FFE4E6" font-family="JetBrains Mono, monospace" font-size="30">mixtures • rates • neutralisation</text>
-  <text x="112" y="650" fill="white" font-family="DM Serif Display, serif" font-size="74">Chemistry</text>
+  <rect width="960" height="720" rx="32" fill="url(#chem-bg)"/>
+  <rect width="960" height="720" rx="32" fill="url(#chem-glow1)"/>
+  <rect width="960" height="720" rx="32" fill="url(#chem-glow2)"/>
+  <!-- Grid -->
+  <g stroke="#a78bfa" stroke-opacity="0.035" stroke-width="1">
+    <line x1="0" y1="144" x2="960" y2="144"/><line x1="0" y1="288" x2="960" y2="288"/>
+    <line x1="0" y1="432" x2="960" y2="432"/><line x1="0" y1="576" x2="960" y2="576"/>
+    <line x1="192" y1="0" x2="192" y2="720"/><line x1="384" y1="0" x2="384" y2="720"/>
+    <line x1="576" y1="0" x2="576" y2="720"/><line x1="768" y1="0" x2="768" y2="720"/>
+  </g>
+  <!-- Molecular structure - benzene ring center right -->
+  <g transform="translate(640, 330)">
+    <!-- Outer glow ring -->
+    <circle r="155" fill="#7c3aed" fill-opacity="0.04" stroke="#a78bfa" stroke-opacity="0.10" stroke-width="1"/>
+    <!-- Benzene hexagon -->
+    <polygon points="0,-110 95,-55 95,55 0,110 -95,55 -95,-55" fill="none" stroke="#a78bfa" stroke-opacity="0.55" stroke-width="2.5"/>
+    <!-- Inner aromatic circle -->
+    <circle r="62" fill="none" stroke="#c4b5fd" stroke-opacity="0.38" stroke-width="1.8" stroke-dasharray="8 5"/>
+    <!-- Atom nodes -->
+    <circle cy="-110" r="14" fill="#1a0a2e" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.8"/>
+    <circle cx="95" cy="-55" r="14" fill="#1a0a2e" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.8"/>
+    <circle cx="95" cy="55" r="14" fill="#1a0a2e" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.8"/>
+    <circle cy="110" r="14" fill="#1a0a2e" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.8"/>
+    <circle cx="-95" cy="55" r="14" fill="#1a0a2e" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.8"/>
+    <circle cx="-95" cy="-55" r="14" fill="#1a0a2e" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.8"/>
+    <!-- C labels -->
+    <text y="-104" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity="0.7">C</text>
+    <text x="95" y="-49" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity="0.7">C</text>
+    <text x="95" y="61" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity="0.7">C</text>
+    <text y="116" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity="0.7">C</text>
+    <text x="-95" y="61" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity="0.7">C</text>
+    <text x="-95" y="-49" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity="0.7">C</text>
+    <!-- Central dot -->
+    <circle r="5" fill="#a78bfa" fill-opacity="0.6"/>
+  </g>
+  <!-- Satellite atoms connected -->
+  <!-- H atoms extending from hexagon -->
+  <g transform="translate(640, 330)">
+    <line x1="0" y1="-110" x2="0" y2="-158" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cy="-168" r="10" fill="#110820" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="0" y="-162" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="10" opacity="0.5">H</text>
+    <line x1="95" y1="-55" x2="136" y2="-79" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="146" cy="-85" r="10" fill="#110820" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="146" y="-79" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="10" opacity="0.5">H</text>
+    <line x1="95" y1="55" x2="136" y2="79" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="146" cy="85" r="10" fill="#110820" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="146" y="91" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="10" opacity="0.5">H</text>
+    <line x1="0" y1="110" x2="0" y2="158" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cy="168" r="10" fill="#110820" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="0" y="174" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="10" opacity="0.5">H</text>
+    <line x1="-95" y1="55" x2="-136" y2="79" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="-146" cy="85" r="10" fill="#110820" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="-146" y="91" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="10" opacity="0.5">H</text>
+    <line x1="-95" y1="-55" x2="-136" y2="-79" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="-146" cy="-85" r="10" fill="#110820" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="-146" y="-79" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="10" opacity="0.5">H</text>
+  </g>
+  <!-- Water molecule - upper left -->
+  <g transform="translate(220, 200)">
+    <circle r="28" fill="#7c3aed" fill-opacity="0.12" stroke="#a78bfa" stroke-opacity="0.40" stroke-width="2"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600" opacity="0.75">O</text>
+    <line x1="-20" y1="-20" x2="-44" y2="-44" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.8"/>
+    <circle cx="-52" cy="-52" r="18" fill="#7c3aed" fill-opacity="0.10" stroke="#a78bfa" stroke-opacity="0.32" stroke-width="1.5"/>
+    <text x="-52" y="-46" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="12" opacity="0.6">H</text>
+    <line x1="20" y1="-20" x2="44" y2="-44" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.8"/>
+    <circle cx="52" cy="-52" r="18" fill="#7c3aed" fill-opacity="0.10" stroke="#a78bfa" stroke-opacity="0.32" stroke-width="1.5"/>
+    <text x="52" y="-46" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="12" opacity="0.6">H</text>
+  </g>
+  <!-- CO2 molecule - lower left -->
+  <g transform="translate(200, 530)">
+    <circle cx="-72" r="22" fill="#7c3aed" fill-opacity="0.10" stroke="#a78bfa" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="-72" y="6" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="12" opacity="0.6">O</text>
+    <line x1="-50" y1="0" x2="-28" y2="0" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.8"/>
+    <line x1="-50" y1="-6" x2="-28" y2="-6" stroke="#a78bfa" stroke-opacity="0.25" stroke-width="1.8"/>
+    <circle r="26" fill="#7c3aed" fill-opacity="0.14" stroke="#a78bfa" stroke-opacity="0.45" stroke-width="2"/>
+    <text x="0" y="6" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600" opacity="0.78">C</text>
+    <line x1="26" y1="0" x2="48" y2="0" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.8"/>
+    <line x1="26" y1="-6" x2="48" y2="-6" stroke="#a78bfa" stroke-opacity="0.25" stroke-width="1.8"/>
+    <circle cx="70" r="22" fill="#7c3aed" fill-opacity="0.10" stroke="#a78bfa" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="70" y="6" text-anchor="middle" dominant-baseline="middle" fill="#c4b5fd" font-family="JetBrains Mono, monospace" font-size="12" opacity="0.6">O</text>
+  </g>
+  <!-- Electron orbital arcs - right of hexa -->
+  <ellipse cx="640" cy="330" rx="310" ry="110" fill="none" stroke="#7c3aed" stroke-opacity="0.09" stroke-width="1" transform="rotate(30 640 330)"/>
+  <ellipse cx="640" cy="330" rx="310" ry="110" fill="none" stroke="#7c3aed" stroke-opacity="0.07" stroke-width="1" transform="rotate(90 640 330)"/>
+  <ellipse cx="640" cy="330" rx="310" ry="110" fill="none" stroke="#7c3aed" stroke-opacity="0.07" stroke-width="1" transform="rotate(150 640 330)"/>
+  <!-- Border -->
+  <rect x="1" y="1" width="958" height="718" rx="31" fill="none" stroke="#a78bfa" stroke-opacity="0.10" stroke-width="1.5"/>
 </svg>

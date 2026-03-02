@@ -1,23 +1,74 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="earthBg" x1="112" y1="40" x2="820" y2="684" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#451A03"/>
-      <stop offset="0.56" stop-color="#B45309"/>
-      <stop offset="1" stop-color="#FBBF24"/>
+    <linearGradient id="es-bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0e0a04"/>
+      <stop offset="50%" stop-color="#1a0f06"/>
+      <stop offset="100%" stop-color="#0b0702"/>
     </linearGradient>
+    <radialGradient id="es-glow1" cx="55%" cy="50%" r="42%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="es-glow2" cx="30%" cy="65%" r="36%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="es-core" cx="50%" cy="50%" r="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ea580c" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#991b1b" stop-opacity="0.5"/>
+    </radialGradient>
   </defs>
-  <rect width="960" height="720" rx="44" fill="url(#earthBg)"/>
-  <rect x="52" y="52" width="856" height="616" rx="32" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18"/>
-  <path d="M90 512C205 475 284 432 360 430C442 428 529 472 616 470C693 468 775 431 870 378V620H90V512Z" fill="#78350F" fill-opacity="0.54"/>
-  <path d="M90 558C193 510 277 488 363 488C455 488 544 528 621 528C708 528 782 493 870 438V620H90V558Z" fill="#92400E"/>
-  <path d="M256 486L376 350L444 441L520 314L642 489" stroke="#FEF3C7" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M508 311C522 260 537 233 552 230C573 226 588 252 601 298" stroke="#FDE68A" stroke-width="10" stroke-linecap="round"/>
-  <path d="M500 306C523 270 548 249 571 249" stroke="#FCA5A5" stroke-width="8" stroke-linecap="round"/>
-  <path d="M394 508L470 430L557 476L640 426" stroke="#FFF7ED" stroke-opacity="0.75" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="395" cy="508" r="14" fill="#FFF7ED"/>
-  <circle cx="470" cy="430" r="12" fill="#FFF7ED"/>
-  <circle cx="556" cy="476" r="12" fill="#FFF7ED"/>
-  <circle cx="640" cy="426" r="12" fill="#FFF7ED"/>
-  <text x="120" y="160" fill="#FEF3C7" font-family="JetBrains Mono, monospace" font-size="30">tectonics • seismic waves • climate</text>
-  <text x="108" y="648" fill="white" font-family="DM Serif Display, serif" font-size="74">Earth Science</text>
+  <rect width="960" height="720" rx="32" fill="url(#es-bg)"/>
+  <rect width="960" height="720" rx="32" fill="url(#es-glow1)"/>
+  <rect width="960" height="720" rx="32" fill="url(#es-glow2)"/>
+  <!-- Grid -->
+  <g stroke="#fb923c" stroke-opacity="0.035" stroke-width="1">
+    <line x1="0" y1="144" x2="960" y2="144"/><line x1="0" y1="288" x2="960" y2="288"/>
+    <line x1="0" y1="432" x2="960" y2="432"/><line x1="0" y1="576" x2="960" y2="576"/>
+    <line x1="192" y1="0" x2="192" y2="720"/><line x1="384" y1="0" x2="384" y2="720"/>
+    <line x1="576" y1="0" x2="576" y2="720"/><line x1="768" y1="0" x2="768" y2="720"/>
+  </g>
+  <!-- Earth cross-section (half circle) - right side -->
+  <!-- Outer crust -->
+  <path d="M660 50 A310 310 0 0 1 660 670" fill="none" stroke="#fb923c" stroke-opacity="0.20" stroke-width="2"/>
+  <path d="M660 50 A310 310 0 0 1 660 670 L660 50 Z" fill="#1a0f06" fill-opacity="0.3"/>
+  <!-- Layer rings (half) -->
+  <path d="M660 105 A255 255 0 0 1 660 615" fill="none" stroke="#fb923c" stroke-opacity="0.18" stroke-width="1.5"/>
+  <path d="M660 175 A185 185 0 0 1 660 545" fill="none" stroke="#fb923c" stroke-opacity="0.22" stroke-width="1.5"/>
+  <path d="M660 255 A105 105 0 0 1 660 465" fill="none" stroke="#f97316" stroke-opacity="0.30" stroke-width="1.8"/>
+  <!-- Core glow -->
+  <path d="M660 295 A65 65 0 0 1 660 425" fill="url(#es-core)" fill-opacity="0.6"/>
+  <path d="M660 295 A65 65 0 0 1 660 425 L660 295 Z" fill="url(#es-core)"/>
+  <!-- Layer fills (very subtle) -->
+  <path d="M660 105 A255 255 0 0 1 660 615 L660 175 A185 185 0 0 0 660 545 Z" fill="#b45309" fill-opacity="0.06"/>
+  <path d="M660 175 A185 185 0 0 1 660 545 L660 255 A105 105 0 0 0 660 465 Z" fill="#ea580c" fill-opacity="0.07"/>
+  <!-- Layer labels -->
+  <g font-family="JetBrains Mono, monospace" font-size="11" fill="#fed7aa" fill-opacity="0.55">
+    <text x="700" y="132">crust</text>
+    <text x="716" y="202">mantle</text>
+    <text x="730" y="272">outer core</text>
+    <text x="744" y="354">inner core</text>
+  </g>
+  <!-- Tectonic plates - left side -->
+  <!-- Plate boundary lines -->
+  <path d="M80 200 C140 220 200 180 260 210 C320 240 360 200 420 220" stroke="#fb923c" stroke-opacity="0.45" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M80 400 C150 380 220 420 290 395 C360 370 400 410 460 390" stroke="#fb923c" stroke-opacity="0.38" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Plate arrows (convergent) -->
+  <g stroke="#fb923c" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round">
+    <line x1="200" y1="280" x2="200" y2="340"/><polygon points="200,345 194,330 206,330" fill="#fb923c" fill-opacity="0.35"/>
+    <line x1="340" y1="300" x2="340" y2="360"/><polygon points="340,365 334,350 346,350" fill="#fb923c" fill-opacity="0.35"/>
+  </g>
+  <!-- Seismic wave rings from a point -->
+  <circle cx="270" cy="480" r="35" fill="none" stroke="#fb923c" stroke-opacity="0.30" stroke-width="1.5"/>
+  <circle cx="270" cy="480" r="65" fill="none" stroke="#fb923c" stroke-opacity="0.20" stroke-width="1.2"/>
+  <circle cx="270" cy="480" r="100" fill="none" stroke="#fb923c" stroke-opacity="0.12" stroke-width="1"/>
+  <circle cx="270" cy="480" r="6" fill="#fb923c" fill-opacity="0.6"/>
+  <!-- Epicenter cross -->
+  <line x1="262" y1="480" x2="278" y2="480" stroke="#fbbf24" stroke-opacity="0.5" stroke-width="1.5"/>
+  <line x1="270" y1="472" x2="270" y2="488" stroke="#fbbf24" stroke-opacity="0.5" stroke-width="1.5"/>
+  <!-- Mountain profile (left) -->
+  <path d="M80 580 L160 420 L220 500 L280 370 L340 480 L420 600" stroke="#fb923c" stroke-opacity="0.30" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Border -->
+  <rect x="1" y="1" width="958" height="718" rx="31" fill="none" stroke="#fb923c" stroke-opacity="0.10" stroke-width="1.5"/>
 </svg>

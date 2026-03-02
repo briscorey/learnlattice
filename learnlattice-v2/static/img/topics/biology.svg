@@ -1,31 +1,83 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bioBg" x1="122" y1="60" x2="790" y2="650" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#082F49"/>
-      <stop offset="0.58" stop-color="#0284C7"/>
-      <stop offset="1" stop-color="#7DD3FC"/>
+    <linearGradient id="bio-bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#071a10"/>
+      <stop offset="50%" stop-color="#0a2e1e"/>
+      <stop offset="100%" stop-color="#051509"/>
     </linearGradient>
+    <radialGradient id="bio-glow1" cx="68%" cy="44%" r="42%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bio-glow2" cx="22%" cy="55%" r="38%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="960" height="720" rx="44" fill="url(#bioBg)"/>
-  <rect x="54" y="54" width="852" height="612" rx="32" fill="white" fill-opacity="0.07" stroke="white" stroke-opacity="0.18"/>
-  <ellipse cx="278" cy="310" rx="118" ry="138" fill="#E0F2FE" fill-opacity="0.24"/>
-  <ellipse cx="278" cy="310" rx="90" ry="110" fill="#E0F2FE" fill-opacity="0.55" stroke="white" stroke-opacity="0.45" stroke-width="8"/>
-  <circle cx="280" cy="306" r="34" fill="#0C4A6E"/>
-  <circle cx="253" cy="264" r="14" fill="#BAE6FD"/>
-  <circle cx="320" cy="270" r="10" fill="#BAE6FD"/>
-  <circle cx="334" cy="336" r="12" fill="#BAE6FD"/>
-  <circle cx="230" cy="346" r="10" fill="#BAE6FD"/>
-  <path d="M535 176C618 92 732 97 799 177C865 256 853 375 768 455C682 535 566 535 499 455C433 374 452 259 535 176Z" stroke="white" stroke-opacity="0.28" stroke-width="16"/>
-  <path d="M540 203C602 139 695 138 751 202" stroke="#E0F2FE" stroke-width="8" stroke-linecap="round"/>
-  <path d="M531 441C594 506 690 506 756 441" stroke="#E0F2FE" stroke-width="8" stroke-linecap="round"/>
-  <path d="M589 238C660 312 661 318 741 395" stroke="#E0F2FE" stroke-width="8" stroke-linecap="round"/>
-  <path d="M744 238C675 306 672 317 589 395" stroke="#E0F2FE" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="666" cy="320" r="28" fill="#E0F2FE"/>
-  <circle cx="540" cy="203" r="20" fill="#BAE6FD"/>
-  <circle cx="750" cy="203" r="20" fill="#BAE6FD"/>
-  <circle cx="534" cy="440" r="20" fill="#BAE6FD"/>
-  <circle cx="754" cy="440" r="20" fill="#BAE6FD"/>
-  <rect x="120" y="502" width="420" height="92" rx="24" fill="#082F49" fill-opacity="0.42" stroke="white" stroke-opacity="0.18"/>
-  <text x="154" y="560" fill="#E0F2FE" font-family="JetBrains Mono, monospace" font-size="30">cells • transport • respiration</text>
-  <text x="110" y="650" fill="white" font-family="DM Serif Display, serif" font-size="74">Biology</text>
+  <rect width="960" height="720" rx="32" fill="url(#bio-bg)"/>
+  <rect width="960" height="720" rx="32" fill="url(#bio-glow1)"/>
+  <rect width="960" height="720" rx="32" fill="url(#bio-glow2)"/>
+  <!-- Grid -->
+  <g stroke="#34d399" stroke-opacity="0.035" stroke-width="1">
+    <line x1="0" y1="144" x2="960" y2="144"/><line x1="0" y1="288" x2="960" y2="288"/>
+    <line x1="0" y1="432" x2="960" y2="432"/><line x1="0" y1="576" x2="960" y2="576"/>
+    <line x1="192" y1="0" x2="192" y2="720"/><line x1="384" y1="0" x2="384" y2="720"/>
+    <line x1="576" y1="0" x2="576" y2="720"/><line x1="768" y1="0" x2="768" y2="720"/>
+  </g>
+  <!-- Cell - right half -->
+  <circle cx="668" cy="345" r="242" fill="#34d399" fill-opacity="0.03" stroke="#34d399" stroke-opacity="0.20" stroke-width="2"/>
+  <circle cx="668" cy="345" r="195" fill="none" stroke="#34d399" stroke-opacity="0.07" stroke-width="1"/>
+  <!-- Nucleus -->
+  <circle cx="668" cy="335" r="84" fill="#059669" fill-opacity="0.10" stroke="#34d399" stroke-opacity="0.30" stroke-width="1.8"/>
+  <circle cx="656" cy="324" r="26" fill="#6ee7b7" fill-opacity="0.22"/>
+  <circle cx="680" cy="346" r="16" fill="#6ee7b7" fill-opacity="0.13"/>
+  <!-- Mitochondria -->
+  <ellipse cx="762" cy="258" rx="29" ry="13" fill="none" stroke="#34d399" stroke-opacity="0.38" stroke-width="1.5" transform="rotate(-32 762 258)"/>
+  <ellipse cx="762" cy="258" rx="19" ry="7" fill="#34d399" fill-opacity="0.07" transform="rotate(-32 762 258)"/>
+  <ellipse cx="572" cy="432" rx="24" ry="11" fill="none" stroke="#34d399" stroke-opacity="0.32" stroke-width="1.5" transform="rotate(18 572 432)"/>
+  <ellipse cx="748" cy="425" rx="21" ry="10" fill="none" stroke="#6ee7b7" stroke-opacity="0.28" stroke-width="1.5" transform="rotate(-14 748 425)"/>
+  <ellipse cx="598" cy="238" rx="23" ry="11" fill="none" stroke="#34d399" stroke-opacity="0.28" stroke-width="1.5" transform="rotate(48 598 238)"/>
+  <!-- Vacuoles -->
+  <circle cx="724" cy="393" r="19" fill="none" stroke="#6ee7b7" stroke-opacity="0.22" stroke-width="1.5"/>
+  <circle cx="614" cy="413" r="13" fill="none" stroke="#6ee7b7" stroke-opacity="0.17" stroke-width="1"/>
+  <circle cx="696" cy="218" r="16" fill="none" stroke="#6ee7b7" stroke-opacity="0.17" stroke-width="1"/>
+  <!-- DNA helix - left -->
+  <path d="M282 72 C228 126 336 182 282 236 C228 290 336 346 282 400 C228 454 336 510 282 564 C228 618 336 672 282 720" stroke="#34d399" stroke-width="2.8" stroke-opacity="0.82" fill="none" stroke-linecap="round"/>
+  <path d="M344 72 C398 126 290 182 344 236 C398 290 290 346 344 400 C398 454 290 510 344 564 C398 618 290 672 344 720" stroke="#6ee7b7" stroke-width="2.8" stroke-opacity="0.60" fill="none" stroke-linecap="round"/>
+  <!-- Rungs -->
+  <g stroke="#a7f3d0" stroke-opacity="0.42" stroke-width="1.8" stroke-linecap="round">
+    <line x1="282" y1="72"  x2="344" y2="72"/>
+    <line x1="274" y1="98"  x2="352" y2="98"/>
+    <line x1="267" y1="126" x2="359" y2="126"/>
+    <line x1="264" y1="154" x2="362" y2="154"/>
+    <line x1="267" y1="182" x2="359" y2="182"/>
+    <line x1="276" y1="208" x2="350" y2="208"/>
+    <line x1="290" y1="234" x2="336" y2="234"/>
+    <line x1="313" y1="254" x2="313" y2="254"/>
+    <line x1="320" y1="278" x2="306" y2="278"/>
+    <line x1="333" y1="304" x2="293" y2="304"/>
+    <line x1="345" y1="330" x2="281" y2="330"/>
+    <line x1="350" y1="358" x2="276" y2="358"/>
+    <line x1="349" y1="386" x2="277" y2="386"/>
+    <line x1="342" y1="413" x2="284" y2="413"/>
+    <line x1="329" y1="438" x2="297" y2="438"/>
+    <line x1="314" y1="462" x2="312" y2="462"/>
+    <line x1="305" y1="488" x2="321" y2="488"/>
+    <line x1="292" y1="512" x2="334" y2="512"/>
+    <line x1="278" y1="538" x2="348" y2="538"/>
+    <line x1="266" y1="564" x2="360" y2="564"/>
+    <line x1="263" y1="590" x2="363" y2="590"/>
+    <line x1="267" y1="616" x2="359" y2="616"/>
+    <line x1="276" y1="644" x2="350" y2="644"/>
+    <line x1="289" y1="671" x2="337" y2="671"/>
+  </g>
+  <!-- Node dots -->
+  <g fill="#34d399" fill-opacity="0.88"><circle cx="282" cy="72" r="4.5"/><circle cx="282" cy="236" r="4.5"/><circle cx="282" cy="400" r="4.5"/><circle cx="282" cy="564" r="4.5"/></g>
+  <g fill="#6ee7b7" fill-opacity="0.70"><circle cx="344" cy="72" r="4.5"/><circle cx="344" cy="236" r="4.5"/><circle cx="344" cy="400" r="4.5"/><circle cx="344" cy="564" r="4.5"/></g>
+  <!-- Small molecules -->
+  <circle cx="148" cy="162" r="5.5" fill="#34d399" fill-opacity="0.32"/><circle cx="163" cy="178" r="3.5" fill="#6ee7b7" fill-opacity="0.22"/><line x1="148" y1="162" x2="163" y2="178" stroke="#34d399" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="178" cy="592" r="5" fill="#34d399" fill-opacity="0.28"/><circle cx="158" cy="606" r="3" fill="#6ee7b7" fill-opacity="0.18"/><line x1="178" y1="592" x2="158" y2="606" stroke="#34d399" stroke-opacity="0.22" stroke-width="1.5"/>
+  <circle cx="492" cy="128" r="4.5" fill="#34d399" fill-opacity="0.22"/><circle cx="507" cy="113" r="3" fill="#a7f3d0" fill-opacity="0.18"/>
+  <!-- Border -->
+  <rect x="1" y="1" width="958" height="718" rx="31" fill="none" stroke="#34d399" stroke-opacity="0.10" stroke-width="1.5"/>
 </svg>
