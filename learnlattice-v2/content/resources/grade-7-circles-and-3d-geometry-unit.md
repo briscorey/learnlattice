@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 7 mathematics unit on circles, 3D objects, nets, and geometric relationships through modelling tasks."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "Grade 7"
   - "MYP Year 2"

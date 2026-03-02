@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Companion worksheet for grade 6 area, surface area, and measurement unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

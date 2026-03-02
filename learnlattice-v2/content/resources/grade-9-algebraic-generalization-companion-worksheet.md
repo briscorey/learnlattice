@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Companion worksheet for grade 9 algebraic generalization unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Mathematics"
+math_topic: "Algebra"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"

@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 8 mathematics unit on exponents, powers, and representing very large or very small quantities meaningfully."
 subjects:
   - "Mathematics"
+math_topic: "Number Sense"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"

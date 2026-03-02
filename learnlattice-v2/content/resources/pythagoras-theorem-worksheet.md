@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "A full worksheet on Pythagoras' Theorem with worked examples, scaffolded questions, real-world problems, and extension tasks for MYP Year 3 mathematics."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "MYP Year 3"
   - "Grade 8"

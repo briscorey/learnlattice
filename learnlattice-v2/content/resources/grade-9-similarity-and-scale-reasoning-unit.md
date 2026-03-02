@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 9 mathematics unit on similar shapes, proportional reasoning, and scale models in authentic design contexts."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"

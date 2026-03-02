@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Companion worksheet for grade 7 rational number operations unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Mathematics"
+math_topic: "Number Sense"
 year_levels:
   - "Grade 7"
   - "MYP Year 2"

@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 8 mathematics unit on congruence, transformations, symmetry, and tessellation design."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"

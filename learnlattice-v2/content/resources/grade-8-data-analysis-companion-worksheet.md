@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Companion worksheet for grade 8 data analysis unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Mathematics"
+math_topic: "Statistics"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"

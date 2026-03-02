@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 7 mathematics unit on ratios, rates, percent, and proportional comparison in authentic contexts."
 subjects:
   - "Mathematics"
+math_topic: "Fractions"
 year_levels:
   - "Grade 7"
   - "MYP Year 2"

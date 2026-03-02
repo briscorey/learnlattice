@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 6 mathematics unit on area, perimeter, surface area, and measurement decisions in design contexts."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

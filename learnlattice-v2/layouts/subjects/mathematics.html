@@ -1,0 +1,97 @@
+{{ define "main" }}
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ $mathResources := where $allResources "Params.subjects" "intersect" (slice "Mathematics") }}
+
+{{/* Subject hero */}}
+<section class="page-hero page-hero-subject" data-color="teal">
+  <div class="page-hero-copy">
+    <div class="page-hero-kicker">MYP Subject Collection</div>
+    <h1>Mathematics</h1>
+    <p>{{ .Description }}</p>
+    <div class="page-hero-note">{{ len $mathResources }} resources across 7 topic branches — unit plans, worksheets, investigations, and games.</div>
+  </div>
+  <div class="page-hero-media">
+    <img src="/img/topics/mathematics.svg" alt="Mathematics subject artwork">
+  </div>
+</section>
+
+{{/* Topic navigation anchors */}}
+<nav class="math-topic-nav" aria-label="Mathematics topics">
+  <div class="math-topic-nav-inner">
+    {{ $topics := slice "Number Sense" "Fractions" "Decimals" "Geometry" "Algebra" "Probability" "Statistics" }}
+    {{ range $topics }}
+    {{ $slug := . | urlize }}
+    {{ $count := len (where $mathResources "Params.math_topic" .) }}
+    <a href="#{{ $slug }}" class="math-topic-nav-pill{{ if eq $count 0 }} math-topic-nav-pill--empty{{ end }}">
+      {{ . }}
+      <span class="math-topic-nav-count">{{ if gt $count 0 }}{{ $count }}{{ else }}soon{{ end }}</span>
+    </a>
+    {{ end }}
+  </div>
+</nav>
+
+{{/* Sections */}}
+<div class="math-sections">
+{{ $topics := slice
+  (dict "name" "Number Sense"  "icon" "🔢" "desc" "Place value, number systems, exponents, and financial reasoning.")
+  (dict "name" "Fractions"     "icon" "½"  "desc" "Fractions, ratios, proportional reasoning, and percentages.")
+  (dict "name" "Decimals"      "icon" "·"  "desc" "Decimal operations, place value extensions, and real-number connections.")
+  (dict "name" "Geometry"      "icon" "📐" "desc" "Shape, measurement, Pythagoras, transformations, and trigonometry.")
+  (dict "name" "Algebra"       "icon" "𝑥"  "desc" "Patterns, expressions, equations, functions, and generalisation.")
+  (dict "name" "Probability"   "icon" "🎲" "desc" "Chance, experimental and theoretical probability, and sample space.")
+  (dict "name" "Statistics"    "icon" "📊" "desc" "Data collection, representation, analysis, and inference.")
+}}
+
+{{ range $topics }}
+{{ $topicName := .name }}
+{{ $topicSlug := $topicName | urlize }}
+{{ $topicResources := where $mathResources "Params.math_topic" $topicName }}
+
+<section class="math-section reveal" id="{{ $topicSlug }}">
+  <div class="math-section-header">
+    <div class="math-section-icon" aria-hidden="true">{{ .icon }}</div>
+    <div class="math-section-meta">
+      <h2 class="math-section-title">{{ $topicName }}</h2>
+      <p class="math-section-desc">{{ .desc }}</p>
+    </div>
+    <div class="math-section-count">
+      {{ if gt (len $topicResources) 0 }}
+        {{ len $topicResources }} resource{{ if gt (len $topicResources) 1 }}s{{ end }}
+      {{ else }}
+        <span class="math-section-soon">Coming soon</span>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ if gt (len $topicResources) 0 }}
+  <div class="resource-list math-resource-list">
+    {{ range $topicResources.ByDate.Reverse }}
+      {{ $resourceType := "" }}
+      {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+      <a class="resource-list-item" href="{{ .RelPermalink }}">
+        <div class="resource-list-main">
+          <div class="resource-list-top">
+            <span class="resource-list-label">{{ $topicName }}</span>
+            {{ with $resourceType }}<span class="resource-list-type">{{ . }}</span>{{ end }}
+          </div>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description | default .Summary }}</p>
+        </div>
+        <div class="resource-list-meta">
+          {{ range first 2 .Params.year_levels }}
+            <span class="resource-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="math-section-empty">
+    <p>Resources for <strong>{{ $topicName }}</strong> are being added. Check back soon.</p>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+</div>
+
+{{ end }}

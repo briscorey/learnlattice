@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 9 mathematics unit on sampling, bias, and evaluating conclusions from data."
 subjects:
   - "Mathematics"
+math_topic: "Statistics"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"

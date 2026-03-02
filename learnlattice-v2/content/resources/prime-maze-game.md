@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "A scaffolded 3D maze game where students collect prime and composite numbers, avoid enemies, and unlock portals. Four levels of increasing difficulty for MYP and Grade 6–7 students."
 subjects:
   - "Mathematics"
+math_topic: "Number Sense"
 year_levels:
   - "MYP Year 1"
   - "MYP Year 2"

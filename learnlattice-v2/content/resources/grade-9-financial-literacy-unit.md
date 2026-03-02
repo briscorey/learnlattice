@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 9 mathematics unit on financial literacy, budgeting, percent change, and justified decision-making in context."
 subjects:
   - "Mathematics"
+math_topic: "Number Sense"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"

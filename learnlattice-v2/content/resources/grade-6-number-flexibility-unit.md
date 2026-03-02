@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 6 mathematics unit on place value, whole-number operations, and efficient strategies for computation and estimation."
 subjects:
   - "Mathematics"
+math_topic: "Number Sense"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

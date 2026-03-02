@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 6 mathematics unit on data displays, interpretation, and experimental probability in inquiry contexts."
 subjects:
   - "Mathematics"
+math_topic: "Probability"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

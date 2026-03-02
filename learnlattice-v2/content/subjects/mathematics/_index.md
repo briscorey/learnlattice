@@ -1,4 +1,5 @@
 ---
 title: "Mathematics"
-description: "Explore algebraic thinking, modelling, and real-world mathematical reasoning through inquiry-driven middle school resources."
+description: "Inquiry-driven resources for MYP middle school mathematics — from number sense and fractions through to algebra, geometry, and statistical reasoning."
+layout: "mathematics"
 ---

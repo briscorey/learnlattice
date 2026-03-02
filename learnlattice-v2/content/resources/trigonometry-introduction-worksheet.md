@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "A complete introductory trigonometry worksheet covering SOH-CAH-TOA, finding missing sides and angles, bearings, and real-world applications for MYP Year 4 Mathematics."
 subjects:
   - "Mathematics"
+math_topic: "Geometry"
 year_levels:
   - "MYP Year 4"
   - "Grade 9"

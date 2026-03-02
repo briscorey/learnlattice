@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Companion worksheet for grade 7 data analysis and probability unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Mathematics"
+math_topic: "Probability"
 year_levels:
   - "Grade 7"
   - "MYP Year 2"

@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 8 mathematics unit on data analysis, graph critique, and evidence-based conclusions from samples."
 subjects:
   - "Mathematics"
+math_topic: "Statistics"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"

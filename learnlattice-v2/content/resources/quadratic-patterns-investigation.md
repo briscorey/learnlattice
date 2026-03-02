@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "An inquiry-based investigation into quadratic patterns, parabolas, vertex form, factored form, and real-world modelling for MYP Year 4 Mathematics."
 subjects:
   - "Mathematics"
+math_topic: "Algebra"
 year_levels:
   - "MYP Year 4"
   - "Grade 9"

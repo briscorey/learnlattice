@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 8 mathematics unit on linear relations, rate of change, and graph interpretation in context."
 subjects:
   - "Mathematics"
+math_topic: "Algebra"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"

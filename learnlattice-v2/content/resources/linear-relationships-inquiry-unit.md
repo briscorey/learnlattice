@@ -4,6 +4,7 @@ date: 2026-02-25
 description: "A complete UbD-aligned unit exploring linear equations through real-world contexts."
 subjects:
   - "Mathematics"
+math_topic: "Algebra"
 year_levels:
   - "MYP Year 4"
 resource_types:

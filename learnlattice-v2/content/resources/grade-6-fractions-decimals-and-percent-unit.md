@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 6 mathematics unit on multiple representations of number and the relationships among fractions, decimals, and percent."
 subjects:
   - "Mathematics"
+math_topic: "Fractions"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

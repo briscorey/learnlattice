@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "A full worksheet on probability, data analysis, measures of centre and spread, and interpreting statistical graphs using real-world data for MYP Mathematics."
 subjects:
   - "Mathematics"
+math_topic: "Statistics"
 year_levels:
   - "MYP Year 3"
   - "Grade 8"

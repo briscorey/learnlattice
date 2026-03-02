@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Companion worksheet for grade 6 data and probability unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Mathematics"
+math_topic: "Probability"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

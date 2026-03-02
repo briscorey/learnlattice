@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 9 mathematics unit on patterns, algebraic relationships, and generalizing structure through equations and models."
 subjects:
   - "Mathematics"
+math_topic: "Algebra"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"

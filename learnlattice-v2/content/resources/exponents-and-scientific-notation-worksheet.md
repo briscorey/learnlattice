@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "A complete worksheet on exponent laws, negative and fractional exponents, scientific notation, and real-world applications of powers for MYP Mathematics / Grade 8."
 subjects:
   - "Mathematics"
+math_topic: "Number Sense"
 year_levels:
   - "MYP Year 3"
   - "Grade 8"

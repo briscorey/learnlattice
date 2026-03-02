@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 6 mathematics unit on patterns, variables, and generalising relationships through tables and expressions."
 subjects:
   - "Mathematics"
+math_topic: "Algebra"
 year_levels:
   - "Grade 6"
   - "MYP Year 1"

@@ -4,6 +4,7 @@ date: 2026-02-28
 description: "Grade 7 mathematics unit on sampling, data displays, and probability reasoning with critical interpretation."
 subjects:
   - "Mathematics"
+math_topic: "Probability"
 year_levels:
   - "Grade 7"
   - "MYP Year 2"
