@@ -24,7 +24,6 @@ summaryLength = 30
 
   [[params.nav_dropdowns]]
     key = "mathematics"
-    mega = true
     [[params.nav_dropdowns.items]]
       title = "Number Sense"
       icon = "🔢"
@@ -63,7 +62,6 @@ summaryLength = 30
 
   [[params.nav_dropdowns]]
     key = "science"
-    mega = true
     [[params.nav_dropdowns.items]]
       title = "Biology"
       icon = "🧬"
