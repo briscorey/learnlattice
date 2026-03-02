@@ -155,16 +155,7 @@ nav {
 
 .nav-link.active {
   color: var(--teal);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -22px;
-  left: 0; right: 0;
-  height: 2px;
-  background: var(--teal);
-  border-radius: 1px;
+  font-weight: 600;
 }
 
 .nav-caret {
