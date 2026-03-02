@@ -41,10 +41,11 @@
 }}
 
 <section class="ka-home-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="ka-home-shell">
     <div class="ka-home-copy">
       <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
-      <h1>{{ $home.hero_title }}</h1>
+      <h1>{{ $home.hero_title | safeHTML }}</h1>
       <p>{{ .Site.Params.description }}</p>
       <div class="hero-actions">
         <a href="{{ $home.hero_primary_url }}" class="btn-primary">{{ $home.hero_primary_label }}</a>
@@ -134,18 +135,27 @@
 
 <div class="stats reveal">
   <div class="stat">
-    <span class="stat-num">{{ len $resources }}+</span>
-    <span class="stat-label">Downloadable<br>resources</span>
+    <span class="stat-num" data-count="{{ len $resources }}">0</span>
+    <div class="stat-detail">
+      <span class="stat-label">Downloadable<br>resources</span>
+      <span class="stat-badge">Free</span>
+    </div>
   </div>
   <div class="stat-divider"></div>
   <div class="stat">
-    <span class="stat-num">6</span>
-    <span class="stat-label">MYP subject<br>branches</span>
+    <span class="stat-num" data-count="6">0</span>
+    <div class="stat-detail">
+      <span class="stat-label">MYP subject<br>branches</span>
+      <span class="stat-badge">IB aligned</span>
+    </div>
   </div>
   <div class="stat-divider"></div>
   <div class="stat">
-    <span class="stat-num">4</span>
-    <span class="stat-label">BC grade<br>collections</span>
+    <span class="stat-num" data-count="4">0</span>
+    <div class="stat-detail">
+      <span class="stat-label">BC grade<br>collections</span>
+      <span class="stat-badge">6–9</span>
+    </div>
   </div>
 </div>
 

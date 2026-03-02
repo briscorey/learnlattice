@@ -359,7 +359,26 @@ nav {
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 56px 48px 24px;
+  padding: 64px 48px 32px;
+  overflow: hidden;
+}
+
+/* Radial glow behind hero copy */
+.hero-glow {
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(ellipse at 30% 40%, rgba(13,148,136,0.12) 0%, rgba(2,132,199,0.06) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: heroGlowPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlowPulse {
+  from { opacity: 0.7; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.08); }
 }
 
 .ka-home-shell {
@@ -367,15 +386,26 @@ nav {
   grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
   gap: 28px;
   align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
 .ka-home-copy h1 {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(40px, 5vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(42px, 5.2vw, 62px);
+  line-height: 1.06;
+  letter-spacing: -1.5px;
   color: var(--ink);
   margin-bottom: 18px;
+}
+
+.ka-home-copy h1 em {
+  font-style: italic;
+  color: var(--teal);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .ka-home-copy p {
@@ -683,41 +713,94 @@ nav {
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px 80px;
+  padding: 0 48px;
   display: flex;
-  gap: 48px;
+  gap: 0;
   animation: fadeUp 0.6s ease 0.4s both;
-  border-top: 1px solid rgba(176,206,198,0.7);
-  border-bottom: 1px solid rgba(176,206,198,0.7);
-  padding-top: 26px;
-  padding-bottom: 26px;
+}
+
+/* Full-bleed teal impact band behind stats */
+.stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -9999px;
+  right: -9999px;
+  background: linear-gradient(135deg, var(--ink-deep) 0%, #0d3d38 40%, #0a4a44 100%);
+  z-index: -1;
+}
+
+.stats::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -9999px;
+  right: -9999px;
+  background-image: radial-gradient(circle at 1px 1px, rgba(20,184,166,0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+  z-index: -1;
+}
+
+.stats {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .stat {
+  flex: 1;
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 18px;
+  padding: 0 40px;
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
+
+.stat:first-child { padding-left: 0; }
+.stat:last-child { border-right: none; padding-right: 0; }
 
 .stat-num {
   font-family: 'DM Serif Display', serif;
-  font-size: 36px;
-  color: var(--ink);
-  letter-spacing: -1px;
+  font-size: clamp(48px, 5vw, 64px);
+  letter-spacing: -2px;
+  line-height: 1;
+  background: linear-gradient(135deg, #ffffff 0%, var(--teal-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 80px;
+}
+
+.stat-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .stat-label {
   font-size: 13px;
-  color: var(--ink-muted);
+  color: rgba(255,255,255,0.65);
   font-weight: 400;
   line-height: 1.4;
 }
 
+.stat-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  background: rgba(20,184,166,0.15);
+  border: 1px solid rgba(20,184,166,0.3);
+  border-radius: 100px;
+  padding: 2px 8px;
+  width: fit-content;
+}
+
 .stat-divider {
-  width: 1px;
-  height: 40px;
-  background: var(--border);
-  align-self: center;
+  display: none; /* replaced by border-right on .stat */
 }
 
 /* ─── SECTIONS ─── */
@@ -2655,7 +2738,9 @@ footer {
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-video-card { min-height: 360px; }
   .hero-video-copy { left: 18px; right: 18px; bottom: 18px; }
-  .stats { padding: 0 24px 48px; flex-wrap: wrap; gap: 24px; }
+  .stats { padding: 24px; flex-wrap: wrap; gap: 0; }
+  .stat { flex: 1 1 40%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 16px; }
+  .stat:nth-child(3) { border-bottom: none; flex: 1 1 100%; }
   .section { padding: 0 24px 48px; }
   .section-header { align-items: flex-start; gap: 16px; flex-direction: column; }
   .ka-program-card { padding: 20px; }

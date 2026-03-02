@@ -146,7 +146,7 @@ summaryLength = 30
 
   [params.home]
     hero_eyebrow = "Middle School Math & Science"
-    hero_title = "A clear path into inquiry-based learning"
+    hero_title = "A clear path into <em>inquiry-based</em> learning"
     hero_primary_label = "All Resources"
     hero_primary_url = "/resources/"
     hero_secondary_label = "BC Curriculum"
