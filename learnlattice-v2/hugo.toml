@@ -24,61 +24,71 @@ summaryLength = 30
 
   [[params.nav_dropdowns]]
     key = "mathematics"
+    mega = true
     [[params.nav_dropdowns.items]]
       title = "Number Sense"
+      icon = "🔢"
       url = "/subjects/mathematics/#number-sense"
-      description = "Place value, exponents, and number systems."
+      description = "Place value, exponents, systems."
     [[params.nav_dropdowns.items]]
       title = "Fractions"
+      icon = "½"
       url = "/subjects/mathematics/#fractions"
-      description = "Fractions, ratios, and proportional reasoning."
+      description = "Fractions, ratios, proportional reasoning."
     [[params.nav_dropdowns.items]]
       title = "Decimals"
+      icon = "·"
       url = "/subjects/mathematics/#decimals"
-      description = "Decimal operations and real-number connections."
+      description = "Decimal ops and real-number connections."
     [[params.nav_dropdowns.items]]
       title = "Geometry"
+      icon = "📐"
       url = "/subjects/mathematics/#geometry"
-      description = "Shape, measurement, Pythagoras, and trigonometry."
+      description = "Shape, measurement, Pythagoras, trig."
     [[params.nav_dropdowns.items]]
       title = "Algebra"
+      icon = "𝑥"
       url = "/subjects/mathematics/#algebra"
-      description = "Patterns, equations, functions, and generalisation."
+      description = "Patterns, equations, functions."
     [[params.nav_dropdowns.items]]
       title = "Probability"
+      icon = "🎲"
       url = "/subjects/mathematics/#probability"
-      description = "Chance, experimental and theoretical probability."
+      description = "Chance, experimental and theoretical."
     [[params.nav_dropdowns.items]]
       title = "Statistics"
+      icon = "📊"
       url = "/subjects/mathematics/#statistics"
-      description = "Data analysis, representation, and inference."
+      description = "Data analysis and inference."
 
   [[params.nav_dropdowns]]
     key = "science"
-    [[params.nav_dropdowns.items]]
-      title = "Middle School Topic Map"
-      url = "/middle-school-science-topics/"
-      description = "Browse the middle school science topic map."
+    mega = true
     [[params.nav_dropdowns.items]]
       title = "Biology"
+      icon = "🧬"
       url = "/subjects/biology/"
-      description = "Cells, transport, respiration, and adaptation."
+      description = "Cells, transport, and adaptation."
     [[params.nav_dropdowns.items]]
       title = "Ecology"
+      icon = "🌿"
       url = "/subjects/ecology/"
-      description = "Fieldwork, biodiversity, and ecosystems."
-    [[params.nav_dropdowns.items]]
-      title = "Space Science"
-      url = "/subjects/space-science/"
-      description = "Orbits, phases, gravity, and planetary systems."
+      description = "Food webs, fieldwork, biodiversity."
     [[params.nav_dropdowns.items]]
       title = "Earth Science"
+      icon = "🌍"
       url = "/subjects/earth-science/"
-      description = "Tectonics, earthquakes, and earth systems."
+      description = "Tectonics, earthquakes, earth systems."
+    [[params.nav_dropdowns.items]]
+      title = "Space Science"
+      icon = "🪐"
+      url = "/subjects/space-science/"
+      description = "Orbits, phases, planetary evidence."
     [[params.nav_dropdowns.items]]
       title = "Chemistry"
+      icon = "⚗️"
       url = "/subjects/chemistry/"
-      description = "Labs, reactions, particles, and mixtures."
+      description = "Reactions, particles, and labs."
 
   [[params.nav_dropdowns]]
     key = "bc-curriculum"

@@ -1,0 +1,60 @@
+{{/*
+  branch-card-grid.html
+  ─────────────────────
+  Reusable card grid for subject topic branches.
+
+  Usage:
+    {{ partial "branch-card-grid.html" (dict
+        "branches"  $branchSlice
+        "gridClass" ""             {{/* optional: "bcg-grid--3col" */}}
+        "color"     "teal"         {{/* default accent colour */}}
+    ) }}
+
+  Each branch dict:
+    name   string  — display name
+    icon   string  — emoji or text icon
+    desc   string  — one-line description
+    count  int     — number of resources (0 = "coming soon")
+    url    string  — destination URL
+    color  string  — teal | sky | amber | rose (overrides parent color)
+*/}}
+
+{{ $branches  := .branches  | default (slice) }}
+{{ $gridClass := .gridClass | default "" }}
+{{ $defColor  := .color     | default "teal" }}
+
+<div class="bcg-grid {{ $gridClass }}" role="list">
+  {{ range $branches }}
+  {{ $color := .color | default $defColor }}
+  {{ $count := .count | default 0 }}
+  <a
+    class="bcg-card"
+    href="{{ .url }}"
+    data-color="{{ $color }}"
+    role="listitem"
+    aria-label="{{ .name }}{{ if gt $count 0 }} — {{ $count }} resource{{ if gt $count 1 }}s{{ end }}{{ end }}"
+  >
+    <div class="bcg-card-head">
+      <span class="bcg-card-icon" aria-hidden="true">{{ .icon }}</span>
+      {{ if gt $count 0 }}
+        <span class="bcg-card-badge">{{ $count }}</span>
+      {{ else }}
+        <span class="bcg-card-badge bcg-card-badge--soon">soon</span>
+      {{ end }}
+    </div>
+
+    <div class="bcg-card-body">
+      <span class="bcg-card-title">{{ .name }}</span>
+      <span class="bcg-card-desc">{{ .desc }}</span>
+    </div>
+
+    <span class="bcg-card-cta">
+      Explore
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </span>
+  </a>
+  {{ end }}
+</div>

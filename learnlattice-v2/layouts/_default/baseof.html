@@ -273,5 +273,208 @@
     document.querySelectorAll('.stat-num[data-count]').forEach(el => observer.observe(el));
   })();
   </script>
+
+  <script>
+  // ─── MEGA MENU keyboard nav + click-outside ───────────────────────────────
+  (function() {
+    var items = document.querySelectorAll('.nav-item.has-dropdown');
+    items.forEach(function(item) {
+      var trigger = item.querySelector('.nav-link');
+      var menu    = item.querySelector('.nav-dropdown');
+      var links   = [];
+      if (menu) links = Array.from(menu.querySelectorAll('a, button'));
+
+      function openMenu() {
+        item.classList.add('menu-open');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+        if (links[0]) { links[0].setAttribute('tabindex', '0'); links[0].focus(); }
+        links.forEach(function(l) { l.setAttribute('tabindex', '0'); });
+      }
+
+      function closeMenu() {
+        item.classList.remove('menu-open');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        links.forEach(function(l) { l.setAttribute('tabindex', '-1'); });
+      }
+
+      // Keyboard on trigger
+      if (trigger) {
+        trigger.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+            // Only intercept if there's a dropdown
+            if (!menu) return;
+            e.preventDefault();
+            openMenu();
+          }
+          if (e.key === 'Escape') closeMenu();
+        });
+      }
+
+      // Arrow navigation within menu
+      if (menu) {
+        menu.addEventListener('keydown', function(e) {
+          var focusable = Array.from(menu.querySelectorAll('a, button'));
+          var idx = focusable.indexOf(document.activeElement);
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            var next = focusable[(idx + 1) % focusable.length];
+            if (next) next.focus();
+          }
+          if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            var prev = focusable[(idx - 1 + focusable.length) % focusable.length];
+            if (prev) prev.focus();
+          }
+          if (e.key === 'Escape') {
+            closeMenu();
+            if (trigger) trigger.focus();
+          }
+          if (e.key === 'Tab') {
+            // Let Tab move naturally; close when focus leaves
+            setTimeout(function() {
+              if (!item.contains(document.activeElement)) closeMenu();
+            }, 0);
+          }
+        });
+
+        // Close on click outside
+        document.addEventListener('click', function(e) {
+          if (!item.contains(e.target)) closeMenu();
+        });
+
+        // hover/focus-within still works via CSS; JS only adds keyboard state
+      }
+    });
+  })();
+  </script>
+
+  <script>
+  // ─── FILTER CHIPS (progressive enhancement) ──────────────────────────────
+  (function() {
+    var chips    = document.querySelectorAll('.filter-chip');
+    var clearBtn = document.getElementById('filter-clear');
+    var countEl  = document.getElementById('filter-count');
+    if (!chips.length) return;
+
+    // Collect all filterable items (resource-list-item with data attrs)
+    var container = document.getElementById('math-sections') || document.getElementById('science-sections');
+    if (!container) return;
+
+    var allItems  = Array.from(container.querySelectorAll('.resource-list-item'));
+    var activeFilters = { topic: null, subject: null, grade: null, restype: null };
+
+    function applyFilters() {
+      var hasActive = Object.values(activeFilters).some(Boolean);
+
+      var visible = 0;
+      allItems.forEach(function(item) {
+        var show = true;
+
+        if (activeFilters.topic   && item.dataset.topic   !== activeFilters.topic)   show = false;
+        if (activeFilters.subject && item.dataset.subject !== activeFilters.subject) show = false;
+        if (activeFilters.grade) {
+          var grades = (item.dataset.grades || '').split(',').map(function(g){ return g.trim(); });
+          if (!grades.includes(activeFilters.grade)) show = false;
+        }
+        if (activeFilters.restype && item.dataset.restype !== activeFilters.restype) show = false;
+
+        item.dataset.hidden = show ? 'false' : 'true';
+        if (show) visible++;
+      });
+
+      // Update count
+      if (countEl) {
+        countEl.textContent = visible + ' resource' + (visible !== 1 ? 's' : '');
+      }
+
+      // Show/hide clear button
+      if (clearBtn) {
+        clearBtn.classList.toggle('visible', hasActive);
+      }
+
+      // Show/hide empty section placeholders
+      var sections = container.querySelectorAll('[data-branch], [data-subject]');
+      sections.forEach(function(sec) {
+        var secItems  = Array.from(sec.querySelectorAll('.resource-list-item'));
+        var secVisible = secItems.some(function(i) { return i.dataset.hidden !== 'true'; });
+        sec.style.display = secVisible ? '' : 'none';
+      });
+    }
+
+    chips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var type  = chip.dataset.filterType;
+        var value = chip.dataset.filterValue;
+
+        // Toggle: click active chip to deselect
+        if (activeFilters[type] === value) {
+          activeFilters[type] = null;
+          chip.classList.remove('active');
+          chip.setAttribute('aria-pressed', 'false');
+        } else {
+          // Deselect other chips of same type
+          chips.forEach(function(c) {
+            if (c.dataset.filterType === type) {
+              c.classList.remove('active');
+              c.setAttribute('aria-pressed', 'false');
+            }
+          });
+          activeFilters[type] = value;
+          chip.classList.add('active');
+          chip.setAttribute('aria-pressed', 'true');
+        }
+        applyFilters();
+      });
+
+      // Keyboard: Space/Enter to toggle
+      chip.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chip.click(); }
+      });
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        activeFilters = { topic: null, subject: null, grade: null, restype: null };
+        chips.forEach(function(c) {
+          c.classList.remove('active');
+          c.setAttribute('aria-pressed', 'false');
+        });
+        allItems.forEach(function(i) { i.dataset.hidden = 'false'; });
+        var sections = container.querySelectorAll('[data-branch], [data-subject]');
+        sections.forEach(function(sec) { sec.style.display = ''; });
+        if (countEl) countEl.textContent = allItems.length + ' resources';
+        clearBtn.classList.remove('visible');
+      });
+    }
+  })();
+  </script>
+
+  <script>
+  // ─── SUBNAV ACTIVE STATE on scroll ────────────────────────────────────────
+  (function() {
+    var links = document.querySelectorAll('.subj-subnav-link[data-section]');
+    if (!links.length) return;
+
+    var sections = Array.from(links).map(function(l) {
+      return document.getElementById(l.dataset.section);
+    }).filter(Boolean);
+
+    var navHeight = 64 + 46; // main nav + subj-subnav
+
+    function onScroll() {
+      var scrollY = window.scrollY + navHeight + 24;
+      var current = sections[0];
+      sections.forEach(function(sec) {
+        if (sec && sec.offsetTop <= scrollY) current = sec;
+      });
+      links.forEach(function(l) {
+        l.classList.toggle('active', current && l.dataset.section === current.id);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
 </body>
 </html>

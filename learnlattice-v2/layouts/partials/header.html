@@ -1,49 +1,118 @@
+{{/*
+  header.html
+  ─────────────────────────────────────────────────────────────
+  Renders site nav. Dropdowns with .mega=true become mega-menu
+  card grids (keyboard accessible via JS in baseof.html).
+*/}}
 {{ $dropdowns := newScratch }}
 {{ range .Site.Params.nav_dropdowns }}
-  {{ $dropdowns.Set .key .items }}
+  {{ $dropdowns.Set .key . }}
 {{ end }}
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <a class="nav-brand" href="/">
     {{ partial "logo.html" . }}
     <span class="nav-title">Learn<span class="nav-title-accent">Lattice</span></span>
   </a>
 
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation">
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="site-menu"
+    aria-label="Toggle navigation"
+  >
     <span></span>
     <span></span>
     <span></span>
   </button>
 
   <div class="nav-panel" id="site-menu">
-  <ul class="nav-links">
-    {{ range .Site.Menus.main }}
-    {{ $items := $dropdowns.Get .Identifier }}
-    <li class="nav-item{{ if $items }} has-dropdown{{ end }}">
-      <a href="{{ .URL }}" class="nav-link{{ if or ($.IsMenuCurrent "main" .) (eq $.RelPermalink .URL) }} active{{ end }}">
-        {{ .Name }}
-        {{ if $items }}
-        <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
-        {{ end }}
-      </a>
-      {{ if $items }}
-      <div class="nav-dropdown" data-key="{{ .Identifier }}">
-        {{ range $items }}
-        <a class="nav-dropdown-item" href="{{ .url }}">
-          <span class="nav-dropdown-title">{{ .title }}</span>
-          {{ with .description }}<span class="nav-dropdown-copy">{{ . }}</span>{{ end }}
-        </a>
-        {{ end }}
-      </div>
+    <ul class="nav-links" role="list">
+      {{ range .Site.Menus.main }}
+      {{ $dropdown := $dropdowns.Get .Identifier }}
+      {{ $items    := slice }}
+      {{ $isMega   := false }}
+      {{ with $dropdown }}
+        {{ $items  = .items  | default (slice) }}
+        {{ $isMega = .mega   | default false }}
       {{ end }}
-    </li>
-    {{ end }}
-  </ul>
+      {{ $hasDropdown := gt (len $items) 0 }}
 
-  <div class="nav-search" id="search-trigger">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <span>Search resources...</span>
-    <kbd>⌘K</kbd>
-  </div>
+      <li
+        class="nav-item{{ if $hasDropdown }} has-dropdown{{ end }}"
+        role="none"
+      >
+        <a
+          href="{{ .URL }}"
+          class="nav-link{{ if or ($.IsMenuCurrent "main" .) (eq $.RelPermalink .URL) }} active{{ end }}"
+          {{ if $hasDropdown }}
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="nav-btn-{{ .Identifier }}"
+          {{ end }}
+        >
+          {{ .Name }}
+          {{ if $hasDropdown }}
+          <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          {{ end }}
+        </a>
+
+        {{ if $hasDropdown }}
+        <div
+          class="nav-dropdown{{ if $isMega }} nav-mega{{ end }}"
+          data-key="{{ .Identifier }}"
+          role="region"
+          aria-labelledby="nav-btn-{{ .Identifier }}"
+          id="nav-menu-{{ .Identifier }}"
+        >
+          {{ if $isMega }}
+          {{/* ── Mega-menu: icon + title + desc card grid ── */}}
+          <div class="nav-mega-grid" role="list">
+            {{ range $items }}
+            <a
+              class="nav-mega-card"
+              href="{{ .url }}"
+              role="listitem"
+              tabindex="-1"
+            >
+              {{ with .icon }}
+              <span class="nav-mega-icon" aria-hidden="true">{{ . }}</span>
+              {{ end }}
+              <div class="nav-mega-text">
+                <span class="nav-mega-title">{{ .title }}</span>
+                {{ with .description }}
+                <span class="nav-mega-desc">{{ . }}</span>
+                {{ end }}
+              </div>
+            </a>
+            {{ end }}
+          </div>
+
+          {{ else }}
+          {{/* ── Standard dropdown list ── */}}
+          {{ range $items }}
+          <a class="nav-dropdown-item" href="{{ .url }}" tabindex="-1">
+            <span class="nav-dropdown-title">{{ .title }}</span>
+            {{ with .description }}<span class="nav-dropdown-copy">{{ . }}</span>{{ end }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+
+    <div class="nav-search" id="search-trigger" role="button" tabindex="0" aria-label="Search resources">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <span>Search resources...</span>
+      <kbd>⌘K</kbd>
+    </div>
   </div>
 </nav>

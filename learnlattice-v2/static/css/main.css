@@ -3204,3 +3204,645 @@ footer {
   .math-section-count { order: -1; margin-left: auto; }
 }
 /* cache-bust 1772440787 */
+
+/* ═══════════════════════════════════════════════════════════
+   BRANCH CARD GRID  (bcg-*)
+   Reusable across Math and Science subject hubs.
+   ═══════════════════════════════════════════════════════════ */
+
+.bcg-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 48px 0;
+}
+
+.bcg-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.bcg-section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
+
+.bcg-section-subtitle {
+  font-size: 14px;
+  color: var(--ink-muted);
+  font-weight: 300;
+}
+
+.bcg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+/* Explicit column cap for science (6 items → 3-col) */
+.bcg-grid--3col {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Full card is the link */
+.bcg-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 20px 18px;
+  gap: 10px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 148px; /* ensures comfortable tap target height */
+}
+
+/* Color accent bar on top */
+.bcg-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+}
+
+.bcg-card[data-color="teal"]::before   { background: linear-gradient(90deg, #0f766e, #2dd4bf); }
+.bcg-card[data-color="sky"]::before    { background: linear-gradient(90deg, #0369a1, #38bdf8); }
+.bcg-card[data-color="amber"]::before  { background: linear-gradient(90deg, #b45309, #fbbf24); }
+.bcg-card[data-color="rose"]::before   { background: linear-gradient(90deg, #be123c, #fb7185); }
+
+.bcg-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+}
+
+.bcg-card:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 5px rgba(13,148,136,0.15);
+}
+
+.bcg-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bcg-card-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bcg-card[data-color="teal"]  .bcg-card-icon { background: var(--teal-wash);   border: 1px solid var(--teal-light); }
+.bcg-card[data-color="sky"]   .bcg-card-icon { background: var(--sky-light);    border: 1px solid #bae6fd; }
+.bcg-card[data-color="amber"] .bcg-card-icon { background: var(--amber-light);  border: 1px solid #fde68a; }
+.bcg-card[data-color="rose"]  .bcg-card-icon { background: var(--rose-light);   border: 1px solid #fecdd3; }
+
+.bcg-card-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 9px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.bcg-card[data-color="teal"]  .bcg-card-badge { background: var(--teal-wash);  color: var(--teal);  border: 1px solid var(--teal-light); }
+.bcg-card[data-color="sky"]   .bcg-card-badge { background: var(--sky-light);  color: var(--sky);   border: 1px solid #bae6fd; }
+.bcg-card[data-color="amber"] .bcg-card-badge { background: var(--amber-light); color: var(--amber); border: 1px solid #fde68a; }
+.bcg-card[data-color="rose"]  .bcg-card-badge { background: var(--rose-light); color: var(--rose);  border: 1px solid #fecdd3; }
+
+.bcg-card-badge--soon {
+  background: var(--surface-warm);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+.bcg-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bcg-card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.bcg-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  font-weight: 300;
+}
+
+.bcg-card-cta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.bcg-card[data-color="teal"]  .bcg-card-cta { color: var(--teal); }
+.bcg-card[data-color="sky"]   .bcg-card-cta { color: var(--sky); }
+.bcg-card[data-color="amber"] .bcg-card-cta { color: var(--amber); }
+.bcg-card[data-color="rose"]  .bcg-card-cta { color: var(--rose); }
+
+.bcg-card-cta svg {
+  transition: transform 0.18s ease;
+  flex-shrink: 0;
+}
+
+.bcg-card:hover .bcg-card-cta svg {
+  transform: translateX(3px);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SUBJECT SUBNAV  (subj-subnav)
+   Page-level sticky 3-section nav: Overview | Branches | Resources
+   ═══════════════════════════════════════════════════════════ */
+
+.subj-subnav {
+  position: sticky;
+  top: 64px;
+  z-index: 88; /* below main nav (100), above page content */
+  background: rgba(248,250,249,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.subj-subnav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 46px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.subj-subnav-inner::-webkit-scrollbar { display: none; }
+
+.subj-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 14px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.subj-subnav-link:hover {
+  color: var(--ink);
+  background: var(--surface-warm);
+}
+
+.subj-subnav-link.active {
+  color: var(--teal);
+  background: var(--teal-wash);
+  font-weight: 600;
+}
+
+.subj-subnav-link:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: -2px;
+}
+
+/* Math pill nav stacks below the page subnav */
+.math-topic-nav {
+  top: 110px; /* 64px nav + 46px subj-subnav */
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   FILTER BAR  (filter-*)
+   Branch / Grade / Type chips with JS progressive enhancement
+   ═══════════════════════════════════════════════════════════ */
+
+.filter-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-group-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.filter-chip.active {
+  background: var(--teal-wash);
+  border-color: var(--teal);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.filter-results {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 48px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 32px;
+}
+
+.filter-results-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.filter-clear {
+  display: none; /* shown by JS when filters active */
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.filter-clear.visible {
+  display: inline-flex;
+}
+
+.filter-clear:hover {
+  text-decoration: underline;
+}
+
+.filter-clear:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Resource items get data attrs; hidden by filter JS */
+.resource-list-item[data-hidden="true"] {
+  display: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MEGA MENU  (nav-mega-*)
+   Replaces standard nav-dropdown for Math and Science keys.
+   ═══════════════════════════════════════════════════════════ */
+
+.nav-dropdown.nav-mega {
+  width: 560px;
+  padding: 14px;
+}
+
+.nav-dropdown.nav-mega[data-key="mathematics"] {
+  width: 560px;
+}
+
+.nav-dropdown.nav-mega[data-key="science"] {
+  width: 480px;
+}
+
+.nav-mega-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.nav-mega-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background 0.15s ease, transform 0.15s ease;
+  min-height: 48px;
+}
+
+.nav-mega-card:hover {
+  background: var(--teal-wash);
+  transform: translateX(2px);
+}
+
+.nav-mega-card:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: -2px;
+  background: var(--teal-wash);
+  border-radius: 10px;
+}
+
+.nav-mega-icon {
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--surface-warm);
+  flex-shrink: 0;
+}
+
+.nav-mega-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nav-mega-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.nav-mega-desc {
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+/* Mobile: mega-menu becomes full-width accordion */
+@media (max-width: 768px) {
+  .nav-dropdown.nav-mega {
+    width: 100%;
+    padding: 0 0 8px;
+  }
+  .nav-mega-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .nav-mega-card {
+    padding: 12px 14px;
+    border-radius: 0;
+    min-height: 48px; /* WCAG 44px target */
+  }
+  .nav-mega-card:hover {
+    transform: none;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SCIENCE HUB LAYOUT  (science-*)
+   Mirror of math layout for /subjects/science/
+   ═══════════════════════════════════════════════════════════ */
+
+.science-resources {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px 80px;
+}
+
+.science-resources-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 48px 0 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.science-resources-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
+
+.science-subject-section {
+  padding: 40px 0 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 40px;
+}
+
+.science-subject-section:last-child {
+  border-bottom: none;
+}
+
+.science-subject-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.science-subject-icon {
+  font-size: 26px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.science-subject-section[data-color="sky"]   .science-subject-icon { background: var(--sky-light); border: 1px solid #bae6fd; }
+.science-subject-section[data-color="teal"]  .science-subject-icon { background: var(--teal-wash); border: 1px solid var(--teal-light); }
+.science-subject-section[data-color="amber"] .science-subject-icon { background: var(--amber-light); border: 1px solid #fde68a; }
+.science-subject-section[data-color="rose"]  .science-subject-icon { background: var(--rose-light); border: 1px solid #fecdd3; }
+
+.science-subject-meta { flex: 1; }
+
+.science-subject-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.science-subject-desc {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.science-subject-count {
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 4px 14px;
+  white-space: nowrap;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.science-subject-section[data-color="sky"]   .science-subject-count { background: var(--sky-light);  color: var(--sky);   border: 1px solid #bae6fd; }
+.science-subject-section[data-color="teal"]  .science-subject-count { background: var(--teal-wash);  color: var(--teal);  border: 1px solid var(--teal-light); }
+.science-subject-section[data-color="amber"] .science-subject-count { background: var(--amber-light); color: var(--amber); border: 1px solid #fde68a; }
+.science-subject-section[data-color="rose"]  .science-subject-count { background: var(--rose-light); color: var(--rose);  border: 1px solid #fecdd3; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   ACCESSIBILITY + POLISH
+   Focus rings, reduced-motion, min tap targets
+   ═══════════════════════════════════════════════════════════ */
+
+/* Ensure all interactive elements meet 44px tap target */
+.math-topic-nav-pill {
+  min-height: 36px; /* pill bar is 52px, this aligns visually */
+}
+
+/* Visible focus ring on nav pills (keyboard) */
+.math-topic-nav-pill:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-color: var(--teal);
+}
+
+/* All resource list items need adequate tap target */
+.resource-list-item {
+  min-height: 64px;
+}
+
+/* Section heading scan aid */
+.math-section-title,
+.science-subject-name {
+  scroll-margin-top: 130px; /* clears stacked sticky bars */
+}
+
+.bcg-section { scroll-margin-top: 110px; }
+.math-sections, .science-resources { scroll-margin-top: 110px; }
+
+/* Reduced motion: no transforms, instant transitions */
+@media (prefers-reduced-motion: reduce) {
+  .bcg-card,
+  .bcg-card-cta svg,
+  .filter-chip,
+  .nav-mega-card,
+  .pathway-branch,
+  .reveal {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .bcg-card:hover,
+  .nav-mega-card:hover {
+    transform: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Responsive additions ─── */
+@media (max-width: 1024px) {
+  .bcg-section { padding: 32px 24px 0; }
+  .filter-bar { padding: 24px 24px 0; }
+  .filter-results { padding: 10px 24px 0; }
+  .science-resources { padding: 0 24px 48px; }
+}
+
+@media (max-width: 768px) {
+  .bcg-grid,
+  .bcg-grid--3col {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .bcg-section { padding: 24px 16px 0; }
+  .bcg-section-header { flex-direction: column; gap: 4px; }
+  .bcg-card { min-height: 130px; padding: 16px; }
+  .bcg-card-title { font-size: 16px; }
+  .subj-subnav-inner { padding: 0 16px; }
+  .filter-bar { padding: 20px 16px 0; gap: 10px; }
+  .filter-results { padding: 8px 16px 0; }
+  .science-resources { padding: 0 16px 48px; }
+  .science-resources-header { padding: 28px 0 16px; }
+  .science-subject-header { flex-wrap: wrap; }
+  .science-subject-count { order: -1; margin-left: auto; }
+}
+
+@media (max-width: 480px) {
+  .bcg-grid,
+  .bcg-grid--3col {
+    grid-template-columns: 1fr;
+  }
+  .bcg-card { min-height: 100px; }
+}

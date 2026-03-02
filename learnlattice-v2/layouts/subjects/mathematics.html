@@ -2,8 +2,26 @@
 {{ $allResources := where .Site.RegularPages "Section" "resources" }}
 {{ $mathResources := where $allResources "Params.subjects" "intersect" (slice "Mathematics") }}
 
-{{/* Subject hero */}}
-<section class="page-hero page-hero-subject" data-color="teal">
+{{/* ── Branch data ── */}}
+{{ $topics := slice
+  (dict "name" "Number Sense"  "icon" "🔢" "color" "teal"  "desc" "Place value, exponents, and number systems." "url" "#number-sense")
+  (dict "name" "Fractions"     "icon" "½"  "color" "teal"  "desc" "Fractions, ratios, and proportional reasoning." "url" "#fractions")
+  (dict "name" "Decimals"      "icon" "·"  "color" "teal"  "desc" "Decimal operations and real-number connections." "url" "#decimals")
+  (dict "name" "Geometry"      "icon" "📐" "color" "teal"  "desc" "Shape, measurement, Pythagoras, and trigonometry." "url" "#geometry")
+  (dict "name" "Algebra"       "icon" "𝑥"  "color" "teal"  "desc" "Patterns, equations, functions, and generalisation." "url" "#algebra")
+  (dict "name" "Probability"   "icon" "🎲" "color" "teal"  "desc" "Chance, experimental and theoretical probability." "url" "#probability")
+  (dict "name" "Statistics"    "icon" "📊" "color" "teal"  "desc" "Data collection, analysis, and inference." "url" "#statistics")
+}}
+
+{{/* Annotate branches with live resource counts */}}
+{{ $branches := slice }}
+{{ range $topics }}
+  {{ $count := len (where $mathResources "Params.math_topic" .name) }}
+  {{ $branches = $branches | append (merge . (dict "count" $count)) }}
+{{ end }}
+
+{{/* ── Hero ── (id="overview" for subnav anchor) */}}
+<section class="page-hero page-hero-subject" data-color="teal" id="overview">
   <div class="page-hero-copy">
     <div class="page-hero-kicker">MYP Subject Collection</div>
     <h1>Mathematics</h1>
@@ -11,43 +29,116 @@
     <div class="page-hero-note">{{ len $mathResources }} resources across 7 topic branches — unit plans, worksheets, investigations, and games.</div>
   </div>
   <div class="page-hero-media">
-    <img src="/img/topics/mathematics.svg" alt="Mathematics subject artwork">
+    <img src="/img/topics/mathematics.svg" alt="Mathematics subject artwork" loading="eager">
   </div>
 </section>
 
-{{/* Topic navigation anchors */}}
-<nav class="math-topic-nav" aria-label="Mathematics topics">
+{{/* ── Page subnav: Overview | Branches | All Resources ── */}}
+<nav class="subj-subnav" aria-label="Page sections">
+  <div class="subj-subnav-inner">
+    <a href="#overview"       class="subj-subnav-link" data-section="overview">Overview</a>
+    <a href="#branches"       class="subj-subnav-link" data-section="branches">Branches</a>
+    <a href="#all-resources"  class="subj-subnav-link" data-section="all-resources">All Resources</a>
+  </div>
+</nav>
+
+{{/* ── Branch card grid ── */}}
+<section id="branches" class="bcg-section reveal">
+  <div class="bcg-section-header">
+    <h2 class="bcg-section-title">Topic Branches</h2>
+    <span class="bcg-section-subtitle">Jump directly to any branch — or scroll through all resources below.</span>
+  </div>
+  {{ partial "branch-card-grid.html" (dict "branches" $branches "color" "teal") }}
+</section>
+
+{{/* ── Within-branch sticky pill nav ── */}}
+<nav class="math-topic-nav" aria-label="Mathematics topics" id="branch-nav">
   <div class="math-topic-nav-inner">
-    {{ $topics := slice "Number Sense" "Fractions" "Decimals" "Geometry" "Algebra" "Probability" "Statistics" }}
-    {{ range $topics }}
-    {{ $slug := . | urlize }}
-    {{ $count := len (where $mathResources "Params.math_topic" .) }}
-    <a href="#{{ $slug }}" class="math-topic-nav-pill{{ if eq $count 0 }} math-topic-nav-pill--empty{{ end }}">
-      {{ . }}
-      <span class="math-topic-nav-count">{{ if gt $count 0 }}{{ $count }}{{ else }}soon{{ end }}</span>
+    {{ range $branches }}
+    {{ $slug := .name | urlize }}
+    <a
+      href="#{{ $slug }}"
+      class="math-topic-nav-pill{{ if eq .count 0 }} math-topic-nav-pill--empty{{ end }}"
+    >
+      {{ .name }}
+      <span class="math-topic-nav-count">{{ if gt .count 0 }}{{ .count }}{{ else }}soon{{ end }}</span>
     </a>
     {{ end }}
   </div>
 </nav>
 
-{{/* Sections */}}
-<div class="math-sections">
-{{ $topics := slice
-  (dict "name" "Number Sense"  "icon" "🔢" "desc" "Place value, number systems, exponents, and financial reasoning.")
-  (dict "name" "Fractions"     "icon" "½"  "desc" "Fractions, ratios, proportional reasoning, and percentages.")
-  (dict "name" "Decimals"      "icon" "·"  "desc" "Decimal operations, place value extensions, and real-number connections.")
-  (dict "name" "Geometry"      "icon" "📐" "desc" "Shape, measurement, Pythagoras, transformations, and trigonometry.")
-  (dict "name" "Algebra"       "icon" "𝑥"  "desc" "Patterns, expressions, equations, functions, and generalisation.")
-  (dict "name" "Probability"   "icon" "🎲" "desc" "Chance, experimental and theoretical probability, and sample space.")
-  (dict "name" "Statistics"    "icon" "📊" "desc" "Data collection, representation, analysis, and inference.")
-}}
+{{/* ── Filter bar ── */}}
+<div id="all-resources">
+  <div class="filter-bar" aria-label="Filter resources" role="group">
+    <div class="filter-group">
+      <span class="filter-group-label" id="filter-branch-label">Branch</span>
+      {{ range $branches }}
+      {{ if gt .count 0 }}
+      <button
+        class="filter-chip"
+        data-filter-type="topic"
+        data-filter-value="{{ .name }}"
+        aria-pressed="false"
+        aria-describedby="filter-branch-label"
+      >{{ .name }}</button>
+      {{ end }}
+      {{ end }}
+    </div>
 
-{{ range $topics }}
+    {{ $grades := slice "Grade 6" "Grade 7" "Grade 8" "Grade 9" }}
+    <div class="filter-group">
+      <span class="filter-group-label" id="filter-grade-label">Grade</span>
+      {{ range $grades }}
+      {{ $g := . }}
+      {{ $gc := len (where $mathResources "Params.year_levels" "intersect" (slice $g)) }}
+      {{ if gt $gc 0 }}
+      <button
+        class="filter-chip"
+        data-filter-type="grade"
+        data-filter-value="{{ . }}"
+        aria-pressed="false"
+        aria-describedby="filter-grade-label"
+      >{{ . }}</button>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    {{ $types := slice "Unit Plan" "Worksheet" "Investigation Pack" "Lab Activity" "Game" }}
+    <div class="filter-group">
+      <span class="filter-group-label" id="filter-type-label">Type</span>
+      {{ range $types }}
+      {{ $t := . }}
+      {{ $tc := len (where $mathResources "Params.resource_types" "intersect" (slice $t)) }}
+      {{ if gt $tc 0 }}
+      <button
+        class="filter-chip"
+        data-filter-type="restype"
+        data-filter-value="{{ . }}"
+        aria-pressed="false"
+        aria-describedby="filter-type-label"
+      >{{ . }}</button>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="filter-results">
+    <span class="filter-results-count" aria-live="polite" aria-atomic="true" id="filter-count">{{ len $mathResources }} resources</span>
+    <button class="filter-clear" id="filter-clear" aria-label="Clear all filters">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      Clear filters
+    </button>
+  </div>
+</div>
+
+{{/* ── Resource sections by branch ── */}}
+<div class="math-sections" id="math-sections">
+{{ range $branches }}
 {{ $topicName := .name }}
 {{ $topicSlug := $topicName | urlize }}
 {{ $topicResources := where $mathResources "Params.math_topic" $topicName }}
 
-<section class="math-section reveal" id="{{ $topicSlug }}">
+<section class="math-section reveal" id="{{ $topicSlug }}" data-branch="{{ $topicName }}">
   <div class="math-section-header">
     <div class="math-section-icon" aria-hidden="true">{{ .icon }}</div>
     <div class="math-section-meta">
@@ -68,7 +159,16 @@
     {{ range $topicResources.ByDate.Reverse }}
       {{ $resourceType := "" }}
       {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
-      <a class="resource-list-item" href="{{ .RelPermalink }}">
+      {{ $grades := .Params.year_levels | default (slice) }}
+      {{ $gradeSlugs := slice }}
+      {{ range $grades }}{{ $gradeSlugs = $gradeSlugs | append . }}{{ end }}
+      <a
+        class="resource-list-item"
+        href="{{ .RelPermalink }}"
+        data-topic="{{ $topicName }}"
+        data-grades="{{ delimit $grades "," }}"
+        data-restype="{{ $resourceType }}"
+      >
         <div class="resource-list-main">
           <div class="resource-list-top">
             <span class="resource-list-label">{{ $topicName }}</span>
