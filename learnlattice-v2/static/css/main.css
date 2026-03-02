@@ -1853,10 +1853,6 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 72px 48px 40px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
-  gap: 28px;
-  align-items: center;
 }
 
 .page-hero-subject .page-hero-copy {

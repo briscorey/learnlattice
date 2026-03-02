@@ -19,17 +19,6 @@
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
     {{ with index $subjectMeta "audience" }}<div class="page-hero-note">{{ . }}</div>{{ end }}
   </div>
-  <div class="page-hero-media">
-    {{ with index $subjectMeta "video" }}
-    <video class="page-hero-video" autoplay muted loop playsinline poster="{{ index $subjectMeta "poster" }}">
-      <source src="{{ . }}" type="video/mp4">
-    </video>
-    {{ else }}
-      {{ with index $subjectMeta "image" }}
-      <img src="{{ . }}" alt="{{ $.Title }} subject artwork">
-      {{ end }}
-    {{ end }}
-  </div>
 </section>
 {{ else if and .IsNode (eq .Data.Singular "year_level") }}
 <section class="page-hero page-hero-subject" data-color="teal">
@@ -38,9 +27,6 @@
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
     <div class="page-hero-note">Browse grade-level unit plans alongside companion worksheets, labs, and inquiry packs connected to MYP criteria.</div>
-  </div>
-  <div class="page-hero-media">
-    <img src="/img/topics/mathematics.svg" alt="{{ .Title }} curriculum artwork">
   </div>
 </section>
 {{ else }}
