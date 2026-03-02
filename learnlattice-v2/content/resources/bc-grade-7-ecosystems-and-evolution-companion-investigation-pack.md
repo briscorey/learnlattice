@@ -27,29 +27,84 @@ download_label: "Companion Resource PDF"
 
 ## Overview
 
-This companion investigation pack extends [BC Grade 7 Ecosystems and Evolution Unit](/resources/bc-grade-7-ecosystems-and-evolution-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This investigation pack gives students a structured but open-ended inquiry into how a real population's traits change when its environment shifts. It extends the [BC Grade 7 Ecosystems and Evolution Unit](/resources/bc-grade-7-ecosystems-and-evolution-unit/) by moving students from understanding natural selection conceptually to applying it to data they collect and interpret themselves.
 
-## What's Included
+---
 
-- A puzzling starter or phenomenon prompt that reconnects students to the central question of the unit.
-- Student recording tables or observation frames designed to surface patterns and anomalies.
-- Claim-evidence-reasoning prompts that require students to justify conclusions with data or models.
-- An extension task that pushes the science into a new context, design challenge, or local issue.
+## Phenomenon Prompt (Lesson Starter)
 
-## Inquiry Prompts
+Display this image or scenario to students without explanation:
 
-**Factual:** What new evidence or pattern becomes visible when students work through this task carefully?
+> *In the 1970s, researchers on Daphne Major island in the Galápagos measured the beak depth of 751 medium ground finches. In 1977, a severe drought wiped out most small, soft seeds. Only large, hard seeds remained. By 1978, only 90 birds survived. When researchers re-measured beak depths of survivors, the average beak depth had increased by 0.5 mm.*
 
-**Conceptual:** How does this companion task deepen the main relationship or system from the unit instead of repeating it?
+Ask students: **Why would a drought change beak size in one year?**
 
-**Debatable:** What should count as a strong explanation or justified solution in this topic?
+Let students discuss in pairs for 3 minutes before taking whole-class responses. Do not confirm or deny. The investigation below builds toward the answer.
+
+---
+
+## Investigation: Simulated Natural Selection
+
+### What you need
+- 200 "seeds" = a mix of small beads (60%), medium beads (30%), and large beads (10%)
+- 3 types of "beaks" per group: chopsticks (narrow), clothes pegs (medium grip), pliers (wide, strong)
+- Stopwatch, graph paper or plotting tool
+- Recording sheet (below)
+
+### The setup
+Each group represents a population of 10 birds. At the start, assign 3–4 birds each beak type. Scatter seeds on a flat surface. Each "bird" has 30 seconds to collect as many seeds as possible. Birds that collect fewer than 5 seeds in a round **do not survive** to reproduce. Birds with 8+ seeds produce one offspring with the same beak type.
+
+### Running the simulation (5 generations)
+
+| Generation | Beak type A count | Beak type B count | Beak type C count | Total survivors |
+|------------|-------------------|-------------------|-------------------|-----------------|
+| Start      |                   |                   |                   | 10              |
+| Gen 1      |                   |                   |                   |                 |
+| Gen 2      |                   |                   |                   |                 |
+| Gen 3      |                   |                   |                   |                 |
+| Gen 4      |                   |                   |                   |                 |
+| Gen 5      |                   |                   |                   |                 |
+
+**Mid-investigation twist:** At generation 3, remove all small beads from the environment (simulating the 1977 drought). Continue for 2 more generations. Students observe what happens to beak-type frequencies.
+
+---
+
+## Claim–Evidence–Reasoning Prompts
+
+After completing the simulation and graphing results, students answer:
+
+**1. Claim:** Write one sentence describing the pattern you observed in beak-type frequency over 5 generations.
+
+**2. Evidence:** Cite specific numbers from your data table. Which beak type increased? By how much between generation 1 and generation 5?
+
+**3. Reasoning:** Explain *why* this pattern occurred using the four steps of natural selection (overproduction, variation, competition, differential survival). Connect your reasoning to what changed in the environment at generation 3.
+
+**4. Evaluation:** Your simulation is a model. Identify one way it oversimplifies real natural selection, and explain how the real process would differ.
+
+---
+
+## Extension: The Vancouver Island Marmot Case
+
+The Vancouver Island marmot is one of the world's most endangered mammals — endemic to BC and found nowhere else on Earth. Populations dropped to around 30 individuals in the early 2000s. A captive breeding program raised numbers to approximately 200 by 2020.
+
+**Research question for extension students:** The marmot evolved in an environment with wolves and cougars as predators. Both predators still exist in its range. Some biologists argue that reintroduced captive-bred marmots lack the predator-wariness behaviour of wild-born individuals and are easier prey.
+
+> Should we continue reintroductions even if captive-bred individuals have lower survival rates than wild-born ones? What does natural selection predict will happen to predator-awareness behaviour across multiple reintroduced generations?
+
+Students write a 200-word evidence-based response.
+
+---
 
 ## MYP Alignment
 
-This companion resource reinforces **MYP Criterion B** through investigative thinking and planning, with additional support for **Criterion C** or **Criterion D** depending on whether students are processing evidence or applying the science to a new context.
+| Section | Criterion | Strand |
+|---------|-----------|--------|
+| Phenomenon prompt + question framing | Criterion B | i, ii |
+| Simulation data collection + table | Criterion C | i, ii |
+| Claim–Evidence–Reasoning | Criterion C | iii, iv |
+| Extension response | Criterion D | i, ii, iii |
 
-## Suggested Use
+---
 
-Use it mid-unit when students need a tighter practical cycle, or after the main unit as a focused performance task that surfaces misconceptions before summative assessment.
+> **Teaching Tip:** The beak simulation works best when students *don't* know the Galápagos outcome in advance. Run the simulation first, graph results, then reveal the real finch data. The match between model and reality is what makes the science feel real.
 
-> **Teaching Tip:** Keep the written structure, but trim any repeated instructions once students show they can carry the inquiry routine independently.
