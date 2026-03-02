@@ -34,7 +34,7 @@
 {{ else if and .IsNode (eq .Data.Singular "year_level") }}
 <section class="page-hero page-hero-subject" data-color="teal">
   <div class="page-hero-copy">
-    <div class="page-hero-kicker">BC Curriculum Collection</div>
+    <div class="page-hero-kicker">Grade Collections Collection</div>
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
     <div class="page-hero-note">Browse grade-level unit plans alongside companion worksheets, labs, and inquiry packs connected to MYP criteria.</div>
@@ -58,12 +58,12 @@
 ) }}
 
 <section class="section">
-  {{ if and (eq .Section "year-levels") (eq .Title "BC Curriculum Grades 6-9") }}
+  {{ if and (eq .Section "year-levels") (eq .Title "Grade Collections Grades 6-9") }}
   {{ $gradePages := slice
-    (.Site.GetPage "/year-levels/bc-grade-6")
-    (.Site.GetPage "/year-levels/bc-grade-7")
-    (.Site.GetPage "/year-levels/bc-grade-8")
-    (.Site.GetPage "/year-levels/bc-grade-9")
+    (.Site.GetPage "/year-levels/grade-6")
+    (.Site.GetPage "/year-levels/grade-7")
+    (.Site.GetPage "/year-levels/grade-8")
+    (.Site.GetPage "/year-levels/grade-9")
   }}
   <div class="taxonomy-grid">
     {{ range $gradePages }}
@@ -79,7 +79,7 @@
   </div>
   {{ else }}
   {{ $pages := .RegularPages.ByDate.Reverse }}
-  {{ if and (eq .Section "year-levels") (ne .Title "BC Curriculum Grades 6-9") }}
+  {{ if and (eq .Section "year-levels") (ne .Title "Grade Collections Grades 6-9") }}
     {{ $pages = where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title) }}
   {{ else if and .IsSection (gt (len .Pages) 0) }}
     {{ $pages = .Pages.ByDate.Reverse }}

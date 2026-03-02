@@ -6,7 +6,7 @@ subjects:
   - "Biology"
 year_levels:
   - "MYP Year 4"
-  - "BC Grade 9"
+  - "Grade 9"
 resource_types:
   - "Worksheet"
 tags:

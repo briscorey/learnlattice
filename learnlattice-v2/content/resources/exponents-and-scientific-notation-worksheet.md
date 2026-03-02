@@ -1,12 +1,12 @@
 ---
 title: "Exponents, Powers, and Scientific Notation — Worksheet"
 date: 2026-02-28
-description: "A complete worksheet on exponent laws, negative and fractional exponents, scientific notation, and real-world applications of powers for MYP Mathematics / BC Grade 8."
+description: "A complete worksheet on exponent laws, negative and fractional exponents, scientific notation, and real-world applications of powers for MYP Mathematics / Grade 8."
 subjects:
   - "Mathematics"
 year_levels:
   - "MYP Year 3"
-  - "BC Grade 8"
+  - "Grade 8"
 resource_types:
   - "Worksheet"
 tags:

@@ -71,24 +71,24 @@ summaryLength = 30
   [[params.nav_dropdowns]]
     key = "bc-curriculum"
     [[params.nav_dropdowns.items]]
-      title = "BC Curriculum Overview"
+      title = "Grade Collections"
       url = "/year-levels/"
       description = "Browse the Grades 6-9 collection by grade band."
     [[params.nav_dropdowns.items]]
-      title = "BC Grade 6"
-      url = "/year-levels/bc-grade-6/"
+      title = "Grade 6"
+      url = "/year-levels/grade-6/"
       description = "Foundational science systems and number sense."
     [[params.nav_dropdowns.items]]
-      title = "BC Grade 7"
-      url = "/year-levels/bc-grade-7/"
+      title = "Grade 7"
+      url = "/year-levels/grade-7/"
       description = "Ecosystems, tectonics, ratios, and early algebra."
     [[params.nav_dropdowns.items]]
-      title = "BC Grade 8"
-      url = "/year-levels/bc-grade-8/"
+      title = "Grade 8"
+      url = "/year-levels/grade-8/"
       description = "Cells, matter, linear relations, and geometry."
     [[params.nav_dropdowns.items]]
-      title = "BC Grade 9"
-      url = "/year-levels/bc-grade-9/"
+      title = "Grade 9"
+      url = "/year-levels/grade-9/"
       description = "Atomic theory, circuits, statistics, and finance."
 
   [[params.nav_dropdowns]]
@@ -117,7 +117,7 @@ summaryLength = 30
       url = "/resources/"
       description = "See the full teaching library."
     [[params.nav_dropdowns.items]]
-      title = "BC Grades 6-9"
+      title = "Grades 6–9"
       url = "/year-levels/"
       description = "Browse curriculum-aligned units by grade."
     [[params.nav_dropdowns.items]]
@@ -149,18 +149,18 @@ summaryLength = 30
     hero_title = "A clear path into <em>inquiry-based</em> learning"
     hero_primary_label = "All Resources"
     hero_primary_url = "/resources/"
-    hero_secondary_label = "BC Curriculum"
+    hero_secondary_label = "Grade Collections"
     hero_secondary_url = "/year-levels/"
     hero_panel_title = "Start here"
-    hero_panel_copy = "Choose the collection that matches how you plan: MYP by subject, BC by grade, or the full library by resource type."
+    hero_panel_copy = "Choose the collection that matches how you plan: MYP by subject, by grade level, or the full library by resource type."
     myp_math_title = "MYP Mathematics"
     myp_math_subtitle = "Open the mathematics collection directly, without visual detours."
     myp_science_title = "MYP Science"
     myp_science_subtitle = "Reach each science branch from one simple section."
     programs_title = "Explore the Library"
-    programs_subtitle = "The site is organised around three ways teachers usually search: MYP subjects, BC grade bands, and resource format."
-    grades_title = "BC Curriculum"
-    grades_subtitle = "Jump straight into the British Columbia Grades 6-9 collections."
+    programs_subtitle = "The site is organised around three ways teachers usually search: MYP subjects, grade levels, and resource format."
+    grades_title = "Grade Collections"
+    grades_subtitle = "Browse by grade level — Grades 6 through 9."
     browse_title = "Browse Everything"
     browse_subtitle = "Use these direct links when you already know the format or pathway you want."
     latest_title = "Latest Resources"
@@ -458,7 +458,7 @@ summaryLength = 30
     url = "/games/"
     weight = 4
   [[menu.main]]
-    name = "BC Curriculum"
+    name = "Grade Collections"
     identifier = "bc-curriculum"
     url = "/year-levels/"
     weight = 5

@@ -6,7 +6,7 @@ subjects:
   - "Physics"
 year_levels:
   - "MYP Year 3"
-  - "BC Grade 9"
+  - "Grade 9"
 resource_types:
   - "Worksheet"
 tags:

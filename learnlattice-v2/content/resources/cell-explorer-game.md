@@ -1,12 +1,12 @@
 ---
 title: "Cell Explorer — Interactive Cell Game"
 date: 2026-02-28
-description: "An interactive 2D game for exploring animal cell organelles. Click to learn, take the quiz, or build a cell from scratch. Built for MYP Biology and BC Grade 8 science."
+description: "An interactive 2D game for exploring animal cell organelles. Click to learn, take the quiz, or build a cell from scratch. Built for MYP Biology and Grade 8 science."
 subjects:
   - "Biology"
 year_levels:
   - "MYP Year 3"
-  - "BC Grade 8"
+  - "Grade 8"
 resource_types:
   - "Interactive Game"
 tags:

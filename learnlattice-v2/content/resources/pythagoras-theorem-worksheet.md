@@ -6,7 +6,7 @@ subjects:
   - "Mathematics"
 year_levels:
   - "MYP Year 3"
-  - "BC Grade 8"
+  - "Grade 8"
 resource_types:
   - "Worksheet"
 tags:

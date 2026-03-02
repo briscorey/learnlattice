@@ -6,7 +6,7 @@ subjects:
   - "Biology"
 year_levels:
   - "MYP Year 2"
-  - "BC Grade 7"
+  - "Grade 7"
 resource_types:
   - "Worksheet"
 tags:
