@@ -230,6 +230,14 @@ nav {
   color: var(--ink-muted);
 }
 
+/* Mathematics dropdown: 2-column grid to fit 7 subsections cleanly */
+.nav-dropdown[data-key="mathematics"] {
+  width: 420px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
 .nav-search {
   display: flex;
   align-items: center;

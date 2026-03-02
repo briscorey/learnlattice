@@ -27,7 +27,7 @@
         {{ end }}
       </a>
       {{ if $items }}
-      <div class="nav-dropdown">
+      <div class="nav-dropdown" data-key="{{ .Identifier }}">
         {{ range $items }}
         <a class="nav-dropdown-item" href="{{ .url }}">
           <span class="nav-dropdown-title">{{ .title }}</span>

@@ -25,21 +25,33 @@ summaryLength = 30
   [[params.nav_dropdowns]]
     key = "mathematics"
     [[params.nav_dropdowns.items]]
-      title = "Middle School Topic Map"
-      url = "/middle-school-math-topics/"
-      description = "Browse the middle school math topic map."
+      title = "Number Sense"
+      url = "/subjects/mathematics/#number-sense"
+      description = "Place value, exponents, and number systems."
     [[params.nav_dropdowns.items]]
-      title = "Mathematics"
-      url = "/subjects/mathematics/"
-      description = "Browse all mathematics resources."
+      title = "Fractions"
+      url = "/subjects/mathematics/#fractions"
+      description = "Fractions, ratios, and proportional reasoning."
+    [[params.nav_dropdowns.items]]
+      title = "Decimals"
+      url = "/subjects/mathematics/#decimals"
+      description = "Decimal operations and real-number connections."
+    [[params.nav_dropdowns.items]]
+      title = "Geometry"
+      url = "/subjects/mathematics/#geometry"
+      description = "Shape, measurement, Pythagoras, and trigonometry."
     [[params.nav_dropdowns.items]]
       title = "Algebra"
-      url = "/tags/algebra/"
-      description = "Linear models, patterns, and equation thinking."
+      url = "/subjects/mathematics/#algebra"
+      description = "Patterns, equations, functions, and generalisation."
     [[params.nav_dropdowns.items]]
-      title = "Criterion D"
-      url = "/tags/criterion-d/"
-      description = "Apply mathematics in real-world contexts."
+      title = "Probability"
+      url = "/subjects/mathematics/#probability"
+      description = "Chance, experimental and theoretical probability."
+    [[params.nav_dropdowns.items]]
+      title = "Statistics"
+      url = "/subjects/mathematics/#statistics"
+      description = "Data analysis, representation, and inference."
 
   [[params.nav_dropdowns]]
     key = "science"
