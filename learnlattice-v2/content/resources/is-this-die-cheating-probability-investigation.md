@@ -1,0 +1,199 @@
+---
+title: "Is This Die Cheating?"
+date: 2026-03-03
+description: "You suspect a die is unfair. How would you find out? This investigation uses a genuinely uncertain question to build experimental probability, sample size reasoning, and the logic of statistical argument — without a single formula until the reasoning demands one."
+subjects:
+  - "Mathematics"
+math_topic: "Probability"
+year_levels:
+  - "Grade 7"
+  - "Grade 8"
+  - "MYP Year 2"
+  - "MYP Year 3"
+resource_types:
+  - "Investigation Pack"
+tags:
+  - "Probability"
+  - "Experimental Probability"
+  - "Statistical Reasoning"
+  - "Sample Size"
+  - "Criterion B"
+  - "Criterion C"
+key_concept: "Logic"
+global_context: "Fairness and Development"
+statement_of_inquiry: "The logic we use to evaluate fairness depends on how much evidence we are willing to gather."
+formula: "P(E) = favourable outcomes / total outcomes"
+download_url: ""
+download_label: "Investigation Pack PDF"
+---
+
+## The Hook
+
+Give each group a die before they know what the task is. Say only:
+
+> **"I think one of these dice might be cheating. Your job is to find out if yours is."**
+
+Before any instruction on probability, let them roll. Watch what happens. Some groups will do 6 rolls and announce a verdict. Some will roll 30 times and still be uncertain. This initial unguided exploration — the instinct to roll, the uncertainty about how many rolls are enough, the disagreement between group members about what "fair" means — is the entire conceptual territory of the investigation.
+
+After 5 minutes, stop and ask: "How many rolls did you do? Are you confident? Why or why not?" The conversation that follows will surface every key idea: what does theoretical probability actually predict? What's a reasonable expectation vs a surprising result? How much evidence is enough?
+
+---
+
+## The Core Problem
+
+A fair die should produce each face with probability 1/6. If you roll a fair die 60 times, you *expect* each face to appear 10 times.
+
+But expectation and outcome are different things.
+
+Even a *perfectly fair* die will rarely produce exactly 10 of each in 60 rolls. So when you get 7 fours and 15 sixes, you face the central question: **is this a biased die, or is this just what randomness looks like?**
+
+This is not a question you can answer with certainty. But you can reason about how *surprising* a result is, and whether the evidence is strong enough to act on.
+
+---
+
+## Core Concepts
+
+### Theoretical Probability
+
+For a fair die, the theoretical probability of any face is:
+
+$$P(\text{rolling a 4}) = \frac{1}{6} \approx 0.167 = 16.7\%$$
+
+This means: in the long run, across many rolls, we expect about 1 in every 6 rolls to show a 4.
+
+**What theoretical probability is not:** a guarantee about any single roll, or any small set of rolls.
+
+### Experimental Probability
+
+The experimental probability of an event is:
+
+$$P_{\text{exp}}(\text{rolling a 4}) = \frac{\text{number of times 4 appeared}}{\text{total rolls}}$$
+
+This is what actually happened in your specific experiment. It approaches the theoretical probability as the number of trials increases — this is the **Law of Large Numbers**.
+
+**Worked example:**
+You roll a die 30 times. A 4 appears 8 times.
+$$P_{\text{exp}}(\text{4}) = \frac{8}{30} \approx 0.267 = 26.7\%$$
+
+Theoretical probability: 16.7%. Is this suspicious? Maybe. But 30 rolls isn't much evidence.
+
+### Sample Size: Why It Matters
+
+| Rolls | Expected 4s | Plausible range for a fair die | Is 8 fours suspicious? |
+|-------|------------|-------------------------------|----------------------|
+| 30 | 5 | 1–10 | Probably not |
+| 60 | 10 | 5–15 | Maybe worth noting |
+| 300 | 50 | 38–62 | Getting interesting |
+| 600 | 100 | 84–116 | Quite suspicious |
+
+The key insight: **the same deviation matters more with more evidence.** Getting 8 fours in 30 rolls is expected variation. Getting 80 fours in 300 rolls means the die is very likely biased.
+
+> **Formative checkpoint:** Ask: "If I flipped a fair coin and got 6 heads in 10 flips, would you say the coin is biased?" Then: "What if I got 600 heads in 1,000 flips?" Students should feel the intuition that the same *proportion* means different things at different sample sizes.
+
+### The 60-Roll Standard Experiment
+
+**Protocol:** Roll your die 60 times. Record each result in a tally table. Complete the frequency and experimental probability columns.
+
+| Face | Tally | Frequency | Experimental Probability | Expected (10) | Deviation |
+|------|-------|-----------|------------------------|---------------|-----------|
+| 1 | | | | 10 | |
+| 2 | | | | 10 | |
+| 3 | | | | 10 | |
+| 4 | | | | 10 | |
+| 5 | | | | 10 | |
+| 6 | | | | 10 | |
+| **Total** | | **60** | **1.0 (100%)** | **60** | |
+
+---
+
+## Investigation Tasks
+
+### Part A — Individual Experiment
+
+Complete the 60-roll experiment with your die. Calculate experimental probabilities for each face.
+
+**Questions to answer:**
+1. Which face showed the most? Which showed the least?
+2. What is the total absolute deviation — the sum of how far each face's frequency is from 10?
+3. Based on your data alone, do you think your die might be biased? Rate your confidence: *not confident / slightly confident / fairly confident / very confident.*
+
+### Part B — Pooling Class Data
+
+Combine your results with three other groups who used the same die design. Now you have 240 rolls total.
+
+1. Recalculate experimental probabilities with 240 rolls.
+2. Has your confidence in your verdict changed? Why or why not?
+3. The class also has data from a die that is known to be loaded (weighted so 6 appears approximately twice as often). Can you identify which class dataset comes from the loaded die?
+
+### Part C — Designing a Better Experiment
+
+Suppose you want to be *genuinely* confident about whether a die is fair. Design an investigation.
+
+Your design must specify:
+- How many rolls you will conduct and why
+- What result would convince you the die is *fair*
+- What result would convince you the die is *biased*
+- How you will account for natural variation
+
+Write this as a formal investigation design. (This is a Criterion B task.)
+
+### Part D — The Real World Application
+
+> *A casino in Las Vegas discovered that one of their roulette wheels was producing the number 17 more often than expected — enough for a professional gambling team to win over $1 million before the casino noticed. The wheel had been checked monthly and always "passed" inspection.*
+
+1. If roulette has 38 numbers, what is the theoretical probability of 17 on any spin?
+2. The casino spun the wheel approximately 5,000 times before the bias was detected. In a fair wheel, how many times would you expect 17? What might the actual count have been?
+3. Why do you think the monthly inspection might have missed the bias?
+4. What would a rigorous inspection procedure look like?
+
+---
+
+## Formative Assessment Checkpoints
+
+**Checkpoint 1:** After the initial unguided roll.
+"You rolled [X] times. How confident are you? What would change your confidence?" — This surfaces prior conceptions about what evidence means.
+
+**Checkpoint 2:** During Part A.
+"Your friend says: 'I got 3 sixes in my first 10 rolls, so the die is definitely biased.' How would you respond?" — Look for students who recognise that 10 rolls is too few, and that 3/10 for a fair die is not particularly surprising.
+
+**Checkpoint 3:** After Part B.
+"Explain in writing why combining class data gives a better estimate than your individual data." — Students should reference sample size and the Law of Large Numbers, even if not by name.
+
+---
+
+## Common Misconceptions
+
+| What students often believe | What's accurate |
+|-----------------------------|----------------|
+| "If I flip a fair coin and get 3 heads in a row, tails is 'due'" | Each flip is independent. The coin has no memory. Previous results don't influence future ones. |
+| "Getting 8 instead of 10 means the die is slightly biased" | Variation is expected. 8/60 is within normal range for a fair die. |
+| "More rolls always give exactly the theoretical probability" | More rolls give results *closer* to theoretical probability on average — but individual experiments still vary. |
+| "Probability tells you what will happen" | Probability tells you what is likely to happen *in the long run* — not in any particular experiment |
+| "A fair die should give exactly 10 of each in 60 rolls" | The *expected* value is 10 each, but equal frequencies are actually less likely than slightly unequal ones |
+
+---
+
+## Teaching Notes
+
+**On the loaded die:** Prepare one or two dice in advance using a small piece of adhesive putty hidden inside a hollowed-out face (or use commercially available weighted dice). The existence of a genuinely biased die in the classroom changes the entire emotional register of the investigation — students are not doing an abstract exercise, they are trying to solve a real problem.
+
+**On disagreement:** When groups reach different verdicts about the same die, don't resolve the disagreement immediately. Let it stand. Ask: "You both have data. Why do you disagree?" The answer is almost always that one group did more rolls. This is more powerful than any explanation you could give.
+
+**On Part C:** The Criterion B investigation design task is the heart of the lesson. Students who can design a sound probability experiment — specifying sample size, decision criteria, and accounting for variation — have understood the conceptual core. The design is harder than the calculation and more valuable.
+
+**On the casino example:** Students are often surprised that a casino — with all its resources — could miss a biased wheel. This is a good place to discuss: how much data do you need? How do you define "expected"? It also surfaces the idea that even with thousands of rolls, certainty is never absolute — probability arguments are always about strength of evidence, not proof.
+
+---
+
+## Assessment Alignment
+
+| Task | MYP Criterion | Descriptor |
+|------|--------------|-----------|
+| Part A experiment | Criterion C | Processing and evaluating: collecting data and calculating experimental probabilities |
+| Part B pooled analysis | Criterion C | Processing and evaluating: interpreting data and justifying conclusions |
+| Part C investigation design | Criterion B | Inquiring and designing: designing a valid investigation with appropriate sample size and decision criteria |
+| Part D real-world analysis | Criterion D | Applying in real-world contexts: interpreting probabilistic reasoning in a consequential scenario |
+
+---
+
+> **The bigger idea:** The question "is this die fair?" is, at bottom, the same question statisticians ask when evaluating a clinical trial, a quality control process, or a pattern in social data. The die is small enough to understand fully. The logic of "how much evidence is enough, and what would change my mind?" is universal. A student who genuinely grasps this investigation is ready for statistical inference at much higher levels.

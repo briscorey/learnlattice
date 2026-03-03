@@ -1,0 +1,216 @@
+---
+title: "The Misleading Graph"
+date: 2026-03-03
+description: "Two graphs show exactly the same data — one looks like a crisis, one looks like everything is fine. How? This investigation builds statistical literacy by putting students in the position of both the deceiver and the detective."
+subjects:
+  - "Mathematics"
+math_topic: "Statistics"
+year_levels:
+  - "Grade 8"
+  - "Grade 9"
+  - "MYP Year 3"
+  - "MYP Year 4"
+resource_types:
+  - "Investigation Pack"
+tags:
+  - "Statistics"
+  - "Statistical Literacy"
+  - "Data Visualisation"
+  - "Mean and Median"
+  - "Criterion C"
+  - "Criterion D"
+key_concept: "Representation"
+global_context: "Globalisation and Sustainability"
+statement_of_inquiry: "The way data is represented determines what questions it can answer — and what stories it can tell."
+formula: "mean ≠ median when data is skewed"
+download_url: ""
+download_label: "Investigation Pack PDF"
+---
+
+## The Hook
+
+Show these two graphs side by side. Give no explanation.
+
+**Graph A:** A bar chart of annual test scores at a fictional school, with the y-axis starting at 0. The bars go from about 72% to 79% over 5 years — a modest, barely visible upward trend.
+
+**Graph B:** The exact same data, with the y-axis starting at 70%. The bars now appear to rise dramatically — the last bar appears to be more than four times the height of the first.
+
+Ask: "Which school would you send your child to based on these graphs?"
+
+Pause. Then: "What if I told you both graphs show exactly the same data?"
+
+The silence after this reveal is the beginning of statistical thinking.
+
+---
+
+## Why This Investigation Matters
+
+Most students who learn statistics learn to calculate. They can find a mean, draw a histogram, and define standard deviation. But very few develop the ability to *interrogate* statistics — to ask who made this graph, what choice they made, what they might want you to conclude.
+
+This matters beyond mathematics. Students encounter manipulated statistics in news, advertising, political argument, and social media every day. The skills in this investigation are not mathematics skills in a narrow sense — they are citizenship skills.
+
+---
+
+## Core Concepts
+
+### The y-axis manipulation
+
+**Rule:** If a bar chart's y-axis doesn't start at 0, the *visual proportion* of the bars no longer represents the *actual proportion* of the values.
+
+**Example:**
+| Year | Score |
+|------|-------|
+| 2019 | 72% |
+| 2020 | 73% |
+| 2021 | 75% |
+| 2022 | 76% |
+| 2023 | 79% |
+
+On a y-axis from 0–100%, the bars look nearly identical. On a y-axis from 70–80%, the 2023 bar *appears* to be about 7 times taller than the 2019 bar — even though the actual value is only 9.7% higher.
+
+> **Formative checkpoint:** Give students a graph with a truncated y-axis and ask: "What percentage change does this graph *look* like it's showing? What is the actual percentage change?" The discrepancy reveals the manipulation.
+
+### Mean vs Median — When the "average" lies
+
+The **mean** (arithmetic average) is easily pulled by extreme values. The **median** (middle value) is resistant to them.
+
+**Example: Employee salaries at a small company**
+
+| Employee | Annual Salary |
+|----------|--------------|
+| Worker 1 | $35,000 |
+| Worker 2 | $38,000 |
+| Worker 3 | $41,000 |
+| Worker 4 | $43,000 |
+| Worker 5 | $44,000 |
+| Worker 6 | $48,000 |
+| CEO | $620,000 |
+
+**Mean salary:** ($35,000 + $38,000 + $41,000 + $43,000 + $44,000 + $48,000 + $620,000) ÷ 7 = **$121,286**
+
+**Median salary:** The middle value = **$43,000**
+
+A company could claim: "Our average employee earns over $120,000." This is mathematically true and deeply misleading. The median gives a far more representative picture of what most employees earn.
+
+> **The rule:** When data is **skewed** (pulled strongly in one direction by extreme values), the median better represents the "typical" value. When data is roughly **symmetric**, mean and median are similar.
+
+### Sample size and cherry-picking
+
+A result from 6 people is not the same as a result from 6,000. But both can be presented as percentages that look equally authoritative. 
+
+**Critical questions to ask of any statistic:**
+1. How large was the sample?
+2. How was the sample selected — randomly, or conveniently?
+3. Who funded or ran the study?
+4. What was the exact question asked?
+5. What data *wasn't* shown?
+
+---
+
+## Investigation Tasks
+
+### Part A — The Detective Work
+
+Each item below contains a statistical claim. For each:
+- Identify what's misleading
+- Explain the manipulation using mathematical language
+- Rewrite the claim as a fair and accurate statement
+
+**Item 1:** A graph shows that chocolate sales increased by 400% — but the y-axis starts at 95% of the original value.
+
+**Item 2:** "9 out of 10 dentists recommend this toothpaste." The study involved 10 dentists. 
+
+**Item 3:** "Average house prices rose by $150,000 this year." In a suburb with 200 modest homes and 5 mansions, three of the mansions sold this year and none sold last year.
+
+**Item 4:** A school claims its student wellbeing score improved from 6.2 to 6.8 out of 10. The graph makes this look like a near-doubling. How?
+
+### Part B — Mean and Median Decisions
+
+For each dataset, calculate both mean and median, then decide which better represents the "typical" value. Write a sentence justifying your choice.
+
+**Dataset 1 — Marathon finishing times (minutes):**
+218, 224, 231, 235, 240, 244, 251, 268, 612
+
+**Dataset 2 — Number of books read last month:**
+0, 0, 1, 1, 1, 2, 2, 2, 3, 4
+
+**Dataset 3 — Monthly rainfall in a coastal city (mm):**
+12, 18, 14, 22, 15, 19, 16, 21, 14, 17, 15, 220
+
+**Reflection:** In which dataset is the mean most misleading? Why? What feature of the data causes this?
+
+### Part C — The Design Challenge (Making a Misleading Graph)
+
+This sounds counterintuitive, but it works: **students who have created a misleading graph understand manipulation better than students who have only critiqued one.**
+
+Choose a dataset from the list below. Create two graphs of the same data:
+- One designed to make the trend look as dramatic as possible
+- One designed to make the same trend look as small as possible
+
+Datasets to choose from:
+- Global average temperature anomaly 1960–2023
+- Smartphone ownership rates 2010–2020
+- A country's annual GDP growth over 10 years (provided as table)
+
+**Annotate both graphs:** Label the specific choices you made (y-axis range, scale, colour, whether to include error bars or omit them) and explain how each choice affects interpretation.
+
+### Part D — The Criterion D Task
+
+> *A government minister claims: "Our education policy is working. Average test scores rose 12% over the past four years."*
+> *An opposition politician claims: "Our schools are in crisis. The majority of students are still below the national benchmark."*
+
+You are given the full dataset (provided on the insert sheet): test scores for 8,000 students, showing a mean rise from 58 to 65 out of 100, but a median that moved from 49 to 51, with the largest gains concentrated among students who were already performing at 70+.
+
+1. Calculate the mean and median for both years.
+2. Are both politicians' claims mathematically accurate?
+3. Which statistical measure better represents what is happening for "most students"?
+4. Write a 150-word summary of the data for a general newspaper audience that is both accurate and fair to all parties.
+
+---
+
+## Formative Assessment Checkpoints
+
+**Checkpoint 1:** Show a real graph from a news source (many politicians' social media feeds are a rich source). Ask: "What question is this graph trying to answer? What would you need to check before you trusted it?" — Surfaces prior statistical literacy.
+
+**Checkpoint 2:** After Part A. "You identified the manipulation. Now explain why it works — what assumption is the designer hoping the reader makes?" — Moves from identification to mechanism.
+
+**Checkpoint 3:** After Part B. "Your friend says: 'Mean and median are just two different ways of saying average.' Is that accurate? What's important to add?" — Pushes toward understanding when to use which measure.
+
+---
+
+## Common Misconceptions
+
+| What students often believe | What's accurate |
+|-----------------------------|----------------|
+| "Statistics don't lie — they're numbers" | Statistics can be accurate and misleading simultaneously. The manipulation is in framing, not usually in calculation. |
+| "The mean is the most accurate average" | No single measure of central tendency is most accurate — it depends on the distribution and the question |
+| "If a graph looks professional, it's probably accurate" | Professional presentation is completely independent of accuracy. Many of the most misleading graphs are beautifully designed. |
+| "Bigger sample size always means better research" | Sample size matters, but so does *how* the sample was selected. A survey of 10,000 people who all read the same magazine may be less representative than 500 randomly selected people. |
+| "I'm not a statistics person so I can't evaluate this" | Statistical literacy requires reasoning, not calculation. The most important skills here are asking questions and checking assumptions. |
+
+---
+
+## Teaching Notes
+
+**On Part C:** Some teachers are nervous about asking students to make misleading graphs. Don't be. The pedagogical principle is well established: making something is the fastest route to understanding it. A student who has *constructed* a manipulated y-axis can never be fooled by one again in the same way.
+
+**On real-world sources:** Use actual news graphs whenever possible. The ONS, World Bank, OECD, and national education ministries publish graphs regularly. During an election period, political parties' social media accounts are a particularly rich — and motivating — source.
+
+**On Part D:** The scenario where both politicians are technically right but telling different stories is the crux. The mean rose because high performers improved significantly. The median barely moved because most students saw almost no change. Both statistics are accurate. Neither, alone, tells the full story. This is the most important statistical insight in the entire investigation.
+
+**On language:** Model precise statistical language throughout. "Average" should become "mean" or "median" depending on what you mean. "This shows a big increase" should become "this shows an increase of X%, from a base of Y." Precision in language is precision in thinking.
+
+---
+
+## Assessment Alignment
+
+| Task | MYP Criterion | Descriptor |
+|------|--------------|-----------|
+| Part A | Criterion C | Processing and evaluating: identifying errors and limitations in data representation |
+| Part B | Criterion C | Processing and evaluating: interpreting statistical measures and justifying conclusions |
+| Part C | Criterion C | Communicating: using mathematical representation deliberately and explaining choices |
+| Part D | Criterion D | Applying in real-world contexts: evaluating and communicating statistical results for a public audience |
+
+---
+
+> **The bigger idea:** Statistics is the discipline that sits at the boundary between mathematics and argumentation. Numbers don't speak for themselves — they speak through the choices made in selecting, representing, and framing them. A student who leaves this investigation asking "what data isn't shown?" at every graph they encounter has developed one of the most important critical thinking skills available. And that skill is entirely transferable outside mathematics.
