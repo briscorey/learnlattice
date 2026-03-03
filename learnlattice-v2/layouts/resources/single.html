@@ -4,29 +4,16 @@
   <div class="resource-single-header">
     <a href="/resources/" class="resource-single-back">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to Resources
+      All Resources
     </a>
 
+    <div class="resource-single-meta-row">
+      {{ with index .Params.subjects 0 }}<span class="resource-single-subject">{{ . }}</span>{{ end }}
+      {{ with index .Params.resource_types 0 }}<span class="resource-single-type">{{ . }}</span>{{ end }}
+    </div>
+
     <h1>{{ .Title }}</h1>
-
-    <div class="resource-single-tags">
-      {{ range .Params.subjects }}
-        <span class="resource-tag">{{ . }}</span>
-      {{ end }}
-      {{ range .Params.year_levels }}
-        <span class="resource-tag">{{ . }}</span>
-      {{ end }}
-      {{ range .Params.resource_types }}
-        <span class="resource-tag">{{ . }}</span>
-      {{ end }}
-      {{ range .Params.tags }}
-        <span class="resource-tag">{{ . }}</span>
-      {{ end }}
-    </div>
-
-    <div class="resource-single-date">
-      Published {{ .Date.Format "January 2, 2006" }}
-    </div>
+    {{ with .Description }}<p class="resource-single-desc">{{ . }}</p>{{ end }}
   </div>
 
   <!-- At a Glance -->
@@ -35,32 +22,74 @@
     <dl class="at-a-glance-grid">
       {{ with index .Params.subjects 0 }}
       <div class="at-a-glance-item">
-        <dt><span aria-hidden="true">📖</span> Subject</dt>
+        <dt>Subject</dt>
         <dd>{{ . }}</dd>
       </div>
       {{ end }}
       {{ with index .Params.year_levels 0 }}
       <div class="at-a-glance-item">
-        <dt><span aria-hidden="true">🎓</span> Year Level</dt>
-        <dd>{{ . }}</dd>
+        <dt>Year Level</dt>
+        <dd>{{ . }}{{ with index $.Params.year_levels 1 }} &amp; {{ . }}{{ end }}</dd>
       </div>
       {{ end }}
       {{ with index .Params.resource_types 0 }}
       <div class="at-a-glance-item">
-        <dt><span aria-hidden="true">📋</span> Type</dt>
+        <dt>Format</dt>
         <dd>{{ . }}</dd>
       </div>
       {{ end }}
       {{ with .Params.formula }}
       <div class="at-a-glance-item">
-        <dt><span aria-hidden="true">🧮</span> Key Formula / Concept</dt>
+        <dt>Key Concept</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+      {{ with .Params.key_concept }}
+      <div class="at-a-glance-item">
+        <dt>MYP Key Concept</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+      {{ with .Params.global_context }}
+      <div class="at-a-glance-item">
+        <dt>Global Context</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
+      {{ with .Params.statement_of_inquiry }}
+      <div class="at-a-glance-item at-a-glance-item--wide">
+        <dt>Statement of Inquiry</dt>
         <dd>{{ . }}</dd>
       </div>
       {{ end }}
     </dl>
-    {{ if .Params.tags }}
+    {{ $criterionTags := slice }}
+    {{ range .Params.tags }}
+      {{ if hasPrefix . "Criterion" }}
+        {{ $criterionTags = $criterionTags | append . }}
+      {{ end }}
+    {{ end }}
+    {{ if $criterionTags }}
+    <div class="at-a-glance-criteria">
+      <span class="at-a-glance-criteria-label">MYP Criteria</span>
+      {{ range $criterionTags }}
+        <span class="at-a-glance-criterion-pill">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ $topicTags := slice }}
+    {{ range .Params.tags }}
+      {{ if not (hasPrefix . "Criterion") }}
+        {{ if not (hasPrefix . "Grade") }}
+          {{ if not (hasPrefix . "MYP") }}
+            {{ $topicTags = $topicTags | append . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if $topicTags }}
     <div class="at-a-glance-tags">
-      {{ range first 6 .Params.tags }}
+      {{ range first 6 $topicTags }}
         <a class="at-a-glance-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
       {{ end }}
     </div>

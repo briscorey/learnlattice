@@ -2,11 +2,37 @@
 
 {{ $games := where .Site.RegularPages "Params.resource_types" "intersect" (slice "Interactive Game") }}
 
-<div class="page-header">
-  <div class="games-page-eyebrow">🎮 Interactive</div>
+<div class="page-header games-page-header">
+  <div class="games-page-eyebrow">Interactive · Browser-based · No login</div>
   <h1>Games &amp; Simulations</h1>
-  <p>Curriculum-aligned games for MYP Grades 6–9. Explore, quiz yourself, and build — all in the browser, no login needed.</p>
+  <p>{{ .Description }}</p>
 </div>
+
+<section class="games-philosophy reveal">
+  <div class="games-philosophy-inner">
+    <div class="games-philosophy-card">
+      <span class="games-philosophy-icon">🎯</span>
+      <div>
+        <h3>Built for curriculum, not distraction</h3>
+        <p>Every game here targets specific MYP learning objectives. Playing is doing the mathematics or science, not taking a break from it.</p>
+      </div>
+    </div>
+    <div class="games-philosophy-card">
+      <span class="games-philosophy-icon">🔁</span>
+      <div>
+        <h3>Designed for replay</h3>
+        <p>Good educational games have dynamic difficulty and no single correct path. Students should be able to return and encounter the same concepts in new configurations.</p>
+      </div>
+    </div>
+    <div class="games-philosophy-card">
+      <span class="games-philosophy-icon">🌍</span>
+      <div>
+        <h3>Classroom-ready anywhere</h3>
+        <p>No app downloads, no accounts, no region restrictions. These run on any school device with a browser — including older Chromebooks and shared iPads.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
 

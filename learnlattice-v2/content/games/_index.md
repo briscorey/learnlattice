@@ -1,4 +1,4 @@
 ---
-title: "Interactive Games"
-description: "Free, curriculum-aligned interactive science and maths games. Explore, quiz yourself, and build — designed for MYP Grades 6–9 students."
+title: "Games & Simulations"
+description: "Interactive games for MYP Grades 6–9. The best games here do the same thing the best lessons do: put students in a situation where they need to think, not just perform. No login. No app. Runs in any browser."
 ---

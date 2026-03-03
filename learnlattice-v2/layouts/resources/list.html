@@ -13,9 +13,29 @@
   {{ end }}
 {{ end }}
 
-<div class="page-header">
+<div class="page-header resources-page-header">
+  <div class="resources-page-eyebrow">Free · MYP-aligned · Classroom-tested</div>
   <h1>All Resources</h1>
-  <p>{{ len $allPages }} resources across MYP Mathematics, Science, and Grade Collections — worksheets, unit plans, labs, and investigations.</p>
+  <p>{{ .Description }}</p>
+</div>
+
+<div class="resources-page-counts reveal">
+  <div class="resources-page-counts-inner">
+    {{ $unitPlans := len (where $allPages "Params.resource_types" "intersect" (slice "Unit Plan")) }}
+    {{ $worksheets := len (where $allPages "Params.resource_types" "intersect" (slice "Worksheet")) }}
+    {{ $labs := len (where $allPages "Params.resource_types" "intersect" (slice "Lab Activity")) }}
+    {{ $invPacks := len (where $allPages "Params.resource_types" "intersect" (slice "Investigation Pack")) }}
+    {{ $games := len (where $allPages "Params.resource_types" "intersect" (slice "Interactive Game")) }}
+    <div class="rpc-stat"><span class="rpc-num">{{ len $allPages }}</span><span class="rpc-label">Total resources</span></div>
+    <div class="rpc-divider"></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ $unitPlans }}</span><span class="rpc-label">Unit Plans</span></div>
+    <div class="rpc-divider"></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ $worksheets }}</span><span class="rpc-label">Worksheets</span></div>
+    <div class="rpc-divider"></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ add $labs $invPacks }}</span><span class="rpc-label">Labs &amp; Investigations</span></div>
+    <div class="rpc-divider"></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ $games }}</span><span class="rpc-label">Interactive Games</span></div>
+  </div>
 </div>
 
 <section class="section">

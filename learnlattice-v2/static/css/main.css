@@ -4582,3 +4582,512 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .about-influence-card { transition: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   SITE-WIDE CONTENT UPGRADES  (v2 — March 2026)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Philosophy Strip (Homepage) ── */
+.philosophy-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-warm);
+  padding: 0;
+  overflow: hidden;
+}
+
+.philosophy-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.philosophy-pill {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid var(--border);
+}
+
+.philosophy-pill:last-child {
+  border-right: none;
+}
+
+.philosophy-pill-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.philosophy-pill span:last-child {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.philosophy-pill em {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+
+/* ── Home Promise Section ── */
+.home-promise {
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+}
+
+.home-promise-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.home-promise-header {
+  margin-bottom: 40px;
+  max-width: 760px;
+}
+
+.home-promise-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-promise-kicker::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 1px;
+}
+
+.home-promise-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.home-promise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.home-promise-card {
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-promise-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.home-promise-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.home-promise-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  font-weight: 300;
+}
+
+
+/* ── Subject Philosophy Section (Math/Science hubs) ── */
+.subject-philosophy {
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+}
+
+.subject-philosophy-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
+  align-items: start;
+}
+
+.subject-philosophy-body p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  font-weight: 300;
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+.subject-philosophy-body p:last-child { margin-bottom: 0; }
+
+.subject-philosophy-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.subject-philosophy-signal {
+  background: var(--surface-warm);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.subject-philosophy-signal-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.subject-philosophy-signal span:last-child {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+
+/* ── Subject List Meta Bar (individual subject pages) ── */
+.subject-list-meta {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-warm);
+}
+
+.subject-list-meta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.subject-list-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.subject-list-types {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.subject-list-type-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+
+
+/* ── Resource Single — upgraded header ── */
+.resource-single-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.resource-single-subject {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--teal-wash);
+  color: var(--teal);
+  border: 1px solid var(--teal-light);
+}
+
+.resource-single-type {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface-warm);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+.resource-single-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  font-weight: 300;
+  max-width: 660px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* Upgraded at-a-glance with criteria pills */
+.at-a-glance-item--wide {
+  grid-column: 1 / -1;
+}
+
+.at-a-glance-criteria {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.at-a-glance-criteria-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.at-a-glance-criterion-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--teal-wash);
+  color: var(--teal);
+  border: 1px solid var(--teal-light);
+}
+
+
+/* ── Games Philosophy Strip ── */
+.games-page-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.games-page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.games-page-eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 1px;
+}
+
+.games-philosophy {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-warm);
+  padding: 0;
+}
+
+.games-philosophy-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.games-philosophy-card {
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border-right: 1px solid var(--border);
+}
+
+.games-philosophy-card:last-child { border-right: none; }
+
+.games-philosophy-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.games-philosophy-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.games-philosophy-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  font-weight: 300;
+}
+
+
+/* ── Resources Page Counts Bar ── */
+.resources-page-header {
+  border-bottom: none;
+  padding-bottom: 32px;
+}
+
+.resources-page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resources-page-eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 1px;
+}
+
+.resources-page-counts {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-warm);
+  margin-bottom: 0;
+}
+
+.resources-page-counts-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.rpc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0 28px;
+}
+
+.rpc-stat:first-child { padding-left: 0; }
+
+.rpc-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.rpc-label {
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.rpc-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+
+/* ── Grade Level Pages — description upgrade ── */
+.page-hero-subject .page-hero-copy p {
+  max-width: 680px;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .philosophy-strip-inner { grid-template-columns: 1fr; padding: 0 32px; }
+  .philosophy-pill { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 24px; }
+  .philosophy-pill:last-child { border-bottom: none; }
+  .home-promise-inner { padding: 0 32px; }
+  .home-promise-grid { grid-template-columns: 1fr 1fr; }
+  .subject-philosophy-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 32px; }
+  .subject-philosophy-signals { flex-direction: row; flex-wrap: wrap; display: grid; grid-template-columns: 1fr 1fr; }
+  .games-philosophy-inner { grid-template-columns: 1fr; padding: 0 32px; }
+  .games-philosophy-card { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 24px; }
+  .games-philosophy-card:last-child { border-bottom: none; }
+  .resources-page-counts-inner { padding: 20px 32px; gap: 0; }
+  .subject-list-meta-inner { padding: 14px 32px; }
+}
+
+@media (max-width: 768px) {
+  .home-promise-grid { grid-template-columns: 1fr; }
+  .home-promise-inner { padding: 0 20px; }
+  .subject-philosophy-inner { padding: 0 20px; }
+  .subject-philosophy-signals { grid-template-columns: 1fr; }
+  .games-philosophy-inner { padding: 0 20px; }
+  .resources-page-counts-inner { padding: 16px 20px; flex-wrap: wrap; gap: 12px; }
+  .rpc-stat { padding: 0 16px; }
+  .rpc-divider { display: none; }
+  .subject-list-meta-inner { padding: 12px 20px; }
+  .philosophy-strip-inner { padding: 0 20px; }
+}

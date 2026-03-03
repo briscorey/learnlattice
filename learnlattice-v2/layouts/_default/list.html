@@ -12,14 +12,35 @@
 {{ end }}
 
 {{ if and $subjectMeta (gt (len $subjectMeta) 0) }}
-<section class="page-hero page-hero-subject" data-color="{{ index $subjectMeta "color" }}">
+<section class="page-hero page-hero-subject" data-color="{{ index $subjectMeta "color" }}" id="overview">
   <div class="page-hero-copy">
-    <div class="page-hero-kicker">Subject Collection</div>
+    <div class="page-hero-kicker">MYP Subject Collection</div>
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    {{ with index $subjectMeta "audience" }}<div class="page-hero-note">{{ . }}</div>{{ end }}
+    {{ with index $subjectMeta "audience" }}
+    <div class="page-hero-note">{{ . }}</div>
+    {{ end }}
   </div>
 </section>
+
+{{ $subjectResources := where (where .Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .Title) }}
+{{ if gt (len $subjectResources) 0 }}
+<div class="subject-list-meta reveal">
+  <div class="subject-list-meta-inner">
+    <span class="subject-list-count">{{ len $subjectResources }} resource{{ if gt (len $subjectResources) 1 }}s{{ end }} in this collection</span>
+    <div class="subject-list-types">
+      {{ $types := slice "Unit Plan" "Worksheet" "Investigation Pack" "Lab Activity" "Interactive Game" }}
+      {{ range $types }}
+        {{ $t := . }}
+        {{ $tc := len (where $subjectResources "Params.resource_types" "intersect" (slice $t)) }}
+        {{ if gt $tc 0 }}
+        <span class="subject-list-type-pill">{{ $tc }} {{ $t }}{{ if gt $tc 1 }}s{{ end }}</span>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
 {{ else if and .IsNode (eq .Data.Singular "year_level") }}
 <section class="page-hero page-hero-subject" data-color="teal">
   <div class="page-hero-copy">
