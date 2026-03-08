@@ -23,6 +23,7 @@ key_concept: "Evidence"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Every observation of the universe beyond Earth requires building knowledge from the properties of light rather than from direct contact."
 formula: "λ_max = b/T (Wien's Displacement Law: peak wavelength → star temperature)"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -42,6 +43,69 @@ Give students 90 seconds to speculate. Then: **"The answer is that light from a 
 This investigation is about learning to read light.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The Comte quote</div>
+    <p>Project the 1835 quote. Read it aloud slowly. Let it sit. "This philosopher said we could NEVER know what stars are made of." Pause. "He was wrong within 25 years." Another pause. "How? How do you identify what something is made of — from 150 million kilometres away — without touching it?"</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Speculation</div>
+    <p>90 seconds of silent thinking, then take ideas. Students will guess: "send something there," "look at the colour," "use a telescope." If someone says "colour" or "light" — circle it. They're close. Don't reveal yet.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–7 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The prism demonstration</div>
+    <p>If you have a prism or diffraction grating, split white light. Show the rainbow spectrum. Then show an image of a solar spectrum with dark absorption lines. "These dark lines are missing colours. Each missing colour is a fingerprint of a specific element. The Sun's light tells us what it passed through."</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">7–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Fingerprint matching</div>
+    <p>Give groups a printed solar spectrum and a reference chart of element spectra. Task: "Match the dark lines in the Sun's spectrum to elements. What is the Sun made of?" This is real spectroscopy — simplified, but the method is genuine.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"The dark lines match hydrogen!" — they're doing spectroscopy. "So every element has a unique pattern?" — they understand spectral fingerprints. "Could we do this with other stars?" — they're extending the method to the universe. "Is this how we know about exoplanet atmospheres?" — phenomenal connection.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>The spectrum is visual — colours need no translation. The matching task is pattern recognition, not language dependent. Print the element spectra with the element name AND symbol (H, He, Na, Fe). Point at a dark line, point at a matching bright line on the reference. The word "fingerprint" can be demonstrated — press your thumb on paper, then point at the spectrum. Same idea.</p>
+</div>
+
+<div class="tm-callout tm-callout--say">
+  <strong>Say this</strong>
+  <p>"Light carries information." · "What other secrets might light be hiding?" · "If you can read the light from one star, can you read it from any star?"</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

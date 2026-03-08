@@ -22,6 +22,7 @@ key_concept: "Relationships"
 global_context: "Fairness and Development"
 statement_of_inquiry: "The way we represent and communicate large quantities shapes how we understand inequality."
 formula: "10⁶ → 10⁹ → 10¹²"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -39,6 +40,77 @@ The answer is **11.6 days**.
 Watch what happens when you say that. Students who guessed "a few hours" are surprised. Students who guessed "decades" are surprised in the other direction. Now ask: how long for a *billion* dollars? Most students significantly underestimate the gap between a million and a billion. This is where the real mathematics begins.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">Before class</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Setup</div>
+    <p>Write on the board before students arrive: <strong>$1,000,000. One dollar per second. How long?</strong> Nothing else. No title, no learning objective visible.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Silent estimation</div>
+    <p>60 seconds of silent thinking, no calculators. Then hands up for estimates — write every answer on the board without judgement. You need the full range visible. Expect answers from "a few hours" to "several years."</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The reveal</div>
+    <p>Show the answer: 11.6 days. Let the reaction happen. Then immediately ask: <strong>"How long for a billion dollars?"</strong> Write new estimates next to the million estimates. The gap between student guesses for million vs billion reveals the core misconception this lesson targets.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–5 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Grouping and task</div>
+    <p>Random groups to whiteboards. Task: Calculate the billion-dollar answer AND find a way to explain the difference to someone who doesn't believe you. One marker per group.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">5–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Circulate</div>
+    <p>Watch for groups converting seconds to minutes to hours to days. Some will get lost in the arithmetic — point at their million calculation and draw an arrow. The billion answer (31.7 years) will shock them again. Groups that finish early: "What about a trillion?"</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"Wait, a billion is a thousand millions" — they're seeing multiplicative structure. "So a billion seconds is a thousand times longer" — they're scaling correctly. "That can't be right..." — the emotional disbelief IS the learning moment. Don't resolve it for them.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>Numbers are universal — this problem requires almost no English. Write the conversion chain on the board as a reference: 60 sec → 1 min, 60 min → 1 hour, 24 hours → 1 day. Point at it when groups stall. The words "million," "billion," "trillion" may need explicit comparison: write 10⁶, 10⁹, 10¹² with the words beside them.</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"A billion is 10⁹" — let them discover the power of ten relationship. "Use scientific notation" — if they reach for it naturally, great; if not, introduce it after they've felt the need for it.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

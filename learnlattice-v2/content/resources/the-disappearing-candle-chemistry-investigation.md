@@ -25,6 +25,7 @@ key_concept: "Change"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "In chemical change, the arrangement of particles is transformed but their total quantity is conserved — matter does not appear or disappear, it changes form."
 formula: "CH₄ + 2O₂ → CO₂ + 2H₂O (or equivalent for candle wax)"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -42,6 +43,69 @@ Then ask the harder question: **"A rusting nail gets heavier as it rusts. A burn
 This is not a trick question. The answers are both correct under conservation of mass — but they require understanding where the matter goes in each case. The rusting nail's reaction products (iron oxide) stay on the nail. The candle's reaction products (CO₂ and H₂O) escape as gases. The candle doesn't lose mass — the *system* loses mass because gases leave.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–3 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Live demonstration</div>
+    <p>Bring a candle and a digital balance to the front. Weigh the candle — say the mass aloud, write it on the board. Light it. Set a 5-minute timer visibly. While it burns, continue with the question setup.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">3–5 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Predictions</div>
+    <p>While the candle burns: "What will the mass be after 5 minutes? More, less, or the same?" Write predictions on the board. Then the harder question: "Where does the missing mass GO?" — 60 seconds of silent thinking, then share with a partner.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">5–7 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The weigh-in and the paradox</div>
+    <p>Blow out the candle. Weigh it. Write the new mass. Ask: "Where did the missing mass go?" Then the killer question: "A rusting nail gets HEAVIER. A burning candle gets LIGHTER. Both are reacting with oxygen. Why?" Groups to whiteboards.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">7–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Diagram construction</div>
+    <p>Task: "Draw two diagrams — one for the rusting nail, one for the burning candle. Show where mass enters and leaves the system. Use arrows." The particle-level understanding emerges from this — gases leaving vs solids accumulating.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"It turned into gas" — they're on the right track. "The rust adds oxygen to the nail but the candle's gases escape" — they understand the system boundary. "Mass isn't destroyed, it just goes into the air" — conservation of mass, stated in their own words. "If we could catch all the gases, the total mass would be the same" — beautiful.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>The demonstration is the scaffold — watching mass change on a balance requires no English. Write the two masses large on the board with an arrow between them and a "?" above the arrow. For the diagram task, draw a box labelled "candle" with arrows going in (O₂) and out (CO₂, H₂O). The particle model can be shown with simple circles — wax molecules + oxygen → carbon dioxide + water.</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"Mass is always conserved" — they need to discover this, not be told it. "The products are CO₂ and H₂O" — let them figure out what combustion produces. "It burned up" — challenge this phrase every time. "Where did it burn TO?"</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

@@ -23,6 +23,7 @@ key_concept: "Form"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The properties of geometric forms depend on the space in which they exist — and questioning assumptions is how mathematics advances."
 formula: "angle sum of triangle = 180° (in flat space)"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -42,6 +43,69 @@ The answer is three. An equatorial triangle on a sphere has angles summing to 27
 This is not a trick. This is the genuine frontier of geometry: the question of what space is, and how its shape constrains what's possible within it.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Draw a triangle on the board. Write 180° inside it. Then say: "Everything you've been taught about triangles assumes you're on flat paper." Pick up a ball — basketball, globe, anything spherical. Draw on it with a whiteboard marker: equator line up to the pole, back down 90° away, connect along the equator.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The question</div>
+    <p>"How many right angles does this triangle have?" Pass the ball around. Let students trace the lines with their fingers. The answer — three — should come from them, not from you. When someone says "three," ask the room: "Is that possible?"</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–6 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Silent exploration</div>
+    <p>Give each group a ball and a marker. Task: "Draw as many different triangles on the sphere as you can. Measure (estimate) the angles. What do you notice about the angle sum?" Two minutes of exploration.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">6–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Groups investigate</div>
+    <p>Whiteboards: "On flat paper, triangle angles sum to 180°. On a sphere, what do they sum to? Is there a pattern?" Circulate. Some groups will discover that larger triangles have larger angle sums. This is the key insight — curvature affects geometry.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"The bigger the triangle, the more than 180°" — they've found the relationship between area and angle excess. "So 180° only works on flat things?" — bingo. "What about a saddle shape?" — if anyone asks this, they're thinking about negative curvature. Run with it.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>This is one of the most accessible investigations for EAL students because the discovery is entirely physical. Drawing on a ball requires no English. The numbers (angles) are universal. If a student needs the word "triangle," point at the shape on the ball and hold up three fingers. The concept "flat vs curved" can be shown by pressing a piece of paper flat, then curving it.</p>
+</div>
+
+<div class="tm-callout tm-callout--say">
+  <strong>Say this</strong>
+  <p>"What happens to the angles as the triangle gets bigger?" · "Were you lied to about 180°?" · "Where in the real world are we on a curved surface?"</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Core Concepts
 

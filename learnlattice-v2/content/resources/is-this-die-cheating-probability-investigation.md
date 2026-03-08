@@ -23,6 +23,7 @@ key_concept: "Logic"
 global_context: "Fairness and Development"
 statement_of_inquiry: "The logic we use to evaluate fairness depends on how much evidence we are willing to gather."
 formula: "P(E) = favourable outcomes / total outcomes"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -38,6 +39,77 @@ Before any instruction on probability, let them roll. Watch what happens. Some g
 After 5 minutes, stop and ask: "How many rolls did you do? Are you confident? Why or why not?" The conversation that follows will surface every key idea: what does theoretical probability actually predict? What's a reasonable expectation vs a surprising result? How much evidence is enough?
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">Before class</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Setup</div>
+    <p>Place a die on each table. Optionally weight one die (tape a small coin inside) so one group genuinely has a biased die. Have tally sheets ready but don't distribute them yet.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–1 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Say only: "I think one of these dice might be cheating. Your job is to find out if yours is." Nothing else. No instruction on how. Walk away.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">1–5 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Unguided exploration</div>
+    <p>Watch what happens. Some groups will roll 6 times and declare a verdict. Others will roll 30+ times. This disagreement about "how many rolls is enough" is the conceptual heart of the lesson. Do not intervene yet.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">5–7 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The pivot question</div>
+    <p>Stop the room. Ask: "How many rolls did you do? Are you confident? Why or why not?" List the different roll counts on the board. The group that rolled 6 times — ask them: "If you rolled a 3 twice out of 6 rolls, is that suspicious?" This surfaces the sample size problem naturally.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">7–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Structured investigation</div>
+    <p>Now distribute tally sheets. Task: "Roll 60 times. Record every result. Then decide: fair or unfair? And how sure are you — 50%? 80%? 99%?" The number 60 is deliberate — it's divisible by 6, making expected frequency (10 per face) clean.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"Six rolls isn't enough" — they understand sample size intuitively. "Each number should come up about the same" — theoretical probability emerging. "I got 15 threes out of 60, is that cheating?" — they're ready for the concept of expected variation vs suspicious deviation.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>Dice are universal. The word "cheating" can be demonstrated — roll a die, pretend to be suspicious, look at it closely. A tally chart needs no language. Write "Fair ✓" and "Unfair ✗" on the board with a question mark between them. The numbers do the communicating.</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"Each face should come up ⅙ of the time" — let them discover this. "You need at least 30 trials" — the law of large numbers should be felt, not prescribed. "That result is just random variation" — they need to wrestle with when variation is meaningful.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## The Core Problem
 

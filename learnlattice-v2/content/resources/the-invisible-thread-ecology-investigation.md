@@ -25,6 +25,7 @@ key_concept: "Systems"
 global_context: "Globalisation and Sustainability"
 statement_of_inquiry: "In ecological systems, every effect has causes that extend far beyond what direct observation can reveal."
 formula: "trophic cascade: predator removal → prey explosion → vegetation collapse"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -52,6 +53,61 @@ Then ask: **"What does this tell us about how ecosystems work?"**
 This is the entry point to ecological systems thinking — the idea that effects in nature are almost never contained, and that understanding an ecosystem means understanding not just what eats what, but *what would happen if anything changed.*
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–5 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Fact reveal sequence</div>
+    <p>Show the five facts one at a time, roughly one per minute. Project each on screen. After each fact, pause. Do not connect them. Let students sit in the accumulating story. Resist the urge to explain between facts — the silence between them is where the thinking happens.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">5–7 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The question</div>
+    <p>"How many species were affected by the hunting of sea otters?" Take estimates. Then: "What does this tell us about how ecosystems work?" 90 seconds of silent thinking. Then groups to whiteboards.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">7–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Web drawing</div>
+    <p>Task: "Draw a diagram showing all the connections. Use arrows to show the direction of impact." This is where the food web concept emerges naturally — they're building it before you name it. Circulate and watch for students who draw simple chains vs complex webs.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"It's like a chain" — they see linear causation. "It's more like a web" — they see interconnection. "Removing one thing affects everything" — they understand cascading effects. "But the otter didn't eat the fish" — they're grasping indirect effects, which is the key ecological concept.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>The fact sequence is visual storytelling — show images of sea otters, sea urchins, kelp forests alongside each fact. The web-drawing task is entirely visual. If students need the word "connected," draw two circles with an arrow between them. For "affected," use a domino-toppling gesture. The concept of cascade can be shown by gently pushing one object into another.</p>
+</div>
+
+<div class="tm-callout tm-callout--say">
+  <strong>Say this</strong>
+  <p>"Which species did the otter never touch directly?" · "What would happen if we removed a different species?" · "Is any species more important than others in this web?"</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

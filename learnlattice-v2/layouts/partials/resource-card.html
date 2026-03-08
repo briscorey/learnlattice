@@ -15,6 +15,7 @@
 {{ if eq $subject "chemistry" }}{{ $thumbColor = "rose" }}{{ end }}
 
 <a class="resource-card" href="{{ .RelPermalink }}">
+  {{ if .Params.teacher_moves }}<span class="resource-tm-badge">🧭 Teacher Moves</span>{{ end }}
   <div class="resource-thumb {{ $thumbColor }}-bg">
     {{ with .Params.formula }}<div class="formula">{{ . }}</div>{{ end }}
     {{ with $subjectLabel }}<span class="resource-thumb-label">{{ . }}</span>{{ end }}

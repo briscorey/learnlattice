@@ -23,6 +23,7 @@ key_concept: "Logic"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The logical structure of our number system determines which representations are equivalent — even when intuition disagrees."
 formula: "1/3 = 0.333... → 3 × 0.333... = 0.999... = 1"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -40,6 +41,69 @@ Expect a room divided. Most students will say "false — it's *almost* 1, but no
 Tell them: "By the end of this investigation, you'll be able to prove this is true in four completely different ways. And more importantly, you'll understand *why* the answer surprises people — and what it tells us about how our number system works."
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–1 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Write on the board: 0.999... = 1. Ask: "True or false?" Show of hands — count and write the split on the board. This becomes data you'll return to at the end.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">1–3 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Silent justification</div>
+    <p>Two minutes: write down WHY you believe what you believe. No discussion yet. This forces every student to commit to a position before groupthink takes over.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">3–5 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Groups — first proof attempt</div>
+    <p>Random groups to whiteboards. "Can you prove your position?" Let them struggle. Most groups will hit a wall — their intuition says false, but they can't disprove it either. This productive frustration is essential. Do not rescue them.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">5–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Guided discovery</div>
+    <p>If no group has found a proof path, offer one seed: write ⅓ = 0.333... on the board. Then write ⅓ × 3 = ? Walk away. The algebraic proof (let x = 0.999..., 10x = 9.999..., subtract) can be seeded by writing "let x = 0.999..." on one stuck group's board.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"There's always a gap" — this is the key misconception to surface, not suppress. "If ⅓ is 0.333... then three thirds is 0.999..." — they've found the fraction proof. "What number goes between 0.999... and 1?" — this is the topological argument forming. Celebrate this question loudly.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>The notation is the language here — 0.999... is readable across all languages. Write the fraction proof as a chain: ⅓ = 0.333... → ⅓ × 3 = 0.999... → but ⅓ × 3 = 1. Use arrows, not words. The algebraic proof can be shown as: x = 0.999..., 10x = 9.999..., 10x - x = 9, 9x = 9, x = 1. Pure symbols.</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"It's true because mathematicians say so" — authority is not proof. "You just have to accept it" — understanding is the goal, not compliance. "It's obvious if you think about it" — it is genuinely non-obvious and that's what makes it beautiful.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

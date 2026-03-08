@@ -25,6 +25,7 @@ key_concept: "Change"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific explanations for things we cannot observe directly must be built from multiple independent lines of converging evidence."
 formula: "convergent + divergent + transform boundaries → earthquakes, volcanoes, mountains"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -44,6 +45,69 @@ Give thinking time. Most students will be genuinely puzzled. A few will guess "t
 The answer — that the ocean floor is continuously created at mid-ocean ridges and destroyed at subduction zones, cycling entirely every ~200 million years — is one of the most striking predictions of plate tectonic theory, and one of its most powerful confirmations.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Write the three facts on the board. Read them aloud slowly. Point at each number as you say it. Give 90 seconds of silent thinking. Then ask the question: "If the oceans cover most of Earth, and Earth is 4.5 billion years old — why is all the old rock on land?"</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Initial theories</div>
+    <p>Hands up for ideas. Write every theory on the board — even wrong ones. "The ocean wears it away," "something destroys it," "it sinks." These are all useful partial explanations. Don't evaluate yet. Let the board fill up.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–6 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Evidence cards</div>
+    <p>Give each group a set of evidence cards: matching coastlines, fossil distributions, magnetic stripes, GPS measurements, age patterns in ocean floor. Task: "Sort these into groups. What story do they tell?" No further instruction.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">6–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Building the theory</div>
+    <p>Groups to whiteboards: "Draw a diagram that explains all the evidence." Watch for students who draw arrows showing plates moving apart (ridges) and together (subduction). The diagram IS the theory — they're building plate tectonics from evidence, not learning it from a textbook.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"The ocean floor is being replaced" — they've hit the key insight. "New rock comes up in the middle and old rock goes down at the edges" — they've independently described seafloor spreading and subduction. "It's like a conveyor belt" — perfect analogy. Use it.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>Numbers tell this story: 200 million vs 4 billion. Write them large. Use a timeline on the board — mark 200M and 4,000M. The evidence cards can be image-heavy: photos of matching coastlines, maps of fossil distributions. The diagram-drawing task requires no English. For key words, label a simple cross-section: "ridge" (arrow up), "trench" (arrow down).</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"This is called plate tectonics" — let them build the model first, name it later. "Alfred Wegener proposed this in 1912" — the history is fascinating but comes after the science. "The answer is subduction" — the process should emerge from the evidence, not precede it.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

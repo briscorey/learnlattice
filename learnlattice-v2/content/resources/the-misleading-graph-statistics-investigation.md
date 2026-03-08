@@ -23,6 +23,7 @@ key_concept: "Representation"
 global_context: "Globalisation and Sustainability"
 statement_of_inquiry: "The way data is represented determines what questions it can answer — and what stories it can tell."
 formula: "mean ≠ median when data is skewed"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -42,6 +43,69 @@ Pause. Then: "What if I told you both graphs show exactly the same data?"
 The silence after this reveal is the beginning of statistical thinking.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Project Graph A and Graph B side by side. No labels, no explanation. Ask: "Which school is improving faster?" Let them answer. Most will choose Graph B. Then reveal: "These show exactly the same data." Pause. Let the silence land.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The detective task</div>
+    <p>Groups to whiteboards: "Find every difference between Graph A and Graph B. Circle what was changed." Give them both graphs printed. They should identify: y-axis starting point, scale, bar width, colour choices, and the resulting visual impression.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–8 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Build your own misleading graph</div>
+    <p>Give each group a small dataset (5 numbers). Task: "Make two graphs of this data — one that makes it look like nothing is changing, and one that makes it look dramatic." This reversal — asking them to mislead deliberately — builds deeper understanding than any lecture about graph literacy.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">8–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Gallery walk</div>
+    <p>Each group presents their two graphs. The class votes: "Which is more honest?" This introduces the idea that "honest" in statistics is not always obvious.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"They changed where the y-axis starts" — they've identified the key manipulation. "The bars look taller but the numbers are the same" — they're distinguishing visual impression from data. "Neither graph is lying, but one is more misleading" — they're thinking about honesty as a spectrum.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>Graphs are inherently visual — EAL students often spot the manipulation faster than strong English speakers because they're reading the image, not the labels. Point at the y-axis on each graph. Use fingers to show "starts here" vs "starts here." The key vocabulary — axis, scale, bar — can be labelled directly on a printed copy with arrows.</p>
+</div>
+
+<div class="tm-callout tm-callout--say">
+  <strong>Say this</strong>
+  <p>"What did your eyes tell you? What do the numbers tell you?" · "Which graph would a school principal prefer to show parents?" · "Is it lying if the numbers are correct?"</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

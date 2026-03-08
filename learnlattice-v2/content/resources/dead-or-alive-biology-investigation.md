@@ -24,6 +24,7 @@ key_concept: "Systems"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The systems we use to define life determine what we include, what we exclude, and what we are forced to admit we don't know."
 formula: "MRS GREN: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -41,6 +42,77 @@ What you will get is productive chaos. Every group will struggle with at least t
 The disagreements are the lesson. The point is not that students don't know the answer. It's that the question is harder than it appears — and answering it rigorously requires building criteria.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">Before class</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Setup</div>
+    <p>Print card sets for each table: candle flame, growing salt crystal, dormant seed, virus, stopped heart (defibrillator), robot, mule. Cut them so students can physically sort them into groups.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Cards are on tables when students arrive. Say only: "Sort these into two groups — alive and not alive." No other instruction. Walk away.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–6 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Sorting and arguing</div>
+    <p>Circulate and listen. Do not resolve disagreements — they ARE the lesson. When a group is stuck on an item (the virus, the dormant seed), point at it and raise an eyebrow. If they ask you directly, say: "What would you need to know to decide?"</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">6–8 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">The criteria question</div>
+    <p>Stop the room. "Raise your hand if your group disagreed about at least one card." (Every group will.) "So — what IS your definition of 'alive'? Write your criteria on the whiteboard." This shifts from sorting to defining — from intuition to rigour.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">8–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Testing criteria</div>
+    <p>Ask: "Does your definition correctly classify ALL seven items?" Most criteria lists will fail on at least one case. The flame grows and uses fuel (alive by their criteria?) The mule can't reproduce (dead by MRS GREN?). These failures drive the investigation forward.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"The flame is like a living thing because..." — they're applying criteria before being taught them. "But the virus doesn't do anything on its own" — they've hit the key biological debate. "Maybe alive isn't yes or no" — if a student says this, you've reached the deepest level of the investigation.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>Physical card sorting requires no language. Alive/not alive can be shown with two zones on the table — draw a line and label one side with a ✓ (alive) and one with a ✗. If the word "virus" is unfamiliar, show a simple diagram — a circle with spikes. For "dormant seed," bring an actual seed to class. Physical props eliminate language barriers entirely.</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"Living things have MRS GREN" — they need to build the criteria themselves before you name the mnemonic. "Viruses are not alive" — this is genuinely debated in biology. Let them feel the ambiguity. "A flame isn't alive, obviously" — it's not obvious, and the flame is the best teaching tool in the set.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

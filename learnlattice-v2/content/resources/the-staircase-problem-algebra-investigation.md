@@ -25,6 +25,7 @@ key_concept: "Patterns"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Finding the pattern behind a structure allows us to predict and design without building every case."
 formula: "n(n+1)/2"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -42,6 +43,82 @@ The raw counting approach collapses by step 10. Students who look for a pattern 
 Students don't need to know who Gauss was yet. They need to find his method themselves first.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–1 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Draw the staircase diagram on the board silently. Steps 1, 2, 3 — nothing else. Write the question: <strong>"How many blocks for 100 steps?"</strong> Read it aloud once. Point at the diagram as you read. Set a 2-minute silent timer.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">1–3 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Silent sketch</div>
+    <p>Every student draws Steps 4 and 5 individually. Walk the room scanning. If anyone hasn't started, point at the board, point at their paper, nod. Do not speak.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">3–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Random grouping</div>
+    <p>Use a random name generator on screen. Students move to numbered vertical whiteboards. Hand each group ONE marker to start — this forces turn-taking without you explaining it.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–9 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Circulate silently</div>
+    <p>Start with the group you're most worried about. Sweep all groups. Your tools: point at interesting work, draw a question mark next to something to reconsider, draw a checkmark next to something correct, draw an arrow connecting two things they haven't connected. Speak only if a group has stalled for 3+ minutes.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">9–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Gallery walk setup</div>
+    <p>Ask everyone to put markers down and step back. This transitions to structured sharing. You now have a visual map of every group's progress.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"It goes up by one more each time" — they've found the pattern. "If I double it and make a rectangle..." — they're approaching Gauss's method. "The differences keep increasing" — they're noticing the quadratic structure. Any of these means they're ready to formalise.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>The staircase is inherently visual — most EAL students will access it through drawing. If a student is stuck on the English, draw Step 4 on their paper and point back at the board. The word "pattern" can be replaced with a gesture: point at 1, 3, 6 and raise an eyebrow. For the formula stage, write n = 5 and draw an arrow to 15. The notation carries the meaning.</p>
+</div>
+
+<div class="tm-callout tm-callout--say">
+  <strong>Say this</strong>
+  <p>"What do you notice?" · "Is there a shortcut?" · "Can you convince me this always works?" · "What if n was a million?"</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"The formula is n(n+1)/2" — let them build it. "This is called a triangular number" — vocabulary comes after understanding. "Gauss figured this out when he was 10" — save this for after they've found it themselves.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 

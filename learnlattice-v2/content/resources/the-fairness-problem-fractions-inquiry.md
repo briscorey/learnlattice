@@ -22,6 +22,7 @@ key_concept: "Form"
 global_context: "Identities and Relationships"
 statement_of_inquiry: "The form in which we represent a quantity determines what relationships we can see."
 formula: "a ÷ b = a/b"
+teacher_moves: true
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
@@ -41,6 +42,74 @@ You will see: area models. Drawings. Guesses. And — importantly — some stude
 The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Group B gets ½ pizza. And ⅔ > ½. But the path from the sharing scenario to that comparison is exactly what this investigation builds.
 
 ---
+
+<div class="teacher-moves">
+  <button class="teacher-moves-toggle" aria-expanded="false">
+    <span class="tm-icon">🧭</span>
+    <span class="tm-label">Teacher Moves<small>Pacing guide, EAL scaffolds, and classroom cues</small></span>
+    <svg class="tm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="teacher-moves-body">
+    <div class="teacher-moves-content">
+
+<h3>Pacing Guide</h3>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">0–2 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Launch</div>
+    <p>Write on the board: Group A — 3 people share 2 pizzas. Group B — 2 people share 1 pizza. Who gets more? Read aloud once, slowly. 90 seconds of silent thinking. Every student must have something on paper before grouping.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">2–4 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Random groups to whiteboards</div>
+    <p>One marker per group. Task: "Show your answer AND your reasoning. Convince your group." Walk away.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">4–9 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Circulate</div>
+    <p>You'll see drawings of circles cut into pieces, number lines, written calculations. All are valid. If a group says "Group B, because ½ is bigger" — point at Group A and draw two circles, cut into thirds. If a group says "Group A" without showing why ⅔ > ½ — draw a question mark next to their claim.</p>
+  </div>
+</div>
+
+<div class="tm-phase">
+  <span class="tm-phase-time">9–10 min</span>
+  <div class="tm-phase-body">
+    <div class="tm-phase-title">Consolidation seed</div>
+    <p>Ask the room: "How many different ways did we represent this problem?" List them: drawing, fraction, decimal, percentage, words. This multiplicity of representations IS the key concept.</p>
+  </div>
+</div>
+
+<div class="tm-callout tm-callout--listen">
+  <strong>What you're listening for</strong>
+  <p>"Each person gets two thirds" — correct division model. "Half is the same as three sixths" — common denominator thinking emerging. "I drew it and Group A's piece is bigger" — valid area reasoning. "It depends on the size of the pizza" — excellent critical thinking; acknowledge it, then clarify we assume equal size.</p>
+</div>
+
+<div class="tm-callout tm-callout--eal">
+  <strong>EAL scaffold</strong>
+  <p>Draw two circles (pizzas) and three stick figures for Group A; one circle and two stick figures for Group B. The visual removes the language barrier entirely. The word "share" can be demonstrated by drawing lines through the circles. Point at a piece, point at a person. If students need the word "fair," gesture equal portions with your hands.</p>
+</div>
+
+<div class="tm-callout tm-callout--say">
+  <strong>Say this</strong>
+  <p>"Show me." · "Can you draw it?" · "Which piece would you rather eat?" · "How do you know ⅔ is more than ½?"</p>
+</div>
+
+<div class="tm-callout tm-callout--dontsay">
+  <strong>Don't say this</strong>
+  <p>"Convert to a common denominator" — they'll find the need for this themselves. "⅔ is approximately 0.67" — the decimal conversion is a later discovery, not a starting point.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
 
 ## Why This Investigation Matters
 
