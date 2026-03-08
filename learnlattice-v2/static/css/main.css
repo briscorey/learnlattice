@@ -6307,3 +6307,56 @@ footer {
   margin-bottom: 0;
 }
 @media (max-width: 640px) { .conf-hero-title { font-size: 1.8rem; } }
+
+/* ═══════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 12px 24px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: 100000;
+  transition: top 0.2s;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Enhanced focus styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-glow, .lattice-bg { display: none; }
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #666;
+    --ink-muted: #444;
+  }
+  .resource-single-subject, .resource-single-type,
+  .at-a-glance-criterion-pill, .at-a-glance-tag {
+    border-width: 2px;
+  }
+}

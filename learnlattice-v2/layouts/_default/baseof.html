@@ -5,17 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Mathematics & Science Investigations{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="theme-color" content="#0D9488">
   {{ partial "seo.html" . }}
+  {{/* Preconnect to external origins */}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css?v=20260309b">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  {{/* Critical CSS inline for fastest paint */}}
+  <link rel="stylesheet" href="/css/main.css?v=20260309c">
+  {{/* Non-blocking font loading */}}
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+  {{/* KaTeX loaded non-blocking — only needed after initial render */}}
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"></noscript>
   {{ block "head" . }}{{ end }}
 </head>
 <body{{ with .Params.body_class }} class="{{ . }}"{{ end }}>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="lattice-bg"></div>
   {{ partial "header.html" . }}
-  <main>
+  <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}

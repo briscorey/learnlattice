@@ -74,38 +74,39 @@
 {{ $links = $links | append (dict "source" "Earth Science" "target" "Space Science" "type" "cross") }}
 {{ $links = $links | append (dict "source" "Decimals" "target" "Number Sense" "type" "cross") }}
 
-{{/* Investigations */}}
+{{/* Investigations — ALL resources, flagships get larger size */}}
 {{ $flagshipSlugs := slice "the-million-dollar-question-number-sense" "the-fairness-problem-fractions-inquiry" "zero-point-nine-repeating-decimals-investigation" "impossible-shapes-geometry-investigation" "the-staircase-problem-algebra-investigation" "is-this-die-cheating-probability-investigation" "the-misleading-graph-statistics-investigation" "dead-or-alive-biology-investigation" "the-invisible-thread-ecology-investigation" "reading-rocks-earth-science-investigation" "how-do-we-know-stars-space-investigation" "the-disappearing-candle-chemistry-investigation" }}
 
-{{ range $flagshipSlugs }}
-  {{ $page := $.Site.GetPage (printf "/resources/%s" .) }}
-  {{ if $page }}
-    {{ $id := . }}
-    {{ $nodes = $nodes | append (dict "id" $id "label" $page.Title "group" "investigation" "size" 11 "url" $page.RelPermalink) }}
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ range $allResources }}
+  {{ $slug := .File.ContentBaseName }}
+  {{ $isFlagship := in $flagshipSlugs $slug }}
+  {{ $nodeSize := 6 }}
+  {{ if $isFlagship }}{{ $nodeSize = 13 }}{{ end }}
+  {{ $nodes = $nodes | append (dict "id" $slug "label" .Title "group" "investigation" "size" $nodeSize "url" .RelPermalink) }}
 
-    {{/* Link to math topic */}}
-    {{ with $page.Params.math_topic }}
-      {{ $links = $links | append (dict "source" $id "target" . "type" "belongs") }}
-    {{ end }}
+  {{/* Link to math topic */}}
+  {{ with .Params.math_topic }}
+    {{ $links = $links | append (dict "source" $slug "target" . "type" "belongs") }}
+  {{ end }}
 
-    {{/* Link to science subjects */}}
-    {{ range $page.Params.subjects }}
-      {{ if and (ne . "Mathematics") (ne . "Science") (in $sciStrands .) }}
-        {{ $links = $links | append (dict "source" $id "target" . "type" "belongs") }}
-      {{ end }}
+  {{/* Link to science subjects */}}
+  {{ range .Params.subjects }}
+    {{ if and (ne . "Mathematics") (ne . "Science") (in $sciStrands .) }}
+      {{ $links = $links | append (dict "source" $slug "target" . "type" "belongs") }}
     {{ end }}
+  {{ end }}
 
-    {{/* Link to key concept */}}
-    {{ with $page.Params.key_concept }}
-      {{ $conceptExists := false }}
-      {{ range $nodes }}
-        {{ if and (eq .group "concept") (eq .id $page.Params.key_concept) }}{{ $conceptExists = true }}{{ end }}
-      {{ end }}
-      {{ if not $conceptExists }}
-        {{ $nodes = $nodes | append (dict "id" . "label" . "group" "concept" "size" 15) }}
-      {{ end }}
-      {{ $links = $links | append (dict "source" $id "target" . "type" "concept") }}
+  {{/* Link to key concept */}}
+  {{ with .Params.key_concept }}
+    {{ $conceptExists := false }}
+    {{ range $nodes }}
+      {{ if and (eq .group "concept") (eq .id $.Params.key_concept) }}{{ $conceptExists = true }}{{ end }}
     {{ end }}
+    {{ if not $conceptExists }}
+      {{ $nodes = $nodes | append (dict "id" . "label" . "group" "concept" "size" 15) }}
+    {{ end }}
+    {{ $links = $links | append (dict "source" $slug "target" . "type" "concept") }}
   {{ end }}
 {{ end }}
 
@@ -137,18 +138,19 @@
 
   var simulation = d3.forceSimulation(graphData.nodes)
     .force('link', d3.forceLink(graphData.links).id(function(d) { return d.id; }).distance(function(d) {
-      if (d.type === 'parent') return 100;
-      if (d.type === 'belongs') return 80;
-      if (d.type === 'cross') return 150;
-      return 120;
+      if (d.type === 'parent') return 120;
+      if (d.type === 'belongs') return 60;
+      if (d.type === 'cross') return 180;
+      return 100;
     }))
     .force('charge', d3.forceManyBody().strength(function(d) {
-      if (d.group === 'math' || d.group === 'science') return -600;
-      if (d.group.includes('strand')) return -300;
-      return -150;
+      if (d.group === 'math' || d.group === 'science') return -800;
+      if (d.group.includes('strand')) return -400;
+      if (d.group === 'concept') return -200;
+      return -60;
     }))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(function(d) { return d.size + 8; }))
+    .force('collision', d3.forceCollide().radius(function(d) { return d.size + 4; }))
     .force('x', d3.forceX(function(d) {
       if (d.group === 'math' || d.group === 'math-strand') return width * 0.35;
       if (d.group === 'science' || d.group === 'science-strand') return width * 0.65;
@@ -207,7 +209,7 @@
     .attr('stroke-width', 1)
     .attr('opacity', 0.3);
 
-  // Labels
+  // Labels — only for hubs, strands, concepts, and large investigations
   node.append('text')
     .text(function(d) { return d.label; })
     .attr('text-anchor', 'middle')
@@ -223,8 +225,12 @@
     .attr('font-weight', function(d) {
       return d.group === 'math' || d.group === 'science' ? '700' : '500';
     })
+    .attr('display', function(d) {
+      // Hide labels on small investigation nodes to reduce clutter
+      if (d.group === 'investigation' && d.size < 10) return 'none';
+      return 'block';
+    })
     .each(function(d) {
-      // Truncate long investigation names
       if (d.label.length > 25 && d.group === 'investigation') {
         d3.select(this).text(d.label.substring(0, 22) + '…');
       }
@@ -232,9 +238,14 @@
 
   // Interactions
   node.on('mouseover', function(event, d) {
+    // Show label on hovered node even if normally hidden
+    d3.select(this).select('text').attr('display', 'block').attr('fill', '#fff');
+
+    var connCount = graphData.links.filter(function(l) { return (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id; }).length;
     tooltip.innerHTML = '<strong>' + d.label + '</strong>' +
-      (d.group === 'investigation' ? '<br><span style="opacity:.6">Click to open investigation</span>' : '') +
-      (d.group.includes('strand') ? '<br><span style="opacity:.6">' + graphData.links.filter(function(l) { return (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id; }).length + ' connections</span>' : '');
+      (d.group === 'investigation' ? '<br><span style="opacity:.6">Click to open · ' + connCount + ' connections</span>' : '') +
+      (d.group.includes('strand') ? '<br><span style="opacity:.6">' + connCount + ' connections</span>' : '') +
+      (d.group === 'concept' ? '<br><span style="opacity:.6">MYP Key Concept · ' + connCount + ' connections</span>' : '');
     tooltip.style.display = 'block';
     tooltip.style.left = (event.pageX - container.getBoundingClientRect().left + 12) + 'px';
     tooltip.style.top = (event.pageY - container.getBoundingClientRect().top - 40) + 'px';
@@ -264,7 +275,13 @@
   .on('mouseout', function() {
     tooltip.style.display = 'none';
     node.selectAll('circle').attr('opacity', 0.9);
-    node.selectAll('text').attr('opacity', 1);
+    node.selectAll('text')
+      .attr('opacity', 1)
+      .attr('fill', 'rgba(255,255,255,0.75)')
+      .attr('display', function(d) {
+        if (d.group === 'investigation' && d.size < 10) return 'none';
+        return 'block';
+      });
     link.attr('opacity', 1);
   })
   .on('click', function(event, d) {

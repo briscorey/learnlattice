@@ -511,6 +511,26 @@ summaryLength = 30
     url = "/about/"
     weight = 8
 
+[related]
+  includeNewer = true
+  threshold = 30
+  toLower = true
+  [[related.indices]]
+    name = "subjects"
+    weight = 100
+  [[related.indices]]
+    name = "math_topic"
+    weight = 80
+  [[related.indices]]
+    name = "tags"
+    weight = 60
+  [[related.indices]]
+    name = "year_levels"
+    weight = 40
+  [[related.indices]]
+    name = "key_concept"
+    weight = 50
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
