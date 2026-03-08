@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="earthGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#earthGrad)" rx="16"/>
+  <!-- Strata layers -->
+  <path d="M 0,140 Q 50,130 100,138 T 200,132" fill="none" stroke="#d97706" stroke-width="1.8" opacity="0.5"/>
+  <path d="M 0,155 Q 60,148 100,155 T 200,150" fill="none" stroke="#d97706" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 0,170 Q 45,165 100,172 T 200,168" fill="none" stroke="#d97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 0,185 Q 55,180 100,186 T 200,183" fill="none" stroke="#d97706" stroke-width="1" opacity="0.2"/>
+  <!-- Mountain -->
+  <path d="M 60,140 L 95,60 L 115,85 L 135,45 L 165,140" fill="none" stroke="#d97706" stroke-width="1.5" opacity="0.45"/>
+  <path d="M 115,85 L 135,45" stroke="#d97706" stroke-width="1.5" opacity="0.45"/>
+  <!-- Tectonic arrows -->
+  <line x1="30" y1="125" x2="75" y2="125" stroke="#d97706" stroke-width="1" opacity="0.3"/>
+  <polygon points="75,125 70,121 70,129" fill="#d97706" opacity="0.3"/>
+  <line x1="170" y1="125" x2="125" y2="125" stroke="#d97706" stroke-width="1" opacity="0.3"/>
+  <polygon points="125,125 130,121 130,129" fill="#d97706" opacity="0.3"/>
+  <!-- Fossil hint -->
+  <circle cx="50" cy="158" r="4" fill="none" stroke="#d97706" stroke-width="0.8" opacity="0.3"/>
+  <path d="M 48,156 Q 50,160 52,156" fill="none" stroke="#d97706" stroke-width="0.6" opacity="0.3"/>
+</svg>

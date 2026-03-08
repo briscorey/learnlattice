@@ -4,31 +4,47 @@
 {{ with .Params.subjects }}{{ $subject = index . 0 | urlize }}{{ $subjectLabel = index . 0 }}{{ end }}
 {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
 
-{{ $thumbColor := "teal" }}
-{{ if eq $subject "mathematics" }}{{ $thumbColor = "teal" }}{{ end }}
-{{ if eq $subject "science" }}{{ $thumbColor = "sky" }}{{ end }}
-{{ if eq $subject "biology" }}{{ $thumbColor = "sky" }}{{ end }}
-{{ if eq $subject "physics" }}{{ $thumbColor = "sky" }}{{ end }}
-{{ if eq $subject "ecology" }}{{ $thumbColor = "teal" }}{{ end }}
-{{ if eq $subject "space-science" }}{{ $thumbColor = "amber" }}{{ end }}
-{{ if eq $subject "earth-science" }}{{ $thumbColor = "amber" }}{{ end }}
-{{ if eq $subject "chemistry" }}{{ $thumbColor = "rose" }}{{ end }}
+{{ $typeIcons := dict "Investigation Pack" "🔍" "Unit Plan" "📋" "Worksheet" "📝" "Lab Activity" "🧪" "Interactive Game" "🎮" "Simulation Activity" "🧪" "Fieldwork Study" "🌿" "Observation Log" "👁" "Data Analysis" "📊" "Case Study" "📂" "Comparison Task" "⚖️" }}
+{{ $typeIcon := index $typeIcons $resourceType | default "📄" }}
 
-<a class="resource-card" href="{{ .RelPermalink }}">
+{{ $subjectColor := "teal" }}
+{{ if eq $subject "mathematics" }}{{ $subjectColor = "teal" }}{{ end }}
+{{ if eq $subject "biology" }}{{ $subjectColor = "green" }}{{ end }}
+{{ if eq $subject "chemistry" }}{{ $subjectColor = "rose" }}{{ end }}
+{{ if eq $subject "physics" }}{{ $subjectColor = "blue" }}{{ end }}
+{{ if eq $subject "earth-science" }}{{ $subjectColor = "amber" }}{{ end }}
+{{ if eq $subject "space-science" }}{{ $subjectColor = "violet" }}{{ end }}
+{{ if eq $subject "ecology" }}{{ $subjectColor = "emerald" }}{{ end }}
+{{ if eq $subject "science" }}{{ $subjectColor = "teal" }}{{ end }}
+
+{{ $svgFile := "mathematics" }}
+{{ if eq $subject "biology" }}{{ $svgFile = "biology" }}{{ end }}
+{{ if eq $subject "chemistry" }}{{ $svgFile = "chemistry" }}{{ end }}
+{{ if eq $subject "physics" }}{{ $svgFile = "physics" }}{{ end }}
+{{ if eq $subject "earth-science" }}{{ $svgFile = "earth-science" }}{{ end }}
+{{ if eq $subject "space-science" }}{{ $svgFile = "space-science" }}{{ end }}
+{{ if eq $subject "ecology" }}{{ $svgFile = "ecology" }}{{ end }}
+{{ if eq $subject "science" }}{{ $svgFile = "physics" }}{{ end }}
+
+<a class="resource-card" href="{{ .RelPermalink }}" data-subject="{{ $subjectColor }}">
   {{ if .Params.teacher_moves }}<span class="resource-tm-badge">🧭 Teacher Moves</span>{{ end }}
-  <div class="resource-thumb {{ $thumbColor }}-bg">
+  <div class="resource-thumb rc-{{ $subjectColor }}">
+    <img class="resource-thumb-svg" src="/img/subjects/{{ $svgFile }}.svg" alt="" loading="lazy" aria-hidden="true">
     {{ with .Params.formula }}<div class="formula">{{ . }}</div>{{ end }}
-    {{ with $subjectLabel }}<span class="resource-thumb-label">{{ . }}</span>{{ end }}
-    {{ with $resourceType }}<span class="resource-thumb-type">{{ . }}</span>{{ end }}
+    <div class="resource-thumb-overlay">
+      <span class="resource-thumb-type-icon">{{ $typeIcon }}</span>
+      <span class="resource-thumb-type-label">{{ $resourceType }}</span>
+    </div>
   </div>
   <div class="resource-body">
+    <div class="resource-body-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</div>
     <h3>{{ .Title }}</h3>
-    <p>{{ .Description | default .Summary }}</p>
+    <p>{{ .Description | default .Summary | truncate 120 }}</p>
     <div class="resource-meta">
-      {{ range .Params.year_levels }}
+      {{ range first 2 .Params.year_levels }}
         <span class="resource-tag">{{ . }}</span>
       {{ end }}
-      {{ range first 3 .Params.tags }}
+      {{ range first 2 .Params.tags }}
         <span class="resource-tag">{{ . }}</span>
       {{ end }}
     </div>

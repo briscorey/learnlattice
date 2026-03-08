@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#mathGrad)" rx="16"/>
+  <!-- Tessellation hexagons -->
+  <polygon points="100,30 130,48 130,82 100,100 70,82 70,48" fill="none" stroke="#0D9488" stroke-width="1.5" opacity="0.6"/>
+  <polygon points="100,100 130,118 130,152 100,170 70,152 70,118" fill="none" stroke="#0D9488" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="40,65 70,48 70,82 40,100 10,82 10,48" fill="none" stroke="#0D9488" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="160,65 190,48 190,82 160,100 130,82 130,48" fill="none" stroke="#0D9488" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="40,135 70,118 70,152 40,170 10,152 10,118" fill="none" stroke="#0D9488" stroke-width="1.5" opacity="0.2"/>
+  <polygon points="160,135 190,118 190,152 160,170 130,152 130,118" fill="none" stroke="#0D9488" stroke-width="1.5" opacity="0.2"/>
+  <!-- Central symbol -->
+  <text x="100" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#0D9488" opacity="0.8">𝑥</text>
+  <!-- Corner dots -->
+  <circle cx="100" cy="30" r="3" fill="#0D9488" opacity="0.7"/>
+  <circle cx="130" cy="48" r="2.5" fill="#0D9488" opacity="0.5"/>
+  <circle cx="70" cy="48" r="2.5" fill="#0D9488" opacity="0.5"/>
+  <circle cx="100" cy="170" r="3" fill="#0D9488" opacity="0.4"/>
+</svg>
