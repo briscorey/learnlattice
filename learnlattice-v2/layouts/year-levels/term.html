@@ -104,16 +104,9 @@
   {{ end }}
 
   {{ if gt (len $flagships) 0 }}
-  <div class="gl-flagships">
+  <div class="gl-flagships resources-grid">
     {{ range $flagships }}
-    <a class="gl-flagship-card" href="{{ .RelPermalink }}">
-      <div class="gl-flagship-badge">⭐ Flagship</div>
-      <h3>{{ .Title }}</h3>
-      <p>{{ .Description | truncate 140 }}</p>
-      <div class="gl-flagship-meta">
-        {{ range first 3 .Params.tags }}<span>{{ . }}</span>{{ end }}
-      </div>
-    </a>
+      {{ partial "resource-card.html" . }}
     {{ end }}
   </div>
   {{ end }}
