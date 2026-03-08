@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Worked Example: Pythagoras' Theorem — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center}.ex{width:100%;max-width:560px}.prob{padding:20px;background:#1e293b;border:2px solid #0D9488;border-radius:12px;text-align:center;margin-bottom:24px}.prob-l{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#0D9488;margin-bottom:8px}.prob-t{font-size:1rem;color:#e2e8f0;line-height:1.5}.steps,.step,.step-h,.step-n,.step-t,.step-b,.step-e,.step-m,.btn,.pg,.dot,.nav,.nav button{/* reuse same styles */}.steps{display:flex;flex-direction:column}.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}.step.on{border-color:#334155}.step.cur{border-color:#0D9488}.step-h{display:flex;align-items:center;gap:10px;padding:12px 16px}.step-n{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}.step:not(.on) .step-n{background:#334155;color:#64748b}.step.on .step-n{background:#0D9488;color:#fff}.step-t{font-size:.85rem;color:#94a3b8}.step.on .step-t{color:#e2e8f0}.step-b{display:none;padding:0 16px 16px}.step.on .step-b{display:block}.step-e{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}.step-m{font-family:'Courier New',monospace;font-size:1.1rem;color:#14b8a6;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}.step-m .hl{color:#f59e0b}.btn{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#0D9488;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}.btn:hover{background:#0a7c72}.btn.done{background:#22c55e}.pg{display:flex;gap:4px;justify-content:center;margin-bottom:20px}.dot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}.dot.on{background:#0D9488}.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s}.nav button.on{background:#0D9488;color:#fff}</style></head><body>
+<h1>Pythagoras' Theorem</h1><p class="sub">a² + b² = c² — finding missing sides of right-angled triangles.</p>
+<div class="ex"><div class="prob"><div class="prob-l">Find the missing side</div><div class="prob-t" id="pt"></div></div><div class="pg" id="pg"></div><div class="steps" id="ss"></div><button class="btn" id="btn" onclick="next()">Show next step</button><div class="nav" id="nav"></div></div>
+<script>
+var P=[
+{t:"A right triangle has legs 3 cm and 4 cm. Find the hypotenuse.",s:[
+{t:"Write the theorem",e:"For a right triangle: a² + b² = c² where c is the hypotenuse (longest side).",m:"a² + b² = c²"},
+{t:"Substitute known values",e:"a = 3, b = 4",m:"3² + 4² = c²"},
+{t:"Calculate the squares",e:"9 + 16 = 25",m:"<span class='hl'>9</span> + <span class='hl'>16</span> = c²"},
+{t:"Solve for c",e:"c² = 25, so c = √25 = 5",m:"c = √25 = <span class='hl'>5 cm</span>"},
+{t:"Check: is 3-4-5 valid?",e:"3² + 4² = 9 + 16 = 25 = 5² ✓ (This is a Pythagorean triple!)",m:"9 + 16 = 25 ✓"},
+]},
+{t:"A right triangle has hypotenuse 13 cm and one leg 5 cm. Find the other leg.",s:[
+{t:"Write the theorem",e:"a² + b² = c². We know c = 13 and a = 5. Find b.",m:"5² + b² = 13²"},
+{t:"Calculate known squares",e:"25 + b² = 169",m:"<span class='hl'>25</span> + b² = <span class='hl'>169</span>"},
+{t:"Isolate b²",e:"Subtract 25 from both sides.",m:"b² = 169 − 25 = <span class='hl'>144</span>"},
+{t:"Square root",e:"b = √144 = 12",m:"b = <span class='hl'>12 cm</span>"},
+{t:"Check",e:"5² + 12² = 25 + 144 = 169 = 13² ✓",m:"25 + 144 = 169 ✓"},
+]},
+{t:"A ladder 10 m long leans against a wall. The base is 6 m from the wall. How high up the wall does it reach?",s:[
+{t:"Draw and label",e:"The ladder is the hypotenuse (10 m). The ground distance is one leg (6 m). The wall height is the unknown leg.",m:"6² + h² = 10²"},
+{t:"Calculate",e:"36 + h² = 100",m:"<span class='hl'>36</span> + h² = <span class='hl'>100</span>"},
+{t:"Isolate h²",e:"h² = 100 − 36 = 64",m:"h² = <span class='hl'>64</span>"},
+{t:"Square root",e:"h = √64 = 8",m:"h = <span class='hl'>8 m</span>"},
+{t:"Check + interpret",e:"6² + 8² = 36 + 64 = 100 = 10² ✓. The ladder reaches 8 m up the wall.",m:"The ladder reaches <span class='hl'>8 m</span> up the wall ✓"},
+]},
+];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('pt').textContent=P[i].t;var s=P[i].s,c=document.getElementById('ss');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-h"><div class="step-n">'+(j+1)+'</div><div class="step-t">'+st.t+'</div></div><div class="step-b"><div class="step-e">'+st.e+'</div><div class="step-m">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('pg');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='dot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].s;if(ri>=s.length)return;document.getElementById('s'+ri).classList.add('on','cur');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('cur');document.querySelectorAll('.dot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='✓ Complete';b.className='btn done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script></body></html>
