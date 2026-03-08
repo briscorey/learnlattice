@@ -194,6 +194,40 @@ Scientists estimate this zone is "locked" — building up stress — and will ev
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Project a world map showing the distribution of identical fossils across continents (e.g., Mesosaurus in both South America and Africa). Ask: **"These are the same fossil. These continents are separated by 5,000 km of ocean. How?"**
+
+Collect ideas. Do not correct any of them — even "they swam across" is worth exploring and eliminating through evidence.
+
+**EAL move:** Print the map. Give each group scissors. Ask them to cut out the continents and try to fit them together. The physical puzzle speaks for itself.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who know the answer (plate tectonics) but can't explain the *evidence* for it. Knowing the theory is not the same as being able to argue for it. Push: "How do you know the continents moved? What would you show a skeptic?"
+
+**Watch for:** Students who focus only on jigsaw fit and ignore paleomagnetic or glacial evidence. Provide the additional evidence sets one at a time, like layers of a detective case. Each new piece of evidence should strengthen the argument.
+
+**Do not say:** "Alfred Wegener proposed continental drift." Not yet. Let students build the argument first. Then introduce Wegener as someone who did exactly what they just did — and was rejected for 50 years. The story of scientific resistance to evidence is as important as the evidence itself.
+
+**Key moment:** When students lay out multiple independent lines of evidence (fossil distribution + continental fit + glacier scratches + paleomagnetic data). Ask: "Any one of these could be a coincidence. All four together — still a coincidence?" This is how scientific confidence works.
+
+### Pulling It Together (Minutes 25–35)
+
+Return to the opening question. Ask: "What's the simplest explanation that accounts for ALL the evidence?" The principle of parsimony — the simplest explanation that fits all facts — is doing real work here.
+
+**EAL move:** Create an evidence wall. Each group posts their strongest piece of evidence (visual — map, diagram, drawing) on the board. The accumulation of evidence is visually powerful.
+
+### What You Are Listening For
+
+- "The shapes fit!" — the first observation, but not sufficient alone
+- "One piece of evidence isn't enough" — the nature of scientific argumentation
+- "Why didn't people believe Wegener?" — the sociology of science; excellent discussion territory
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

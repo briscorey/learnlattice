@@ -156,6 +156,40 @@ Put this on the board: "The US national debt is approximately $3.3 × 10¹³. De
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Write "$1,000,000" on the board. Below it: **"If you spent one dollar every second, how long until it's gone?"** Say the question once. Point at the number. Set a 90-second silent timer for individual estimates.
+
+**Do not** give hints about units or conversion. The whole point is that students will underestimate catastrophically — and that surprise is the engine of the lesson.
+
+**EAL move:** Write "1 second = $1" and draw a clock tick. The visual is enough.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who convert to minutes but stop there. Walk over, point at their answer, write "days?" next to it with a question mark. Let them continue.
+
+**Watch for:** Students who get to ~11.5 days and think they're done. They've calculated for a million seconds but haven't yet felt the *scale*. Ask: "What about a billion?" — this is where the real learning happens.
+
+**Do not say:** "Use scientific notation." Wait until students are frustrated by the number of zeros, then ask: "Is there a shorter way to write this?"
+
+**Key moment:** When a student realises that a million seconds is about 11 days but a billion seconds is about 31 *years*, stop the class. Have that student share. This is the conceptual core — the jump from 10⁶ to 10⁹ is not "a bit more," it's a different human experience.
+
+### Pulling It Together (Minutes 25–35)
+
+Draw a number line on the board: 10³ → 10⁶ → 10⁹ → 10¹². Ask each group to label their time conversions underneath. The visual compression of the number line versus the experiential expansion of the times is the lesson's signature moment.
+
+**EAL move:** Use a table on the board — "seconds / minutes / hours / days / years" as column headers. Students can contribute numbers without needing to explain in English.
+
+### What You Are Listening For
+
+- "Wait, that can't be right" — this means the scale surprise has landed
+- Students debating whether to round or be exact — this is a conversation about precision worth amplifying
+- "So a billionaire has..." — the connection to inequality and the Global Context is emerging naturally
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

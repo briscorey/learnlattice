@@ -190,6 +190,40 @@ Expected answers: mules (no reproduction), dormant seeds (minimal active metabol
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Project a list on the board: **fire, virus, seed, robot vacuum, coral, frozen embryo**. Ask: **"Which of these are alive?"**
+
+Do not provide criteria. Let students argue using their intuitions. The disagreements are the lesson — they reveal that "alive" is harder to define than anyone expects.
+
+**EAL move:** Use images, not words. Project a photo of each item. Students point at the ones they think are alive. No language required for the initial sort.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who immediately apply MRS GREN (movement, respiration, sensitivity, growth, reproduction, excretion, nutrition) and think they're done. Hand them the virus. "Which criteria does it meet?" It reproduces (sort of) but doesn't respire, grow, or excrete. This is where the framework breaks.
+
+**Watch for:** The fire debate. Fire "grows," "reproduces," "consumes," and "responds to stimuli." If it meets most criteria, is it alive? Students who say "obviously not" need to explain *why* — and that explanation reveals the limits of checklist-based classification.
+
+**Do not say:** "Viruses are not alive." The scientific community does not fully agree on this. Let students encounter the genuine ambiguity.
+
+**Key moment:** When a student asks "so who decides what's alive?" The answer is: biologists, and they disagree. This is the nature of science — classification systems are human inventions imposed on a continuous world.
+
+### Pulling It Together (Minutes 25–35)
+
+Return to the original list. Ask each group to present their revised criteria. Highlight where groups disagree. Ask: "Could we design a test that would settle this for the virus?" (They'll find they can't — not definitively.)
+
+**EAL move:** Create a large matrix on the board: items down the left, MRS GREN criteria across the top. Students place ✓, ✗, or ? in each cell. The matrix communicates without sentences.
+
+### What You Are Listening For
+
+- "But fire isn't alive... is it?" — productive doubt about categories
+- "It depends on your definition" — the epistemological insight that definitions shape conclusions
+- Students arguing about viruses — this is a real scientific debate and they're inside it
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

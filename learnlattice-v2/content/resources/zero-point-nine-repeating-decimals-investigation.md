@@ -213,6 +213,42 @@ Write a letter to a sceptical friend who refuses to believe that 0.999... = 1. Y
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Write on the board: **0.999... = 1**
+
+Say nothing else. Set a 60-second timer. Ask students to write on their mini-whiteboard: "Agree" or "Disagree" and hold it up.
+
+The class will be split. That division is the fuel. **Do not** reveal the answer. Say: "Interesting. Let's find out."
+
+**EAL move:** Write "= ?" between 0.999... and 1 with a large question mark. Thumbs up for yes, thumbs down for no. Every student can participate.
+
+### During the Investigation (Minutes 3–30)
+
+**Watch for:** Students who say "it's close but not equal." Ask: "How much less than 1 is it? Can you write that number down?" They will try to write 0.000...1 — and realise they can't, because there's no "last zero." This is a moment of genuine mathematical discovery.
+
+**Watch for:** The algebraic proof (let x = 0.999..., then 10x = 9.999..., subtract to get 9x = 9). Students often feel this is "cheating." Ask: "Which step do you not trust? Point to it." This surfaces their discomfort with infinity, which is the real lesson.
+
+**Do not say:** "Infinity is just a concept." It's not — it's doing actual mathematical work here. Let students wrestle with it.
+
+**Key moment:** When a student asks "but doesn't it go on forever?" — this is the opening to discuss the difference between a process (writing more 9s) and a limit (what the number equals). You don't need to use the word "limit." You can say: "What number is it trying to reach, even if it never finishes writing?"
+
+### Pulling It Together (Minutes 30–40)
+
+Present all four proofs side by side. Ask: "Which proof convinced you the most? Which do you still doubt?" The fact that multiple independent methods produce the same conclusion is itself a lesson about mathematical certainty.
+
+**EAL move:** Number the four proofs 1–4 on the board. Students hold up fingers for which convinced them most. No English needed.
+
+### What You Are Listening For
+
+- "That's not possible" — the productive disbelief that drives mathematical inquiry
+- "But what about 0.000...1?" — the key misconception to address, gently
+- Students trying to break the proof — this is what mathematicians do; praise it
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

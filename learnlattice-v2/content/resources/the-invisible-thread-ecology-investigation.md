@@ -219,6 +219,40 @@ Ask groups: "You predicted the seal population would decrease when herring are o
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Tell the story: **"In 1995, wolves were reintroduced to Yellowstone National Park. Within 20 years, the rivers changed course. How?"** Write the question on the board. Give 60 seconds of silent thinking.
+
+Collect predictions on sticky notes. Group them on the board. Do not evaluate any prediction.
+
+**EAL move:** Show a before/after satellite image of Yellowstone rivers (available freely online). Point at the difference. Point at a picture of a wolf. Connect with an arrow and a question mark.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who jump straight to "wolves eat deer, so more plants grow." That's the first link in the chain, but the investigation needs to go further — through vegetation stabilising riverbanks, to beaver recolonisation, to changed water flow patterns. Push them: "OK, then what?"
+
+**Watch for:** Students who build simple food chains instead of webs. Give them a second species to add. Then a third. The complexity should feel overwhelming — that's the point about interconnectedness.
+
+**Do not say:** "This is called a trophic cascade." Let students experience the cascade first, name it later. The term means nothing until they've traced the connections themselves.
+
+**Key moment:** When a student traces a connection that goes: wolves → deer behaviour → tree growth → bird nesting → insect populations → river chemistry. Five links in a chain that starts with a predator and ends with water. This is the "invisible thread" — and the moment it becomes visible is electric.
+
+### Pulling It Together (Minutes 25–35)
+
+Build the full cascade on the board as a class. Start with wolves and keep asking "and then what happened?" String it out across the entire board. The physical length of the chain is the visual argument for interconnectedness.
+
+**EAL move:** Use arrows, icons, and drawings instead of words. Each group adds their link to the chain physically on the board. The story builds visually.
+
+### What You Are Listening For
+
+- "Wait, the wolves changed the *rivers*?" — the surprise that drives the investigation
+- "Everything is connected to everything" — the ecological principle, discovered not stated
+- Students arguing about which link in the chain is most important — there's no single answer
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

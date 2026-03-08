@@ -170,6 +170,42 @@ A building casts a shadow 24 m long at the same time that a metre stick casts a 
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Draw a triangle on the board. Write three angles inside: 60°, 70°, 80°. Ask: **"Can this triangle exist?"** (It can't — angles sum to 210°.) Let students figure out why.
+
+Then draw another triangle: 60°, 60°, 60°. **"What about this one?"** (Yes — equilateral.)
+
+Then: **"Can you draw a triangle where all angles are 90°?"** Say nothing more.
+
+**EAL move:** Draw the shapes large and clear. Use a protractor visibly. Point at each angle and write the degree. The mathematics is entirely visual.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who immediately say "impossible" to the 90-90-90 triangle. Hand them a ball (a globe or sports ball). Say: "Try it on this." Drawing on a sphere changes everything — and that's the point.
+
+**Watch for:** Students who add angles incorrectly. This is not the time for correction — the investigation will self-correct when their shapes fail to close. Let the failure teach.
+
+**Do not say:** "Angles in a triangle sum to 180°." Let students discover this through the investigation, and let the spherical geometry challenge break it open again.
+
+**Key moment:** When a student draws a valid triangle on a sphere where every angle is 90°. Stop the class. Hold up the ball. Ask: "Is this a triangle?" The answer is yes — it has three straight sides and three angles. But the rule they just "discovered" doesn't apply here. This is the moment that Euclidean assumptions become visible.
+
+### Pulling It Together (Minutes 25–35)
+
+Create two columns on the board: "Flat Surface Rules" and "Curved Surface Rules." Have students fill in what they've discovered. The punchline: the angle sum depends on the surface, not on the shape.
+
+**EAL move:** Use the flat desk and the ball as physical anchors. Point at each surface when discussing the rules. Students can demonstrate rather than explain.
+
+### What You Are Listening For
+
+- "Wait, that works on the ball but not on paper" — the Euclidean assumption is becoming visible
+- Students arguing about whether a "curved line" counts as "straight" — this is a deep question about geodesics
+- "So the rules change?" — yes, and knowing when rules change is more important than memorising rules
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

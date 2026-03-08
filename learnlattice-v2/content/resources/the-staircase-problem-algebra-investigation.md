@@ -193,6 +193,42 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Draw Steps 1–3 on the board (the staircase pattern). Write: **"How many blocks in Step 10? Step 100? Step n?"**
+
+Set a 2-minute silent timer. Every student sketches Steps 4 and 5 individually before joining a group. This silent start is critical — it means every person arrives at their group with something to contribute.
+
+**Do not** say "find the pattern" or "look for a formula." These phrases shut down exploration by telling students what the destination is before they've started the journey.
+
+**EAL move:** The problem is entirely visual. Point at the drawing. Hold up fingers: 1, 3, 6. Point at the question marks. No language needed.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Groups who build a table but don't see the pattern. Point at the "blocks added" column (1, 2, 3, 4...) and raise your eyebrows. That's usually enough.
+
+**Watch for:** The student who tries to double the staircase and make a rectangle. This is Gauss's method. If only one group finds it, let them present later — don't broadcast it early.
+
+**Do not say:** "n(n+1)/2." If you give the formula, you steal the discovery. The formula is not the point — the process of finding it is the point.
+
+**Key moment:** When a group gets Step 100 = 5050 by brute-force addition AND another group gets 5050 by formula. Bring both to the board. Ask: "You got the same answer by completely different methods. Why does that make us more confident it's correct?" This is mathematical reasoning, not answer-getting.
+
+### Pulling It Together (Minutes 25–35)
+
+Show the rectangle method on the board: two staircases forming an n × (n+1) rectangle. Ask: "Why do we divide by 2?" Students who understand the geometry will say "because we used two staircases." Students who memorised the formula will struggle to explain the 2.
+
+**EAL move:** Build the rectangle physically with blocks or draw it step-by-step. The visual proof needs no words.
+
+### What You Are Listening For
+
+- "It's going up by one more each time" — the first pattern; build on it
+- "What if I flip it?" — the geometric insight that leads to Gauss
+- "Does this work for any number?" — the generalisation impulse; this is the transition to algebra
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

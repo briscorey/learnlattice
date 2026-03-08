@@ -202,6 +202,40 @@ You are given the full dataset (provided on the insert sheet): test scores for 8
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Project two graphs showing the same data but telling opposite stories (one with a truncated y-axis showing dramatic change, one with a full y-axis showing minimal change). Ask: **"Which graph is telling the truth?"** Then: **"Can they both be showing the same data?"**
+
+Let the room argue for 90 seconds before confirming: yes, same data, same numbers, completely different impression.
+
+**EAL move:** Point at Graph A, give a thumbs up (looks good!). Point at Graph B, give a thumbs down (looks bad!). Point at both, show the same data table. Confused face. Students will get it.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who think the "zoomed-in" graph is simply "wrong." It's not wrong — it's technically accurate but visually misleading. The distinction between accuracy and honesty is the conceptual core.
+
+**Watch for:** Students who discover that mean and median tell different stories. Give them a dataset where these diverge dramatically (e.g., income data with outliers). Ask: "If you wanted to make people think salaries are high, which would you use?"
+
+**Do not say:** "This graph is misleading because..." Let students identify the manipulation techniques themselves. They'll remember what they discovered far better than what you told them.
+
+**Key moment:** When a student says "so you can make data say anything?" This is both a valid insight and a dangerous one. The response: "You can make data *look* like anything. But the numbers underneath don't change. Your job is to see through the presentation to the numbers."
+
+### Pulling It Together (Minutes 25–35)
+
+Give each group the same dataset. Challenge: "Make two graphs — one that makes this data look great, and one that makes it look terrible. Both must be technically accurate." Share and vote on most convincing/most misleading.
+
+**EAL move:** The graph-making task is hands-on and visual. Provide graph paper and rulers. The output speaks for itself without requiring written explanation.
+
+### What You Are Listening For
+
+- "That's not fair" — the ethical dimension is engaging; lean into it
+- "But the numbers are the same!" — the core insight about presentation vs. data
+- Students debating which average is "better" — there's no single answer, and that's the point
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

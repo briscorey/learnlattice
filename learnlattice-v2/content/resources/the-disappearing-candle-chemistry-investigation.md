@@ -248,6 +248,42 @@ The main components of fossil fuels are hydrocarbons (compounds of carbon and hy
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Light a candle. Place it on a digital balance. Ask: **"If I leave this burning for 10 minutes, will the mass go up, down, or stay the same?"**
+
+Have students vote. Record the votes visibly. Then: **"Where does the candle go?"**
+
+This question — "where does the mass go?" — drives the entire investigation into conservation of mass, combustion, and the particle model.
+
+**EAL move:** Point at the candle. Point at the balance reading. Mime "smaller" with hands. Point at the air with a questioning gesture. The question is entirely physical.
+
+### During the Investigation (Minutes 3–30)
+
+**Watch for:** Students who say the mass "disappears." Push back: "Can mass disappear? Where would it go?" The idea that mass is conserved is counterintuitive when the candle is visibly shrinking, which is exactly why this investigation works.
+
+**Watch for:** Students who know "it turns into CO₂" but can't explain *how*. The particle model is the bridge: wax molecules + oxygen molecules → carbon dioxide molecules + water molecules. Every atom in the reactants is in the products. Nothing disappears — it changes form.
+
+**Do not say:** "Mass is conserved." This is what students need to discover. If they weigh the candle and see the mass decrease, they need to reason about where the missing mass went (into the air as gas). The conservation principle emerges from the evidence, not from a textbook statement.
+
+**Key moment:** If possible, burn the candle in a sealed container on a balance. The mass stays constant. Open container: mass appears to decrease. Sealed container: mass stays the same. Ask: "Why the difference?" The gas products are escaping in the open system — that's the missing mass.
+
+### Pulling It Together (Minutes 30–40)
+
+Draw the particle model of combustion on the board. Count atoms on each side. Ask: "Are all the atoms accounted for?" Students should be able to verify that every carbon, hydrogen, and oxygen atom in the reactants appears in the products.
+
+**EAL move:** Use molecular model kits or coloured balls. Students physically rearrange "atoms" from reactants to products. The conservation becomes tactile — you can't create or destroy a ball.
+
+### What You Are Listening For
+
+- "The candle didn't disappear — it turned into gas" — the conservation insight
+- "But it weighs less!" — the open-system confusion, which is the best teaching moment
+- Students counting atoms on both sides — this is balancing equations through understanding, not procedure
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

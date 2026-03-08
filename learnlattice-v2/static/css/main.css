@@ -5257,3 +5257,191 @@ footer {
   .blog-single-nav { flex-direction: column; }
   .blog-nav-next { text-align: left; }
 }
+
+/* ═══════════════════════════════════════════
+   TEACHER MOVES
+   ═══════════════════════════════════════════ */
+
+.teacher-moves {
+  margin: 32px 0 40px;
+  border: 2px solid #f59e0b;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fffbeb;
+}
+
+.teacher-moves-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #fef3c7, #fff7ed);
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #92400e;
+  transition: background 0.2s;
+  text-align: left;
+}
+.teacher-moves-toggle:hover { background: linear-gradient(135deg, #fde68a, #fed7aa); }
+
+.teacher-moves-toggle .tm-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.teacher-moves-toggle .tm-label { flex: 1; }
+.teacher-moves-toggle .tm-label small {
+  display: block;
+  font-weight: 400;
+  font-size: 13px;
+  color: #b45309;
+  margin-top: 2px;
+}
+
+.teacher-moves-toggle .tm-chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s ease;
+  color: #b45309;
+  flex-shrink: 0;
+}
+
+.teacher-moves.open .tm-chevron { transform: rotate(180deg); }
+.teacher-moves.open .teacher-moves-toggle { border-bottom-color: #f59e0b; }
+
+.teacher-moves-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.teacher-moves.open .teacher-moves-body { max-height: 8000px; }
+
+.teacher-moves-content {
+  padding: 28px 24px;
+}
+
+.teacher-moves-content h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  color: #92400e;
+  margin: 28px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #fde68a;
+}
+.teacher-moves-content h3:first-child { margin-top: 0; }
+
+.teacher-moves-content h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #b45309;
+  margin: 20px 0 8px;
+}
+
+.teacher-moves-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #78350f;
+  margin-bottom: 14px;
+}
+
+.teacher-moves-content strong { color: #92400e; }
+.teacher-moves-content em { font-style: italic; }
+
+.teacher-moves-content ul, .teacher-moves-content ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.teacher-moves-content li {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #78350f;
+  margin-bottom: 6px;
+}
+
+/* Pacing timeline */
+.tm-phase {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: rgba(255,255,255,0.6);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid #f59e0b;
+}
+.tm-phase-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #b45309;
+  white-space: nowrap;
+  min-width: 70px;
+  padding-top: 2px;
+}
+.tm-phase-body { flex: 1; }
+.tm-phase-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #92400e;
+  margin-bottom: 6px;
+}
+.tm-phase-body p { margin-bottom: 8px; }
+.tm-phase-body p:last-child { margin-bottom: 0; }
+
+/* Callout boxes */
+.tm-callout {
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  margin: 16px 0;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+.tm-callout p { margin-bottom: 6px; }
+.tm-callout p:last-child { margin-bottom: 0; }
+.tm-callout strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+
+.tm-callout--listen {
+  background: rgba(13,148,136,0.1);
+  border: 1px solid rgba(13,148,136,0.2);
+  color: var(--ink-deep);
+}
+.tm-callout--listen strong { color: var(--teal-deep); }
+
+.tm-callout--eal {
+  background: rgba(2,132,199,0.08);
+  border: 1px solid rgba(2,132,199,0.18);
+  color: var(--ink-deep);
+}
+.tm-callout--eal strong { color: var(--sky); }
+
+.tm-callout--dontsay {
+  background: rgba(225,29,72,0.06);
+  border: 1px solid rgba(225,29,72,0.15);
+  color: var(--ink-deep);
+}
+.tm-callout--dontsay strong { color: var(--rose); }
+
+.tm-callout--say {
+  background: rgba(13,148,136,0.06);
+  border: 1px solid rgba(13,148,136,0.15);
+  color: var(--ink-deep);
+}
+.tm-callout--say strong { color: var(--teal); }
+
+@media (max-width: 640px) {
+  .teacher-moves-content { padding: 20px 16px; }
+  .tm-phase { flex-direction: column; gap: 4px; }
+  .tm-phase-time { min-width: unset; }
+}

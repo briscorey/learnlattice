@@ -182,6 +182,40 @@ This metacognitive question reveals which meaning of fraction students are still
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Draw three circles on the board, each a different size. Write: **"3 people. 1 pizza each. Is this fair?"** Pause. Let them argue. Then draw one large pizza. **"3 people. 1 pizza. Now is it fair?"**
+
+**Do not** mention fractions yet. The word "fraction" kills the inquiry for students who have decided they can't do fractions. Keep it about fairness.
+
+**EAL move:** Use three actual objects of different sizes (books, pieces of paper). Point at them, point at three students. Shrug with a questioning face. The meaning is clear without language.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who immediately cut into thirds using vertical lines. Ask: "Is that the only way?" Hand them a second paper circle and a different colour marker.
+
+**Watch for:** Students who argue about whether oddly-shaped but equal-area pieces are "fair." This is the key distinction — congruent vs. equal area — and it's worth stopping the class for if the debate gets heated.
+
+**Do not say:** "A fraction is a part of a whole." Many students carry this as their only definition, and it breaks when fractions are greater than 1 or used as operators. Let the investigation build a richer understanding.
+
+**Key moment:** When a group discovers that 1÷3 and ⅓ mean the same thing. Point at their work. Write "1÷3 = ?" next to "⅓ of 1 = ?" and let them see the equivalence. This is the conceptual bridge.
+
+### Pulling It Together (Minutes 25–35)
+
+Ask each group to hold up their cut circles. Project the question: **"Which group's method would you trust to be fair? Why?"** The word "trust" forces justification — it's not enough to look fair, you need to prove it.
+
+**EAL move:** Give each group a sentence frame on a card: "Our method is fair because ___." Even one-word answers ("equal," "same") are valid contributions.
+
+### What You Are Listening For
+
+- "It depends what you mean by equal" — this is the lesson
+- Students comparing their method to another group's method — this is mathematical argumentation
+- "What if there are 7 people?" — the generalisation impulse is emerging; feed it
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

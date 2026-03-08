@@ -215,6 +215,40 @@ Return to the Auguste Comte quote from the hook:
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Ask: **"What are stars made of?"** Collect answers. Then ask: **"How do you know? Has anyone been to a star?"**
+
+The point: everything we know about stars comes from light. We have never touched a star, visited a star, or sampled a star. All our knowledge comes from analysing light that has travelled for years to reach us. This is one of science's greatest detective stories.
+
+**EAL move:** Turn off the classroom lights. Hold up a torch through a prism or diffraction grating (or show a photo of a rainbow). Point at the colours. Point at the sky. Connect with an arrow.
+
+### During the Investigation (Minutes 3–25)
+
+**Watch for:** Students who don't understand why different elements produce different spectra. Use the analogy: "Every element has a fingerprint. Instead of ridges on skin, it's lines in light." Give them printed spectra of hydrogen, helium, and sodium and ask them to match to "mystery star" spectra.
+
+**Watch for:** Students who find Wien's Law calculation difficult. The formula itself is simple ($\lambda_{max} = b/T$), but the concept — that colour tells you temperature — is the insight worth protecting. A student who says "blue stars are hotter" has the concept, even if they can't calculate the peak wavelength.
+
+**Do not say:** "This is called spectroscopy." Let students do spectroscopy first. The word comes after the practice.
+
+**Key moment:** When students match a "mystery spectrum" to a known element and realise they just identified what a star 100 light-years away is made of — using only its light. This is the "how do we know?" moment. The answer is: patterns in light. And it's extraordinary.
+
+### Pulling It Together (Minutes 25–35)
+
+Show the actual absorption spectrum of our Sun. Ask students to identify elements present. Then ask: "If we can do this for our Sun, can we do it for any star?" The universality of spectroscopy — same physics works everywhere in the universe — is a profound idea.
+
+**EAL move:** Use colour-coded spectral line cards that students can physically match and sort. The pattern-matching is visual and tactile.
+
+### What You Are Listening For
+
+- "We figured out what it's made of without going there" — the power of remote observation
+- "Every element has its own pattern" — the fingerprint analogy has landed
+- "What if we see lines we don't recognise?" — this is how helium was discovered (in the Sun, before Earth); share the story
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |

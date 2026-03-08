@@ -185,6 +185,42 @@ Write this as a formal investigation design. (This is a Criterion B task.)
 
 ---
 
+## Teacher Moves
+
+### Launch (Minutes 0–3)
+
+Hold up a die. Ask: **"Is this die fair?"** Roll it once. Record the result. Ask: "Based on that roll, is it fair?" (Students will say one roll proves nothing.) Ask: **"How many rolls until you'd be confident?"**
+
+That question — "how many?" — is the entire investigation.
+
+**Do not** define fairness yet. Let students argue about what "fair" means before you formalise anything.
+
+**EAL move:** Roll the die. Write the number on the board. Shrug. Roll again. Write again. The pattern of recording and questioning is clear without language.
+
+### During the Investigation (Minutes 3–30)
+
+**Watch for:** Groups who roll 30 times and declare the die unfair because they got more 3s than 6s. Ask: "How much more would make you suspicious? What if you rolled 30 more times?" The idea that small samples are unreliable is the lesson.
+
+**Watch for:** Students who calculate expected frequency (30 rolls ÷ 6 = 5 per number) but don't know what to do when actual results differ. This is the gap between theoretical and experimental probability — exactly where the investigation lives.
+
+**Do not say:** "You need a bigger sample size." Let the data itself teach this lesson. When groups pool their data (120 rolls vs. 30), the distribution flattens. Students will see it.
+
+**Key moment:** When the class pools all data onto one large frequency table. The individual group data is noisy and irregular. The pooled data approaches the expected distribution. Ask: "Why did combining the data help?" This is the law of large numbers, experienced rather than explained.
+
+### Pulling It Together (Minutes 30–40)
+
+Project the pooled data. Ask: "If someone showed you JUST this data, would you say the die is fair? What number would make you say 'cheating'?" This transitions to the concept of statistical significance — without needing to use that term.
+
+**EAL move:** Draw a bar chart of the pooled results in real time. The visual comparison to the "expected" uniform distribution is immediately clear.
+
+### What You Are Listening For
+
+- "30 rolls isn't enough" — the sample size insight has landed
+- "My data says unfair but everyone else says fair" — the tension between individual and pooled data
+- "How far off is too far off?" — this is the threshold question that leads to formal hypothesis testing in later years
+
+---
+
 ## Assessment Alignment
 
 | Task | MYP Criterion | Descriptor |
