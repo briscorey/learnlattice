@@ -25,13 +25,21 @@ key_concept: "Systems"
 global_context: "Globalisation and Sustainability"
 statement_of_inquiry: "In ecological systems, every effect has causes that extend far beyond what direct observation can reveal."
 formula: "trophic cascade: predator removal → prey explosion → vegetation collapse"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Use actual string"
+    description: "Students stand in a circle, each holding a card with an organism. Pass string between predator and prey. The web becomes physical. Then cut one string."
+  - title: "Remove the keystone"
+    description: "Which organism, when removed, collapses the most connections? This is the keystone species concept, discovered through the activity, not defined in advance."
+  - title: "Real food webs are messier"
+    description: "After the simplified version, show a real marine food web diagram. The complexity is overwhelming. This is why ecologists need mathematics."
+
 hints:
   - "Pick one organism in the food web. List everything it eats and everything that eats it."
   - "Now remove that organism. What happens to the things that ate it? What happens to the things it ate?"

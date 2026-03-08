@@ -25,6 +25,12 @@ statement_of_inquiry: "Simple systems can amplify human capability — and the t
 formula: "MA = load ÷ effort · work = force × distance"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Try to lift the heavy object directly. Hard, right? Now place the plank on the fulcrum."
+  - "Push down on the long end while the object sits on the short end. What happens?"
+  - "Move the fulcrum closer to the object. Does it get easier or harder to lift?"
+  - "The mechanical advantage = distance from fulcrum to your hand ÷ distance from fulcrum to the object. A bigger ratio means easier lifting."
+
 teacher_moves:
   - title: "Test the plank before class"
     description: "The lift-the-teacher demonstration requires a strong plank and safe fulcrum. Test it with an adult before class. The physics is reliable but the equipment might not be."

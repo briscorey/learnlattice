@@ -25,13 +25,27 @@ key_concept: "Change"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific explanations for things we cannot observe directly must be built from multiple independent lines of converging evidence."
 formula: "convergent + divergent + transform boundaries → earthquakes, volcanoes, mountains"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Blind sorting"
+    description: "Give groups a tray of unlabelled rock samples. Sort them however you want. Every group will sort differently. Then compare — which properties matter most?"
+  - title: "Texture tells the story"
+    description: "Large crystals = slow cooling underground. Tiny crystals = fast cooling on surface. Layers = built up over time. The texture IS the evidence of how it formed."
+  - title: "Name last"
+    description: "Students should describe rocks in full before learning names like granite, basite, sandstone. The name is a shortcut for properties they already know."
+
+hints:
+  - "Pick up each rock sample. What can you observe without any tools? Colour, texture, weight, crystal size."
+  - "Group the rocks by texture: smooth vs. rough vs. layered vs. crystalline. What does texture tell you about how the rock formed?"
+  - "Large crystals = slow cooling (igneous intrusive). Small crystals = fast cooling (igneous extrusive). Layers = sedimentary. Folded = metamorphic."
+  - "You are doing exactly what geologists do: reading the rock's history from its physical properties."
+
 difficulty: "meeting"
 duration: "2–3 lessons"
 ---

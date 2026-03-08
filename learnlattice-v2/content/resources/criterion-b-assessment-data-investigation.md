@@ -1,42 +1,49 @@
 ---
-title: "Criterion B Assessment: Data Investigation"
+title: 'Criterion B Assessment: Data Investigation'
 date: 2026-03-08
-description: "A ready-to-use MYP Criterion B assessment task on statistical investigation with annotated student responses at levels 3-4, 5-6, and 7-8. Students design and carry out their own data investigation from a provided dataset."
+description: A ready-to-use MYP Criterion B assessment task on statistical investigation
+  with annotated student responses at levels 3-4, 5-6, and 7-8. Students design and
+  carry out their own data investigation from a provided dataset.
 subjects:
-  - "Mathematics"
-math_topic: "Statistics"
+- Mathematics
+math_topic: Statistics
 year_levels:
-  - "Grade 8"
-  - "Grade 9"
-  - "MYP Year 3"
-  - "MYP Year 4"
+- Grade 8
+- Grade 9
+- MYP Year 3
+- MYP Year 4
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Criterion B"
-  - "Assessment"
-  - "Statistics"
-  - "Data Analysis"
-  - "Student Work"
-  - "Annotated Responses"
-key_concept: "Relationships"
-global_context: "Identities and Relationships"
-statement_of_inquiry: "Statistical investigation of real data reveals relationships that are invisible to casual observation — and the strength of our conclusions depends on the rigour of our analysis."
-formula: "mean, median, range, IQR"
+- Criterion B
+- Assessment
+- Statistics
+- Data Analysis
+- Student Work
+- Annotated Responses
+key_concept: Relationships
+global_context: Identities and Relationships
+statement_of_inquiry: Statistical investigation of real data reveals relationships
+  that are invisible to casual observation — and the strength of our conclusions depends
+  on the rigour of our analysis.
+formula: mean, median, range, IQR
 btc_practices:
-  - "Thinking Tasks"
-download_url: ""
-download_label: "Assessment Task PDF"
+- Thinking Tasks
+download_url: ''
+download_label: Assessment Task PDF
 teacher_moves:
-  before:
-    - title: "Provide the dataset"
-      body: "Give students the class survey data (or use the sample dataset provided). Emphasise that they must formulate their OWN question — the investigation is not prescribed."
-  during:
-    - title: "Question quality check"
-      body: "If a student's question can be answered with a single number ('What is the average screen time?'), redirect: 'Can you ask a question that COMPARES two groups or looks for a RELATIONSHIP?'"
-  after:
-    - title: "Peer review protocol"
-      body: "Before submission, have students swap investigations and check: Is the question clear? Does the display match the question? Is the conclusion supported by the data? This builds assessment literacy."
+- title: Provide the dataset
+  body: Give students the class survey data (or use the sample dataset provided).
+    Emphasise that they must formulate their OWN question — the investigation is not
+    prescribed.
+- title: Question quality check
+  body: 'If a student''s question can be answered with a single number (''What is
+    the average screen time?''), redirect: ''Can you ask a question that COMPARES
+    two groups or looks for a RELATIONSHIP?'''
+- title: Peer review protocol
+  body: 'Before submission, have students swap investigations and check: Is the question
+    clear? Does the display match the question? Is the conclusion supported by the
+    data? This builds assessment literacy.'
 ---
 
 ## The Assessment Task

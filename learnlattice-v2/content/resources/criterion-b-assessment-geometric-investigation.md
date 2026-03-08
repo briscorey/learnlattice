@@ -1,43 +1,50 @@
 ---
-title: "Criterion B Assessment: Geometric Investigation"
+title: 'Criterion B Assessment: Geometric Investigation'
 date: 2026-03-08
-description: "A ready-to-use MYP Criterion B assessment task investigating the relationship between the number of sides of a polygon and the sum of its interior angles. Annotated responses at levels 3-4, 5-6, and 7-8."
+description: A ready-to-use MYP Criterion B assessment task investigating the relationship
+  between the number of sides of a polygon and the sum of its interior angles. Annotated
+  responses at levels 3-4, 5-6, and 7-8.
 subjects:
-  - "Mathematics"
-math_topic: "Geometry"
+- Mathematics
+math_topic: Geometry
 year_levels:
-  - "Grade 7"
-  - "Grade 8"
-  - "MYP Year 2"
-  - "MYP Year 3"
+- Grade 7
+- Grade 8
+- MYP Year 2
+- MYP Year 3
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Criterion B"
-  - "Assessment"
-  - "Geometry"
-  - "Angles"
-  - "Student Work"
-  - "Annotated Responses"
-key_concept: "Form"
-global_context: "Scientific and Technical Innovation"
-statement_of_inquiry: "The forms of polygons follow mathematical rules that connect the number of sides to measurable properties — and discovering these rules requires systematic investigation."
-formula: "Sum of interior angles = (n − 2) × 180°"
+- Criterion B
+- Assessment
+- Geometry
+- Angles
+- Student Work
+- Annotated Responses
+key_concept: Form
+global_context: Scientific and Technical Innovation
+statement_of_inquiry: The forms of polygons follow mathematical rules that connect
+  the number of sides to measurable properties — and discovering these rules requires
+  systematic investigation.
+formula: Sum of interior angles = (n − 2) × 180°
 btc_practices:
-  - "Thinking Tasks"
-  - "Vertical Non-Permanent Surfaces"
-download_url: ""
-download_label: "Assessment Task PDF"
+- Thinking Tasks
+- Vertical Non-Permanent Surfaces
+download_url: ''
+download_label: Assessment Task PDF
 teacher_moves:
-  before:
-    - title: "Start with what they know"
-      body: "Ask: 'What is the sum of angles in a triangle?' (180°). Then: 'What about a square?' (360°). Write both on the board. 'What about a pentagon? Can you figure it out WITHOUT being told?' This launches the investigation."
-  during:
-    - title: "Drawing triangles inside polygons"
-      body: "If students are stuck, suggest: 'Can you divide the pentagon into triangles by drawing lines from ONE vertex?' This is the key insight. Don't tell them the formula — let the triangle decomposition lead them to it."
-  after:
-    - title: "Predict then verify"
-      body: "After students find the formula, ask: 'Predict the angle sum for a 20-sided polygon. Now predict for a 100-sided polygon. What would happen as n approaches infinity?' This stretches thinking toward limits."
+- title: Start with what they know
+  body: 'Ask: ''What is the sum of angles in a triangle?'' (180°). Then: ''What about
+    a square?'' (360°). Write both on the board. ''What about a pentagon? Can you
+    figure it out WITHOUT being told?'' This launches the investigation.'
+- title: Drawing triangles inside polygons
+  body: 'If students are stuck, suggest: ''Can you divide the pentagon into triangles
+    by drawing lines from ONE vertex?'' This is the key insight. Don''t tell them
+    the formula — let the triangle decomposition lead them to it.'
+- title: Predict then verify
+  body: 'After students find the formula, ask: ''Predict the angle sum for a 20-sided
+    polygon. Now predict for a 100-sided polygon. What would happen as n approaches
+    infinity?'' This stretches thinking toward limits.'
 ---
 
 ## The Assessment Task

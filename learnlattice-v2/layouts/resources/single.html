@@ -1,195 +1,170 @@
 {{ define "main" }}
 
+{{ $subject := "" }}
+{{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+{{ $subjectColor := "teal" }}
+{{ if eq ($subject | urlize) "biology" }}{{ $subjectColor = "green" }}{{ end }}
+{{ if eq ($subject | urlize) "chemistry" }}{{ $subjectColor = "rose" }}{{ end }}
+{{ if eq ($subject | urlize) "physics" }}{{ $subjectColor = "blue" }}{{ end }}
+{{ if eq ($subject | urlize) "earth-science" }}{{ $subjectColor = "amber" }}{{ end }}
+{{ if eq ($subject | urlize) "space-science" }}{{ $subjectColor = "violet" }}{{ end }}
+{{ if eq ($subject | urlize) "ecology" }}{{ $subjectColor = "emerald" }}{{ end }}
+
+{{ $svgFile := "mathematics" }}
+{{ if eq ($subject | urlize) "biology" }}{{ $svgFile = "biology" }}{{ end }}
+{{ if eq ($subject | urlize) "chemistry" }}{{ $svgFile = "chemistry" }}{{ end }}
+{{ if eq ($subject | urlize) "physics" }}{{ $svgFile = "physics" }}{{ end }}
+{{ if eq ($subject | urlize) "earth-science" }}{{ $svgFile = "earth-science" }}{{ end }}
+{{ if eq ($subject | urlize) "space-science" }}{{ $svgFile = "space-science" }}{{ end }}
+{{ if eq ($subject | urlize) "ecology" }}{{ $svgFile = "ecology" }}{{ end }}
+{{ if eq ($subject | urlize) "science" }}{{ $svgFile = "physics" }}{{ end }}
+
 <article class="resource-single">
-  <div class="resource-single-header">
-    <div class="resource-single-top-row">
+  {{/* ── HEADER ── */}}
+  <div class="rs-header rc-{{ $subjectColor }}">
+    <div class="rs-header-bg">
+      <img src="/img/subjects/{{ $svgFile }}.svg" alt="" aria-hidden="true">
+    </div>
+    <div class="rs-header-content">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="bc-sep">›</span>
-        {{ with index .Params.subjects 0 }}
-        <a href="/subjects/{{ . | urlize }}/">{{ . }}</a>
-        <span class="bc-sep">›</span>
-        {{ end }}
-        <span aria-current="page">{{ .Title | truncate 50 }}</span>
+        <a href="/">Home</a><span class="bc-sep">›</span>
+        {{ with $subject }}<a href="/subjects/{{ . | urlize }}/">{{ . }}</a><span class="bc-sep">›</span>{{ end }}
+        <span aria-current="page">{{ .Title | truncate 45 }}</span>
       </nav>
-      <button class="classroom-mode-btn" id="classroomModeBtn" title="Open Classroom Mode — project this investigation step by step">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        Present
-      </button>
-    </div>
-
-    <div class="resource-single-meta-row">
-      {{ with index .Params.subjects 0 }}<span class="resource-single-subject">{{ . }}</span>{{ end }}
-      {{ with index .Params.resource_types 0 }}<span class="resource-single-type">{{ . }}</span>{{ end }}
-    </div>
-
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="resource-single-desc">{{ . }}</p>{{ end }}
-  </div>
-
-  <!-- At a Glance -->
-  <div class="at-a-glance">
-    <h3 class="at-a-glance-heading">At a Glance</h3>
-    <dl class="at-a-glance-grid">
-      {{ with index .Params.subjects 0 }}
-      <div class="at-a-glance-item">
-        <dt>Subject</dt>
-        <dd>{{ . }}</dd>
+      <div class="rs-meta-row">
+        {{ with $subject }}<span class="rs-subject rc-text-{{ $subjectColor }}">{{ . }}</span>{{ end }}
+        {{ with index .Params.resource_types 0 }}<span class="rs-type">{{ . }}</span>{{ end }}
+        {{ with .Params.difficulty }}<span class="resource-difficulty resource-difficulty--{{ . }}">{{ if eq . "approaching" }}🟢 Approaching{{ end }}{{ if eq . "meeting" }}🟡 Meeting{{ end }}{{ if eq . "exceeding" }}🔴 Exceeding{{ end }}</span>{{ end }}
       </div>
-      {{ end }}
-      {{ with index .Params.year_levels 0 }}
-      <div class="at-a-glance-item">
-        <dt>Year Level</dt>
-        <dd>{{ . }}{{ with index $.Params.year_levels 1 }} &amp; {{ . }}{{ end }}</dd>
-      </div>
-      {{ end }}
-      {{ with index .Params.resource_types 0 }}
-      <div class="at-a-glance-item">
-        <dt>Format</dt>
-        <dd>{{ . }}</dd>
-      </div>
-      {{ end }}
-      {{ with .Params.difficulty }}
-      <div class="at-a-glance-item">
-        <dt>Difficulty</dt>
-        <dd><span class="difficulty-badge difficulty-{{ . | urlize }}">{{ . }}</span></dd>
-      </div>
-      {{ end }}
-      {{ with .Params.duration }}
-      <div class="at-a-glance-item">
-        <dt>Duration</dt>
-        <dd>{{ . }}</dd>
-      </div>
-      {{ end }}
-      {{ with .Params.formula }}
-      <div class="at-a-glance-item">
-        <dt>Key Concept</dt>
-        <dd>{{ . }}</dd>
-      </div>
-      {{ end }}
-      {{ with .Params.key_concept }}
-      <div class="at-a-glance-item">
-        <dt>MYP Key Concept</dt>
-        <dd>{{ . }}</dd>
-      </div>
-      {{ end }}
-      {{ with .Params.global_context }}
-      <div class="at-a-glance-item">
-        <dt>Global Context</dt>
-        <dd>{{ . }}</dd>
-      </div>
-      {{ end }}
-      {{ with .Params.statement_of_inquiry }}
-      <div class="at-a-glance-item at-a-glance-item--wide">
-        <dt>Statement of Inquiry</dt>
-        <dd>{{ . }}</dd>
-      </div>
-      {{ end }}
-    </dl>
-    {{ $criterionTags := slice }}
-    {{ range .Params.tags }}
-      {{ if hasPrefix . "Criterion" }}
-        {{ $criterionTags = $criterionTags | append . }}
-      {{ end }}
-    {{ end }}
-    {{ if $criterionTags }}
-    <div class="at-a-glance-criteria">
-      <span class="at-a-glance-criteria-label">MYP Criteria</span>
-      {{ range $criterionTags }}
-        <span class="at-a-glance-criterion-pill">{{ . }}</span>
-      {{ end }}
-    </div>
-    {{ end }}
-    {{ $topicTags := slice }}
-    {{ range .Params.tags }}
-      {{ if not (hasPrefix . "Criterion") }}
-        {{ if not (hasPrefix . "Grade") }}
-          {{ if not (hasPrefix . "MYP") }}
-            {{ $topicTags = $topicTags | append . }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-    {{ if $topicTags }}
-    <div class="at-a-glance-tags">
-      {{ range first 6 $topicTags }}
-        <a class="at-a-glance-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
-      {{ end }}
-    </div>
-    {{ end }}
-    {{ with .Params.btc_practices }}
-    <div class="at-a-glance-btc">
-      <a href="/blog/thinking-classrooms-meet-myp/" class="btc-badge" title="This investigation is designed for Building Thinking Classrooms practices">
-        <span class="btc-badge-icon">🧠</span>
-        <span class="btc-badge-text">
-          <strong>Thinking Classroom Ready</strong>
-          <small>{{ delimit . " · " }}</small>
-        </span>
-      </a>
-    </div>
-    {{ end }}
-  </div>
-
-  {{ with .Params.download_url }}
-  <div class="download-box">
-    <div class="download-box-info">
-      <h4>📄 Download Resource</h4>
-      <p>{{ $.Params.download_label | default "PDF document" }}</p>
-    </div>
-    <a href="{{ . }}" class="btn-primary" download>
-      Download
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    </a>
-  </div>
-  {{ end }}
-
-  <div class="resource-content">
-    {{ .Content }}
-  </div>
-
-  {{/* ── I'm Stuck hints ── */}}
-  {{ with .Params.hints }}
-  <div class="stuck-section">
-    <button class="stuck-toggle" onclick="this.parentElement.classList.toggle('open')">
-      <span class="stuck-icon">💡</span>
-      <span>Stuck? Get a hint</span>
-      <svg class="stuck-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div class="stuck-hints">
-      {{ range $i, $hint := . }}
-      <div class="stuck-hint" data-n="{{ add $i 1 }}">
-        <button class="stuck-hint-reveal" onclick="this.parentElement.classList.add('shown')">
-          Show hint {{ add $i 1 }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="rs-desc">{{ . }}</p>{{ end }}
+      <div class="rs-actions">
+        <button class="classroom-mode-btn" id="classroomModeBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Present
         </button>
-        <div class="stuck-hint-text">{{ $hint }}</div>
+        <button onclick="window.print()" class="rs-print-btn">🖨 Print</button>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── TWO-COLUMN LAYOUT ── */}}
+  <div class="rs-layout">
+
+    {{/* ── MAIN CONTENT ── */}}
+    <div class="rs-main">
+
+      {{/* ── Teacher Moves (collapsible) ── */}}
+      {{ with .Params.teacher_moves }}
+      {{ if gt (len .) 0 }}
+      <details class="rs-teacher-moves">
+        <summary>
+          <span class="rs-tm-icon">🧭</span>
+          <span>Teacher Moves</span>
+          <span class="rs-tm-count">{{ len . }} moves</span>
+        </summary>
+        <div class="rs-tm-list">
+          {{ range . }}
+          <div class="rs-tm-item">
+            <h4>{{ .title }}</h4>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </details>
+      {{ end }}
+      {{ end }}
+
+      {{/* ── Content ── */}}
+      <div class="resource-content">
+        {{ .Content }}
+      </div>
+
+      {{/* ── I'm Stuck hints ── */}}
+      {{ with .Params.hints }}
+      <div class="stuck-section">
+        <button class="stuck-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <span class="stuck-icon">💡</span>
+          <span>Stuck? Get a hint</span>
+          <svg class="stuck-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="stuck-hints">
+          {{ range $i, $hint := . }}
+          <div class="stuck-hint" data-n="{{ add $i 1 }}">
+            <button class="stuck-hint-reveal" onclick="this.parentElement.classList.add('shown')">Show hint {{ add $i 1 }}</button>
+            <div class="stuck-hint-text">{{ $hint }}</div>
+          </div>
+          {{ end }}
+        </div>
       </div>
       {{ end }}
     </div>
-  </div>
-  {{ end }}
 
-  {{ with .Params.download_url }}
-  <div class="download-box" style="margin-top: 48px;">
-    <div class="download-box-info">
-      <h4>📄 Download Resource</h4>
-      <p>{{ $.Params.download_label | default "PDF document" }}</p>
-    </div>
-    <a href="{{ . }}" class="btn-primary" download>
-      Download
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    </a>
+    {{/* ── SIDEBAR ── */}}
+    <aside class="rs-sidebar">
+      <div class="rs-sidebar-card">
+        <h3>At a Glance</h3>
+        <dl class="rs-glance">
+          {{ with $subject }}<div class="rs-glance-row"><dt>Subject</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with index .Params.year_levels 0 }}<div class="rs-glance-row"><dt>Year Level</dt><dd>{{ . }}{{ with index $.Params.year_levels 1 }} & {{ . }}{{ end }}</dd></div>{{ end }}
+          {{ with index .Params.resource_types 0 }}<div class="rs-glance-row"><dt>Format</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with .Params.key_concept }}<div class="rs-glance-row"><dt>Key Concept</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with .Params.global_context }}<div class="rs-glance-row"><dt>Global Context</dt><dd>{{ . }}</dd></div>{{ end }}
+        </dl>
+
+        {{ with .Params.formula }}
+        <div class="rs-formula">{{ . }}</div>
+        {{ end }}
+
+        {{ with .Params.statement_of_inquiry }}
+        <div class="rs-soi">
+          <span class="rs-soi-label">Statement of Inquiry</span>
+          {{ . }}
+        </div>
+        {{ end }}
+
+        {{/* Criteria pills */}}
+        {{ $criterionTags := slice }}
+        {{ range .Params.tags }}{{ if hasPrefix . "Criterion" }}{{ $criterionTags = $criterionTags | append . }}{{ end }}{{ end }}
+        {{ if $criterionTags }}
+        <div class="rs-criteria">
+          {{ range $criterionTags }}
+          <a href="/assessment/{{ . | urlize }}/" class="rs-criterion-pill">{{ . }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Topic tags */}}
+        {{ $topicTags := slice }}
+        {{ range .Params.tags }}{{ if not (or (hasPrefix . "Criterion") (hasPrefix . "Grade") (hasPrefix . "MYP") (eq . "Assessment") (eq . "Exemplars") (eq . "Annotated Student Work")) }}{{ $topicTags = $topicTags | append . }}{{ end }}{{ end }}
+        {{ if $topicTags }}
+        <div class="rs-topic-tags">
+          {{ range first 6 $topicTags }}
+          <a href="/tags/{{ . | urlize }}/" class="rs-topic-tag">{{ . }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* BTC badge */}}
+        {{ with .Params.btc_practices }}
+        <a href="/blog/thinking-classrooms-meet-myp/" class="rs-btc">
+          <span>🧠</span>
+          <div><strong>Thinking Classroom Ready</strong><small>{{ delimit . " · " }}</small></div>
+        </a>
+        {{ end }}
+      </div>
+
+      {{/* Quick links */}}
+      <div class="rs-sidebar-links">
+        <a href="/assessment/" class="rs-sidebar-link">📋 Assessment Toolkit</a>
+        <a href="/vocabulary/" class="rs-sidebar-link">🔤 Visual Vocabulary</a>
+        <a href="/explore/" class="rs-sidebar-link">🎲 Explore More</a>
+      </div>
+    </aside>
   </div>
-  {{ end }}
 </article>
 
 {{ partial "newsletter.html" . }}
-
-{{ partial "topic-pathways.html" (dict
-  "page" .
-  "mode" "compact"
-  "headline" "Where This Resource Branches"
-  "copy" "This resource sits inside larger topic pathways. Use these branch links to extend the lesson into adjacent concepts and inquiry routes."
-) }}
 
 <!-- Related Resources -->
 {{ $related := .Site.RegularPages.Related . | first 4 }}
@@ -221,17 +196,12 @@
   </div>
   <div class="cm-stage" id="cmStage"></div>
   <div class="cm-nav">
-    <button class="cm-nav-btn" id="cmPrev" title="Previous (←)">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
+    <button class="cm-nav-btn" id="cmPrev" title="Previous (←)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
     <div class="cm-progress" id="cmProgress"></div>
-    <button class="cm-nav-btn" id="cmNext" title="Next (→)">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
-    </button>
+    <button class="cm-nav-btn" id="cmNext" title="Next (→)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg></button>
   </div>
   <div class="cm-hint">Use ← → arrow keys · Esc to exit</div>
 </div>
-
 <script src="/js/classroom-mode.js?v=20260308d" defer></script>
 
 {{ end }}

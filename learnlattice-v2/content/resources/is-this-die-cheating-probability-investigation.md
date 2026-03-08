@@ -23,13 +23,21 @@ key_concept: "Logic"
 global_context: "Fairness and Development"
 statement_of_inquiry: "The logic we use to evaluate fairness depends on how much evidence we are willing to gather."
 formula: "P(E) = favourable outcomes / total outcomes"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Roll before you calculate"
+    description: "30 rolls per group. Results on the board. THEN ask: do these look fair? Students must form an opinion before the statistics tell them the answer."
+  - title: "Pool the class data"
+    description: "30 rolls is noisy. 300 rolls (from 10 groups) is much clearer. The law of large numbers becomes visible in the pooled data."
+  - title: "The unfair die is the payoff"
+    description: "Give one group a weighted die (sand one corner). When their results look different, the class has to figure out why. This is what statistics is FOR."
+
 hints:
   - "Roll the die 30 times. Record the frequency of each number. Are they roughly equal?"
   - "If the die is fair, each number should appear about 5 times in 30 rolls. How far off are your results?"

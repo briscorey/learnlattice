@@ -25,6 +25,12 @@ statement_of_inquiry: "Invisible forces follow predictable spatial patterns — 
 formula: "Field lines: N → S (outside the magnet)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Place the magnet under a piece of paper. Sprinkle iron filings gently on top. Tap the paper lightly."
+  - "Sketch the pattern you see. Where are the filings densest? Where are they most spread out?"
+  - "The dense regions (near the poles) are where the field is strongest. The spread-out regions are where it is weaker."
+  - "Now place two magnets under the paper. What happens to the pattern between them? Does it change if you flip one magnet?"
+
 teacher_moves:
   - title: "Tap gently"
     description: "The iron filings need a gentle tap to settle into the field pattern. Too hard and they scatter. Practice the tap before class."

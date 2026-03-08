@@ -23,13 +23,27 @@ key_concept: "Logic"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The logical structure of our number system determines which representations are equivalent — even when intuition disagrees."
 formula: "1/3 = 0.333... → 3 × 0.333... = 0.999... = 1"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Let them be uncomfortable"
+    description: "Most students will say 0.999... is close to 1 but not equal. Do not correct them immediately. The algebraic proof should change their mind, not your authority."
+  - title: "The algebra is the proof"
+    description: "x = 0.999... → 10x = 9.999... → 9x = 9 → x = 1. Walk through this slowly. Each step is valid. The conclusion follows logically."
+  - title: "Challenge them to find the gap"
+    description: "If 0.999... is not 1, ask: what number is between them? There is no number between them. That is the proof."
+
+hints:
+  - "Let x = 0.999... Write this down."
+  - "Now multiply both sides by 10: 10x = 9.999..."
+  - "Subtract the first equation from the second: 10x - x = 9.999... - 0.999..."
+  - "This gives 9x = 9, so x = 1. Therefore 0.999... = 1. Does this feel wrong? That feeling is the investigation."
+
 difficulty: "meeting"
 duration: "2–3 lessons"
 ---

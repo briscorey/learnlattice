@@ -22,13 +22,21 @@ key_concept: "Relationships"
 global_context: "Fairness and Development"
 statement_of_inquiry: "The way we represent and communicate large quantities shapes how we understand inequality."
 formula: "10⁶ → 10⁹ → 10¹²"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Don't give the answer"
+    description: "When students ask 'how much does a million dollars weigh?' say 'I don't know. How would you find out?' The investigation IS the finding out."
+  - title: "Let them argue"
+    description: "Groups will disagree on units, assumptions, and calculations. That disagreement is productive. Let it run for 5 minutes before intervening."
+  - title: "The reveal is the hook"
+    description: "When groups discover it weighs about 8 tonnes, ask: 'Could you carry that to your car?' The physical impossibility makes the number real."
+
 hints:
   - "Start by figuring out how much one million $1 coins would weigh. A single coin weighs about 8 grams."
   - "Convert your answer to kilograms (divide by 1000), then to tonnes (divide by 1000 again)."

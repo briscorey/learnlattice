@@ -25,6 +25,12 @@ statement_of_inquiry: "Our perception of temperature change depends not on the t
 formula: "Rate of heat transfer depends on: thermal conductivity, temperature difference, surface area, thickness"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Hold a metal spoon and a wooden spoon at the same time. Which feels colder? They are actually the same temperature — room temperature."
+  - "The metal feels colder because it conducts heat away from your hand faster. Your hand is warmer than room temperature."
+  - "Now place ice cubes on different surfaces. Which one melts fastest? That surface conducts heat best."
+  - "Good conductors transfer heat quickly (metals). Poor conductors — insulators — transfer heat slowly (wood, plastic, air)."
+
 teacher_moves:
   - title: "The reveal moment"
     description: "Let the student hold both spoons for 5 seconds. Ask which is colder. They say metal. THEN show the infrared thermometer. Same temperature. The cognitive dissonance is the lesson."

@@ -24,13 +24,21 @@ key_concept: "Systems"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The systems we use to define life determine what we include, what we exclude, and what we are forced to admit we don't know."
 formula: "MRS GREN: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Start with fire"
+    description: "Is fire alive? It grows, it consumes, it responds, it reproduces (spreads). Let students argue for 5 minutes before introducing MRS GREN."
+  - title: "The virus is the hardest case"
+    description: "After students learn the 7 criteria, ask about viruses. They reproduce but only inside a host. They don't respire. Are they alive? Science doesn't have a clean answer."
+  - title: "The criteria ARE the assessment"
+    description: "Students who can apply all 7 criteria systematically to edge cases are doing Criterion B investigation. The debate IS the learning."
+
 hints:
   - "Start with an easy example: is a dog alive? What makes you say yes? List the reasons."
   - "Now try a harder one: is fire alive? It grows, it consumes fuel, it responds to wind. But is it alive?"

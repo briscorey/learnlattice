@@ -1,42 +1,49 @@
 ---
-title: "Criterion B Assessment: Experimental Investigation"
+title: 'Criterion B Assessment: Experimental Investigation'
 date: 2026-03-08
-description: "A ready-to-use MYP Criterion B science assessment task on investigating the effect of surface area on dissolving rate, with annotated student responses at levels 3-4, 5-6, and 7-8."
+description: A ready-to-use MYP Criterion B science assessment task on investigating
+  the effect of surface area on dissolving rate, with annotated student responses
+  at levels 3-4, 5-6, and 7-8.
 subjects:
-  - "Chemistry"
-  - "Science"
+- Chemistry
+- Science
 year_levels:
-  - "Grade 7"
-  - "Grade 8"
-  - "MYP Year 2"
-  - "MYP Year 3"
+- Grade 7
+- Grade 8
+- MYP Year 2
+- MYP Year 3
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Criterion B"
-  - "Assessment"
-  - "Experimental Design"
-  - "Variables"
-  - "Student Work"
-  - "Annotated Responses"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
-statement_of_inquiry: "Systematic investigation of how one variable affects another allows us to identify cause-and-effect relationships — but only if we control everything else."
-formula: "rate of dissolving = mass dissolved ÷ time"
+- Criterion B
+- Assessment
+- Experimental Design
+- Variables
+- Student Work
+- Annotated Responses
+key_concept: Change
+global_context: Scientific and Technical Innovation
+statement_of_inquiry: Systematic investigation of how one variable affects another
+  allows us to identify cause-and-effect relationships — but only if we control everything
+  else.
+formula: rate of dissolving = mass dissolved ÷ time
 btc_practices:
-  - "Thinking Tasks"
-download_url: ""
-download_label: "Assessment Task PDF"
+- Thinking Tasks
+download_url: ''
+download_label: Assessment Task PDF
 teacher_moves:
-  before:
-    - title: "Demonstrate, don't instruct"
-      body: "Drop a whole sugar cube and a crushed sugar cube into identical cups of room-temperature water. Let students observe. Ask: 'What question does this make you want to investigate?' The task should emerge from the observation."
-  during:
-    - title: "Variables scaffold"
-      body: "For students struggling with experimental design, ask three questions: 'What are you changing? What are you measuring? What are you keeping the same?' These three questions map directly to independent, dependent, and controlled variables."
-  after:
-    - title: "Graph before conclusion"
-      body: "Insist that students create their data display BEFORE writing their conclusion. The graph often reveals patterns that raw data tables hide — and the act of graphing forces students to think about the relationship between variables."
+- title: Demonstrate, don't instruct
+  body: 'Drop a whole sugar cube and a crushed sugar cube into identical cups of room-temperature
+    water. Let students observe. Ask: ''What question does this make you want to investigate?''
+    The task should emerge from the observation.'
+- title: Variables scaffold
+  body: 'For students struggling with experimental design, ask three questions: ''What
+    are you changing? What are you measuring? What are you keeping the same?'' These
+    three questions map directly to independent, dependent, and controlled variables.'
+- title: Graph before conclusion
+  body: Insist that students create their data display BEFORE writing their conclusion.
+    The graph often reveals patterns that raw data tables hide — and the act of graphing
+    forces students to think about the relationship between variables.
 ---
 
 ## The Assessment Task

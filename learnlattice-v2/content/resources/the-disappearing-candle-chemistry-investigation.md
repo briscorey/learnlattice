@@ -25,13 +25,27 @@ key_concept: "Change"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "In chemical change, the arrangement of particles is transformed but their total quantity is conserved — matter does not appear or disappear, it changes form."
 formula: "CH₄ + 2O₂ → CO₂ + 2H₂O (or equivalent for candle wax)"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Different jar sizes"
+    description: "Give each group a different sized jar. The comparison across groups is where the science happens — bigger jar, longer burn, more air, more oxygen."
+  - title: "Time it precisely"
+    description: "Students need stopwatches, not guesses. The difference between a 4-second and 6-second burn under the same jar is significant. Precision matters."
+  - title: "What gas replaced the oxygen?"
+    description: "The candle consumed oxygen and produced carbon dioxide. The jar still looks empty. Ask: how do you know the gas composition changed?"
+
+hints:
+  - "Watch the flame carefully as the jar covers it. When does it go out?"
+  - "What gas does a candle need to burn? What happens when that gas runs out?"
+  - "Measure how long the candle burns under jars of different sizes. What pattern do you see?"
+  - "Bigger jar = more air = more oxygen = longer burn time. Is the relationship linear?"
+
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

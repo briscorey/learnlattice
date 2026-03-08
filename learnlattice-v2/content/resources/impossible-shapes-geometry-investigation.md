@@ -23,13 +23,27 @@ key_concept: "Form"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The properties of geometric forms depend on the space in which they exist — and questioning assumptions is how mathematics advances."
 formula: "angle sum of triangle = 180° (in flat space)"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Tear, don't measure"
+    description: "Have students tear the corners off a triangle and arrange them. They form a straight line. This is more convincing than any protractor measurement."
+  - title: "Build from triangles"
+    description: "Every polygon can be divided into triangles. A pentagon = 3 triangles = 540 degrees. Students who discover this have found the general rule."
+  - title: "The impossible shape is the extension"
+    description: "Can you have a triangle with angles 90-90-90? Draw it on a sphere. Flat geometry rules break on curved surfaces. This is genuinely mind-bending."
+
+hints:
+  - "Start by drawing a triangle, a square, and a pentagon. What is the angle sum of each?"
+  - "Make a table: number of sides vs. angle sum. Do you see a pattern?"
+  - "Each time you add a side, the angle sum increases by 180 degrees. Why?"
+  - "Think of it this way: any polygon can be split into triangles. A quadrilateral = 2 triangles = 360 degrees."
+
 difficulty: "meeting"
 duration: "2–3 lessons"
 ---

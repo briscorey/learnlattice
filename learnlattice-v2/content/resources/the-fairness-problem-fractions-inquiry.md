@@ -22,13 +22,21 @@ key_concept: "Form"
 global_context: "Identities and Relationships"
 statement_of_inquiry: "The form in which we represent a quantity determines what relationships we can see."
 formula: "a ÷ b = a/b"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Use pizza, not numbers"
+    description: "Start with paper circles, not fraction notation. Students who can show 2/3 on a circle understand fractions. Students who can only write 2/3 might not."
+  - title: "The unfair share is the investigation"
+    description: "Give 3 pizzas to 7 people. Let them struggle. The moment someone says 'everyone gets 3/7' is the moment fractions become tools, not topics."
+  - title: "Equivalent fractions emerge naturally"
+    description: "When students see that 2/6 and 1/3 are the same share, they have discovered equivalence. Name it after they see it."
+
 hints:
   - "Start with a simple example: sharing one pizza between 3 people. How much does each person get?"
   - "Now try: 2 pizzas shared between 5 people. Write it as a fraction first, then check with a drawing."

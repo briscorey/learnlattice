@@ -145,6 +145,39 @@
   </div>
 </section>
 
+<!-- ── INVESTIGATION OF THE WEEK ── -->
+{{ $flagships := where $resources "Params.teacher_moves" "ne" nil }}
+{{ $featured := index $flagships 0 }}
+{{ with $featured }}
+{{ $fSubject := "" }}
+{{ with .Params.subjects }}{{ $fSubject = index . 0 }}{{ end }}
+{{ $fColor := "teal" }}
+{{ if eq ($fSubject | urlize) "biology" }}{{ $fColor = "green" }}{{ end }}
+{{ if eq ($fSubject | urlize) "chemistry" }}{{ $fColor = "rose" }}{{ end }}
+{{ if eq ($fSubject | urlize) "physics" }}{{ $fColor = "blue" }}{{ end }}
+{{ $fSvg := "mathematics" }}
+{{ if eq ($fSubject | urlize) "biology" }}{{ $fSvg = "biology" }}{{ end }}
+{{ if eq ($fSubject | urlize) "chemistry" }}{{ $fSvg = "chemistry" }}{{ end }}
+{{ if eq ($fSubject | urlize) "physics" }}{{ $fSvg = "physics" }}{{ end }}
+{{ if eq ($fSubject | urlize) "ecology" }}{{ $fSvg = "ecology" }}{{ end }}
+<section class="home-featured reveal">
+  <div class="home-featured-inner">
+    <div class="home-featured-kicker">Featured Investigation</div>
+    <a href="{{ .RelPermalink }}" class="home-featured-card rc-{{ $fColor }}">
+      <div class="home-featured-illustration">
+        <img src="/img/subjects/{{ $fSvg }}.svg" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="home-featured-content">
+        <span class="home-featured-subject rc-text-{{ $fColor }}">{{ $fSubject }}</span>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description | truncate 180 }}</p>
+        <span class="home-featured-cta">Start this investigation →</span>
+      </div>
+    </a>
+  </div>
+</section>
+{{ end }}
+
 <!-- ── STUDENT ENTRY ── -->
 <section class="student-entry reveal" aria-labelledby="student-entry-heading">
   <div class="student-entry-inner">

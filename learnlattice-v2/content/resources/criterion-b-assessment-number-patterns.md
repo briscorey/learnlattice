@@ -1,45 +1,53 @@
 ---
-title: "Criterion B Assessment: Number Patterns"
+title: 'Criterion B Assessment: Number Patterns'
 date: 2026-03-08
-description: "A ready-to-use MYP Criterion B assessment task on number patterns with annotated student responses at levels 3-4, 5-6, and 7-8. Includes the task, marking notes, and analysis of what distinguishes each achievement level."
+description: A ready-to-use MYP Criterion B assessment task on number patterns with
+  annotated student responses at levels 3-4, 5-6, and 7-8. Includes the task, marking
+  notes, and analysis of what distinguishes each achievement level.
 subjects:
-  - "Mathematics"
-math_topic: "Algebra"
+- Mathematics
+math_topic: Algebra
 year_levels:
-  - "Grade 7"
-  - "Grade 8"
-  - "MYP Year 2"
-  - "MYP Year 3"
+- Grade 7
+- Grade 8
+- MYP Year 2
+- MYP Year 3
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Criterion B"
-  - "Assessment"
-  - "Patterns"
-  - "Algebra"
-  - "Student Work"
-  - "Annotated Responses"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
-statement_of_inquiry: "Logical reasoning allows us to identify, describe, and generalise patterns — and the quality of a generalisation depends on the evidence and justification behind it."
-formula: "T(n) = ?"
+- Criterion B
+- Assessment
+- Patterns
+- Algebra
+- Student Work
+- Annotated Responses
+key_concept: Logic
+global_context: Scientific and Technical Innovation
+statement_of_inquiry: Logical reasoning allows us to identify, describe, and generalise
+  patterns — and the quality of a generalisation depends on the evidence and justification
+  behind it.
+formula: T(n) = ?
 btc_practices:
-  - "Thinking Tasks"
-  - "Vertical Non-Permanent Surfaces"
-download_url: ""
-download_label: "Assessment Task PDF"
+- Thinking Tasks
+- Vertical Non-Permanent Surfaces
+download_url: ''
+download_label: Assessment Task PDF
 teacher_moves:
-  before:
-    - title: "Establish the norm"
-      body: "Before distributing the task, remind students that Criterion B is about showing their thinking process, not just getting the answer. A correct generalisation with no working scores lower than a partially correct one with clear reasoning."
-  during:
-    - title: "Monitor without rescuing"
-      body: "If a student is stuck on the pattern, ask: 'What do you notice changes from one figure to the next?' Do not point to the answer. The struggle IS the assessment."
-    - title: "Encourage multiple representations"
-      body: "If a student has found the pattern numerically, prompt: 'Can you show this another way? A table? A graph? A diagram?' Multiple representations strengthen justification."
-  after:
-    - title: "Annotated response review"
-      body: "Use the three annotated responses below as a class calibration activity. Show all three (anonymised) and ask students to rank them. Then reveal the levels and discuss what makes each one stronger or weaker."
+- title: Establish the norm
+  body: Before distributing the task, remind students that Criterion B is about showing
+    their thinking process, not just getting the answer. A correct generalisation
+    with no working scores lower than a partially correct one with clear reasoning.
+- title: Monitor without rescuing
+  body: 'If a student is stuck on the pattern, ask: ''What do you notice changes from
+    one figure to the next?'' Do not point to the answer. The struggle IS the assessment.'
+- title: Encourage multiple representations
+  body: 'If a student has found the pattern numerically, prompt: ''Can you show this
+    another way? A table? A graph? A diagram?'' Multiple representations strengthen
+    justification.'
+- title: Annotated response review
+  body: Use the three annotated responses below as a class calibration activity. Show
+    all three (anonymised) and ask students to rank them. Then reveal the levels and
+    discuss what makes each one stronger or weaker.
 ---
 
 ## The Assessment Task

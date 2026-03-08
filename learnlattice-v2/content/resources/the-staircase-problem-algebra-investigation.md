@@ -25,13 +25,21 @@ key_concept: "Patterns"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Finding the pattern behind a structure allows us to predict and design without building every case."
 formula: "n(n+1)/2"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Build with blocks first"
+    description: "Physical blocks for the first 5 staircases. Students who build before they count find the pattern faster than students who just look at numbers."
+  - title: "The rectangle trick"
+    description: "If a student is stuck, ask them to build two identical staircases and fit them together. They make a rectangle. The area of the rectangle is n(n+1)."
+  - title: "The formula comes from the shape"
+    description: "T(n) = n(n+1)/2 is not a formula to memorise — it is half a rectangle. Students who see this never forget the formula because they understand where it came from."
+
 hints:
   - "Build the first 4 staircases with blocks. Count the total blocks in each. Look for a pattern."
   - "Make a table: staircase number (1, 2, 3, 4...) and total blocks. What happens each time?"

@@ -25,6 +25,12 @@ statement_of_inquiry: "In any system, energy transformations follow predictable 
 formula: "E_total = E_kinetic + E_potential + E_thermal"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Drop the ball from a measured height. Measure how high it bounces. What fraction of the height is recovered?"
+  - "Try different drop heights. Is the fraction constant? Make a table."
+  - "If the fraction is constant (say 0.6), that means 60% of the energy is recovered. Where did the other 40% go?"
+  - "The 'missing' energy became heat (the ball and floor warmed slightly) and sound (you heard the bounce). Energy is conserved — it just changed form."
+
 teacher_moves:
   - title: "Write the question before the drop"
     description: "Write Where does the energy go on the board before you drop the ball. Every student answer goes up: friction, heat, sound. All contain truth. None are complete."

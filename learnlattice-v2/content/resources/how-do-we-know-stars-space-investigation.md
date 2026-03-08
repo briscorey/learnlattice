@@ -23,13 +23,27 @@ key_concept: "Evidence"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Every observation of the universe beyond Earth requires building knowledge from the properties of light rather than from direct contact."
 formula: "λ_max = b/T (Wien's Displacement Law: peak wavelength → star temperature)"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Go outside first"
+    description: "If you can see stars from your school, go outside at dusk. What can students actually observe? Brightness and colour. Everything else is inferred."
+  - title: "The distance problem"
+    description: "Hold a torch at the far end of the playground. Is it dim because it is far away, or because it is a weak torch? This is the fundamental problem of stellar astronomy."
+  - title: "Colour equals temperature"
+    description: "Blue stars are hotter than red stars. This is counterintuitive (we associate blue with cold). The blue flame of a Bunsen burner makes it concrete."
+
+hints:
+  - "Look at the star data table. Which measurements can we actually make from Earth?"
+  - "We can measure brightness (how bright it looks) but not luminosity (how bright it actually is). What else do we need to know?"
+  - "Distance matters. A dim nearby star looks bright. A bright distant star looks dim. How do astronomers measure distance?"
+  - "Parallax works for nearby stars. For distant ones, we use the relationship between colour and luminosity."
+
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

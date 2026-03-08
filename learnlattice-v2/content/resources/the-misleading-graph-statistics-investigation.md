@@ -23,13 +23,27 @@ key_concept: "Representation"
 global_context: "Globalisation and Sustainability"
 statement_of_inquiry: "The way data is represented determines what questions it can answer — and what stories it can tell."
 formula: "mean ≠ median when data is skewed"
-teacher_moves: true
+
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Show the misleading version first"
+    description: "Project the manipulated graph. Let students form an impression. THEN show the same data plotted fairly. The shift in perception is the lesson."
+  - title: "Students make misleading graphs"
+    description: "Give every group the same dataset. Half must make the data look dramatic. Half must make it look boring. Compare. This teaches manipulation by doing it."
+  - title: "Find real examples"
+    description: "Homework: find a misleading graph in the news, on social media, or in advertising. Bring it to class. The real world is full of them."
+
+hints:
+  - "Look at the Y-axis. Does it start at zero? If not, how does that change the visual impression?"
+  - "Compare the actual numbers to how they look on the graph. Is the difference really as dramatic as it appears?"
+  - "Try redrawing the graph with the Y-axis starting at zero. How does it change the story?"
+  - "The misleading element is usually one of: truncated axis, 3D effects, cherry-picked time range, or inconsistent intervals."
+
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---
