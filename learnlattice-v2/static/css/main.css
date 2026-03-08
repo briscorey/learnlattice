@@ -7660,26 +7660,14 @@ html.dark .dark-toggle .icon-sun { display: inline; }
 /* ═══════════════════════════════════════════
    BLOG HEADER IMAGES
    ═══════════════════════════════════════════ */
-.blog-header-image {
-  width: 100%;
-  max-height: 280px;
-  overflow: hidden;
-  border-radius: 0 0 var(--radius) var(--radius);
-  margin-bottom: -20px;
-}
+
 .blog-header-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-.blog-card-image {
-  display: block;
-  height: 140px;
-  overflow: hidden;
-  border-radius: var(--radius) var(--radius) 0 0;
-  margin: -1px -1px 0 -1px;
-}
+
 .blog-card-image img {
   width: 100%;
   height: 100%;
@@ -8543,10 +8531,9 @@ html { scroll-behavior: smooth; }
 }
 
 /* ═══════════════════════════════════════════
-   LAYOUT AUDIT FIXES — March 2026
-   ═══════════════════════════════════════════ */
+   LAYOUT AUDIT═══════════════════════ */
 
-/* FIX: Resource page breadcrumbs — tighten spacing, left-align */
+/* FIX: Resourcign */
 .rs-header { padding: 24px 24px 20px; }
 .rs-header .breadcrumbs {
   display: flex;
@@ -8600,9 +8587,7 @@ html { scroll-behavior: smooth; }
   object-position: center;
 }
 
-/* FIX: Resource card — ensure formula doesn't collide with badge */
-.resource-thumb {
-  position: relative;
+/* FIX: Resource card — ensureosition: relative;
   overflow: hidden;
 }
 .resource-thumb .formula {
@@ -8709,10 +8694,7 @@ code, pre, .formula, .step-m, .prob-btn { font-family: 'JetBrains Mono', 'Courie
 .gl-pills { margin-bottom: 0; }
 .gl-type-strip { 
   position: relative; 
-  z-index: 1;
-  margin-top: 0;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  z-index: 114px;
 }
 
 /* ── Fix: Grade page pills/type bar spacing ── */
@@ -8725,3 +8707,321 @@ code, pre, .formula, .step-m, .prob-btn { font-family: 'JetBrains Mono', 'Courie
 
 /* ── Fix: Remove old thumb height remnant ── */
 .resource-thumb-old-removed { display: none; }
+
+/* ═══════════════════════════════════════════
+   LAYOUT FIX PASS — Missing CSS Definitions
+   ═══════════════════════════════════════════ */
+
+/* Blog card date and reading time */
+.blog-card-date {
+  font-size: .75rem;
+  color: var(--ink-muted);
+}
+.blog-card-reading {
+  font-size: .75rem;
+  color: var(--ink-muted);
+}
+.blog-card-reading::before {
+  content: "·";
+  margin: 0 6px;
+  opacity: .4;
+}
+
+/* Blog single navigation */
+.blog-nav-prev,
+.blog-nav-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+  color: var(--ink-muted);
+  font-size: .82rem;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.blog-nav-prev:hover,
+.blog-nav-next:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* Newsletter description copy */
+.newsletter-copy {
+  font-size: .88rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Resource card type label text */
+.resource-thumb-type-label {
+  font-size: .68rem;
+  font-weight: 600;
+  color: var(--sc, var(--ink-muted));
+}
+
+/* Resource list Teacher Moves inline badge */
+.resource-tm-badge-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: .62rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(13,148,136,.08);
+  color: var(--teal);
+  border: 1px solid rgba(13,148,136,.15);
+}
+
+/* Vocabulary search wrapper — center the input */
+.vocab-search-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* ── Grade Page Fixes ── */
+
+/* Fix subject pills overlapping summary bar */
+.yl-subject-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.yl-summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Resource Content Minimum Padding ── */
+.resource-content {
+  min-height: 200px;
+  padding-bottom: 24px;
+}
+
+/* ── Resource Page — ensure sidebar doesn't collapse ── */
+@media (min-width: 861px) {
+  .rs-sidebar {
+    min-width: 260px;
+    max-width: 300px;
+  }
+}
+
+/* ── Blog Card Image Consistency ── */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color .2s, transform .15s, box-shadow .2s;
+}
+.blog-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.blog-card-image {
+  display: block;
+  height: 160px;
+  overflow: hidden;
+}
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.03);
+}
+
+/* ── Ensure all page heroes have consistent padding ── */
+.assess-hero,
+.cb-hero,
+.explore-hero,
+.lm-hero,
+.port-hero,
+.rubric-hero,
+.topicmap-hero,
+.vocab-hero,
+.zh-hero {
+  padding-top: max(48px, env(safe-area-inset-top, 48px));
+}
+
+/* ── Footer spacing fix ── */
+.footer {
+  margin-top: 0;
+}
+
+/* ── Resource cards grid — ensure uniform height ── */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+/* ── Fix dark mode for new elements ── */
+html.dark .blog-card { background: #1e293b; border-color: #334155; }
+html.dark .blog-card:hover { border-color: var(--teal); }
+html.dark .blog-nav-prev,
+html.dark .blog-nav-next { background: #1e293b; border-color: #334155; }
+html.dark .resource-tm-badge-inline { background: rgba(13,148,136,.15); }
+
+/* ── Grade Page — Fix pills/strip overlap ── */
+.gl-pills { margin-bottom: 0; padding-bottom: 8px; }
+.gl-type-strip { margin-top: 0; border-top: 1px solid var(--border); }
+
+/* ── Resource card — ensure consistent card height in grids ── */
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.resource-card .resource-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.resource-card .resource-body .resource-desc {
+  flex: 1;
+}
+
+/* ── Blog header image — ensure no gap between image and content ── */
+.blog-header-image {
+  margin-bottom: 0;
+}
+.blog-single-header {
+  padding-top: 24px;
+}
+
+/* ── Content tables — style markdown tables in resource content ── */
+.resource-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: .88rem;
+}
+.resource-content th,
+.resource-content td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.resource-content th {
+  background: var(--surface-warm);
+  font-weight: 600;
+  font-size: .82rem;
+  color: var(--ink);
+}
+.resource-content td {
+  color: var(--ink-muted);
+}
+html.dark .resource-content th { background: #1e293b; }
+
+/* ── Blockquotes in resource content ── */
+.resource-content blockquote {
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-left: 4px solid var(--teal);
+  background: var(--teal-wash);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--ink);
+}
+html.dark .resource-content blockquote {
+  background: rgba(13,148,136,.08);
+}
+
+/* ── Lists in resource content ── */
+.resource-content ul,
+.resource-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+.resource-content li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.resource-content li strong {
+  color: var(--ink);
+}
+
+/* ── Code in resource content ── */
+.resource-content code {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: .85em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border);
+  color: var(--teal);
+}
+html.dark .resource-content code {
+  background: #334155;
+}
+
+/* ── Headings in resource content ── */
+.resource-content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-top: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.resource-content h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.resource-content h4 {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+/* ── HR in resource content ── */
+.resource-content hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 32px 0;
+}
+
+/* ── Images in resource content ── */
+.resource-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 12px 0;
+}
+
+/* ── iframes (games/explainers embedded in resources) ── */
+.resource-content iframe {
+  border-radius: 12px;
+  margin: 16px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+html.dark .resource-content iframe {
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
