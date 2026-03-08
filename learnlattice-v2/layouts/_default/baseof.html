@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Mathematics & Science Investigations{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Investigations{{ else }}{{ $t := .Title }}{{ if gt (len $t) 50 }}{{ $t }}{{ else }}{{ $t }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . | truncate 155 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="theme-color" content="#0D9488">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   {{ partial "seo.html" . }}
   {{/* Preconnect to external origins */}}
   <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -17,6 +17,9 @@ tags:
 formula: "acid + base -> salt + water"
 download_url: ""
 download_label: "Investigation Pack PDF"
+key_concept: "Change"
+global_context: "Scientific and Technical Innovation"
+statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
 ---
 
 ## Overview

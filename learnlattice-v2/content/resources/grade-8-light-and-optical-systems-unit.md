@@ -18,6 +18,9 @@ tags:
 formula: "angle i = angle r"
 download_url: ""
 download_label: "Unit Plan PDF"
+key_concept: "Systems"
+global_context: "Scientific and Technical Innovation"
+statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help us understand the natural world."
 ---
 
 ## Overview

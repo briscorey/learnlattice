@@ -20,6 +20,9 @@ tags:
 formula: "precision × context = appropriate accuracy"
 download_url: ""
 download_label: "Unit Plan PDF"
+key_concept: "Form"
+global_context: "Scientific and Technical Innovation"
+statement_of_inquiry: "Understanding the form of decimal notation enables precise measurement and comparison."
 ---
 
 ## The Hook

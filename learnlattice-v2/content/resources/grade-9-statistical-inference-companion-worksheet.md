@@ -22,6 +22,9 @@ tags:
 formula: "validity depends on method"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Logic"
+global_context: "Fairness and Development"
+statement_of_inquiry: "Representing and interpreting data reveals patterns that inform equitable decision-making."
 ---
 
 ## Overview

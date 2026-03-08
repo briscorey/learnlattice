@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<section style="padding: 120px 24px 80px; text-align: center; max-width: 560px; margin: 0 auto;">
+  <div style="font-size: 4rem; margin-bottom: 16px; opacity: 0.15;">404</div>
+  <h1 style="font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--ink); margin-bottom: 12px;">This page doesn't exist</h1>
+  <p style="font-size: 1rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 32px;">The resource you're looking for may have moved or been renamed. Try one of these instead:</p>
+  
+  <div style="display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto;">
+    <a href="/resources/" class="btn-primary" style="text-align: center;">Browse All Resources</a>
+    <a href="/subjects/mathematics/" class="btn-secondary" style="text-align: center;">MYP Mathematics</a>
+    <a href="/subjects/science/" class="btn-secondary" style="text-align: center;">MYP Science</a>
+    <a href="/" class="btn-secondary" style="text-align: center;">Back to Home</a>
+  </div>
+
+  <p style="margin-top: 32px; font-size: 0.82rem; color: var(--ink-muted);">Or press <kbd style="padding: 2px 8px; background: var(--surface-warm); border: 1px solid var(--border); border-radius: 4px; font-size: 0.78rem;">⌘K</kbd> to search.</p>
+</section>
+
+{{ end }}

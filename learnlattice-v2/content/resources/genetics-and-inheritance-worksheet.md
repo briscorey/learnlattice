@@ -18,6 +18,9 @@ tags:
 formula: "P(event) = favourable outcomes / total outcomes"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Systems"
+global_context: "Identities and Relationships"
+statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 ---
 
 ## Key Vocabulary — Match Before You Start

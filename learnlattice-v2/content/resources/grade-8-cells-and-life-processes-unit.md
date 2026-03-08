@@ -19,6 +19,9 @@ tags:
 formula: "cell theory -> structure + function"
 download_url: ""
 download_label: "Unit Plan PDF"
+key_concept: "Systems"
+global_context: "Identities and Relationships"
+statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 ---
 
 ## Overview

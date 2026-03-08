@@ -19,6 +19,9 @@ tags:
 formula: "ΔT = T_current − T_baseline"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Change"
+global_context: "Orientation in Space and Time"
+statement_of_inquiry: "Evidence of change in Earth systems reveals processes that operate across vast timescales."
 ---
 
 ## Before You Start — What Do You Already Know?

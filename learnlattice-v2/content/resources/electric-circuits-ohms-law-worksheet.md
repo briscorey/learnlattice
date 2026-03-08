@@ -17,6 +17,9 @@ tags:
 formula: "V = IR"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Relationships"
+global_context: "Scientific and Technical Innovation"
+statement_of_inquiry: "The relationships between forces, energy, and motion explain how the physical world behaves."
 ---
 
 ## Key Concepts — Quick Reference

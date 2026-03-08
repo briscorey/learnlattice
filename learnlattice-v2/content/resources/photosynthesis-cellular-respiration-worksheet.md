@@ -18,6 +18,9 @@ tags:
 formula: "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Systems"
+global_context: "Identities and Relationships"
+statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 ---
 
 ## The Big Picture

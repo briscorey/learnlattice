@@ -19,6 +19,9 @@ tags:
 formula: "plate motion -> earthquakes + volcanoes + mountains"
 download_url: ""
 download_label: "Unit Plan PDF"
+key_concept: "Change"
+global_context: "Orientation in Space and Time"
+statement_of_inquiry: "Evidence of change in Earth systems reveals processes that operate across vast timescales."
 ---
 
 ## The Hook

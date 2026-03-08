@@ -21,6 +21,9 @@ tags:
 formula: "fraction <-> decimal <-> percent"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Relationships"
+global_context: "Fairness and Development"
+statement_of_inquiry: "Relationships between parts and wholes reveal patterns that connect mathematics to fairness and proportion."
 ---
 
 ## Overview

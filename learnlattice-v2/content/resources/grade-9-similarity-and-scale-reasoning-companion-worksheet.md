@@ -22,6 +22,9 @@ tags:
 formula: "similar figures -> proportional sides"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Form"
+global_context: "Orientation in Space and Time"
+statement_of_inquiry: "The properties of shapes and space inform how we design, build, and navigate the physical world."
 ---
 
 ## Overview

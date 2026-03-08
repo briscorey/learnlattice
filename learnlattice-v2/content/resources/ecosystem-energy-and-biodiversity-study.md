@@ -18,6 +18,9 @@ tags:
 formula: "sun -> producers -> consumers"
 download_url: ""
 download_label: "Fieldwork Study PDF"
+key_concept: "Systems"
+global_context: "Globalisation and Sustainability"
+statement_of_inquiry: "Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance."
 ---
 
 ## Overview

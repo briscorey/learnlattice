@@ -22,6 +22,9 @@ tags:
 formula: "variation + selection -> change over time"
 download_url: ""
 download_label: "Companion Resource PDF"
+key_concept: "Systems"
+global_context: "Globalisation and Sustainability"
+statement_of_inquiry: "Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance."
 ---
 
 ## Overview

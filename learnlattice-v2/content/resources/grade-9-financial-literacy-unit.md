@@ -20,6 +20,9 @@ tags:
 formula: "income - expenses = balance"
 download_url: ""
 download_label: "Unit Plan PDF"
+key_concept: "Form"
+global_context: "Scientific and Technical Innovation"
+statement_of_inquiry: "The form and structure of numbers shapes how we understand quantity and scale."
 ---
 
 ## Overview

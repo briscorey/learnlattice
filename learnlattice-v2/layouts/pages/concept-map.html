@@ -113,10 +113,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script>
 (function() {
+  // Data is embedded at build time by Hugo
+  var _n = {{ $nodes | jsonify }};
+  var _l = {{ $links | jsonify }};
+  // Handle Hugo minifier wrapping arrays as strings
   var graphData = {
-    nodes: {{ $nodes | jsonify }},
-    links: {{ $links | jsonify }}
+    nodes: typeof _n === 'string' ? JSON.parse(_n) : _n,
+    links: typeof _l === 'string' ? JSON.parse(_l) : _l
   };
+
+  if (!graphData.nodes.length) { console.error('No concept map data'); return; }
 
   var container = document.getElementById('cmapContainer');
   var svg = d3.select('#cmapSvg');

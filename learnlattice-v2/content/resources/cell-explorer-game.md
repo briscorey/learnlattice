@@ -18,6 +18,9 @@ tags:
 formula: "Cell = Membrane + Nucleus + Organelles"
 download_url: ""
 download_label: ""
+key_concept: "Systems"
+global_context: "Identities and Relationships"
+statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 ---
 
 ## How to Use This Game
@@ -36,7 +39,7 @@ download_label: ""
 
 <div style="position: relative; width: 100%; padding-bottom: 62%; border-radius: 16px; overflow: hidden; border: 1px solid rgba(29, 227, 200, 0.2); box-shadow: 0 8px 40px rgba(0,0,0,0.4);">
   <iframe 
-    src="/games/cell-explorer.html" 
+    src="/games/cell-explorer" 
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
     title="Cell Explorer Interactive Game"
     loading="lazy">

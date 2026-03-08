@@ -19,6 +19,9 @@ tags:
 formula: "y = ax² + bx + c"
 download_url: ""
 download_label: "Worksheet PDF"
+key_concept: "Relationships"
+global_context: "Scientific and Technical Innovation"
+statement_of_inquiry: "Generalising patterns through symbolic relationships allows us to predict and explain change."
 ---
 
 ## What is a Quadratic?
