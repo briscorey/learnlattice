@@ -3,10 +3,15 @@
 <article class="resource-single">
   <div class="resource-single-header">
     <div class="resource-single-top-row">
-      <a href="/resources/" class="resource-single-back">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        All Resources
-      </a>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="bc-sep">›</span>
+        {{ with index .Params.subjects 0 }}
+        <a href="/subjects/{{ . | urlize }}/">{{ . }}</a>
+        <span class="bc-sep">›</span>
+        {{ end }}
+        <span aria-current="page">{{ .Title | truncate 50 }}</span>
+      </nav>
       <button class="classroom-mode-btn" id="classroomModeBtn" title="Open Classroom Mode — project this investigation step by step">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         Present

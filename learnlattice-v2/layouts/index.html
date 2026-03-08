@@ -26,10 +26,10 @@
 {{ $browseLinks := slice
   (dict "title" "All Resources" "url" "/resources/" "copy" "Open the full resource library.")
   (dict "title" "🎮 Games" "url" "/games/" "copy" "Interactive simulations and quizzes.")
-  (dict "title" "Unit Plans" "url" "/resource-types/unit-plan/" "copy" "Longer inquiry sequences and full units.")
-  (dict "title" "Worksheets" "url" "/resource-types/worksheet/" "copy" "Structured practice and reflection.")
-  (dict "title" "Lab Activities" "url" "/resource-types/lab-activity/" "copy" "Practical investigations and experiments.")
-  (dict "title" "Investigation Packs" "url" "/resource-types/investigation-pack/" "copy" "Guided inquiry packs and evidence tasks.")
+  (dict "title" "Unit Plans" "url" "/resources/" "copy" "Longer inquiry sequences and full units.")
+  (dict "title" "Worksheets" "url" "/resources/" "copy" "Structured practice and reflection.")
+  (dict "title" "Lab Activities" "url" "/resources/" "copy" "Practical investigations and experiments.")
+  (dict "title" "Investigation Packs" "url" "/resources/" "copy" "Guided inquiry packs and evidence tasks.")
   (dict "title" "Topic Pathways" "url" "/#topic-pathways" "copy" "Browse by concept instead of by subject.")
 }}
 {{ $startLinks := slice
@@ -82,6 +82,29 @@
     <div class="philosophy-pill">
       <span class="philosophy-pill-label">On identity</span>
       <span>"Every student arrives with a mathematical identity that teaching either protects or damages."</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section class="home-stats reveal">
+  <div class="home-stats-inner">
+    {{ $totalResources := len $resources }}
+    <div class="home-stat-item">
+      <span class="home-stat-num stat-num" data-count="{{ $totalResources }}">0</span>
+      <span class="home-stat-label">Resources</span>
+    </div>
+    <div class="home-stat-item">
+      <span class="home-stat-num">12</span>
+      <span class="home-stat-label">MYP Strands</span>
+    </div>
+    <div class="home-stat-item">
+      <span class="home-stat-num">4</span>
+      <span class="home-stat-label">Year Levels</span>
+    </div>
+    <div class="home-stat-item">
+      <span class="home-stat-num">Free</span>
+      <span class="home-stat-label">Forever · CC BY-SA</span>
     </div>
   </div>
 </section>
@@ -333,6 +356,30 @@
       <a class="topic-pill" href="{{ .Page.RelPermalink }}">
         {{ .Page.Title }} <span class="count">{{ .Count }}</span>
       </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- ── FROM THE BLOG ── -->
+{{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+{{ if $blogPosts }}
+<section class="section reveal">
+  <div class="section-header">
+    <h2 class="section-title">From the Blog</h2>
+    <a href="/blog/" class="section-link">
+      All posts
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+  <div class="home-blog-grid">
+    {{ range first 3 $blogPosts }}
+    <a href="{{ .RelPermalink }}" class="home-blog-card">
+      {{ with .Params.pillar }}<span class="home-blog-pillar">{{ . }}</span>{{ end }}
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description | truncate 120 }}</p>
+      <span class="home-blog-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.reading_time }} · {{ . }} min read{{ end }}</span>
+    </a>
     {{ end }}
   </div>
 </section>
