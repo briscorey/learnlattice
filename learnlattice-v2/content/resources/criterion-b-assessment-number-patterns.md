@@ -1,7 +1,7 @@
 ---
 title: "Criterion B Assessment: Number Patterns"
 date: 2026-03-08
-description: "A complete Criterion B assessment task with three annotated student responses at levels 3-4, 5-6, and 7-8. Students investigate the pattern in triangular numbers and generalise to a formula. Includes the task, mark scheme, and commentary on what distinguishes each achievement level."
+description: "A ready-to-use MYP Criterion B assessment task on number patterns with annotated student responses at levels 3-4, 5-6, and 7-8. Includes the task, marking notes, and analysis of what distinguishes each achievement level."
 subjects:
   - "Mathematics"
 math_topic: "Algebra"
@@ -17,129 +17,158 @@ tags:
   - "Assessment"
   - "Patterns"
   - "Algebra"
-  - "Annotated Student Work"
-  - "Triangular Numbers"
+  - "Student Work"
+  - "Annotated Responses"
 key_concept: "Logic"
 global_context: "Scientific and Technical Innovation"
-statement_of_inquiry: "Logical reasoning reveals patterns in number systems that can be described, generalised, and justified using algebraic thinking."
-formula: "T_n = n(n+1)/2"
+statement_of_inquiry: "Logical reasoning allows us to identify, describe, and generalise patterns — and the quality of a generalisation depends on the evidence and justification behind it."
+formula: "T(n) = ?"
+btc_practices:
+  - "Thinking Tasks"
+  - "Vertical Non-Permanent Surfaces"
 download_url: ""
-download_label: "Assessment Pack PDF"
-difficulty: "Meeting"
-duration: "1 lesson + homework"
+download_label: "Assessment Task PDF"
+teacher_moves:
+  before:
+    - title: "Establish the norm"
+      body: "Before distributing the task, remind students that Criterion B is about showing their thinking process, not just getting the answer. A correct generalisation with no working scores lower than a partially correct one with clear reasoning."
+  during:
+    - title: "Monitor without rescuing"
+      body: "If a student is stuck on the pattern, ask: 'What do you notice changes from one figure to the next?' Do not point to the answer. The struggle IS the assessment."
+    - title: "Encourage multiple representations"
+      body: "If a student has found the pattern numerically, prompt: 'Can you show this another way? A table? A graph? A diagram?' Multiple representations strengthen justification."
+  after:
+    - title: "Annotated response review"
+      body: "Use the three annotated responses below as a class calibration activity. Show all three (anonymised) and ask students to rank them. Then reveal the levels and discuss what makes each one stronger or weaker."
 ---
 
 ## The Assessment Task
 
-### Triangular Numbers
+### Context
+The figures below show a growing pattern made from square tiles:
 
-The first four triangular numbers are shown below:
+**Figure 1:** A single square (1 tile)
+**Figure 2:** An L-shape (3 tiles)
+**Figure 3:** A larger L-shape (5 tiles)
+**Figure 4:** An even larger L-shape (7 tiles)
 
-$$T_1 = 1 \quad T_2 = 3 \quad T_3 = 6 \quad T_4 = 10$$
+Each figure adds 2 tiles to the previous figure, extending the L-shape.
 
-These can be visualised as dots arranged in equilateral triangles.
+### Questions
 
-**Part (i):** Find the next three triangular numbers: $T_5$, $T_6$, and $T_7$. Describe how you found them.
+**(a)** Draw Figure 5 and Figure 6. State the number of tiles in each. *[Criterion B strand i: select and apply problem-solving techniques]*
 
-**Part (ii):** Organise your results in a table. Describe the pattern you observe. Include the differences between consecutive terms.
+**(b)** Organise your results in a table showing Figure number and number of tiles for Figures 1 through 6. Describe the pattern you see. *[Criterion B strand ii: describe patterns as general rules]*
 
-**Part (iii):** Find a general formula for $T_n$ (the $n$th triangular number). Verify your formula works for at least three known values.
+**(c)** Write a general rule (formula) that gives the number of tiles $T$ for any Figure number $n$. *[Criterion B strand ii: describe patterns as general rules]*
 
-**Part (iv):** Using your formula, justify why $T_n + T_{n-1} = n^2$. Explain what this means geometrically.
+**(d)** Use your rule to find the number of tiles in Figure 50 and Figure 100. *[Criterion B strand iii: verify and justify]*
 
----
-
-## Mark Scheme
-
-| Strand | Level 1-2 | Level 3-4 | Level 5-6 | Level 7-8 |
-|--------|-----------|-----------|-----------|-----------|
-| **i. Apply mathematical problem-solving techniques** | Finds 1-2 correct values | Finds all three values with a described method | Finds values and organises work systematically | Finds values using multiple approaches |
-| **ii. Describe patterns as general rules** | Lists numbers without describing a pattern | Describes that differences increase by 1 each time | Describes the pattern formally and uses it to predict further terms | Describes both the term-to-term and position-to-term rules |
-| **iii. Verify and justify** | Substitutes one value into a given formula | Finds a formula and checks 1-2 values | Derives the formula independently and verifies systematically | Proves the formula and explains the $n^2$ relationship with geometric reasoning |
+**(e)** Explain why your rule works. Justify that it will give the correct answer for any figure number, not just the ones you tested. *[Criterion B strand iii: verify and justify]*
 
 ---
 
-## Student Response A — Achieving Level 3-4
+## Annotated Student Response: Levels 3–4
 
-> **Part (i):** $T_5 = 15$, $T_6 = 21$, $T_7 = 28$. I added 5 to get 15, then 6 to get 21, then 7 to get 28.
+> **Student A's work:**
 >
-> **Part (ii):** The pattern is that you add one more each time. So first you add 2, then 3, then 4, then 5, etc.
+> Figure 5 has 9 tiles. Figure 6 has 11 tiles. ✓
 >
-> **Part (iii):** I tried $T_n = n \times (n+1) \div 2$. For $n=4$: $4 \times 5 \div 2 = 10$. It works.
+> Table: 1, 3, 5, 7, 9, 11
 >
-> **Part (iv):** Not attempted.
+> "The pattern goes up by 2 each time."
+>
+> Rule: "Add 2 to the last number"
+>
+> Figure 50: "I don't know, you'd have to keep adding 2"
+>
+> [No justification attempted]
 
-### Commentary
+### Why this is Level 3–4:
 
-This response correctly identifies all values and describes the term-to-term pattern clearly. The formula is stated but only verified once. Part (iv) is not attempted, which limits the response to strand (i) and (ii). The description of the pattern ("add one more each time") is accurate but informal — it doesn't use mathematical language like "consecutive differences increase by 1." The formula appears without explanation of where it came from, suggesting it may have been found through trial and error or prior knowledge rather than derived.
+**Strand i (3-4):** The student correctly draws Figures 5 and 6 and counts the tiles. The problem-solving technique (drawing and counting) is appropriate but limited.
 
-**What would move this to 5-6:** Verify the formula for at least three values. Attempt part (iv). Use more precise mathematical language.
+**Strand ii (3-4):** The pattern description ("goes up by 2") is correct but is a **recursive rule** (each term depends on the previous one), not a **general rule** (which gives any term directly from its position number). The student has described the pattern but has not generalised it.
+
+**Strand iii (1-2):** No justification is attempted. The student cannot apply the rule to Figure 50 because their recursive rule requires computing all previous terms.
+
+**What's missing to reach 5-6:** A general rule in the form $T = \text{something involving } n$. A table that shows the relationship between figure number and tile count. Any attempt at justification.
 
 ---
 
-## Student Response B — Achieving Level 5-6
+## Annotated Student Response: Levels 5–6
 
-> **Part (i):** $T_5 = 15$, $T_6 = 21$, $T_7 = 28$. Each triangular number is the sum of the natural numbers up to $n$: $T_5 = 1+2+3+4+5 = 15$.
+> **Student B's work:**
 >
-> **Part (ii):**
+> Figure 5: 9 tiles ✓ Figure 6: 11 tiles ✓
 >
-> | $n$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-> |---|---|---|---|---|---|---|---|
-> | $T_n$ | 1 | 3 | 6 | 10 | 15 | 21 | 28 |
-> | Difference | — | 2 | 3 | 4 | 5 | 6 | 7 |
+> | Figure (n) | Tiles (T) |
+> |---|---|
+> | 1 | 1 |
+> | 2 | 3 |
+> | 3 | 5 |
+> | 4 | 7 |
+> | 5 | 9 |
+> | 6 | 11 |
 >
-> The first differences are $2, 3, 4, 5, 6, 7$ — they increase by 1 each time. This means the second differences are constant (all equal to 1), which tells us the formula is quadratic.
+> "Each time the figure number goes up by 1, the tiles go up by 2. The tiles are always 1 less than double the figure number."
 >
-> **Part (iii):** Since $T_n = 1 + 2 + 3 + \ldots + n$, I can use the formula for the sum of an arithmetic series: $T_n = \frac{n(n+1)}{2}$.
+> Rule: $T = 2n - 1$
 >
-> Checking: $T_3 = \frac{3 \times 4}{2} = 6$ ✓, $T_5 = \frac{5 \times 6}{2} = 15$ ✓, $T_7 = \frac{7 \times 8}{2} = 28$ ✓
+> Figure 50: $T = 2(50) - 1 = 99$ tiles
+> Figure 100: $T = 2(100) - 1 = 199$ tiles
 >
-> **Part (iv):** $T_n + T_{n-1} = \frac{n(n+1)}{2} + \frac{(n-1)n}{2} = \frac{n^2 + n + n^2 - n}{2} = \frac{2n^2}{2} = n^2$. This works algebraically but I'm not sure what it means geometrically.
+> "I can verify this works: for Figure 3, $T = 2(3) - 1 = 5$ ✓ and for Figure 6, $T = 2(6) - 1 = 11$ ✓"
 
-### Commentary
+### Why this is Level 5–6:
 
-This response demonstrates strong pattern recognition and systematic verification. The use of second differences to identify a quadratic formula shows genuine mathematical reasoning. The formula is derived from understanding (sum of natural numbers), not guessed. Three verifications are provided. The algebraic proof in part (iv) is correct.
+**Strand i (5-6):** Correct drawings, clear table, organised approach. The problem-solving technique is well selected and applied.
 
-The response falls short of 7-8 because the geometric interpretation is not provided. The student proves the relationship algebraically but doesn't connect it to the visual meaning: two consecutive triangular numbers of dots combine to form a square arrangement of $n \times n$ dots.
+**Strand ii (5-6):** The pattern is described correctly ("1 less than double the figure number") and expressed as a general rule $T = 2n - 1$. This is a genuine generalisation — it works for any figure number without needing to calculate previous terms.
 
-**What would move this to 7-8:** Add the geometric interpretation. Explain why the sum formula $1 + 2 + \ldots + n$ gives $\frac{n(n+1)}{2}$ visually (the "pairing" argument).
+**Strand iii (5-6):** The student verifies the rule by substituting known values back into the formula. This demonstrates that the rule produces correct results for tested cases. However, verification is not the same as justification — the student shows the rule WORKS but doesn't explain WHY it works.
 
----
-
-## Student Response C — Achieving Level 7-8
-
-> **Part (i):** $T_5 = 15$, $T_6 = 21$, $T_7 = 28$.
->
-> I used two methods: (1) Adding $n$ to the previous term: $T_5 = T_4 + 5 = 10 + 5 = 15$. (2) Using the formula $T_n = \frac{n(n+1)}{2}$, verified below.
->
-> **Part (ii):** [Table as above, plus:] The constant second difference of 1 confirms the relationship is quadratic (degree 2), so $T_n$ must be a quadratic function of $n$.
->
-> **Part (iii):** I derived the formula using Gauss's pairing argument. Write the sum forwards and backwards:
->
-> $S = 1 + 2 + 3 + \ldots + n$
->
-> $S = n + (n-1) + (n-2) + \ldots + 1$
->
-> Adding: $2S = (n+1) + (n+1) + \ldots + (n+1) = n(n+1)$
->
-> So $S = T_n = \frac{n(n+1)}{2}$.
->
-> Verified: $T_1 = 1$ ✓, $T_4 = 10$ ✓, $T_7 = 28$ ✓, $T_{10} = 55$ ✓
->
-> **Part (iv):** Algebraic proof: [same as Response B].
->
-> Geometric interpretation: If you arrange $T_n$ dots in a triangle and $T_{n-1}$ dots in a slightly smaller triangle, then rotate the smaller triangle 180° and fit it against the larger one, the combined shape forms an $n \times n$ square. This is because each row of the combined shape has exactly $n$ dots: row $k$ from $T_n$ has $k$ dots, and the corresponding row from $T_{n-1}$ has $n-k$ dots, giving $k + (n-k) = n$.
-
-### Commentary
-
-This response demonstrates all four strands at the highest level. The formula is derived through a classical proof (Gauss's argument), not stated from memory. The verification goes beyond the required three values. The geometric interpretation in part (iv) is precise, creative, and mathematically sound — the student explains exactly how two triangular numbers fit together to form a square.
-
-The response also shows mathematical maturity: using multiple methods in part (i), connecting second differences to polynomial degree in part (ii), and providing both algebraic and geometric arguments in part (iv).
+**What's missing to reach 7-8:** A justification that connects the rule to the structure of the pattern. Why does each figure add 2? Why does the formula $2n - 1$ describe this? A structural explanation linking the algebra to the geometry of the L-shapes.
 
 ---
 
-## Teaching Notes
+## Annotated Student Response: Levels 7–8
 
-This assessment task works best after students have explored triangular numbers informally — for example, through the Staircase Problem investigation. The three annotated responses are designed to be used in class: show all three (anonymised) and have students discuss what distinguishes each level. This builds assessment literacy — students learn to self-assess by seeing what "investigating patterns" looks like at different levels of sophistication.
+> **Student C's work:**
+>
+> [Correct drawings, table, and rule: $T = 2n - 1$]
+>
+> Figure 50: 99 tiles ✓ Figure 100: 199 tiles ✓
+>
+> **Justification:**
+>
+> "Each L-shape can be thought of as two arms extending from a corner tile. The corner tile is always 1 tile. Each arm has length $n - 1$ (because Figure 1 has no arms, Figure 2 has arms of length 1, Figure 3 has arms of length 2, etc.).
+>
+> So the total is: 1 (corner) + 2(n - 1) = 1 + 2n - 2 = 2n - 1.
+>
+> This means $T = 2n - 1$ will work for ANY figure number, not just the ones I tested, because every L-shape has the same structure: one corner tile plus two arms of length $n - 1$.
+>
+> I can also verify this makes sense at the extremes: Figure 1 ($n = 1$) gives $T = 1$, which is just the corner tile with no arms. As $n$ gets very large, the number of tiles approaches $2n$ because the single corner tile becomes negligible compared to the two arms."
 
-**EAL note:** The visual representation of triangular numbers (dot patterns) provides an entry point that doesn't require reading. Students can draw the patterns and count before engaging with the algebraic formalisation. The table in Part (ii) is a structured scaffold that helps organise thinking regardless of language proficiency.
+### Why this is Level 7–8:
+
+**Strand i (7-8):** Correct, well-organised, efficient problem-solving.
+
+**Strand ii (7-8):** The general rule is correct and clearly stated with proper mathematical notation.
+
+**Strand iii (7-8):** This is where level 7-8 is distinguished. The student doesn't just verify — they **justify**. They explain the structural reason why $T = 2n - 1$: the L-shape decomposes into a corner plus two arms. This is a mathematical argument that proves the rule works for all cases, not just the tested ones. The limit behaviour analysis ("as $n$ gets large, $T$ approaches $2n$") shows sophisticated mathematical thinking.
+
+**The key distinction:** Verification says "my rule gives the right answer when I test it." Justification says "here is WHY my rule must be correct for all cases." This is the difference between level 5-6 and level 7-8 in Criterion B.
+
+---
+
+## Using This Resource
+
+### As an assessment task
+Distribute the task as-is. Allow 40-50 minutes. Students work individually.
+
+### As a calibration activity
+After the assessment, show all three annotated responses (remove names and level labels). Ask students to rank them and explain their reasoning. Then reveal the levels. This builds assessment literacy — students learn to see the difference between describing, generalising, verifying, and justifying.
+
+### As a teaching tool
+Use the three responses to explicitly teach the Criterion B strands. The progression from Student A → B → C maps directly to the progression from describing patterns → writing general rules → justifying why they work.
