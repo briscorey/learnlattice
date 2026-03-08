@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   {{/* Critical CSS inline for fastest paint */}}
-  <link rel="stylesheet" href="/css/main.css?v=20260310d">
+  <link rel="stylesheet" href="/css/main.css?v=20260310e">
   {{/* Non-blocking font loading */}}
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
@@ -21,6 +21,7 @@
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"></noscript>
   {{ block "head" . }}{{ end }}
+  <script>try{if(localStorage.getItem('ll-dark')==='1')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
 <body{{ with .Params.body_class }} class="{{ . }}"{{ end }}>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -502,6 +503,17 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+  </script>
+  <script>
+  // Dark mode toggle
+  (function(){
+    var btn = document.getElementById('darkToggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('ll-dark', document.documentElement.classList.contains('dark') ? '1' : '0'); } catch(e){}
+    });
   })();
   </script>
 </body>

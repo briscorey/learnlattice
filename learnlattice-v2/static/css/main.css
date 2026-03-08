@@ -7246,3 +7246,75 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 @media (min-width: 1200px) {
   .resources-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* ═══════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════ */
+html.dark {
+  --ink: #e2e8f0;
+  --ink-deep: #f1f5f9;
+  --ink-light: #94a3b8;
+  --ink-muted: #94a3b8;
+  --surface: #0f172a;
+  --surface-warm: #1e293b;
+  --surface-card: #1e293b;
+  --teal-wash: rgba(13,148,136,0.1);
+  --teal-light: rgba(13,148,136,0.15);
+  --border: #334155;
+  --border-hover: #475569;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+}
+html.dark body { background: #0f172a; }
+html.dark .ka-home-hero { background: #0f172a; }
+html.dark .nav-wrap { background: rgba(15,23,42,0.95); border-color: #334155; }
+html.dark .resource-thumb .formula {
+  background: rgba(30,41,59,0.9);
+  color: var(--teal-bright);
+}
+html.dark .resource-thumb-overlay {
+  background: rgba(30,41,59,0.88);
+  color: #e2e8f0;
+}
+html.dark .resource-tm-badge {
+  background: rgba(30,41,59,0.9);
+  color: var(--teal-bright);
+}
+html.dark .grade-section-icon { background: rgba(13,148,136,0.15); }
+html.dark .grade-subject-pill { background: #1e293b; color: #e2e8f0; }
+html.dark .grade-type-bar { background: #1e293b; }
+html.dark .home-stats { background: #1e293b; border-color: #334155; }
+html.dark .philosophy-strip { background: #0f172a; }
+html.dark .home-promise { background: #0f172a; }
+html.dark .home-promise-card { background: #1e293b; border-color: #334155; }
+html.dark .footer { background: #0f172a; border-color: #334155; }
+html.dark .resource-body-subject { opacity: 0.9; }
+html.dark .page-hero, html.dark .page-hero-subject { background: #0f172a; }
+html.dark .topic-pill { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+html.dark .grade-hero { background: #1e293b; border-color: #334155; }
+html.dark .grade-card-tag, html.dark .resource-tag { background: #334155; border-color: #475569; color: #94a3b8; }
+html.dark .resources-page-counts { background: #1e293b; border-color: #334155; }
+html.dark .nav-dropdown { background: #1e293b; border-color: #334155; }
+html.dark .nav-dropdown-item:hover { background: #334155; }
+html.dark .search-modal { background: rgba(15,23,42,0.96); }
+html.dark .search-input { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+
+/* Dark mode toggle button */
+.dark-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+.dark-toggle:hover { border-color: var(--teal); color: var(--teal); }
+html.dark .dark-toggle { color: #f59e0b; border-color: #475569; }
+html.dark .dark-toggle:hover { border-color: #f59e0b; }
+.dark-toggle .icon-sun, html.dark .dark-toggle .icon-moon { display: none; }
+html.dark .dark-toggle .icon-sun { display: inline; }
