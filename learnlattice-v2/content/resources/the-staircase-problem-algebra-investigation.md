@@ -48,6 +48,50 @@ hints:
 
 difficulty: "meeting"
 duration: "1–2 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I built or drew the first 5 staircases
+  - I counted the blocks in each and made a table
+- level: Building understanding
+  items:
+  - I found the pattern in the differences
+  - I wrote a formula for the nth staircase
+- level: Going deeper
+  items:
+  - I verified my formula for values I did not build
+  - I explained how I found the formula
+- level: Pushing further
+  items:
+  - I proved why the formula must work for ALL values
+  - I connected the pattern to a geometric shape
+misconceptions:
+- myth: The formula is just the pattern of differences
+  why: The differences are 1, 2, 3, 4 so it seems like the formula should be n
+  truth: 'The differences tell you about the formula but they ARE not the formula.
+    The totals are 1, 3, 6, 10 — these are triangular numbers: n(n+1)/2.'
+- myth: Checking 5 cases proves a formula
+  why: If it works for 5 values it must always work
+  truth: Verification is not proof. A formula must work for ALL values of n, not just
+    the ones you tested.
+- myth: Algebra is about guessing and checking
+  why: Many students find formulas by trial and error
+  truth: Deriving a formula means building it logically from the structure of the
+    problem. Guess-and-check finds the answer but does not explain WHY it works.
+timeline: '0-5 min: Build staircase 1-3 with blocks. | 5-15 min: Groups build up to
+  staircase 8, record in table. | 15-25 min: Find the pattern, write a formula. |
+  25-35 min: Test your formula — predict staircase 20 and 100. | 35-45 min: Gallery
+  walk. | 45-50 min: Can anyone explain WHY the formula works?'
+sentence_starters:
+  describing:
+  - The pattern I notice is...
+  - Each time n increases by 1, the total increases by...
+  explaining:
+  - The formula is ___ because...
+  - I found this formula by noticing that...
+  justifying:
+  - I can prove this works for all n because...
+  - The geometric explanation is...
 ---
 
 ## The Hook

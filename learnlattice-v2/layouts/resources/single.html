@@ -75,10 +75,79 @@
       {{ end }}
       {{ end }}
 
+      {{/* ── Investigation Timeline ── */}}
+      {{ with .Params.timeline }}
+      <div class="rs-timeline">
+        <div class="rs-timeline-label">⏱ Lesson Timeline (50 min)</div>
+        <div class="rs-timeline-strip">
+          {{ $phases := split . " | " }}
+          {{ range $phases }}
+          {{ $parts := split . ": " }}
+          <div class="rs-timeline-phase">
+            <span class="rs-timeline-time">{{ index $parts 0 }}</span>
+            <span class="rs-timeline-desc">{{ if gt (len $parts) 1 }}{{ index $parts 1 }}{{ else }}{{ index $parts 0 }}{{ end }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
       {{/* ── Content ── */}}
       <div class="resource-content">
         {{ .Content }}
       </div>
+
+      {{/* ── Self-Assessment Checklist ── */}}
+      {{ with .Params.self_check }}
+      <div class="rs-selfcheck">
+        <button class="rs-selfcheck-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <span>✅ Check Your Progress</span>
+          <svg class="rs-selfcheck-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="rs-selfcheck-body">
+          {{ range . }}
+          <div class="rs-selfcheck-level">
+            <h4>{{ .level }}</h4>
+            {{ range .items }}
+            <label class="rs-selfcheck-item">
+              <input type="checkbox">
+              <span>{{ . }}</span>
+            </label>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{/* ── Sentence Starters ── */}}
+      {{ with .Params.sentence_starters }}
+      <details class="rs-starters">
+        <summary>
+          <span>✏️ Sentence Starters</span>
+        </summary>
+        <div class="rs-starters-body">
+          {{ with .describing }}
+          <div class="rs-starters-group">
+            <h4>Describing <span class="rs-starters-level">Level 3-4</span></h4>
+            {{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}
+          </div>
+          {{ end }}
+          {{ with .explaining }}
+          <div class="rs-starters-group">
+            <h4>Explaining <span class="rs-starters-level">Level 5-6</span></h4>
+            {{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}
+          </div>
+          {{ end }}
+          {{ with .justifying }}
+          <div class="rs-starters-group">
+            <h4>Justifying <span class="rs-starters-level">Level 7-8</span></h4>
+            {{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </details>
+      {{ end }}
 
       {{/* ── I'm Stuck hints ── */}}
       {{ with .Params.hints }}
@@ -156,10 +225,24 @@
 
       {{/* Quick links */}}
       <div class="rs-sidebar-links">
+        <a href="/students/" class="rs-sidebar-link">🎓 Student Section</a>
         <a href="/assessment/" class="rs-sidebar-link">📋 Assessment Toolkit</a>
         <a href="/vocabulary/" class="rs-sidebar-link">🔤 Visual Vocabulary</a>
-        <a href="/explore/" class="rs-sidebar-link">🎲 Explore More</a>
       </div>
+
+      {{/* Common Misconceptions */}}
+      {{ with .Params.misconceptions }}
+      <div class="rs-sidebar-card rs-misconceptions">
+        <h3>⚠️ Common Misconceptions</h3>
+        {{ range . }}
+        <div class="rs-misconception">
+          <div class="rs-misconception-myth">"{{ .myth }}"</div>
+          <div class="rs-misconception-why">Why it seems right: {{ .why }}</div>
+          <div class="rs-misconception-truth">Actually: {{ .truth }}</div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
     </aside>
   </div>
 </article>

@@ -9232,3 +9232,329 @@ html.dark .resource-content iframe {
   .rs-header .rs-actions { animation: none; }
   .explore-surprise-card { animation: none; }
 }
+
+/* ═══════════════════════════════════════════
+   STUDENT SECTION — Warm, inviting, student-first
+   ═══════════════════════════════════════════ */
+
+/* ── Student Hero — warmer, friendlier ── */
+.stu-hero {
+  padding: 56px 24px 36px;
+  text-align: center;
+  background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+html.dark .stu-hero { background: linear-gradient(180deg, #1a2e2b 0%, #0f172a 100%); border-color: #334155; }
+.stu-hero-inner { max-width: 600px; margin: 0 auto; }
+.stu-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+.stu-hero p { color: var(--ink-muted); font-size: .95rem; line-height: 1.5; margin-bottom: 12px; }
+.stu-back { font-size: .82rem; color: var(--teal); text-decoration: none; font-weight: 500; }
+
+/* ── Dashboard Cards ── */
+.stu-grid-section { padding: 36px 24px; max-width: 900px; margin: 0 auto; }
+.stu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 640px) { .stu-grid { grid-template-columns: 1fr; } }
+
+.stu-card {
+  padding: 28px 24px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.stu-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
+.stu-card-learn { background: linear-gradient(135deg, #0D9488, #14b8a6); }
+.stu-card-practise { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.stu-card-play { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+.stu-card-explore { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.stu-card-icon { font-size: 2.2rem; margin-bottom: 12px; }
+.stu-card h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
+.stu-card p { font-size: .85rem; opacity: .9; line-height: 1.5; flex: 1; margin-bottom: 12px; }
+.stu-card-count { font-size: .72rem; font-weight: 600; opacity: .7; text-transform: uppercase; letter-spacing: .5px; }
+
+/* ── "I don't understand" chips ── */
+.stu-help-preview { padding: 36px 24px; background: var(--surface-warm); border-top: 1px solid var(--border); }
+html.dark .stu-help-preview { background: #1e293b; }
+.stu-help-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+.stu-help-inner h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--ink); margin-bottom: 6px; }
+.stu-help-inner p { color: var(--ink-muted); font-size: .88rem; margin-bottom: 20px; }
+.stu-help-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.stu-help-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px; border-radius: 12px;
+  background: var(--surface-card); border: 1px solid var(--border);
+  text-decoration: none; color: var(--ink); font-size: .88rem; font-weight: 500;
+  transition: all 0.2s;
+}
+.stu-help-chip:hover { border-color: var(--teal); background: var(--teal-wash); transform: translateY(-2px); }
+.stu-help-chip span { font-size: 1.1rem; }
+
+/* ── Vocab teaser ── */
+.stu-vocab-teaser { padding: 32px 24px; text-align: center; }
+.stu-vocab-inner h2 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: 4px; }
+.stu-vocab-inner p { color: var(--ink-muted); font-size: .85rem; margin-bottom: 12px; }
+.stu-vocab-link { font-size: .85rem; color: var(--teal); text-decoration: none; font-weight: 600; }
+
+/* ── Help topic sections ── */
+.shelp-topics { max-width: 900px; margin: 0 auto; padding: 24px; }
+.shelp-topic {
+  margin-bottom: 32px; padding: 24px;
+  background: var(--surface-card); border: 1px solid var(--border);
+  border-radius: 16px; scroll-margin-top: 80px;
+}
+.shelp-topic-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.shelp-topic-icon { font-size: 2rem; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: var(--teal-wash); border-radius: 14px; }
+.shelp-topic-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 2px; }
+.shelp-topic-header p { font-size: .85rem; color: var(--ink-muted); }
+.shelp-explainer { margin-bottom: 16px; border-radius: 12px; overflow: hidden; }
+.shelp-links h3 { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-muted); margin-bottom: 8px; }
+.shelp-link {
+  display: block; padding: 10px 14px; margin-bottom: 6px;
+  background: var(--surface-warm); border: 1px solid var(--border); border-radius: 10px;
+  text-decoration: none; color: var(--ink); font-size: .85rem; font-weight: 500;
+  transition: border-color 0.2s;
+}
+.shelp-link:hover { border-color: var(--teal); }
+
+/* ── Practise page ── */
+.stu-practise-grid-section { max-width: 800px; margin: 0 auto; padding: 24px; }
+.stu-practise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.stu-practise-card {
+  padding: 20px; background: var(--surface-card); border: 1px solid var(--border);
+  border-radius: 14px; text-decoration: none; color: inherit;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.stu-practise-card:hover { transform: translateY(-3px); border-color: var(--teal); }
+.stu-practise-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.stu-practise-card h3 { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--ink); margin-bottom: 6px; }
+.stu-practise-card p { font-size: .78rem; color: var(--ink-muted); line-height: 1.5; }
+
+/* ═══════════════════════════════════════════
+   TEACHING LAYER — Timeline, Self-Check,
+   Sentence Starters, Misconceptions
+   ═══════════════════════════════════════════ */
+
+/* ── Investigation Timeline ── */
+.rs-timeline {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.rs-timeline-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+.rs-timeline-strip {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+}
+.rs-timeline-phase {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px 12px;
+  background: var(--surface-card);
+  border-radius: 8px;
+  border-left: 3px solid var(--teal);
+  font-size: .78rem;
+}
+.rs-timeline-time {
+  display: block;
+  font-weight: 700;
+  color: var(--teal);
+  font-size: .68rem;
+  margin-bottom: 4px;
+}
+.rs-timeline-desc {
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+/* ── Self-Assessment Checklist ── */
+.rs-selfcheck {
+  margin-top: 24px;
+  border: 2px solid #22c55e;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.rs-selfcheck-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(34,197,94,0.06);
+  border: none;
+  color: var(--ink);
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .2s;
+}
+.rs-selfcheck-toggle:hover { background: rgba(34,197,94,0.1); }
+.rs-selfcheck-chevron { transition: transform .3s; }
+.rs-selfcheck.open .rs-selfcheck-chevron { transform: rotate(180deg); }
+.rs-selfcheck-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  padding: 0 18px;
+}
+.rs-selfcheck.open .rs-selfcheck-body {
+  max-height: 800px;
+  padding: 0 18px 18px;
+}
+.rs-selfcheck-level {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.rs-selfcheck-level:first-child { border-top: none; margin-top: 8px; }
+.rs-selfcheck-level h4 {
+  font-size: .78rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.rs-selfcheck-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: .85rem;
+  color: var(--ink);
+  cursor: pointer;
+  line-height: 1.5;
+}
+.rs-selfcheck-item input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: #22c55e;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.rs-selfcheck-item input:checked + span {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+
+/* ── Sentence Starters ── */
+.rs-starters {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.rs-starters summary {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--ink);
+  background: var(--surface-warm);
+  list-style: none;
+  transition: background .2s;
+}
+.rs-starters summary::-webkit-details-marker { display: none; }
+.rs-starters summary:hover { background: var(--surface-card); }
+.rs-starters-body { padding: 0 18px 18px; }
+.rs-starters-group {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.rs-starters-group:first-child { border-top: none; margin-top: 4px; }
+.rs-starters-group h4 {
+  font-size: .82rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rs-starters-level {
+  font-size: .62rem;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: var(--teal-wash);
+  color: var(--teal);
+  font-weight: 600;
+}
+.rs-starter {
+  padding: 8px 14px;
+  margin-bottom: 6px;
+  background: var(--surface-warm);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  font-size: .85rem;
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Common Misconceptions (sidebar) ── */
+.rs-misconceptions { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.2); }
+.rs-misconceptions h3 { color: #d97706; border-bottom-color: rgba(245,158,11,0.15); }
+.rs-misconception { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(245,158,11,0.1); }
+.rs-misconception:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.rs-misconception-myth {
+  font-size: .82rem;
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+.rs-misconception-why {
+  font-size: .75rem;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.rs-misconception-truth {
+  font-size: .78rem;
+  color: #16a34a;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ── Dark mode adjustments ── */
+html.dark .rs-timeline { background: #1e293b; border-color: #334155; }
+html.dark .rs-timeline-phase { background: #0f172a; }
+html.dark .rs-selfcheck { border-color: #22c55e40; }
+html.dark .rs-selfcheck-toggle { background: rgba(34,197,94,0.08); }
+html.dark .rs-misconceptions { background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.15); }
+html.dark .rs-starters summary { background: #1e293b; }
+html.dark .rs-starter { background: #1e293b; }
+html.dark .rs-selfcheck.open .rs-selfcheck-body { background: var(--surface); }
+
+/* ── Print — show checklists, hide interactive bits ── */
+@media print {
+  .rs-selfcheck { border: 1px solid #ccc; }
+  .rs-selfcheck-body { max-height: none !important; padding: 0 18px 18px !important; }
+  .rs-selfcheck-toggle .rs-selfcheck-chevron { display: none; }
+  .rs-starters[open] .rs-starters-body { display: block; }
+  .rs-timeline-strip { flex-wrap: wrap; }
+}

@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ $explainers := where $allResources "Params.resource_types" "intersect" (slice "Visual Explainer") }}
+{{ $workedExamples := where $allResources "Params.resource_types" "intersect" (slice "Worked Example") }}
+{{ $games := where $allResources "Params.resource_types" "intersect" (slice "Interactive Game") }}
+
+<section class="stu-hero">
+  <div class="stu-hero-inner">
+    <h1>What are you working on today?</h1>
+    <p>Pick where you want to start. No login. No tracking. Just learning.</p>
+  </div>
+</section>
+
+<section class="stu-grid-section">
+  <div class="stu-grid">
+
+    <a href="/students/help/" class="stu-card stu-card-learn">
+      <div class="stu-card-icon">💡</div>
+      <h2>Learn</h2>
+      <p>Don't understand something? Start here. Visual explanations that make concepts click.</p>
+      <span class="stu-card-count">{{ len $explainers }} explainers</span>
+    </a>
+
+    <a href="/students/practise/" class="stu-card stu-card-practise">
+      <div class="stu-card-icon">✏️</div>
+      <h2>Practise</h2>
+      <p>Worked examples that show you every step. Go at your own pace.</p>
+      <span class="stu-card-count">{{ len $workedExamples }} examples</span>
+    </a>
+
+    <a href="/games/" class="stu-card stu-card-play">
+      <div class="stu-card-icon">🎮</div>
+      <h2>Play</h2>
+      <p>Games where the learning IS the game. No scores. No pressure.</p>
+      <span class="stu-card-count">{{ len $games }} games</span>
+    </a>
+
+    <a href="/explore/" class="stu-card stu-card-explore">
+      <div class="stu-card-icon">🎲</div>
+      <h2>Explore</h2>
+      <p>Not sure where to start? Let us surprise you with something interesting.</p>
+      <span class="stu-card-count">Surprise me</span>
+    </a>
+
+  </div>
+</section>
+
+<section class="stu-help-preview">
+  <div class="stu-help-inner">
+    <h2>I don't understand...</h2>
+    <p>Click what's confusing you. We'll explain it visually.</p>
+    <div class="stu-help-grid">
+      {{ $helpTopics := slice
+        (dict "label" "Negative numbers" "url" "/students/help/#negative-numbers" "icon" "➖")
+        (dict "label" "Fractions" "url" "/students/help/#fractions" "icon" "½")
+        (dict "label" "Algebra" "url" "/students/help/#algebra" "icon" "𝑥")
+        (dict "label" "Graphs" "url" "/students/help/#graphs" "icon" "📈")
+        (dict "label" "Probability" "url" "/students/help/#probability" "icon" "🎲")
+        (dict "label" "Density" "url" "/students/help/#density" "icon" "⚖️")
+        (dict "label" "Forces" "url" "/students/help/#forces" "icon" "💪")
+        (dict "label" "Energy" "url" "/students/help/#energy" "icon" "⚡")
+        (dict "label" "Particles" "url" "/students/help/#particles" "icon" "⚛️")
+        (dict "label" "Food webs" "url" "/students/help/#food-webs" "icon" "🌿")
+      }}
+      {{ range $helpTopics }}
+      <a href="{{ .url }}" class="stu-help-chip">
+        <span>{{ .icon }}</span>
+        {{ .label }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="stu-vocab-teaser">
+  <div class="stu-vocab-inner">
+    <h2>Need a word explained?</h2>
+    <p>102 key terms with visual definitions.</p>
+    <a href="/vocabulary/" class="stu-vocab-link">Open Visual Vocabulary →</a>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+{{ end }}

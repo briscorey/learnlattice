@@ -45,6 +45,50 @@ hints:
 
 difficulty: "meeting"
 duration: "1–2 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I estimated an answer before calculating
+  - I identified the key information in the problem
+- level: Building understanding
+  items:
+  - I converted between units correctly
+  - I used scientific notation for large numbers
+- level: Going deeper
+  items:
+  - I compared my answer to something real to check it makes sense
+  - I can explain my reasoning to someone else
+- level: Pushing further
+  items:
+  - I considered multiple approaches and chose the best one
+  - I extended the question by asking 'what if...?'
+misconceptions:
+- myth: A million is a really big number
+  why: It sounds big because we rarely count that high
+  truth: A million seconds is only 11.5 days. A billion seconds is 31 years. The difference
+    between million, billion, and trillion is enormous.
+- myth: You can estimate by guessing
+  why: Estimation feels like guessing
+  truth: Good estimation uses calculation with rounded numbers. It is not a guess
+    — it is a calculation with simpler values.
+- myth: Scientific notation is just for scientists
+  why: The name suggests it is specialised
+  truth: Scientific notation is for anyone working with very large or very small numbers.
+    It makes comparison possible.
+timeline: '0-5 min: Write the hook on the board. Silent thinking. | 5-15 min: Pairs
+  estimate and share. | 15-30 min: Groups calculate with different denominations.
+  | 30-40 min: Gallery walk — compare approaches. | 40-50 min: Consolidate — what
+  surprised you?'
+sentence_starters:
+  describing:
+  - The answer I got is...
+  - I estimated by...
+  explaining:
+  - This makes sense because...
+  - I converted from ___ to ___ by...
+  justifying:
+  - I am confident this is correct because...
+  - I can verify by checking that...
 ---
 
 ## The Hook

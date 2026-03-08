@@ -41,6 +41,50 @@ teacher_moves:
     description: "Fast finishers get the salt solution experiment. At what concentration does the grape float? This turns a closed task into an open investigation."
 difficulty: "approaching"
 duration: "2 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I measured the mass of the object
+  - I measured the volume using water displacement
+- level: Building understanding
+  items:
+  - I calculated density using mass ÷ volume
+  - I predicted whether the object would float or sink
+- level: Going deeper
+  items:
+  - I tested my prediction and recorded whether I was correct
+  - I can explain the relationship between density and floating
+- level: Pushing further
+  items:
+  - I explained why the same material can float or sink depending on shape
+  - I connected density to a real-world application
+misconceptions:
+- myth: Heavy things sink
+  why: A bowling ball sinks and it is heavy. A feather floats and it is light.
+  truth: It is density, not mass. A massive ship floats because its average density
+    including air inside is less than water.
+- myth: All metals sink
+  why: Most metals we encounter are dense and do sink
+  truth: Aluminium foil can be shaped into a boat that floats. Sodium metal actually
+    floats on water because its density is 0.97.
+- myth: Water always has density 1.0
+  why: Pure water at room temperature is approximately 1.0 g per cm cubed
+  truth: Salt water is denser than fresh water, which is why you float more easily
+    in the sea. Temperature also changes water density.
+timeline: '0-5 min: Predict — will the peeled orange float? | 5-10 min: Demo — test
+  the prediction. | 10-25 min: Groups measure mass and volume of 5 objects, calculate
+  density. | 25-35 min: Predict float or sink for each, then test. | 35-45 min: Why
+  does shape matter? The aluminium foil boat. | 45-50 min: Exit reflection.'
+sentence_starters:
+  describing:
+  - The density of this object is...
+  - Objects that float have a density...
+  explaining:
+  - This object floats because...
+  - Density depends on both ___ and ___
+  justifying:
+  - I can predict whether any object will float if I know...
+  - The relationship between density and floating is...
 ---
 
 ## The Hook

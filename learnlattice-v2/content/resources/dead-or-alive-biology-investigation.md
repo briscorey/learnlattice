@@ -47,6 +47,52 @@ hints:
 
 difficulty: "meeting"
 duration: "2–3 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I can list some characteristics of living things
+  - I gave my opinion on whether fire is alive
+- level: Building understanding
+  items:
+  - I applied all 7 criteria (MRS GREN) to fire systematically
+  - I identified which criteria fire meets and which it fails
+- level: Going deeper
+  items:
+  - I evaluated a difficult case like viruses using all criteria
+  - I explained why some cases are genuinely ambiguous
+- level: Pushing further
+  items:
+  - I argued that the definition of life is a human construction, not a natural law
+  - I identified the limitations of the MRS GREN criteria
+misconceptions:
+- myth: If something moves, it is alive
+  why: Animals move, and they are alive
+  truth: Rivers move. Clouds move. Robots move. Movement alone does not indicate life
+    — it must be self-generated movement in response to stimuli.
+- myth: Fire is alive because it grows and reproduces
+  why: Fire spreads like reproduction and gets larger like growth
+  truth: Fire does not have cells, DNA, or metabolism. It is a chemical reaction,
+    not an organism. It meets some criteria superficially but fails at the cellular
+    level.
+- myth: Viruses are alive because they reproduce
+  why: Viruses make copies of themselves inside hosts
+  truth: Viruses cannot reproduce independently — they hijack a host cell. They do
+    not respire, grow, or respond to stimuli on their own. Scientists genuinely disagree
+    about whether viruses are alive.
+timeline: '0-5 min: Is fire alive? Silent vote, then discuss in pairs. | 5-15 min:
+  Introduce MRS GREN — 7 characteristics. | 15-30 min: Groups apply all 7 to fire,
+  then to 3 more edge cases. | 30-40 min: Class debate — present verdicts with evidence.
+  | 40-50 min: The virus question — does our definition of life work?'
+sentence_starters:
+  describing:
+  - This organism meets the criteria for ___ because...
+  - Fire does/does not meet the criterion of ___ because...
+  explaining:
+  - The reason this is difficult to classify is...
+  - The MRS GREN criteria suggest that...
+  justifying:
+  - I believe ___ is/is not alive because...
+  - The strongest evidence for my conclusion is...
 ---
 
 ## The Hook

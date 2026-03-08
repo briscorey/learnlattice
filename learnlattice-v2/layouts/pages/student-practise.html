@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{ $worked := where (where .Site.RegularPages "Section" "resources") "Params.resource_types" "intersect" (slice "Worked Example") }}
+
+<section class="stu-hero">
+  <div class="stu-hero-inner">
+    <h1>Practise</h1>
+    <p>Step-by-step worked examples. Click to reveal one line at a time.</p>
+    <a href="/students/" class="stu-back">← Back to Student Home</a>
+  </div>
+</section>
+
+<section class="stu-practise-grid-section">
+  <div class="stu-practise-grid">
+    {{ range $worked }}
+    <a href="{{ .RelPermalink }}" class="stu-practise-card">
+      <div class="stu-practise-icon">📝</div>
+      <h3>{{ .Title | strings.TrimPrefix "Worked Example: " }}</h3>
+      <p>{{ .Description | truncate 100 }}</p>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+{{ end }}

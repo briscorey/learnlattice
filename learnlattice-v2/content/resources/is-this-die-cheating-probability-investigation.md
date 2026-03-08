@@ -46,6 +46,52 @@ hints:
 
 difficulty: "exceeding"
 duration: "2–3 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I rolled the die at least 30 times
+  - I recorded the frequency of each number
+- level: Building understanding
+  items:
+  - I compared my results to the expected frequencies
+  - I calculated experimental probability for each number
+- level: Going deeper
+  items:
+  - I pooled class data and compared to individual results
+  - I explained why more trials give more reliable results
+- level: Pushing further
+  items:
+  - I used a statistical test to decide if the die is fair
+  - I explained the difference between experimental and theoretical probability
+misconceptions:
+- myth: After 5 heads, tails is due
+  why: It feels like the coin should balance out
+  truth: Each flip is independent. The coin has no memory. The probability of tails
+    is still 0.5 regardless of previous flips.
+- myth: 30 rolls is enough to know if a die is fair
+  why: 30 feels like a lot of rolls
+  truth: With 30 rolls, random variation is large. You need hundreds of rolls before
+    the experimental probability reliably matches the theoretical probability.
+- myth: If results are not exactly equal, the die is unfair
+  why: Fair means equal, so results should be equal
+  truth: Even a perfectly fair die will not give exactly equal results. Random variation
+    is normal. The question is whether the variation is larger than we would expect
+    by chance.
+timeline: '0-5 min: Prediction — is this die fair? How would you know? | 5-15 min:
+  Roll 30 times, record frequencies. | 15-25 min: Calculate experimental probabilities,
+  compare to 1/6. | 25-35 min: Pool class data on the board. | 35-45 min: Compare
+  individual vs pooled — what changed? | 45-50 min: So is the die cheating? What is
+  your evidence?'
+sentence_starters:
+  describing:
+  - The most common result was...
+  - The experimental probability of rolling a ___ is...
+  explaining:
+  - My results differ from theoretical probability because...
+  - More trials made the results more reliable because...
+  justifying:
+  - I can conclude the die is fair/unfair because...
+  - The evidence for this is...
 ---
 
 ## The Hook

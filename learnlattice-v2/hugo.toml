@@ -176,6 +176,11 @@ summaryLength = 30
       icon = "🔤"
       url = "/vocabulary/"
       description = "Key terms with visual definitions and examples."
+    [[params.nav_dropdowns.items]]
+      title = "For Students"
+      icon = "🎓"
+      url = "/students/"
+      description = "Learn, practise, play, explore — designed for students."
 
   [[params.nav_dropdowns]]
     key = "about"
