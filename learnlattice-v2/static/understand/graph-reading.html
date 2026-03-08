@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Graph Reading — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:600px}.display{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.coin{font-size:3rem;margin-bottom:8px}.counts{display:flex;justify-content:center;gap:24px;font-family:'Courier New',monospace;font-size:1rem;color:#94a3b8}.pct{font-family:'Courier New',monospace;font-size:1.2rem;color:#0D9488;font-weight:700;margin-top:8px}.bar-wrap{height:24px;background:#1e293b;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid #334155}.bar{height:100%;background:#0D9488;border-radius:12px;transition:width .3s}.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btns button{padding:8px 18px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.btns button:hover{border-color:#0D9488;background:#0f172a}.info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}.hl{color:#0D9488;font-weight:700}.neg{color:#ef4444;font-weight:700}.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center}.slider-row label{font-size:.85rem;color:#94a3b8}.slider-row input{width:200px;accent-color:#0D9488}.slider-row span{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:40px}.pos{text-align:center;font-family:'Courier New',monospace;font-size:1.3rem;color:#e2e8f0;margin-bottom:16px}.line{display:flex;gap:2px;justify-content:center;margin-bottom:16px;overflow-x:auto;padding:8px 0}.tick{min-width:28px;height:40px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#64748b;border-radius:6px;background:#1e293b;border:1px solid transparent}.tick.current{background:#0D9488;color:#fff;font-weight:700;border-color:#0D9488}.tick.zero{border-color:#475569}.web{position:relative;height:300px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:12px}.sp{position:absolute;padding:6px 10px;background:#1e293b;border:1px solid #334155;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;transform:translate(-50%,-50%);white-space:nowrap;user-select:none}.sp:hover{border-color:#059669;background:#0f172a}.sp.affected{border-color:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.3)}.history{font-size:.78rem;color:#64748b;text-align:center}</style></head><body>
+<h1>Reading Graphs</h1>
+<p class="sub">Hover over the graph. Read the coordinates. What does each section tell you?</p>
+<div class="app">
+  <canvas id="canvas" width="500" height="350" style="width:100%;border-radius:10px;background:#0f172a;cursor:crosshair"></canvas>
+  <div class="info" id="info">Hover over the graph to read values. The <strong>gradient</strong> (steepness) tells you the rate of change.</div>
+</div>
+<script>
+var c=document.getElementById('canvas'),ctx=c.getContext('2d');
+var data=[{x:0,y:0},{x:2,y:3},{x:4,y:3},{x:6,y:8},{x:8,y:8},{x:10,y:4}];
+function toX(v){return 60+v*40}function toY(v){return 300-v*30}
+function draw(mx,my){
+ctx.clearRect(0,0,500,350);
+// Grid
+ctx.strokeStyle='#1e293b';ctx.lineWidth=.5;
+for(var i=0;i<=10;i++){ctx.beginPath();ctx.moveTo(toX(i),30);ctx.lineTo(toX(i),310);ctx.stroke();ctx.beginPath();ctx.moveTo(50,toY(i));ctx.lineTo(470,toY(i));ctx.stroke()}
+// Axes
+ctx.strokeStyle='#475569';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(60,30);ctx.lineTo(60,310);ctx.lineTo(470,310);ctx.stroke();
+// Labels
+ctx.fillStyle='#64748b';ctx.font='10px sans-serif';ctx.textAlign='center';
+for(var i=0;i<=10;i++){ctx.fillText(i,toX(i),325);ctx.fillText(i,40,toY(i)+4)}
+ctx.fillText('Time (min)',270,345);ctx.save();ctx.translate(15,180);ctx.rotate(-Math.PI/2);ctx.fillText('Distance (km)',0,0);ctx.restore();
+// Line
+ctx.strokeStyle='#0D9488';ctx.lineWidth=2.5;ctx.beginPath();
+data.forEach(function(p,i){var fn=i===0?'moveTo':'lineTo';ctx[fn](toX(p.x),toY(p.y))});ctx.stroke();
+// Points
+data.forEach(function(p){ctx.beginPath();ctx.arc(toX(p.x),toY(p.y),5,0,Math.PI*2);ctx.fillStyle='#14b8a6';ctx.fill()});
+// Hover
+if(mx!==undefined){
+  ctx.setLineDash([3,3]);ctx.strokeStyle='#64748b';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(mx,310);ctx.lineTo(mx,30);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(60,my);ctx.lineTo(470,my);ctx.stroke();
+  ctx.setLineDash([]);
+  var xv=((mx-60)/40).toFixed(1),yv=((300-my)/30).toFixed(1);
+  ctx.fillStyle='#e2e8f0';ctx.font='12px monospace';ctx.fillText('('+xv+', '+yv+')',mx+10,my-10);
+}}
+draw();
+c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var sx=c.width/r.width,sy=c.height/r.height;draw(Math.round((e.clientX-r.left)*sx),Math.round((e.clientY-r.top)*sy));
+var mx=(e.clientX-r.left)*sx,xv=(mx-60)/40;
+var info=document.getElementById('info');
+if(xv<2)info.innerHTML='<strong>0-2 min:</strong> Moving away. Gradient = 3/2 = 1.5 km/min. This is the speed.';
+else if(xv<4)info.innerHTML='<strong>2-4 min:</strong> Flat section = <strong>stationary</strong>. Distance stays at 3 km. Speed = 0.';
+else if(xv<6)info.innerHTML='<strong>4-6 min:</strong> Moving again, steeper this time. Gradient = 5/2 = 2.5 km/min. Faster than before.';
+else if(xv<8)info.innerHTML='<strong>6-8 min:</strong> Another flat section. Stationary at 8 km.';
+else info.innerHTML='<strong>8-10 min:</strong> Going <strong>back</strong> (distance decreasing). Returning towards the start at 2 km/min.';
+});
+</script></body></html>
