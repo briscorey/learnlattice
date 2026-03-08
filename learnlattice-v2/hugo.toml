@@ -1,7 +1,8 @@
 baseURL = "https://learnlattice.org"
 languageCode = "en-us"
 title = "LearnLattice"
-paginate = 12
+[pagination]
+  pagerSize = 12
 summaryLength = 30
 
 [params]
@@ -488,15 +489,26 @@ summaryLength = 30
     url = "/resources/"
     weight = 6
   [[menu.main]]
+    name = "Ideas"
+    identifier = "blog"
+    url = "/blog/"
+    weight = 7
+  [[menu.main]]
     name = "About"
     identifier = "about"
     url = "/about/"
-    weight = 7
+    weight = 8
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$']]
+          inline = [['$', '$']]
 
 [outputs]
   home = ["HTML", "JSON"]

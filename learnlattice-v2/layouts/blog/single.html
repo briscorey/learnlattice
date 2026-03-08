@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+<article class="blog-single">
+  <header class="blog-single-header">
+    <a href="/blog/" class="blog-single-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      All Posts
+    </a>
+    <div class="blog-single-meta">
+      {{ with .Params.pillar }}
+      <span class="blog-pillar blog-pillar--{{ . | urlize }}">{{ . }}</span>
+      {{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.reading_time }}<span>{{ . }} min read</span>{{ end }}
+    </div>
+    <h1 class="blog-single-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="blog-single-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="blog-single-body">
+    {{ .Content }}
+  </div>
+
+  <footer class="blog-single-footer">
+    <div class="blog-single-tags">
+      {{ range .Params.tags }}
+      <span class="blog-card-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    <div class="blog-single-series">
+      {{ with .Params.pillar }}
+      <p>This post is part of the <strong>{{ . }}</strong> series — {{ if eq . "Craft" }}practical classroom design for MYP teachers{{ else if eq . "Thinking" }}frameworks and mental models for educators{{ else }}navigating the IB system from inside the classroom{{ end }}.</p>
+      {{ end }}
+    </div>
+    <div class="blog-single-nav">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="blog-nav-link blog-nav-prev">
+        <span class="blog-nav-label">← Previous</span>
+        <span class="blog-nav-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="blog-nav-link blog-nav-next">
+        <span class="blog-nav-label">Next →</span>
+        <span class="blog-nav-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </footer>
+</article>
+
+{{ end }}

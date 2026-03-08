@@ -1,6 +1,7 @@
 {{- $pages := where .Site.RegularPages "Section" "resources" -}}
 {{- $games := where .Site.RegularPages "Section" "games" -}}
-{{- $all := $pages | append $games -}}
+{{- $blog := where .Site.RegularPages "Section" "blog" -}}
+{{- $all := $pages | append $games | append $blog -}}
 [
 {{- range $i, $p := $all -}}
 {{- if $i }},{{ end }}
