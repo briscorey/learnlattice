@@ -1290,10 +1290,8 @@ nav {
   max-width: 220px;
 }
 
-.resource-thumb {
-  height: 180px;
-  position: relative;
-  overflow: hidden;
+/* removed old 180px thumb */
+.resource-thumb-old-removed {
 }
 
 .resource-thumb.teal-bg {
@@ -7105,20 +7103,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .resource-thumb-type-icon { font-size: 0.85rem; }
 
 /* Teacher Moves badge */
-.resource-tm-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 3;
-  font-size: 0.62rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(4px);
-  color: var(--sc, var(--teal));
-  letter-spacing: 0.2px;
-}
+/* consolidated into single rule below */
 
 /* Card body */
 .resource-body {
@@ -8689,14 +8674,21 @@ code, pre, .formula, .step-m, .prob-btn { font-family: 'JetBrains Mono', 'Courie
 
 /* FIX: Teacher Moves badge — icon only, no text overflow */
 .resource-tm-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 4;
   width: 28px;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   padding: 0;
   border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 /* FIX: Resource card formula — ensure it doesn't get cut off */
@@ -8722,3 +8714,14 @@ code, pre, .formula, .step-m, .prob-btn { font-family: 'JetBrains Mono', 'Courie
   padding-top: 14px;
   padding-bottom: 14px;
 }
+
+/* ── Fix: Grade page pills/type bar spacing ── */
+.gl-subject-pills { margin-bottom: 12px; }
+.gl-type-bar { margin-top: 8px; gap: 16px; font-size: 0.78rem; }
+.gl-type-chip { font-size: 0.75rem; padding: 4px 8px; }
+
+/* ── Fix: Resource card needs position:relative for TM badge ── */
+.resource-card { position: relative; }
+
+/* ── Fix: Remove old thumb height remnant ── */
+.resource-thumb-old-removed { display: none; }
