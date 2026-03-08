@@ -9,173 +9,173 @@ summaryLength = 30
   description = "Free, inquiry-driven resources for MYP mathematics and science. Built by a teacher, for teachers and students."
 
   [[params.nav_dropdowns]]
-    key = "home"
-    [[params.nav_dropdowns.items]]
-      title = "Latest Resources"
-      url = "/resources/"
-      description = "Start with the newest units and investigations."
-    [[params.nav_dropdowns.items]]
-      title = "Topic Pathways"
-      url = "/#topic-pathways"
-      description = "Browse the site through connected concept branches."
-    [[params.nav_dropdowns.items]]
-      title = "Concept Map"
-      url = "/concept-map/"
-      description = "Interactive map of how every MYP concept connects."
-    [[params.nav_dropdowns.items]]
-      title = "Popular Topics"
-      url = "/#popular-topics"
-      description = "Jump into the most-used tags and classroom ideas."
-
-  [[params.nav_dropdowns]]
     key = "mathematics"
+    [[params.nav_dropdowns.items]]
+      title = "All Mathematics"
+      icon = "📚"
+      url = "/subjects/mathematics/"
+      description = "Browse all 70+ MYP mathematics resources."
     [[params.nav_dropdowns.items]]
       title = "Number Sense"
       icon = "🔢"
       url = "/subjects/mathematics/#number-sense"
-      description = "Place value, exponents, systems."
+      description = "Place value, exponents, number systems."
     [[params.nav_dropdowns.items]]
-      title = "Fractions"
+      title = "Fractions & Ratios"
       icon = "½"
       url = "/subjects/mathematics/#fractions"
       description = "Fractions, ratios, proportional reasoning."
     [[params.nav_dropdowns.items]]
-      title = "Decimals"
-      icon = "·"
-      url = "/subjects/mathematics/#decimals"
-      description = "Decimal ops and real-number connections."
-    [[params.nav_dropdowns.items]]
       title = "Geometry"
       icon = "📐"
       url = "/subjects/mathematics/#geometry"
-      description = "Shape, measurement, Pythagoras, trig."
+      description = "Shape, measurement, tessellations, Pythagoras."
     [[params.nav_dropdowns.items]]
       title = "Algebra"
       icon = "𝑥"
       url = "/subjects/mathematics/#algebra"
       description = "Patterns, equations, functions."
     [[params.nav_dropdowns.items]]
-      title = "Probability"
+      title = "Probability & Statistics"
       icon = "🎲"
       url = "/subjects/mathematics/#probability"
-      description = "Chance, experimental and theoretical."
-    [[params.nav_dropdowns.items]]
-      title = "Statistics"
-      icon = "📊"
-      url = "/subjects/mathematics/#statistics"
-      description = "Data analysis and inference."
+      description = "Data analysis, chance, inference."
 
   [[params.nav_dropdowns]]
     key = "science"
     [[params.nav_dropdowns.items]]
+      title = "All Sciences"
+      icon = "🔬"
+      url = "/subjects/science/"
+      description = "Browse all MYP science resources."
+    [[params.nav_dropdowns.items]]
       title = "Biology"
       icon = "🧬"
       url = "/subjects/biology/"
-      description = "Cells, transport, and adaptation."
-    [[params.nav_dropdowns.items]]
-      title = "Ecology"
-      icon = "🌿"
-      url = "/subjects/ecology/"
-      description = "Food webs, fieldwork, biodiversity."
-    [[params.nav_dropdowns.items]]
-      title = "Earth Science"
-      icon = "🌍"
-      url = "/subjects/earth-science/"
-      description = "Tectonics, earthquakes, earth systems."
-    [[params.nav_dropdowns.items]]
-      title = "Space Science"
-      icon = "🪐"
-      url = "/subjects/space-science/"
-      description = "Orbits, phases, planetary evidence."
+      description = "Cells, body systems, adaptation."
     [[params.nav_dropdowns.items]]
       title = "Chemistry"
       icon = "⚗️"
       url = "/subjects/chemistry/"
-      description = "Reactions, particles, and labs."
+      description = "Reactions, particles, properties of matter."
+    [[params.nav_dropdowns.items]]
+      title = "Physics"
+      icon = "⚡"
+      url = "/subjects/science/#physics"
+      description = "Forces, energy, waves, circuits, magnetism."
+    [[params.nav_dropdowns.items]]
+      title = "Earth Science"
+      icon = "🌍"
+      url = "/subjects/earth-science/"
+      description = "Rocks, tectonics, climate, earth systems."
+    [[params.nav_dropdowns.items]]
+      title = "Space Science"
+      icon = "🪐"
+      url = "/subjects/space-science/"
+      description = "Moon phases, solar system, stellar evidence."
+    [[params.nav_dropdowns.items]]
+      title = "Ecology"
+      icon = "🌿"
+      url = "/subjects/ecology/"
+      description = "Ecosystems, food webs, biodiversity."
 
   [[params.nav_dropdowns]]
-    key = "bc-curriculum"
+    key = "grades"
     [[params.nav_dropdowns.items]]
-      title = "Grade Collections"
+      title = "All Grades"
       url = "/year-levels/"
-      description = "Browse the Grades 6-9 collection by grade band."
+      description = "Browse the complete Grades 6–9 library."
     [[params.nav_dropdowns.items]]
       title = "Grade 6"
       url = "/year-levels/grade-6/"
-      description = "Foundational science systems and number sense."
+      description = "42 resources · Number sense, ecosystems, Earth systems."
     [[params.nav_dropdowns.items]]
       title = "Grade 7"
       url = "/year-levels/grade-7/"
-      description = "Ecosystems, tectonics, ratios, and early algebra."
+      description = "50 resources · Ratios, ecology, forces, tectonics."
     [[params.nav_dropdowns.items]]
       title = "Grade 8"
       url = "/year-levels/grade-8/"
-      description = "Cells, matter, linear relations, and geometry."
+      description = "56 resources · Algebra, cells, energy, circuits."
     [[params.nav_dropdowns.items]]
       title = "Grade 9"
       url = "/year-levels/grade-9/"
-      description = "Atomic theory, circuits, statistics, and finance."
+      description = "42 resources · Statistics, chemistry, waves, space."
 
   [[params.nav_dropdowns]]
     key = "games"
     [[params.nav_dropdowns.items]]
       title = "All Games"
       url = "/games/"
-      description = "Browse every interactive game and simulation."
+      description = "Browse all 7 interactive games and simulations."
+    [[params.nav_dropdowns.items]]
+      title = "Function Machine"
+      icon = "𝑓"
+      url = "/resources/function-machine-game/"
+      description = "Guess the algebraic rule from inputs and outputs."
+    [[params.nav_dropdowns.items]]
+      title = "Probability Simulator"
+      icon = "🎲"
+      url = "/resources/probability-simulator-game/"
+      description = "Roll dice, flip coins, test fairness with chi-squared."
+    [[params.nav_dropdowns.items]]
+      title = "Equation Balancer"
+      icon = "⚖️"
+      url = "/resources/equation-balancer-game/"
+      description = "Balance chemical equations with real-time atom counts."
+    [[params.nav_dropdowns.items]]
+      title = "Food Web Builder"
+      icon = "🌿"
+      url = "/resources/food-web-builder-game/"
+      description = "Build a food web, then remove species to see cascading effects."
+    [[params.nav_dropdowns.items]]
+      title = "Tectonic Puzzle"
+      icon = "🌍"
+      url = "/resources/tectonic-puzzle-game/"
+      description = "Reconstruct Pangaea using fossil and rock evidence."
     [[params.nav_dropdowns.items]]
       title = "Cell Explorer"
+      icon = "🔬"
       url = "/resources/cell-explorer-game/"
       description = "Explore, quiz, and build an animal cell."
-    [[params.nav_dropdowns.items]]
-      title = "Prime Maze"
-      url = "/prime-composite-maze/"
-      description = "Navigate a 3D maze collecting prime and composite numbers."
-    [[params.nav_dropdowns.items]]
-      title = "Coming Soon"
-      url = "/games/"
-      description = "Circuit builder, genetics, tectonics, and more."
 
   [[params.nav_dropdowns]]
-    key = "resources"
+    key = "explore"
     [[params.nav_dropdowns.items]]
       title = "All Resources"
+      icon = "📚"
       url = "/resources/"
-      description = "See the full teaching library."
+      description = "See the full 150+ resource teaching library."
     [[params.nav_dropdowns.items]]
-      title = "Grades 6–9"
-      url = "/year-levels/"
-      description = "Browse curriculum-aligned units by grade."
+      title = "Concept Map"
+      icon = "🗺️"
+      url = "/concept-map/"
+      description = "Interactive map of how every investigation connects."
     [[params.nav_dropdowns.items]]
-      title = "Unit Plans"
-      url = "/resources/#unit-plans"
-      description = "Longer inquiry sequences and full units."
+      title = "Blog"
+      icon = "✏️"
+      url = "/blog/"
+      description = "Classroom stories, MYP strategies, teaching ideas."
     [[params.nav_dropdowns.items]]
-      title = "Lab Activities"
-      url = "/resources/#lab-activities"
-      description = "Hands-on practical investigations."
-    [[params.nav_dropdowns.items]]
-      title = "Worksheets"
-      url = "/resources/#worksheets"
-      description = "Structured practice and guided inquiry sheets."
+      title = "Multilingual Learners"
+      icon = "🌏"
+      url = "/eal/"
+      description = "How every resource is designed for EAL classrooms."
 
   [[params.nav_dropdowns]]
     key = "about"
     [[params.nav_dropdowns.items]]
-      title = "Our Approach"
+      title = "About LearnLattice"
       url = "/about/"
-      description = "Understand the inquiry design philosophy."
+      description = "The story, the philosophy, the person behind it."
     [[params.nav_dropdowns.items]]
       title = "For Teachers"
       url = "/about/#for-teachers"
-      description = "See how to use the materials in class."
+      description = "How to use these materials in your classroom."
     [[params.nav_dropdowns.items]]
-      title = "Multilingual Learners"
-      url = "/eal/"
-      description = "How every investigation is designed for EAL classrooms."
-    [[params.nav_dropdowns.items]]
-      title = "Concept Map"
-      url = "/concept-map/"
-      description = "Explore how every concept connects."
+      title = "How I Built This"
+      url = "/about/#how-i-built-this"
+      description = "AI-assisted, practitioner-designed, open source."
 
   [params.home]
     hero_eyebrow = "Free MYP Mathematics & Science Resources"
@@ -471,19 +471,19 @@ summaryLength = 30
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    identifier = "home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "MYP Mathematics"
+    name = "Mathematics"
     identifier = "mathematics"
     url = "/subjects/mathematics/"
-    weight = 2
+    weight = 1
   [[menu.main]]
-    name = "MYP Science"
+    name = "Science"
     identifier = "science"
     url = "/subjects/science/"
+    weight = 2
+  [[menu.main]]
+    name = "Grades"
+    identifier = "grades"
+    url = "/year-levels/"
     weight = 3
   [[menu.main]]
     name = "Games"
@@ -491,25 +491,15 @@ summaryLength = 30
     url = "/games/"
     weight = 4
   [[menu.main]]
-    name = "Grade Collections"
-    identifier = "bc-curriculum"
-    url = "/year-levels/"
-    weight = 5
-  [[menu.main]]
-    name = "Resources"
-    identifier = "resources"
+    name = "Explore"
+    identifier = "explore"
     url = "/resources/"
-    weight = 6
-  [[menu.main]]
-    name = "Ideas"
-    identifier = "blog"
-    url = "/blog/"
-    weight = 7
+    weight = 5
   [[menu.main]]
     name = "About"
     identifier = "about"
     url = "/about/"
-    weight = 8
+    weight = 6
 
 [related]
   includeNewer = true
