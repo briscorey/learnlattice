@@ -46,6 +46,48 @@ hints:
 
 difficulty: "meeting"
 duration: "2–3 lessons"
+warmup: Write 1/3 as a decimal. Now multiply it by 3. What do you get? Is 0.333...
+  × 3 the same as 3/3?
+listen_for:
+- level: 3-4
+  phrase: 0.999 is close to 1 but not quite 1
+- level: 5-6
+  phrase: The algebra shows x = 1, so they must be equal, even though it feels wrong
+- level: 7-8
+  phrase: There is no number between 0.999... and 1, which proves they are the same
+    number written two different ways
+self_check:
+- level: Getting started
+  items:
+  - I know that 1/3 = 0.333...
+  - I multiplied 0.333... by 3 and got 0.999...
+- level: Building understanding
+  items:
+  - 'I followed the algebraic proof: if x = 0.999... then 10x = 9.999...'
+  - I arrived at the conclusion that x = 1
+- level: Going deeper
+  items:
+  - I can explain why the algebra is valid at every step
+  - I understand that two different representations can equal the same number
+- level: Pushing further
+  items:
+  - I can argue that there is no number between 0.999... and 1
+  - I explored other infinite decimals like 0.4999... = 0.5
+timeline: '0-3 min: 1/3 × 3 warm-up on whiteboards. | 3-10 min: Silent thinking —
+  is 0.999... equal to 1? Vote. | 10-20 min: The algebraic proof — work through together.
+  | 20-30 min: Groups try to find a flaw in the proof. | 30-40 min: The gap argument
+  — what number is between them? | 40-50 min: What about 0.4999...? Does this equal
+  0.5?'
+sentence_starters:
+  describing:
+  - When I multiply 0.333... by 3, I get...
+  - The algebra shows that x equals...
+  explaining:
+  - Each step of the proof is valid because...
+  - 0.999... equals 1 because...
+  justifying:
+  - I can prove they are the same number because there is no number between them
+  - This challenges my intuition because...
 ---
 
 ## The Hook

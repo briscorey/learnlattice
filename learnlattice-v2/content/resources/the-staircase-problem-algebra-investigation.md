@@ -92,6 +92,17 @@ sentence_starters:
   justifying:
   - I can prove this works for all n because...
   - The geometric explanation is...
+warmup: How many handshakes if 4 people all shake hands with each other? What about
+  5 people? Can you see a pattern?
+listen_for:
+- level: 3-4
+  phrase: It goes up by 1, then 2, then 3
+- level: 5-6
+  phrase: The formula is n times n plus 1 divided by 2 because the differences are
+    1, 2, 3, 4
+- level: 7-8
+  phrase: Two staircases fit together to make a rectangle of n by n plus 1, so one
+    staircase is half that rectangle
 ---
 
 ## The Hook

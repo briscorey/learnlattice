@@ -40,6 +40,49 @@ teacher_moves:
     description: "When students are ready, show mg = ma therefore g = a. Ask where mass went. This is one of the most elegant results in physics."
 difficulty: "Approaching"
 duration: "2 lessons"
+warmup: Hold a textbook and a piece of paper at the same height. Drop them at the
+  same time. Which lands first? Now crumple the paper. Drop again. What changed?
+listen_for:
+- level: 3-4
+  phrase: The paper is lighter so it falls slower
+- level: 5-6
+  phrase: It is not about mass, it is about air resistance — the flat paper has more
+    surface area
+- level: 7-8
+  phrase: In a vacuum all objects fall at the same rate because gravitational acceleration
+    is independent of mass — the Apollo 15 experiment proved this
+self_check:
+- level: Getting started
+  items:
+  - I dropped objects and observed which fell faster
+  - I noticed that shape affects how fast things fall
+- level: Building understanding
+  items:
+  - I identified air resistance as the reason lighter objects seem to fall slower
+  - I understood that mass does not determine fall speed in a vacuum
+- level: Going deeper
+  items:
+  - I can explain why a = g for all objects using F = mg and F = ma
+  - I watched the Apollo 15 video and connected it to my classroom experiment
+- level: Pushing further
+  items:
+  - I derived that mg = ma leads to g = a, showing mass cancels
+  - I explored terminal velocity and why skydivers reach a maximum speed
+timeline: '0-5 min: Drop textbook vs flat paper. | 5-10 min: Crumple paper, drop again.
+  What changed? Mass or shape? | 10-20 min: Groups test different objects — heavy
+  vs light, big vs small. | 20-30 min: The feather and coin in a vacuum tube (video
+  or demo). | 30-40 min: Apollo 15 footage — hammer and feather on the Moon. | 40-50
+  min: The algebra — why does mass cancel?'
+sentence_starters:
+  describing:
+  - When I dropped ___, it fell...
+  - The crumpled paper fell faster because...
+  explaining:
+  - Air resistance depends on ___ not on...
+  - In a vacuum, all objects fall at the same rate because...
+  justifying:
+  - The mathematical proof that mass does not affect fall speed is...
+  - The Apollo 15 experiment confirms this because...
 ---
 
 ## The Hook

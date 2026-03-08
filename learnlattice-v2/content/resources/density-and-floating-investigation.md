@@ -85,6 +85,16 @@ sentence_starters:
   justifying:
   - I can predict whether any object will float if I know...
   - The relationship between density and floating is...
+warmup: 'Rank these 5 objects from lightest to heaviest: grape, coin, cork, marble,
+  orange. Now rank from smallest to largest. Are the rankings the same? Why not?'
+listen_for:
+- level: 3-4
+  phrase: The heavy ones sink
+- level: 5-6
+  phrase: It is not about mass, it is about density — mass divided by volume
+- level: 7-8
+  phrase: The density ratio determines how much of the object sits below the surface
+    — an object with density 0.6 will be 60 percent submerged
 ---
 
 ## The Hook

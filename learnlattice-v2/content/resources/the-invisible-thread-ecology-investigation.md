@@ -48,6 +48,62 @@ hints:
 
 difficulty: "exceeding"
 duration: "2–3 lessons"
+warmup: Name something you ate for breakfast. Now name what that food needed to grow.
+  And what THAT needed. Keep going back. How far can you get?
+listen_for:
+- level: 3-4
+  phrase: If you remove the grass, the rabbits have nothing to eat
+- level: 5-6
+  phrase: Removing the producer affects all consumers because energy flows from the
+    bottom up
+- level: 7-8
+  phrase: The keystone species has the most connections, so removing it causes the
+    biggest cascade effect across the ecosystem
+self_check:
+- level: Getting started
+  items:
+  - I identified producers and consumers in the food web
+  - I drew arrows showing what eats what
+- level: Building understanding
+  items:
+  - I predicted what happens when one species is removed
+  - I identified primary and secondary consumers
+- level: Going deeper
+  items:
+  - I found the keystone species — the one whose removal causes the most damage
+  - I explained the cascade effect using energy flow
+- level: Pushing further
+  items:
+  - I compared a simple food chain to a complex food web and explained why complexity
+    provides stability
+  - I connected this to a real ecosystem and a real conservation problem
+misconceptions:
+- myth: Removing one species only affects the species directly connected to it
+  why: It seems logical that only predators and prey are affected
+  truth: Cascade effects ripple through the entire web. Removing a producer can collapse
+    consumers three or four levels above.
+- myth: Top predators are the most important species
+  why: They are at the top of the food chain
+  truth: Producers are often the most critical because ALL energy enters through them.
+    Remove the grass and everything above it collapses.
+- myth: More species is always better
+  why: Biodiversity is often described as positive
+  truth: Invasive species can devastate ecosystems. It is the right species in the
+    right balance that matters, not just the total number.
+timeline: '0-5 min: Breakfast chain warm-up. | 5-10 min: Introduce the food web diagram.
+  | 10-25 min: Groups build food webs with string (physical activity). | 25-35 min:
+  Remove one species — cut the string. What happens? | 35-45 min: Find the keystone
+  species. | 45-50 min: How does this apply to real conservation?'
+sentence_starters:
+  describing:
+  - In this food web, ___ eats...
+  - If ___ is removed, ___ would be affected because...
+  explaining:
+  - Energy flows from ___ to ___ because...
+  - The cascade effect means that...
+  justifying:
+  - I believe ___ is the keystone species because...
+  - A complex food web is more stable than a simple chain because...
 ---
 
 ## The Hook

@@ -93,6 +93,16 @@ sentence_starters:
   justifying:
   - I believe ___ is/is not alive because...
   - The strongest evidence for my conclusion is...
+warmup: Write down 3 things that are definitely alive and 3 things that are definitely
+  not alive. Now write one thing you are not sure about. Share with your partner.
+listen_for:
+- level: 3-4
+  phrase: Fire is alive because it moves and grows
+- level: 5-6
+  phrase: Fire meets some criteria but fails others — it does not have cells or DNA
+- level: 7-8
+  phrase: The definition of life is a human construction and edge cases like viruses
+    show that the boundary is not clear-cut
 ---
 
 ## The Hook

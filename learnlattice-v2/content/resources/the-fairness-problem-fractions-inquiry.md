@@ -45,6 +45,60 @@ hints:
 
 difficulty: "meeting"
 duration: "1–2 lessons"
+warmup: Give each pair 2 paper circles. Ask them to divide one into thirds and one
+  into fifths. Which piece is bigger? How do you know without measuring?
+listen_for:
+- level: 3-4
+  phrase: This piece looks bigger
+- level: 5-6
+  phrase: One third is bigger because thirds are bigger pieces than fifths
+- level: 7-8
+  phrase: I can prove 1/3 is bigger than 1/5 because 1/3 equals 5/15 and 1/5 equals
+    3/15
+self_check:
+- level: Getting started
+  items:
+  - I shared something equally between people
+  - I wrote the share as a fraction
+- level: Building understanding
+  items:
+  - I compared two fractions using a diagram
+  - I found equivalent fractions
+- level: Going deeper
+  items:
+  - I explained why 2/6 equals 1/3 using a model
+  - I can order fractions from smallest to largest
+- level: Pushing further
+  items:
+  - I proved two fractions are equal algebraically
+  - I generalised a rule for comparing fractions
+misconceptions:
+- myth: Bigger denominator means bigger fraction
+  why: 5 is bigger than 3, so 1/5 seems bigger than 1/3
+  truth: Bigger denominator means MORE pieces, which means each piece is SMALLER.
+    1/5 is smaller than 1/3.
+- myth: You add fractions by adding tops and bottoms
+  why: 1/2 + 1/3 looks like it should be 2/5
+  truth: You need a common denominator first. 1/2 + 1/3 = 3/6 + 2/6 = 5/6, not 2/5.
+- myth: Fractions and decimals are different things
+  why: 'They look different: 1/4 vs 0.25'
+  truth: They are different representations of the same value. 1/4 = 0.25 = 25%. Understanding
+    this equivalence is essential.
+timeline: '0-5 min: Paper circle warm-up — divide into thirds and fifths. | 5-15 min:
+  Sharing pizzas — 3 pizzas for 7 people. | 15-25 min: Groups explore different sharing
+  scenarios. | 25-35 min: Equivalent fractions emerge from the sharing. | 35-45 min:
+  Gallery walk — who found the most creative sharing? | 45-50 min: The big question
+  — is any share ever truly fair?'
+sentence_starters:
+  describing:
+  - Each person gets...
+  - The fraction for each share is...
+  explaining:
+  - These two fractions are equal because...
+  - I know ___ is bigger than ___ because...
+  justifying:
+  - I can prove the shares are equal by...
+  - The general rule for comparing fractions is...
 ---
 
 ## The Hook

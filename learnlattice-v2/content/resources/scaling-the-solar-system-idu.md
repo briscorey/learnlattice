@@ -44,6 +44,49 @@ teacher_moves:
     description: "After the walkout, ask how far the nearest star would be at this scale. Over 6000 km. This reveals why interstellar travel is hard."
 difficulty: "approaching"
 duration: "3–4 lessons"
+warmup: If the Sun were the size of a basketball, how big do you think Earth would
+  be? The size of a tennis ball? A marble? A peppercorn? Guess before we calculate.
+listen_for:
+- level: 3-4
+  phrase: Earth is really small compared to the Sun
+- level: 5-6
+  phrase: The scale factor is the same for both sizes and distances — about 1 to 6
+    billion
+- level: 7-8
+  phrase: The same scale that makes Earth a peppercorn makes Neptune 780 metres away
+    — the model reveals that space is mostly empty
+self_check:
+- level: Getting started
+  items:
+  - I calculated the scale factor
+  - I found the scaled diameter of Earth
+- level: Building understanding
+  items:
+  - I calculated scaled distances for all planets
+  - I placed planets at the correct scaled distances
+- level: Going deeper
+  items:
+  - I walked the full distance to Neptune and understood the scale of emptiness
+  - I compared planet sizes at this scale to everyday objects
+- level: Pushing further
+  items:
+  - I calculated how far the nearest star would be at this scale
+  - I reflected on what the model reveals that numbers alone cannot
+timeline: '0-5 min: Guess warm-up — how big is Earth if Sun is a basketball? | 5-15
+  min: Calculate the scale factor and all planet diameters. | 15-20 min: Calculate
+  all distances. Convert to meaningful units. | 20-40 min: Go outside. Walk the solar
+  system. Place each planet. | 40-45 min: The Proxima Centauri question — how far
+  at this scale? | 45-50 min: What does this model teach you that numbers cannot?'
+sentence_starters:
+  describing:
+  - At this scale, Earth is the size of...
+  - Neptune is ___ metres from the Sun at this scale...
+  explaining:
+  - The scale factor works because...
+  - The model shows that space is mostly empty because...
+  justifying:
+  - This model reveals something that numbers alone cannot because...
+  - The nearest star would be ___ km away at this scale, which shows...
 ---
 
 ## The Hook

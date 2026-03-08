@@ -89,6 +89,17 @@ sentence_starters:
   justifying:
   - I am confident this is correct because...
   - I can verify by checking that...
+warmup: How long is a million seconds? Guess before you calculate. Write your guess
+  on your whiteboard.
+listen_for:
+- level: 3-4
+  phrase: A million is a really big number
+- level: 5-6
+  phrase: I converted to hours by dividing by 3600 because there are 3600 seconds
+    in an hour
+- level: 7-8
+  phrase: In scientific notation this is approximately 1.16 times 10 to the 1 days,
+    which I can verify by working backwards
 ---
 
 ## The Hook

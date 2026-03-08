@@ -19,7 +19,7 @@
 {{ if eq ($subject | urlize) "ecology" }}{{ $svgFile = "ecology" }}{{ end }}
 {{ if eq ($subject | urlize) "science" }}{{ $svgFile = "physics" }}{{ end }}
 
-<article class="resource-single">
+<article class="resource-single rc-{{ $subjectColor }}">
   {{/* ── HEADER ── */}}
   <div class="rs-header rc-{{ $subjectColor }}">
     <div class="rs-header-bg">
@@ -54,6 +54,14 @@
     {{/* ── MAIN CONTENT ── */}}
     <div class="rs-main">
 
+      {{/* ── Warm-Up Connector ── */}}
+      {{ with .Params.warmup }}
+      <div class="rs-warmup">
+        <div class="rs-warmup-label">🔥 Before This Lesson (5 min)</div>
+        <p>{{ . }}</p>
+      </div>
+      {{ end }}
+
       {{/* ── Teacher Moves (collapsible) ── */}}
       {{ with .Params.teacher_moves }}
       {{ if gt (len .) 0 }}
@@ -68,6 +76,19 @@
           <div class="rs-tm-item">
             <h4>{{ .title }}</h4>
             <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+          {{/* Listen For prompts inside teacher moves */}}
+          {{ with $.Params.listen_for }}
+          <div class="rs-listen-for">
+            <h4>👂 What to Listen For</h4>
+            <p class="rs-listen-intro">As you circulate, listen for these phrases:</p>
+            {{ range . }}
+            <div class="rs-listen-item rs-listen-{{ .level | urlize }}">
+              <span class="rs-listen-level">Level {{ .level }}</span>
+              <span class="rs-listen-phrase">"{{ .phrase }}"</span>
+            </div>
+            {{ end }}
           </div>
           {{ end }}
         </div>

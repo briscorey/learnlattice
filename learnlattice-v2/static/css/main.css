@@ -9558,3 +9558,139 @@ html.dark .rs-selfcheck.open .rs-selfcheck-body { background: var(--surface); }
   .rs-starters[open] .rs-starters-body { display: block; }
   .rs-timeline-strip { flex-wrap: wrap; }
 }
+
+/* ═══════════════════════════════════════════
+   WARM-UPS + LISTEN FOR + COLOUR IMMERSION
+   ═══════════════════════════════════════════ */
+
+/* ── Warm-Up Connector ── */
+.rs-warmup {
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(249,115,22,0.06), rgba(245,158,11,0.06));
+  border: 1px solid rgba(249,115,22,0.15);
+  border-left: 4px solid #f97316;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.rs-warmup-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #f97316;
+  margin-bottom: 8px;
+}
+.rs-warmup p {
+  font-size: .88rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+html.dark .rs-warmup { background: rgba(249,115,22,0.06); border-color: rgba(249,115,22,0.2); }
+
+/* ── What to Listen For ── */
+.rs-listen-for {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.rs-listen-for h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: .95rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.rs-listen-intro {
+  font-size: .78rem;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+.rs-listen-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: var(--surface-warm);
+  border-left: 3px solid var(--border);
+}
+.rs-listen-1-2 { border-left-color: #ef4444; }
+.rs-listen-3-4 { border-left-color: #f59e0b; }
+.rs-listen-5-6 { border-left-color: #0D9488; }
+.rs-listen-7-8 { border-left-color: #7c3aed; }
+.rs-listen-level {
+  font-size: .65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.rs-listen-phrase {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   SUBJECT COLOUR IMMERSION (D1)
+   ═══════════════════════════════════════════ */
+
+/* When a resource page is viewed, the entire page subtly shifts
+   into the subject's colour world. Background tint, border accents,
+   link colours all respond to the subject. */
+
+/* Mathematics = Teal world (default, no override needed) */
+
+/* Biology = Green world */
+.rc-green { --sc: #16a34a; --sc-bg: rgba(22,163,74,0.06); --sc-dark: #14532d; }
+.rc-green .rs-header { background: linear-gradient(135deg, #f0fdf4, #f8fafc); }
+html.dark .rc-green .rs-header { background: linear-gradient(135deg, #14532d20, #0f172a); }
+.rc-green .rs-warmup { border-left-color: #16a34a; }
+.rc-green .rs-warmup-label { color: #16a34a; }
+.rc-green .rs-selfcheck { border-color: #16a34a; }
+
+/* Chemistry = Rose world */
+.rc-rose { --sc: #e11d48; --sc-bg: rgba(225,29,72,0.06); --sc-dark: #4c0519; }
+.rc-rose .rs-header { background: linear-gradient(135deg, #fff1f2, #f8fafc); }
+html.dark .rc-rose .rs-header { background: linear-gradient(135deg, #4c051920, #0f172a); }
+.rc-rose .rs-warmup { border-left-color: #e11d48; }
+.rc-rose .rs-warmup-label { color: #e11d48; }
+.rc-rose .rs-selfcheck { border-color: #e11d48; }
+
+/* Physics = Blue world */
+.rc-blue { --sc: #2563eb; --sc-bg: rgba(37,99,235,0.06); --sc-dark: #1e3a5f; }
+.rc-blue .rs-header { background: linear-gradient(135deg, #eff6ff, #f8fafc); }
+html.dark .rc-blue .rs-header { background: linear-gradient(135deg, #1e3a5f20, #0f172a); }
+.rc-blue .rs-warmup { border-left-color: #2563eb; }
+.rc-blue .rs-warmup-label { color: #2563eb; }
+.rc-blue .rs-selfcheck { border-color: #2563eb; }
+
+/* Earth Science = Amber world */
+.rc-amber { --sc: #d97706; --sc-bg: rgba(217,119,6,0.06); --sc-dark: #451a03; }
+.rc-amber .rs-header { background: linear-gradient(135deg, #fffbeb, #f8fafc); }
+html.dark .rc-amber .rs-header { background: linear-gradient(135deg, #451a0320, #0f172a); }
+.rc-amber .rs-warmup { border-left-color: #d97706; }
+.rc-amber .rs-warmup-label { color: #d97706; }
+
+/* Space Science = Violet world */
+.rc-violet { --sc: #7c3aed; --sc-bg: rgba(124,58,237,0.06); --sc-dark: #2e1065; }
+.rc-violet .rs-header { background: linear-gradient(135deg, #f5f3ff, #f8fafc); }
+html.dark .rc-violet .rs-header { background: linear-gradient(135deg, #2e106520, #0f172a); }
+
+/* Ecology = Emerald world */
+.rc-emerald { --sc: #059669; --sc-bg: rgba(5,150,105,0.06); --sc-dark: #022c22; }
+.rc-emerald .rs-header { background: linear-gradient(135deg, #ecfdf5, #f8fafc); }
+html.dark .rc-emerald .rs-header { background: linear-gradient(135deg, #022c2220, #0f172a); }
+
+/* Subject-coloured accents on resource page elements */
+.rs-header .rs-subject { color: var(--sc, var(--teal)); }
+.rs-sidebar-card .rs-formula { color: var(--sc, var(--teal)); }
+.rs-sidebar-card .rs-soi { border-left: 3px solid var(--sc, var(--teal)); background: var(--sc-bg, var(--teal-wash)); }
+.rs-sidebar-card .rs-soi-label { color: var(--sc, var(--teal)); }
+.rs-starters .rs-starters-level { background: var(--sc-bg, var(--teal-wash)); color: var(--sc, var(--teal)); }
+.rs-starters .rs-starter { border-left-color: var(--sc, var(--teal)); }

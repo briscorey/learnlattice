@@ -40,6 +40,49 @@ teacher_moves:
     description: "v = f times lambda should be the final step. Students who have seen patterns change with frequency are ready for the formula. It explains what they already know."
 difficulty: "exceeding"
 duration: "2–3 lessons"
+warmup: Put your hand on your throat. Hum a low note. Now hum a high note. What do
+  you feel? What changed?
+listen_for:
+- level: 3-4
+  phrase: Higher notes make more vibrations
+- level: 5-6
+  phrase: Higher frequency means shorter wavelength because the wave speed stays the
+    same
+- level: 7-8
+  phrase: Since v equals f times lambda, and v is constant in the same medium, increasing
+    f must decrease lambda proportionally
+self_check:
+- level: Getting started
+  items:
+  - I observed salt patterns on a vibrating surface
+  - I counted nodes at different frequencies
+- level: Building understanding
+  items:
+  - I made a table of frequency vs number of nodes
+  - I described the relationship — higher frequency means more nodes
+- level: Going deeper
+  items:
+  - I connected node count to wavelength — more nodes means shorter wavelength
+  - I used v = f × λ to explain the relationship
+- level: Pushing further
+  items:
+  - I calculated wavelengths from my data and verified v = f × λ
+  - I explored why different instruments playing the same note sound different
+timeline: '0-5 min: Hand on throat warm-up — feel the vibrations. | 5-15 min: Salt
+  on speaker experiment — observe patterns at 100 Hz. | 15-25 min: Change frequency
+  — 200 Hz, 400 Hz, 800 Hz. Sketch each pattern. | 25-35 min: Count nodes, make a
+  table, find the pattern. | 35-45 min: Introduce v = fλ — does it explain your data?
+  | 45-50 min: Why do different instruments playing the same note sound different?'
+sentence_starters:
+  describing:
+  - At ___ Hz, I observed...
+  - When frequency increases, the pattern...
+  explaining:
+  - More nodes means shorter wavelength because...
+  - The relationship between frequency and wavelength is...
+  justifying:
+  - Using v = fλ, I can calculate that...
+  - My data supports this formula because...
 ---
 
 ## The Hook

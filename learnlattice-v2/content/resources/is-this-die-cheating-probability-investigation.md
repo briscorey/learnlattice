@@ -92,6 +92,17 @@ sentence_starters:
   justifying:
   - I can conclude the die is fair/unfair because...
   - The evidence for this is...
+warmup: I am going to flip this coin 5 times. Predict the sequence — H or T for each
+  flip. How many did you get right? Was the coin predictable?
+listen_for:
+- level: 3-4
+  phrase: 6 came up the most so the die might be unfair
+- level: 5-6
+  phrase: With only 30 rolls, random variation is expected — we need more data before
+    concluding
+- level: 7-8
+  phrase: The chi-squared test compares observed frequencies to expected frequencies,
+    and a value above the critical threshold suggests the die is not fair
 ---
 
 ## The Hook

@@ -46,6 +46,64 @@ hints:
 
 difficulty: "meeting"
 duration: "2–3 lessons"
+warmup: Draw a triangle on your mini whiteboard. Without measuring, estimate the total
+  of all three angles. Now tear off the three corners and arrange them. What do they
+  make?
+listen_for:
+- level: 3-4
+  phrase: The angles make a straight line
+- level: 5-6
+  phrase: Triangles always add to 180 degrees, so a quadrilateral is two triangles
+    which is 360
+- level: 7-8
+  phrase: Any polygon with n sides can be split into n minus 2 triangles, so the angle
+    sum is (n-2) times 180
+self_check:
+- level: Getting started
+  items:
+  - I measured the angles of a triangle and found they add to about 180
+  - I drew several different polygons
+- level: Building understanding
+  items:
+  - I made a table of sides vs angle sum
+  - I found the pattern — it goes up by 180 each time
+- level: Going deeper
+  items:
+  - 'I wrote a formula: angle sum = (n-2) × 180'
+  - I can explain why this formula works using triangle decomposition
+- level: Pushing further
+  items:
+  - I proved the formula works for any polygon by showing every polygon splits into
+    n-2 triangles
+  - I explored what happens on curved surfaces
+misconceptions:
+- myth: All triangles add to exactly 180 degrees when you measure
+  why: The rule says 180, so measurement should give exactly 180
+  truth: Measurement always has error. You will get 178 or 182. The mathematical truth
+    is exactly 180, but physical measurement is approximate.
+- myth: The angle sum formula only works for regular polygons
+  why: It is easier to see with regular shapes
+  truth: The formula works for ALL polygons — regular or irregular. You can always
+    decompose any polygon into triangles.
+- myth: A circle has infinite sides so its angle sum is infinite
+  why: If more sides means more degrees, infinity sides should mean infinity degrees
+  truth: A circle is not a polygon. As the number of sides increases, each interior
+    angle approaches 180 degrees, but the total does increase without bound.
+timeline: '0-5 min: Tear corners off a triangle — they form a straight line. | 5-15
+  min: Measure angle sums of quadrilateral, pentagon, hexagon. | 15-25 min: Make a
+  table, find the pattern. | 25-35 min: Derive the formula, test it on an octagon.
+  | 35-45 min: WHY does it work? The triangle decomposition proof. | 45-50 min: Can
+  you have a triangle with three 90-degree angles?'
+sentence_starters:
+  describing:
+  - The angle sum of a ___ is...
+  - Each time I add a side, the angle sum...
+  explaining:
+  - The formula is (n-2) × 180 because...
+  - I can split any polygon into triangles by...
+  justifying:
+  - This formula must work for all polygons because...
+  - The reason adding a side adds exactly 180 degrees is...
 ---
 
 ## The Hook
