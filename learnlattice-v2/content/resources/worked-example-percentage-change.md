@@ -9,7 +9,7 @@ year_levels:
   - "Grade 8"
   - "Grade 9"
 resource_types:
-  - "Interactive Game"
+  - "Worked Example"
 tags:
   - "Worked Example"
   - "Step by Step"

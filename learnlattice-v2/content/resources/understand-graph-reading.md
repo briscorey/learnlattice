@@ -9,7 +9,7 @@ year_levels:
   - "Grade 7"
   - "Grade 8"
 resource_types:
-  - "Interactive Game"
+  - "Visual Explainer"
 tags:
   - "Visual Explainer"
   - "Understanding"
