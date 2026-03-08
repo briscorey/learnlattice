@@ -8882,8 +8882,9 @@ html.dark .blog-nav-next { background: #1e293b; border-color: #334155; }
 html.dark .resource-tm-badge-inline { background: rgba(13,148,136,.15); }
 
 /* ── Grade Page — Fix pills/strip overlap ── */
-.gl-pills { margin-bottom: 0; padding-bottom: 8px; }
-.gl-type-strip { margin-top: 0; border-top: 1px solid var(--border); }
+.gl-hero { padding-bottom: 24px; }
+.gl-pills { margin-bottom: 0; }
+.gl-type-strip { margin-top: 0; clear: both; position: relative; z-index: 2; }
 
 /* ── Resource card — ensure consistent card height in grids ── */
 .resource-card {
