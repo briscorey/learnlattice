@@ -1,0 +1,324 @@
+{{ define "main" }}
+
+<section class="cmap-hero">
+  <div class="cmap-hero-inner">
+    <h1 class="cmap-title">Concept Map</h1>
+    <p class="cmap-subtitle">Every investigation, strand, and key concept — connected. Click any node to explore.</p>
+    <div class="cmap-legend">
+      <span class="cmap-legend-item"><span class="cmap-dot cmap-dot--math"></span> Mathematics</span>
+      <span class="cmap-legend-item"><span class="cmap-dot cmap-dot--science"></span> Science</span>
+      <span class="cmap-legend-item"><span class="cmap-dot cmap-dot--investigation"></span> Investigations</span>
+      <span class="cmap-legend-item"><span class="cmap-dot cmap-dot--concept"></span> Key Concepts</span>
+    </div>
+  </div>
+</section>
+
+<div class="cmap-container" id="cmapContainer">
+  <div class="cmap-tooltip" id="cmapTooltip"></div>
+  <svg id="cmapSvg"></svg>
+</div>
+
+<section class="cmap-explore reveal">
+  <div class="cmap-explore-inner">
+    <h2>Explore by strand</h2>
+    <p>Every node in the map links to real classroom resources. Start anywhere — the lattice connects everything.</p>
+    <div class="cmap-strand-grid">
+      <a href="/subjects/mathematics/" class="cmap-strand-link cmap-strand-link--math">MYP Mathematics →</a>
+      <a href="/subjects/biology/" class="cmap-strand-link cmap-strand-link--sci">Biology →</a>
+      <a href="/subjects/chemistry/" class="cmap-strand-link cmap-strand-link--sci">Chemistry →</a>
+      <a href="/subjects/ecology/" class="cmap-strand-link cmap-strand-link--sci">Ecology →</a>
+      <a href="/subjects/earth-science/" class="cmap-strand-link cmap-strand-link--sci">Earth Science →</a>
+      <a href="/subjects/space-science/" class="cmap-strand-link cmap-strand-link--sci">Space Science →</a>
+    </div>
+  </div>
+</section>
+
+{{/* ── Generate graph data from Hugo resources ── */}}
+{{ $nodes := slice }}
+{{ $links := slice }}
+{{ $nodeIDs := slice }}
+
+{{/* Subject hubs */}}
+{{ $subjects := dict
+  "Mathematics" "math"
+  "Science" "science"
+}}
+{{ $mathStrands := slice "Number Sense" "Fractions" "Decimals" "Geometry" "Algebra" "Probability" "Statistics" }}
+{{ $sciStrands := slice "Biology" "Ecology" "Earth Science" "Space Science" "Chemistry" }}
+
+{{ range $name, $group := $subjects }}
+  {{ $nodes = $nodes | append (dict "id" $name "label" $name "group" $group "size" 32) }}
+  {{ $nodeIDs = $nodeIDs | append $name }}
+{{ end }}
+{{ range $mathStrands }}
+  {{ $nodes = $nodes | append (dict "id" . "label" . "group" "math-strand" "size" 20) }}
+  {{ $nodeIDs = $nodeIDs | append . }}
+  {{ $links = $links | append (dict "source" "Mathematics" "target" . "type" "parent") }}
+{{ end }}
+{{ range $sciStrands }}
+  {{ $nodes = $nodes | append (dict "id" . "label" . "group" "science-strand" "size" 20) }}
+  {{ $nodeIDs = $nodeIDs | append . }}
+  {{ $links = $links | append (dict "source" "Science" "target" . "type" "parent") }}
+{{ end }}
+
+{{/* Cross-discipline links */}}
+{{ $links = $links | append (dict "source" "Fractions" "target" "Decimals" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Fractions" "target" "Algebra" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Algebra" "target" "Statistics" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Probability" "target" "Statistics" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Number Sense" "target" "Algebra" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Geometry" "target" "Algebra" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Chemistry" "target" "Number Sense" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Ecology" "target" "Statistics" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Biology" "target" "Chemistry" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Earth Science" "target" "Space Science" "type" "cross") }}
+{{ $links = $links | append (dict "source" "Decimals" "target" "Number Sense" "type" "cross") }}
+
+{{/* Investigations */}}
+{{ $flagshipSlugs := slice "the-million-dollar-question-number-sense" "the-fairness-problem-fractions-inquiry" "zero-point-nine-repeating-decimals-investigation" "impossible-shapes-geometry-investigation" "the-staircase-problem-algebra-investigation" "is-this-die-cheating-probability-investigation" "the-misleading-graph-statistics-investigation" "dead-or-alive-biology-investigation" "the-invisible-thread-ecology-investigation" "reading-rocks-earth-science-investigation" "how-do-we-know-stars-space-investigation" "the-disappearing-candle-chemistry-investigation" }}
+
+{{ range $flagshipSlugs }}
+  {{ $page := $.Site.GetPage (printf "/resources/%s" .) }}
+  {{ if $page }}
+    {{ $id := . }}
+    {{ $nodes = $nodes | append (dict "id" $id "label" $page.Title "group" "investigation" "size" 11 "url" $page.RelPermalink) }}
+
+    {{/* Link to math topic */}}
+    {{ with $page.Params.math_topic }}
+      {{ $links = $links | append (dict "source" $id "target" . "type" "belongs") }}
+    {{ end }}
+
+    {{/* Link to science subjects */}}
+    {{ range $page.Params.subjects }}
+      {{ if and (ne . "Mathematics") (ne . "Science") (in $sciStrands .) }}
+        {{ $links = $links | append (dict "source" $id "target" . "type" "belongs") }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Link to key concept */}}
+    {{ with $page.Params.key_concept }}
+      {{ $conceptExists := false }}
+      {{ range $nodes }}
+        {{ if and (eq .group "concept") (eq .id $page.Params.key_concept) }}{{ $conceptExists = true }}{{ end }}
+      {{ end }}
+      {{ if not $conceptExists }}
+        {{ $nodes = $nodes | append (dict "id" . "label" . "group" "concept" "size" 15) }}
+      {{ end }}
+      {{ $links = $links | append (dict "source" $id "target" . "type" "concept") }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+(function() {
+  var graphData = {
+    nodes: {{ $nodes | jsonify }},
+    links: {{ $links | jsonify }}
+  };
+
+  var container = document.getElementById('cmapContainer');
+  var svg = d3.select('#cmapSvg');
+  var tooltip = document.getElementById('cmapTooltip');
+  var width = container.clientWidth;
+  var height = Math.max(600, window.innerHeight - 200);
+
+  svg.attr('width', width).attr('height', height);
+
+  // Color scheme
+  var colors = {
+    'math': '#0D9488',
+    'math-strand': '#14b8a6',
+    'science': '#0284C7',
+    'science-strand': '#38bdf8',
+    'investigation': '#f59e0b',
+    'concept': '#e11d48'
+  };
+
+  var simulation = d3.forceSimulation(graphData.nodes)
+    .force('link', d3.forceLink(graphData.links).id(function(d) { return d.id; }).distance(function(d) {
+      if (d.type === 'parent') return 100;
+      if (d.type === 'belongs') return 80;
+      if (d.type === 'cross') return 150;
+      return 120;
+    }))
+    .force('charge', d3.forceManyBody().strength(function(d) {
+      if (d.group === 'math' || d.group === 'science') return -600;
+      if (d.group.includes('strand')) return -300;
+      return -150;
+    }))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(function(d) { return d.size + 8; }))
+    .force('x', d3.forceX(function(d) {
+      if (d.group === 'math' || d.group === 'math-strand') return width * 0.35;
+      if (d.group === 'science' || d.group === 'science-strand') return width * 0.65;
+      return width / 2;
+    }).strength(0.05))
+    .force('y', d3.forceY(height / 2).strength(0.03));
+
+  // Links
+  var link = svg.append('g')
+    .selectAll('line')
+    .data(graphData.links)
+    .join('line')
+    .attr('stroke', function(d) {
+      if (d.type === 'parent') return 'rgba(255,255,255,0.2)';
+      if (d.type === 'cross') return 'rgba(255,255,255,0.08)';
+      if (d.type === 'concept') return 'rgba(225,29,72,0.2)';
+      return 'rgba(245,158,11,0.25)';
+    })
+    .attr('stroke-width', function(d) {
+      return d.type === 'parent' ? 2.5 : 1.2;
+    })
+    .attr('stroke-dasharray', function(d) {
+      return d.type === 'cross' ? '4,4' : 'none';
+    });
+
+  // Node groups
+  var node = svg.append('g')
+    .selectAll('g')
+    .data(graphData.nodes)
+    .join('g')
+    .attr('cursor', function(d) { return d.url ? 'pointer' : 'default'; })
+    .call(d3.drag()
+      .on('start', dragstarted)
+      .on('drag', dragged)
+      .on('end', dragended));
+
+  // Node circles
+  node.append('circle')
+    .attr('r', function(d) { return d.size; })
+    .attr('fill', function(d) { return colors[d.group] || '#666'; })
+    .attr('stroke', function(d) {
+      if (d.group === 'math' || d.group === 'science') return 'rgba(255,255,255,0.3)';
+      return 'rgba(255,255,255,0.1)';
+    })
+    .attr('stroke-width', function(d) {
+      return d.group === 'math' || d.group === 'science' ? 3 : 1.5;
+    })
+    .attr('opacity', 0.9);
+
+  // Glow for hub nodes
+  node.filter(function(d) { return d.group === 'math' || d.group === 'science'; })
+    .append('circle')
+    .attr('r', function(d) { return d.size + 8; })
+    .attr('fill', 'none')
+    .attr('stroke', function(d) { return colors[d.group]; })
+    .attr('stroke-width', 1)
+    .attr('opacity', 0.3);
+
+  // Labels
+  node.append('text')
+    .text(function(d) { return d.label; })
+    .attr('text-anchor', 'middle')
+    .attr('dy', function(d) { return d.size + 16; })
+    .attr('fill', 'rgba(255,255,255,0.75)')
+    .attr('font-size', function(d) {
+      if (d.group === 'math' || d.group === 'science') return '14px';
+      if (d.group.includes('strand')) return '12px';
+      if (d.group === 'investigation') return '10px';
+      return '11px';
+    })
+    .attr('font-family', 'Outfit, sans-serif')
+    .attr('font-weight', function(d) {
+      return d.group === 'math' || d.group === 'science' ? '700' : '500';
+    })
+    .each(function(d) {
+      // Truncate long investigation names
+      if (d.label.length > 25 && d.group === 'investigation') {
+        d3.select(this).text(d.label.substring(0, 22) + '…');
+      }
+    });
+
+  // Interactions
+  node.on('mouseover', function(event, d) {
+    tooltip.innerHTML = '<strong>' + d.label + '</strong>' +
+      (d.group === 'investigation' ? '<br><span style="opacity:.6">Click to open investigation</span>' : '') +
+      (d.group.includes('strand') ? '<br><span style="opacity:.6">' + graphData.links.filter(function(l) { return (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id; }).length + ' connections</span>' : '');
+    tooltip.style.display = 'block';
+    tooltip.style.left = (event.pageX - container.getBoundingClientRect().left + 12) + 'px';
+    tooltip.style.top = (event.pageY - container.getBoundingClientRect().top - 40) + 'px';
+
+    // Highlight connected
+    var connected = new Set();
+    connected.add(d.id);
+    graphData.links.forEach(function(l) {
+      var s = l.source.id || l.source;
+      var t = l.target.id || l.target;
+      if (s === d.id) connected.add(t);
+      if (t === d.id) connected.add(s);
+    });
+
+    node.selectAll('circle').attr('opacity', function(n) {
+      return connected.has(n.id) ? 1 : 0.15;
+    });
+    node.selectAll('text').attr('opacity', function(n) {
+      return connected.has(n.id) ? 1 : 0.1;
+    });
+    link.attr('opacity', function(l) {
+      var s = l.source.id || l.source;
+      var t = l.target.id || l.target;
+      return (s === d.id || t === d.id) ? 1 : 0.05;
+    });
+  })
+  .on('mouseout', function() {
+    tooltip.style.display = 'none';
+    node.selectAll('circle').attr('opacity', 0.9);
+    node.selectAll('text').attr('opacity', 1);
+    link.attr('opacity', 1);
+  })
+  .on('click', function(event, d) {
+    if (d.url) window.location = d.url;
+  });
+
+  // Tick
+  simulation.on('tick', function() {
+    link
+      .attr('x1', function(d) { return d.source.x; })
+      .attr('y1', function(d) { return d.source.y; })
+      .attr('x2', function(d) { return d.target.x; })
+      .attr('y2', function(d) { return d.target.y; });
+
+    node.attr('transform', function(d) {
+      d.x = Math.max(d.size, Math.min(width - d.size, d.x));
+      d.y = Math.max(d.size, Math.min(height - d.size, d.y));
+      return 'translate(' + d.x + ',' + d.y + ')';
+    });
+  });
+
+  // Drag functions
+  function dragstarted(event) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    event.subject.fx = event.subject.x;
+    event.subject.fy = event.subject.y;
+  }
+  function dragged(event) {
+    event.subject.fx = event.x;
+    event.subject.fy = event.y;
+  }
+  function dragended(event) {
+    if (!event.active) simulation.alphaTarget(0);
+    event.subject.fx = null;
+    event.subject.fy = null;
+  }
+
+  // Zoom
+  var zoom = d3.zoom()
+    .scaleExtent([0.3, 4])
+    .on('zoom', function(event) {
+      svg.selectAll('g').attr('transform', event.transform);
+    });
+  svg.call(zoom);
+
+  // Responsive
+  window.addEventListener('resize', function() {
+    width = container.clientWidth;
+    height = Math.max(600, window.innerHeight - 200);
+    svg.attr('width', width).attr('height', height);
+    simulation.force('center', d3.forceCenter(width / 2, height / 2));
+    simulation.alpha(0.3).restart();
+  });
+})();
+</script>
+
+{{ end }}

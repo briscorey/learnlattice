@@ -19,6 +19,10 @@ summaryLength = 30
       url = "/#topic-pathways"
       description = "Browse the site through connected concept branches."
     [[params.nav_dropdowns.items]]
+      title = "Concept Map"
+      url = "/concept-map/"
+      description = "Interactive map of how every MYP concept connects."
+    [[params.nav_dropdowns.items]]
       title = "Popular Topics"
       url = "/#popular-topics"
       description = "Jump into the most-used tags and classroom ideas."
