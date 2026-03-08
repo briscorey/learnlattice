@@ -147,15 +147,15 @@ summaryLength = 30
       description = "Browse curriculum-aligned units by grade."
     [[params.nav_dropdowns.items]]
       title = "Unit Plans"
-      url = "/resource-types/unit-plan/"
+      url = "/resources/#unit-plans"
       description = "Longer inquiry sequences and full units."
     [[params.nav_dropdowns.items]]
       title = "Lab Activities"
-      url = "/resource-types/lab-activity/"
+      url = "/resources/#lab-activities"
       description = "Hands-on practical investigations."
     [[params.nav_dropdowns.items]]
       title = "Worksheets"
-      url = "/resource-types/worksheet/"
+      url = "/resources/#worksheets"
       description = "Structured practice and guided inquiry sheets."
 
   [[params.nav_dropdowns]]

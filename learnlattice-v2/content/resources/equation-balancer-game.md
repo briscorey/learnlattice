@@ -28,9 +28,9 @@ formula: "reactants → products (atoms in = atoms out)"
 
 ## Play Equation Balancer
 
-<iframe src="/games/equation-balancer.html" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Equation Balancer"></iframe>
+<iframe src="/games/equation-balancer" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Equation Balancer"></iframe>
 
-<a href="/games/equation-balancer.html" target="_blank" style="display:inline-block;margin-top:12px;font-size:0.85rem;color:var(--teal);">Open in full screen →</a>
+<a href="/games/equation-balancer" target="_blank" style="display:inline-block;margin-top:12px;font-size:0.85rem;color:var(--teal);">Open in full screen →</a>
 
 ---
 
