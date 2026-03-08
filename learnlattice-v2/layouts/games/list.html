@@ -2,121 +2,122 @@
 
 {{ $games := where .Site.RegularPages "Params.resource_types" "intersect" (slice "Interactive Game") }}
 
-<div class="page-header games-page-header">
-  <div class="games-page-eyebrow">Interactive · Browser-based · No login</div>
-  <h1>Games &amp; Simulations</h1>
-  <p>{{ .Description }}</p>
-</div>
+{{ $screenshots := dict
+  "cell-explorer-game" "cell-explorer"
+  "equation-balancer-game" "equation-balancer"
+  "food-web-builder-game" "food-web-builder"
+  "function-machine-game" "function-machine"
+  "prime-maze-game" "prime-maze"
+  "probability-simulator-game" "probability-simulator"
+  "tectonic-puzzle-game" "tectonic-puzzle"
+}}
+
+{{ $subjectColors := dict
+  "Mathematics" "#0D9488"
+  "Biology" "#16a34a"
+  "Chemistry" "#e11d48"
+  "Physics" "#2563eb"
+  "Earth Science" "#d97706"
+  "Space Science" "#7c3aed"
+  "Ecology" "#059669"
+}}
+
+<section class="games-hero">
+  <div class="games-hero-inner">
+    <div class="games-hero-kicker">Interactive · Browser-based · No login required</div>
+    <h1>Games & Simulations</h1>
+    <p>{{ len $games }} interactive tools that make the mathematics or science the game — not a distraction from it. Every game runs on any device with a browser.</p>
+  </div>
+</section>
+
+<section class="games-showcase">
+  {{ if $games }}
+  <div class="games-showcase-grid">
+    {{ range $games }}
+    {{ $subject := "" }}
+    {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+    {{ $slug := .File.ContentBaseName }}
+    {{ $screenshotSlug := index $screenshots $slug }}
+    {{ $color := index $subjectColors $subject | default "#0D9488" }}
+
+    <a class="gcard" href="{{ .RelPermalink }}" style="--gc: {{ $color }}">
+      <div class="gcard-screen">
+        {{ with $screenshotSlug }}
+        <img class="gcard-screenshot" src="/img/games/{{ . }}.png" alt="{{ $.Title }} screenshot" loading="lazy">
+        {{ end }}
+        <div class="gcard-play-overlay">
+          <div class="gcard-play-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span>Play now</span>
+        </div>
+        {{ with $subject }}
+        <span class="gcard-subject">{{ . }}</span>
+        {{ end }}
+      </div>
+      <div class="gcard-body">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description | default .Summary | truncate 140 }}</p>
+        <div class="gcard-footer">
+          <div class="gcard-tags">
+            {{ range first 3 .Params.tags }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+          <div class="gcard-grades">
+            {{ range first 2 .Params.year_levels }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
 
 <section class="games-philosophy reveal">
   <div class="games-philosophy-inner">
     <div class="games-philosophy-card">
       <span class="games-philosophy-icon">🎯</span>
       <div>
-        <h3>Built for curriculum, not distraction</h3>
-        <p>Every game here targets specific MYP learning objectives. Playing is doing the mathematics or science, not taking a break from it.</p>
+        <h3>Built for curriculum</h3>
+        <p>Every game targets specific MYP learning objectives. Playing is doing the mathematics or science.</p>
       </div>
     </div>
     <div class="games-philosophy-card">
       <span class="games-philosophy-icon">🔁</span>
       <div>
         <h3>Designed for replay</h3>
-        <p>Good educational games have dynamic difficulty and no single correct path. Students should be able to return and encounter the same concepts in new configurations.</p>
+        <p>Dynamic difficulty and no single correct path. Students return and encounter concepts in new configurations.</p>
       </div>
     </div>
     <div class="games-philosophy-card">
       <span class="games-philosophy-icon">🌍</span>
       <div>
-        <h3>Classroom-ready anywhere</h3>
-        <p>No app downloads, no accounts, no region restrictions. These run on any school device with a browser — including older Chromebooks and shared iPads.</p>
+        <h3>Runs anywhere</h3>
+        <p>No downloads, no accounts, no region locks. Works on Chromebooks, iPads, and shared devices.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-
-  {{ if $games }}
-  <div class="games-grid">
-    {{ range $games }}
-    {{ $subject := "" }}
-    {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
-
-    {{ $accentColor := "#0D9488" }}
-    {{ if eq $subject "Biology" }}{{ $accentColor = "#0D9488" }}{{ end }}
-    {{ if eq $subject "Chemistry" }}{{ $accentColor = "#e11d48" }}{{ end }}
-    {{ if eq $subject "Physics" }}{{ $accentColor = "#0D9488" }}{{ end }}
-    {{ if eq $subject "Mathematics" }}{{ $accentColor = "#0D9488" }}{{ end }}
-    {{ if eq $subject "Earth Science" }}{{ $accentColor = "#d97706" }}{{ end }}
-    {{ if eq $subject "Ecology" }}{{ $accentColor = "#16a34a" }}{{ end }}
-
-    <a class="game-card" href="{{ .RelPermalink }}" style="--accent: {{ $accentColor }}">
-      <div class="game-card-screen">
-        <div class="game-card-screen-inner">
-          <div class="game-card-icon">🎮</div>
-          <div class="game-card-play">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Play now
-          </div>
-        </div>
-        {{ with $subject }}
-        <span class="game-card-subject">{{ . }}</span>
-        {{ end }}
-      </div>
-      <div class="game-card-body">
-        <h2>{{ .Title }}</h2>
-        <p>{{ .Description | default .Summary }}</p>
-        <div class="game-card-tags">
-          {{ range first 3 .Params.tags }}
-          <span class="resource-tag">{{ . }}</span>
-          {{ end }}
-        </div>
-        <div class="game-card-meta">
-          {{ range first 2 .Params.year_levels }}
-          <span class="game-card-level">{{ . }}</span>
-          {{ end }}
-        </div>
-      </div>
-    </a>
-    {{ end }}
-  </div>
-
-  {{ else }}
-  <div class="games-empty">
-    <div class="games-empty-icon">🎮</div>
-    <h2>More games coming soon</h2>
-    <p>New interactive games are being built. Check back soon or explore the full resource library in the meantime.</p>
-    <a href="/resources/" class="btn-primary">Browse all resources →</a>
-  </div>
-  {{ end }}
-
-  <div class="games-coming-soon reveal">
+<section class="games-coming reveal">
+  <div class="games-coming-inner">
     <h2>Coming next</h2>
-    <p>More interactive games are in development. Planned topics include:</p>
-    <div class="games-upcoming-grid">
-      <div class="games-upcoming-item">
-        <span class="games-upcoming-icon">⚡</span>
-        <span class="games-upcoming-name">Circuit Builder</span>
-        <span class="games-upcoming-subject">Physics</span>
+    <div class="games-coming-grid">
+      <div class="games-coming-item">
+        <span>⚡</span><span>Circuit Builder</span><span>Physics</span>
       </div>
-      <div class="games-upcoming-item">
-        <span class="games-upcoming-icon">🧬</span>
-        <span class="games-upcoming-name">DNA &amp; Genetics Simulator</span>
-        <span class="games-upcoming-subject">Biology</span>
+      <div class="games-coming-item">
+        <span>📐</span><span>Geometry Transformer</span><span>Mathematics</span>
       </div>
-      <div class="games-upcoming-item">
-        <span class="games-upcoming-icon">📐</span>
-        <span class="games-upcoming-name">Geometry Transformer</span>
-        <span class="games-upcoming-subject">Mathematics</span>
-      </div>
-      <div class="games-upcoming-item">
-        <span class="games-upcoming-icon">⚗️</span>
-        <span class="games-upcoming-name">Reaction Rate Lab</span>
-        <span class="games-upcoming-subject">Chemistry</span>
+      <div class="games-coming-item">
+        <span>⚗️</span><span>Reaction Rate Lab</span><span>Chemistry</span>
       </div>
     </div>
   </div>
-
 </section>
 
 {{ partial "newsletter.html" . }}
