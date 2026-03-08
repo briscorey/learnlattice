@@ -5591,10 +5591,12 @@ footer {
   justify-content: center;
   padding: 48px 80px;
   overflow-y: auto;
+  min-height: 0;
 }
 .cm-slide {
   max-width: 900px;
   width: 100%;
+  max-height: 100%;
   animation: cmFadeIn 0.35s ease;
 }
 @keyframes cmFadeIn {

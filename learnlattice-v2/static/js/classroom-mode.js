@@ -38,15 +38,19 @@
     var buffer = [];
 
     function flushBuffer() {
-      if (buffer.length > 0) {
+      if (buffer.length === 0) return;
+      // Split large buffers into multiple slides (max 2 elements per slide)
+      var maxPerSlide = 2;
+      for (var b = 0; b < buffer.length; b += maxPerSlide) {
+        var chunk = buffer.slice(b, b + maxPerSlide);
         slides.push({
           html: '<div class="cm-slide">' +
             (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
-            buffer.join('') +
+            chunk.join('') +
             '</div>'
         });
-        buffer = [];
       }
+      buffer = [];
     }
 
     for (var i = 0; i < children.length; i++) {
@@ -85,7 +89,7 @@
         } else if (text.length > 0) {
           buffer.push('<p>' + el.innerHTML + '</p>');
           // Flush if buffer is getting big
-          if (buffer.length >= 3) flushBuffer();
+          if (buffer.length >= 2) flushBuffer();
         }
       } else if (tag === 'BLOCKQUOTE') {
         flushBuffer();
@@ -96,10 +100,35 @@
         });
       } else if (tag === 'UL' || tag === 'OL') {
         flushBuffer();
-        slides.push({
-          html: '<div class="cm-slide">' +
-            (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
-            '<' + tag.toLowerCase() + '>' + el.innerHTML + '</' + tag.toLowerCase() + '></div>'
+        // Split long lists - if more than 5 items, break into separate slides
+        var items = el.querySelectorAll('li');
+        if (items.length > 5) {
+          var half = Math.ceil(items.length / 2);
+          var list1 = '<' + tag.toLowerCase() + '>';
+          var list2 = '<' + tag.toLowerCase() + '>';
+          for (var li = 0; li < items.length; li++) {
+            if (li < half) list1 += '<li>' + items[li].innerHTML + '</li>';
+            else list2 += '<li>' + items[li].innerHTML + '</li>';
+          }
+          list1 += '</' + tag.toLowerCase() + '>';
+          list2 += '</' + tag.toLowerCase() + '>';
+          slides.push({
+            html: '<div class="cm-slide">' +
+              (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+              list1 + '</div>'
+          });
+          slides.push({
+            html: '<div class="cm-slide">' +
+              (currentSection ? '<h2>' + currentSection + ' <span style="opacity:.4">(continued)</span></h2>' : '') +
+              list2 + '</div>'
+          });
+        } else {
+          slides.push({
+            html: '<div class="cm-slide">' +
+              (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+              '<' + tag.toLowerCase() + '>' + el.innerHTML + '</' + tag.toLowerCase() + '></div>'
+          });
+        }
         });
       } else if (tag === 'TABLE') {
         flushBuffer();
