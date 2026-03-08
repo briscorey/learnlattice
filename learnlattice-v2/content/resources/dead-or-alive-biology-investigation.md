@@ -25,6 +25,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The systems we use to define life determine what we include, what we exclude, and what we are forced to admit we don't know."
 formula: "MRS GREN: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

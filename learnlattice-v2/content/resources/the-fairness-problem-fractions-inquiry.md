@@ -23,6 +23,10 @@ global_context: "Identities and Relationships"
 statement_of_inquiry: "The form in which we represent a quantity determines what relationships we can see."
 formula: "a ÷ b = a/b"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

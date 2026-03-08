@@ -24,6 +24,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Every observation of the universe beyond Earth requires building knowledge from the properties of light rather than from direct contact."
 formula: "λ_max = b/T (Wien's Displacement Law: peak wavelength → star temperature)"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

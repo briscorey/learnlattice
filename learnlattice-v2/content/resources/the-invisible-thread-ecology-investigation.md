@@ -26,6 +26,10 @@ global_context: "Globalisation and Sustainability"
 statement_of_inquiry: "In ecological systems, every effect has causes that extend far beyond what direct observation can reveal."
 formula: "trophic cascade: predator removal → prey explosion → vegetation collapse"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

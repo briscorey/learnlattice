@@ -168,6 +168,14 @@ summaryLength = 30
       title = "For Teachers"
       url = "/about/#for-teachers"
       description = "See how to use the materials in class."
+    [[params.nav_dropdowns.items]]
+      title = "Multilingual Learners"
+      url = "/eal/"
+      description = "How every investigation is designed for EAL classrooms."
+    [[params.nav_dropdowns.items]]
+      title = "Concept Map"
+      url = "/concept-map/"
+      description = "Explore how every concept connects."
 
   [params.home]
     hero_eyebrow = "Free MYP Mathematics & Science Resources"

@@ -24,6 +24,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The logical structure of our number system determines which representations are equivalent — even when intuition disagrees."
 formula: "1/3 = 0.333... → 3 × 0.333... = 0.999... = 1"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

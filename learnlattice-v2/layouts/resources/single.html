@@ -100,6 +100,17 @@
       {{ end }}
     </div>
     {{ end }}
+    {{ with .Params.btc_practices }}
+    <div class="at-a-glance-btc">
+      <a href="/blog/thinking-classrooms-meet-myp/" class="btc-badge" title="This investigation is designed for Building Thinking Classrooms practices">
+        <span class="btc-badge-icon">🧠</span>
+        <span class="btc-badge-text">
+          <strong>Thinking Classroom Ready</strong>
+          <small>{{ delimit . " · " }}</small>
+        </span>
+      </a>
+    </div>
+    {{ end }}
   </div>
 
   {{ with .Params.download_url }}

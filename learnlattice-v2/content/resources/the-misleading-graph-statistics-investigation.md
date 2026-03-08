@@ -24,6 +24,10 @@ global_context: "Globalisation and Sustainability"
 statement_of_inquiry: "The way data is represented determines what questions it can answer — and what stories it can tell."
 formula: "mean ≠ median when data is skewed"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

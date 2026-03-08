@@ -6005,3 +6005,133 @@ footer {
   .cmap-title { font-size: 2rem; }
   .cmap-container { border-radius: 0; margin-left: -16px; margin-right: -16px; }
 }
+
+/* ═══════════════════════════════════════════
+   BTC BADGE (Building Thinking Classrooms)
+   ═══════════════════════════════════════════ */
+.at-a-glance-btc { margin-top: 16px; }
+.btc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(20,184,166,0.06));
+  border: 1px solid rgba(168,85,247,0.2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btc-badge:hover {
+  border-color: rgba(168,85,247,0.4);
+  background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(20,184,166,0.08));
+}
+.btc-badge-icon { font-size: 1.3rem; }
+.btc-badge-text { display: flex; flex-direction: column; gap: 2px; }
+.btc-badge-text strong {
+  font-size: 0.85rem;
+  color: #a855f7;
+  font-weight: 600;
+}
+.btc-badge-text small {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+@media print { .btc-badge { border: 1px solid #ccc; } .btc-badge-text strong { color: #333; } }
+
+/* ═══════════════════════════════════════════
+   EAL SHOWCASE PAGE
+   ═══════════════════════════════════════════ */
+.eal-hero {
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+}
+.eal-hero-inner { max-width: 680px; margin: 0 auto; }
+.eal-hero-kicker {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.eal-hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.eal-hero-sub {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.eal-section { padding: 48px 24px; }
+.eal-section--alt { background: var(--surface-warm); }
+.eal-inner { max-width: 720px; margin: 0 auto; }
+.eal-inner h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.eal-inner p {
+  font-size: 0.95rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.eal-inner a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+.eal-principles { display: flex; flex-direction: column; gap: 28px; margin-top: 24px; }
+.eal-principle {
+  padding: 24px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+}
+.eal-principle-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--teal-light);
+  opacity: 0.5;
+  position: absolute;
+  top: 16px; right: 20px;
+}
+.eal-principle h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.eal-principle p { margin-bottom: 0; }
+
+.eal-examples { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+.eal-example h3 { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 8px; font-weight: 600; }
+.eal-example-box {
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.eal-example-box p { margin-bottom: 8px; }
+.eal-example-box p:last-child { margin-bottom: 0; }
+.eal-example-box--bad {
+  background: rgba(225,29,72,0.05);
+  border: 1px solid rgba(225,29,72,0.15);
+  color: var(--ink-light);
+}
+.eal-example-box--good {
+  background: rgba(13,148,136,0.05);
+  border: 1px solid rgba(13,148,136,0.2);
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  .eal-hero-title { font-size: 1.8rem; }
+  .eal-examples { grid-template-columns: 1fr; }
+}

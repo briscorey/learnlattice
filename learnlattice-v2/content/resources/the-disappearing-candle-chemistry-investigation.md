@@ -26,6 +26,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "In chemical change, the arrangement of particles is transformed but their total quantity is conserved — matter does not appear or disappear, it changes form."
 formula: "CH₄ + 2O₂ → CO₂ + 2H₂O (or equivalent for candle wax)"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

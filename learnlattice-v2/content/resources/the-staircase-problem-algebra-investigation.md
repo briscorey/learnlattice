@@ -26,6 +26,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Finding the pattern behind a structure allows us to predict and design without building every case."
 formula: "n(n+1)/2"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

@@ -24,6 +24,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "The properties of geometric forms depend on the space in which they exist — and questioning assumptions is how mathematics advances."
 formula: "angle sum of triangle = 180° (in flat space)"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

@@ -23,6 +23,10 @@ global_context: "Fairness and Development"
 statement_of_inquiry: "The way we represent and communicate large quantities shapes how we understand inequality."
 formula: "10⁶ → 10⁹ → 10¹²"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

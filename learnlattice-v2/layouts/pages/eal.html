@@ -1,0 +1,106 @@
+{{ define "main" }}
+
+<section class="eal-hero">
+  <div class="eal-hero-inner">
+    <div class="eal-hero-kicker">For International Schools</div>
+    <h1 class="eal-hero-title">Designed for multilingual learners from the ground up</h1>
+    <p class="eal-hero-sub">Every investigation on this site was written for classrooms where students are working in their second, third, or fourth language. Not as an afterthought. As the starting point.</p>
+  </div>
+</section>
+
+<section class="eal-section reveal">
+  <div class="eal-inner">
+    <h2>The Problem</h2>
+    <p>Most mathematics and science resources assume English fluency. Instructions are dense. Hooks require reading comprehension before mathematical thinking can begin. The students with the strongest mathematical reasoning are often the last to start — because they are still decoding the language.</p>
+    <p>In an international school classroom, this is not an edge case. It is the norm. At Nanjing International School, my students' first languages include Mandarin, Korean, Japanese, Thai, Vietnamese, and about eight others. Six of twenty-four can follow rapid English. The rest are reading my face, my gestures, and the board — in that order.</p>
+    <p>If the first move of a lesson is a paragraph of verbal explanation, a third of the room is lost before the mathematics begins.</p>
+  </div>
+</section>
+
+<section class="eal-section eal-section--alt reveal">
+  <div class="eal-inner">
+    <h2>The Design Principles</h2>
+
+    <div class="eal-principles">
+      <div class="eal-principle">
+        <div class="eal-principle-num">01</div>
+        <h3>The problem comes before the language</h3>
+        <p>Every investigation starts with a visual, a number, or a physical action — not a paragraph. Students access the mathematics before they access the English. In <a href="/resources/the-million-dollar-question-number-sense/">The Million Dollar Question</a>, the board reads: <strong>$1,000,000. One dollar per second. How long?</strong> Six words. Every student can start.</p>
+      </div>
+
+      <div class="eal-principle">
+        <div class="eal-principle-num">02</div>
+        <h3>Hooks work visually</h3>
+        <p>Dan Meyer's Act 1 principle: <em>"Impose as few demands as possible — of language or of math."</em> In <a href="/resources/reading-rocks-earth-science-investigation/">Reading Rocks</a>, the hook is a map with no labels — thousands of dots on a dark background. No title. No legend. Just: "What is this?" Every student can wonder, regardless of English proficiency.</p>
+      </div>
+
+      <div class="eal-principle">
+        <div class="eal-principle-num">03</div>
+        <h3>Mathematics is the shared language</h3>
+        <p>When students work on vertical whiteboards in random groups, the board becomes the universal translator. A student who cannot explain their reasoning in English can draw it, calculate it, or gesture at it. The mathematics is visible to the teacher and to other students across every language barrier.</p>
+      </div>
+
+      <div class="eal-principle">
+        <div class="eal-principle-num">04</div>
+        <h3>Vocabulary emerges from understanding</h3>
+        <p>We do not front-load terminology. If a student discovers a pattern that is quadratic, we give them the word "quadratic" <em>after</em> they have found the pattern — not before. Language attached to existing understanding sticks. Language taught in isolation evaporates.</p>
+      </div>
+
+      <div class="eal-principle">
+        <div class="eal-principle-num">05</div>
+        <h3>Every investigation includes EAL scaffolds</h3>
+        <p>The <a href="/resources/the-million-dollar-question-number-sense/">Teacher Moves</a> section on every flagship investigation includes specific EAL guidance: what to write on the board, what conversion chains to display, when to use gesture instead of words, and how to consolidate learning using whiteboards rather than verbal discussion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="eal-section reveal">
+  <div class="eal-inner">
+    <h2>What This Looks Like in Practice</h2>
+
+    <div class="eal-examples">
+      <div class="eal-example">
+        <h3>Instead of this:</h3>
+        <div class="eal-example-box eal-example-box--bad">
+          <p>"Today we're going to investigate the relationship between the number of steps in a staircase and the total number of blocks needed to build it. You'll start by drawing staircases of different heights, counting the blocks, recording your results in a table, and then looking for a pattern that you can express as a general rule."</p>
+        </div>
+      </div>
+      <div class="eal-example">
+        <h3>We do this:</h3>
+        <div class="eal-example-box eal-example-box--good">
+          <p><em>Draw a 3-step staircase on the board.</em></p>
+          <p><strong>"How many blocks?"</strong></p>
+          <p><em>Students count: 6.</em></p>
+          <p><strong>"What about 4 steps?"</strong></p>
+          <p><em>Students are already drawing.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 24px; color: var(--ink-muted);">Same mathematics. Same investigation. Same Criterion B assessment. But one version requires reading comprehension as the entry ticket. The other requires only eyes and curiosity.</p>
+  </div>
+</section>
+
+<section class="eal-section eal-section--alt reveal">
+  <div class="eal-inner">
+    <h2>Investigations to Start With</h2>
+    <p>These investigations are especially effective for multilingual classrooms because their hooks require minimal English:</p>
+  </div>
+</section>
+
+{{ $ealSlugs := slice "the-million-dollar-question-number-sense" "the-fairness-problem-fractions-inquiry" "the-staircase-problem-algebra-investigation" "is-this-die-cheating-probability-investigation" "reading-rocks-earth-science-investigation" "the-invisible-thread-ecology-investigation" }}
+<section class="section">
+  <div class="resources-grid">
+    {{ range $ealSlugs }}
+      {{ $page := $.Site.GetPage (printf "/resources/%s" .) }}
+      {{ if $page }}
+        {{ partial "resource-card.html" $page }}
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+{{ end }}

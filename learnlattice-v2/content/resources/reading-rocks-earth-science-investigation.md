@@ -26,6 +26,10 @@ global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific explanations for things we cannot observe directly must be built from multiple independent lines of converging evidence."
 formula: "convergent + divergent + transform boundaries → earthquakes, volcanoes, mountains"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---

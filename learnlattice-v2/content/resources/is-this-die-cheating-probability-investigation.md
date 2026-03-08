@@ -24,6 +24,10 @@ global_context: "Fairness and Development"
 statement_of_inquiry: "The logic we use to evaluate fairness depends on how much evidence we are willing to gather."
 formula: "P(E) = favourable outcomes / total outcomes"
 teacher_moves: true
+btc_practices:
+  - "Visibly Random Groups"
+  - "Vertical Non-Permanent Surfaces"
+  - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
 ---
