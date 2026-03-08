@@ -21,6 +21,8 @@
     {{ .Content }}
   </div>
 
+  {{ partial "newsletter.html" . }}
+
   <footer class="blog-single-footer">
     <div class="blog-single-tags">
       {{ range .Params.tags }}
