@@ -27,7 +27,7 @@
 {{ if eq $subject "science" }}{{ $svgFile = "physics" }}{{ end }}
 
 <a class="resource-card" href="{{ .RelPermalink }}" data-subject="{{ $subjectColor }}">
-  {{ if .Params.teacher_moves }}<span class="resource-tm-badge">🧭 Teacher Moves</span>{{ end }}
+  {{ if .Params.teacher_moves }}<span class="resource-tm-badge" title="Has Teacher Moves">🧭</span>{{ end }}
   <div class="resource-thumb rc-{{ $subjectColor }}">
     <img class="resource-thumb-svg" src="/img/subjects/{{ $svgFile }}.svg" alt="" loading="lazy" aria-hidden="true">
     {{ with .Params.formula }}<div class="formula">{{ . }}</div>{{ end }}
