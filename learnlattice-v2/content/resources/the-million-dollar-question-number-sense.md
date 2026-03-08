@@ -29,6 +29,8 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "1–2 lessons"
 ---
 
 ## The Hook

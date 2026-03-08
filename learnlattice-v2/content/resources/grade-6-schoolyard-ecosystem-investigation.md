@@ -23,6 +23,8 @@ statement_of_inquiry: "Even the most familiar environments contain systems of in
 formula: "Species richness = number of different species in a defined area"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2–3 lessons"
 ---
 
 ## The Hook

@@ -25,6 +25,8 @@ statement_of_inquiry: "In any system, energy transformations follow predictable 
 formula: "E_total = E_kinetic + E_potential + E_thermal"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook

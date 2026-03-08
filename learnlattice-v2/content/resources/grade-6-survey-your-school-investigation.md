@@ -26,6 +26,8 @@ statement_of_inquiry: "The form in which we collect and present data determines 
 formula: "mean = sum of values ÷ number of values"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook

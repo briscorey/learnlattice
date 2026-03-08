@@ -25,6 +25,8 @@ statement_of_inquiry: "Our perception of temperature change depends not on the t
 formula: "Rate of heat transfer depends on: thermal conductivity, temperature difference, surface area, thickness"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook

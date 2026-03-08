@@ -25,6 +25,8 @@ statement_of_inquiry: "Invisible forces follow predictable spatial patterns — 
 formula: "Field lines: N → S (outside the magnet)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook

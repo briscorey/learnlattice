@@ -23,6 +23,8 @@ statement_of_inquiry: "The form and properties of substances can be revealed thr
 formula: ""
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2–3 lessons"
 ---
 
 ## The Hook

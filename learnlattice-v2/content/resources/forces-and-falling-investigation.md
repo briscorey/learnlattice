@@ -25,6 +25,8 @@ statement_of_inquiry: "The relationship between forces acting on an object deter
 formula: "F = mg · a = 9.8 m/s²"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook

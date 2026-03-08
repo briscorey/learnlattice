@@ -26,6 +26,8 @@ statement_of_inquiry: "The relationship between the angle of light and the lengt
 formula: "shadow length = object height ÷ tan(angle of light)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "1–2 lessons"
 ---
 
 ## The Hook

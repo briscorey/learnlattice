@@ -49,6 +49,18 @@
         <dd>{{ . }}</dd>
       </div>
       {{ end }}
+      {{ with .Params.difficulty }}
+      <div class="at-a-glance-item">
+        <dt>Difficulty</dt>
+        <dd><span class="difficulty-badge difficulty-{{ . | urlize }}">{{ . }}</span></dd>
+      </div>
+      {{ end }}
+      {{ with .Params.duration }}
+      <div class="at-a-glance-item">
+        <dt>Duration</dt>
+        <dd>{{ . }}</dd>
+      </div>
+      {{ end }}
       {{ with .Params.formula }}
       <div class="at-a-glance-item">
         <dt>Key Concept</dt>

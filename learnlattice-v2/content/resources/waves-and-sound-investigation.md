@@ -25,6 +25,8 @@ statement_of_inquiry: "The relationship between wave properties and the phenomen
 formula: "v = fλ (wave speed = frequency × wavelength)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Meeting"
+duration: "2–3 lessons"
 ---
 
 ## The Hook

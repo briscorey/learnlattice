@@ -26,6 +26,8 @@ statement_of_inquiry: "The relationship between mass and volume determines wheth
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook

@@ -25,6 +25,8 @@ statement_of_inquiry: "Simple systems can amplify human capability — and the t
 formula: "MA = load ÷ effort · work = force × distance"
 download_url: ""
 download_label: "Investigation Pack PDF"
+difficulty: "Approaching"
+duration: "2 lessons"
 ---
 
 ## The Hook
