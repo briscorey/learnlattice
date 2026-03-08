@@ -2,10 +2,16 @@
 
 <article class="resource-single">
   <div class="resource-single-header">
-    <a href="/resources/" class="resource-single-back">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      All Resources
-    </a>
+    <div class="resource-single-top-row">
+      <a href="/resources/" class="resource-single-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        All Resources
+      </a>
+      <button class="classroom-mode-btn" id="classroomModeBtn" title="Open Classroom Mode — project this investigation step by step">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Present
+      </button>
+    </div>
 
     <div class="resource-single-meta-row">
       {{ with index .Params.subjects 0 }}<span class="resource-single-subject">{{ . }}</span>{{ end }}
@@ -148,5 +154,33 @@
   </div>
 </section>
 {{ end }}
+
+<!-- Classroom Mode Overlay -->
+<div id="classroomOverlay" class="cm-overlay" aria-hidden="true">
+  <div class="cm-chrome">
+    <div class="cm-brand">
+      <svg width="20" height="20" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="15" r="9" fill="#14b8a6"/><circle cx="35" cy="30" r="8" fill="#14b8a6"/><circle cx="85" cy="30" r="8" fill="#14b8a6"/><circle cx="35" cy="62" r="8" fill="#14b8a6"/><circle cx="85" cy="62" r="8" fill="#14b8a6"/><circle cx="60" cy="78" r="9" fill="#14b8a6"/></svg>
+      <span>LearnLattice</span>
+    </div>
+    <div class="cm-title">{{ .Title }}</div>
+    <div class="cm-controls">
+      <span class="cm-counter" id="cmCounter"></span>
+      <button class="cm-close" id="cmClose" title="Exit (Esc)">✕</button>
+    </div>
+  </div>
+  <div class="cm-stage" id="cmStage"></div>
+  <div class="cm-nav">
+    <button class="cm-nav-btn" id="cmPrev" title="Previous (←)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="cm-progress" id="cmProgress"></div>
+    <button class="cm-nav-btn" id="cmNext" title="Next (→)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+  </div>
+  <div class="cm-hint">Use ← → arrow keys · Esc to exit</div>
+</div>
+
+<script src="/js/classroom-mode.js" defer></script>
 
 {{ end }}

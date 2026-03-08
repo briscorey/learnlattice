@@ -5473,3 +5473,316 @@ footer {
   .tm-phase { flex-direction: column; gap: 4px; }
   .tm-phase-time { min-width: unset; }
 }
+
+/* ═══════════════════════════════════════════
+   CLASSROOM MODE — Present Button
+   ═══════════════════════════════════════════ */
+.resource-single-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.classroom-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(13,148,136,0.25);
+}
+.classroom-mode-btn:hover {
+  background: var(--teal-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(13,148,136,0.35);
+}
+.classroom-mode-btn svg { stroke: #fff; }
+
+/* ═══════════════════════════════════════════
+   CLASSROOM MODE — Full-Screen Overlay
+   ═══════════════════════════════════════════ */
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #0a0f1a;
+  display: none;
+  flex-direction: column;
+  font-family: 'Outfit', sans-serif;
+  color: #e8edf3;
+}
+.cm-overlay.open {
+  display: flex;
+}
+
+/* Top chrome bar */
+.cm-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.cm-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #14b8a6;
+  opacity: 0.8;
+}
+.cm-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  flex: 1;
+  padding: 0 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cm-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cm-counter {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  font-variant-numeric: tabular-nums;
+}
+.cm-close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.cm-close:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* Main stage */
+.cm-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 80px;
+  overflow-y: auto;
+}
+.cm-slide {
+  max-width: 900px;
+  width: 100%;
+  animation: cmFadeIn 0.35s ease;
+}
+@keyframes cmFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cm-slide h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  color: #14b8a6;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.cm-slide p {
+  font-size: 1.55rem;
+  line-height: 1.65;
+  color: #c8d4e0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.cm-slide strong, .cm-slide b {
+  color: #fff;
+  font-weight: 600;
+}
+.cm-slide em {
+  color: #14b8a6;
+  font-style: italic;
+}
+.cm-slide blockquote {
+  border-left: 4px solid #14b8a6;
+  padding: 16px 24px;
+  margin: 24px auto;
+  max-width: 700px;
+  background: rgba(20,184,166,0.06);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.4rem;
+  color: #a8c0d0;
+}
+.cm-slide ul, .cm-slide ol {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: #c8d4e0;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  padding-left: 24px;
+}
+.cm-slide li { margin-bottom: 12px; }
+.cm-slide-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.2rem;
+  line-height: 1.15;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.cm-slide-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+}
+
+/* Bottom navigation */
+.cm-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 24px;
+  flex-shrink: 0;
+}
+.cm-nav-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+.cm-nav-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  transform: scale(1.05);
+}
+.cm-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+  transform: none;
+}
+.cm-progress {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.cm-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+.cm-dot.active {
+  background: #14b8a6;
+  transform: scale(1.3);
+}
+.cm-dot.visited {
+  background: rgba(20,184,166,0.4);
+}
+.cm-hint {
+  text-align: center;
+  padding: 0 24px 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cm-stage { padding: 32px 24px; }
+  .cm-slide h2 { font-size: 1.8rem; }
+  .cm-slide p { font-size: 1.2rem; }
+  .cm-slide-title { font-size: 2.2rem; }
+  .cm-slide ul, .cm-slide ol { font-size: 1.1rem; }
+  .cm-chrome { padding: 10px 16px; }
+  .cm-title { display: none; }
+}
+
+/* ═══════════════════════════════════════════
+   PRINT STYLESHEET
+   ═══════════════════════════════════════════ */
+@media print {
+  /* Hide non-essential elements */
+  nav, .lattice-bg, .hero-glow, .nav-search, .search-overlay,
+  .classroom-mode-btn, .cm-overlay, .download-box,
+  .topic-pathways, footer, .section,
+  .at-a-glance-tags, .philosophy-strip, .student-entry,
+  .ka-home-hero aside { display: none !important; }
+
+  body {
+    background: #fff !important;
+    color: #1a1a1a !important;
+    font-size: 11pt;
+    line-height: 1.5;
+    font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .resource-single { max-width: 100%; padding: 0; }
+  .resource-single-header { margin-bottom: 16pt; }
+  .resource-single-header h1 { font-size: 18pt; color: #134E4A; }
+  .resource-single-desc { font-size: 10pt; color: #555; }
+
+  .at-a-glance {
+    border: 1pt solid #ccc;
+    padding: 12pt;
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+  }
+
+  .resource-content h2 {
+    font-size: 14pt;
+    color: #0D9488;
+    margin-top: 16pt;
+    page-break-after: avoid;
+  }
+  .resource-content h3 {
+    font-size: 12pt;
+    page-break-after: avoid;
+  }
+
+  a { color: inherit !important; text-decoration: none !important; }
+  a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 8pt; color: #666; }
+
+  /* Print footer */
+  @page { margin: 2cm; }
+  body::after {
+    content: "learnlattice.org · Free MYP Mathematics & Science Investigations · CC BY-SA 4.0";
+    display: block;
+    text-align: center;
+    font-size: 8pt;
+    color: #999;
+    margin-top: 24pt;
+    padding-top: 12pt;
+    border-top: 0.5pt solid #ddd;
+  }
+}
