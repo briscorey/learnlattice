@@ -1,0 +1,138 @@
+{{ define "main" }}
+
+{{ $resources := where .Site.RegularPages "Section" "resources" }}
+{{ $games := where $resources "Params.resource_types" "intersect" (slice "Interactive Game") }}
+{{ $exemplars := where $resources "Params.tags" "intersect" (slice "Annotated Student Work") }}
+{{ $withMoves := where $resources "Params.teacher_moves" "ne" nil }}
+{{ $withHints := where $resources "Params.hints" "ne" nil }}
+{{ $blogs := where .Site.RegularPages "Section" "blog" }}
+
+<section class="port-hero">
+  <div class="port-hero-inner">
+    <h1>LearnLattice Portfolio</h1>
+    <p>A free, open resource library for MYP Mathematics and Science — designed and built by Corey Briscoe.</p>
+  </div>
+</section>
+
+<section class="port-stats">
+  <div class="port-stats-inner">
+    <div class="port-stat">
+      <span class="port-stat-num">{{ len $resources }}</span>
+      <span class="port-stat-label">Resources</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">{{ len $games }}</span>
+      <span class="port-stat-label">Interactive Games</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">7</span>
+      <span class="port-stat-label">Subjects</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">4</span>
+      <span class="port-stat-label">Grade Levels</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">{{ len $withMoves }}</span>
+      <span class="port-stat-label">Teacher Moves</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">{{ len $exemplars }}</span>
+      <span class="port-stat-label">Annotated Exemplars</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">{{ len $withHints }}</span>
+      <span class="port-stat-label">Investigations with Hints</span>
+    </div>
+    <div class="port-stat">
+      <span class="port-stat-num">{{ len $blogs }}</span>
+      <span class="port-stat-label">Blog Posts</span>
+    </div>
+  </div>
+</section>
+
+<section class="port-section">
+  <div class="port-section-inner">
+    <h2>What I Built</h2>
+    <div class="port-features">
+
+      <div class="port-feature">
+        <span class="port-feature-icon">📚</span>
+        <h3>Resource Library</h3>
+        <p>{{ len $resources }} resources across Mathematics, Biology, Chemistry, Physics, Earth Science, Space Science, and Ecology. Every resource is aligned to the IB MYP framework with key concepts, global contexts, and criterion mapping.</p>
+      </div>
+
+      <div class="port-feature">
+        <span class="port-feature-icon">🎮</span>
+        <h3>Interactive Games</h3>
+        <p>{{ len $games }} browser-based educational games built from scratch: Probability Simulator, Equation Balancer, Cell Explorer, Function Machine, Food Web Builder, Tectonic Puzzle, Prime Maze, Circuit Builder, Geometry Transformer, Reaction Rate Lab. No downloads, no accounts.</p>
+      </div>
+
+      <div class="port-feature">
+        <span class="port-feature-icon">📋</span>
+        <h3>Assessment Toolkit</h3>
+        <p>Criterion rubric cards for B, C, and D — projectable and printable. A searchable report comment bank with ~80 criterion-referenced comments. {{ len $exemplars }} annotated student work exemplars at three achievement levels.</p>
+      </div>
+
+      <div class="port-feature">
+        <span class="port-feature-icon">💡</span>
+        <h3>Understanding Layer</h3>
+        <p>3 interactive visual concept explainers (Density, Algebra, Particles). 3 worked examples with step-by-step reveal. 30-term visual vocabulary builder. {{ len $withHints }} investigations with progressive "I'm Stuck" hints.</p>
+      </div>
+
+      <div class="port-feature">
+        <span class="port-feature-icon">🧭</span>
+        <h3>Teacher Support</h3>
+        <p>{{ len $withMoves }} resources with specific, actionable Teacher Moves — practical guidance on what to do in the classroom, not what to know. Classroom Mode for projecting investigations step by step. Dark mode. Print stylesheets.</p>
+      </div>
+
+      <div class="port-feature">
+        <span class="port-feature-icon">🗺️</span>
+        <h3>Concept Map</h3>
+        <p>Interactive D3.js concept map with 262 nodes showing how every investigation connects across subjects, topics, and MYP criteria. Force-directed physics simulation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="port-section port-section-alt">
+  <div class="port-section-inner">
+    <h2>How I Built It</h2>
+    <div class="port-tech">
+      <div class="port-tech-item"><strong>Static Site Generator:</strong> Hugo (v0.142.0)</div>
+      <div class="port-tech-item"><strong>Hosting:</strong> Cloudflare Pages (auto-deploy on push)</div>
+      <div class="port-tech-item"><strong>Source Control:</strong> GitHub</div>
+      <div class="port-tech-item"><strong>Design System:</strong> Custom CSS with subject colour system, SVG illustrations, dark mode</div>
+      <div class="port-tech-item"><strong>Interactive Tools:</strong> Vanilla JavaScript, D3.js, HTML5 Canvas</div>
+      <div class="port-tech-item"><strong>Accessibility:</strong> WCAG AA targets, reduced motion support, keyboard navigation</div>
+      <div class="port-tech-item"><strong>Performance:</strong> No frameworks, minimal JS, lazy loading, preconnect hints</div>
+    </div>
+  </div>
+</section>
+
+<section class="port-section">
+  <div class="port-section-inner">
+    <h2>Presentations</h2>
+    <div class="port-presentations">
+      <div class="port-presentation">
+        <div class="port-pres-date">May 9, 2026</div>
+        <h3>AI in Action Conference</h3>
+        <p>International School of Beijing. Presenting LearnLattice as a case study in AI-assisted curriculum design.</p>
+        <a href="/beijing-2026/">Conference details →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="port-section port-section-alt">
+  <div class="port-section-inner">
+    <h2>About Me</h2>
+    <p>I'm an MYP Mathematics and Science teacher at Nanjing International School, China. I build LearnLattice because I believe every investigation should be beautifully designed, genuinely challenging, and accessible to every student — including those who don't speak English as a first language.</p>
+    <p>I'm seeking a position at a Tier-1/2 IB school from August 2027.</p>
+    <a href="/about/" class="btn-primary" style="margin-top:16px;display:inline-block">Read the full story →</a>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+{{ end }}

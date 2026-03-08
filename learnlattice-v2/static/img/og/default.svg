@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#ogbg)" opacity="0.5"/>
+  <defs><linearGradient id="ogbg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#042f2e"/><stop offset="100%" stop-color="#0f172a"/></linearGradient></defs>
+  <circle cx="1050" cy="120" r="200" fill="#0D9488" opacity="0.04"/>
+  <circle cx="150" cy="500" r="150" fill="#14b8a6" opacity="0.03"/>
+  <text x="80" y="280" font-family="Georgia,serif" font-size="48" fill="#e2e8f0" font-weight="700">LearnLattice</text>
+  <text x="80" y="340" font-family="sans-serif" font-size="22" fill="#94a3b8">Free MYP Mathematics &amp; Science Investigations</text>
+  <line x1="80" y1="380" x2="400" y2="380" stroke="#0D9488" stroke-width="3" opacity="0.5"/>
+  <text x="80" y="430" font-family="sans-serif" font-size="18" fill="#64748b">170+ resources · 10 games · Assessment toolkit</text>
+  <text x="80" y="460" font-family="sans-serif" font-size="18" fill="#64748b">learnlattice.org</text>
+</svg>

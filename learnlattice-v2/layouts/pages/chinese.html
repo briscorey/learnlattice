@@ -1,0 +1,127 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+
+<section class="zh-hero">
+  <div class="zh-hero-inner">
+    <div class="zh-hero-kicker">中文</div>
+    <h1>LearnLattice 学习格子</h1>
+    <p>免费的MYP数学和科学探究资源——为国际学校教师和学生设计。所有资源均可在浏览器中使用，无需下载或登录。</p>
+    <a href="/" class="zh-en-link">Switch to English →</a>
+  </div>
+</section>
+
+<section class="zh-section">
+  <div class="zh-section-inner">
+    <h2>🔢 网站概览</h2>
+    <div class="zh-stats">
+      <div class="zh-stat"><span class="zh-stat-num">{{ len $allResources }}</span><span>教学资源</span></div>
+      <div class="zh-stat"><span class="zh-stat-num">10</span><span>互动游戏</span></div>
+      <div class="zh-stat"><span class="zh-stat-num">7</span><span>学科</span></div>
+      <div class="zh-stat"><span class="zh-stat-num">4</span><span>年级</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="zh-section zh-section-alt">
+  <div class="zh-section-inner">
+    <h2>🎮 互动游戏</h2>
+    <p style="text-align:center;color:var(--ink-muted);margin-bottom:20px">所有游戏无需英语即可操作——视觉交互即是说明。</p>
+    <div class="zh-games">
+      <a href="/resources/probability-simulator-game/" class="zh-game-card">
+        <img src="/img/games/probability-simulator.png" alt="" loading="lazy">
+        <div class="zh-game-info"><strong>概率模拟器</strong><span>掷骰子，比较实验概率和理论概率</span></div>
+      </a>
+      <a href="/resources/equation-balancer-game/" class="zh-game-card">
+        <img src="/img/games/equation-balancer.png" alt="" loading="lazy">
+        <div class="zh-game-info"><strong>方程式配平器</strong><span>拖动系数配平化学方程式</span></div>
+      </a>
+      <a href="/resources/cell-explorer-game/" class="zh-game-card">
+        <img src="/img/games/cell-explorer.png" alt="" loading="lazy">
+        <div class="zh-game-info"><strong>细胞探索者</strong><span>探索动物细胞的结构</span></div>
+      </a>
+      <a href="/resources/geometry-transformer-game/" class="zh-game-card">
+        <img src="/img/games/geometry-transformer.png" alt="" loading="lazy">
+        <div class="zh-game-info"><strong>几何变换器</strong><span>平移、旋转、反射和放大图形</span></div>
+      </a>
+      <a href="/resources/circuit-builder-game/" class="zh-game-card">
+        <img src="/img/games/circuit-builder.png" alt="" loading="lazy">
+        <div class="zh-game-info"><strong>电路构建器</strong><span>拖放组件建造电路</span></div>
+      </a>
+      <a href="/resources/reaction-rate-lab-game/" class="zh-game-card">
+        <img src="/img/games/reaction-rate-lab.png" alt="" loading="lazy">
+        <div class="zh-game-info"><strong>反应速率实验室</strong><span>调节温度和浓度观察粒子碰撞</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="zh-section">
+  <div class="zh-section-inner">
+    <h2>📚 重点探究活动</h2>
+    <p style="text-align:center;color:var(--ink-muted);margin-bottom:20px">以下是最受欢迎的探究活动——每一个都从一个引人入胜的问题开始。</p>
+    <div class="zh-investigations">
+
+      <a href="/resources/the-million-dollar-question-number-sense/" class="zh-inv">
+        <div class="zh-inv-subject" style="color:#0D9488">数学</div>
+        <h3>百万美元问题</h3>
+        <p>一百万美元到底有多重？够装进背包吗？用数感和估算来回答。</p>
+      </a>
+
+      <a href="/resources/the-staircase-problem-algebra-investigation/" class="zh-inv">
+        <div class="zh-inv-subject" style="color:#0D9488">数学</div>
+        <h3>楼梯问题</h3>
+        <p>一步台阶用1块积木，两步用3块，三步用6块。100步需要多少块？</p>
+      </a>
+
+      <a href="/resources/density-and-floating-investigation/" class="zh-inv">
+        <div class="zh-inv-subject" style="color:#2563eb">物理</div>
+        <h3>沉浮的秘密</h3>
+        <p>为什么橙子能浮在水面上，但去了皮之后就沉了？</p>
+      </a>
+
+      <a href="/resources/dead-or-alive-biology-investigation/" class="zh-inv">
+        <div class="zh-inv-subject" style="color:#16a34a">生物</div>
+        <h3>死了还是活着？</h3>
+        <p>火是活的吗？它会生长、消耗能量、对环境做出反应。用七个生命特征来判断。</p>
+      </a>
+
+      <a href="/resources/is-this-die-cheating-probability-investigation/" class="zh-inv">
+        <div class="zh-inv-subject" style="color:#0D9488">数学</div>
+        <h3>这个骰子公平吗？</h3>
+        <p>掷骰子30次。记录每个数字出现的次数。如何用数学来判断骰子是否作弊？</p>
+      </a>
+
+      <a href="/resources/scaling-the-solar-system-idu/" class="zh-inv">
+        <div class="zh-inv-subject" style="color:#7c3aed">跨学科</div>
+        <h3>缩放太阳系</h3>
+        <p>如果太阳是一个篮球，地球有多大？海王星有多远？走出教室，用脚步丈量宇宙。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="zh-section zh-section-alt">
+  <div class="zh-section-inner">
+    <h2>🔗 快速导航</h2>
+    <div class="zh-links">
+      <a href="/explore/" class="zh-link-card"><span>🎲</span><div><strong>探索</strong><span>选择学科或获取随机探究活动</span></div></a>
+      <a href="/games/" class="zh-link-card"><span>🎮</span><div><strong>所有游戏</strong><span>10个互动教学游戏</span></div></a>
+      <a href="/assessment/" class="zh-link-card"><span>📋</span><div><strong>评估工具</strong><span>评分标准、报告评语、学生范例</span></div></a>
+      <a href="/vocabulary/" class="zh-link-card"><span>🔤</span><div><strong>词汇表</strong><span>30个关键术语的视觉解释</span></div></a>
+      <a href="/concept-map/" class="zh-link-card"><span>🗺️</span><div><strong>概念地图</strong><span>262个节点的互动概念网络</span></div></a>
+      <a href="/understand/density" class="zh-link-card"><span>💡</span><div><strong>理解密度</strong><span>互动可视化：拖动物体进入水中</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="zh-section">
+  <div class="zh-section-inner" style="text-align:center">
+    <h2>关于 LearnLattice</h2>
+    <p>LearnLattice 由南京国际学校的 MYP 数学和科学教师 Corey Briscoe 创建。所有资源免费、开源，专为 IB 中学项目设计。</p>
+    <p style="margin-top:12px"><a href="/about/" style="color:var(--teal);text-decoration:none;font-weight:600">了解更多 →</a></p>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+{{ end }}

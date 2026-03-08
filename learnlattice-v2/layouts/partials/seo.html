@@ -6,9 +6,18 @@
 {{- $siteName := .Site.Title -}}
 {{- $isResource := eq .Section "resources" -}}
 {{- $isBlog := eq .Section "blog" -}}
+{{- $isAssessment := eq .Section "assessment" -}}
+{{- $ogImage := "/img/og/default.svg" -}}
+{{- if $isBlog -}}
+  {{- $ogImage = printf "/img/blog/%s.svg" .File.ContentBaseName -}}
+{{- end -}}
 
 {{/* Canonical URL */}}
 <link rel="canonical" href="{{ $url }}">
+{{ if .IsTranslated }}{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}{{ end }}
+<link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
 
 {{/* Open Graph */}}
 <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
@@ -17,6 +26,9 @@
 <meta property="og:url" content="{{ $url }}">
 <meta property="og:site_name" content="{{ $siteName }}">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 {{- with .Date }}
 <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
 {{- end }}
@@ -25,6 +37,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:description" content="{{ $desc | truncate 200 }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}">
 
 {{/* Schema.org JSON-LD */}}
 {{- if .IsHome }}
@@ -78,11 +91,12 @@
   "headline": "{{ .Title }}",
   "description": "{{ $desc | truncate 300 }}",
   "url": "{{ $url }}",
+  "image": "{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}",
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
   "author": {
     "@type": "Person",
-    "name": "Corey",
+    "name": "Corey Briscoe",
     "url": "{{ .Site.BaseURL }}about/"
   },
   "publisher": {
@@ -92,6 +106,23 @@
   },
   "inLanguage": "en",
   "isAccessibleForFree": true
+}
+</script>
+{{- else if $isAssessment }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MYP {{ .Title }}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ $desc | truncate 300 }}"
+      }
+    }
+  ]
 }
 </script>
 {{- else }}

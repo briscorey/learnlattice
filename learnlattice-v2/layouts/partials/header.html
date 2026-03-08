@@ -106,6 +106,13 @@
       {{ end }}
     </ul>
 
+    {{ if .IsTranslated }}
+    <div class="lang-switch">
+      {{ range .Translations }}
+      <a href="{{ .Permalink }}" class="lang-link" title="{{ .Language.LanguageName }}">{{ if eq .Lang "zh" }}中文{{ else }}EN{{ end }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
     <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
       <span class="icon-moon">🌙</span>
       <span class="icon-sun">☀️</span>

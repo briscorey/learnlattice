@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+{{ $exemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
+
+<section class="lm-hero">
+  <div class="lm-hero-inner">
+    <div class="lm-hero-kicker">Free Download</div>
+    <h1>Annotated Student Work Exemplars</h1>
+    <p>Real student responses at levels 3-4, 5-6, and 7-8 — with detailed annotations explaining what makes each response that level. Use them for teaching, moderation, and student self-assessment.</p>
+  </div>
+</section>
+
+<section class="lm-exemplars">
+  <div class="lm-exemplars-inner">
+    <div class="lm-grid">
+      {{ range $exemplars }}
+      <div class="lm-card">
+        <div class="lm-card-levels">
+          <span class="lm-level lm-level-low">3-4</span>
+          <span class="lm-level lm-level-mid">5-6</span>
+          <span class="lm-level lm-level-high">7-8</span>
+        </div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description | truncate 150 }}</p>
+        <a href="{{ .RelPermalink }}" class="lm-view">View exemplar →</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="lm-newsletter">
+  <div class="lm-newsletter-inner">
+    <h2>Get new exemplars delivered to your inbox</h2>
+    <p>One new investigation + one teaching tip + one assessment resource per month. Join the LearnLattice newsletter.</p>
+    {{ partial "newsletter.html" . }}
+  </div>
+</section>
+
+<section class="lm-toolkit">
+  <div class="lm-toolkit-inner">
+    <h2>More Assessment Tools</h2>
+    <div class="lm-toolkit-grid">
+      <a href="/assessment/criterion-b/" class="lm-toolkit-item">
+        <span>📋</span>
+        <div><strong>Criterion B Rubric Card</strong><small>Projectable desk reference</small></div>
+      </a>
+      <a href="/assessment/criterion-c/" class="lm-toolkit-item">
+        <span>📋</span>
+        <div><strong>Criterion C Rubric Card</strong><small>Communication levels</small></div>
+      </a>
+      <a href="/assessment/comments/" class="lm-toolkit-item">
+        <span>💬</span>
+        <div><strong>Report Comment Bank</strong><small>80+ ready-to-use comments</small></div>
+      </a>
+      <a href="/assessment/" class="lm-toolkit-item">
+        <span>🧰</span>
+        <div><strong>Full Assessment Toolkit</strong><small>Everything in one place</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}
