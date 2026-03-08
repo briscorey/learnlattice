@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Investigations{{ else }}{{ $t := .Title }}{{ if gt (len $t) 50 }}{{ $t }}{{ else }}{{ $t }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . | truncate 155 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <meta name="theme-color" content="#0D9488">
+  <meta name="theme-color" content="#0284C7">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   {{ partial "seo.html" . }}
   {{/* Preconnect to external origins */}}
@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   {{/* Critical CSS inline for fastest paint */}}
-  <link rel="stylesheet" href="/css/main.css?v=20260309d">
+  <link rel="stylesheet" href="/css/main.css?v=20260310a">
   {{/* Non-blocking font loading */}}
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>

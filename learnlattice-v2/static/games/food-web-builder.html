@@ -8,16 +8,16 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;overflow:hidden;height:100vh}
 .header{padding:12px 20px;display:flex;align-items:center;justify-content:space-between;background:#0f172a;border-bottom:1px solid #1e293b;z-index:10;position:relative}
-h1{font-size:1.2rem;background:linear-gradient(135deg,#2dd4bf,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-size:1.2rem;background:linear-gradient(135deg,#38BDF8,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .controls{display:flex;gap:8px}
 .ctrl-btn{padding:6px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;transition:all .15s}
-.ctrl-btn:hover{border-color:#2dd4bf;color:#e2e8f0}
+.ctrl-btn:hover{border-color:#38BDF8;color:#e2e8f0}
 .ctrl-btn.danger{border-color:#7f1d1d;color:#fca5a5}
 .ctrl-btn.danger:hover{background:#7f1d1d;color:#fff}
 .sidebar{position:absolute;top:49px;left:0;bottom:0;width:180px;background:#0f172a;border-right:1px solid #1e293b;padding:12px;overflow-y:auto;z-index:5}
 .sidebar-title{font-size:.68rem;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .organism{padding:8px 10px;margin-bottom:4px;border-radius:8px;border:1px solid #1e293b;cursor:grab;transition:all .15s;font-size:.82rem;display:flex;align-items:center;gap:6px}
-.organism:hover{border-color:#2dd4bf;background:#1e293b}
+.organism:hover{border-color:#38BDF8;background:#1e293b}
 .organism .emoji{font-size:1.2rem}
 .organism.placed{opacity:.35;cursor:default}
 .trophic-label{font-size:.6rem;padding:2px 6px;border-radius:4px;margin-left:auto;font-weight:600}
@@ -34,13 +34,13 @@ svg{width:100%;height:100%}
 .node text{font-size:11px;fill:#e2e8f0;text-anchor:middle;pointer-events:none}
 .node .emoji-label{font-size:22px;text-anchor:middle;pointer-events:none}
 .link{stroke-width:2;fill:none;marker-end:url(#arrowhead)}
-.link.energy{stroke:#2dd4bf;opacity:.6}
+.link.energy{stroke:#38BDF8;opacity:.6}
 .link.removing{stroke:#ef4444;opacity:1;stroke-width:3;stroke-dasharray:6,3}
 .info-panel{position:absolute;bottom:16px;left:196px;right:16px;background:rgba(15,23,42,.92);border:1px solid #1e293b;border-radius:12px;padding:14px 18px;backdrop-filter:blur(10px);font-size:.82rem;color:#94a3b8;transition:all .3s}
-.info-panel strong{color:#2dd4bf}
+.info-panel strong{color:#38BDF8}
 .info-panel .impact{color:#f59e0b}
 .stats-bar{display:flex;gap:16px;font-size:.72rem;color:#64748b;padding:6px 12px;background:#020617;border-radius:8px;margin-top:8px}
-.stats-bar span{color:#2dd4bf}
+.stats-bar span{color:#38BDF8}
 </style>
 </head>
 <body>
@@ -61,7 +61,7 @@ svg{width:100%;height:100%}
   <svg id="svg">
     <defs>
       <marker id="arrowhead" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto">
-        <polygon points="0 0, 10 3.5, 0 7" fill="#2dd4bf" opacity=".6"/>
+        <polygon points="0 0, 10 3.5, 0 7" fill="#38BDF8" opacity=".6"/>
       </marker>
     </defs>
     <g id="linksGroup"></g>

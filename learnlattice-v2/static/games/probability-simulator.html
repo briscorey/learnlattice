@@ -9,7 +9,7 @@
 body { font-family: 'Outfit', system-ui, sans-serif; background: #0a0f1a; color: #e0e8f0; min-height: 100vh; }
 .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
 .header { text-align: center; margin-bottom: 32px; }
-.header h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: 2rem; color: #14b8a6; margin-bottom: 8px; }
+.header h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: 2rem; color: #38BDF8; margin-bottom: 8px; }
 .header p { font-size: 0.95rem; color: rgba(255,255,255,0.5); }
 
 /* Controls */
@@ -18,8 +18,8 @@ body { font-family: 'Outfit', system-ui, sans-serif; background: #0a0f1a; color:
 .control-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; }
 select, button { font-family: 'Outfit', sans-serif; font-size: 0.9rem; border-radius: 8px; padding: 10px 16px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e0e8f0; cursor: pointer; transition: all 0.15s; }
 select:hover, button:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
-.btn-roll { background: #0D9488; border-color: #0D9488; font-weight: 600; padding: 10px 28px; }
-.btn-roll:hover { background: #0a7c72; transform: translateY(-1px); }
+.btn-roll { background: #0284C7; border-color: #0284C7; font-weight: 600; padding: 10px 28px; }
+.btn-roll:hover { background: #0369A1; transform: translateY(-1px); }
 .btn-roll.rolling { animation: pulse 0.3s ease; }
 @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 .btn-reset { background: rgba(225,29,72,0.15); border-color: rgba(225,29,72,0.3); color: #fb7185; }
@@ -35,7 +35,7 @@ select:hover, button:hover { background: rgba(255,255,255,0.1); border-color: rg
 /* Stats */
 .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-bottom: 32px; }
 .stat-card { text-align: center; padding: 16px 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; }
-.stat-card .num { font-size: 1.8rem; font-weight: 700; color: #14b8a6; }
+.stat-card .num { font-size: 1.8rem; font-weight: 700; color: #38BDF8; }
 .stat-card .label { font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
 
 /* Chart */
@@ -45,7 +45,7 @@ select:hover, button:hover { background: rgba(255,255,255,0.1); border-color: rg
 .bar-col { display: flex; flex-direction: column; align-items: center; flex: 1; max-width: 80px; height: 100%; justify-content: flex-end; }
 .bar-wrapper { width: 100%; display: flex; gap: 3px; align-items: flex-end; height: calc(100% - 36px); }
 .bar { flex: 1; border-radius: 4px 4px 0 0; transition: height 0.4s ease; min-height: 2px; position: relative; }
-.bar-exp { background: #14b8a6; }
+.bar-exp { background: #38BDF8; }
 .bar-theo { background: rgba(245,158,11,0.5); border: 1px solid rgba(245,158,11,0.4); border-bottom: none; }
 .bar-label { font-size: 0.85rem; font-weight: 600; margin-top: 6px; color: rgba(255,255,255,0.7); }
 .bar-pct { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
@@ -53,12 +53,12 @@ select:hover, button:hover { background: rgba(255,255,255,0.1); border-color: rg
 /* Legend */
 .chart-legend { display: flex; gap: 20px; justify-content: center; margin-top: 12px; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
 .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
-.legend-exp { background: #14b8a6; }
+.legend-exp { background: #38BDF8; }
 .legend-theo { background: rgba(245,158,11,0.5); border: 1px solid rgba(245,158,11,0.4); }
 
 /* Question prompt */
 .question-box { background: linear-gradient(135deg, rgba(20,184,166,0.08), rgba(245,158,11,0.06)); border: 1px solid rgba(20,184,166,0.2); border-radius: 12px; padding: 20px 24px; text-align: center; }
-.question-box h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.15rem; color: #14b8a6; margin-bottom: 8px; }
+.question-box h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.15rem; color: #38BDF8; margin-bottom: 8px; }
 .question-box p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
 
 /* Fair/unfair meter */
@@ -247,7 +247,7 @@ select:hover, button:hover { background: rgba(255,255,255,0.1); border-color: rg
     var fairness = Math.max(0, Math.min(100, 100 - (chi2 / df) * 15));
 
     fairnessBar.style.width = fairness + '%';
-    if (fairness > 60) fairnessBar.style.background = '#14b8a6';
+    if (fairness > 60) fairnessBar.style.background = '#38BDF8';
     else if (fairness > 30) fairnessBar.style.background = '#f59e0b';
     else fairnessBar.style.background = '#e11d48';
   }

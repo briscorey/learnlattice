@@ -42,11 +42,11 @@
     {{ $subject := "" }}
     {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
 
-    {{ $accentColor := "#0D9488" }}
+    {{ $accentColor := "#0284C7" }}
     {{ if eq $subject "Biology" }}{{ $accentColor = "#0284C7" }}{{ end }}
     {{ if eq $subject "Chemistry" }}{{ $accentColor = "#e11d48" }}{{ end }}
     {{ if eq $subject "Physics" }}{{ $accentColor = "#0284C7" }}{{ end }}
-    {{ if eq $subject "Mathematics" }}{{ $accentColor = "#0D9488" }}{{ end }}
+    {{ if eq $subject "Mathematics" }}{{ $accentColor = "#0284C7" }}{{ end }}
     {{ if eq $subject "Earth Science" }}{{ $accentColor = "#d97706" }}{{ end }}
     {{ if eq $subject "Ecology" }}{{ $accentColor = "#16a34a" }}{{ end }}
 
