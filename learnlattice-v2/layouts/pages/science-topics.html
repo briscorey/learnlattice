@@ -1,0 +1,141 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+
+{{ $subjects := slice
+  (dict "name" "Biology" "icon" "🧬" "color" "green" "svg" "biology"
+    "desc" "Cells, body systems, adaptation, and the criteria for life."
+    "url" "/subjects/biology/"
+    "grades" "Grades 6–9")
+  (dict "name" "Chemistry" "icon" "⚗️" "color" "rose" "svg" "chemistry"
+    "desc" "Reactions, particles, properties of matter, and atomic structure."
+    "url" "/subjects/chemistry/"
+    "grades" "Grades 6–9")
+  (dict "name" "Physics" "icon" "⚡" "color" "blue" "svg" "physics"
+    "desc" "Forces, energy, waves, circuits, magnetism, and motion."
+    "url" "/subjects/science/"
+    "grades" "Grades 6–9")
+  (dict "name" "Earth Science" "icon" "🌍" "color" "amber" "svg" "earth-science"
+    "desc" "Rocks, plate tectonics, climate data, and earth systems."
+    "url" "/subjects/earth-science/"
+    "grades" "Grades 6–9")
+  (dict "name" "Space Science" "icon" "🪐" "color" "violet" "svg" "space-science"
+    "desc" "Moon phases, the solar system, stellar evidence, and scale."
+    "url" "/subjects/space-science/"
+    "grades" "Grades 6–9")
+  (dict "name" "Ecology" "icon" "🌿" "color" "emerald" "svg" "ecology"
+    "desc" "Ecosystems, food webs, biodiversity, and fieldwork."
+    "url" "/subjects/ecology/"
+    "grades" "Grades 6–8")
+}}
+
+{{/* ── HERO ── */}}
+<section class="topicmap-hero">
+  <div class="topicmap-hero-inner">
+    <div class="topicmap-hero-kicker">Topic Map</div>
+    <h1>Middle School Science</h1>
+    <p>Six disciplines. Every investigation, unit, and lab — organised by topic. Click a subject to jump in.</p>
+
+    <nav class="topicmap-nav" aria-label="Jump to subject">
+      {{ range $subjects }}
+      <a href="#{{ .name | urlize }}" class="topicmap-pill rc-{{ .color }}">
+        <span>{{ .icon }}</span>
+        {{ .name }}
+      </a>
+      {{ end }}
+      <a href="#inquiry-routes" class="topicmap-pill rc-teal">
+        <span>🔗</span>
+        Cross-topic
+      </a>
+    </nav>
+  </div>
+</section>
+
+{{/* ── Subject sections ── */}}
+{{ range $subjects }}
+  {{ $subj := .name }}
+  {{ $resources := where $allResources "Params.subjects" "intersect" (slice $subj) }}
+  {{ $count := len $resources }}
+
+<section class="topicmap-section" id="{{ $subj | urlize }}">
+  <div class="topicmap-section-header">
+    <div class="topicmap-section-visual rc-{{ .color }}">
+      <img src="/img/subjects/{{ .svg }}.svg" alt="" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="topicmap-section-info">
+      <h2>{{ .icon }} {{ $subj }}</h2>
+      <p>{{ .desc }}</p>
+      <div class="topicmap-section-meta">
+        <span>{{ $count }} resources</span>
+        <span>·</span>
+        <span>{{ .grades }}</span>
+      </div>
+    </div>
+  </div>
+
+  {{ if gt $count 0 }}
+  <div class="topicmap-cards resources-grid">
+    {{ range first 6 $resources }}
+      {{ partial "resource-card.html" . }}
+    {{ end }}
+  </div>
+  {{ if gt $count 6 }}
+  <div class="topicmap-more">
+    <a href="{{ .url | default (printf "/subjects/%s/" ($subj | urlize)) }}" class="topicmap-more-link">
+      View all {{ $count }} {{ $subj }} resources →
+    </a>
+  </div>
+  {{ end }}
+  {{ end }}
+</section>
+{{ end }}
+
+{{/* ── Cross-topic routes ── */}}
+<section class="topicmap-section" id="inquiry-routes">
+  <div class="topicmap-section-header">
+    <div class="topicmap-section-visual rc-teal">
+      <div style="font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%">🔗</div>
+    </div>
+    <div class="topicmap-section-info">
+      <h2>🔗 Cross-topic Inquiry Routes</h2>
+      <p>Investigations that cut across subjects — connecting mathematics to science, ecology to statistics, physics to measurement.</p>
+    </div>
+  </div>
+
+  {{ $idu := where $allResources "Params.tags" "intersect" (slice "Interdisciplinary") }}
+  {{ if gt (len $idu) 0 }}
+  <div class="topicmap-cards resources-grid">
+    {{ range $idu }}
+      {{ partial "resource-card.html" . }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="topicmap-links">
+    <a href="/concept-map/" class="topicmap-link-card">
+      <span class="topicmap-link-icon">🗺️</span>
+      <div>
+        <strong>Concept Map</strong>
+        <span>See how every investigation connects</span>
+      </div>
+    </a>
+    <a href="/tags/criterion-b/" class="topicmap-link-card">
+      <span class="topicmap-link-icon">🔍</span>
+      <div>
+        <strong>Criterion B Investigations</strong>
+        <span>All resources targeting MYP investigating</span>
+      </div>
+    </a>
+    <a href="/subjects/science/" class="topicmap-link-card">
+      <span class="topicmap-link-icon">🔬</span>
+      <div>
+        <strong>All MYP Science</strong>
+        <span>Browse the complete science library</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+{{ end }}

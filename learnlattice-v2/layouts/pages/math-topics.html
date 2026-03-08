@@ -1,0 +1,117 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ $mathResources := where $allResources "Params.subjects" "intersect" (slice "Mathematics") }}
+
+{{ $topics := slice
+  (dict "name" "Number Sense" "icon" "🔢" "tag" "Number Sense"
+    "desc" "Place value, exponents, number systems, and operations."
+    "grades" "Grades 6–8")
+  (dict "name" "Fractions & Ratios" "icon" "½" "tag" "Fractions"
+    "desc" "Fractions, decimals, percentages, ratios, and proportional reasoning."
+    "grades" "Grades 6–8")
+  (dict "name" "Geometry" "icon" "📐" "tag" "Geometry"
+    "desc" "Shape, measurement, tessellations, transformations, and Pythagoras."
+    "grades" "Grades 6–9")
+  (dict "name" "Algebra" "icon" "𝑥" "tag" "Algebra"
+    "desc" "Patterns, expressions, equations, functions, and generalisation."
+    "grades" "Grades 6–9")
+  (dict "name" "Probability" "icon" "🎲" "tag" "Probability"
+    "desc" "Chance, experimental and theoretical probability, fairness."
+    "grades" "Grades 6–9")
+  (dict "name" "Statistics" "icon" "📊" "tag" "Statistics"
+    "desc" "Data collection, analysis, representation, and inference."
+    "grades" "Grades 6–9")
+}}
+
+{{/* ── HERO ── */}}
+<section class="topicmap-hero">
+  <div class="topicmap-hero-inner">
+    <div class="topicmap-hero-kicker">Topic Map</div>
+    <h1>Middle School Mathematics</h1>
+    <p>{{ len $mathResources }} resources across six topic branches — from number sense to statistics. Click a topic to jump in.</p>
+
+    <nav class="topicmap-nav" aria-label="Jump to topic">
+      {{ range $topics }}
+      <a href="#{{ .name | urlize }}" class="topicmap-pill rc-teal">
+        <span>{{ .icon }}</span>
+        {{ .name }}
+      </a>
+      {{ end }}
+      <a href="#by-grade" class="topicmap-pill rc-teal">
+        <span>📚</span>
+        By Grade
+      </a>
+    </nav>
+  </div>
+</section>
+
+{{/* ── Topic sections ── */}}
+{{ range $topics }}
+  {{ $tag := .tag }}
+  {{ $topicResources := where $mathResources "Params.tags" "intersect" (slice $tag) }}
+  {{ $count := len $topicResources }}
+
+<section class="topicmap-section" id="{{ .name | urlize }}">
+  <div class="topicmap-section-header">
+    <div class="topicmap-section-visual rc-teal">
+      <img src="/img/subjects/mathematics.svg" alt="" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="topicmap-section-info">
+      <h2>{{ .icon }} {{ .name }}</h2>
+      <p>{{ .desc }}</p>
+      <div class="topicmap-section-meta">
+        <span>{{ $count }} resources</span>
+        <span>·</span>
+        <span>{{ .grades }}</span>
+      </div>
+    </div>
+  </div>
+
+  {{ if gt $count 0 }}
+  <div class="topicmap-cards resources-grid">
+    {{ range first 6 $topicResources }}
+      {{ partial "resource-card.html" . }}
+    {{ end }}
+  </div>
+  {{ if gt $count 6 }}
+  <div class="topicmap-more">
+    <a href="/subjects/mathematics/#{{ $tag | urlize }}" class="topicmap-more-link">
+      View all {{ $count }} {{ .name }} resources →
+    </a>
+  </div>
+  {{ end }}
+  {{ end }}
+</section>
+{{ end }}
+
+{{/* ── By Grade ── */}}
+<section class="topicmap-section" id="by-grade">
+  <div class="topicmap-section-header">
+    <div class="topicmap-section-visual rc-teal">
+      <div style="font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%">📚</div>
+    </div>
+    <div class="topicmap-section-info">
+      <h2>📚 Browse by Grade</h2>
+      <p>Every grade collection combines unit plans with companion worksheets, investigations, and games.</p>
+    </div>
+  </div>
+
+  <div class="topicmap-links">
+    {{ range (slice "Grade 6" "Grade 7" "Grade 8" "Grade 9") }}
+      {{ $grade := . }}
+      {{ $count := len (where $mathResources "Params.year_levels" "intersect" (slice $grade)) }}
+    <a href="/year-levels/{{ $grade | urlize }}/" class="topicmap-link-card">
+      <span class="topicmap-link-icon">{{ $grade }}</span>
+      <div>
+        <strong>{{ $grade }} Mathematics</strong>
+        <span>{{ $count }} resources</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+{{ end }}
