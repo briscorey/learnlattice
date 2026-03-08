@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="400" fill="#0f172a"/>
+  <defs><linearGradient id="bg5" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#14b8a6" stop-opacity="0.06"/><stop offset="100%" stop-color="#0f172a"/></linearGradient></defs>
+  <rect width="1200" height="400" fill="url(#bg5)"/>
+  <!-- Achievement level bars -->
+  <rect x="200" y="300" width="80" height="40" rx="4" fill="#334155" opacity="0.4"/>
+  <text x="240" y="326" text-anchor="middle" font-size="16" fill="#64748b" opacity="0.5" font-family="sans-serif">1-2</text>
+  <rect x="320" y="260" width="80" height="80" rx="4" fill="#334155" opacity="0.45"/>
+  <text x="360" y="306" text-anchor="middle" font-size="16" fill="#64748b" opacity="0.5" font-family="sans-serif">3-4</text>
+  <rect x="440" y="200" width="80" height="140" rx="4" fill="#334155" opacity="0.5"/>
+  <text x="480" y="280" text-anchor="middle" font-size="16" fill="#94a3b8" opacity="0.6" font-family="sans-serif">5-6</text>
+  <rect x="560" y="120" width="80" height="220" rx="4" fill="#0D9488" opacity="0.3"/>
+  <rect x="560" y="120" width="80" height="220" rx="4" fill="none" stroke="#14b8a6" stroke-width="2" opacity="0.6"/>
+  <text x="600" y="240" text-anchor="middle" font-family="Georgia,serif" font-size="32" fill="#14b8a6" opacity="0.8">7</text>
+  <rect x="680" y="100" width="80" height="240" rx="4" fill="#334155" opacity="0.3"/>
+  <text x="720" y="230" text-anchor="middle" font-size="16" fill="#64748b" opacity="0.4" font-family="sans-serif">8</text>
+  <!-- Arrow pointing to 7 -->
+  <line x1="600" y1="90" x2="600" y2="110" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="594,92 606,92 600,80" fill="#14b8a6" opacity="0.5"/>
+  <!-- Annotation -->
+  <text x="900" y="180" text-anchor="middle" font-size="13" fill="#94a3b8" opacity="0.4" font-family="sans-serif">"Describes patterns"</text>
+  <text x="900" y="210" text-anchor="middle" font-size="13" fill="#14b8a6" opacity="0.5" font-family="sans-serif">"Justifies the generalisation"</text>
+  <text x="900" y="240" text-anchor="middle" font-size="13" fill="#14b8a6" opacity="0.6" font-family="sans-serif">"Makes connections"</text>
+</svg>

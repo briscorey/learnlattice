@@ -23,7 +23,7 @@ statement_of_inquiry: "Systematic investigation of variables allows us to determ
 formula: "growth rate = change in height ÷ time"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "2–3 lessons"
 ---
 

@@ -20,6 +20,7 @@ tags:
 formula: "probability = favourable / total"
 download_url: ""
 download_label: "Unit Plan PDF"
+difficulty: "approaching"
 key_concept: "Logic"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Logical reasoning about chance helps us evaluate risk and make informed decisions."

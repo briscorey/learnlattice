@@ -25,7 +25,7 @@ statement_of_inquiry: "The forms that fit together without gaps or overlaps foll
 formula: "Interior angle of regular polygon = (n-2) × 180° ÷ n"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "2 lessons"
 ---
 

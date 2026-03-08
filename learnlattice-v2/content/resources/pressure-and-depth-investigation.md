@@ -25,7 +25,7 @@ statement_of_inquiry: "The relationship between depth and pressure follows a pre
 formula: "P = ρgh (pressure = density × gravitational field strength × height)"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Meeting"
+difficulty: "exceeding"
 duration: "2–3 lessons"
 ---
 

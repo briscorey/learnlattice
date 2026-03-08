@@ -26,7 +26,7 @@ statement_of_inquiry: "The relationship between distance and time reveals fundam
 formula: "speed = distance ÷ time"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "2 lessons"
 ---
 

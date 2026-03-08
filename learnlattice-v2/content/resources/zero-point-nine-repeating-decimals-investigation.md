@@ -30,7 +30,7 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Meeting"
+difficulty: "meeting"
 duration: "2–3 lessons"
 ---
 

@@ -21,6 +21,7 @@ tags:
 formula: "rule -> term n"
 download_url: ""
 download_label: "Worksheet PDF"
+difficulty: "approaching"
 key_concept: "Relationships"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Generalising patterns through symbolic relationships allows us to predict and explain change."

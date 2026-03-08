@@ -28,7 +28,7 @@ statement_of_inquiry: "Exponential patterns in natural systems eventually encoun
 formula: "N = N₀ × 2^(t/d) where d = doubling time"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Exceeding"
+difficulty: "exceeding"
 duration: "3–4 lessons"
 ---
 

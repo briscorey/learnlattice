@@ -19,6 +19,7 @@ tags:
 formula: "mixture -> properties -> method"
 download_url: ""
 download_label: "Unit Plan PDF"
+difficulty: "approaching"
 key_concept: "Change"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."

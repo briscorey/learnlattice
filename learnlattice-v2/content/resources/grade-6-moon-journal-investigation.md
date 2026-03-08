@@ -23,7 +23,7 @@ statement_of_inquiry: "Regular observation of change over time reveals patterns 
 formula: "Lunar cycle ≈ 29.5 days"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "2–3 lessons"
 ---
 

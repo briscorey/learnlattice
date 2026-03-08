@@ -41,6 +41,13 @@
     <h3>{{ .Title }}</h3>
     <p>{{ .Description | default .Summary | truncate 120 }}</p>
     <div class="resource-meta">
+      {{ with .Params.difficulty }}
+      <span class="resource-difficulty resource-difficulty--{{ . }}">
+        {{ if eq . "approaching" }}🟢 Approaching{{ end }}
+        {{ if eq . "meeting" }}🟡 Meeting{{ end }}
+        {{ if eq . "exceeding" }}🔴 Exceeding{{ end }}
+      </span>
+      {{ end }}
       {{ range first 2 .Params.year_levels }}
         <span class="resource-tag">{{ . }}</span>
       {{ end }}

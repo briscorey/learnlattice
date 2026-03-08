@@ -26,7 +26,7 @@ statement_of_inquiry: "The form in which we collect and present data determines 
 formula: "mean = sum of values ÷ number of values"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "2 lessons"
 ---
 

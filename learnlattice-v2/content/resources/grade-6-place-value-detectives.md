@@ -23,7 +23,7 @@ statement_of_inquiry: "The form of our number system is a human invention — an
 formula: "In base b: d₂b² + d₁b¹ + d₀b⁰"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "2 lessons"
 ---
 

@@ -18,6 +18,10 @@
     {{ $posts := where .Site.RegularPages "Section" "blog" }}
     {{ range $posts.ByDate.Reverse }}
     <article class="blog-card">
+      {{ $slug := .File.ContentBaseName }}
+      <a href="{{ .RelPermalink }}" class="blog-card-image">
+        <img src="/img/blog/{{ $slug }}.svg" alt="" loading="lazy" aria-hidden="true">
+      </a>
       <div class="blog-card-meta">
         {{ with .Params.pillar }}
         <span class="blog-card-pillar blog-card-pillar--{{ . | urlize }}">{{ . }}</span>

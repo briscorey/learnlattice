@@ -1,0 +1,182 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ $investigations := where $allResources "Params.resource_types" "intersect" (slice "Investigation Pack") }}
+{{ $games := where .Site.RegularPages "Params.resource_types" "intersect" (slice "Interactive Game") }}
+
+{{ $subjects := slice
+  (dict "name" "Mathematics" "icon" "🔢" "color" "teal" "svg" "mathematics" "tagline" "Patterns, puzzles, and proofs" "url" "/subjects/mathematics/")
+  (dict "name" "Biology" "icon" "🧬" "color" "green" "svg" "biology" "tagline" "Life under the microscope" "url" "/subjects/biology/")
+  (dict "name" "Chemistry" "icon" "⚗️" "color" "rose" "svg" "chemistry" "tagline" "Reactions and discoveries" "url" "/subjects/chemistry/")
+  (dict "name" "Physics" "icon" "⚡" "color" "blue" "svg" "physics" "tagline" "Forces, waves, and energy" "url" "/subjects/science/")
+  (dict "name" "Earth Science" "icon" "🌍" "color" "amber" "svg" "earth-science" "tagline" "Rocks, plates, and climate" "url" "/subjects/earth-science/")
+  (dict "name" "Space Science" "icon" "🪐" "color" "violet" "svg" "space-science" "tagline" "Moons, planets, and stars" "url" "/subjects/space-science/")
+  (dict "name" "Ecology" "icon" "🌿" "color" "emerald" "svg" "ecology" "tagline" "Ecosystems and connections" "url" "/subjects/ecology/")
+}}
+
+{{ $gameScreenshots := dict
+  "cell-explorer-game" "cell-explorer"
+  "equation-balancer-game" "equation-balancer"
+  "food-web-builder-game" "food-web-builder"
+  "function-machine-game" "function-machine"
+  "prime-maze-game" "prime-maze"
+  "probability-simulator-game" "probability-simulator"
+  "tectonic-puzzle-game" "tectonic-puzzle"
+}}
+
+{{/* ── HERO ── */}}
+<section class="explore-hero">
+  <svg class="explore-hero-bg" aria-hidden="true" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
+    <circle cx="100" cy="80" r="120" fill="#0D9488" opacity="0.04"/>
+    <circle cx="700" cy="300" r="150" fill="#14b8a6" opacity="0.03"/>
+    <circle cx="400" cy="200" r="80" fill="#0D9488" opacity="0.02"/>
+  </svg>
+  <div class="explore-hero-inner">
+    <h1>What are you curious about?</h1>
+    <p>Pick a subject, play a game, or let us surprise you.</p>
+    <button class="explore-surprise-btn" id="surpriseBtn" onclick="surpriseMe()">
+      <span class="explore-surprise-icon">🎲</span>
+      Surprise me with an investigation
+    </button>
+  </div>
+</section>
+
+{{/* ── Surprise result (hidden by default) ── */}}
+<section class="explore-surprise-result" id="surpriseResult" style="display:none;">
+  <div class="explore-surprise-card" id="surpriseCard">
+    <div class="explore-surprise-dismiss" onclick="document.getElementById('surpriseResult').style.display='none'">✕</div>
+    <div class="explore-surprise-subject" id="surpriseSubject"></div>
+    <h2 id="surpriseTitle"></h2>
+    <p id="surpriseDesc"></p>
+    <a id="surpriseLink" href="#" class="explore-surprise-go">Start this investigation →</a>
+  </div>
+</section>
+
+{{/* ── SUBJECT CARDS ── */}}
+<section class="explore-subjects">
+  <div class="explore-subjects-grid">
+    {{ range $subjects }}
+    {{ $count := len (where $allResources "Params.subjects" "intersect" (slice .name)) }}
+    <a href="{{ .url }}" class="explore-subject-card rc-{{ .color }}">
+      <div class="explore-subject-illustration">
+        <img src="/img/subjects/{{ .svg }}.svg" alt="" loading="lazy" aria-hidden="true">
+      </div>
+      <div class="explore-subject-info">
+        <span class="explore-subject-icon">{{ .icon }}</span>
+        <h2>{{ .name }}</h2>
+        <p>{{ .tagline }}</p>
+        <span class="explore-subject-count">{{ $count }} resources</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+{{/* ── GAMES SHOWCASE ── */}}
+<section class="explore-games">
+  <div class="explore-games-inner">
+    <div class="explore-games-header">
+      <h2>Play a game</h2>
+      <p>Interactive tools that make the learning the game itself.</p>
+      <a href="/games/" class="explore-games-all">All {{ len $games }} games →</a>
+    </div>
+    <div class="explore-games-scroll">
+      {{ range first 5 $games }}
+      {{ $slug := .File.ContentBaseName }}
+      {{ $ss := index $gameScreenshots $slug }}
+      <a href="{{ .RelPermalink }}" class="explore-game-thumb">
+        {{ with $ss }}
+        <img src="/img/games/{{ . }}.png" alt="{{ $.Title }}" loading="lazy">
+        {{ end }}
+        <div class="explore-game-label">{{ .Title }}</div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── BY GRADE ── */}}
+<section class="explore-grades">
+  <div class="explore-grades-inner">
+    <h2>Find resources for your grade</h2>
+    <div class="explore-grades-grid">
+      {{ range (slice "Grade 6" "Grade 7" "Grade 8" "Grade 9") }}
+      {{ $grade := . }}
+      {{ $count := len (where $allResources "Params.year_levels" "intersect" (slice $grade)) }}
+      <a href="/year-levels/{{ $grade | urlize }}/" class="explore-grade-card">
+        <span class="explore-grade-num">{{ strings.TrimPrefix "Grade " $grade }}</span>
+        <span class="explore-grade-label">{{ $grade }}</span>
+        <span class="explore-grade-count">{{ $count }} resources</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── FEATURED INVESTIGATIONS ── */}}
+<section class="explore-featured">
+  <div class="explore-featured-inner">
+    <h2>Investigations students love</h2>
+    <p>These are the ones that make the whole class go quiet — then erupt into debate.</p>
+    <div class="resources-grid">
+      {{ $flagships := where $allResources "Params.teacher_moves" "ne" nil }}
+      {{ range first 6 $flagships }}
+        {{ partial "resource-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── CONCEPT MAP TEASER ── */}}
+<section class="explore-map-teaser">
+  <div class="explore-map-inner">
+    <div class="explore-map-text">
+      <h2>See how everything connects</h2>
+      <p>Every investigation, every topic, every key concept — mapped in one interactive visualisation.</p>
+      <a href="/concept-map/" class="btn-primary">Open the Concept Map</a>
+    </div>
+    <div class="explore-map-preview">
+      <svg viewBox="0 0 200 150" aria-hidden="true">
+        <line x1="50" y1="30" x2="100" y2="75" stroke="#0D9488" stroke-width="1" opacity="0.3"/>
+        <line x1="150" y1="30" x2="100" y2="75" stroke="#0D9488" stroke-width="1" opacity="0.3"/>
+        <line x1="100" y1="75" x2="60" y2="120" stroke="#0D9488" stroke-width="1" opacity="0.25"/>
+        <line x1="100" y1="75" x2="140" y2="120" stroke="#0D9488" stroke-width="1" opacity="0.25"/>
+        <line x1="50" y1="30" x2="150" y2="30" stroke="#0D9488" stroke-width="0.8" opacity="0.15"/>
+        <line x1="60" y1="120" x2="140" y2="120" stroke="#0D9488" stroke-width="0.8" opacity="0.15"/>
+        <circle cx="50" cy="30" r="8" fill="#0D9488" opacity="0.3"/>
+        <circle cx="150" cy="30" r="8" fill="#14b8a6" opacity="0.3"/>
+        <circle cx="100" cy="75" r="10" fill="#0D9488" opacity="0.4"/>
+        <circle cx="60" cy="120" r="7" fill="#d97706" opacity="0.3"/>
+        <circle cx="140" cy="120" r="7" fill="#e11d48" opacity="0.3"/>
+        <circle cx="20" cy="60" r="4" fill="#0D9488" opacity="0.15"/>
+        <circle cx="180" cy="90" r="4" fill="#0D9488" opacity="0.15"/>
+        <line x1="50" y1="30" x2="20" y2="60" stroke="#0D9488" stroke-width="0.5" opacity="0.15"/>
+        <line x1="150" y1="30" x2="180" y2="90" stroke="#0D9488" stroke-width="0.5" opacity="0.15"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+{{/* ── RANDOMISER SCRIPT ── */}}
+<script>
+var investigations = [
+  {{ range $investigations }}
+  {title: {{ .Title | jsonify }}, desc: {{ (.Description | default .Summary | truncate 140) | jsonify }}, url: {{ .RelPermalink | jsonify }}, subject: {{ with .Params.subjects }}{{ index . 0 | jsonify }}{{ else }}""{{ end }} },
+  {{ end }}
+];
+
+function surpriseMe() {
+  var inv = investigations[Math.floor(Math.random() * investigations.length)];
+  document.getElementById('surpriseTitle').textContent = inv.title;
+  document.getElementById('surpriseDesc').textContent = inv.desc;
+  document.getElementById('surpriseSubject').textContent = inv.subject;
+  document.getElementById('surpriseLink').href = inv.url;
+  var r = document.getElementById('surpriseResult');
+  r.style.display = 'block';
+  r.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+</script>
+
+{{ end }}

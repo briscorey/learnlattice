@@ -21,6 +21,7 @@ tags:
 formula: "orbit ∝ distance and time"
 download_url: ""
 download_label: "Companion Resource PDF"
+difficulty: "approaching"
 key_concept: "Relationships"
 global_context: "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."

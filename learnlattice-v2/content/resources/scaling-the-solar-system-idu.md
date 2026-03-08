@@ -29,7 +29,7 @@ statement_of_inquiry: "The relationships between quantities at vastly different 
 formula: "scale factor = model size ÷ actual size"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "3–4 lessons"
 ---
 

@@ -25,7 +25,7 @@ statement_of_inquiry: "Understanding how components are connected within a syste
 formula: "V = IR (Ohm's Law) · Series: I_total = I_1 = I_2 · Parallel: I_total = I_1 + I_2"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Meeting"
+difficulty: "exceeding"
 duration: "2–3 lessons"
 ---
 

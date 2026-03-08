@@ -25,7 +25,7 @@ statement_of_inquiry: "Proportional relationships allow us to scale quantities w
 formula: "scale factor = new amount ÷ original amount"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Approaching"
+difficulty: "approaching"
 duration: "1–2 lessons"
 ---
 

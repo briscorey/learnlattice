@@ -142,6 +142,11 @@ summaryLength = 30
   [[params.nav_dropdowns]]
     key = "explore"
     [[params.nav_dropdowns.items]]
+      title = "Explore"
+      icon = "🎲"
+      url = "/explore/"
+      description = "Pick a subject, play a game, or get surprised."
+    [[params.nav_dropdowns.items]]
       title = "All Resources"
       icon = "📚"
       url = "/resources/"
@@ -493,7 +498,7 @@ summaryLength = 30
   [[menu.main]]
     name = "Explore"
     identifier = "explore"
-    url = "/resources/"
+    url = "/explore/"
     weight = 5
   [[menu.main]]
     name = "About"

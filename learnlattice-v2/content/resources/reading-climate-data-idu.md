@@ -29,7 +29,7 @@ statement_of_inquiry: "Statistical analysis of real-world data reveals patterns 
 formula: "mean anomaly = observed temperature − baseline average"
 download_url: ""
 download_label: "Investigation Pack PDF"
-difficulty: "Exceeding"
+difficulty: "exceeding"
 duration: "4–5 lessons"
 ---
 

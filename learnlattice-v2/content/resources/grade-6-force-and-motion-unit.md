@@ -18,6 +18,7 @@ tags:
 formula: "F = ma"
 download_url: ""
 download_label: "Unit Plan PDF"
+difficulty: "approaching"
 key_concept: "Systems"
 global_context: "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help us understand the natural world."
