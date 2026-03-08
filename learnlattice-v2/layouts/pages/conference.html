@@ -1,0 +1,120 @@
+{{ define "main" }}
+
+<section class="conf-hero">
+  <div class="conf-hero-inner">
+    <div class="conf-hero-badge">AI in Action 2026 · International School of Beijing</div>
+    <h1 class="conf-hero-title">How one classroom teacher used AI to build 125+ MYP investigations</h1>
+    <p class="conf-hero-sub">Every resource on this site is free, classroom-ready, and designed for multilingual learners. Start using them on Monday.</p>
+    <div class="conf-hero-meta">
+      <span><strong>May 9, 2026</strong> · Beijing</span>
+      <span>Corey · MYP Mathematics & Science</span>
+      <span>Nanjing International School</span>
+    </div>
+  </div>
+</section>
+
+<section class="conf-section conf-section--alt reveal">
+  <div class="conf-inner">
+    <h2>What you'll find here</h2>
+    <p>LearnLattice is a free, practitioner-built resource library for MYP mathematics and science — with features designed specifically for international school classrooms.</p>
+
+    <div class="conf-features">
+      <div class="conf-feature">
+        <h3>🧭 Teacher Moves</h3>
+        <p>Every flagship investigation includes a pacing guide, EAL scaffolds, and "what to listen for" cues — the layer between a worksheet and a great lesson.</p>
+        <a href="/resources/the-million-dollar-question-number-sense/">See an example →</a>
+      </div>
+      <div class="conf-feature">
+        <h3>📽️ Classroom Mode</h3>
+        <p>One click turns any investigation into a full-screen presentation. Arrow keys to advance. Dark background. Designed for projectors.</p>
+        <a href="/resources/the-staircase-problem-algebra-investigation/">Try it →</a>
+      </div>
+      <div class="conf-feature">
+        <h3>🧠 Thinking Classroom Ready</h3>
+        <p>Investigations aligned with Liljedahl's Building Thinking Classrooms practices — random groups, VNPSs, and thinking tasks built in.</p>
+        <a href="/blog/thinking-classrooms-meet-myp/">Read more →</a>
+      </div>
+      <div class="conf-feature">
+        <h3>🌏 EAL-First Design</h3>
+        <p>Every hook works visually before any reading. Problems come before language. Built for rooms where six languages are spoken.</p>
+        <a href="/eal/">See the approach →</a>
+      </div>
+      <div class="conf-feature">
+        <h3>🎮 Interactive Games</h3>
+        <p>Browser-based simulations — probability simulator, equation balancer, cell explorer, and more. No login, no app, any device.</p>
+        <a href="/games/">Play now →</a>
+      </div>
+      <div class="conf-feature">
+        <h3>🗺️ Concept Map</h3>
+        <p>An interactive D3.js visualisation showing how every MYP concept connects across mathematics and science.</p>
+        <a href="/concept-map/">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="conf-section reveal">
+  <div class="conf-inner">
+    <h2>Use these on Monday</h2>
+    <p>These five investigations are the most immediately usable resources on the site. Each includes the full investigation, teacher moves, EAL scaffolds, and MYP criteria alignment. Click any card to open it.</p>
+
+    <div class="conf-start-grid">
+      {{ $picks := slice
+        "the-million-dollar-question-number-sense"
+        "the-staircase-problem-algebra-investigation"
+        "is-this-die-cheating-probability-investigation"
+        "the-invisible-thread-ecology-investigation"
+        "the-disappearing-candle-chemistry-investigation"
+      }}
+      {{ range $picks }}
+        {{ $page := $.Site.GetPage (printf "/resources/%s" .) }}
+        {{ if $page }}
+        <a href="{{ $page.RelPermalink }}" class="conf-start-card">
+          <h3>{{ $page.Title }}</h3>
+          <p>{{ $page.Description | truncate 120 }}</p>
+        </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="conf-section conf-section--alt reveal">
+  <div class="conf-inner">
+    <h2>The story behind this site</h2>
+    <p>I teach MYP mathematics and science at Nanjing International School. Thirteen years in classrooms — ten in Australian public schools, three in international education. I teach non-English speaking students using inquiry-based pedagogy.</p>
+    <p>I built LearnLattice because the resources I needed didn't exist: genuinely inquiry-based, properly aligned to MYP criteria, and designed for multilingual learners. What started as personal classroom materials became a platform with 125+ resources spanning 12 MYP strands across 4 year levels.</p>
+    <p>The technology is AI-assisted — I used Claude as a development partner to build the framework, the games, and the infrastructure. The pedagogy is mine. The classroom testing is mine. The voice is mine. This is what practitioner-led, AI-amplified resource development looks like.</p>
+    <p><a href="/about/">Read the full story →</a></p>
+  </div>
+</section>
+
+<section class="conf-section reveal">
+  <div class="conf-inner">
+    <h2>Read the blog</h2>
+    <p>Ideas about craft, thinking, and IB practice — written from inside the classroom.</p>
+    <div class="conf-start-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <a href="{{ .RelPermalink }}" class="conf-start-card">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description | truncate 120 }}</p>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+<section class="conf-section reveal" style="text-align: center; padding-bottom: 80px;">
+  <div class="conf-inner">
+    <h2>Everything here is free</h2>
+    <p>125+ resources. 4 interactive games. Teacher moves on every flagship. All licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. No login. No paywall. No catches.</p>
+    <p style="margin-top: 24px;">
+      <a href="/resources/" class="btn-primary" style="margin-right: 12px;">Browse all resources</a>
+      <a href="/subjects/mathematics/" class="btn-secondary">Start with Mathematics</a>
+    </p>
+  </div>
+</section>
+
+{{ end }}
