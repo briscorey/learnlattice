@@ -1278,6 +1278,17 @@ nav {
   font-family: 'JetBrains Mono', monospace;
 }
 
+.resource-tm-badge-inline {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  font-family: 'Outfit', sans-serif;
+}
+
 .resource-list-main h2 {
   font-size: 18px;
   line-height: 1.3;

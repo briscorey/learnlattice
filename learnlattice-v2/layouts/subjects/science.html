@@ -176,6 +176,7 @@
             <div class="resource-list-top">
               <span class="resource-list-label">{{ $subjName }}</span>
               {{ with $resourceType }}<span class="resource-list-type">{{ . }}</span>{{ end }}
+              {{ if .Params.teacher_moves }}<span class="resource-tm-badge-inline">🧭 Teacher Moves</span>{{ end }}
             </div>
             <h2>{{ .Title }}</h2>
             <p>{{ .Description | default .Summary }}</p>
