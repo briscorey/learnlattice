@@ -45,7 +45,7 @@
         var chunk = buffer.slice(b, b + maxPerSlide);
         slides.push({
           html: '<div class="cm-slide">' +
-            (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+            
             chunk.join('') +
             '</div>'
         });
@@ -69,7 +69,7 @@
         // H3 becomes its own slide with section context
         slides.push({
           html: '<div class="cm-slide">' +
-            (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+            
             '<p><strong>' + el.innerHTML + '</strong></p></div>'
         });
       } else if (tag === 'P') {
@@ -83,7 +83,7 @@
           flushBuffer();
           slides.push({
             html: '<div class="cm-slide">' +
-              (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+              
               '<p>' + el.innerHTML + '</p></div>'
           });
         } else if (text.length > 0) {
@@ -95,7 +95,7 @@
         flushBuffer();
         slides.push({
           html: '<div class="cm-slide">' +
-            (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+            
             '<blockquote>' + el.innerHTML + '</blockquote></div>'
         });
       } else if (tag === 'UL' || tag === 'OL') {
@@ -114,18 +114,18 @@
           list2 += '</' + tag.toLowerCase() + '>';
           slides.push({
             html: '<div class="cm-slide">' +
-              (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+              
               list1 + '</div>'
           });
           slides.push({
             html: '<div class="cm-slide">' +
-              (currentSection ? '<h2>' + currentSection + ' <span style="opacity:.4">(continued)</span></h2>' : '') +
+              
               list2 + '</div>'
           });
         } else {
           slides.push({
             html: '<div class="cm-slide">' +
-              (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+              
               '<' + tag.toLowerCase() + '>' + el.innerHTML + '</' + tag.toLowerCase() + '></div>'
           });
         }
@@ -133,7 +133,7 @@
         flushBuffer();
         slides.push({
           html: '<div class="cm-slide" style="overflow-x:auto">' +
-            (currentSection ? '<h2>' + currentSection + '</h2>' : '') +
+            
             '<div style="font-size:1.1rem">' + el.outerHTML + '</div></div>'
         });
       } else {
