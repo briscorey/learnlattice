@@ -48,6 +48,7 @@
     {{ if eq $subject "Physics" }}{{ $accentColor = "#0284C7" }}{{ end }}
     {{ if eq $subject "Mathematics" }}{{ $accentColor = "#0D9488" }}{{ end }}
     {{ if eq $subject "Earth Science" }}{{ $accentColor = "#d97706" }}{{ end }}
+    {{ if eq $subject "Ecology" }}{{ $accentColor = "#16a34a" }}{{ end }}
 
     <a class="game-card" href="{{ .RelPermalink }}" style="--accent: {{ $accentColor }}">
       <div class="game-card-screen">
@@ -104,11 +105,6 @@
         <span class="games-upcoming-subject">Biology</span>
       </div>
       <div class="games-upcoming-item">
-        <span class="games-upcoming-icon">🌋</span>
-        <span class="games-upcoming-name">Plate Tectonics Explorer</span>
-        <span class="games-upcoming-subject">Earth Science</span>
-      </div>
-      <div class="games-upcoming-item">
         <span class="games-upcoming-icon">📐</span>
         <span class="games-upcoming-name">Geometry Transformer</span>
         <span class="games-upcoming-subject">Mathematics</span>
@@ -117,11 +113,6 @@
         <span class="games-upcoming-icon">⚗️</span>
         <span class="games-upcoming-name">Reaction Rate Lab</span>
         <span class="games-upcoming-subject">Chemistry</span>
-      </div>
-      <div class="games-upcoming-item">
-        <span class="games-upcoming-icon">🪐</span>
-        <span class="games-upcoming-name">Solar System Scale</span>
-        <span class="games-upcoming-subject">Space Science</span>
       </div>
     </div>
   </div>

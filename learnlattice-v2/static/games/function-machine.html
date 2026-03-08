@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Function Machine — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}
+h1{font-size:1.6rem;margin-bottom:4px;background:linear-gradient(135deg,#2dd4bf,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:#94a3b8;font-size:.85rem;margin-bottom:20px}
+.game-area{width:100%;max-width:500px}
+.machine{background:linear-gradient(180deg,#1e293b,#0f172a);border:2px solid #334155;border-radius:16px;padding:24px;margin-bottom:16px;position:relative;overflow:hidden}
+.machine::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:3px;background:linear-gradient(90deg,transparent,#2dd4bf,transparent);border-radius:0 0 4px 4px}
+.io-row{display:flex;align-items:center;gap:12px;margin:12px 0}
+.io-label{font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:1px;width:60px;flex-shrink:0}
+.io-display{flex:1;background:#020617;border:1px solid #1e293b;border-radius:10px;padding:10px 16px;font-size:1.4rem;font-family:'Courier New',monospace;color:#2dd4bf;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center}
+.io-display.output{color:#f59e0b}
+.io-display.unknown{color:#475569;font-style:italic;font-size:1rem}
+.rule-box{text-align:center;padding:16px;margin:16px 0;border:1px dashed #334155;border-radius:10px;font-size:1rem;color:#94a3b8}
+.rule-box .revealed{color:#2dd4bf;font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700}
+.num-pad{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.num-btn{background:#1e293b;border:1px solid #334155;border-radius:10px;color:#e2e8f0;font-size:1.1rem;padding:14px;cursor:pointer;transition:all .15s;font-family:'Courier New',monospace}
+.num-btn:hover{background:#334155;border-color:#2dd4bf}
+.num-btn:active{transform:scale(.95)}
+.num-btn.action{background:#0d9488;border-color:#0d9488;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;font-size:.85rem;font-weight:600}
+.num-btn.action:hover{background:#0f766e}
+.num-btn.action.guess{background:#f59e0b;border-color:#f59e0b;color:#000}
+.num-btn.action.guess:hover{background:#d97706}
+.history{margin-top:16px}
+.history-title{font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.history-row{display:flex;gap:8px;margin-bottom:6px;font-family:'Courier New',monospace;font-size:.9rem;padding:6px 12px;background:#0f172a;border-radius:8px;border:1px solid #1e293b}
+.history-in{color:#2dd4bf;width:60px;text-align:right}
+.history-arrow{color:#475569}
+.history-out{color:#f59e0b;width:60px}
+.stats{display:flex;justify-content:space-around;margin-bottom:16px;padding:12px;background:#0f172a;border-radius:10px;border:1px solid #1e293b}
+.stat{text-align:center}
+.stat-val{font-size:1.3rem;font-weight:700;color:#2dd4bf}
+.stat-label{font-size:.65rem;color:#64748b;text-transform:uppercase;letter-spacing:1px}
+.feedback{text-align:center;padding:12px;border-radius:10px;margin-bottom:12px;font-weight:600;font-size:.95rem;min-height:44px;display:flex;align-items:center;justify-content:center}
+.feedback.correct{background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3)}
+.feedback.wrong{background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+.feedback.hint{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2)}
+.level-select{display:flex;gap:8px;margin-bottom:16px}
+.level-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.8rem;transition:all .15s}
+.level-btn.active{background:#0d9488;border-color:#0d9488;color:#fff}
+.level-btn:hover{border-color:#2dd4bf}
+.guess-input{display:none;margin:12px 0}
+.guess-input.show{display:block}
+.guess-input input{width:100%;padding:12px;background:#020617;border:1px solid #334155;border-radius:10px;color:#f59e0b;font-size:1rem;font-family:'Courier New',monospace;text-align:center}
+.guess-input input:focus{outline:none;border-color:#f59e0b}
+.guess-input input::placeholder{color:#475569}
+</style>
+</head>
+<body>
+<h1>Function Machine</h1>
+<p class="subtitle">Feed numbers in. Watch what comes out. Guess the rule.</p>
+
+<div class="game-area">
+  <div class="stats">
+    <div class="stat"><div class="stat-val" id="streak">0</div><div class="stat-label">Streak</div></div>
+    <div class="stat"><div class="stat-val" id="solved">0</div><div class="stat-label">Solved</div></div>
+    <div class="stat"><div class="stat-val" id="tests">0</div><div class="stat-label">Tests Used</div></div>
+  </div>
+
+  <div class="level-select">
+    <button class="level-btn active" data-level="easy" onclick="setLevel('easy')">Easy</button>
+    <button class="level-btn" data-level="medium" onclick="setLevel('medium')">Medium</button>
+    <button class="level-btn" data-level="hard" onclick="setLevel('hard')">Hard</button>
+  </div>
+
+  <div id="feedback" class="feedback"></div>
+
+  <div class="machine">
+    <div class="io-row">
+      <span class="io-label">Input</span>
+      <div class="io-display" id="inputDisplay">—</div>
+    </div>
+    <div class="rule-box" id="ruleBox">? → ?</div>
+    <div class="io-row">
+      <span class="io-label">Output</span>
+      <div class="io-display output" id="outputDisplay">—</div>
+    </div>
+  </div>
+
+  <div class="num-pad">
+    <button class="num-btn" onclick="inputNum(-3)">−3</button>
+    <button class="num-btn" onclick="inputNum(-1)">−1</button>
+    <button class="num-btn" onclick="inputNum(0)">0</button>
+    <button class="num-btn" onclick="inputNum(1)">1</button>
+    <button class="num-btn" onclick="inputNum(2)">2</button>
+    <button class="num-btn" onclick="inputNum(3)">3</button>
+    <button class="num-btn" onclick="inputNum(5)">5</button>
+    <button class="num-btn" onclick="inputNum(7)">7</button>
+    <button class="num-btn" onclick="inputNum(10)">10</button>
+    <button class="num-btn" onclick="inputNum(12)">12</button>
+    <button class="num-btn" onclick="inputNum(20)">20</button>
+    <button class="num-btn" onclick="inputNum(100)">100</button>
+  </div>
+
+  <div class="guess-input show" id="guessArea">
+    <input type="text" id="guessInput" placeholder="Type the rule, e.g. x × 2 + 1" onkeydown="if(event.key==='Enter')submitGuess()">
+  </div>
+
+  <div class="num-pad" style="grid-template-columns:1fr 1fr">
+    <button class="num-btn action guess" onclick="submitGuess()">Guess the Rule</button>
+    <button class="num-btn action" onclick="newRule()">New Rule</button>
+  </div>
+
+  <div class="history" id="historyArea">
+    <div class="history-title">Test History</div>
+    <div id="historyList"></div>
+  </div>
+</div>
+
+<script>
+const rules={
+  easy:[
+    {fn:x=>x+3,display:'x + 3',hint:'Adding something...'},
+    {fn:x=>x*2,display:'x × 2',hint:'Doubling?'},
+    {fn:x=>x-5,display:'x − 5',hint:'Subtracting something...'},
+    {fn:x=>x+10,display:'x + 10',hint:'Adding a round number...'},
+    {fn:x=>x*3,display:'x × 3',hint:'Tripling?'},
+    {fn:x=>x*5,display:'x × 5',hint:'Times a small number...'},
+    {fn:x=>x-2,display:'x − 2',hint:'Subtracting something small...'},
+    {fn:x=>x+7,display:'x + 7',hint:'Adding an odd number...'},
+    {fn:x=>x*10,display:'x × 10',hint:'A very round multiplier...'},
+    {fn:x=>x*4,display:'x × 4',hint:'Quadrupling?'},
+  ],
+  medium:[
+    {fn:x=>x*2+1,display:'x × 2 + 1',hint:'Two operations...'},
+    {fn:x=>x*3-2,display:'x × 3 − 2',hint:'Multiply then subtract...'},
+    {fn:x=>(x+1)*2,display:'(x + 1) × 2',hint:'Add first, then multiply...'},
+    {fn:x=>x*x,display:'x²',hint:'The number times itself...'},
+    {fn:x=>x*2+5,display:'x × 2 + 5',hint:'Double then add...'},
+    {fn:x=>x*5-3,display:'x × 5 − 3',hint:'Big multiplier, small subtraction...'},
+    {fn:x=>(x-1)*3,display:'(x − 1) × 3',hint:'Subtract first, then multiply...'},
+    {fn:x=>x*4+2,display:'x × 4 + 2',hint:'Quadruple then add...'},
+    {fn:x=>100-x,display:'100 − x',hint:'Subtraction FROM something...'},
+    {fn:x=>x*x+1,display:'x² + 1',hint:'Square then add...'},
+  ],
+  hard:[
+    {fn:x=>x*x-x,display:'x² − x',hint:'Two operations involving x itself...'},
+    {fn:x=>(x+2)*(x-2),display:'(x+2)(x−2)',hint:'Think about factoring...'},
+    {fn:x=>x*x*x,display:'x³',hint:'Cubing...'},
+    {fn:x=>Math.abs(x)*2,display:'|x| × 2',hint:'Negatives behave strangely here...'},
+    {fn:x=>x*(x+1),display:'x(x + 1)',hint:'Consecutive products...'},
+    {fn:x=>(x%2===0)?x/2:x*3+1,display:'even→x/2, odd→3x+1',hint:'Even and odd give different results...'},
+    {fn:x=>x*x+x+1,display:'x² + x + 1',hint:'Three terms...'},
+    {fn:x=>2**Math.abs(x),display:'2^|x|',hint:'Powers of 2...'},
+  ]
+};
+
+let currentLevel='easy',currentRule=null,streak=0,solved=0,tests=0,history=[];
+
+function setLevel(level){
+  currentLevel=level;
+  document.querySelectorAll('.level-btn').forEach(b=>b.classList.toggle('active',b.dataset.level===level));
+  newRule();
+}
+
+function pickRule(){
+  const pool=rules[currentLevel];
+  let r;
+  do{r=pool[Math.floor(Math.random()*pool.length)]}while(r===currentRule&&pool.length>1);
+  return r;
+}
+
+function newRule(){
+  currentRule=pickRule();
+  history=[];
+  tests=0;
+  document.getElementById('tests').textContent=tests;
+  document.getElementById('inputDisplay').textContent='—';
+  document.getElementById('outputDisplay').textContent='—';
+  document.getElementById('ruleBox').innerHTML='? → ?';
+  document.getElementById('historyList').innerHTML='';
+  document.getElementById('feedback').textContent='';
+  document.getElementById('feedback').className='feedback';
+  document.getElementById('guessInput').value='';
+}
+
+function inputNum(n){
+  if(!currentRule)return;
+  tests++;
+  document.getElementById('tests').textContent=tests;
+  const out=currentRule.fn(n);
+  document.getElementById('inputDisplay').textContent=n;
+  document.getElementById('outputDisplay').textContent=Number.isInteger(out)?out:out.toFixed(2);
+  history.unshift({i:n,o:out});
+
+  const list=document.getElementById('historyList');
+  const row=document.createElement('div');
+  row.className='history-row';
+  row.innerHTML=`<span class="history-in">${n}</span><span class="history-arrow">→</span><span class="history-out">${Number.isInteger(out)?out:out.toFixed(2)}</span>`;
+  list.prepend(row);
+
+  if(tests===4&&currentRule.hint){
+    const fb=document.getElementById('feedback');
+    fb.textContent='💡 Hint: '+currentRule.hint;
+    fb.className='feedback hint';
+  }
+}
+
+function submitGuess(){
+  const guess=document.getElementById('guessInput').value.trim();
+  if(!guess||!currentRule)return;
+
+  const norm=s=>s.replace(/\s+/g,'').replace(/×/g,'*').replace(/·/g,'*').replace(/÷/g,'/').replace(/−/g,'-').replace(/\^/g,'**').toLowerCase();
+  const gn=norm(guess),rn=norm(currentRule.display);
+
+  let correct=false;
+  if(gn===rn)correct=true;
+  // Also test functionally with sample inputs
+  if(!correct){
+    try{
+      const gFn=new Function('x','return '+gn.replace(/(\d)(x)/g,'$1*$2').replace(/(x)(\d)/g,'$1*$2'));
+      let match=true;
+      for(const t of[-3,-1,0,1,2,3,5,7,10]){
+        if(Math.abs(gFn(t)-currentRule.fn(t))>0.001){match=false;break}
+      }
+      correct=match;
+    }catch(e){}
+  }
+
+  const fb=document.getElementById('feedback');
+  if(correct){
+    solved++;
+    streak++;
+    document.getElementById('solved').textContent=solved;
+    document.getElementById('streak').textContent=streak;
+    document.getElementById('ruleBox').innerHTML='<span class="revealed">'+currentRule.display+'</span>';
+    fb.textContent='✓ Correct! The rule is '+currentRule.display+(tests<=2?' — Brilliant, only '+tests+' tests!':'');
+    fb.className='feedback correct';
+    setTimeout(()=>newRule(),2500);
+  }else{
+    streak=0;
+    document.getElementById('streak').textContent=streak;
+    fb.textContent='✗ Not quite. Try more test inputs. The rule was: '+currentRule.display;
+    fb.className='feedback wrong';
+    document.getElementById('ruleBox').innerHTML='<span class="revealed">'+currentRule.display+'</span>';
+    setTimeout(()=>newRule(),3500);
+  }
+  document.getElementById('guessInput').value='';
+}
+
+newRule();
+</script>
+</body>
+</html>
