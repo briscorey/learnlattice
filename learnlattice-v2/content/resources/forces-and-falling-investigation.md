@@ -25,6 +25,13 @@ statement_of_inquiry: "The relationship between forces acting on an object deter
 formula: "F = mg · a = 9.8 m/s²"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Crumple the paper slowly"
+    description: "Drop the flat paper first. Then crumple it while students watch. Drop again. What changed? Mass stayed the same. Shape changed. That is the entire lesson."
+  - title: "Show the Apollo 15 video second"
+    description: "The classroom demo comes first. Students build their theory. THEN show the Moon footage. It confirms what they have been arguing about."
+  - title: "The mass-cancellation algebra"
+    description: "When students are ready, show mg = ma therefore g = a. Ask where mass went. This is one of the most elegant results in physics."
 difficulty: "Approaching"
 duration: "2 lessons"
 ---

@@ -25,6 +25,13 @@ statement_of_inquiry: "Simple systems can amplify human capability — and the t
 formula: "MA = load ÷ effort · work = force × distance"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Test the plank before class"
+    description: "The lift-the-teacher demonstration requires a strong plank and safe fulcrum. Test it with an adult before class. The physics is reliable but the equipment might not be."
+  - title: "Move the teacher to the end"
+    description: "After the successful lift, move the teacher to the far end. The student can no longer lift. This demonstrates mechanical advantage in 10 seconds."
+  - title: "Levers are everywhere"
+    description: "After the demo, ask students to find levers in the classroom. Scissors, hole punches, door handles. The concept transfers immediately."
 difficulty: "Approaching"
 duration: "2 lessons"
 ---

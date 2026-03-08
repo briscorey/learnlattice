@@ -25,6 +25,13 @@ statement_of_inquiry: "Understanding how components are connected within a syste
 formula: "V = IR (Ohm's Law) · Series: I_total = I_1 = I_2 · Parallel: I_total = I_1 + I_2"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Start with the Christmas lights"
+    description: "One bulb dies, the whole string goes dark. Why? This is a real problem students have encountered. The physics explains a frustration they have already felt."
+  - title: "Build before you diagram"
+    description: "If you have circuit kits, build the series circuit physically before drawing the diagram. Students who see the bulb light up understand complete circuits viscerally."
+  - title: "The binary search is a bonus"
+    description: "The diagnostic problem of finding the broken bulb in 100 is secretly a computer science algorithm. Students who discover the half-and-half strategy have independently invented binary search."
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

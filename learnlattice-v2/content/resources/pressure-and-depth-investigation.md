@@ -25,6 +25,13 @@ statement_of_inquiry: "The relationship between depth and pressure follows a pre
 formula: "P = ρgh (pressure = density × gravitational field strength × height)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Prepare the bottle before class"
+    description: "Use a nail to make clean holes at different heights. Have a tray underneath. Test the flow. The bottom hole should shoot water noticeably further."
+  - title: "Three images, one word"
+    description: "Show the swimmer, the chip bag, and the submersible. What do these have in common? Do not accept pressure immediately. Make them explain the connection."
+  - title: "The Mariana Trench calculation"
+    description: "After the demonstration, the P = rho g h calculation for the Mariana Trench makes the concept concrete. 1100 atmospheres. Students need a number to grasp the extremity."
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

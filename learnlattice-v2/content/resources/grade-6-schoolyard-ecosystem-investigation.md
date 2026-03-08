@@ -23,6 +23,13 @@ statement_of_inquiry: "Even the most familiar environments contain systems of in
 formula: "Species richness = number of different species in a defined area"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Predict first"
+    description: "Ask how many species live in the schoolyard BEFORE going outside. Write every guess. The actual count always surprises them."
+  - title: "Sketch, do not name"
+    description: "Many organisms will not have names students know. That is fine. Sketch them. A careful drawing IS data. Naming comes later."
+  - title: "Shady vs sunny is the question"
+    description: "The comparison between micro-habitats is where the science happens. Different areas give comparison. Same areas give replication. Both are valuable."
 difficulty: "approaching"
 duration: "2–3 lessons"
 ---

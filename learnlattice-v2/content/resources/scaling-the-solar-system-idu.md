@@ -29,6 +29,13 @@ statement_of_inquiry: "The relationships between quantities at vastly different 
 formula: "scale factor = model size ÷ actual size"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Do the walkout"
+    description: "This requires going outside. Do not skip it. Students who walk 800 metres to place Neptune will remember it for years."
+  - title: "Planet cards for EAL"
+    description: "Each card has planet name, photo, scaled size, scaled distance. Students walk and place. No English needed during the walkout."
+  - title: "The Proxima Centauri question"
+    description: "After the walkout, ask how far the nearest star would be at this scale. Over 6000 km. This reveals why interstellar travel is hard."
 difficulty: "approaching"
 duration: "3–4 lessons"
 ---

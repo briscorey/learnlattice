@@ -23,6 +23,13 @@ statement_of_inquiry: "The form and properties of substances can be revealed thr
 formula: ""
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Five powders, five tests, one table"
+    description: "Give every group a blank data table. The table structure teaches systematic testing. Students who fill it completely have done the science."
+  - title: "The mixture is the extension"
+    description: "Fast finishers get a mystery mixture of two powders. Now they use their data table to work backwards. This is forensic thinking."
+  - title: "Safety first"
+    description: "No tasting. Lab coats for iodine. Small quantities of plaster of Paris. Say it before you start and enforce it during."
 difficulty: "approaching"
 duration: "2–3 lessons"
 ---

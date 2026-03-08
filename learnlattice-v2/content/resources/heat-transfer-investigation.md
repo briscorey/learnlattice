@@ -25,6 +25,13 @@ statement_of_inquiry: "Our perception of temperature change depends not on the t
 formula: "Rate of heat transfer depends on: thermal conductivity, temperature difference, surface area, thickness"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "The reveal moment"
+    description: "Let the student hold both spoons for 5 seconds. Ask which is colder. They say metal. THEN show the infrared thermometer. Same temperature. The cognitive dissonance is the lesson."
+  - title: "Do not explain conductivity first"
+    description: "The ice-on-surfaces experiment should come before vocabulary. Students who see ice melt fastest on metal have discovered thermal conductivity."
+  - title: "The thermos flask is the assessment"
+    description: "After students understand all three transfer types, the thermos flask question asks them to apply all three. Can they identify which design feature blocks which type?"
 difficulty: "Approaching"
 duration: "2 lessons"
 ---

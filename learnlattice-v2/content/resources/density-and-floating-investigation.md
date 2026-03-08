@@ -26,6 +26,13 @@ statement_of_inquiry: "The relationship between mass and volume determines wheth
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Let them predict first"
+    description: "Before you peel the orange, ask every student to predict: will the peeled orange float or sink? Write predictions on the board. The reveal is dramatic precisely because most students get it wrong."
+  - title: "Delay the formula"
+    description: "Students should calculate densities and test predictions before you introduce the formula. The formula should explain what they already discovered."
+  - title: "The salt solution is the extension"
+    description: "Fast finishers get the salt solution experiment. At what concentration does the grape float? This turns a closed task into an open investigation."
 difficulty: "approaching"
 duration: "2 lessons"
 ---

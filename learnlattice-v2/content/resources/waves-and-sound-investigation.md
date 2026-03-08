@@ -25,6 +25,13 @@ statement_of_inquiry: "The relationship between wave properties and the phenomen
 formula: "v = fλ (wave speed = frequency × wavelength)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Say nothing when the salt moves"
+    description: "Set up the speaker, sprinkle salt, play the tone. Do not explain. Just point. Let students watch in silence for 10 seconds. Then ask what they are looking at."
+  - title: "Change frequency while they sketch"
+    description: "Students sketch the pattern at 100 Hz. Switch to 200 Hz without warning. Their sketch is now wrong. This forces them to look again."
+  - title: "Connect to the formula last"
+    description: "v = f times lambda should be the final step. Students who have seen patterns change with frequency are ready for the formula. It explains what they already know."
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

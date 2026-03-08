@@ -28,6 +28,13 @@ statement_of_inquiry: "Exponential patterns in natural systems eventually encoun
 formula: "N = N₀ × 2^(t/d) where d = doubling time"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Let them guess first"
+    description: "One bacterium divides every 20 minutes. How many after 24 hours? Most guess thousands. The answer is 4.7 times 10 to the 21. The shock drives the lesson."
+  - title: "Random groups at whiteboards"
+    description: "Give each group a different organism with a different doubling time. They all discover the same J-curve independently. The pattern is universal."
+  - title: "The ecological limit is the twist"
+    description: "After the maths, ask why the world is not buried in bacteria. This is where ecology enters. Limiting factors and carrying capacity explain why the pure maths breaks down."
 difficulty: "exceeding"
 duration: "3–4 lessons"
 ---

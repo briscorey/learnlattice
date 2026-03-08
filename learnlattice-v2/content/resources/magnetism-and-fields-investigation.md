@@ -25,6 +25,13 @@ statement_of_inquiry: "Invisible forces follow predictable spatial patterns — 
 formula: "Field lines: N → S (outside the magnet)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Tap gently"
+    description: "The iron filings need a gentle tap to settle into the field pattern. Too hard and they scatter. Practice the tap before class."
+  - title: "Photograph every pattern"
+    description: "Iron filing patterns are temporary. Have students photograph each pattern immediately. These photos become the data for the investigation."
+  - title: "The compass tells the story"
+    description: "After filings reveal the shape, a compass reveals the direction. Walk a compass around the magnet slowly. The needle always follows the field lines."
 difficulty: "Approaching"
 duration: "2 lessons"
 ---

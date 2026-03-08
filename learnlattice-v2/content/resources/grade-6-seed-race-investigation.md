@@ -23,6 +23,13 @@ statement_of_inquiry: "Systematic investigation of variables allows us to determ
 formula: "growth rate = change in height ÷ time"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "One variable per group"
+    description: "Each group changes ONE thing. The class builds the full picture together. This teaches fair testing more effectively than any worksheet."
+  - title: "The control group matters"
+    description: "Group 5 is the control. When other groups ask is my plant growing fast, the answer is compared to what. The control provides the comparison."
+  - title: "Measure on the same days"
+    description: "Set a class schedule for measurements. Consistent timing makes data comparable. Inconsistent timing makes it worthless."
 difficulty: "approaching"
 duration: "2–3 lessons"
 ---

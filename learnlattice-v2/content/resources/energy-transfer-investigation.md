@@ -25,6 +25,13 @@ statement_of_inquiry: "In any system, energy transformations follow predictable 
 formula: "E_total = E_kinetic + E_potential + E_thermal"
 download_url: ""
 download_label: "Investigation Pack PDF"
+teacher_moves:
+  - title: "Write the question before the drop"
+    description: "Write Where does the energy go on the board before you drop the ball. Every student answer goes up: friction, heat, sound. All contain truth. None are complete."
+  - title: "Hands rubbing warm-up"
+    description: "Ask students to rub hands vigorously for 10 seconds. Where did the heat come from? This 30-second activity builds kinetic-to-thermal before the ball drop."
+  - title: "Sankey diagrams before data collection"
+    description: "Have students draw a Sankey diagram BEFORE they collect data. The diagram makes them think about energy flow, which improves their experimental design."
 difficulty: "Approaching"
 duration: "2 lessons"
 ---
