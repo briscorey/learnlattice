@@ -25,6 +25,12 @@ statement_of_inquiry: "The relationship between wave properties and the phenomen
 formula: "v = fλ (wave speed = frequency × wavelength)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Look at the salt pattern. Count the number of clear patches (nodes) where salt collects."
+  - "Change the frequency. Count the nodes again. Is there a pattern between frequency and number of nodes?"
+  - "Higher frequency = more nodes = shorter wavelength. The wave speed stays the same (speed of sound)."
+  - "The relationship is v = f times lambda. If v is constant and f increases, lambda must decrease."
+
 teacher_moves:
   - title: "Say nothing when the salt moves"
     description: "Set up the speaker, sprinkle salt, play the tone. Do not explain. Just point. Let students watch in silence for 10 seconds. Then ask what they are looking at."

@@ -1,0 +1,246 @@
+{{ define "main" }}
+
+{{ $criterion := .Params.criterion }}
+{{ $name := .Params.criterion_name }}
+{{ $color := .Params.color }}
+
+<section class="rubric-hero" style="--rc: {{ $color }}">
+  <div class="rubric-hero-inner">
+    <div class="rubric-hero-badge">{{ $criterion }}</div>
+    <h1>Criterion {{ $criterion }}: {{ $name }}</h1>
+    <p>Project this page during lessons. Print it for your desk. Use it during moderation. Each level shows what the IB descriptor means in plain language.</p>
+    <div class="rubric-hero-actions">
+      <button onclick="window.print()" class="rubric-print-btn">🖨 Print this card</button>
+      <a href="/assessment/" class="rubric-back-btn">← All assessment tools</a>
+    </div>
+  </div>
+</section>
+
+<section class="rubric-grid-section" style="--rc: {{ $color }}">
+  <div class="rubric-grid">
+
+  {{ if eq $criterion "B" }}
+    <div class="rubric-level" data-level="1-2">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">1–2</span>
+        <span class="rubric-level-label">Limited</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student applies, with teacher support, mathematical problem-solving techniques to discover simple patterns.</p>
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Identifies that something is changing but cannot describe how</li>
+          <li>Needs prompting to try specific values</li>
+          <li>Writes "it goes up" or "it gets bigger" without numbers</li>
+          <li>Cannot write a formula or rule</li>
+        </ul>
+        <div class="rubric-student-voice">
+          <span class="rubric-voice-label">Student might write:</span>
+          "The numbers get bigger each time."
+        </div>
+      </div>
+    </div>
+
+    <div class="rubric-level" data-level="3-4">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">3–4</span>
+        <span class="rubric-level-label">Adequate</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student applies mathematical problem-solving techniques to discover simple patterns. Describes patterns as relationships or general rules consistent with findings.</p>
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Correctly identifies a pattern (e.g., "adds 3 each time")</li>
+          <li>May find a correct formula by guess-and-check</li>
+          <li>Verifies the formula for 1-2 values</li>
+          <li>Cannot explain WHY the formula works</li>
+        </ul>
+        <div class="rubric-student-voice">
+          <span class="rubric-voice-label">Student might write:</span>
+          "The rule is 3n + 1. I checked and it works for n = 1 and n = 5."
+        </div>
+      </div>
+    </div>
+
+    <div class="rubric-level" data-level="5-6">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">5–6</span>
+        <span class="rubric-level-label">Substantial</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student selects and applies mathematical problem-solving techniques to discover complex patterns. Describes patterns as general rules consistent with findings. Verifies the validity of these general rules.</p>
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Derives the formula logically (not just guessing)</li>
+          <li>Uses mathematical vocabulary (common difference, linear, proportional)</li>
+          <li>Verifies systematically against multiple data points</li>
+          <li>Explains the reasoning: "because the common difference is 3, the rule involves 3n"</li>
+          <li>May not yet prove the rule works for ALL cases</li>
+        </ul>
+        <div class="rubric-student-voice">
+          <span class="rubric-voice-label">Student might write:</span>
+          "Since the common difference is 3, I know the rule uses 3n. The first term is 4, so 3(1) = 3, and I need to add 1. This gives 3n + 1. I verified this for all five given values."
+        </div>
+      </div>
+    </div>
+
+    <div class="rubric-level rubric-level-top" data-level="7-8">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">7–8</span>
+        <span class="rubric-level-label">Excellent</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student selects and applies mathematical problem-solving techniques to discover complex patterns. Describes patterns as general rules consistent with correct findings. Proves, or verifies and justifies, general rules.</p>
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Derives the formula from first principles</li>
+          <li>Provides algebraic proof (not just verification of cases)</li>
+          <li>Distinguishes between "checking" and "proving"</li>
+          <li>Connects the mathematical structure to the pattern</li>
+          <li>May use terms like "for all values of n" or "in general"</li>
+        </ul>
+        <div class="rubric-student-voice">
+          <span class="rubric-voice-label">Student might write:</span>
+          "I can prove this works for all terms: T(n+1) − T(n) = [3(n+1)+1] − [3n+1] = 3. Since the difference is always 3 regardless of n, and T(1) = 4 matches, the rule T(n) = 3n + 1 generates the entire sequence."
+        </div>
+        <div class="rubric-key-distinction">
+          <strong>The key distinction:</strong> At 5-6, the student says "I checked and it works." At 7-8, the student explains <em>why</em> it must work — for all cases, not just the ones they tested.
+        </div>
+      </div>
+    </div>
+  {{ end }}
+
+  {{ if eq $criterion "C" }}
+    <div class="rubric-level" data-level="1-2">
+      <div class="rubric-level-header"><span class="rubric-level-num">1–2</span><span class="rubric-level-label">Limited</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Uses everyday language instead of mathematical/scientific terms</li>
+          <li>Diagrams are missing labels or units</li>
+          <li>Work is disorganised — hard to follow the reasoning</li>
+          <li>May show correct working but cannot explain it</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"I timesed the numbers and got the answer."</div>
+      </div>
+    </div>
+    <div class="rubric-level" data-level="3-4">
+      <div class="rubric-level-header"><span class="rubric-level-num">3–4</span><span class="rubric-level-label">Adequate</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Uses some correct terminology but inconsistently</li>
+          <li>Graphs and diagrams are present but may lack titles, labels, or scales</li>
+          <li>Shows working but steps may be out of order</li>
+          <li>Conclusion is present but may not connect to the evidence</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"I plotted the data on a graph. The line goes up. This shows the relationship is positive."</div>
+      </div>
+    </div>
+    <div class="rubric-level" data-level="5-6">
+      <div class="rubric-level-header"><span class="rubric-level-num">5–6</span><span class="rubric-level-label">Substantial</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Consistent use of correct terminology</li>
+          <li>Graphs are complete: title, labelled axes, appropriate scale, units</li>
+          <li>Working is logical and easy to follow</li>
+          <li>Moves between representations (words → table → graph → formula)</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"Figure 1 shows a positive linear relationship between drop height and bounce height. The line of best fit has a gradient of approximately 0.59, indicating the ball retains about 59% of its height after each bounce."</div>
+      </div>
+    </div>
+    <div class="rubric-level rubric-level-top" data-level="7-8">
+      <div class="rubric-level-header"><span class="rubric-level-num">7–8</span><span class="rubric-level-label">Excellent</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Communication is precise, concise, and appropriate for the audience</li>
+          <li>Chooses the best representation for the data (not just the one they were told to use)</li>
+          <li>Explains limitations of their representations</li>
+          <li>Integrates multiple representations into a coherent argument</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"I chose a scatter plot rather than a line graph because the data is experimental and contains measurement uncertainty. A line of best fit is more appropriate than connecting the points because it shows the overall trend rather than implying the intermediate values are exact."</div>
+        <div class="rubric-key-distinction"><strong>The key distinction:</strong> At 5-6, the student uses correct formats. At 7-8, the student <em>chooses</em> the right format and explains why.</div>
+      </div>
+    </div>
+  {{ end }}
+
+  {{ if eq $criterion "D" }}
+    <div class="rubric-level" data-level="1-2">
+      <div class="rubric-level-header"><span class="rubric-level-num">1–2</span><span class="rubric-level-label">Limited</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Identifies a real-world context but does not connect it to the mathematics/science</li>
+          <li>May state "this is useful in real life" without explanation</li>
+          <li>Applies a formula but cannot explain what the answer means in context</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"Density is used in real life."</div>
+      </div>
+    </div>
+    <div class="rubric-level" data-level="3-4">
+      <div class="rubric-level-header"><span class="rubric-level-num">3–4</span><span class="rubric-level-label">Adequate</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Identifies relevant mathematical/scientific elements in a real situation</li>
+          <li>Applies a method correctly to the context</li>
+          <li>States the answer but may not fully interpret what it means</li>
+          <li>Limited discussion of whether the answer is reasonable</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"The density of the object is 2.3 g/cm³. This is more than water (1.0 g/cm³) so it would sink."</div>
+      </div>
+    </div>
+    <div class="rubric-level" data-level="5-6">
+      <div class="rubric-level-header"><span class="rubric-level-num">5–6</span><span class="rubric-level-label">Substantial</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Selects appropriate mathematics/science for the context</li>
+          <li>Applies it correctly and interprets the result in context</li>
+          <li>Discusses accuracy and reasonableness of the answer</li>
+          <li>Considers practical constraints</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"The bridge needs to support 5,000 kg. My calculation shows the maximum load is 4,800 kg, which is not enough. However, this calculation assumes uniform distribution, which may not be realistic."</div>
+      </div>
+    </div>
+    <div class="rubric-level rubric-level-top" data-level="7-8">
+      <div class="rubric-level-header"><span class="rubric-level-num">7–8</span><span class="rubric-level-label">Excellent</span></div>
+      <div class="rubric-descriptor">
+        <h3>What this actually looks like</h3>
+        <ul>
+          <li>Justifies the degree of accuracy of the solution</li>
+          <li>Discusses limitations of the mathematical model in the real-world context</li>
+          <li>Suggests improvements or alternatives</li>
+          <li>Reflects on whether the mathematical answer is the "right" answer in practice</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"My model predicts a bounce height of 88.7 cm at 150 cm drop, but this extrapolation is unreliable. At higher speeds, the ball deforms more, changing the coefficient of restitution. A quadratic model might be more appropriate beyond 100 cm."</div>
+        <div class="rubric-key-distinction"><strong>The key distinction:</strong> At 5-6, the student applies maths to a context. At 7-8, the student evaluates whether the maths is the right tool for the context — and what its limits are.</div>
+      </div>
+    </div>
+  {{ end }}
+
+  </div>
+</section>
+
+<section class="rubric-exemplars">
+  <div class="rubric-exemplars-inner">
+    <h2>See It in Action</h2>
+    <p>Annotated student responses showing what each level looks like in a real investigation.</p>
+    <div class="resources-grid">
+      {{ $tag := printf "Criterion %s" $criterion }}
+      {{ $exemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
+      {{ range first 4 $exemplars }}
+        {{ partial "resource-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+{{ end }}

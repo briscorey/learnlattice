@@ -30,6 +30,12 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Roll the die 30 times. Record the frequency of each number. Are they roughly equal?"
+  - "If the die is fair, each number should appear about 5 times in 30 rolls. How far off are your results?"
+  - "The chi-squared test compares observed frequencies to expected frequencies. Big differences = suspicious."
+  - "Try the Probability Simulator game to test with 1000+ rolls — the pattern becomes much clearer."
+
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

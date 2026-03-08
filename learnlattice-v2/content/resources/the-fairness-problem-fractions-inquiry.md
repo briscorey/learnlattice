@@ -29,6 +29,12 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Start with a simple example: sharing one pizza between 3 people. How much does each person get?"
+  - "Now try: 2 pizzas shared between 5 people. Write it as a fraction first, then check with a drawing."
+  - "The investigation asks whether the share is always fair. What happens when the number of pizzas and people have a common factor?"
+  - "Try comparing 2/6 and 1/3. Are they the same share? How can you prove it?"
+
 difficulty: "meeting"
 duration: "1–2 lessons"
 ---

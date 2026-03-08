@@ -32,6 +32,12 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Build the first 4 staircases with blocks. Count the total blocks in each. Look for a pattern."
+  - "Make a table: staircase number (1, 2, 3, 4...) and total blocks. What happens each time?"
+  - "The differences between consecutive totals are 1, 2, 3, 4... This is a triangular number pattern."
+  - "The formula is T(n) = n(n+1)/2. Can you see why? Each staircase is half a rectangle."
+
 difficulty: "meeting"
 duration: "1–2 lessons"
 ---

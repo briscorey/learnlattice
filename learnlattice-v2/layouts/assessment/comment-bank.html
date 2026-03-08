@@ -1,0 +1,180 @@
+{{ define "main" }}
+
+<section class="cb-hero">
+  <div class="cb-hero-inner">
+    <div class="cb-hero-kicker">Assessment Toolkit</div>
+    <h1>Report Comment Bank</h1>
+    <p>Select subject, criterion, and achievement level. Get ready-to-use comments you can personalise and paste into ManageBac or Toddle.</p>
+  </div>
+</section>
+
+<section class="cb-app" id="commentBank">
+  <div class="cb-filters">
+    <div class="cb-filter-group">
+      <label>Subject</label>
+      <div class="cb-pills" data-filter="subject">
+        <button class="cb-pill active" data-val="math">Mathematics</button>
+        <button class="cb-pill" data-val="science">Science</button>
+      </div>
+    </div>
+    <div class="cb-filter-group">
+      <label>Criterion</label>
+      <div class="cb-pills" data-filter="criterion">
+        <button class="cb-pill active" data-val="B" style="--pc:#2563eb">B — Investigating</button>
+        <button class="cb-pill" data-val="C" style="--pc:#16a34a">C — Communicating</button>
+        <button class="cb-pill" data-val="D" style="--pc:#d97706">D — Applying</button>
+      </div>
+    </div>
+    <div class="cb-filter-group">
+      <label>Achievement Level</label>
+      <div class="cb-pills" data-filter="level">
+        <button class="cb-pill" data-val="1-2">1–2</button>
+        <button class="cb-pill active" data-val="3-4">3–4</button>
+        <button class="cb-pill" data-val="5-6">5–6</button>
+        <button class="cb-pill" data-val="7-8">7–8</button>
+      </div>
+    </div>
+    <div class="cb-filter-group">
+      <label>Focus</label>
+      <div class="cb-pills" data-filter="focus">
+        <button class="cb-pill active" data-val="strength">Strength</button>
+        <button class="cb-pill" data-val="growth">Growth area</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cb-results" id="cbResults"></div>
+
+  <div class="cb-tip">
+    <strong>Tip:</strong> Replace [Name] with the student's name. Adjust the specific skill reference to match the unit you taught.
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+<script>
+var comments = {
+  math: {
+    B: {
+      "1-2": {
+        strength: [
+          "[Name] is beginning to identify simple patterns in mathematical investigations, such as recognising that a sequence increases or decreases.",
+          "[Name] can follow a guided process to test specific values within a pattern, showing emerging awareness of systematic approaches.",
+          "[Name] shows willingness to engage with pattern-finding tasks and can describe what they observe in everyday language."
+        ],
+        growth: [
+          "To progress, [Name] should practise describing patterns using numerical relationships rather than general statements like 'it gets bigger.'",
+          "[Name] would benefit from structured support in translating observed patterns into simple rules, beginning with sequences that have a constant difference.",
+          "A next step for [Name] is to develop the habit of testing a proposed rule against multiple values before concluding it is correct."
+        ]
+      },
+      "3-4": {
+        strength: [
+          "[Name] can identify patterns in number sequences and describe them using the correct common difference or ratio.",
+          "[Name] demonstrates the ability to find general rules for simple sequences, typically through guess-and-check methods, and can verify them against given values.",
+          "[Name] applies appropriate problem-solving techniques to discover straightforward patterns and can express findings as basic formulae."
+        ],
+        growth: [
+          "To reach higher levels, [Name] should focus on deriving formulae logically rather than relying on guess-and-check, explaining how each part of the formula connects to the pattern.",
+          "[Name] would benefit from practising the distinction between verifying a rule (checking it works for specific cases) and justifying why it must work for all cases.",
+          "A productive next step is for [Name] to use mathematical vocabulary such as 'common difference,' 'linear,' and 'proportional' when describing patterns."
+        ]
+      },
+      "5-6": {
+        strength: [
+          "[Name] selects and applies appropriate techniques to investigate complex patterns, deriving general rules through logical reasoning rather than trial and error.",
+          "[Name] consistently uses mathematical vocabulary to describe patterns and can verify rules systematically against multiple data points.",
+          "[Name] demonstrates strong pattern-recognition skills and can express relationships as algebraic formulae with clear working."
+        ],
+        growth: [
+          "To reach the highest levels, [Name] should develop the skill of algebraic proof — showing that a rule must work for all values of n, not just the ones tested.",
+          "[Name] would benefit from exploring the distinction between verification and justification, explicitly addressing why a pattern holds in general terms.",
+          "A valuable next step is for [Name] to connect mathematical patterns to their structural properties, explaining not just what the rule is but why it must be that rule."
+        ]
+      },
+      "7-8": {
+        strength: [
+          "[Name] demonstrates excellent investigative skills, selecting sophisticated techniques to discover complex patterns and expressing them as justified general rules.",
+          "[Name] provides algebraic proofs that demonstrate why patterns hold for all cases, clearly distinguishing between verification of specific instances and general justification.",
+          "[Name] consistently connects mathematical structures to the patterns they generate, demonstrating deep conceptual understanding alongside strong procedural skills."
+        ],
+        growth: [
+          "[Name] could extend their excellent investigative skills by exploring patterns in unfamiliar contexts, applying their proven techniques to new mathematical domains.",
+          "A productive challenge for [Name] is to investigate non-linear and multi-variable patterns, where justification requires more sophisticated algebraic reasoning.",
+          "[Name] might consider how their pattern-finding skills connect to broader mathematical concepts such as proof by induction or functional relationships."
+        ]
+      }
+    },
+    C: {
+      "1-2": {strength:["[Name] is beginning to present mathematical ideas, though work often lacks clear structure, appropriate notation, or labelled diagrams.","[Name] shows some mathematical working but may use informal language where mathematical terminology would be more precise."],growth:["[Name] should practise presenting solutions in a logical sequence, using one step per line and showing how each step follows from the previous one.","A priority for [Name] is learning to label graphs and diagrams with titles, axis labels, and appropriate units."]},
+      "3-4": {strength:["[Name] communicates mathematical ideas with adequate clarity, using some correct notation and labelled representations.","[Name] can create graphs, tables, and diagrams that convey information, though these may occasionally lack precision in scale or labelling."],growth:["[Name] should aim to use mathematical vocabulary more consistently, replacing informal phrases with precise terms.","Improving the clarity and completeness of graphical representations — particularly axis scales and titles — would strengthen [Name]'s communication."]},
+      "5-6": {strength:["[Name] communicates mathematical thinking clearly and logically, using correct notation, well-labelled representations, and appropriate mathematical language.","[Name] moves effectively between different representations — words, tables, graphs, and formulae — to present mathematical ideas."],growth:["To reach the highest levels, [Name] should develop the skill of choosing the most effective representation for a given purpose, rather than defaulting to a familiar format.","[Name] could strengthen their communication by discussing the limitations of their chosen representations."]},
+      "7-8": {strength:["[Name] communicates mathematical reasoning with precision, coherence, and sophistication, choosing the most appropriate representations for the context.","[Name]'s mathematical communication demonstrates a clear understanding of audience — explanations are complete enough for a reader unfamiliar with the problem to follow the reasoning."],growth:["[Name] could further develop their communication by exploring how mathematical ideas can be presented for different audiences, such as peers versus younger students.","An enriching challenge would be for [Name] to create visual explanations of complex ideas that make the mathematics accessible to non-specialists."]}
+    },
+    D: {
+      "1-2": {strength:["[Name] can identify that mathematics is used in real-world situations, though connections between the mathematics and the context are not yet clearly articulated."],growth:["[Name] should practise identifying the specific mathematical concepts relevant to a real-world problem before attempting to apply them."]},
+      "3-4": {strength:["[Name] identifies relevant mathematical elements in real-life situations and applies appropriate methods, demonstrating an adequate ability to connect classroom learning to practical contexts."],growth:["To improve, [Name] should focus on interpreting mathematical results in context — explaining what the answer means in the real-world situation, not just stating the numerical result."]},
+      "5-6": {strength:["[Name] selects and applies appropriate mathematics to real-world problems, interpreting results in context and discussing the reasonableness of solutions."],growth:["[Name] would benefit from developing a critical perspective on mathematical models — considering whether a model's assumptions are realistic and what the limitations are."]},
+      "7-8": {strength:["[Name] demonstrates excellent ability to apply mathematical knowledge to complex real-world situations, justifying the degree of accuracy and critically evaluating the limitations of mathematical models in practice."],growth:["[Name] could extend their skills by exploring situations where multiple mathematical models could apply and evaluating which is most appropriate for the specific context."]}
+    }
+  },
+  science: {
+    B: {
+      "1-2": {strength:["[Name] is beginning to engage with scientific investigations, making simple observations with teacher guidance.","[Name] can follow a structured investigation procedure and record basic observations."],growth:["[Name] should develop the ability to identify variables in an experiment and begin to explain why controlling variables matters.","A next step is for [Name] to practise describing patterns in data using specific numbers rather than general statements."]},
+      "3-4": {strength:["[Name] can design simple investigations with identifiable independent and dependent variables, collecting data and presenting it in basic tables and graphs.","[Name] describes patterns in experimental data and can state general relationships between variables."],growth:["[Name] should focus on explaining patterns using scientific concepts, not just describing what the data shows.","To improve, [Name] should practise evaluating the reliability of their data by considering the number of trials and the consistency of results."]},
+      "5-6": {strength:["[Name] designs well-structured investigations with controlled variables, collects systematic data, and describes patterns as general scientific relationships.","[Name] effectively uses scientific knowledge to explain observed patterns and evaluates the reliability of experimental results."],growth:["[Name] should develop the ability to justify scientific conclusions with reference to multiple sources of evidence, not just their own experimental data.","A productive next step is for [Name] to critically evaluate whether their experimental method was the most appropriate approach to the research question."]},
+      "7-8": {strength:["[Name] demonstrates excellent scientific investigation skills, designing rigorous experiments and justifying conclusions through systematic analysis and connection to established scientific principles.","[Name]'s investigations show sophisticated understanding of reliability, validity, and the limitations of experimental methods."],growth:["[Name] could extend their skills by designing investigations that test competing hypotheses, requiring more nuanced data analysis.","An enriching challenge would be for [Name] to explore how their experimental findings connect to current scientific research or technological applications."]}
+    },
+    C: {
+      "1-2": {strength:["[Name] is beginning to communicate scientific ideas, though reports may lack structure or use informal language."],growth:["[Name] should practise writing investigation reports with a clear structure: aim, method, results, and conclusion."]},
+      "3-4": {strength:["[Name] communicates scientific findings adequately, using some correct terminology and creating basic data representations."],growth:["[Name] should focus on using precise scientific vocabulary and ensuring all graphs include titles, axis labels, and units."]},
+      "5-6": {strength:["[Name] communicates scientific ideas clearly, using correct terminology, well-constructed data representations, and logical report structure."],growth:["[Name] could improve by discussing the limitations of their data representations and explaining why they chose specific formats."]},
+      "7-8": {strength:["[Name] communicates scientific understanding with precision and sophistication, integrating multiple representations and justifying methodological choices."],growth:["[Name] might explore communicating scientific findings for non-specialist audiences, developing the skill of making complex ideas accessible."]}
+    },
+    D: {
+      "1-2": {strength:["[Name] recognises that science has applications in everyday life, though connections between scientific concepts and real-world contexts are not yet well developed."],growth:["[Name] should practise identifying the specific scientific principles at work in real-world situations."]},
+      "3-4": {strength:["[Name] identifies scientific concepts relevant to real-life situations and applies basic scientific understanding to explain familiar phenomena."],growth:["[Name] would benefit from developing the ability to evaluate the implications of scientific applications, considering both benefits and limitations."]},
+      "5-6": {strength:["[Name] applies scientific knowledge effectively to real-world problems, evaluating impacts and considering multiple perspectives on scientific issues."],growth:["[Name] should aim to support evaluations with specific evidence and consider how scientific understanding influences decision-making at different scales."]},
+      "7-8": {strength:["[Name] demonstrates excellent ability to analyse real-world issues through a scientific lens, critically evaluating evidence, considering ethical implications, and proposing evidence-based solutions."],growth:["[Name] could further develop their skills by engaging with contested scientific issues where evidence is incomplete or where different stakeholders interpret the same data differently."]}
+    }
+  }
+};
+
+var state = {subject:'math', criterion:'B', level:'3-4', focus:'strength'};
+
+document.querySelectorAll('.cb-pill').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var group = this.parentElement;
+    group.querySelectorAll('.cb-pill').forEach(function(b){b.classList.remove('active')});
+    this.classList.add('active');
+    var filter = group.dataset.filter;
+    state[filter] = this.dataset.val;
+    render();
+  });
+});
+
+function render(){
+  var results = document.getElementById('cbResults');
+  try {
+    var items = comments[state.subject][state.criterion][state.level][state.focus];
+    results.innerHTML = items.map(function(c,i){
+      return '<div class="cb-comment"><div class="cb-comment-text">' + c + '</div><button class="cb-copy" onclick="copyComment(this)">Copy</button></div>';
+    }).join('');
+  } catch(e) {
+    results.innerHTML = '<div class="cb-empty">No comments available for this combination yet.</div>';
+  }
+}
+
+function copyComment(btn){
+  var text = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(text).then(function(){
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied')}, 2000);
+  });
+}
+
+render();
+</script>
+
+{{ end }}

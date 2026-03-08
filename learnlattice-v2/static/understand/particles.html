@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understand Particles — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}
+h1{font-size:1.5rem;background:linear-gradient(135deg,#e11d48,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}
+.sim{width:100%;max-width:600px}
+.controls-bar{display:flex;gap:16px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.controls-bar label{font-size:.78rem;color:#94a3b8}
+.controls-bar input[type=range]{width:180px;accent-color:#e11d48}
+.temp-val{font-family:'Courier New',monospace;font-size:1rem;color:#e11d48;font-weight:700;min-width:50px}
+.state-pills{display:flex;gap:6px;margin-bottom:16px}
+.state-pill{padding:6px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;transition:all .15s;font-family:inherit}
+.state-pill.active{border-color:#e11d48;color:#e11d48;background:rgba(225,29,72,.1)}
+.box{position:relative;width:100%;height:350px;background:#0f172a;border:2px solid #334155;border-radius:12px;overflow:hidden}
+.particle{position:absolute;border-radius:50%;background:#e11d48}
+.state-label{position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:1.1rem;font-weight:700;color:#f43f5e;opacity:.4;pointer-events:none;text-transform:uppercase;letter-spacing:2px}
+.info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6}
+.info strong{color:#e11d48}
+</style>
+</head>
+<body>
+<h1>How Do Particles Behave?</h1>
+<p class="subtitle">Drag the temperature slider. Watch what happens to the particles. Can you see the three states of matter?</p>
+
+<div class="sim">
+  <div class="controls-bar">
+    <label>Temperature:</label>
+    <input type="range" id="temp" min="0" max="100" value="25" oninput="setTemp(+this.value)">
+    <span class="temp-val" id="tempVal">25°C</span>
+  </div>
+  <div class="state-pills">
+    <button class="state-pill" onclick="setTemp(5)">🧊 Solid</button>
+    <button class="state-pill active" onclick="setTemp(25)">💧 Liquid</button>
+    <button class="state-pill" onclick="setTemp(85)">♨️ Gas</button>
+  </div>
+  <div class="box" id="box">
+    <div class="state-label" id="stateLabel">Liquid</div>
+  </div>
+  <div class="info" id="info">
+    <strong>Liquid (25°C):</strong> Particles are close together but can slide past each other. They vibrate and move around, but stay roughly the same distance apart. This is why liquids take the shape of their container but keep a fixed volume.
+  </div>
+</div>
+
+<script>
+var box=document.getElementById('box');
+var particles=[],N=80,temp=25;
+var W,H;
+
+function init(){
+  var rect=box.getBoundingClientRect();
+  W=rect.width;H=rect.height;
+  box.querySelectorAll('.particle').forEach(function(p){p.remove()});
+  particles=[];
+  for(var i=0;i<N;i++){
+    var el=document.createElement('div');
+    el.className='particle';
+    box.appendChild(el);
+    particles.push({el:el,x:W/2+Math.random()*100-50,y:H/2+Math.random()*100-50,vx:0,vy:0,r:5});
+  }
+  setTemp(25);
+}
+
+function setTemp(t){
+  temp=t;
+  document.getElementById('temp').value=t;
+  document.getElementById('tempVal').textContent=t+'°C';
+  var label=document.getElementById('stateLabel');
+  var info=document.getElementById('info');
+  document.querySelectorAll('.state-pill').forEach(function(p){p.classList.remove('active')});
+
+  if(t<15){
+    label.textContent='Solid';
+    document.querySelectorAll('.state-pill')[0].classList.add('active');
+    info.innerHTML='<strong>Solid ('+t+'°C):</strong> Particles vibrate in fixed positions. They are packed tightly in a regular arrangement and cannot move past each other. This is why solids have a fixed shape and a fixed volume.';
+  } else if(t<65){
+    label.textContent='Liquid';
+    document.querySelectorAll('.state-pill')[1].classList.add('active');
+    info.innerHTML='<strong>Liquid ('+t+'°C):</strong> Particles are close together but can slide past each other. They move around randomly but stay roughly the same distance apart. This is why liquids take the shape of their container but keep a fixed volume.';
+  } else {
+    label.textContent='Gas';
+    document.querySelectorAll('.state-pill')[2].classList.add('active');
+    info.innerHTML='<strong>Gas ('+t+'°C):</strong> Particles move fast and spread far apart. They bounce off the walls and each other. There is lots of empty space between them. This is why gases fill their entire container and can be compressed.';
+  }
+}
+
+function step(){
+  var speed=temp/25;
+  var attraction=temp<15?0.15:temp<65?0.02:0;
+  var repulsion=temp<15?8:temp<65?6:3;
+  var maxSpeed=temp<15?0.3:speed*2;
+
+  particles.forEach(function(p){
+    // Random thermal motion
+    p.vx+=(Math.random()-.5)*speed*0.8;
+    p.vy+=(Math.random()-.5)*speed*0.8;
+
+    // Attraction to center (for solid/liquid)
+    if(attraction>0){
+      p.vx+=(W/2-p.x)*attraction*0.001;
+      p.vy+=(H/2-p.y)*attraction*0.001;
+    }
+
+    // Repulsion from other particles
+    particles.forEach(function(q){
+      if(p===q)return;
+      var dx=p.x-q.x,dy=p.y-q.y;
+      var dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<repulsion*2&&dist>0){
+        var force=repulsion/(dist*dist)*0.5;
+        p.vx+=dx/dist*force;
+        p.vy+=dy/dist*force;
+      }
+    });
+
+    // Speed limit
+    var spd=Math.sqrt(p.vx*p.vx+p.vy*p.vy);
+    if(spd>maxSpeed){p.vx*=maxSpeed/spd;p.vy*=maxSpeed/spd}
+
+    // Damping
+    p.vx*=0.98;p.vy*=0.98;
+
+    // Move
+    p.x+=p.vx;p.y+=p.vy;
+
+    // Bounce off walls
+    if(p.x<p.r){p.x=p.r;p.vx*=-0.8}
+    if(p.x>W-p.r){p.x=W-p.r;p.vx*=-0.8}
+    if(p.y<p.r){p.y=p.r;p.vy*=-0.8}
+    if(p.y>H-p.r){p.y=H-p.r;p.vy*=-0.8}
+
+    p.el.style.left=(p.x-p.r)+'px';
+    p.el.style.top=(p.y-p.r)+'px';
+    p.el.style.width=p.el.style.height=(p.r*2)+'px';
+    p.el.style.opacity=Math.min(1,0.5+speed*0.2);
+  });
+
+  requestAnimationFrame(step);
+}
+
+init();
+step();
+window.addEventListener('resize',function(){var r=box.getBoundingClientRect();W=r.width;H=r.height});
+</script>
+</body>
+</html>

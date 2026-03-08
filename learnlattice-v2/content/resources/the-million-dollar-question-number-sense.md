@@ -29,6 +29,12 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Start by figuring out how much one million $1 coins would weigh. A single coin weighs about 8 grams."
+  - "Convert your answer to kilograms (divide by 1000), then to tonnes (divide by 1000 again)."
+  - "8 tonnes is about the weight of a large elephant. Could you carry that in a backpack?"
+  - "Now try the same calculation with $100 notes. A note weighs about 1 gram. How does that change things?"
+
 difficulty: "meeting"
 duration: "1–2 lessons"
 ---

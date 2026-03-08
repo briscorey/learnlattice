@@ -32,6 +32,12 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Pick one organism in the food web. List everything it eats and everything that eats it."
+  - "Now remove that organism. What happens to the things that ate it? What happens to the things it ate?"
+  - "The cascade effect means one removal can affect the whole web. Which organism causes the most damage when removed?"
+  - "Try the Food Web Builder game to test your predictions visually."
+
 difficulty: "exceeding"
 duration: "2–3 lessons"
 ---

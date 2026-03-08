@@ -147,6 +147,27 @@
     {{ .Content }}
   </div>
 
+  {{/* ── I'm Stuck hints ── */}}
+  {{ with .Params.hints }}
+  <div class="stuck-section">
+    <button class="stuck-toggle" onclick="this.parentElement.classList.toggle('open')">
+      <span class="stuck-icon">💡</span>
+      <span>Stuck? Get a hint</span>
+      <svg class="stuck-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="stuck-hints">
+      {{ range $i, $hint := . }}
+      <div class="stuck-hint" data-n="{{ add $i 1 }}">
+        <button class="stuck-hint-reveal" onclick="this.parentElement.classList.add('shown')">
+          Show hint {{ add $i 1 }}
+        </button>
+        <div class="stuck-hint-text">{{ $hint }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
   {{ with .Params.download_url }}
   <div class="download-box" style="margin-top: 48px;">
     <div class="download-box-info">

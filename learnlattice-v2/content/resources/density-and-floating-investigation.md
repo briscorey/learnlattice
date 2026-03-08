@@ -26,6 +26,12 @@ statement_of_inquiry: "The relationship between mass and volume determines wheth
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Measure the mass of the object on a balance. Record it in grams."
+  - "Measure the volume using water displacement: put water in a measuring cylinder, note the level, add the object, note the new level. The difference is the volume."
+  - "Calculate density = mass divided by volume. If the answer is less than 1.0 g/cm cubed, it will float."
+  - "Try the Density visual explainer to see this in action with different objects."
+
 teacher_moves:
   - title: "Let them predict first"
     description: "Before you peel the orange, ask every student to predict: will the peeled orange float or sink? Write predictions on the board. The reveal is dramatic precisely because most students get it wrong."

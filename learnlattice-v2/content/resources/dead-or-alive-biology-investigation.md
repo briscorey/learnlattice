@@ -31,6 +31,12 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Start with an easy example: is a dog alive? What makes you say yes? List the reasons."
+  - "Now try a harder one: is fire alive? It grows, it consumes fuel, it responds to wind. But is it alive?"
+  - "The 7 characteristics of life are: movement, respiration, sensitivity, growth, reproduction, excretion, nutrition (MRS GREN)."
+  - "Apply all 7 to fire. Which ones does it meet? Which ones does it fail? That is your evidence."
+
 difficulty: "meeting"
 duration: "2–3 lessons"
 ---

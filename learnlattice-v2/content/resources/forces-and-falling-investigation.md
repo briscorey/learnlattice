@@ -25,6 +25,12 @@ statement_of_inquiry: "The relationship between forces acting on an object deter
 formula: "F = mg · a = 9.8 m/s²"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Drop a flat sheet of paper and a textbook from the same height at the same time. Which lands first?"
+  - "Now crumple the paper into a tight ball. Drop again with the book. What changes?"
+  - "The mass of the paper did not change. The shape changed. Air resistance depends on surface area, not mass."
+  - "The key equation: F = mg means the force of gravity IS proportional to mass. But a = g means the acceleration is the same for all objects."
+
 teacher_moves:
   - title: "Crumple the paper slowly"
     description: "Drop the flat paper first. Then crumple it while students watch. Drop again. What changed? Mass stayed the same. Shape changed. That is the entire lesson."

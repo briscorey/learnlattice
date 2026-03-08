@@ -166,6 +166,11 @@ summaryLength = 30
       icon = "🌏"
       url = "/eal/"
       description = "How every resource is designed for EAL classrooms."
+    [[params.nav_dropdowns.items]]
+      title = "Assessment Toolkit"
+      icon = "📋"
+      url = "/assessment/"
+      description = "Rubric cards, comment bank, exemplars, moderation guides."
 
   [[params.nav_dropdowns]]
     key = "about"

@@ -29,6 +29,12 @@ statement_of_inquiry: "The relationships between quantities at vastly different 
 formula: "scale factor = model size ÷ actual size"
 download_url: ""
 download_label: "Investigation Pack PDF"
+hints:
+  - "Start with the scale factor. If the Sun is a basketball (24 cm), divide 0.24 m by 1,392,000,000 m."
+  - "Use that scale factor to calculate Earth is diameter. It should be tiny — about the size of a peppercorn."
+  - "Now calculate the distance. Earth should be about 26 metres from the basketball-Sun."
+  - "Neptune will be about 780 metres away. That is further than you think. Go outside and walk it."
+
 teacher_moves:
   - title: "Do the walkout"
     description: "This requires going outside. Do not skip it. Students who walk 800 metres to place Neptune will remember it for years."

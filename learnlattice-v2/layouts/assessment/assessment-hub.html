@@ -1,0 +1,63 @@
+{{ define "main" }}
+
+<section class="assess-hero">
+  <div class="assess-hero-inner">
+    <div class="assess-hero-kicker">For Teachers</div>
+    <h1>Assessment Toolkit</h1>
+    <p>Rubric cards you can project. A comment bank you can search. Exemplars you can use for moderation. Everything here is designed to save you time and make assessment consistent.</p>
+  </div>
+</section>
+
+<section class="assess-grid-section">
+  <div class="assess-grid">
+
+    <a href="/assessment/criterion-b/" class="assess-card" style="--ac: #2563eb">
+      <div class="assess-card-badge" style="background: #2563eb">B</div>
+      <h2>Criterion B</h2>
+      <h3>Investigating Patterns</h3>
+      <p>Selecting techniques, describing patterns as general rules, proving and justifying generalisations.</p>
+      <span class="assess-card-cta">Open rubric card →</span>
+    </a>
+
+    <a href="/assessment/criterion-c/" class="assess-card" style="--ac: #16a34a">
+      <div class="assess-card-badge" style="background: #16a34a">C</div>
+      <h2>Criterion C</h2>
+      <h3>Communicating</h3>
+      <p>Using mathematical language, creating visual representations, organising information logically.</p>
+      <span class="assess-card-cta">Open rubric card →</span>
+    </a>
+
+    <a href="/assessment/criterion-d/" class="assess-card" style="--ac: #d97706">
+      <div class="assess-card-badge" style="background: #d97706">D</div>
+      <h2>Criterion D</h2>
+      <h3>Applying in Real-Life Contexts</h3>
+      <p>Identifying relevant elements, applying mathematics and science, justifying the degree of accuracy.</p>
+      <span class="assess-card-cta">Open rubric card →</span>
+    </a>
+
+    <a href="/assessment/comments/" class="assess-card assess-card-wide" style="--ac: #0D9488">
+      <div class="assess-card-badge" style="background: #0D9488">💬</div>
+      <h2>Report Comment Bank</h2>
+      <h3>Search · Filter · Copy · Paste</h3>
+      <p>Criterion-referenced report comments for every subject, criterion, and achievement level. Select, personalise, paste into ManageBac or Toddle.</p>
+      <span class="assess-card-cta">Open comment bank →</span>
+    </a>
+
+  </div>
+</section>
+
+<section class="assess-exemplars-section">
+  <div class="assess-exemplars-inner">
+    <h2>Annotated Student Work</h2>
+    <p>Real student responses at levels 3-4, 5-6, and 7-8 — with detailed annotations explaining every level.</p>
+    <div class="resources-grid">
+      {{ $exemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
+      {{ range $exemplars }}
+        {{ partial "resource-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+{{ end }}
