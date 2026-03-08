@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Solving a Linear Equation — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center}
+.example{width:100%;max-width:560px}
+.problem{padding:20px;background:#1e293b;border:2px solid #0D9488;border-radius:12px;text-align:center;margin-bottom:24px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#0D9488;margin-bottom:8px}
+.problem-eq{font-family:'Courier New',monospace;font-size:1.8rem;color:#fff}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px;transition:border-color .3s}
+.step.revealed{border-color:#334155}
+.step.current{border-color:#0D9488}
+.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;transition:background .2s}
+.step.revealed .step-header{background:#0f172a}
+.step:not(.revealed) .step-header{background:#1e293b}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;transition:all .3s}
+.step:not(.revealed) .step-num{background:#334155;color:#64748b}
+.step.revealed .step-num{background:#0D9488;color:#fff}
+.step-title{font-size:.85rem;color:#94a3b8;font-weight:500}
+.step.revealed .step-title{color:#e2e8f0}
+.step-body{display:none;padding:0 16px 16px}
+.step.revealed .step-body{display:block}
+.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
+.step-math{font-family:'Courier New',monospace;font-size:1.2rem;color:#14b8a6;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math .highlight{color:#f59e0b}
+.step-math .old{text-decoration:line-through;opacity:.4;color:#94a3b8}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#0D9488;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#0a7c72;transform:translateY(-1px)}
+.btn-next:disabled{opacity:.3;cursor:default;transform:none}
+.btn-next.complete{background:#22c55e}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.progress-dot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
+.progress-dot.done{background:#0D9488}
+.progress-dot.current{background:#14b8a6;box-shadow:0 0 8px rgba(20,184,166,.5)}
+.problems-nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.prob-btn{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:'Courier New',monospace;transition:all .15s}
+.prob-btn:hover{border-color:#0D9488}
+.prob-btn.active{background:#0D9488;border-color:#0D9488;color:#fff}
+</style>
+</head>
+<body>
+<h1>Solving a Linear Equation</h1>
+<p class="subtitle">Click "Show next step" to reveal one line of working at a time.</p>
+
+<div class="example">
+  <div class="problem">
+    <div class="problem-label">Solve for x</div>
+    <div class="problem-eq" id="problemEq">3x + 7 = 22</div>
+  </div>
+
+  <div class="progress" id="progress"></div>
+  <div class="steps" id="stepsContainer"></div>
+  <button class="btn-next" id="nextBtn" onclick="showNext()">Show next step</button>
+
+  <div class="problems-nav" id="problemsNav"></div>
+</div>
+
+<script>
+var problems = [
+  { eq: '3x + 7 = 22', steps: [
+    {title:'Identify what to isolate',explain:'We want x alone on one side. Currently 3x + 7 is on the left.',math:'3x + 7 = 22'},
+    {title:'Subtract 7 from both sides',explain:'The +7 is stopping us from isolating the x term. Remove it by subtracting 7 from BOTH sides.',math:'3x + <span class="old">7 − 7</span> = 22 − <span class="highlight">7</span>'},
+    {title:'Simplify',explain:'7 − 7 = 0 on the left. 22 − 7 = 15 on the right.',math:'3x = <span class="highlight">15</span>'},
+    {title:'Divide both sides by 3',explain:'3x means 3 times x. To undo the multiplication, divide both sides by 3.',math:'<span class="old">3</span>x ÷ <span class="old">3</span> = 15 ÷ <span class="highlight">3</span>'},
+    {title:'Solution',explain:'15 ÷ 3 = 5. We have isolated x.',math:'x = <span class="highlight">5</span>'},
+    {title:'Check',explain:'Substitute x = 5 back into the original equation: 3(5) + 7 = 15 + 7 = 22 ✓',math:'3(<span class="highlight">5</span>) + 7 = 15 + 7 = 22 ✓'},
+  ]},
+  { eq: '5x − 3 = 27', steps: [
+    {title:'Identify what to isolate',explain:'We want x alone. Currently 5x − 3 is on the left.',math:'5x − 3 = 27'},
+    {title:'Add 3 to both sides',explain:'The −3 is in the way. Undo it by adding 3 to BOTH sides.',math:'5x <span class="old">− 3 + 3</span> = 27 + <span class="highlight">3</span>'},
+    {title:'Simplify',explain:'−3 + 3 = 0 on the left. 27 + 3 = 30 on the right.',math:'5x = <span class="highlight">30</span>'},
+    {title:'Divide both sides by 5',explain:'5x means 5 times x. Divide both sides by 5.',math:'x = 30 ÷ <span class="highlight">5</span>'},
+    {title:'Solution',explain:'30 ÷ 5 = 6.',math:'x = <span class="highlight">6</span>'},
+    {title:'Check',explain:'5(6) − 3 = 30 − 3 = 27 ✓',math:'5(<span class="highlight">6</span>) − 3 = 30 − 3 = 27 ✓'},
+  ]},
+  { eq: '2(x + 4) = 18', steps: [
+    {title:'Expand the brackets',explain:'Multiply 2 by everything inside the bracket: 2 × x = 2x, 2 × 4 = 8.',math:'<span class="highlight">2x + 8</span> = 18'},
+    {title:'Subtract 8 from both sides',explain:'Remove the +8 from the left side.',math:'2x = 18 − <span class="highlight">8</span>'},
+    {title:'Simplify',explain:'18 − 8 = 10.',math:'2x = <span class="highlight">10</span>'},
+    {title:'Divide both sides by 2',explain:'2x means 2 times x. Divide both sides by 2.',math:'x = 10 ÷ <span class="highlight">2</span>'},
+    {title:'Solution',explain:'10 ÷ 2 = 5.',math:'x = <span class="highlight">5</span>'},
+    {title:'Check',explain:'2(5 + 4) = 2(9) = 18 ✓',math:'2(<span class="highlight">5</span> + 4) = 2(9) = 18 ✓'},
+  ]},
+  { eq: '4x + 2 = 3x + 9', steps: [
+    {title:'Get all x terms on one side',explain:'Subtract 3x from both sides to move x terms to the left.',math:'4x − <span class="highlight">3x</span> + 2 = <span class="old">3x − 3x</span> + 9'},
+    {title:'Simplify',explain:'4x − 3x = x on the left. 3x − 3x = 0 on the right.',math:'<span class="highlight">x</span> + 2 = 9'},
+    {title:'Subtract 2 from both sides',explain:'Now isolate x by removing the +2.',math:'x = 9 − <span class="highlight">2</span>'},
+    {title:'Solution',explain:'9 − 2 = 7.',math:'x = <span class="highlight">7</span>'},
+    {title:'Check',explain:'4(7) + 2 = 30. 3(7) + 9 = 30. Both sides equal ✓',math:'4(<span class="highlight">7</span>) + 2 = 30 = 3(<span class="highlight">7</span>) + 9 ✓'},
+  ]},
+];
+
+var current = 0, revealed = 0;
+
+function loadProblem(i) {
+  current = i; revealed = 0;
+  document.getElementById('problemEq').textContent = problems[i].eq;
+  var steps = problems[i].steps;
+  var container = document.getElementById('stepsContainer');
+  container.innerHTML = '';
+  steps.forEach(function(s, j) {
+    var div = document.createElement('div');
+    div.className = 'step';
+    div.id = 'step' + j;
+    div.innerHTML = '<div class="step-header"><div class="step-num">' + (j+1) + '</div><div class="step-title">' + s.title + '</div></div><div class="step-body"><div class="step-explain">' + s.explain + '</div><div class="step-math">' + s.math + '</div></div>';
+    container.appendChild(div);
+  });
+  // Progress dots
+  var prog = document.getElementById('progress');
+  prog.innerHTML = '';
+  steps.forEach(function(s, j) {
+    var dot = document.createElement('div');
+    dot.className = 'progress-dot';
+    prog.appendChild(dot);
+  });
+  // Nav
+  var nav = document.getElementById('problemsNav');
+  nav.innerHTML = '';
+  problems.forEach(function(p, j) {
+    var btn = document.createElement('button');
+    btn.className = 'prob-btn' + (j === i ? ' active' : '');
+    btn.textContent = p.eq;
+    btn.onclick = function() { loadProblem(j); };
+    nav.appendChild(btn);
+  });
+  document.getElementById('nextBtn').textContent = 'Show next step';
+  document.getElementById('nextBtn').className = 'btn-next';
+  document.getElementById('nextBtn').disabled = false;
+}
+
+function showNext() {
+  var steps = problems[current].steps;
+  if (revealed >= steps.length) return;
+  var el = document.getElementById('step' + revealed);
+  el.classList.add('revealed');
+  if (revealed > 0) document.getElementById('step' + (revealed-1)).classList.remove('current');
+  el.classList.add('current');
+  // Update progress
+  var dots = document.querySelectorAll('.progress-dot');
+  dots[revealed].classList.add('done');
+  dots[revealed].classList.add('current');
+  if (revealed > 0) dots[revealed-1].classList.remove('current');
+  revealed++;
+  if (revealed >= steps.length) {
+    document.getElementById('nextBtn').textContent = '✓ Complete — try another problem';
+    document.getElementById('nextBtn').className = 'btn-next complete';
+    document.getElementById('nextBtn').onclick = function() {
+      loadProblem((current + 1) % problems.length);
+      this.onclick = showNext;
+    };
+  }
+}
+
+loadProblem(0);
+</script>
+</body>
+</html>

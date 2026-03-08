@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Calculating Density — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}h1{font-size:1.4rem;background:linear-gradient(135deg,#2563eb,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center}.example{width:100%;max-width:560px}.problem{padding:20px;background:#1e293b;border:2px solid #2563eb;border-radius:12px;text-align:center;margin-bottom:24px}.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#2563eb;margin-bottom:8px}.problem-text{font-size:1rem;color:#e2e8f0;line-height:1.5}.steps{display:flex;flex-direction:column}.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}.step.revealed{border-color:#334155}.step.current{border-color:#2563eb}.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}.step:not(.revealed) .step-num{background:#334155;color:#64748b}.step.revealed .step-num{background:#2563eb;color:#fff}.step-title{font-size:.85rem;color:#94a3b8}.step.revealed .step-title{color:#e2e8f0}.step-body{display:none;padding:0 16px 16px}.step.revealed .step-body{display:block}.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}.step-math{font-family:'Courier New',monospace;font-size:1.1rem;color:#60a5fa;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}.step-math .hl{color:#f59e0b}.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}.btn-next:hover{background:#1d4ed8}.btn-next.done{background:#22c55e}.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}.pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}.pdot.on{background:#2563eb}.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s}.nav button:hover{border-color:#2563eb}.nav button.on{background:#2563eb;color:#fff}
+</style>
+</head>
+<body>
+<h1>Calculating Density</h1>
+<p class="subtitle">Step by step: mass, volume, divide, interpret.</p>
+<div class="example">
+  <div class="problem"><div class="problem-label">Find the density</div><div class="problem-text" id="ptext">A rock has a mass of 156 g. When placed in water, the level rises from 40 mL to 100 mL. Calculate the density. Will it float or sink?</div></div>
+  <div class="progress" id="prog"></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn-next" id="btn" onclick="next()">Show next step</button>
+  <div class="nav" id="nav"></div>
+</div>
+<script>
+var P=[
+{text:'A rock has a mass of 156 g. When placed in water, the level rises from 40 mL to 100 mL. Calculate the density. Will it float or sink?',steps:[
+{t:'Write the formula',e:'Density equals mass divided by volume.',m:'ρ = mass ÷ volume'},
+{t:'Find the mass',e:'Given directly in the question.',m:'mass = <span class="hl">156 g</span>'},
+{t:'Find the volume',e:'Volume = final water level − initial water level. This is water displacement.',m:'volume = 100 − 40 = <span class="hl">60 mL</span> = 60 cm³'},
+{t:'Calculate density',e:'Divide mass by volume.',m:'ρ = 156 ÷ 60 = <span class="hl">2.6 g/cm³</span>'},
+{t:'Float or sink?',e:'Water has a density of 1.0 g/cm³. 2.6 > 1.0, so the rock sinks.',m:'2.6 > 1.0 → <span class="hl">SINKS</span>'},
+]},
+{text:'A wooden block has a mass of 36 g and measures 3 cm × 4 cm × 5 cm. Calculate its density. Will it float?',steps:[
+{t:'Write the formula',e:'ρ = mass ÷ volume.',m:'ρ = mass ÷ volume'},
+{t:'Find the mass',e:'Given: 36 g.',m:'mass = <span class="hl">36 g</span>'},
+{t:'Calculate the volume',e:'For a rectangular block: length × width × height.',m:'volume = 3 × 4 × 5 = <span class="hl">60 cm³</span>'},
+{t:'Calculate density',e:'Divide mass by volume.',m:'ρ = 36 ÷ 60 = <span class="hl">0.6 g/cm³</span>'},
+{t:'Float or sink?',e:'0.6 < 1.0, so the wood floats. About 60% will be submerged.',m:'0.6 < 1.0 → <span class="hl">FLOATS</span> (60% submerged)'},
+]},
+];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('ptext').textContent=P[i].text;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='✓ Complete — try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script>
+</body>
+</html>

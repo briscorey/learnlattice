@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Finding the nth Term — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center}
+.example{width:100%;max-width:560px}
+.problem{padding:20px;background:#1e293b;border:2px solid #0D9488;border-radius:12px;text-align:center;margin-bottom:24px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#0D9488;margin-bottom:8px}
+.problem-seq{font-family:'Courier New',monospace;font-size:1.6rem;color:#fff;letter-spacing:4px}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px;transition:border-color .3s}
+.step.revealed{border-color:#334155}
+.step.current{border-color:#0D9488}
+.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step:not(.revealed) .step-num{background:#334155;color:#64748b}
+.step.revealed .step-num{background:#0D9488;color:#fff}
+.step-title{font-size:.85rem;color:#94a3b8}
+.step.revealed .step-title{color:#e2e8f0}
+.step-body{display:none;padding:0 16px 16px}
+.step.revealed .step-body{display:block}
+.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
+.step-math{font-family:'Courier New',monospace;font-size:1.1rem;color:#14b8a6;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math .hl{color:#f59e0b}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#0D9488;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#0a7c72}
+.btn-next.done{background:#22c55e}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
+.pdot.on{background:#0D9488}
+.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:'Courier New',monospace;transition:all .15s}
+.nav button:hover{border-color:#0D9488}
+.nav button.on{background:#0D9488;border-color:#0D9488;color:#fff}
+</style>
+</head>
+<body>
+<h1>Finding the nth Term</h1>
+<p class="subtitle">Reveal one step at a time. See how to go from a number pattern to a formula.</p>
+<div class="example">
+  <div class="problem"><div class="problem-label">Find a formula for the nth term</div><div class="problem-seq" id="seq">5, 8, 11, 14, 17, ...</div></div>
+  <div class="progress" id="prog"></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn-next" id="btn" onclick="next()">Show next step</button>
+  <div class="nav" id="nav"></div>
+</div>
+<script>
+var P=[
+{seq:'5, 8, 11, 14, 17, ...',steps:[
+{t:'Find the common difference',e:'Look at the gaps between consecutive terms: 8−5=3, 11−8=3, 14−11=3.',m:'d = <span class="hl">3</span>'},
+{t:'The coefficient of n',e:'Because the common difference is 3, the formula starts with 3n.',m:'T(n) = <span class="hl">3</span>n + ?'},
+{t:'Find the constant',e:'When n=1, T(1) should be 5. But 3×1 = 3. So we need to add 2.',m:'3(1) + ? = 5 → ? = <span class="hl">2</span>'},
+{t:'Write the formula',e:'The general rule is T(n) = 3n + 2.',m:'T(n) = <span class="hl">3n + 2</span>'},
+{t:'Verify',e:'T(1)=5✓ T(2)=8✓ T(3)=11✓ T(10)=32.',m:'T(10) = 3(10) + 2 = <span class="hl">32</span>'},
+]},
+{seq:'2, 7, 12, 17, 22, ...',steps:[
+{t:'Find the common difference',e:'7−2=5, 12−7=5, 17−12=5. Constant difference of 5.',m:'d = <span class="hl">5</span>'},
+{t:'The coefficient of n',e:'Common difference is 5, so the formula involves 5n.',m:'T(n) = <span class="hl">5</span>n + ?'},
+{t:'Find the constant',e:'T(1) should be 2. But 5×1 = 5. So we need 2 − 5 = −3.',m:'5(1) + ? = 2 → ? = <span class="hl">−3</span>'},
+{t:'Write the formula',e:'T(n) = 5n − 3.',m:'T(n) = <span class="hl">5n − 3</span>'},
+{t:'Verify',e:'T(1)=2✓ T(2)=7✓ T(5)=22✓ T(100)=497.',m:'T(100) = 5(100) − 3 = <span class="hl">497</span>'},
+]},
+{seq:'10, 7, 4, 1, −2, ...',steps:[
+{t:'Find the common difference',e:'7−10=−3, 4−7=−3. The sequence is decreasing by 3.',m:'d = <span class="hl">−3</span>'},
+{t:'The coefficient of n',e:'Common difference is −3, so the formula involves −3n.',m:'T(n) = <span class="hl">−3</span>n + ?'},
+{t:'Find the constant',e:'T(1) should be 10. But −3×1 = −3. So 10 − (−3) = 13.',m:'−3(1) + ? = 10 → ? = <span class="hl">13</span>'},
+{t:'Write the formula',e:'T(n) = −3n + 13, or equivalently T(n) = 13 − 3n.',m:'T(n) = <span class="hl">13 − 3n</span>'},
+{t:'Verify',e:'T(1)=10✓ T(4)=1✓ T(5)=−2✓. When does T(n)=0? 13−3n=0 → n=4.33.',m:'T(n) = 0 when n ≈ <span class="hl">4.3</span>'},
+]},
+];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('seq').textContent=P[i].seq;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent=pr.seq.split(',').slice(0,3).join(',')+' ...';b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='✓ Complete — try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script>
+</body>
+</html>

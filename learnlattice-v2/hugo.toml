@@ -171,6 +171,11 @@ summaryLength = 30
       icon = "📋"
       url = "/assessment/"
       description = "Rubric cards, comment bank, exemplars, moderation guides."
+    [[params.nav_dropdowns.items]]
+      title = "Visual Vocabulary"
+      icon = "🔤"
+      url = "/vocabulary/"
+      description = "Key terms with visual definitions and examples."
 
   [[params.nav_dropdowns]]
     key = "about"
