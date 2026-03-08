@@ -129,7 +129,6 @@
               '<' + tag.toLowerCase() + '>' + el.innerHTML + '</' + tag.toLowerCase() + '></div>'
           });
         }
-        });
       } else if (tag === 'TABLE') {
         flushBuffer();
         slides.push({
