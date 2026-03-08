@@ -4,7 +4,7 @@
 {{ $allResources := where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice $gradeTitle) }}
 {{ $totalCount := len $allResources }}
 
-{{/* ── Build subject groups ── */}}
+{{/* ── Subject config ── */}}
 {{ $subjectOrder := slice "Mathematics" "Biology" "Chemistry" "Physics" "Earth Science" "Space Science" "Ecology" "Science" }}
 {{ $subjectIcons := dict
   "Mathematics" "🔢"
@@ -16,114 +16,145 @@
   "Ecology" "🌿"
   "Science" "🔬"
 }}
-{{ $subjectColors := dict
-  "Mathematics" "blue"
-  "Biology" "emerald"
-  "Chemistry" "rose"
-  "Physics" "cyan"
-  "Earth Science" "amber"
-  "Space Science" "violet"
-  "Ecology" "green"
-  "Science" "sky"
+{{ $subjectDescriptions := dict
+  "Mathematics" "Number sense, algebra, geometry, probability, statistics, and fractions"
+  "Biology" "Cells, body systems, adaptation, and life processes"
+  "Chemistry" "Reactions, particles, properties of matter, and lab techniques"
+  "Physics" "Forces, energy, waves, circuits, magnetism, and motion"
+  "Earth Science" "Rocks, tectonics, climate, and earth systems"
+  "Space Science" "Moon phases, solar system, scale, and stellar evidence"
+  "Ecology" "Ecosystems, food webs, biodiversity, and fieldwork"
+  "Science" "Cross-disciplinary science investigations"
 }}
-
-{{/* ── Count by type ── */}}
-{{ $typeNames := slice "Investigation Pack" "Unit Plan" "Worksheet" "Lab Activity" "Interactive Game" }}
+{{ $typeOrder := slice "Unit Plan" "Investigation Pack" "Worksheet" "Lab Activity" "Interactive Game" }}
 {{ $typeIcons := dict "Investigation Pack" "🔍" "Unit Plan" "📋" "Worksheet" "📝" "Lab Activity" "🧪" "Interactive Game" "🎮" }}
+{{ $typeLabels := dict "Investigation Pack" "Investigation Packs" "Unit Plan" "Unit Plans" "Worksheet" "Worksheets" "Lab Activity" "Lab Activities" "Interactive Game" "Games" }}
+
+{{/* ── Count subjects with resources ── */}}
+{{ $activeSubjects := slice }}
+{{ range $subjectOrder }}
+  {{ $subj := . }}
+  {{ $count := len (where $allResources "Params.subjects" "intersect" (slice $subj)) }}
+  {{ if gt $count 0 }}
+    {{ $activeSubjects = $activeSubjects | append $subj }}
+  {{ end }}
+{{ end }}
 
 {{/* ── HERO ── */}}
-<section class="grade-hero">
-  <div class="grade-hero-inner">
-    <div class="grade-hero-kicker">MYP Year Level Collection</div>
+<section class="gl-hero">
+  <div class="gl-hero-inner">
+    <div class="gl-hero-kicker">MYP Year Level Collection</div>
     <h1>{{ $gradeTitle }}</h1>
-    <p class="grade-hero-count">{{ $totalCount }} resources across {{ len $subjectOrder }} subjects</p>
+    <p class="gl-hero-stat"><strong>{{ $totalCount }}</strong> resources across <strong>{{ len $activeSubjects }}</strong> subjects</p>
 
-    {{/* ── Subject pills (quick nav) ── */}}
-    <nav class="grade-subject-nav" aria-label="Jump to subject">
-      {{ range $subjectOrder }}
+    <nav class="gl-pills" aria-label="Jump to subject">
+      {{ range $activeSubjects }}
         {{ $subj := . }}
-        {{ $subjResources := where $allResources "Params.subjects" "intersect" (slice $subj) }}
-        {{ $count := len $subjResources }}
-        {{ if gt $count 0 }}
-        <a href="#{{ $subj | urlize }}" class="grade-subject-pill" data-color="{{ index $subjectColors $subj }}">
-          <span class="grade-pill-icon">{{ index $subjectIcons $subj }}</span>
-          <span class="grade-pill-name">{{ $subj }}</span>
-          <span class="grade-pill-count">{{ $count }}</span>
+        {{ $count := len (where $allResources "Params.subjects" "intersect" (slice $subj)) }}
+        <a href="#{{ $subj | urlize }}" class="gl-pill">
+          <span class="gl-pill-icon">{{ index $subjectIcons $subj }}</span>
+          {{ $subj }}
+          <span class="gl-pill-count">{{ $count }}</span>
         </a>
-        {{ end }}
       {{ end }}
     </nav>
   </div>
 </section>
 
-{{/* ── Resource type summary bar ── */}}
-<section class="grade-type-bar">
-  <div class="grade-type-bar-inner">
-    {{ range $typeNames }}
+{{/* ── Type summary strip ── */}}
+<div class="gl-type-strip">
+  <div class="gl-type-strip-inner">
+    {{ range $typeOrder }}
       {{ $t := . }}
       {{ $tc := len (where $allResources "Params.resource_types" "intersect" (slice $t)) }}
       {{ if gt $tc 0 }}
-      <div class="grade-type-chip">
-        <span class="grade-type-icon">{{ index $typeIcons $t }}</span>
-        <span class="grade-type-count">{{ $tc }}</span>
-        <span class="grade-type-label">{{ $t }}{{ if gt $tc 1 }}s{{ end }}</span>
-      </div>
+      <span class="gl-type-chip">
+        {{ index $typeIcons $t }} <strong>{{ $tc }}</strong> {{ index $typeLabels $t }}
+      </span>
       {{ end }}
     {{ end }}
   </div>
-</section>
+</div>
 
-{{/* ── Subject sections ── */}}
-{{ range $subjectOrder }}
+{{/* ── SUBJECT SECTIONS ── */}}
+{{ range $activeSubjects }}
   {{ $subj := . }}
   {{ $subjResources := where $allResources "Params.subjects" "intersect" (slice $subj) }}
   {{ $count := len $subjResources }}
-  {{ if gt $count 0 }}
-  <section class="grade-subject-section" id="{{ $subj | urlize }}" data-color="{{ index $subjectColors $subj }}">
-    <div class="grade-section-header">
-      <div class="grade-section-icon">{{ index $subjectIcons $subj }}</div>
-      <div class="grade-section-info">
-        <h2>{{ $subj }}</h2>
-        <span class="grade-section-count">{{ $count }} resource{{ if gt $count 1 }}s{{ end }}</span>
-      </div>
-      <a href="/subjects/{{ $subj | urlize }}/" class="grade-section-link">
-        View all {{ $subj }}
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+
+<section class="gl-subject" id="{{ $subj | urlize }}">
+  <div class="gl-subject-header">
+    <div class="gl-subject-icon">{{ index $subjectIcons $subj }}</div>
+    <div class="gl-subject-info">
+      <h2>{{ $subj }}</h2>
+      <p>{{ index $subjectDescriptions $subj }} · {{ $count }} resource{{ if gt $count 1 }}s{{ end }}</p>
     </div>
+    <a href="/subjects/{{ $subj | urlize }}/" class="gl-subject-link">
+      All {{ $subj }}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
 
-    <div class="grade-cards-grid">
-      {{/* Show flagships (with teacher_moves) first, then the rest */}}
-      {{ $flagships := where $subjResources "Params.teacher_moves" "ne" nil }}
-      {{ $regular := $subjResources }}
-
-      {{ range $subjResources }}
-        {{ $resourceType := "" }}
-        {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
-        {{ $isFlagship := .Params.teacher_moves }}
-
-        <a class="grade-resource-card{{ if $isFlagship }} grade-flagship{{ end }}" href="{{ .RelPermalink }}">
-          {{ if $isFlagship }}<span class="grade-flagship-badge">⭐ Flagship</span>{{ end }}
-          <div class="grade-card-type" data-color="{{ index $subjectColors $subj }}">
-            {{ with $resourceType }}
-            <span>{{ index $typeIcons . }}{{ if not (index $typeIcons .) }}📄{{ end }} {{ . }}</span>
-            {{ end }}
-          </div>
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Description | truncate 120 }}</p>
-          {{ if .Params.formula }}
-          <div class="grade-card-formula">{{ .Params.formula }}</div>
-          {{ end }}
-          <div class="grade-card-tags">
-            {{ range first 3 .Params.tags }}
-              <span class="grade-card-tag">{{ . }}</span>
-            {{ end }}
-          </div>
-        </a>
-      {{ end }}
-    </div>
-  </section>
+  {{/* ── Flagships ── */}}
+  {{ $flagships := slice }}
+  {{ range $subjResources }}
+    {{ if .Params.teacher_moves }}
+      {{ $flagships = $flagships | append . }}
+    {{ end }}
   {{ end }}
+
+  {{ if gt (len $flagships) 0 }}
+  <div class="gl-flagships">
+    {{ range $flagships }}
+    <a class="gl-flagship-card" href="{{ .RelPermalink }}">
+      <div class="gl-flagship-badge">⭐ Flagship</div>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description | truncate 140 }}</p>
+      <div class="gl-flagship-meta">
+        {{ range first 3 .Params.tags }}<span>{{ . }}</span>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ── Resources grouped by type ── */}}
+  {{ range $typeOrder }}
+    {{ $typeName := . }}
+    {{ $typeResources := where $subjResources "Params.resource_types" "intersect" (slice $typeName) }}
+    {{ $displayResources := slice }}
+    {{ range $typeResources }}
+      {{ if not .Params.teacher_moves }}
+        {{ $displayResources = $displayResources | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt (len $displayResources) 0 }}
+    <div class="gl-type-group">
+      <div class="gl-type-label">
+        <span class="gl-type-label-icon">{{ index $typeIcons $typeName }}</span>
+        {{ index $typeLabels $typeName }}
+        <span class="gl-type-label-count">{{ len $displayResources }}</span>
+      </div>
+      <div class="gl-resource-list">
+        {{ range $displayResources }}
+        <a class="gl-resource-row" href="{{ .RelPermalink }}">
+          <div class="gl-row-main">
+            <span class="gl-row-title">{{ .Title }}</span>
+            <span class="gl-row-desc">{{ .Description | truncate 90 }}</span>
+          </div>
+          <div class="gl-row-tags">
+            {{ range first 2 .Params.tags }}<span class="gl-row-tag">{{ . }}</span>{{ end }}
+          </div>
+          <svg class="gl-row-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+
+</section>
 {{ end }}
 
 {{ partial "newsletter.html" . }}
