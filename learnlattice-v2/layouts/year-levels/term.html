@@ -1,0 +1,131 @@
+{{ define "main" }}
+
+{{ $gradeTitle := .Title }}
+{{ $allResources := where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice $gradeTitle) }}
+{{ $totalCount := len $allResources }}
+
+{{/* ── Build subject groups ── */}}
+{{ $subjectOrder := slice "Mathematics" "Biology" "Chemistry" "Physics" "Earth Science" "Space Science" "Ecology" "Science" }}
+{{ $subjectIcons := dict
+  "Mathematics" "🔢"
+  "Biology" "🧬"
+  "Chemistry" "⚗️"
+  "Physics" "⚡"
+  "Earth Science" "🌍"
+  "Space Science" "🪐"
+  "Ecology" "🌿"
+  "Science" "🔬"
+}}
+{{ $subjectColors := dict
+  "Mathematics" "blue"
+  "Biology" "emerald"
+  "Chemistry" "rose"
+  "Physics" "cyan"
+  "Earth Science" "amber"
+  "Space Science" "violet"
+  "Ecology" "green"
+  "Science" "sky"
+}}
+
+{{/* ── Count by type ── */}}
+{{ $typeNames := slice "Investigation Pack" "Unit Plan" "Worksheet" "Lab Activity" "Interactive Game" }}
+{{ $typeIcons := dict "Investigation Pack" "🔍" "Unit Plan" "📋" "Worksheet" "📝" "Lab Activity" "🧪" "Interactive Game" "🎮" }}
+
+{{/* ── HERO ── */}}
+<section class="grade-hero">
+  <div class="grade-hero-inner">
+    <div class="grade-hero-kicker">MYP Year Level Collection</div>
+    <h1>{{ $gradeTitle }}</h1>
+    <p class="grade-hero-count">{{ $totalCount }} resources across {{ len $subjectOrder }} subjects</p>
+
+    {{/* ── Subject pills (quick nav) ── */}}
+    <nav class="grade-subject-nav" aria-label="Jump to subject">
+      {{ range $subjectOrder }}
+        {{ $subj := . }}
+        {{ $subjResources := where $allResources "Params.subjects" "intersect" (slice $subj) }}
+        {{ $count := len $subjResources }}
+        {{ if gt $count 0 }}
+        <a href="#{{ $subj | urlize }}" class="grade-subject-pill" data-color="{{ index $subjectColors $subj }}">
+          <span class="grade-pill-icon">{{ index $subjectIcons $subj }}</span>
+          <span class="grade-pill-name">{{ $subj }}</span>
+          <span class="grade-pill-count">{{ $count }}</span>
+        </a>
+        {{ end }}
+      {{ end }}
+    </nav>
+  </div>
+</section>
+
+{{/* ── Resource type summary bar ── */}}
+<section class="grade-type-bar">
+  <div class="grade-type-bar-inner">
+    {{ range $typeNames }}
+      {{ $t := . }}
+      {{ $tc := len (where $allResources "Params.resource_types" "intersect" (slice $t)) }}
+      {{ if gt $tc 0 }}
+      <div class="grade-type-chip">
+        <span class="grade-type-icon">{{ index $typeIcons $t }}</span>
+        <span class="grade-type-count">{{ $tc }}</span>
+        <span class="grade-type-label">{{ $t }}{{ if gt $tc 1 }}s{{ end }}</span>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+{{/* ── Subject sections ── */}}
+{{ range $subjectOrder }}
+  {{ $subj := . }}
+  {{ $subjResources := where $allResources "Params.subjects" "intersect" (slice $subj) }}
+  {{ $count := len $subjResources }}
+  {{ if gt $count 0 }}
+  <section class="grade-subject-section" id="{{ $subj | urlize }}" data-color="{{ index $subjectColors $subj }}">
+    <div class="grade-section-header">
+      <div class="grade-section-icon">{{ index $subjectIcons $subj }}</div>
+      <div class="grade-section-info">
+        <h2>{{ $subj }}</h2>
+        <span class="grade-section-count">{{ $count }} resource{{ if gt $count 1 }}s{{ end }}</span>
+      </div>
+      <a href="/subjects/{{ $subj | urlize }}/" class="grade-section-link">
+        View all {{ $subj }}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="grade-cards-grid">
+      {{/* Show flagships (with teacher_moves) first, then the rest */}}
+      {{ $flagships := where $subjResources "Params.teacher_moves" "ne" nil }}
+      {{ $regular := $subjResources }}
+
+      {{ range $subjResources }}
+        {{ $resourceType := "" }}
+        {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+        {{ $isFlagship := .Params.teacher_moves }}
+
+        <a class="grade-resource-card{{ if $isFlagship }} grade-flagship{{ end }}" href="{{ .RelPermalink }}">
+          {{ if $isFlagship }}<span class="grade-flagship-badge">⭐ Flagship</span>{{ end }}
+          <div class="grade-card-type" data-color="{{ index $subjectColors $subj }}">
+            {{ with $resourceType }}
+            <span>{{ index $typeIcons . }}{{ if not (index $typeIcons .) }}📄{{ end }} {{ . }}</span>
+            {{ end }}
+          </div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description | truncate 120 }}</p>
+          {{ if .Params.formula }}
+          <div class="grade-card-formula">{{ .Params.formula }}</div>
+          {{ end }}
+          <div class="grade-card-tags">
+            {{ range first 3 .Params.tags }}
+              <span class="grade-card-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+{{ partial "newsletter.html" . }}
+
+{{ end }}
