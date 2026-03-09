@@ -11871,3 +11871,200 @@ html.dark .streak-badge { background: rgba(245,158,11,0.08); }
   .home-finder { max-width: 100% !important; overflow: hidden !important; }
   .home-finder-card { margin: 0 12px !important; }
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE FIXES (max-width: 640px)
+   Targeting: tiny text, small touch targets,
+   cramped layouts, wasted vertical space
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+
+  /* ── Global: Bump minimum font sizes ── */
+  .resource-tag, .gl-pill-count, .gl-type-chip,
+  .rs-type, .rs-subject, .resource-difficulty,
+  .resource-thumb-type-label, .resource-meta span,
+  .resource-list-label, .resource-list-type,
+  .blog-card-tag, .blog-card-pillar, .blog-card-date,
+  .blog-card-reading, .game-grade, .game-subject,
+  .rs-listen-level, .rs-qc-type, .rs-diff-level,
+  .rs-warmup-label, .rs-seq-label, .rs-journal-intro,
+  .peek-badge, .rs-glance-row dt, .rs-glance-row dd {
+    font-size: 12px !important;
+  }
+
+  /* ── Resource header: tighter on mobile ── */
+  .rs-header { padding: 0 !important; }
+  .rs-header-content { padding: 12px 16px !important; }
+  .rs-header-content h1 { font-size: 1.5rem !important; }
+  .rs-desc { font-size: .88rem !important; }
+  .breadcrumbs { font-size: 12px !important; }
+  .rs-meta-row { gap: 6px !important; flex-wrap: wrap; }
+  .rs-actions { gap: 8px !important; }
+  .classroom-mode-btn, .rs-print-btn { padding: 8px 14px !important; font-size: .8rem !important; }
+
+  /* ── Resource layout: single column, tighter ── */
+  .rs-layout {
+    padding: 12px 14px !important;
+    gap: 12px !important;
+  }
+
+  /* ── Resource teacher tools: compact ── */
+  .rs-warmup, .rs-listen, .rs-quickcheck, .rs-exit-ticket,
+  .rs-timeline, .rs-selfcheck, .rs-journal, .rs-diff, .rs-sequence {
+    margin-bottom: 10px !important;
+  }
+  .rs-warmup { padding: 10px !important; }
+  .rs-listen { padding: 10px !important; }
+  .rs-quickcheck-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .rs-diff-body { grid-template-columns: 1fr !important; }
+
+  /* ── Student dashboard: bigger progress nodes ── */
+  .stu-progress-node {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: .9rem !important;
+    border-radius: 12px !important;
+  }
+  .stu-progress-grid { gap: 8px !important; }
+
+  /* ── Student cards: full width ── */
+  .stu-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 0 16px !important;
+  }
+
+  /* ── Game page topbar: compact ── */
+  .game-topbar {
+    padding: 6px 10px !important;
+    gap: 6px !important;
+  }
+  .game-topbar h1 { font-size: .9rem !important; }
+  .game-topbar-right { gap: 4px !important; }
+  .game-grade { display: none !important; }
+  .game-fullscreen { padding: 4px 8px !important; font-size: .65rem !important; }
+  .game-back { padding: 3px 6px !important; font-size: .68rem !important; }
+  .game-info-strip { padding: 6px 10px !important; }
+  .game-desc { font-size: .72rem !important; }
+  .game-tags { display: none !important; }
+
+  /* ── Games list page: tags bigger ── */
+  .games-card-tags span, .resource-card .resource-tag {
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* ── Grade level pages: tighter sections ── */
+  .gl-hero { padding: 24px 16px 16px !important; }
+  .gl-hero h1 { font-size: 2rem !important; }
+  .gl-subject { padding: 16px 12px !important; }
+  .gl-subject-header { gap: 10px !important; margin-bottom: 10px !important; }
+  .gl-subject-icon { font-size: 1.4rem !important; width: 36px !important; height: 36px !important; }
+  .gl-subject-info h2 { font-size: 1.1rem !important; }
+  .gl-pills { gap: 6px !important; }
+  .gl-pill { padding: 6px 10px !important; font-size: 13px !important; min-height: 36px; }
+  .gl-type-strip { padding: 8px 12px !important; }
+  .gl-type-chip { font-size: 12px !important; padding: 4px 8px !important; }
+
+  /* ── Vocab cards: bigger text ── */
+  .vocab-card h3 { font-size: 1rem !important; }
+  .vocab-def { font-size: .85rem !important; }
+  .vocab-example { font-size: .82rem !important; }
+
+  /* ── Blog cards: readable ── */
+  .blog-card-desc { font-size: .85rem !important; }
+  .blog-card-title a { font-size: 1.05rem !important; }
+
+  /* ── Sequences: stack vertically ── */
+  .seq-flow { flex-direction: column !important; gap: 8px !important; }
+  .seq-arrow { transform: rotate(90deg); padding: 2px 0 !important; text-align: center; }
+  .seq-node { min-width: 0 !important; }
+  .seq-pathway { padding: 16px !important; }
+
+  /* ── Curiosity cards: tighter ── */
+  .curiosity-card { padding: 12px 14px !important; gap: 10px !important; }
+  .curiosity-icon { font-size: 1.5rem !important; }
+  .curiosity-card p { font-size: .85rem !important; }
+
+  /* ── Daily question: tighter ── */
+  .daily-question-card { padding: 16px 18px !important; }
+  .dq-text { font-size: 1.1rem !important; }
+
+  /* ── Engagement strip: single column ── */
+  .engagement-inner { grid-template-columns: 1fr !important; gap: 10px !important; }
+
+  /* ── Sidebar cards on mobile: less padding ── */
+  .rs-sidebar-card { padding: 12px !important; }
+  .rs-sidebar-card h3 { font-size: .9rem !important; }
+
+  /* ── Remove sidebar links on mobile (save space) ── */
+  .rs-sidebar-links { display: none !important; }
+
+  /* ── Resource cards on mobile: full width, tighter ── */
+  .resource-card .resource-body { padding: 10px 12px !important; }
+  .resource-card .resource-body h3 { font-size: .95rem !important; }
+  .resource-card .resource-body p { font-size: .82rem !important; }
+
+  /* ── Section padding: reduce on mobile ── */
+  .section { padding: 0 12px 32px !important; }
+
+  /* ── Homepage hero ── */
+  .hero-content h1 { font-size: 1.6rem !important; }
+  .hero-content p { font-size: .9rem !important; }
+
+  /* ── Seasonal banner: compact ── */
+  .seasonal-inner { font-size: .78rem !important; gap: 8px !important; }
+  .seasonal-icon { font-size: 1.2rem !important; }
+
+  /* ── Mini map: compact ── */
+  .rs-mini-map .rs-map-node { font-size: .72rem !important; }
+
+  /* ── Assessment hub cards: full width ── */
+  .assess-grid { grid-template-columns: 1fr !important; }
+
+  /* ── Search bar: usable on mobile ── */
+  .search-input { font-size: 16px !important; } /* prevents iOS zoom */
+
+  /* ── Footer: tighter ── */
+  .site-footer { padding: 24px 16px !important; }
+}
+
+/* Small phones (< 380px) */
+@media (max-width: 380px) {
+  .rs-header-content h1 { font-size: 1.3rem !important; }
+  .stu-progress-node { width: 38px !important; height: 38px !important; }
+  .gl-pill { padding: 5px 8px !important; font-size: 12px !important; }
+  .game-topbar h1 { font-size: .8rem !important; }
+}
+
+/* ── Mobile: Fix remaining tiny text (specificity override) ── */
+@media (max-width: 640px) {
+  /* Resource card elements — currently 10-11px */
+  .resource-card .resource-tag,
+  .resource-card .resource-body-subject,
+  .resource-card .resource-thumb-type-label,
+  .resource-card .resource-thumb-overlay span,
+  .resource-card .resource-difficulty,
+  .resource-card .resource-meta span {
+    font-size: 12px !important;
+  }
+
+  /* Grade level kicker */
+  .gl-hero-kicker { font-size: 12px !important; }
+
+  /* Resource thumb overlay */
+  .resource-thumb-overlay { font-size: 12px !important; }
+  .resource-thumb-type-icon { font-size: 14px !important; }
+
+  /* Games page — game card spans are classless, target the container */
+  .games-card span,
+  .games-card-subject,
+  .games-card-tags span,
+  .games-card-meta span {
+    font-size: 12px !important;
+  }
+
+  /* All remaining spans < 12px inside resource cards */
+  .resource-body span { min-font-size: 12px; font-size: max(12px, inherit) !important; }
+}
