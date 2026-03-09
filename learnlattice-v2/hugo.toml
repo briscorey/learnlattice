@@ -162,25 +162,7 @@ summaryLength = 30
       url = "/assessment/"
       description = "Rubrics, exemplars, moderation guides."
 
-  [[params.nav_dropdowns]]
-    key = "about"
-    [[params.nav_dropdowns.items]]
-      title = "About LearnLattice"
-      url = "/about/"
-      description = "The story, the philosophy, the person behind it."
-    [[params.nav_dropdowns.items]]
-      title = "For Teachers"
-      url = "/about/#for-teachers"
-      description = "How to use these materials in your classroom."
-    [[params.nav_dropdowns.items]]
-      title = "Portfolio"
-      icon = "📊"
-      url = "/portfolio/"
-      description = "LearnLattice by the numbers — a living portfolio."
-    [[params.nav_dropdowns.items]]
-      title = "How I Built This"
-      url = "/about/#how-i-built-this"
-      description = "AI-assisted, practitioner-designed, open source."
+
 
   [params.home]
     hero_eyebrow = "Free MYP Mathematics & Science Resources"
