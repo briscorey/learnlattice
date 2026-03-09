@@ -103,6 +103,11 @@ listen_for:
 - level: 7-8
   phrase: The definition of life is a human construction and edge cases like viruses
     show that the boundary is not clear-cut
+warm_up:
+  title: Odd one out
+  activity: 'Show: a robot, a plant seed, a flame, a sleeping bear. Which is alive?
+    Which is not? Students will disagree — that disagreement IS the warm-up.'
+  time: 5 minutes
 ---
 
 ## The Hook

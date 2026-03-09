@@ -104,6 +104,11 @@ sentence_starters:
   justifying:
   - I believe ___ is the keystone species because...
   - A complex food web is more stable than a simple chain because...
+warm_up:
+  title: What did you eat?
+  activity: Trace your breakfast back to a plant. Toast → wheat → sun. Eggs → chicken
+    → grain → sun. You are connected to the sun in 3 steps.
+  time: 3 minutes
 ---
 
 ## The Hook

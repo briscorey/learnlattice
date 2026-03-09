@@ -83,6 +83,21 @@ sentence_starters:
   justifying:
   - Using v = fλ, I can calculate that...
   - My data supports this formula because...
+warm_up:
+  title: Can you feel sound?
+  activity: Put your hand on your throat and hum. What do you feel? Put your hand
+    on a speaker playing bass. Sound is vibration — you can feel it before you understand
+    it.
+  time: 2 minutes
+misconceptions:
+- myth: Sound travels through empty space
+  why: We hear sounds from far away, and space seems empty
+  truth: Sound needs a medium — air, water, or solid. In the vacuum of space, there
+    is no sound. This is why the tagline of Alien is scientifically accurate.
+- myth: Louder means higher pitch
+  why: We associate 'more' sound with 'higher' sound
+  truth: Loudness is amplitude (height of the wave). Pitch is frequency (speed of
+    vibration). They are independent.
 ---
 
 ## The Hook

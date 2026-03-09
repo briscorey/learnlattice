@@ -83,6 +83,21 @@ sentence_starters:
   justifying:
   - The mathematical proof that mass does not affect fall speed is...
   - The Apollo 15 experiment confirms this because...
+warm_up:
+  title: Which falls first?
+  activity: 'Hold a textbook and a sheet of paper at the same height. Ask students
+    to predict which hits the ground first. Drop them. Then ask: what if I put the
+    paper ON TOP of the book?'
+  time: 3 minutes
+misconceptions:
+- myth: Heavier objects fall faster
+  why: A bowling ball hits the ground before a feather in everyday life
+  truth: In a vacuum, ALL objects fall at the same rate. The difference we see is
+    caused by air resistance, not gravity.
+- myth: Objects fall because they are heavy
+  why: Weight and falling seem directly connected
+  truth: Objects fall because gravity pulls them. Weight is the FORCE of gravity on
+    the object, but the acceleration is the same regardless of mass.
 ---
 
 ## The Hook

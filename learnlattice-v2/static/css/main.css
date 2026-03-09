@@ -9694,3 +9694,176 @@ html.dark .rc-emerald .rs-header { background: linear-gradient(135deg, #022c2220
 .rs-sidebar-card .rs-soi-label { color: var(--sc, var(--teal)); }
 .rs-starters .rs-starters-level { background: var(--sc-bg, var(--teal-wash)); color: var(--sc, var(--teal)); }
 .rs-starters .rs-starter { border-left-color: var(--sc, var(--teal)); }
+
+/* ═══════════════════════════════════════════
+   WARM-UP CONNECTORS
+   ═══════════════════════════════════════════ */
+.rs-warmup {
+  margin-bottom: 20px;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(249,115,22,0.06), rgba(245,158,11,0.04));
+  border: 1px solid rgba(249,115,22,0.15);
+  border-radius: var(--radius);
+  border-left: 4px solid #f97316;
+}
+.rs-warmup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.rs-warmup-icon {
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249,115,22,0.1);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.rs-warmup-label {
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #f97316;
+  margin-bottom: 2px;
+}
+.rs-warmup h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.rs-warmup p {
+  font-size: .88rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+html.dark .rs-warmup { background: rgba(249,115,22,0.06); border-color: rgba(249,115,22,0.2); }
+
+/* ═══════════════════════════════════════════
+   WHAT TO LISTEN FOR
+   ═══════════════════════════════════════════ */
+.rs-listenfor {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.rs-listenfor-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #7c3aed;
+  margin-bottom: 12px;
+}
+.rs-listenfor-items { display: flex; flex-direction: column; gap: 8px; }
+.rs-listenfor-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--surface-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.rs-listenfor-level {
+  font-size: .62rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.rs-listenfor-level--3-4 { background: rgba(34,197,94,0.1); color: #16a34a; }
+.rs-listenfor-level--5-6 { background: rgba(245,158,11,0.1); color: #d97706; }
+.rs-listenfor-level--7-8 { background: rgba(13,148,136,0.1); color: #0D9488; }
+.rs-listenfor-phrase {
+  font-size: .85rem;
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.5;
+}
+html.dark .rs-listenfor { background: #1e293b; }
+
+/* ═══════════════════════════════════════════
+   SUBJECT COLOUR IMMERSION (D1)
+   Page-level colour tinting when in a subject area
+   ═══════════════════════════════════════════ */
+
+/* Mathematics — teal world */
+.rc-teal { --sc: #0D9488; --sc-bg: #f0fdfa; --sc-dark: #042f2e; }
+.rc-text-teal { color: #0D9488; }
+
+/* Biology — green world */
+.rc-green { --sc: #16a34a; --sc-bg: #f0fdf4; --sc-dark: #052e16; }
+.rc-text-green { color: #16a34a; }
+
+/* Chemistry — rose world */
+.rc-rose { --sc: #e11d48; --sc-bg: #fff1f2; --sc-dark: #4c0519; }
+.rc-text-rose { color: #e11d48; }
+
+/* Physics — blue world */
+.rc-blue { --sc: #2563eb; --sc-bg: #eff6ff; --sc-dark: #1e3a5f; }
+.rc-text-blue { color: #2563eb; }
+
+/* Earth Science — amber world */
+.rc-amber { --sc: #d97706; --sc-bg: #fffbeb; --sc-dark: #451a03; }
+.rc-text-amber { color: #d97706; }
+
+/* Space Science — violet world */
+.rc-violet { --sc: #7c3aed; --sc-bg: #f5f3ff; --sc-dark: #2e1065; }
+.rc-text-violet { color: #7c3aed; }
+
+/* Ecology — emerald world */
+.rc-emerald { --sc: #059669; --sc-bg: #ecfdf5; --sc-dark: #022c22; }
+.rc-text-emerald { color: #059669; }
+
+/* Apply subject colour to resource page header */
+.rs-header {
+  background: var(--sc-bg, var(--surface-warm));
+  border-bottom: 2px solid var(--sc, var(--teal));
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* Subject-tinted sidebar card border */
+.rs-sidebar-card {
+  border-top: 3px solid var(--sc, var(--teal));
+}
+
+/* Subject colour on Teacher Moves border */
+.rs-teacher-moves {
+  border-left: 3px solid var(--sc, var(--teal));
+}
+
+/* Warm-up connector inherits subject colour */
+.rs-warmup {
+  border-left-color: var(--sc, #f97316);
+}
+
+/* Self-check uses subject colour for header */
+.rs-selfcheck {
+  border-color: var(--sc, #22c55e);
+}
+.rs-selfcheck-toggle {
+  background: color-mix(in srgb, var(--sc, #22c55e) 6%, transparent);
+}
+
+/* Sentence starters use subject colour */
+.rs-starter {
+  border-left-color: var(--sc, var(--teal));
+}
+
+/* Dark mode subject colours */
+html.dark .rc-teal { --sc-bg: #0a2420; }
+html.dark .rc-green { --sc-bg: #0a1f0a; }
+html.dark .rc-rose { --sc-bg: #200a10; }
+html.dark .rc-blue { --sc-bg: #0a1530; }
+html.dark .rc-amber { --sc-bg: #1a150a; }
+html.dark .rc-violet { --sc-bg: #150a25; }
+html.dark .rc-emerald { --sc-bg: #0a1f15; }

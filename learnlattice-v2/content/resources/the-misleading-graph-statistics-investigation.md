@@ -46,6 +46,62 @@ hints:
 
 difficulty: "exceeding"
 duration: "2–3 lessons"
+warm_up:
+  title: First impression
+  activity: 'Show a graph with a truncated Y-axis that makes a small change look dramatic.
+    Ask: is this a big change or a small change? Then show the same data with Y-axis
+    starting at 0.'
+  time: 3 minutes
+listen_for:
+- level: 3-4
+  phrase: The graph looks like it's going up a lot
+- level: 5-6
+  phrase: The Y-axis doesn't start at zero — that makes the change look bigger than
+    it is
+- level: 7-8
+  phrase: The actual percentage change is only 2%, but the visual impression suggests
+    a much larger shift — this is deliberate manipulation
+self_check:
+- level: Getting started
+  items:
+  - I identified something that looks wrong about the graph
+  - I can say whether the graph exaggerates or minimises
+- level: Building understanding
+  items:
+  - I identified the specific technique used (truncated axis, 3D, etc.)
+  - I replotted the data fairly
+- level: Going deeper
+  items:
+  - I calculated the actual change and compared to the visual impression
+  - I explained why this technique is misleading
+- level: Pushing further
+  items:
+  - I found a real misleading graph in news or advertising
+  - I created deliberately misleading AND fair versions of the same data
+misconceptions:
+- myth: If a graph looks dramatic, the change is dramatic
+  why: We trust visual representations instinctively
+  truth: The visual impression depends on the scale, not just the data. Always check
+    the axis values before drawing conclusions.
+- myth: All graphs are honest
+  why: Graphs feel scientific and objective
+  truth: Graphs are created by people who make choices about scale, colour, labels,
+    and time range. Every choice can emphasise or hide information.
+timeline: '0-3 min: First impression warm-up. | 3-10 min: Identify 3 misleading techniques.
+  | 10-20 min: Groups receive a dataset — half make it look dramatic, half make it
+  look boring. | 20-30 min: Compare — same data, different impression. | 30-40 min:
+  Find real misleading graphs online. | 40-50 min: What should you check before trusting
+  a graph?'
+sentence_starters:
+  describing:
+  - The graph appears to show...
+  - The Y-axis starts at ___ instead of...
+  explaining:
+  - This is misleading because...
+  - The actual change is only ___%, which is...
+  justifying:
+  - I can prove this is misleading by showing that...
+  - The percentage change calculation shows...
 ---
 
 ## The Hook

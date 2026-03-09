@@ -99,6 +99,11 @@ sentence_starters:
   justifying:
   - I can prove the shares are equal by...
   - The general rule for comparing fractions is...
+warm_up:
+  title: Quick share
+  activity: Can you share 3 cookies equally between 4 people? Draw it. Most students
+    will draw fractions without knowing they're using fractions.
+  time: 3 minutes
 ---
 
 ## The Hook

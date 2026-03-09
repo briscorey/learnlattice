@@ -100,6 +100,12 @@ listen_for:
 - level: 7-8
   phrase: In scientific notation this is approximately 1.16 times 10 to the 1 days,
     which I can verify by working backwards
+warm_up:
+  title: How long is a million seconds?
+  activity: 'Ask students to guess — write answers on the board. Don''t reveal the
+    answer. Then ask: how long is a billion seconds? The gap between guesses reveals
+    whether they understand scale.'
+  time: 5 minutes
 ---
 
 ## The Hook

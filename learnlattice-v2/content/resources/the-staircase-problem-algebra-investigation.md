@@ -103,6 +103,12 @@ listen_for:
 - level: 7-8
   phrase: Two staircases fit together to make a rectangle of n by n plus 1, so one
     staircase is half that rectangle
+warm_up:
+  title: Handshake problem
+  activity: If 4 people all shake hands with each other, how many handshakes? What
+    about 5? 6? This activates the same triangular number structure without revealing
+    the staircase formula.
+  time: 5 minutes
 ---
 
 ## The Hook

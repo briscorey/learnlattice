@@ -87,6 +87,20 @@ sentence_starters:
   justifying:
   - This model reveals something that numbers alone cannot because...
   - The nearest star would be ___ km away at this scale, which shows...
+warm_up:
+  title: How big is Earth?
+  activity: If the Sun were a basketball, how big would Earth be? A marble? A pea?
+    A grain of sand? Take guesses. Don't reveal — they'll calculate it in the investigation.
+  time: 3 minutes
+misconceptions:
+- myth: Planets are close together in space
+  why: Diagrams in textbooks show planets close together
+  truth: Space is almost entirely empty. At basketball-Sun scale, Earth is 26 metres
+    away. Neptune is 780 metres. The nearest star is over 6000 km.
+- myth: The Sun is a bit bigger than the planets
+  why: Textbook diagrams use similar-sized circles
+  truth: The Sun is 109 times Earth's diameter. You could fit 1.3 million Earths inside
+    the Sun.
 ---
 
 ## The Hook

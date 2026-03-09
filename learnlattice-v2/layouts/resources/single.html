@@ -96,6 +96,35 @@
       {{ end }}
       {{ end }}
 
+      {{/* ── What to Listen For ── */}}
+      {{ with .Params.listen_for }}
+      <div class="rs-listenfor">
+        <div class="rs-listenfor-label">👂 What to Listen For (while circulating)</div>
+        <div class="rs-listenfor-items">
+          {{ range . }}
+          <div class="rs-listenfor-item">
+            <span class="rs-listenfor-level rs-listenfor-level--{{ .level | urlize }}">{{ .level }}</span>
+            <span class="rs-listenfor-phrase">"{{ .phrase }}"</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{/* ── Warm-Up Connector ── */}}
+      {{ with .Params.warm_up }}
+      <div class="rs-warmup">
+        <div class="rs-warmup-header">
+          <span class="rs-warmup-icon">🔥</span>
+          <div>
+            <div class="rs-warmup-label">Before this lesson ({{ .time }})</div>
+            <h3>{{ .title }}</h3>
+          </div>
+        </div>
+        <p>{{ .activity }}</p>
+      </div>
+      {{ end }}
+
       {{/* ── Investigation Timeline ── */}}
       {{ with .Params.timeline }}
       <div class="rs-timeline">

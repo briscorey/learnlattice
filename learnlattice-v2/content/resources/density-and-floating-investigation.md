@@ -95,6 +95,12 @@ listen_for:
 - level: 7-8
   phrase: The density ratio determines how much of the object sits below the surface
     — an object with density 0.6 will be 60 percent submerged
+warm_up:
+  title: Heavy or light?
+  activity: 'Rank these 5 objects from heaviest to lightest: a brick, a football,
+    a marble, a watermelon, a balloon. Now rank them from biggest to smallest. Are
+    the rankings the same? Why not?'
+  time: 5 minutes
 ---
 
 ## The Hook

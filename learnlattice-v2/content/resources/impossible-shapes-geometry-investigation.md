@@ -104,6 +104,12 @@ sentence_starters:
   justifying:
   - This formula must work for all polygons because...
   - The reason adding a side adds exactly 180 degrees is...
+warm_up:
+  title: Angle hunt
+  activity: Find 3 angles in the classroom. Estimate each in degrees. Check with a
+    protractor. The skill of estimating angles activates before they need to measure
+    them.
+  time: 5 minutes
 ---
 
 ## The Hook

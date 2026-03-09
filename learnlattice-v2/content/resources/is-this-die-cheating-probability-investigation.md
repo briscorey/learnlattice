@@ -103,6 +103,12 @@ listen_for:
 - level: 7-8
   phrase: The chi-squared test compares observed frequencies to expected frequencies,
     and a value above the critical threshold suggests the die is not fair
+warm_up:
+  title: Is this coin fair?
+  activity: 'Flip a coin 10 times as a class. Record heads and tails on the board.
+    Ask: is the coin fair? Most will say ''we need more flips.'' That instinct IS
+    the lesson.'
+  time: 5 minutes
 ---
 
 ## The Hook
