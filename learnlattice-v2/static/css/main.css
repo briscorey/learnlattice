@@ -11526,3 +11526,136 @@ html.dark .rs-related-games { background: rgba(124,58,237,0.06); }
   color: #d97706;
 }
 html.dark .streak-badge { background: rgba(245,158,11,0.08); }
+
+/* ═══════════════════════════════════════════
+   LAYOUT WIDTH FIX — Use full screen on all pages
+   ═══════════════════════════════════════════ */
+
+/* 1. RESOURCE SINGLE: 780px → uncapped (rs-layout controls width) */
+.resource-single {
+  max-width: none !important;
+  padding: 0 !important;
+}
+.rs-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.rs-layout {
+  max-width: 1200px !important;
+  margin: 0 auto;
+  padding: 24px 32px !important;
+  grid-template-columns: 1fr 300px !important;
+  gap: 40px !important;
+}
+@media (max-width: 900px) {
+  .rs-layout { grid-template-columns: 1fr !important; gap: 16px !important; padding: 16px !important; }
+  .rs-header-content { padding: 0 16px; }
+}
+
+/* 2. GRADE LEVEL PAGES: 820px → 1200px, force 3 columns */
+.gl-subject {
+  max-width: 1200px !important;
+  padding: 32px 32px 24px !important;
+}
+.gl-flagships.resources-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+}
+
+/* 3. SUBJECT PAGES: resource-list gets 2 columns */
+.resource-list {
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)) !important;
+}
+@media (max-width: 600px) {
+  .resource-list { grid-template-columns: 1fr !important; }
+}
+
+/* 4. VOCABULARY: 1000px → 1200px, smaller cards for 4 columns */
+.vocab-grid-section {
+  max-width: 1200px !important;
+}
+.vocab-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+}
+
+/* 5. SEQUENCES: 900px → 1100px */
+.seq-pathways-inner {
+  max-width: 1100px !important;
+}
+
+/* 6. BLOG: 2-column grid */
+.blog-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+/* 7. STUDENT HELP: wider iframe sections */
+.stu-help-topics {
+  max-width: 1100px !important;
+  margin: 0 auto;
+}
+
+/* 8. Global section: bump to 1300px */
+.section {
+  max-width: 1300px !important;
+}
+
+/* 9. Resource engagement strip — wider */
+.engagement-inner {
+  max-width: 1200px !important;
+}
+
+/* 10. Header content areas in rs-header should span full */
+.rs-header {
+  padding: 0 !important;
+}
+.rs-header .rs-header-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+/* Fix subject pages — math-resource-list needs 2 columns */
+.math-resource-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)) !important;
+  gap: 10px !important;
+}
+.math-resource-list .resource-list-item {
+  margin-bottom: 0 !important;
+}
+@media (max-width: 600px) {
+  .math-resource-list { grid-template-columns: 1fr !important; }
+}
+
+/* Fix blog — blog-list-inner needs grid */
+.blog-list-inner {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+}
+.blog-card {
+  margin-bottom: 0 !important;
+}
+
+/* Compact resource page vertical spacing — reduce teacher tools padding */
+.rs-warmup { padding: 12px !important; margin-bottom: 12px !important; }
+.rs-listen { padding: 12px !important; margin-bottom: 12px !important; }
+.rs-quickcheck { padding: 14px !important; margin-top: 14px !important; }
+.rs-exit-ticket { padding: 12px !important; }
+.rs-timeline { margin-bottom: 12px !important; }
+.rs-selfcheck { margin-bottom: 12px !important; }
+.rs-diff { margin-top: 12px !important; }
+.rs-journal { margin-top: 12px !important; }
+.rs-sequence { margin-top: 12px !important; padding: 10px 14px !important; }
+
+/* Resource content area — tighter paragraph spacing */
+.resource-content p { margin-bottom: 12px; }
+.resource-content h2 { margin-top: 20px; margin-bottom: 10px; }
+.resource-content h3 { margin-top: 16px; margin-bottom: 8px; }
+.resource-content ol, .resource-content ul { margin-bottom: 12px; }
+
+/* Grade level pages — tighter section spacing */
+.gl-subject { padding-top: 24px !important; padding-bottom: 16px !important; }
+.gl-subject-header { margin-bottom: 12px; }
+.gl-flagships { margin-bottom: 12px !important; }
