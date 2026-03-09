@@ -140,57 +140,27 @@ summaryLength = 30
       description = "Explore, quiz, and build an animal cell."
 
   [[params.nav_dropdowns]]
-    key = "explore"
+    key = "students"
     [[params.nav_dropdowns.items]]
-      title = "Explore"
-      icon = "🎲"
-      url = "/explore/"
-      description = "Pick a subject, play a game, or get surprised."
+      title = "Student Hub"
+      icon = "🎓"
+      url = "/students/"
+      description = "Learn, practise, play, explore."
     [[params.nav_dropdowns.items]]
-      title = "All Resources"
-      icon = "📚"
-      url = "/resources/"
-      description = "See the full 150+ resource teaching library."
-    [[params.nav_dropdowns.items]]
-      title = "Concept Map"
-      icon = "🗺️"
-      url = "/concept-map/"
-      description = "Interactive map of how every investigation connects."
-    [[params.nav_dropdowns.items]]
-      title = "Blog"
-      icon = "✏️"
-      url = "/blog/"
-      description = "Classroom stories, MYP strategies, teaching ideas."
-    [[params.nav_dropdowns.items]]
-      title = "Multilingual Learners"
-      icon = "🌏"
-      url = "/eal/"
-      description = "How every resource is designed for EAL classrooms."
-    [[params.nav_dropdowns.items]]
-      title = "Assessment Toolkit"
-      icon = "📋"
-      url = "/assessment/"
-      description = "Rubric cards, comment bank, exemplars, moderation guides."
+      title = "Revision Mode"
+      icon = "📖"
+      url = "/revision/"
+      description = "Flashcards, quizzes, formula practice."
     [[params.nav_dropdowns.items]]
       title = "Visual Vocabulary"
       icon = "🔤"
       url = "/vocabulary/"
-      description = "Key terms with visual definitions and examples."
+      description = "102 key terms with visual definitions."
     [[params.nav_dropdowns.items]]
-      title = "For Students"
-      icon = "🎓"
-      url = "/students/"
-      description = "Learn, practise, play, explore — designed for students."
-    [[params.nav_dropdowns.items]]
-      title = "Revision Mode"
-      icon = "🧠"
-      url = "/revise/"
-      description = "Focused study sessions with vocab, questions, and formulas."
-    [[params.nav_dropdowns.items]]
-      title = "Investigation Pathways"
-      icon = "📍"
-      url = "/pathways/"
-      description = "Visual maps showing how investigations connect."
+      title = "Assessment Toolkit"
+      icon = "📋"
+      url = "/assessment/"
+      description = "Rubrics, exemplars, moderation guides."
 
   [[params.nav_dropdowns]]
     key = "about"
@@ -526,15 +496,20 @@ summaryLength = 30
     url = "/games/"
     weight = 4
   [[menu.main]]
-    name = "Explore"
-    identifier = "explore"
-    url = "/explore/"
+    name = "Students"
+    identifier = "students"
+    url = "/students/"
     weight = 5
+  [[menu.main]]
+    name = "Blog"
+    identifier = "blog"
+    url = "/blog/"
+    weight = 6
   [[menu.main]]
     name = "About"
     identifier = "about"
     url = "/about/"
-    weight = 6
+    weight = 7
 
 [related]
   includeNewer = true
