@@ -30,7 +30,7 @@ h1{font-size:1.3rem;color:#d97706;font-weight:800}
 .colors{display:flex;gap:4px;margin-top:12px;justify-content:center;flex-wrap:wrap}
 .colors span{font-size:.6rem;padding:3px 8px;border-radius:4px;color:#fff;font-weight:600}
 </style></head><body>
-<div class="hdr"><h1>🧱 Fraction Wall</h1><div class="score-box" id="sc">0 / 0</div></div>
+<div class="hdr"><h1>🧱 Fraction Wall</h1><a href="/games/" style="font-size:.72rem;color:#94a3b8;text-decoration:none;opacity:.7;margin-left:8px">← All Games</a><div class="score-box" id="sc">0 / 0</div></div>
 <div class="game">
   <div class="wall" id="wall"></div>
   <div class="challenge">
@@ -89,7 +89,7 @@ function loadQ(){
   q.opts.forEach(function(o,i){
     var btn=document.createElement('button');btn.className='opt';btn.textContent=o;
     btn.onclick=function(){
-      if(this.classList.contains('correct')||this.classList.contains('wrong'))return;
+      if(document.querySelector('.opt.correct')||document.querySelector('.opt.wrong'))return;
       total++;
       if(i===q.answer){
         correct++;this.classList.add('correct');
@@ -105,7 +105,7 @@ function loadQ(){
   });
 }
 
-function nextQ(){qi++;loadQ();}
+function nextQ(){qi++;if(qi>=questions.length){document.getElementById('cq').textContent='🎉 All 10 questions complete! Score: '+correct+'/'+total;document.getElementById('ch').textContent='';document.getElementById('opts').innerHTML='';document.getElementById('fb').textContent='';return;}loadQ();}
 
 buildWall();loadQ();
 </script></body></html>

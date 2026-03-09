@@ -41,7 +41,7 @@ td.filled{color:#e2e8f0;font-weight:600}
 .pdot.done{background:#0D9488;border-color:#0D9488}
 .pdot.cur{background:rgba(13,148,136,.4);border-color:#0D9488}
 </style></head><body>
-<div class="hdr"><h1>🔷 Sequence Builder</h1><div class="hdr-r"><span id="lvl">Level 1/8</span><span id="pts">Score: 0</span></div></div>
+<div class="hdr"><h1>🔷 Sequence Builder</h1><a href="/games/" style="font-size:.72rem;color:#94a3b8;text-decoration:none;opacity:.7;margin-left:8px">← All Games</a><div class="hdr-r"><span id="lvl">Level 1/8</span><span id="pts">Score: 0</span></div></div>
 <div class="game">
   <div class="progress" id="prog"></div>
   <div class="stage">
@@ -146,7 +146,7 @@ function showHint(){
 
 function nextLevel(){
   if(ci<levels.length-1){ci++;loadLevel();}
-  else{document.getElementById('fb').textContent='🎉 All 8 levels complete! Score: '+score+'/80';document.getElementById('fb').className='fb ok';}
+  else{document.getElementById('fb').textContent='🎉 All 8 levels complete! Final score: '+score+'/80';document.getElementById('fb').className='fb ok';if(typeof celebrate==='function')celebrate('🎉 '+score+'/80!');}
 }
 
 document.getElementById('predictInput').addEventListener('keydown',function(e){if(e.key==='Enter')checkPredict();});

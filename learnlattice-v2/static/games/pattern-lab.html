@@ -45,7 +45,7 @@ h1{font-size:1.3rem;color:#0f2;letter-spacing:2px;text-transform:uppercase;font-
 </style></head><body>
 <div class="scanline"></div>
 <div class="hdr">
-  <h1>⚡ Pattern Lab</h1>
+  <h1>⚡ Pattern Lab</h1><a href="/games/" style="font-size:.72rem;color:#94a3b8;text-decoration:none;opacity:.7;margin-left:8px">← All Games</a>
   <div class="hdr-right">
     <span class="lvl" id="lvlText">Level 1 / 10</span>
     <span class="score" id="scoreText">Score: 0</span>
@@ -141,10 +141,10 @@ function showHint(){
   fb.style.display='block';
 }
 
-function nextLevel(){
+function nextLevel(){if(!answered){document.getElementById("feedback").textContent="Answer the current level first!";document.getElementById("feedback").className="feedback wrong";return;}
   if(current<levels.length-1){current++;loadLevel();}
   else{
-    document.getElementById('feedback').textContent='🎉 All 10 levels complete! Score: '+score+'/100';
+    document.getElementById('feedback').textContent='🎉 All 10 levels complete! Final score: '+score+'/100';if(typeof celebrate==='function')celebrate('🎉 '+score+'/100!');
     document.getElementById('feedback').className='feedback correct';
   }
 }

@@ -14,13 +14,13 @@ h1{font-size:1.2rem;background:linear-gradient(135deg,#06b6d4,#3b82f6);-webkit-b
 .mode-btns{display:flex;gap:4px;align-items:flex-end}
 .mode-btn{padding:6px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.72rem;font-family:inherit;transition:all .15s}
 .mode-btn.on{background:#06b6d4;border-color:#06b6d4;color:#020617}
-canvas{flex:1;display:block}
+canvas{touch-action:none;flex:1;display:block}
 .info{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,.9);border:1px solid #1e293b;border-radius:8px;padding:8px 16px;font-size:.72rem;color:#94a3b8;backdrop-filter:blur(8px)}
 .readings{position:absolute;top:12px;right:12px;background:rgba(15,23,42,.9);border:1px solid #1e293b;border-radius:9px;padding:10px 14px;font-size:.75rem}
 .readings div{margin-bottom:4px;color:#64748b}.readings span{color:#06b6d4;font-weight:600}
 .cvs-wrap{flex:1;position:relative}
 </style></head><body>
-<div class="hdr"><h1>🌊 Wave Sandbox</h1></div>
+<div class="hdr"><h1>🌊 Wave Sandbox</h1><a href="/games/" style="font-size:.72rem;color:#94a3b8;text-decoration:none;opacity:.7;margin-left:8px">← All Games</a></div>
 <div class="ctrls">
   <div class="ctrl"><label>Frequency 1</label><input type="range" id="f1" min="0.5" max="5" step="0.1" value="1" oninput="updateVal()"><div class="val" id="f1v">1.0 Hz</div></div>
   <div class="ctrl"><label>Amplitude 1</label><input type="range" id="a1" min="10" max="100" step="1" value="60" oninput="updateVal()"><div class="val" id="a1v">60</div></div>
@@ -115,10 +115,19 @@ function draw(){
   if(mode==='both'||mode==='sum') drawSum(f1,a1,f2,a2,'#a78bfa');
 
   // Readings
-  document.getElementById('r1').textContent=f1.toFixed(1)+'Hz, A='+Math.round(a1);
-  document.getElementById('r2').textContent=f2.toFixed(1)+'Hz, A='+Math.round(a2);
-  var maxCombined=a1+a2;
-  document.getElementById('rc').textContent='max amplitude = '+(maxCombined);
+  document.getElementById('r1').textContent=f1.toFixed(1)+'Hz, A='+Math.round(a1)+', λ='+Math.round(W/(f1*4))+'px';
+  document.getElementById('r2').textContent=f2.toFixed(1)+'Hz, A='+Math.round(a2)+', λ='+Math.round(W/(f2*4))+'px';
+  document.getElementById('rc').textContent='max A='+(a1+a2)+' | beat='+(Math.abs(f1-f2)).toFixed(1)+'Hz';
+  
+  // Dynamic info
+  var info=document.getElementById('info');
+  if(mode==='sum'||mode==='both'){
+    var diff=Math.abs(f1-f2);
+    if(diff<0.3&&a2>0) info.textContent='Frequencies are close → you can see BEATS (the amplitude rises and falls)';
+    else if(Math.abs(f2-f1*2)<0.2&&a2>0) info.textContent='Frequency 2 is double → this is a HARMONIC (octave relationship)';
+    else if(a2===0) info.textContent='Only Wave 1 is active. Increase Amplitude 2 to see superposition.';
+    else info.textContent='Two waves combine by SUPERPOSITION — add their values at each point';
+  }
 
   requestAnimationFrame(draw);
 }
