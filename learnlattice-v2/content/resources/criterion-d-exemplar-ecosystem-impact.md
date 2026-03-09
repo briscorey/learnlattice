@@ -1,32 +1,104 @@
 ---
-title: "What Does Level 7 Look Like? Ecosystem Impact"
+title: What Does Level 7 Look Like? Ecosystem Impact
 date: 2026-03-08
-description: "Three student responses applying ecology to a real-world environmental decision — annotated at levels 3-4, 5-6, and 7-8. From 'pollution is bad' to genuine evidence-based argumentation."
+description: Three student responses applying ecology to a real-world environmental decision — annotated at levels 3-4, 5-6, and 7-8. From 'pollution is bad' to genuine evidence-based argumentation.
 subjects:
-  - "Ecology"
-  - "Science"
+- Ecology
+- Science
 year_levels:
-  - "Grade 8"
-  - "Grade 9"
-  - "MYP Year 3"
-  - "MYP Year 4"
+- Grade 8
+- Grade 9
+- MYP Year 3
+- MYP Year 4
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Criterion D"
-  - "Assessment"
-  - "Exemplars"
-  - "Ecology"
-  - "Real-World Application"
-  - "Annotated Student Work"
-key_concept: "Systems"
-global_context: "Globalisation and Sustainability"
-statement_of_inquiry: "Applying scientific understanding to real-world decisions requires evaluating evidence, considering multiple perspectives, and accepting that the 'best' answer depends on context."
-formula: ""
-difficulty: "exceeding"
-download_url: ""
-download_label: "Assessment Exemplar PDF"
+- Criterion D
+- Assessment
+- Exemplars
+- Ecology
+- Real-World Application
+- Annotated Student Work
+key_concept: Systems
+global_context: Globalisation and Sustainability
+statement_of_inquiry: Applying scientific understanding to real-world decisions requires evaluating evidence, considering multiple perspectives, and accepting that the 'best' answer depends on context.
+formula: ''
+difficulty: exceeding
+download_url: ''
+download_label: Assessment Exemplar PDF
+hook: What makes what does level 7 look like? ecosystem impact worth investigating?
+warmup: 'Show students a simple example related to what does level 7 look like? ecosystem impact. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion.'
+timeline: '10 min: Introduce the problem. Students predict before investigating. | 25 min: Students work through the investigation in pairs or small groups. | 15 min: Gallery walk or class discussion. Compare
+  approaches and findings.'
+self_check:
+- level: Getting started
+  items:
+  - I can describe what we investigated
+- level: Making progress
+  items:
+  - I can explain the key patterns or relationships
+- level: Going deeper
+  items:
+  - I can use evidence to justify my conclusions
+- level: Extending
+  items:
+  - I can connect this to other topics or real-world situations
+sentence_starters:
+  approaching:
+  - I noticed that...
+  - The pattern I see is...
+  - My prediction was...
+  meeting:
+  - The evidence shows that...
+  - I can explain this because...
+  - Comparing the results...
+  exceeding:
+  - This connects to... because...
+  - If we changed the variable...
+  - The limitation of this approach is...
+misconceptions:
+- myth: Correlation means causation
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Just because two things happen together doesn't mean one causes the other.
+- myth: More data always means better results
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Data quality matters more than quantity. Controlled variables are essential.
+- myth: Living things always behave predictably
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Biological systems have natural variation. Repeat trials help account for this.
+listen_for:
+- level: 3-4
+  phrase: Describes observations about what does level 7 look like? ecosystem impact without explanation
+- level: 5-6
+  phrase: Explains patterns using evidence from the investigation
+- level: 7-8
+  phrase: Evaluates the method, identifies limitations, and connects to broader concepts
+quick_check:
+- q: What is the key question this investigation explores?
+  a: Students should reference the central question of What Does Level 7 Look Like? Ecosystem Impact
+  type: recall
+- q: What evidence supports your conclusion?
+  a: Students should cite specific data or observations from their investigation
+  type: apply
+- q: How would your results change if you modified one variable?
+  a: Students should predict and justify based on their understanding
+  type: extend
+exit_ticket:
+- What is one thing you learned today that surprised you?
+- What question do you still have about this topic?
+- Rate your confidence from 1-5 on the key concept.
+journal_prompts:
+- Explain what does level 7 look like? ecosystem impact to someone who hasn't studied it. What would you say?
+- What was the hardest part of today's investigation? How did you work through it?
+- How does this topic connect to something you already knew?
+- If you could investigate one more question about this topic, what would it be?
+differentiated:
+  approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
+  meeting: Complete the investigation independently. Explain the patterns you find using evidence.
+  exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
 ---
+
+
 
 ## The Task
 

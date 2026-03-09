@@ -1,43 +1,116 @@
 ---
-title: "Population Prediction"
+title: Population Prediction
 date: 2026-03-08
-description: "A single bacterium divides every 20 minutes. After 24 hours, the colony would weigh more than the Earth. But it doesn't. Why not? This investigation connects exponential growth to ecological limits — and asks whether human population growth faces the same constraints."
+description: A single bacterium divides every 20 minutes. After 24 hours, the colony would weigh more than the Earth. But it doesn't. Why not? This investigation connects exponential growth to ecological
+  limits — and asks whether human population growth faces the same constraints.
 subjects:
-  - "Mathematics"
-  - "Science"
-  - "Ecology"
-math_topic: "Algebra"
+- Mathematics
+- Science
+- Ecology
+math_topic: Algebra
 year_levels:
-  - "Grade 8"
-  - "Grade 9"
-  - "MYP Year 3"
-  - "MYP Year 4"
+- Grade 8
+- Grade 9
+- MYP Year 3
+- MYP Year 4
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Exponential Growth"
-  - "Ecology"
-  - "Systems Thinking"
-  - "Algebra"
-  - "Interdisciplinary"
-  - "Criterion B"
-  - "Criterion D"
-key_concept: "Systems"
-global_context: "Globalisation and Sustainability"
-statement_of_inquiry: "Exponential patterns in natural systems eventually encounter limits — and understanding those limits requires both mathematical models and ecological thinking."
-formula: "N = N₀ × 2^(t/d) where d = doubling time"
-download_url: ""
-download_label: "Investigation Pack PDF"
+- Exponential Growth
+- Ecology
+- Systems Thinking
+- Algebra
+- Interdisciplinary
+- Criterion B
+- Criterion D
+key_concept: Systems
+global_context: Globalisation and Sustainability
+statement_of_inquiry: Exponential patterns in natural systems eventually encounter limits — and understanding those limits requires both mathematical models and ecological thinking.
+formula: N = N₀ × 2^(t/d) where d = doubling time
+download_url: ''
+download_label: Investigation Pack PDF
 teacher_moves:
-  - title: "Let them guess first"
-    description: "One bacterium divides every 20 minutes. How many after 24 hours? Most guess thousands. The answer is 4.7 times 10 to the 21. The shock drives the lesson."
-  - title: "Random groups at whiteboards"
-    description: "Give each group a different organism with a different doubling time. They all discover the same J-curve independently. The pattern is universal."
-  - title: "The ecological limit is the twist"
-    description: "After the maths, ask why the world is not buried in bacteria. This is where ecology enters. Limiting factors and carrying capacity explain why the pure maths breaks down."
-difficulty: "exceeding"
-duration: "3–4 lessons"
+- title: Let them guess first
+  description: One bacterium divides every 20 minutes. How many after 24 hours? Most guess thousands. The answer is 4.7 times 10 to the 21. The shock drives the lesson.
+- title: Random groups at whiteboards
+  description: Give each group a different organism with a different doubling time. They all discover the same J-curve independently. The pattern is universal.
+- title: The ecological limit is the twist
+  description: After the maths, ask why the world is not buried in bacteria. This is where ecology enters. Limiting factors and carrying capacity explain why the pure maths breaks down.
+difficulty: exceeding
+duration: 3–4 lessons
+hook: What makes population prediction worth investigating?
+warmup: 'Show students a simple example related to population prediction. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion.'
+timeline: '10 min: Introduce the problem. Students predict before investigating. | 25 min: Students work through the investigation in pairs or small groups. | 15 min: Gallery walk or class discussion. Compare
+  approaches and findings.'
+self_check:
+- level: Getting started
+  items:
+  - I can describe what we investigated
+- level: Making progress
+  items:
+  - I can explain the key patterns or relationships
+- level: Going deeper
+  items:
+  - I can use evidence to justify my conclusions
+- level: Extending
+  items:
+  - I can connect this to other topics or real-world situations
+sentence_starters:
+  approaching:
+  - I noticed that...
+  - The pattern I see is...
+  - My prediction was...
+  meeting:
+  - The evidence shows that...
+  - I can explain this because...
+  - Comparing the results...
+  exceeding:
+  - This connects to... because...
+  - If we changed the variable...
+  - The limitation of this approach is...
+misconceptions:
+- myth: Finding one example proves a rule
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: One example supports a conjecture but doesn't prove it. Look for a general argument.
+- myth: The pattern must continue forever
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Patterns can break. We need to test edge cases and justify why the pattern holds.
+- myth: There is only one correct method
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Mathematics values different approaches. The reasoning matters more than the method.
+listen_for:
+- level: 3-4
+  phrase: Describes observations about population prediction without explanation
+- level: 5-6
+  phrase: Explains patterns using evidence from the investigation
+- level: 7-8
+  phrase: Evaluates the method, identifies limitations, and connects to broader concepts
+quick_check:
+- q: What is the key question this investigation explores?
+  a: Students should reference the central question of Population Prediction
+  type: recall
+- q: What evidence supports your conclusion?
+  a: Students should cite specific data or observations from their investigation
+  type: apply
+- q: How would your results change if you modified one variable?
+  a: Students should predict and justify based on their understanding
+  type: extend
+exit_ticket:
+- What is one thing you learned today that surprised you?
+- What question do you still have about this topic?
+- Rate your confidence from 1-5 on the key concept.
+journal_prompts:
+- Explain population prediction to someone who hasn't studied it. What would you say?
+- What was the hardest part of today's investigation? How did you work through it?
+- How does this topic connect to something you already knew?
+- If you could investigate one more question about this topic, what would it be?
+differentiated:
+  approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
+  meeting: Complete the investigation independently. Explain the patterns you find using evidence.
+  exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
 ---
+
+
 
 ## The Hook
 

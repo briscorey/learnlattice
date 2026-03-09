@@ -1,54 +1,124 @@
 ---
-title: "The Disappearing Candle"
+title: The Disappearing Candle
 date: 2026-03-03
-description: "A burning candle slowly disappears — where does it go? This investigation uses the mass conservation paradox of combustion to build particle model thinking from scratch: the idea that matter never vanishes, it changes form."
+description: 'A burning candle slowly disappears — where does it go? This investigation uses the mass conservation paradox of combustion to build particle model thinking from scratch: the idea that matter
+  never vanishes, it changes form.'
 subjects:
-  - "Chemistry"
-  - "Science"
+- Chemistry
+- Science
 year_levels:
-  - "Grade 7"
-  - "Grade 8"
-  - "Grade 9"
-  - "MYP Year 2"
-  - "MYP Year 3"
-  - "MYP Year 4"
+- Grade 7
+- Grade 8
+- Grade 9
+- MYP Year 2
+- MYP Year 3
+- MYP Year 4
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Conservation of Mass"
-  - "Particle Model"
-  - "Chemical Reactions"
-  - "Combustion"
-  - "Criterion B"
-  - "Criterion C"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
-statement_of_inquiry: "In chemical change, the arrangement of particles is transformed but their total quantity is conserved — matter does not appear or disappear, it changes form."
-formula: "CH₄ + 2O₂ → CO₂ + 2H₂O (or equivalent for candle wax)"
-
+- Conservation of Mass
+- Particle Model
+- Chemical Reactions
+- Combustion
+- Criterion B
+- Criterion C
+key_concept: Change
+global_context: Scientific and Technical Innovation
+statement_of_inquiry: In chemical change, the arrangement of particles is transformed but their total quantity is conserved — matter does not appear or disappear, it changes form.
+formula: CH₄ + 2O₂ → CO₂ + 2H₂O (or equivalent for candle wax)
 btc_practices:
-  - "Visibly Random Groups"
-  - "Vertical Non-Permanent Surfaces"
-  - "Thinking Tasks"
-download_url: ""
-download_label: "Investigation Pack PDF"
+- Visibly Random Groups
+- Vertical Non-Permanent Surfaces
+- Thinking Tasks
+download_url: ''
+download_label: Investigation Pack PDF
 teacher_moves:
-  - title: "Different jar sizes"
-    description: "Give each group a different sized jar. The comparison across groups is where the science happens — bigger jar, longer burn, more air, more oxygen."
-  - title: "Time it precisely"
-    description: "Students need stopwatches, not guesses. The difference between a 4-second and 6-second burn under the same jar is significant. Precision matters."
-  - title: "What gas replaced the oxygen?"
-    description: "The candle consumed oxygen and produced carbon dioxide. The jar still looks empty. Ask: how do you know the gas composition changed?"
-
+- title: Different jar sizes
+  description: Give each group a different sized jar. The comparison across groups is where the science happens — bigger jar, longer burn, more air, more oxygen.
+- title: Time it precisely
+  description: Students need stopwatches, not guesses. The difference between a 4-second and 6-second burn under the same jar is significant. Precision matters.
+- title: What gas replaced the oxygen?
+  description: 'The candle consumed oxygen and produced carbon dioxide. The jar still looks empty. Ask: how do you know the gas composition changed?'
 hints:
-  - "Watch the flame carefully as the jar covers it. When does it go out?"
-  - "What gas does a candle need to burn? What happens when that gas runs out?"
-  - "Measure how long the candle burns under jars of different sizes. What pattern do you see?"
-  - "Bigger jar = more air = more oxygen = longer burn time. Is the relationship linear?"
-
-difficulty: "exceeding"
-duration: "2–3 lessons"
+- Watch the flame carefully as the jar covers it. When does it go out?
+- What gas does a candle need to burn? What happens when that gas runs out?
+- Measure how long the candle burns under jars of different sizes. What pattern do you see?
+- Bigger jar = more air = more oxygen = longer burn time. Is the relationship linear?
+difficulty: exceeding
+duration: 2–3 lessons
+hook: What makes the disappearing candle worth investigating?
+warmup: 'Show students a simple example related to the disappearing candle. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion.'
+timeline: '10 min: Introduce the problem. Students predict before investigating. | 25 min: Students work through the investigation in pairs or small groups. | 15 min: Gallery walk or class discussion. Compare
+  approaches and findings.'
+self_check:
+- level: Getting started
+  items:
+  - I can describe what we investigated
+- level: Making progress
+  items:
+  - I can explain the key patterns or relationships
+- level: Going deeper
+  items:
+  - I can use evidence to justify my conclusions
+- level: Extending
+  items:
+  - I can connect this to other topics or real-world situations
+sentence_starters:
+  approaching:
+  - I noticed that...
+  - The pattern I see is...
+  - My prediction was...
+  meeting:
+  - The evidence shows that...
+  - I can explain this because...
+  - Comparing the results...
+  exceeding:
+  - This connects to... because...
+  - If we changed the variable...
+  - The limitation of this approach is...
+misconceptions:
+- myth: Chemical reactions destroy matter
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Mass is conserved in chemical reactions. Atoms rearrange but are not created or destroyed.
+- myth: Gases have no mass
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Gases have mass. When a substance produces gas, the gas still has mass even though we cannot see it.
+- myth: Mixing is the same as reacting
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: A mixture can be separated; a chemical reaction creates new substances with different properties.
+listen_for:
+- level: 3-4
+  phrase: Describes observations about the disappearing candle without explanation
+- level: 5-6
+  phrase: Explains patterns using evidence from the investigation
+- level: 7-8
+  phrase: Evaluates the method, identifies limitations, and connects to broader concepts
+quick_check:
+- q: What is the key question this investigation explores?
+  a: Students should reference the central question of The Disappearing Candle
+  type: recall
+- q: What evidence supports your conclusion?
+  a: Students should cite specific data or observations from their investigation
+  type: apply
+- q: How would your results change if you modified one variable?
+  a: Students should predict and justify based on their understanding
+  type: extend
+exit_ticket:
+- What is one thing you learned today that surprised you?
+- What question do you still have about this topic?
+- Rate your confidence from 1-5 on the key concept.
+journal_prompts:
+- Explain the disappearing candle to someone who hasn't studied it. What would you say?
+- What was the hardest part of today's investigation? How did you work through it?
+- How does this topic connect to something you already knew?
+- If you could investigate one more question about this topic, what would it be?
+differentiated:
+  approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
+  meeting: Complete the investigation independently. Explain the patterns you find using evidence.
+  exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
 ---
+
+
 
 ## The Hook
 

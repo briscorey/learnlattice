@@ -1,30 +1,102 @@
 ---
-title: "Grade 7 Earth's Dynamic Crust Companion Investigation Pack"
+title: Grade 7 Earth's Dynamic Crust Companion Investigation Pack
 date: 2026-02-28
-description: "Companion investigation pack for grade 7 earth's dynamic crust unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+description: Companion investigation pack for grade 7 earth's dynamic crust unit. Built for MYP curriculum alignment and MYP inquiry-based teaching.
 subjects:
-  - "Earth Science"
-  - "Science"
+- Earth Science
+- Science
 year_levels:
-  - "Grade 7"
-  - "MYP Year 2"
+- Grade 7
+- MYP Year 2
 resource_types:
-  - "Investigation Pack"
+- Investigation Pack
 tags:
-  - "Grade 7"
-  - "Earth Science"
-  - "Plate Tectonics"
-  - "Criterion B"
-  - "Criterion C"
-  - "Companion Resource"
-  - "Investigation Pack"
-formula: "plate motion -> earthquakes + volcanoes + mountains"
-download_url: ""
-download_label: "Companion Resource PDF"
-key_concept: "Change"
-global_context: "Orientation in Space and Time"
-statement_of_inquiry: "Evidence of change in Earth systems reveals processes that operate across vast timescales."
+- Grade 7
+- Earth Science
+- Plate Tectonics
+- Criterion B
+- Criterion C
+- Companion Resource
+- Investigation Pack
+formula: plate motion -> earthquakes + volcanoes + mountains
+download_url: ''
+download_label: Companion Resource PDF
+key_concept: Change
+global_context: Orientation in Space and Time
+statement_of_inquiry: Evidence of change in Earth systems reveals processes that operate across vast timescales.
+hook: The ground beneath your feet is moving right now. Can you prove it?
+warmup: 'Show students a simple example related to grade 7 earth''s dynamic crust companion investigation pack. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion.'
+timeline: '10 min: Introduce the problem. Students predict before investigating. | 25 min: Students work through the investigation in pairs or small groups. | 15 min: Gallery walk or class discussion. Compare
+  approaches and findings.'
+self_check:
+- level: Getting started
+  items:
+  - I can describe what we investigated
+- level: Making progress
+  items:
+  - I can explain the key patterns or relationships
+- level: Going deeper
+  items:
+  - I can use evidence to justify my conclusions
+- level: Extending
+  items:
+  - I can connect this to other topics or real-world situations
+sentence_starters:
+  approaching:
+  - I noticed that...
+  - The pattern I see is...
+  - My prediction was...
+  meeting:
+  - The evidence shows that...
+  - I can explain this because...
+  - Comparing the results...
+  exceeding:
+  - This connects to... because...
+  - If we changed the variable...
+  - The limitation of this approach is...
+misconceptions:
+- myth: Scientific models are exact copies of reality
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Models are simplified representations. They help us understand but have limitations.
+- myth: Evidence always gives a clear answer
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Evidence can be ambiguous. Scientists interpret evidence and sometimes disagree.
+- myth: Bigger changes need bigger causes
+  why: This is a common intuition but leads to incorrect conclusions.
+  truth: Small changes can accumulate over time to produce enormous effects.
+listen_for:
+- level: 3-4
+  phrase: Describes observations about grade 7 earth's dynamic crust companion investigation pack without explanation
+- level: 5-6
+  phrase: Explains patterns using evidence from the investigation
+- level: 7-8
+  phrase: Evaluates the method, identifies limitations, and connects to broader concepts
+quick_check:
+- q: What is the key question this investigation explores?
+  a: Students should reference the central question of Grade 7 Earth's Dynamic Crust Companion Investigation Pack
+  type: recall
+- q: What evidence supports your conclusion?
+  a: Students should cite specific data or observations from their investigation
+  type: apply
+- q: How would your results change if you modified one variable?
+  a: Students should predict and justify based on their understanding
+  type: extend
+exit_ticket:
+- What is one thing you learned today that surprised you?
+- What question do you still have about this topic?
+- Rate your confidence from 1-5 on the key concept.
+journal_prompts:
+- Explain grade 7 earth's dynamic crust companion investigation pack to someone who hasn't studied it. What would you say?
+- What was the hardest part of today's investigation? How did you work through it?
+- How does this topic connect to something you already knew?
+- If you could investigate one more question about this topic, what would it be?
+differentiated:
+  approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
+  meeting: Complete the investigation independently. Explain the patterns you find using evidence.
+  exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
 ---
+
+
 
 ## Overview
 
