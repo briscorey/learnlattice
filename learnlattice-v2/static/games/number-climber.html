@@ -345,10 +345,10 @@ var GameScene = new Phaser.Class({
     this.physics.add.existing(ground, true);
     platforms.add(ground);
 
-    // Initial platforms
+    // Initial platforms — close together for easy start
     lastPlatformY = GAME_H - 20;
     platformList = [];
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 10; i++) {
       createPlatform(self);
     }
 
@@ -374,18 +374,18 @@ var GameScene = new Phaser.Class({
     playerGfx.destroy();
 
     player = this.physics.add.sprite(GAME_W/2, GAME_H - 60, 'player');
-    player.setBounce(0.15);
+    player.setBounce(0);
     player.setCollideWorldBounds(false);
     player.body.setSize(24, 32);
-    player.setGravityY(300);
     player.setDepth(10);
+    this.coyoteTimer = 0; // frames since last grounded
 
     // Collision
     this.physics.add.collider(player, platforms, onLandPlatform, null, this);
 
-    // Camera
-    this.cameras.main.startFollow(player, true, 0.1, 0.1);
-    this.cameras.main.setDeadzone(GAME_W, 100);
+    // Camera — tighter vertical follow so player stays centered
+    this.cameras.main.startFollow(player, true, 0.1, 0.15);
+    this.cameras.main.setDeadzone(GAME_W, 60);
     this.cameras.main.setBounds(0, -10000, GAME_W, 10600);
 
     // World bounds (only left/right, not top/bottom)
@@ -428,7 +428,7 @@ var GameScene = new Phaser.Class({
     if (!gameActive) return;
 
     // Left / Right movement
-    var speed = 240;
+    var speed = 300;
     if (cursors.left.isDown || this.keyA.isDown) {
       player.setVelocityX(-speed);
       player.setFlipX(true);
@@ -436,12 +436,21 @@ var GameScene = new Phaser.Class({
       player.setVelocityX(speed);
       player.setFlipX(false);
     } else {
-      player.setVelocityX(player.body.velocity.x * 0.85);
+      player.setVelocityX(player.body.velocity.x * 0.82);
     }
 
-    // Jump
-    if ((cursors.up.isDown || cursors.space.isDown || this.keyW.isDown) && player.body.touching.down) {
-      player.setVelocityY(-420);
+    // Coyote time — allow jumping for 8 frames after leaving a platform
+    if (player.body.touching.down || player.body.blocked.down) {
+      this.coyoteTimer = 8;
+    } else if (this.coyoteTimer > 0) {
+      this.coyoteTimer--;
+    }
+
+    // Jump — uses coyote time for responsive feel
+    var jumpPressed = cursors.up.isDown || cursors.space.isDown || this.keyW.isDown;
+    if (jumpPressed && this.coyoteTimer > 0) {
+      player.setVelocityY(-480);
+      this.coyoteTimer = 0; // consume coyote time
     }
 
     // Track height
@@ -455,8 +464,9 @@ var GameScene = new Phaser.Class({
     if (player.x < -20) player.x = GAME_W + 20;
     if (player.x > GAME_W + 20) player.x = -20;
 
-    // Fall death
-    if (player.y > GAME_H + 200) {
+    // Fall death — die when falling below visible screen
+    var camBottom = this.cameras.main.scrollY + GAME_H + 100;
+    if (player.y > camBottom) {
       gameOver();
     }
 
@@ -468,21 +478,30 @@ var GameScene = new Phaser.Class({
 });
 
 function createPlatform(scene) {
-  var gap = 70 + Math.random() * 40;
+  var gap = 55 + Math.random() * 25;
   var y = lastPlatformY - gap;
-  var x = 80 + Math.random() * (GAME_W - 160);
-  var width = 100 + Math.random() * 80;
+  // Keep platforms within reachable horizontal range of each other
+  var prevX = platformList.length > 0 ? platformList[platformList.length - 1].x : GAME_W / 2;
+  var maxDrift = 250; // max horizontal distance from previous platform
+  var minX = Math.max(80, prevX - maxDrift);
+  var maxX = Math.min(GAME_W - 80, prevX + maxDrift);
+  var x = minX + Math.random() * (maxX - minX);
+  var width = 120 + Math.random() * 80;
 
   // Platform visual
   var color = [0x7c3aed, 0x6366f1, 0x8b5cf6, 0xa78bfa, 0x6d28d9][Math.floor(Math.random()*5)];
-  var platVisual = scene.add.rectangle(x, y, width, 16, color);
+  var platVisual = scene.add.rectangle(x, y, width, 20, color);
   platVisual.setStrokeStyle(1, 0xc084fc, 0.3);
 
   // Glow
-  var glow = scene.add.rectangle(x, y, width + 8, 20, color, 0.08);
+  var glow = scene.add.rectangle(x, y, width + 8, 24, color, 0.08);
   glow.setDepth(-1);
 
   scene.physics.add.existing(platVisual, true);
+  // Make platform one-way — player can jump through from below
+  platVisual.body.checkCollision.down = false;
+  platVisual.body.checkCollision.left = false;
+  platVisual.body.checkCollision.right = false;
   platforms.add(platVisual);
 
   var platData = { visual: platVisual, glow: glow, x: x, y: y, answered: false, locked: true };
@@ -649,7 +668,7 @@ window.startGame = function() {
       physics: {
         default: 'arcade',
         arcade: {
-          gravity: { y: 600 },
+          gravity: { y: 400 },
           debug: false
         }
       },
