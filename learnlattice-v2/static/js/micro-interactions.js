@@ -225,3 +225,92 @@
   });
 
 })();
+
+// ═══════════════════════════════════════════
+// 10. ACHIEVEMENT CELEBRATION
+// Confetti + message when self-check is completed
+// ═══════════════════════════════════════════
+
+window.celebrate = function(message) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  
+  // Confetti particles
+  var colors = ['#0D9488', '#f59e0b', '#22c55e', '#3b82f6', '#8b5cf6', '#ec4899'];
+  for (var i = 0; i < 40; i++) {
+    var particle = document.createElement('div');
+    particle.className = 'confetti-particle';
+    particle.style.left = (Math.random() * 100) + 'vw';
+    particle.style.top = '-10px';
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.animationDelay = (Math.random() * 0.5) + 's';
+    particle.style.animationDuration = (1.5 + Math.random()) + 's';
+    particle.style.width = (6 + Math.random() * 6) + 'px';
+    particle.style.height = (6 + Math.random() * 6) + 'px';
+    document.body.appendChild(particle);
+    setTimeout(function(el) { el.remove(); }, 3000, particle);
+  }
+
+  // Message
+  var msg = document.createElement('div');
+  msg.className = 'celebration-msg';
+  msg.textContent = message || '🎉 Nice work!';
+  document.body.appendChild(msg);
+  setTimeout(function() { msg.remove(); }, 2000);
+};
+
+// Watch self-check checkboxes
+var selfCheckContainer = document.querySelector('.rs-selfcheck-body');
+if (selfCheckContainer) {
+  selfCheckContainer.addEventListener('change', function() {
+    var boxes = selfCheckContainer.querySelectorAll('input[type="checkbox"]');
+    var checked = 0;
+    boxes.forEach(function(b) { if (b.checked) checked++; });
+    if (checked === boxes.length && checked > 0) {
+      setTimeout(function() { celebrate('🎉 All checked!'); }, 300);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════
+// 11. STUDENT PROGRESS TRACKER
+// Session-based tracking using sessionStorage fallback
+// ═══════════════════════════════════════════
+
+(function() {
+  var progressNodes = document.querySelectorAll('.stu-progress-node');
+  if (progressNodes.length === 0) return;
+
+  // Track visited pages in memory (session-only)
+  var visited = {};
+  try {
+    var stored = window.name; // Using window.name as session storage (persists across same-tab navigations)
+    if (stored && stored.startsWith('ll-progress:')) {
+      visited = JSON.parse(stored.replace('ll-progress:', ''));
+    }
+  } catch(e) {}
+
+  // Mark current page as visited
+  var path = window.location.pathname;
+  if (path.indexOf('/students/help') > -1 || path.indexOf('/understand/') > -1 || 
+      path.indexOf('/worked-examples/') > -1 || path.indexOf('/games/') > -1 ||
+      path.indexOf('/vocabulary') > -1) {
+    visited[path] = true;
+    try { window.name = 'll-progress:' + JSON.stringify(visited); } catch(e) {}
+  }
+
+  // Update progress nodes
+  var total = progressNodes.length;
+  var count = 0;
+  progressNodes.forEach(function(node) {
+    var href = node.getAttribute('href') || node.dataset.href || '';
+    if (visited[href]) {
+      node.classList.add('visited');
+      count++;
+    }
+  });
+
+  var summary = document.querySelector('.stu-progress-summary');
+  if (summary) {
+    summary.innerHTML = '<strong>' + count + '</strong> of <strong>' + total + '</strong> explored this session';
+  }
+})();

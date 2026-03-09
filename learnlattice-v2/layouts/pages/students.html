@@ -73,6 +73,27 @@
   </div>
 </section>
 
+<section class="stu-progress">
+  <h2>Your Session</h2>
+  <div class="stu-progress-grid">
+    <a href="/understand/negative-numbers" class="stu-progress-node" data-href="/understand/negative-numbers" title="Negative Numbers">➖</a>
+    <a href="/understand/fractions" class="stu-progress-node" data-href="/understand/fractions" title="Fractions">½</a>
+    <a href="/understand/algebra" class="stu-progress-node" data-href="/understand/algebra" title="Algebra">𝑥</a>
+    <a href="/understand/graph-reading" class="stu-progress-node" data-href="/understand/graph-reading" title="Graphs">📈</a>
+    <a href="/understand/probability" class="stu-progress-node" data-href="/understand/probability" title="Probability">🎲</a>
+    <a href="/understand/density" class="stu-progress-node" data-href="/understand/density" title="Density">⚖️</a>
+    <a href="/understand/forces" class="stu-progress-node" data-href="/understand/forces" title="Forces">💪</a>
+    <a href="/understand/energy" class="stu-progress-node" data-href="/understand/energy" title="Energy">⚡</a>
+    <a href="/understand/particles" class="stu-progress-node" data-href="/understand/particles" title="Particles">⚛️</a>
+    <a href="/understand/food-webs" class="stu-progress-node" data-href="/understand/food-webs" title="Food Webs">🌿</a>
+    <a href="/vocabulary/" class="stu-progress-node" data-href="/vocabulary/" title="Vocabulary">🔤</a>
+    {{ range (where (where .Site.RegularPages "Section" "resources") "Params.resource_types" "intersect" (slice "Interactive Game")) }}
+    <a href="{{ .RelPermalink }}" class="stu-progress-node" data-href="/games/{{ .File.ContentBaseName | replaceRE `-game$` `` }}.html" title="{{ .Title }}">🎮</a>
+    {{ end }}
+  </div>
+  <div class="stu-progress-summary">Start exploring to light up nodes</div>
+</section>
+
 <section class="stu-vocab-teaser">
   <div class="stu-vocab-inner">
     <h2>Need a word explained?</h2>

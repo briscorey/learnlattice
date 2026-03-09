@@ -122,6 +122,34 @@
   </div>
 </section>
 
+<!-- ── SEASONAL BANNER ── -->
+{{ $month := now.Month }}
+<section class="seasonal-banner">
+  <div class="seasonal-inner">
+    {{ if or (eq $month 3) (eq $month 4) }}
+    <span class="seasonal-icon">🥧</span>
+    <div><strong>March: Pi Day & Probability Month</strong>
+    <span class="seasonal-links"><a href="/resources/is-this-die-cheating-probability-investigation/">Is This Die Cheating?</a> · <a href="/resources/zero-point-nine-repeating-decimals-investigation/">Does 0.999... = 1?</a> · <a href="/resources/probability-simulator-game/">Probability Simulator</a></span></div>
+    {{ else if or (eq $month 5) (eq $month 6) }}
+    <span class="seasonal-icon">🌍</span>
+    <div><strong>June: World Environment Day</strong>
+    <span class="seasonal-links"><a href="/resources/the-invisible-thread-ecology-investigation/">The Invisible Thread</a> · <a href="/resources/food-web-builder-game/">Food Web Builder</a> · <a href="/resources/grade-9-climate-data-investigation/">Is Our City Getting Warmer?</a></span></div>
+    {{ else if or (eq $month 8) (eq $month 9) }}
+    <span class="seasonal-icon">📚</span>
+    <div><strong>Back to School: Starter Investigations</strong>
+    <span class="seasonal-links"><a href="/resources/the-million-dollar-question-number-sense/">Million Dollar Question</a> · <a href="/resources/dead-or-alive-biology-investigation/">Dead or Alive?</a> · <a href="/explore/">Explore all resources</a></span></div>
+    {{ else if or (eq $month 11) (eq $month 12) }}
+    <span class="seasonal-icon">❄️</span>
+    <div><strong>Winter: Data & Statistics Season</strong>
+    <span class="seasonal-links"><a href="/resources/the-misleading-graph-statistics-investigation/">Misleading Graphs</a> · <a href="/resources/grade-7-statistics-survey-investigation/">Survey Design</a> · <a href="/resources/grade-8-scatter-graphs-investigation/">Height vs Armspan</a></span></div>
+    {{ else }}
+    <span class="seasonal-icon">✨</span>
+    <div><strong>New this month: 5 visual explainers</strong>
+    <span class="seasonal-links"><a href="/students/help/">I don't understand...</a> · <a href="/vocabulary/">Visual Vocabulary (102 terms)</a> · <a href="/students/">Student Section</a></span></div>
+    {{ end }}
+  </div>
+</section>
+
 <!-- ── STATS BAR ── -->
 <section class="home-stats reveal">
   <div class="home-stats-inner">
