@@ -182,10 +182,10 @@ summaryLength = 30
       url = "/students/"
       description = "Learn, practise, play, explore — designed for students."
     [[params.nav_dropdowns.items]]
-      title = "Teaching Sequences"
+      title = "Investigation Pathways"
       icon = "📍"
-      url = "/sequences/"
-      description = "Curated investigation pathways across 6-week units."
+      url = "/pathways/"
+      description = "Visual maps showing how investigations connect."
 
   [[params.nav_dropdowns]]
     key = "about"

@@ -173,6 +173,19 @@
       </details>
       {{ end }}
 
+      {{/* ── Journal Prompts (student-facing) ── */}}
+      {{ with .Params.journal_prompts }}
+      <details class="rs-journal">
+        <summary><span>📓 Reflection Journal</span></summary>
+        <div class="rs-journal-body">
+          <p class="rs-journal-intro">Pick one or two. Write honestly — there are no wrong answers.</p>
+          {{ range . }}
+          <div class="rs-journal-prompt">{{ . }}</div>
+          {{ end }}
+        </div>
+      </details>
+      {{ end }}
+
       {{/* ── Exit Ticket ── */}}
       {{ with .Params.exit_ticket }}
       <div class="rs-exit-ticket">
@@ -342,6 +355,24 @@
         <a href="/assessment/" class="rs-sidebar-link">📋 Assessment Toolkit</a>
         <a href="/vocabulary/" class="rs-sidebar-link">🔤 Visual Vocabulary</a>
       </div>
+
+      {{/* Mini Concept Map — show 5 related investigations */}}
+      {{ $related := .Site.RegularPages.Related . | first 5 }}
+      {{ if $related }}
+      <div class="rs-sidebar-card rs-minimap">
+        <h3>🗺️ Connected Investigations</h3>
+        <div class="rs-minimap-nodes">
+          <div class="rs-minimap-center">{{ .Title | truncate 30 "…" }}</div>
+          {{ range $related }}
+          <a href="{{ .RelPermalink }}" class="rs-minimap-node" title="{{ .Title }}">
+            <span class="rs-minimap-dot"></span>
+            <span class="rs-minimap-label">{{ .Title | truncate 28 "…" }}</span>
+          </a>
+          {{ end }}
+        </div>
+        <a href="/concept-map/" class="rs-minimap-full">View full concept map →</a>
+      </div>
+      {{ end }}
 
       {{/* Common Misconceptions */}}
       {{ with .Params.misconceptions }}

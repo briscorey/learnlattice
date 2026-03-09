@@ -105,6 +105,11 @@ exit_ticket:
 - If the Sun is a basketball, roughly how big is Earth?
 - What surprised you most about the scale of the solar system?
 - Why is it important to use a model when studying space?
+journal_prompts:
+- What surprised you most about the scale of the solar system?
+- Why is it important to use a consistent scale?
+- Which planet's distance was most shocking?
+- How does understanding scale change how you think about space travel?
 ---
 
 ## The Hook
