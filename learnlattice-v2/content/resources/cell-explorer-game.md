@@ -22,30 +22,20 @@ download_label: ""
 key_concept: "Systems"
 global_context: "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
+game_url: "/games/cell-explorer.html?embed=1"
 ---
 
 ## How to Use This Game
-
 **Cell Explorer** is a fully interactive animal cell you can explore, quiz yourself on, and build from scratch. Switch between three modes using the tabs at the top.
-
 ### Three Modes
-
 **🔬 Explore** — Click any part of the cell to learn its name, function, real-world analogy, and a surprising fact. Hover to highlight organelles, click to lock in.
-
 **🧠 Quiz** — A random organelle glows and you identify it from four options. 10 questions per round, scored live. Start here after you've explored.
-
 **🏗️ Build** — Drag organelles from the sidebar and drop them onto the correct location inside the cell. Build the complete cell to win.
-
 ---
-
 <div style="position: relative; width: 100%; padding-bottom: 62%; border-radius: 16px; overflow: hidden; border: 1px solid rgba(29, 227, 200, 0.2); box-shadow: 0 8px 40px rgba(0,0,0,0.4);">
-  
 </div>
-
 ---
-
 ## Organelles in This Game
-
 | Organelle | Function |
 |-----------|---------|
 | Cell Membrane | Controls what enters and exits the cell |
@@ -58,16 +48,11 @@ statement_of_inquiry: "Living systems maintain balance through interconnected pr
 | Vacuole | Stores water and nutrients |
 | Centrosome | Organises cell division |
 | Cytoplasm | Fluid medium for all reactions |
-
 ## MYP Connection
-
 This game supports **Criterion A (Knowing and Understanding)** by developing factual knowledge of organelle names and functions. After exploring the game, students should be able to:
-
 - Name at least 8 organelles in an animal cell
 - Describe the function of each organelle in their own words
 - Explain how organelles work together as a system
 - Use real-world analogies to explain cell structure to others
-
 ## What to Do Next
-
 After mastering the game, check out the **[Photosynthesis and Cellular Respiration Worksheet](/resources/photosynthesis-cellular-respiration-worksheet/)** to connect organelle function to energy systems, or the **[Biodiversity and Classification Worksheet](/resources/biodiversity-and-classification-worksheet/)** for broader biology contexts.

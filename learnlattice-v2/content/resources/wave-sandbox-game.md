@@ -23,4 +23,5 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: ""
+game_url: "/games/wave-sandbox.html?embed=1"
 ---

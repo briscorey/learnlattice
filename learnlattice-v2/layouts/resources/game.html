@@ -13,12 +13,8 @@
 {{ if eq $subject "space-science" }}{{ $subjectColor = "violet" }}{{ end }}
 {{ if eq $subject "ecology" }}{{ $subjectColor = "emerald" }}{{ end }}
 
-{{/* Extract game slug from content — find the iframe src */}}
-{{ $gameSlug := "" }}
-{{ $content := .RawContent }}
-{{ range (findRE `/games/[a-z0-9-]+` $content) }}
-  {{ $gameSlug = . }}
-{{ end }}
+{{/* Extract game URL from front matter */}}
+{{ $gameURL := .Params.game_url | default "" }}
 
 <div class="game-page">
 
@@ -30,15 +26,15 @@
       <span class="game-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</span>
     </div>
     <div class="game-bar-right">
-      {{ with $gameSlug }}<a href="{{ . }}" target="_blank" class="game-fullscreen-btn" title="Open in new tab">⛶ Full Screen</a>{{ end }}
+      {{ if $gameURL }}<a href="{{ $gameURL }}" target="_blank" class="game-fullscreen-btn" title="Open in new tab">⛶ Full Screen</a>{{ end }}
       <button class="game-info-toggle" onclick="document.getElementById('gameInfo').classList.toggle('open')" title="About this game">ℹ️</button>
     </div>
   </div>
 
   {{/* ── Game iframe — fills available space ── */}}
   <div class="game-frame-wrap">
-    {{ with $gameSlug }}
-    <iframe src="{{ . }}" class="game-frame" loading="lazy" title="{{ $.Title }}" allow="autoplay"></iframe>
+    {{ if $gameURL }}
+    <iframe src="{{ $gameURL }}" class="game-frame" loading="lazy" title="{{ .Title }}" allow="autoplay"></iframe>
     {{ end }}
   </div>
 
