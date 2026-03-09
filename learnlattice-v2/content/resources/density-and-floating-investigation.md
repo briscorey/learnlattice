@@ -136,6 +136,7 @@ journal_prompts:
 - Did any of your predictions turn out wrong? What did you learn?
 - How does knowing about density change how you see everyday objects?
 - What would you test next if you had more time?
+hook: "An orange floats. Peel it, and it sinks. Same orange. Why?"
 ---
 
 ## The Hook

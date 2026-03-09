@@ -110,6 +110,7 @@ journal_prompts:
 - How did it feel to deliberately create a misleading graph?
 - Will you look at graphs differently after this lesson?
 - Where do you see misleading graphs in your daily life?
+hook: "Same data, opposite conclusions. How?"
 ---
 
 ## The Hook

@@ -48,7 +48,7 @@
   <div class="resource-body">
     <div class="resource-body-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</div>
     <h3>{{ .Title }}</h3>
-    <p>{{ .Description | default .Summary | truncate 120 }}</p>
+    {{ with .Params.hook }}<p class="resource-hook">"{{ . }}"</p>{{ else }}<p>{{ .Description | default .Summary | truncate 120 }}</p>{{ end }}
     <div class="resource-meta">
       {{ with .Params.difficulty }}
       <span class="resource-difficulty resource-difficulty--{{ . }}">

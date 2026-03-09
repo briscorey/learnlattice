@@ -129,6 +129,7 @@ journal_prompts:
 - Why is tearing triangle corners such a convincing demonstration?
 - What is the difference between checking cases and proving a rule?
 - Could this pattern ever break? What would that mean?
+hook: "Can you predict a polygon's angle sum without measuring a single angle?"
 ---
 
 ## The Hook

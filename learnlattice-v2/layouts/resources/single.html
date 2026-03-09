@@ -418,6 +418,34 @@
   </div>
 </article>
 
+<!-- Engagement Strip — "Try this next" + related games -->
+<section class="engagement-strip">
+  <div class="engagement-inner">
+    <div id="random-curiosity"></div>
+    <div class="rs-related-games">
+      <h3>🎮 Related Games</h3>
+      {{ $subject := "" }}
+      {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+      {{ $games := where (where .Site.RegularPages "Section" "resources") "Params.resource_types" "intersect" (slice "Interactive Game") }}
+      {{ $subjectGames := where $games "Params.subjects" "intersect" (slice $subject) }}
+      {{ range first 3 $subjectGames }}
+      <a href="{{ .RelPermalink }}" class="rs-game-link">
+        <span>🎮</span>
+        <span>{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ if not $subjectGames }}
+      {{ range first 3 $games }}
+      <a href="{{ .RelPermalink }}" class="rs-game-link">
+        <span>🎮</span>
+        <span>{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 {{ partial "newsletter.html" . }}
 
 <!-- Related Resources -->

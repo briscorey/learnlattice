@@ -107,6 +107,7 @@ journal_prompts:
 - Which step of the proof felt the most uncomfortable?
 - How did other people's arguments change your thinking?
 - What does this teach you about infinity?
+hook: "0.999... = 1. Not approximately. Exactly. Can you break the proof?"
 ---
 
 ## The Hook

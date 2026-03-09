@@ -145,6 +145,7 @@ journal_prompts:
 - How did pooling class data change your conclusion?
 - What does this investigation teach you about trusting small samples?
 - Where in real life do people draw conclusions from too little data?
+hook: "You rolled a 6 five times in a row. Is the die fair? How would you know?"
 ---
 
 ## The Hook
