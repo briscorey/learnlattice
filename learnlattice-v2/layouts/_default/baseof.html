@@ -12,14 +12,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  {{/* Critical CSS inline for fastest paint */}}
-  <link rel="stylesheet" href="/css/main.css?v=20260313a">
-  {{/* Non-blocking font loading */}}
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-  {{/* KaTeX loaded non-blocking — only needed after initial render */}}
+  {{/* Critical CSS inline for instant first paint (~1KB) */}}
+  {{ partial "critical-css.html" . }}
+  {{/* Main CSS loaded non-blocking — won't delay first paint */}}
+  <link rel="preload" href="/css/main.css?v=20260313b" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css?v=20260313b"></noscript>
+  {{/* Non-blocking font loading — reduced weights */}}
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  {{/* KaTeX — only load on resource pages (saves ~150KB on non-resource pages) */}}
+  {{ if and (eq .Section "resources") (not (eq (.Params.layout | default "") "game")) }}
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"></noscript>
+  {{ end }}
   {{ block "head" . }}{{ end }}
   <script>try{if(localStorage.getItem('ll-dark')==='1')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
@@ -258,20 +263,11 @@
   <script src="/js/micro-interactions.js?v=20260312b" defer></script>
   <script src="/js/curiosity.js?v=20260312a" defer></script>
 
-  <!-- Teacher Moves toggle -->
-  <script>
-  (function() {
-    document.querySelectorAll('.teacher-moves-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        btn.closest('.teacher-moves').classList.toggle('open');
-      });
-    });
-  })();
-  </script>
-
-  <!-- KaTeX auto-render -->
+  <!-- KaTeX auto-render (only on resource pages) -->
+  {{ if and (eq .Section "resources") (not (eq (.Params.layout | default "") "game")) }}
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+  {{ end }}
   <script>
   // Count-up animation for stat numbers
   (function() {
