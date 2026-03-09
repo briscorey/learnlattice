@@ -182,6 +182,11 @@ summaryLength = 30
       url = "/students/"
       description = "Learn, practise, play, explore — designed for students."
     [[params.nav_dropdowns.items]]
+      title = "Revision Mode"
+      icon = "🧠"
+      url = "/revise/"
+      description = "Focused study sessions with vocab, questions, and formulas."
+    [[params.nav_dropdowns.items]]
       title = "Investigation Pathways"
       icon = "📍"
       url = "/pathways/"

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revision Mode — LearnLattice</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0f1a;--s:#151929;--s2:#1c2036;--bd:#2a2e45;--ink:#e2e8f0;--ink2:#94a3b8;--teal:#0D9488;--grn:#22c55e;--red:#ef4444;--amb:#f59e0b;--pur:#a78bfa;--r:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh}
+.pick{max-width:600px;margin:0 auto;padding:32px 16px;text-align:center}
+.pick h1{font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:4px}
+.pick .sub{color:var(--ink2);font-size:.85rem;margin-bottom:28px}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+.tb{padding:14px;border-radius:var(--r);border:1px solid var(--bd);background:var(--s);color:var(--ink);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:left;display:flex;align-items:center;gap:10px}
+.tb:hover{border-color:var(--teal);background:var(--s2);transform:translateY(-2px)}
+.tb.sel{border-color:var(--teal);background:rgba(13,148,136,.12)}
+.tb .ti{font-size:1.3rem}.tb .tc{font-size:.65rem;color:var(--ink2);display:block;font-weight:400}
+.sets{display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.sb{padding:7px 16px;border-radius:10px;border:1px solid var(--bd);background:var(--s);color:var(--ink2);font-family:inherit;font-size:.78rem;cursor:pointer;transition:all .15s}
+.sb.on{border-color:var(--teal);color:var(--teal);background:rgba(13,148,136,.08)}
+.go{padding:14px 40px;border-radius:var(--r);border:none;background:var(--teal);color:#fff;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s}
+.go:hover{background:#0a7c72;transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,148,136,.3)}
+.go:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.sess{max-width:480px;margin:0 auto;padding:16px;display:none}
+.bar{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.prog{flex:1;height:5px;border-radius:3px;background:var(--s2);overflow:hidden}
+.fill{height:100%;border-radius:3px;background:var(--teal);transition:width .4s}
+.cnt{font-size:.75rem;color:var(--ink2);white-space:nowrap}
+.pts{font-size:.75rem;color:var(--grn);font-weight:700;white-space:nowrap}
+.card{background:var(--s);border:1px solid var(--bd);border-radius:20px;padding:28px 24px;min-height:300px;display:flex;flex-direction:column;animation:cin .3s ease}
+@keyframes cin{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.ct{font-size:.58rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;padding:3px 9px;border-radius:5px;display:inline-block;margin-bottom:14px;width:fit-content}
+.ct-v{background:rgba(13,148,136,.12);color:var(--teal)}.ct-q{background:rgba(37,99,235,.12);color:#60a5fa}
+.ct-m{background:rgba(245,158,11,.12);color:var(--amb)}.ct-f{background:rgba(167,139,250,.12);color:var(--pur)}
+.cp{font-family:'DM Serif Display',serif;font-size:1.4rem;line-height:1.3;margin-bottom:16px;flex:1}
+.cs{font-size:.82rem;color:var(--ink2);margin-bottom:14px;line-height:1.5}
+.ans{display:grid;gap:7px}
+.ab{padding:12px 16px;border-radius:11px;border:1px solid var(--bd);background:var(--s2);color:var(--ink);font-family:inherit;font-size:.85rem;cursor:pointer;transition:all .15s;text-align:left}
+.ab:hover{border-color:var(--teal);background:rgba(13,148,136,.06)}
+.ab.ok{border-color:var(--grn);background:rgba(34,197,94,.1);color:var(--grn)}
+.ab.no{border-color:var(--red);background:rgba(239,68,68,.08);color:var(--red)}
+.ab:disabled{cursor:default}
+.rb{padding:12px;border-radius:11px;border:1px dashed var(--bd);background:transparent;color:var(--ink2);font-family:inherit;font-size:.85rem;cursor:pointer;transition:all .2s;width:100%}
+.rb:hover{border-color:var(--teal);color:var(--teal)}
+.rev{padding:16px;border-radius:11px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.15);animation:rin .3s ease}
+@keyframes rin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.rev h4{font-size:.85rem;color:var(--teal);margin-bottom:5px}
+.rev p{font-size:.85rem;color:var(--ink);line-height:1.5}
+.rr{display:flex;gap:7px;margin-top:14px}
+.rt{flex:1;padding:9px;border-radius:9px;border:1px solid var(--bd);background:var(--s2);color:var(--ink2);font-family:inherit;font-size:.75rem;cursor:pointer;transition:all .15s;text-align:center}
+.rt:hover{border-color:var(--teal)}
+.rt-h{border-color:var(--red);color:var(--red)}.rt-o{border-color:var(--amb);color:var(--amb)}.rt-e{border-color:var(--grn);color:var(--grn)}
+.res{max-width:480px;margin:0 auto;padding:32px 16px;text-align:center;display:none}
+.res h2{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:6px}
+.bs{font-size:3rem;font-weight:700;color:var(--teal);margin-bottom:6px}
+.ss{color:var(--ink2);font-size:.85rem;margin-bottom:20px}
+.sr{display:flex;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.sx{padding:12px 18px;border-radius:var(--r);background:var(--s);border:1px solid var(--bd);min-width:80px}
+.sx .sv{font-size:1.3rem;font-weight:700;display:block}.sx .sl{font-size:.6rem;color:var(--ink2);text-transform:uppercase;letter-spacing:1px}
+.sx-g .sv{color:var(--grn)}.sx-a .sv{color:var(--amb)}.sx-r .sv{color:var(--red)}
+.wl{text-align:left;margin:14px 0;padding:14px;border-radius:var(--r);background:var(--s);border:1px solid var(--bd)}
+.wl h4{font-size:.72rem;color:var(--amb);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.wi{padding:5px 0;font-size:.82rem;color:var(--ink);border-bottom:1px solid var(--bd)}.wi:last-child{border:none}
+.rst{padding:12px 36px;border-radius:var(--r);border:1px solid var(--teal);background:rgba(13,148,136,.08);color:var(--teal);font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s}
+.rst:hover{background:var(--teal);color:#fff}
+.bk{display:inline-block;margin-bottom:12px;color:var(--ink2);text-decoration:none;font-size:.8rem}.bk:hover{color:var(--teal)}
+@media(max-width:480px){.tg{grid-template-columns:1fr}.card{padding:20px 16px;min-height:260px}.cp{font-size:1.2rem}.sr{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="pick" id="P">
+  <a href="/students/" class="bk">← Back to Students</a>
+  <h1>Revision Mode</h1>
+  <p class="sub">Pick a topic. Get a focused study session. No guessing what to revise.</p>
+  <div class="tg" id="TG"></div>
+  <div class="sets">
+    <button class="sb on" onclick="SL(10,this)">10 cards</button>
+    <button class="sb" onclick="SL(20,this)">20 cards</button>
+    <button class="sb" onclick="SL(30,this)">30 cards</button>
+  </div>
+  <button class="go" id="GO" onclick="start()" disabled>Choose a topic</button>
+</div>
+<div class="sess" id="S">
+  <div class="bar"><div class="prog"><div class="fill" id="F"></div></div><div class="cnt" id="C">1/10</div><div class="pts" id="PT">0</div></div>
+  <div id="A"></div>
+</div>
+<div class="res" id="R">
+  <h2>Session Complete</h2>
+  <div class="bs" id="FS">0%</div>
+  <div class="ss" id="FM"></div>
+  <div class="sr">
+    <div class="sx sx-g"><span class="sv" id="SC">0</span><span class="sl">Correct</span></div>
+    <div class="sx sx-a"><span class="sv" id="SP">0</span><span class="sl">Partial</span></div>
+    <div class="sx sx-r"><span class="sv" id="SW">0</span><span class="sl">Missed</span></div>
+  </div>
+  <div class="wl" id="WL" style="display:none"><h4>Review these</h4><div id="WI"></div></div>
+  <button class="rst" onclick="re()">Revise Again</button>
+</div>
+<script>
+(function(){
+var T={
+algebra:{l:"Algebra & Patterns",i:"📐",
+v:[{t:"Variable",d:"A letter representing an unknown number.",x:"In 3x+1=10, x is the variable."},
+{t:"Coefficient",d:"The number multiplied by a variable.",x:"In 5x, the coefficient is 5."},
+{t:"Constant",d:"A fixed number in an expression.",x:"In T(n)=3n+2, the constant is 2."},
+{t:"Common Difference",d:"Amount added each step in a sequence.",x:"4,7,10,13... common difference is 3."},
+{t:"Linear",d:"Makes a straight line. Constant rate of change.",x:"y=2x+1 is linear."},
+{t:"Gradient",d:"Steepness of a line. Rise ÷ run.",x:"Up 3 for every 1 across = gradient 3."},
+{t:"Equation",d:"A sentence with = sign. Both sides balance.",x:"3x+1=10 → x=3."},
+{t:"Quadratic",d:"Has x² as highest power. U-shaped curve.",x:"y=x²-4 is quadratic."}],
+q:[{q:"T(n)=3n+1. What is T(5)?",c:"16",w:["15","14","18"]},
+{q:"Gradient of y=4x-3?",c:"4",w:["3","-3","1"]},
+{q:"Solve: 2x+5=13",c:"x = 4",w:["x = 5","x = 3","x = 9"]},
+{q:"Next: 2, 6, 12, 20, ?",c:"30",w:["28","24","32"]},
+{q:"If n²=144, n=?",c:"12",w:["11","13","14"]},
+{q:"3x when x=-2?",c:"-6",w:["6","-5","1"]}],
+m:[{m:"You can't have negative answers",t:"Negative numbers are valid. x=-3 is fine."},
+{m:"The = sign means 'the answer is'",t:"= means both sides have the same value. It's a balance."},
+{m:"Letters always represent one number",t:"Variables can represent ranges. In y=2x, x can be anything."}],
+f:[{f:"y = mx + c",n:"Straight line equation",p:"m=gradient, c=y-intercept"},
+{f:"T(n) = dn + (a-d)",n:"nth term of linear sequence",p:"d=common difference, a=first term"},
+{f:"n(n+1)/2",n:"Triangular numbers",p:"Sum of first n integers"}]},
+probability:{l:"Probability & Statistics",i:"🎲",
+v:[{t:"Probability",d:"How likely something is. 0=impossible, 1=certain.",x:"P(rolling 6) = 1/6 ≈ 0.167"},
+{t:"Mean",d:"Sum of all values ÷ number of values.",x:"Mean of 3,7,5 = 15÷3 = 5"},
+{t:"Median",d:"Middle value when in order.",x:"2,5,8,9,12 → median=8"},
+{t:"Mode",d:"Most frequent value.",x:"3,5,5,7,9 → mode=5"},
+{t:"Range",d:"Highest minus lowest.",x:"Range of 3,7,12 = 9"},
+{t:"Experimental Probability",d:"Estimated from actual trials.",x:"12 sixes in 60 rolls → 12/60=0.2"},
+{t:"Theoretical Probability",d:"Calculated from equally likely outcomes.",x:"P(heads)=1/2"},
+{t:"Sample Size",d:"How many data points you collect.",x:"Larger samples give more reliable results."}],
+q:[{q:"P(rolling 3) on fair die?",c:"1/6",w:["1/3","3/6","1/2"]},
+{q:"Mean of 4,8,6,10,2?",c:"6",w:["5","7","8"]},
+{q:"60 rolls. Expected 4s?",c:"10",w:["6","12","15"]},
+{q:"NOT a measure of central tendency?",c:"Range",w:["Mean","Median","Mode"]},
+{q:"5 heads in a row. P(tails next)?",c:"1/2",w:["1/6","5/6","0"]},
+{q:"12 red, 8 blue marbles. P(blue)?",c:"2/5",w:["8/12","1/2","2/3"]}],
+m:[{m:"After 5 heads, tails is 'due'",t:"Each flip is independent. The coin has no memory."},
+{m:"The mean is always the best average",t:"Median is better for skewed data. One outlier wrecks the mean."},
+{m:"Low probability means it won't happen",t:"P=0.01 means 1 in 100. In 1000 trials, expect ~10."}],
+f:[{f:"P(E) = favourable / total",n:"Basic probability",p:"Count what you want ÷ count everything"},
+{f:"Mean = Σx / n",n:"Arithmetic mean",p:"Sum of values ÷ number of values"},
+{f:"P(A or B) = P(A) + P(B)",n:"Addition rule (mutually exclusive)",p:"Only when A and B can't both happen"}]},
+number:{l:"Number Sense",i:"🔢",
+v:[{t:"Integer",d:"A whole number. Positive, negative, or zero.",x:"-3, 0, 7 are integers. 2.5 is not."},
+{t:"Prime",d:"Exactly two factors: 1 and itself.",x:"7 is prime. 9 is not (1,3,9)."},
+{t:"Factor",d:"Divides exactly into another number.",x:"Factors of 12: 1,2,3,4,6,12"},
+{t:"Percentage",d:"A fraction out of 100.",x:"25% = 25/100 = 1/4 = 0.25"},
+{t:"Ratio",d:"Comparison between two quantities.",x:"3:5 means for every 3 there are 5."},
+{t:"Exponential Growth",d:"Multiplies by same factor each time.",x:"1→2→4→8→16 (doubling)"},
+{t:"Standard Form",d:"Large/small numbers using powers of 10.",x:"3,400,000 = 3.4 × 10⁶"},
+{t:"HCF/GCD",d:"Highest Common Factor. Largest number dividing both.",x:"HCF(24,36) = 12"}],
+q:[{q:"15% of 80?",c:"12",w:["15","10","8"]},
+{q:"2⁵ = ?",c:"32",w:["10","25","64"]},
+{q:"√81?",c:"9",w:["8","7","81"]},
+{q:"(-3)×(-4)?",c:"12",w:["-12","-7","7"]},
+{q:"GCD(24,36)?",c:"12",w:["6","8","4"]},
+{q:"0.75 as fraction?",c:"3/4",w:["7/5","3/5","7/10"]}],
+m:[{m:"Multiplying always makes bigger",t:"×0.5 makes smaller. ×negative flips sign."},
+{m:"0.999... is close to 1 but not equal",t:"They ARE equal. No number exists between them."},
+{m:"Negative × negative = negative",t:"Negative × negative = positive. Reversing a reversal."}],
+f:[{f:"% = (part/whole) × 100",n:"Finding a percentage",p:"Part ÷ Whole × 100"},
+{f:"aⁿ × aᵐ = aⁿ⁺ᵐ",n:"Multiplying powers",p:"Same base → add exponents"},
+{f:"(a/b)×(c/d) = ac/bd",n:"Multiplying fractions",p:"Tops × tops, bottoms × bottoms"}]},
+biology:{l:"Biology & Ecology",i:"🧬",
+v:[{t:"Photosynthesis",d:"Plants convert sunlight+water+CO₂ into glucose+oxygen.",x:"No photosynthesis → no oxygen."},
+{t:"Respiration",d:"Cells break glucose to release energy. All living things.",x:"Glucose+O₂ → CO₂+H₂O+Energy"},
+{t:"Ecosystem",d:"Living things + their non-living environment.",x:"Pond: fish, plants, water, sun."},
+{t:"Food Chain",d:"Linear sequence of who eats whom.",x:"Grass→Rabbit→Fox"},
+{t:"Keystone Species",d:"Removal collapses the ecosystem.",x:"Wolves in Yellowstone."},
+{t:"Diffusion",d:"Particles move high→low concentration.",x:"Perfume spreading across a room."},
+{t:"Osmosis",d:"Water diffusion through a membrane.",x:"Roots absorb water by osmosis."},
+{t:"Cell",d:"Basic unit of life. Smallest living thing.",x:"~37 trillion cells in your body."}],
+q:[{q:"Plants produce during photosynthesis?",c:"Glucose and oxygen",w:["CO₂ and water","Just oxygen","Just glucose"]},
+{q:"Where does respiration happen?",c:"All living cells",w:["Only lungs","Only plants","Only animals"]},
+{q:"NOT a life characteristic (MRS GREN)?",c:"Thinking",w:["Respiration","Growth","Nutrition"]},
+{q:"Remove keystone species?",c:"Ecosystem collapses",w:["Nothing","One species dies","Chain shortens"]},
+{q:"Diffusion: particles move from...",c:"High→low concentration",w:["Low→high","Cold→hot","Small→large"]},
+{q:"Cell membrane's job?",c:"Controls entry/exit",w:["Energy","Stores DNA","Makes proteins"]}],
+m:[{m:"Respiration is just breathing",t:"Breathing=gas exchange. Respiration=chemical reaction in cells releasing energy."},
+{m:"Plants don't respire, only photosynthesise",t:"Plants respire 24/7. They only photosynthesise in light."},
+{m:"Removing one species only affects what it eats",t:"Effects cascade through the ENTIRE web."}],
+f:[{f:"CO₂+H₂O → Glucose+O₂",n:"Photosynthesis",p:"Needs light energy. Happens in chloroplasts."},
+{f:"Glucose+O₂ → CO₂+H₂O+Energy",n:"Aerobic respiration",p:"Happens in mitochondria. All cells."},
+{f:"MRS GREN",n:"7 life characteristics",p:"Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition"}]},
+physics:{l:"Physics & Forces",i:"⚡",
+v:[{t:"Density",d:"Mass per unit volume. How packed the stuff is.",x:"Steel: 7.9 g/cm³. Cork: 0.24 g/cm³."},
+{t:"Speed",d:"Distance per unit time.",x:"60 km/h = 60 km every hour."},
+{t:"Force",d:"A push or pull. Measured in Newtons.",x:"Gravity ≈ 10N per kg."},
+{t:"Friction",d:"Opposes motion between surfaces.",x:"Rough=more friction."},
+{t:"Wavelength",d:"Distance between consecutive wave peaks.",x:"Red≈700nm, Blue≈450nm."},
+{t:"Amplitude",d:"Wave height from rest to peak.",x:"Loud=large amplitude."},
+{t:"Frequency",d:"Waves per second. In Hertz (Hz).",x:"440 Hz = concert A."},
+{t:"Gravity",d:"Force pulling objects toward each other.",x:"g ≈ 10 N/kg on Earth."}],
+q:[{q:"Density formula?",c:"Mass ÷ Volume",w:["Mass × Volume","Volume ÷ Mass","Force × Distance"]},
+{q:"Object floats if density is...",c:"Less than liquid",w:["More","Equal","Greater than 1"]},
+{q:"Speed = ?",c:"Distance ÷ Time",w:["Distance × Time","Time ÷ Distance","Force × Time"]},
+{q:"Constructive interference?",c:"Waves add up",w:["Cancel out","Nothing","Speed up"]},
+{q:"Fastest?",c:"Light",w:["Sound","Electricity","Water waves"]},
+{q:"Unbalanced forces cause?",c:"Acceleration",w:["Constant speed","No movement","Friction"]}],
+m:[{m:"Heavy objects fall faster",t:"In vacuum all fall equally. Air resistance makes feathers slow."},
+{m:"Brightest star is closest",t:"Brightness depends on BOTH distance and luminosity."},
+{m:"Friction always slows things down",t:"Friction lets you walk and hold things. Without it you couldn't move."}],
+f:[{f:"D = M / V",n:"Density",p:"Mass(g) ÷ Volume(cm³)"},
+{f:"S = D / T",n:"Speed",p:"Distance(m) ÷ Time(s)"},
+{f:"F = ma",n:"Newton's 2nd Law",p:"Force(N) = mass(kg) × acceleration(m/s²)"}]},
+chemistry:{l:"Chemistry",i:"⚗️",
+v:[{t:"Reactant",d:"Substance used up in a reaction.",x:"Fuel+oxygen are reactants in burning."},
+{t:"Product",d:"Substance made in a reaction.",x:"CO₂+water are products of burning."},
+{t:"Catalyst",d:"Speeds up reaction, not used up.",x:"Enzymes are biological catalysts."},
+{t:"Element",d:"Pure substance, one type of atom.",x:"Gold, oxygen, carbon."},
+{t:"Compound",d:"Two+ elements chemically bonded.",x:"H₂O = hydrogen+oxygen."},
+{t:"pH",d:"0-14 scale. <7 acid, 7 neutral, >7 alkali.",x:"Lemon≈2, bleach≈13."},
+{t:"Exothermic",d:"Releases heat to surroundings.",x:"Burning, hand warmers."},
+{t:"Atom",d:"Smallest particle of an element.",x:"Carbon atom has 6 protons."}],
+q:[{q:"Conservation of mass means...",c:"Mass doesn't change in a reaction",w:["Mass increases","Mass decreases","Only for liquids"]},
+{q:"pH 3 is...",c:"Acidic",w:["Alkaline","Neutral","Can't tell"]},
+{q:"Speeds up without being used?",c:"Catalyst",w:["Reactant","Product","Solvent"]},
+{q:"Atoms in H₂O?",c:"3",w:["2","1","4"]},
+{q:"Higher temp → faster reaction because...",c:"Particles collide more",w:["More reactant","Removes products","Changes equation"]},
+{q:"Acid + Alkali → ?",c:"Salt + Water",w:["Just water","Just salt","Gas + water"]}],
+m:[{m:"Reactions destroy atoms",t:"Atoms NEVER created/destroyed. They just rearrange."},
+{m:"All acids are dangerous",t:"Citric acid in oranges, acetic acid in vinegar — we eat acids daily."},
+{m:"Dissolving is a chemical reaction",t:"Usually physical — substance recoverable by evaporation."}],
+f:[{f:"Reactants → Products",n:"General equation",p:"What goes in → What comes out"},
+{f:"Acid+Alkali → Salt+Water",n:"Neutralisation",p:"They cancel each other out."},
+{f:"Rate = Amount / Time",n:"Reaction rate",p:"How fast product forms."}]}
+};
+for(var k in T){var t=T[k];t.n=t.v.length+t.q.length+t.m.length+t.f.length}
+var sel=null,len=10,cards=[],ci=0,sc=0,rd={c:0,p:0,w:0,wk:[]};
+function rp(){var g=document.getElementById('TG');g.innerHTML='';for(var k in T){var t=T[k];var b=document.createElement('button');b.className='tb';b.dataset.t=k;b.innerHTML='<span class="ti">'+t.i+'</span><div><strong>'+t.l+'</strong><span class="tc">'+t.n+' cards</span></div>';b.onclick=function(){document.querySelectorAll('.tb').forEach(function(x){x.classList.remove('sel')});this.classList.add('sel');sel=this.dataset.t;document.getElementById('GO').disabled=false;document.getElementById('GO').textContent='Start: '+T[sel].l};g.appendChild(b)}}
+window.SL=function(n,b){len=n;document.querySelectorAll('.sb').forEach(function(x){x.classList.remove('on')});b.classList.add('on')};
+function sh(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=a[i];a[i]=a[j];a[j]=tmp}return a}
+window.start=function(){if(!sel)return;var t=T[sel];cards=[];t.v.forEach(function(v){cards.push({y:'v',d:v})});t.q.forEach(function(q){cards.push({y:'q',d:q})});t.m.forEach(function(m){cards.push({y:'m',d:m})});t.f.forEach(function(f){cards.push({y:'f',d:f})});sh(cards);cards=cards.slice(0,len);ci=0;sc=0;rd={c:0,p:0,w:0,wk:[]};document.getElementById('P').style.display='none';document.getElementById('S').style.display='block';document.getElementById('R').style.display='none';rc()};
+function up(){document.getElementById('F').style.width=(ci/cards.length*100)+'%';document.getElementById('C').textContent=(ci+1)+'/'+cards.length;document.getElementById('PT').textContent=sc+' pts'}
+function rc(){if(ci>=cards.length){sr();return}up();var c=cards[ci],a=document.getElementById('A');if(c.y==='v')rv(a,c.d);else if(c.y==='q')rq(a,c.d);else if(c.y==='m')rm(a,c.d);else rf(a,c.d)}
+function rv(a,v){a.innerHTML='<div class="card"><span class="ct ct-v">Vocabulary</span><div class="cp">What does <em>'+v.t+'</em> mean?</div><button class="rb" onclick="this.style.display=\'none\';document.getElementById(\'VA\').style.display=\'block\';document.getElementById(\'VR\').style.display=\'flex\'">Tap to reveal</button><div class="rev" style="display:none" id="VA"><h4>'+v.t+'</h4><p>'+v.d+'</p>'+(v.x?'<p style="margin-top:6px;color:var(--ink2);font-style:italic">'+v.x+'</p>':'')+'</div><div class="rr" style="display:none" id="VR"><button class="rt rt-h" onclick="rate(0)">Didn\'t know</button><button class="rt rt-o" onclick="rate(1)">Kind of</button><button class="rt rt-e" onclick="rate(2)">Knew it</button></div></div>'}
+function rq(a,q){var ans=sh([q.c].concat(q.w.slice(0,3)));var h=ans.map(function(x){return'<button class="ab" onclick="cq(this,\''+x.replace(/'/g,"\\'")+'\',\''+q.c.replace(/'/g,"\\'")+'\')">'+x+'</button>'}).join('');a.innerHTML='<div class="card"><span class="ct ct-q">Quick Check</span><div class="cp">'+q.q+'</div><div class="ans">'+h+'</div></div>'}
+window.cq=function(b,ans,cor){document.querySelectorAll('.ab').forEach(function(x){x.disabled=true;if(x.textContent===cor)x.classList.add('ok')});if(ans===cor){b.classList.add('ok');sc+=10;rd.c++}else{b.classList.add('no');rd.w++;rd.wk.push(cards[ci].d.q)}setTimeout(nc,900)};
+function rm(a,m){a.innerHTML='<div class="card"><span class="ct ct-m">Myth Buster</span><div class="cp" style="font-style:italic">"'+m.m+'"</div><div class="cs">Is this TRUE or FALSE?</div><div class="ans" style="grid-template-columns:1fr 1fr"><button class="ab" onclick="cm(this,true)" style="text-align:center;font-weight:700">TRUE</button><button class="ab" onclick="cm(this,false)" style="text-align:center;font-weight:700">FALSE</button></div><div class="rev" style="display:none;margin-top:10px" id="MR"><h4>It\'s a myth!</h4><p>'+m.t+'</p></div></div>'}
+window.cm=function(b,ans){document.querySelectorAll('.ab').forEach(function(x){x.disabled=true});if(!ans){b.classList.add('ok');sc+=10;rd.c++}else{b.classList.add('no');document.querySelectorAll('.ab').forEach(function(x){if(x.textContent==='FALSE')x.classList.add('ok')});rd.w++;rd.wk.push(cards[ci].d.m)}document.getElementById('MR').style.display='block';setTimeout(nc,1500)};
+function rf(a,f){a.innerHTML='<div class="card"><span class="ct ct-f">Formula Flash</span><div class="cp" style="font-family:\'DM Sans\',sans-serif;font-size:1.6rem;text-align:center;letter-spacing:1px">'+f.f+'</div><div class="cs" style="text-align:center">What does this calculate?</div><button class="rb" onclick="this.style.display=\'none\';document.getElementById(\'FA\').style.display=\'block\';document.getElementById(\'FR\').style.display=\'flex\'">Tap to reveal</button><div class="rev" style="display:none" id="FA"><h4>'+f.n+'</h4><p>'+f.p+'</p></div><div class="rr" style="display:none" id="FR"><button class="rt rt-h" onclick="rate(0)">Didn\'t know</button><button class="rt rt-o" onclick="rate(1)">Kind of</button><button class="rt rt-e" onclick="rate(2)">Knew it</button></div></div>'}
+window.rate=function(l){if(l===0){rd.w++;rd.wk.push(cards[ci].d.t||cards[ci].d.f||'?')}else if(l===1){sc+=5;rd.p++}else{sc+=10;rd.c++}nc()};
+function nc(){ci++;up();if(ci>=cards.length){sr();return}rc()}
+function sr(){document.getElementById('S').style.display='none';document.getElementById('R').style.display='block';var tot=rd.c+rd.p+rd.w;var pct=tot>0?Math.round((rd.c+rd.p*.5)/tot*100):0;document.getElementById('FS').textContent=pct+'%';document.getElementById('SC').textContent=rd.c;document.getElementById('SP').textContent=rd.p;document.getElementById('SW').textContent=rd.w;document.getElementById('FM').textContent=pct>=80?'Excellent — you know this well!':pct>=60?'Good progress — review the items below.':'Keep practising — focus on what you missed.';if(rd.wk.length>0){document.getElementById('WL').style.display='block';document.getElementById('WI').innerHTML=rd.wk.map(function(w){return'<div class="wi">'+w+'</div>'}).join('')}else{document.getElementById('WL').style.display='none'}}
+window.re=function(){document.getElementById('R').style.display='none';document.getElementById('P').style.display='block'};
+rp();
+})();
+</script>
+</body>
+</html>

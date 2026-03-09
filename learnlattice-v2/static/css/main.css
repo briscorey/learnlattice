@@ -12068,3 +12068,6 @@ html.dark .streak-badge { background: rgba(245,158,11,0.08); }
   /* All remaining spans < 12px inside resource cards */
   .resource-body span { min-font-size: 12px; font-size: max(12px, inherit) !important; }
 }
+
+/* ── Revise card (student dashboard) ── */
+.stu-card-revise { background: linear-gradient(135deg, #1e1b4b, #312e81) !important; }
