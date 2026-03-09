@@ -58,32 +58,34 @@ body {
 .ui-height span { color: #4ade80; font-size: 18px; font-weight: 700; }
 #question-panel {
   position: absolute;
-  bottom: 60px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(15, 10, 30, 0.95);
+  background: rgba(15, 10, 30, 0.92);
   backdrop-filter: blur(12px);
   border: 2px solid rgba(139, 92, 246, 0.4);
-  border-radius: 20px;
-  padding: 20px 28px;
+  border-radius: 16px;
+  padding: 14px 20px;
   text-align: center;
   z-index: 20;
   display: none;
-  min-width: 320px;
-  max-width: 90%;
-  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
-  animation: panelIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 280px;
+  max-width: 85%;
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+  animation: panelIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: auto;
 }
 @keyframes panelIn {
   from { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.9); }
   to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 }
 #question-panel .q-text {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #e9d5ff;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   line-height: 1.3;
+  white-space: pre-line;
 }
 #question-panel .q-answers {
   display: grid;
@@ -211,8 +213,8 @@ body {
     <button class="big-btn" onclick="startGame()">Start Climbing</button>
     <div style="margin-top:20px;font-size:13px;color:#64748b;max-width:300px;text-align:center;line-height:1.5">
       Arrow keys or A/D to move · Space or Up to jump<br>
-      Land on a platform to get a question<br>
-      Answer correctly to unlock the next platform
+      Land on glowing orbs to answer questions for points<br>
+      Keep climbing — you never stop moving!
     </div>
   </div>
 
@@ -378,7 +380,8 @@ var GameScene = new Phaser.Class({
     player.setCollideWorldBounds(false);
     player.body.setSize(24, 32);
     player.setDepth(10);
-    this.coyoteTimer = 0; // frames since last grounded
+    this.coyoteTimer = 0;
+    this.jumpBuffer = 0;
 
     // Collision
     this.physics.add.collider(player, platforms, onLandPlatform, null, this);
@@ -427,7 +430,7 @@ var GameScene = new Phaser.Class({
   update: function() {
     if (!gameActive) return;
 
-    // Left / Right movement
+    // Left / Right movement — always active, even during questions
     var speed = 300;
     if (cursors.left.isDown || this.keyA.isDown) {
       player.setVelocityX(-speed);
@@ -439,18 +442,30 @@ var GameScene = new Phaser.Class({
       player.setVelocityX(player.body.velocity.x * 0.82);
     }
 
-    // Coyote time — allow jumping for 8 frames after leaving a platform
-    if (player.body.touching.down || player.body.blocked.down) {
-      this.coyoteTimer = 8;
+    var grounded = player.body.touching.down || player.body.blocked.down;
+
+    // Coyote time — 10 frames after leaving a ledge
+    if (grounded) {
+      this.coyoteTimer = 10;
     } else if (this.coyoteTimer > 0) {
       this.coyoteTimer--;
     }
 
-    // Jump — uses coyote time for responsive feel
-    var jumpPressed = cursors.up.isDown || cursors.space.isDown || this.keyW.isDown;
-    if (jumpPressed && this.coyoteTimer > 0) {
-      player.setVelocityY(-480);
-      this.coyoteTimer = 0; // consume coyote time
+    // Jump buffer — remember Space presses for 10 frames
+    var jumpPressed = Phaser.Input.Keyboard.JustDown(cursors.up) || 
+                      Phaser.Input.Keyboard.JustDown(cursors.space) || 
+                      Phaser.Input.Keyboard.JustDown(this.keyW);
+    if (jumpPressed) {
+      this.jumpBuffer = 10;
+    } else if (this.jumpBuffer > 0) {
+      this.jumpBuffer--;
+    }
+
+    // Execute jump when buffer AND coyote both valid
+    if (this.jumpBuffer > 0 && this.coyoteTimer > 0) {
+      player.setVelocityY(-500);
+      this.jumpBuffer = 0;
+      this.coyoteTimer = 0;
     }
 
     // Track height
@@ -480,47 +495,46 @@ var GameScene = new Phaser.Class({
 function createPlatform(scene) {
   var gap = 55 + Math.random() * 25;
   var y = lastPlatformY - gap;
-  // Keep platforms within reachable horizontal range of each other
   var prevX = platformList.length > 0 ? platformList[platformList.length - 1].x : GAME_W / 2;
-  var maxDrift = 250; // max horizontal distance from previous platform
+  var maxDrift = 250;
   var minX = Math.max(80, prevX - maxDrift);
   var maxX = Math.min(GAME_W - 80, prevX + maxDrift);
   var x = minX + Math.random() * (maxX - minX);
   var width = 120 + Math.random() * 80;
 
-  // Platform visual
   var color = [0x7c3aed, 0x6366f1, 0x8b5cf6, 0xa78bfa, 0x6d28d9][Math.floor(Math.random()*5)];
   var platVisual = scene.add.rectangle(x, y, width, 20, color);
   platVisual.setStrokeStyle(1, 0xc084fc, 0.3);
 
-  // Glow
   var glow = scene.add.rectangle(x, y, width + 8, 24, color, 0.08);
   glow.setDepth(-1);
 
   scene.physics.add.existing(platVisual, true);
-  // Make platform one-way — player can jump through from below
   platVisual.body.checkCollision.down = false;
   platVisual.body.checkCollision.left = false;
   platVisual.body.checkCollision.right = false;
   platforms.add(platVisual);
 
-  var platData = { visual: platVisual, glow: glow, x: x, y: y, answered: false, locked: true };
+  // Only every 3rd platform has a question (the rest are free to use)
+  var hasQuestion = (platformList.length % 3 === 1);
+  var platData = { visual: platVisual, glow: glow, x: x, y: y, answered: false, hasQuestion: hasQuestion };
   platformList.push(platData);
   lastPlatformY = y;
 
-  // Lock indicator (small lock icon above platform)
-  var lock = scene.add.text(x, y - 20, '🔒', { fontSize: '14px' });
-  lock.setOrigin(0.5);
-  platData.lockIcon = lock;
+  // Question orb indicator on platforms with questions
+  if (hasQuestion) {
+    var orb = scene.add.circle(x, y - 22, 8, 0xfbbf24, 0.8);
+    scene.tweens.add({ targets: orb, y: y - 28, duration: 800, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+    platData.orb = orb;
+  }
 
   return platData;
 }
 
 function onLandPlatform(playerSprite, platform) {
-  if (!gameActive || questionShowing) return;
+  if (!gameActive) return;
   if (!playerSprite.body.touching.down) return;
 
-  // Find platform data
   var platData = null;
   for (var i = 0; i < platformList.length; i++) {
     if (platformList[i].visual === platform) {
@@ -528,14 +542,18 @@ function onLandPlatform(playerSprite, platform) {
       break;
     }
   }
-  if (!platData || platData.answered) return;
+  if (!platData || platData.answered || !platData.hasQuestion) return;
 
-  // Show question
+  // Show question NON-BLOCKING — player keeps moving
   showQuestion(platData);
 }
 
+var questionTimer = null;
+
 function showQuestion(platData) {
+  if (questionShowing) return;
   questionShowing = true;
+  
   var height = Math.max(0, Math.floor((GAME_H - 60 - platData.y) / 8));
   currentQuestion = getQuestion(height);
   currentQuestion.platData = platData;
@@ -555,30 +573,42 @@ function showQuestion(platData) {
   });
 
   panel.style.display = 'block';
-  // Pause player
-  player.setVelocity(0, 0);
-  player.body.setAllowGravity(false);
+  // NO FREEZE — player keeps full control
+
+  // Auto-dismiss after 5 seconds if not answered
+  if (questionTimer) clearTimeout(questionTimer);
+  questionTimer = setTimeout(function() {
+    dismissQuestion();
+  }, 5000);
+}
+
+function dismissQuestion() {
+  if (questionTimer) { clearTimeout(questionTimer); questionTimer = null; }
+  document.getElementById('question-panel').style.display = 'none';
+  questionShowing = false;
+  currentQuestion = null;
 }
 
 function checkAnswer(answer, btn) {
   if (!currentQuestion) return;
   var buttons = document.querySelectorAll('.q-btn');
+  buttons.forEach(function(b) { b.onclick = null; }); // disable all
 
   if (answer === currentQuestion.correct) {
     btn.classList.add('correct');
     score += 10;
     currentQuestion.platData.answered = true;
 
-    // Remove lock icon
-    if (currentQuestion.platData.lockIcon) {
-      currentQuestion.platData.lockIcon.destroy();
+    // Remove orb
+    if (currentQuestion.platData.orb) {
+      currentQuestion.platData.orb.destroy();
     }
 
-    // Visual feedback — change platform color to green
+    // Visual feedback — platform turns green
     currentQuestion.platData.visual.setFillStyle(0x22c55e);
     currentQuestion.platData.glow.setFillStyle(0x22c55e, 0.12);
 
-    // Star burst particles
+    // Star burst
     if (gameScene) {
       for (var i = 0; i < 8; i++) {
         var s = gameScene.add.image(player.x, player.y, 'star');
@@ -588,8 +618,7 @@ function checkAnswer(answer, btn) {
           targets: s,
           x: s.x + (Math.random() - 0.5) * 160,
           y: s.y - 40 - Math.random() * 80,
-          alpha: 0,
-          scale: 0,
+          alpha: 0, scale: 0,
           duration: 600 + Math.random() * 300,
           ease: 'Cubic.easeOut',
           onComplete: function() { s.destroy(); }
@@ -597,43 +626,16 @@ function checkAnswer(answer, btn) {
       }
     }
 
-    setTimeout(function() {
-      document.getElementById('question-panel').style.display = 'none';
-      questionShowing = false;
-      currentQuestion = null;
-      player.body.setAllowGravity(true);
-      updateUI();
-    }, 500);
+    setTimeout(function() { dismissQuestion(); updateUI(); }, 400);
 
   } else {
     btn.classList.add('wrong');
-    // Highlight correct answer
+    // Show correct answer
     buttons.forEach(function(b) {
-      if (parseFloat(b.textContent) === currentQuestion.correct) {
-        b.classList.add('correct');
-      }
-      b.onclick = null;
+      if (parseFloat(b.textContent) === currentQuestion.correct) b.classList.add('correct');
     });
-
-    // Shake the platform
-    if (gameScene && currentQuestion.platData.visual) {
-      gameScene.tweens.add({
-        targets: currentQuestion.platData.visual,
-        x: currentQuestion.platData.x + 5,
-        duration: 50,
-        yoyo: true,
-        repeat: 5
-      });
-    }
-
-    setTimeout(function() {
-      document.getElementById('question-panel').style.display = 'none';
-      questionShowing = false;
-      currentQuestion = null;
-      player.body.setAllowGravity(true);
-      // Small bounce down as penalty
-      player.setVelocityY(100);
-    }, 1200);
+    // Dismiss after 800ms — NO PENALTY, just move on
+    setTimeout(function() { dismissQuestion(); }, 800);
   }
 }
 
@@ -644,7 +646,7 @@ function updateUI() {
 
 function gameOver() {
   gameActive = false;
-  document.getElementById('question-panel').style.display = 'none';
+  dismissQuestion();
   document.getElementById('finalScore').textContent = score;
   document.getElementById('finalHeight').textContent = 'Reached ' + maxHeight + 'm';
   document.getElementById('gameover-screen').style.display = 'flex';
@@ -697,6 +699,9 @@ window.restartGame = function() {
     setTimeout(function() { gameActive = true; }, 300);
   }
 };
+
+// Expose for debugging
+window._g = function() { return { game:game, player:player, platformList:platformList, score:score, maxHeight:maxHeight, gameActive:gameActive, questionShowing:questionShowing }; };
 
 })();
 </script>
