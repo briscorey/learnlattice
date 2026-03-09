@@ -101,6 +101,10 @@ misconceptions:
   why: Textbook diagrams use similar-sized circles
   truth: The Sun is 109 times Earth's diameter. You could fit 1.3 million Earths inside
     the Sun.
+exit_ticket:
+- If the Sun is a basketball, roughly how big is Earth?
+- What surprised you most about the scale of the solar system?
+- Why is it important to use a model when studying space?
 ---
 
 ## The Hook

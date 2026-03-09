@@ -110,6 +110,10 @@ warm_up:
     protractor. The skill of estimating angles activates before they need to measure
     them.
   time: 5 minutes
+exit_ticket:
+- What is the angle sum of a hexagon?
+- A regular pentagon has 5 equal angles. What is each angle?
+- Can you have a polygon where every angle is 170°? Why or why not?
 ---
 
 ## The Hook

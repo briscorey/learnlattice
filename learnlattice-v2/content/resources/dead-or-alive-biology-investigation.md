@@ -31,6 +31,7 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+handout_url: "/handouts/dead-or-alive"
 teacher_moves:
   - title: "Start with fire"
     description: "Is fire alive? It grows, it consumes, it responds, it reproduces (spreads). Let students argue for 5 minutes before introducing MRS GREN."
@@ -108,6 +109,10 @@ warm_up:
   activity: 'Show: a robot, a plant seed, a flame, a sleeping bear. Which is alive?
     Which is not? Students will disagree — that disagreement IS the warm-up.'
   time: 5 minutes
+exit_ticket:
+- Name the 7 characteristics of life (MRS GREN).
+- Is a virus alive? Give your verdict and one reason.
+- What is one weakness of using MRS GREN to define life?
 ---
 
 ## The Hook

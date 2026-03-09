@@ -26,6 +26,7 @@ statement_of_inquiry: "The relationship between mass and volume determines wheth
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""
 download_label: "Investigation Pack PDF"
+handout_url: "/handouts/density"
 hints:
   - "Measure the mass of the object on a balance. Record it in grams."
   - "Measure the volume using water displacement: put water in a measuring cylinder, note the level, add the object, note the new level. The difference is the volume."
@@ -101,6 +102,10 @@ warm_up:
     a marble, a watermelon, a balloon. Now rank them from biggest to smallest. Are
     the rankings the same? Why not?'
   time: 5 minutes
+exit_ticket:
+- A block has mass 80g and volume 100cm³. Will it float? How do you know?
+- Why does a steel ship float when a steel ball sinks?
+- 'Rate your confidence in calculating density: 1 (not sure) to 5 (totally got it)'
 ---
 
 ## The Hook

@@ -30,6 +30,7 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+handout_url: "/handouts/probability-die"
 teacher_moves:
   - title: "Roll before you calculate"
     description: "30 rolls per group. Results on the board. THEN ask: do these look fair? Students must form an opinion before the statistics tell them the answer."
@@ -109,6 +110,10 @@ warm_up:
     Ask: is the coin fair? Most will say ''we need more flips.'' That instinct IS
     the lesson.'
   time: 5 minutes
+exit_ticket:
+- How many times would you need to roll a die to be confident it's fair?
+- What's the difference between theoretical and experimental probability?
+- If you rolled a 6 five times in a row, would you suspect cheating? Why or why not?
 ---
 
 ## The Hook

@@ -57,8 +57,11 @@
       {{/* ── Warm-Up Connector ── */}}
       {{ with .Params.warmup }}
       <div class="rs-warmup">
-        <div class="rs-warmup-label">🔥 Before This Lesson (5 min)</div>
-        <p>{{ . }}</p>
+        <span class="rs-warmup-icon">🔥</span>
+        <div>
+          <div class="rs-warmup-label">Before This Lesson · 5 min</div>
+          <p>{{ . }}</p>
+        </div>
       </div>
       {{ end }}
 
@@ -78,19 +81,6 @@
             <p>{{ .description }}</p>
           </div>
           {{ end }}
-          {{/* Listen For prompts inside teacher moves */}}
-          {{ with $.Params.listen_for }}
-          <div class="rs-listen-for">
-            <h4>👂 What to Listen For</h4>
-            <p class="rs-listen-intro">As you circulate, listen for these phrases:</p>
-            {{ range . }}
-            <div class="rs-listen-item rs-listen-{{ .level | urlize }}">
-              <span class="rs-listen-level">Level {{ .level }}</span>
-              <span class="rs-listen-phrase">"{{ .phrase }}"</span>
-            </div>
-            {{ end }}
-          </div>
-          {{ end }}
         </div>
       </details>
       {{ end }}
@@ -98,30 +88,14 @@
 
       {{/* ── What to Listen For ── */}}
       {{ with .Params.listen_for }}
-      <div class="rs-listenfor">
-        <div class="rs-listenfor-label">👂 What to Listen For (while circulating)</div>
-        <div class="rs-listenfor-items">
-          {{ range . }}
-          <div class="rs-listenfor-item">
-            <span class="rs-listenfor-level rs-listenfor-level--{{ .level | urlize }}">{{ .level }}</span>
-            <span class="rs-listenfor-phrase">"{{ .phrase }}"</span>
-          </div>
-          {{ end }}
+      <div class="rs-listen">
+        <div class="rs-listen-header">👂 What to Listen For</div>
+        {{ range . }}
+        <div class="rs-listen-phrase">
+          <span class="rs-listen-level rs-listen--{{ .level | urlize }}">{{ .level }}</span>
+          <span>"{{ .phrase }}"</span>
         </div>
-      </div>
-      {{ end }}
-
-      {{/* ── Warm-Up Connector ── */}}
-      {{ with .Params.warm_up }}
-      <div class="rs-warmup">
-        <div class="rs-warmup-header">
-          <span class="rs-warmup-icon">🔥</span>
-          <div>
-            <div class="rs-warmup-label">Before this lesson ({{ .time }})</div>
-            <h3>{{ .title }}</h3>
-          </div>
-        </div>
-        <p>{{ .activity }}</p>
+        {{ end }}
       </div>
       {{ end }}
 
@@ -193,6 +167,42 @@
           <div class="rs-starters-group">
             <h4>Justifying <span class="rs-starters-level">Level 7-8</span></h4>
             {{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </details>
+      {{ end }}
+
+      {{/* ── Exit Ticket ── */}}
+      {{ with .Params.exit_ticket }}
+      <div class="rs-exit-ticket">
+        <div class="rs-exit-header">
+          <span>🎫</span>
+          <span>Exit Ticket — Last 3 Minutes</span>
+        </div>
+        <div class="rs-exit-questions">
+          {{ range $i, $q := . }}
+          <div class="rs-exit-q">
+            <span class="rs-exit-num">{{ add $i 1 }}</span>
+            <span>{{ $q }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{/* ── What to Listen For ── */}}
+      {{ with .Params.listen_for }}
+      <details class="rs-listen-for">
+        <summary>
+          <span>👂 What to Listen For (while circulating)</span>
+        </summary>
+        <div class="rs-listen-body">
+          {{ range . }}
+          <div class="rs-listen-item rs-listen-{{ .level | urlize }}">
+            <div class="rs-listen-level">Level {{ .level }}</div>
+            <div class="rs-listen-phrase">"{{ .phrase }}"</div>
+            <div class="rs-listen-means">{{ .means }}</div>
           </div>
           {{ end }}
         </div>
@@ -274,6 +284,16 @@
       </div>
 
       {{/* Quick links */}}
+      {{ with .Params.handout_url }}
+      <a href="{{ . }}" target="_blank" class="rs-handout-btn">
+        <span>📄</span>
+        <div>
+          <strong>Student Handout</strong>
+          <small>Print-ready · One page</small>
+        </div>
+      </a>
+      {{ end }}
+
       <div class="rs-sidebar-links">
         <a href="/students/" class="rs-sidebar-link">🎓 Student Section</a>
         <a href="/assessment/" class="rs-sidebar-link">📋 Assessment Toolkit</a>

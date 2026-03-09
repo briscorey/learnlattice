@@ -104,6 +104,10 @@ warm_up:
   activity: Can you share 3 cookies equally between 4 people? Draw it. Most students
     will draw fractions without knowing they're using fractions.
   time: 3 minutes
+exit_ticket:
+- 3 pizzas shared between 7 people. How much does each person get?
+- Is 3/7 bigger or smaller than 1/2? How do you know without a calculator?
+- Draw a picture showing 2/5 of a rectangle.
 ---
 
 ## The Hook

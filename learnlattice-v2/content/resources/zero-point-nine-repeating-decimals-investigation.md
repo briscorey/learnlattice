@@ -88,6 +88,20 @@ sentence_starters:
   justifying:
   - I can prove they are the same number because there is no number between them
   - This challenges my intuition because...
+misconceptions:
+- myth: 0.999... is close to 1 but not equal
+  why: It looks like there is always a tiny gap
+  truth: There is no gap. If two numbers are different, you can always find a number
+    between them. Try to find a number between 0.999... and 1. You cannot. They are
+    the same number.
+- myth: The proof is a trick
+  why: The algebra feels like it is hiding something
+  truth: Every step is valid. Let x = 0.999... Then 10x = 9.999... Then 10x - x =
+    9. So 9x = 9 and x = 1. No trick — just logic.
+- myth: Infinity is not real so the proof does not apply
+  why: We cannot write infinitely many 9s
+  truth: 0.999... is a precisely defined mathematical object. The ellipsis means the
+    pattern continues without end. Mathematics handles infinity rigorously.
 ---
 
 ## The Hook

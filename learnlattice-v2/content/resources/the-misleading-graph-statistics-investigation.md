@@ -102,6 +102,9 @@ sentence_starters:
   justifying:
   - I can prove this is misleading by showing that...
   - The percentage change calculation shows...
+warmup: Which country is taller — the UK or Germany? Show a bar chart where the UK
+  bar is 65 million and Germany is 83 million, but the Y-axis starts at 60 million.
+  The difference looks massive.
 ---
 
 ## The Hook

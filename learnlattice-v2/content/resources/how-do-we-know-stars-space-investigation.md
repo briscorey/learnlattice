@@ -46,6 +46,61 @@ hints:
 
 difficulty: "exceeding"
 duration: "2–3 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I identified what we can observe about stars from Earth
+  - I listed brightness and colour as observable properties
+- level: Building understanding
+  items:
+  - I explained why a bright star might be close or genuinely luminous
+  - I described how parallax measures distance
+- level: Going deeper
+  items:
+  - I explained the relationship between colour and temperature
+  - I used evidence to determine properties of a star
+- level: Pushing further
+  items:
+  - I evaluated the limitations of different measurement methods
+  - I explained how we know things about objects we can never visit
+misconceptions:
+- myth: The brightest star is the closest
+  why: Closer things look brighter in everyday life
+  truth: Brightness depends on BOTH distance and luminosity. A very luminous star
+    far away can look brighter than a dim star nearby.
+- myth: Stars are all the same colour
+  why: They look white to the naked eye
+  truth: Stars range from red (cool, about 3000K) to blue (hot, about 30000K). Our
+    eyes struggle to see star colours, but telescopes reveal them clearly.
+- myth: We guess what stars are made of
+  why: We cannot visit them to check
+  truth: Spectroscopy analyses the light from a star. Each element absorbs specific
+    wavelengths, leaving a unique fingerprint. We KNOW what stars are made of.
+timeline: '0-5 min: Hold a torch at the end of the playground. Is it dim because it
+  is far or because it is weak? | 5-15 min: Star data table — what can we measure
+  vs what must we infer? | 15-30 min: Groups investigate the distance-brightness relationship.
+  | 30-40 min: Colour equals temperature — the Bunsen burner demonstration. | 40-50
+  min: How do we know what we cannot visit?'
+sentence_starters:
+  describing:
+  - From Earth we can observe...
+  - This star appears bright because...
+  explaining:
+  - We can determine the distance by...
+  - The colour tells us the temperature because...
+  justifying:
+  - The evidence for this star's composition is...
+  - We can be confident about this measurement because...
+warmup: Look at these two lights. One is a torch 5 metres away. One is a car headlight
+  200 metres away. Which looks brighter? Does that tell you which is MORE powerful?
+listen_for:
+- level: 3-4
+  phrase: Bright stars are probably close to us
+- level: 5-6
+  phrase: We need to know the distance before we can calculate the actual luminosity
+- level: 7-8
+  phrase: Apparent brightness follows an inverse square law — doubling the distance
+    quarters the brightness, so we can calculate distance if we know the true luminosity
 ---
 
 ## The Hook

@@ -32,6 +32,7 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+handout_url: "/handouts/staircase"
 teacher_moves:
   - title: "Build with blocks first"
     description: "Physical blocks for the first 5 staircases. Students who build before they count find the pattern faster than students who just look at numbers."
@@ -109,6 +110,10 @@ warm_up:
     about 5? 6? This activates the same triangular number structure without revealing
     the staircase formula.
   time: 5 minutes
+exit_ticket:
+- What is the 50th triangular number? Show your working.
+- How did you find your formula — guess and check, or reasoning?
+- Where else might triangular numbers appear in real life?
 ---
 
 ## The Hook

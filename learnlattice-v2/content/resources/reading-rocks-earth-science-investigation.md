@@ -48,6 +48,62 @@ hints:
 
 difficulty: "meeting"
 duration: "2–3 lessons"
+self_check:
+- level: Getting started
+  items:
+  - I observed colour, texture, and crystal size of each rock
+  - I sorted rocks into groups
+- level: Building understanding
+  items:
+  - I connected texture to how the rock formed
+  - I classified rocks as igneous, sedimentary, or metamorphic
+- level: Going deeper
+  items:
+  - I explained what each texture tells us about the rock's history
+  - I used multiple properties to justify my classification
+- level: Pushing further
+  items:
+  - I explained the complete formation story of each rock
+  - I connected the rock cycle to geological processes
+misconceptions:
+- myth: Rocks are all the same — just different colours
+  why: To an untrained eye, rocks look similar
+  truth: Crystal size, layering, hardness, and mineral composition all tell different
+    stories. A geologist reads a rock like a detective reads evidence.
+- myth: Fossils are found in all types of rock
+  why: Fossils are associated with rocks in general
+  truth: Fossils are found almost exclusively in sedimentary rock. Igneous and metamorphic
+    processes destroy organic remains.
+- myth: Metamorphic means the rock melted
+  why: Metamorphic sounds like it changed completely
+  truth: Metamorphic rocks changed due to heat and pressure WITHOUT melting. If they
+    melted, they would become igneous rock.
+timeline: '0-5 min: Each group gets a tray of 6 unlabelled rocks. Sort them however
+  you want. | 5-15 min: Compare your sorting with other groups. What criteria did
+  you use? | 15-25 min: Introduce the three rock types and their textures. | 25-35
+  min: Reclassify your rocks using the scientific criteria. | 35-45 min: For each
+  rock, tell its formation story. | 45-50 min: How do these processes connect? The
+  rock cycle.'
+sentence_starters:
+  describing:
+  - This rock has ___ texture and ___ colour...
+  - I sorted the rocks by...
+  explaining:
+  - The large crystals tell me this rock formed...
+  - This rock is sedimentary because...
+  justifying:
+  - I am confident this is ___ because the evidence shows...
+  - The texture proves ___ because...
+warmup: Hold two rocks — one smooth, one rough with visible crystals. Which one cooled
+  slowly underground? Which one cooled quickly on the surface? How do you know?
+listen_for:
+- level: 3-4
+  phrase: This rock has big crystals and this one has small crystals
+- level: 5-6
+  phrase: Big crystals mean slow cooling because the minerals had time to grow
+- level: 7-8
+  phrase: The crystal size is direct evidence of cooling rate — this is an intrusive
+    igneous rock that formed deep underground over thousands of years
 ---
 
 ## The Hook

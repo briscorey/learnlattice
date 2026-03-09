@@ -29,6 +29,7 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
+handout_url: "/handouts/million-dollar"
 teacher_moves:
   - title: "Don't give the answer"
     description: "When students ask 'how much does a million dollars weigh?' say 'I don't know. How would you find out?' The investigation IS the finding out."
@@ -106,6 +107,10 @@ warm_up:
     answer. Then ask: how long is a billion seconds? The gap between guesses reveals
     whether they understand scale.'
   time: 5 minutes
+exit_ticket:
+- What unit did you convert to? Why that unit?
+- Was your estimate close to the calculated answer? What surprised you?
+- If someone offered you a million dollars in coins, what would you say?
 ---
 
 ## The Hook
