@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sequence Builder — LearnLattice</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Outfit',sans-serif;min-height:100vh}
+.hdr{padding:12px 20px;background:#1e293b;border-bottom:1px solid #334155;display:flex;justify-content:space-between;align-items:center}
+h1{font-size:1.2rem;color:#0D9488;font-weight:700}
+.hdr-r{display:flex;gap:14px;font-size:.82rem}.hdr-r span{color:#0D9488;font-weight:600}
+.game{max-width:800px;margin:0 auto;padding:24px}
+.stage{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:24px;margin-bottom:20px}
+.stage-label{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:#64748b;margin-bottom:14px}
+.visual{display:flex;gap:20px;align-items:flex-end;justify-content:center;flex-wrap:wrap;margin-bottom:20px;min-height:120px}
+.shape-group{text-align:center}
+.shape-label{font-size:.72rem;color:#94a3b8;margin-top:6px}
+.shape-count{font-size:1rem;font-weight:700;color:#0D9488}
+canvas.shape-canvas{border-radius:8px;background:rgba(13,148,136,.03);border:1px solid rgba(13,148,136,.1)}
+.table-wrap{overflow-x:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:rgba(13,148,136,.08);padding:8px 12px;color:#0D9488;font-weight:600;border:1px solid #334155;text-align:center}
+td{padding:8px 12px;border:1px solid #334155;text-align:center;color:#94a3b8}
+td.filled{color:#e2e8f0;font-weight:600}
+.predict{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.predict label{font-size:.88rem;color:#94a3b8}
+.predict input{width:80px;padding:8px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#0D9488;font-family:'Outfit',sans-serif;font-size:1rem;text-align:center;outline:none}
+.predict input:focus{border-color:#0D9488;box-shadow:0 0 8px rgba(13,148,136,.2)}
+.formula-section{margin-top:16px}
+.formula-section label{font-size:.78rem;color:#64748b;display:block;margin-bottom:6px}
+.formula-input{width:100%;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-family:'Outfit',sans-serif;font-size:.9rem;outline:none}
+.formula-input:focus{border-color:#0D9488}
+.btn{padding:10px 24px;border-radius:10px;border:1px solid #0D9488;background:rgba(13,148,136,.1);color:#0D9488;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn:hover{background:rgba(13,148,136,.2);box-shadow:0 0 16px rgba(13,148,136,.15)}
+.btn-primary{background:#0D9488;color:#fff;border-color:#0D9488}
+.btn-primary:hover{background:#0a7c72}
+.btns{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.fb{margin-top:14px;padding:12px;border-radius:10px;font-size:.88rem;text-align:center;display:none}
+.fb.ok{display:block;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#22c55e}
+.fb.no{display:block;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.pdot{width:36px;height:5px;border-radius:3px;background:#1e293b;border:1px solid #334155}
+.pdot.done{background:#0D9488;border-color:#0D9488}
+.pdot.cur{background:rgba(13,148,136,.4);border-color:#0D9488}
+</style></head><body>
+<div class="hdr"><h1>🔷 Sequence Builder</h1><div class="hdr-r"><span id="lvl">Level 1/8</span><span id="pts">Score: 0</span></div></div>
+<div class="game">
+  <div class="progress" id="prog"></div>
+  <div class="stage">
+    <div class="stage-label" id="stageLabel">Growing Pattern</div>
+    <div class="visual" id="visual"></div>
+    <div class="table-wrap">
+      <table id="tbl"><thead><tr id="tHead"></tr></thead><tbody><tr id="tBody"></tr></tbody></table>
+    </div>
+    <div class="predict">
+      <label>Term <span id="predictN"></span> = </label>
+      <input type="number" id="predictInput" placeholder="?">
+      <button class="btn btn-primary" onclick="checkPredict()">Check</button>
+    </div>
+    <div class="formula-section">
+      <label>Write the formula for term n (optional)</label>
+      <input class="formula-input" id="formulaInput" placeholder="e.g. 2n + 1">
+    </div>
+    <div class="fb" id="fb"></div>
+    <div class="btns">
+      <button class="btn" onclick="showHint()">💡 Hint</button>
+      <button class="btn" onclick="nextLevel()">Next →</button>
+    </div>
+  </div>
+</div>
+<script>
+var levels=[
+  {name:"Dots in a Row",terms:[2,4,6,8],predict:5,answer:10,formula:"2n",hint:"Each term adds 2 dots.",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var v=n*2,cols=Math.min(v,6),rows=Math.ceil(v/6);for(var r=0;r<rows;r++)for(var c=0;c<Math.min(cols,v-r*6);c++){x.beginPath();x.arc(12+c*20,12+r*20,7,0,Math.PI*2);x.fillStyle='#0D9488';x.fill();}}},
+  {name:"L-Shapes",terms:[1,3,5,7],predict:6,answer:11,formula:"2n-1",hint:"Each L-shape adds 2 more squares.",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var v=2*n-1;for(var i=0;i<n;i++){x.fillStyle='#0D9488';x.fillRect(4+i*16,cv.height-20,14,14);}for(var i=1;i<n;i++){x.fillStyle='#14b8a6';x.fillRect(4,cv.height-20-i*16,14,14);}}},
+  {name:"Squares",terms:[1,4,9,16],predict:7,answer:49,formula:"n²",hint:"1×1, 2×2, 3×3, 4×4...",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var sz=Math.min(14,Math.floor((cv.width-8)/(n+1)));for(var r=0;r<n;r++)for(var c=0;c<n;c++){x.fillStyle=r===n-1||c===n-1?'#14b8a6':'#0D9488';x.fillRect(4+c*(sz+2),4+r*(sz+2),sz,sz);}}},
+  {name:"Triangular Numbers",terms:[1,3,6,10],predict:6,answer:21,formula:"n(n+1)/2",hint:"Row 1 has 1, row 2 has 2, row 3 has 3...",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var y=4;for(var r=1;r<=n;r++){var xoff=(cv.width-r*16)/2;for(var c=0;c<r;c++){x.beginPath();x.arc(xoff+8+c*16,y+8,6,0,Math.PI*2);x.fillStyle=r===n?'#14b8a6':'#0D9488';x.fill();}y+=16;}}},
+  {name:"Powers of Two",terms:[2,4,8,16],predict:8,answer:256,formula:"2ⁿ",hint:"Each term doubles the previous one.",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var v=Math.pow(2,n),sz=Math.min(10,Math.floor(cv.width/Math.ceil(Math.sqrt(v))))-2;var cols=Math.ceil(Math.sqrt(v));for(var i=0;i<v&&i<64;i++){var r=Math.floor(i/cols),c=i%cols;x.fillStyle='#0D9488';x.fillRect(2+c*(sz+2),2+r*(sz+2),sz,sz);}}},
+  {name:"Cubes",terms:[1,8,27,64],predict:5,answer:125,formula:"n³",hint:"1³, 2³, 3³, 4³...",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);x.font='bold 24px Outfit';x.fillStyle='#0D9488';x.textAlign='center';x.textBaseline='middle';x.fillText(Math.pow(n,3),cv.width/2,cv.height/2);x.font='10px Outfit';x.fillStyle='#64748b';x.fillText(n+'³',cv.width/2,cv.height/2+24);}},
+  {name:"Fibonacci-style",terms:[1,1,2,3],predict:7,answer:13,formula:"add previous two",hint:"Each number is the sum of the two before it.",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var fib=[1,1];for(var i=2;i<n;i++)fib.push(fib[i-1]+fib[i-2]);var v=fib[n-1];x.font='bold 20px Outfit';x.fillStyle='#0D9488';x.textAlign='center';x.textBaseline='middle';x.fillText(v,cv.width/2,cv.height/2);}},
+  {name:"Oblong Numbers",terms:[2,6,12,20],predict:6,answer:42,formula:"n(n+1)",hint:"2=1×2, 6=2×3, 12=3×4, 20=4×5...",draw:function(n,cv){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);var sz=Math.min(12,Math.floor((cv.width-8)/((n+1)+1)));for(var r=0;r<n;r++)for(var c=0;c<n+1;c++){x.fillStyle=c===n?'#14b8a6':'#0D9488';x.fillRect(4+c*(sz+2),4+r*(sz+2),sz,sz);}}},
+];
+var ci=0,score=0,answered=false;
+
+function loadLevel(){
+  answered=false;
+  var lv=levels[ci];
+  document.getElementById('stageLabel').textContent=lv.name;
+  document.getElementById('lvl').textContent='Level '+(ci+1)+'/'+levels.length;
+  document.getElementById('pts').textContent='Score: '+score;
+  document.getElementById('predictN').textContent=lv.predict;
+  document.getElementById('predictInput').value='';
+  document.getElementById('formulaInput').value='';
+  document.getElementById('fb').className='fb';
+  // Progress
+  var prog=document.getElementById('prog');prog.innerHTML='';
+  levels.forEach(function(_,i){prog.innerHTML+='<div class="pdot'+(i<ci?' done':i===ci?' cur':'')+'"></div>';});
+  // Visual
+  var vis=document.getElementById('visual');vis.innerHTML='';
+  for(var i=1;i<=4;i++){
+    var grp=document.createElement('div');grp.className='shape-group';
+    var cv=document.createElement('canvas');cv.className='shape-canvas';cv.width=120;cv.height=100;
+    lv.draw(i,cv);
+    grp.appendChild(cv);
+    grp.innerHTML+='<div class="shape-label">Term '+i+'</div><div class="shape-count">'+lv.terms[i-1]+'</div>';
+    vis.appendChild(grp);
+  }
+  // Question mark for term to predict
+  var grp2=document.createElement('div');grp2.className='shape-group';
+  grp2.innerHTML='<canvas class="shape-canvas" width="120" height="100" style="opacity:.3"></canvas><div class="shape-label">Term '+lv.predict+'</div><div class="shape-count" style="color:#f59e0b">?</div>';
+  vis.appendChild(grp2);
+  // Table
+  var th=document.getElementById('tHead');th.innerHTML='<th>n</th>';
+  var tb=document.getElementById('tBody');tb.innerHTML='<td class="filled">T(n)</td>';
+  for(var i=1;i<=4;i++){th.innerHTML+='<th>'+i+'</th>';tb.innerHTML+='<td class="filled">'+lv.terms[i-1]+'</td>';}
+  th.innerHTML+='<th style="color:#f59e0b">'+lv.predict+'</th>';
+  tb.innerHTML+='<td style="color:#f59e0b">?</td>';
+}
+
+function checkPredict(){
+  if(answered)return;
+  var lv=levels[ci],guess=parseInt(document.getElementById('predictInput').value);
+  var fb=document.getElementById('fb');
+  if(isNaN(guess)){fb.textContent='Enter a number!';fb.className='fb no';return;}
+  if(guess===lv.answer){
+    answered=true;score+=10;
+    fb.textContent='✓ Correct! T('+lv.predict+') = '+lv.answer+'. The formula is: '+lv.formula;
+    fb.className='fb ok';
+    document.getElementById('pts').textContent='Score: '+score;
+    var dots=document.querySelectorAll('.pdot');if(dots[ci])dots[ci].className='pdot done';
+  } else {
+    fb.textContent='✗ Not quite. Look at the pattern in the differences.';
+    fb.className='fb no';
+  }
+}
+
+function showHint(){
+  var fb=document.getElementById('fb');
+  fb.textContent='💡 '+levels[ci].hint;fb.className='fb ok';
+}
+
+function nextLevel(){
+  if(ci<levels.length-1){ci++;loadLevel();}
+  else{document.getElementById('fb').textContent='🎉 All 8 levels complete! Score: '+score+'/80';document.getElementById('fb').className='fb ok';}
+}
+
+document.getElementById('predictInput').addEventListener('keydown',function(e){if(e.key==='Enter')checkPredict();});
+loadLevel();
+</script></body></html>
