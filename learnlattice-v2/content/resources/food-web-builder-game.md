@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Food Web Builder"
 date: 2026-03-08
 description: "Drag organisms onto the canvas to build a food web. Then remove a species and watch the cascading effects ripple through the ecosystem. This interactive simulation makes ecological interdependence visible and tangible."
@@ -34,9 +35,7 @@ download_label: ""
 
 ## The Game
 
-<iframe src="/games/food-web-builder" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Food Web Builder"></iframe>
 
-[Open full screen](/games/food-web-builder)
 
 ## Investigation Questions
 

@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Prime and Composite Maze Quest — 3D Math Game"
 date: 2026-02-28
 description: "A scaffolded 3D maze game where students collect prime and composite numbers, avoid enemies, and unlock portals. Four levels of increasing difficulty for MYP and Grade 6–7 students."

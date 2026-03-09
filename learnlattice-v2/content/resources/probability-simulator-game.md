@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Probability Simulator"
 date: 2026-03-08
 description: "Roll fair dice, loaded dice, coins, and octahedrons. Compare experimental and theoretical probability in real time. How many rolls do you need to prove a die is loaded?"
@@ -34,7 +35,7 @@ formula: "P(event) = favourable outcomes ÷ total outcomes"
 
 ## Play the Simulator
 
-<iframe src="/games/probability-simulator" style="width:100%;height:800px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Probability Simulator"></iframe>
+
 
 <a href="/games/probability-simulator" target="_blank" style="display:inline-block;margin-top:12px;font-size:0.85rem;color:var(--teal);">Open in full screen →</a>
 

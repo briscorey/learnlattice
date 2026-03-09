@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Tectonic Puzzle"
 date: 2026-03-08
 description: "The continents were once joined as Pangaea. Can you put them back together? Drag continental plates to reconstruct the supercontinent using fossil, climate, and rock evidence — just like Alfred Wegener did in 1912."
@@ -34,9 +35,7 @@ download_label: ""
 
 ## The Game
 
-<iframe src="/games/tectonic-puzzle" style="width:100%;height:650px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Tectonic Puzzle"></iframe>
 
-[Open full screen](/games/tectonic-puzzle)
 
 ## Evidence Types
 

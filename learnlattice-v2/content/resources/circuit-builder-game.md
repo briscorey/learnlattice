@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Circuit Builder"
 date: 2026-03-08
 description: "Drag batteries, bulbs, resistors, and switches onto a canvas. Wire them together. Watch current flow in real time. This interactive simulator makes series and parallel circuits visible and experimental."
@@ -33,9 +34,7 @@ download_label: ""
 
 ## The Game
 
-<iframe src="/games/circuit-builder" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Circuit Builder"></iframe>
 
-[Open full screen](/games/circuit-builder)
 
 ## Challenges
 

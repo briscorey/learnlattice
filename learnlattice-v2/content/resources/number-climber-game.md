@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Number Climber"
 date: 2026-03-09
 description: "A Phaser 3 physics platformer where you jump between platforms and solve math problems to climb higher. Progressive difficulty from basic arithmetic to algebra. Built with real arcade physics, particle effects, and camera follow."
@@ -32,9 +33,7 @@ Use **arrow keys** (or A/D) to move left and right. Press **Space** (or Up) to j
 
 The questions get harder as you climb — from basic arithmetic near the ground to algebra and powers at the top.
 
-<iframe src="/games/number-climber" style="width:100%;height:700px;border:none;border-radius:12px;background:#0f0a1e;" loading="lazy" title="Number Climber"></iframe>
 
-[Open full screen](/games/number-climber)
 
 ## Built with Phaser 3
 

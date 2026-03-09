@@ -1,0 +1,70 @@
+{{ define "main" }}
+
+{{ $subject := "general" }}
+{{ $subjectLabel := "" }}
+{{ with .Params.subjects }}{{ $subject = index . 0 | urlize }}{{ $subjectLabel = index . 0 }}{{ end }}
+
+{{ $subjectColor := "teal" }}
+{{ if eq $subject "mathematics" }}{{ $subjectColor = "teal" }}{{ end }}
+{{ if eq $subject "biology" }}{{ $subjectColor = "green" }}{{ end }}
+{{ if eq $subject "chemistry" }}{{ $subjectColor = "rose" }}{{ end }}
+{{ if eq $subject "physics" }}{{ $subjectColor = "blue" }}{{ end }}
+{{ if eq $subject "earth-science" }}{{ $subjectColor = "amber" }}{{ end }}
+{{ if eq $subject "space-science" }}{{ $subjectColor = "violet" }}{{ end }}
+{{ if eq $subject "ecology" }}{{ $subjectColor = "emerald" }}{{ end }}
+
+{{/* Extract game slug from content — find the iframe src */}}
+{{ $gameSlug := "" }}
+{{ $content := .RawContent }}
+{{ range (findRE `/games/[a-z0-9-]+` $content) }}
+  {{ $gameSlug = . }}
+{{ end }}
+
+<div class="game-page">
+
+  {{/* ── Compact header bar ── */}}
+  <div class="game-bar">
+    <div class="game-bar-left">
+      <a href="/games/" class="game-back" title="All games">← Games</a>
+      <h1 class="game-title">{{ .Title }}</h1>
+      <span class="game-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</span>
+    </div>
+    <div class="game-bar-right">
+      {{ with $gameSlug }}<a href="{{ . }}" target="_blank" class="game-fullscreen-btn" title="Open in new tab">⛶ Full Screen</a>{{ end }}
+      <button class="game-info-toggle" onclick="document.getElementById('gameInfo').classList.toggle('open')" title="About this game">ℹ️</button>
+    </div>
+  </div>
+
+  {{/* ── Game iframe — fills available space ── */}}
+  <div class="game-frame-wrap">
+    {{ with $gameSlug }}
+    <iframe src="{{ . }}" class="game-frame" loading="lazy" title="{{ $.Title }}" allow="autoplay"></iframe>
+    {{ end }}
+  </div>
+
+  {{/* ── Collapsible info panel ── */}}
+  <div class="game-info" id="gameInfo">
+    <div class="game-info-inner">
+      <div class="game-info-desc">
+        <p>{{ .Description }}</p>
+      </div>
+      <div class="game-info-meta">
+        {{ range .Params.year_levels }}<span class="game-meta-tag">{{ . }}</span>{{ end }}
+        {{ range .Params.tags }}<span class="game-meta-tag">{{ . }}</span>{{ end }}
+        {{ with .Params.difficulty }}
+        <span class="game-meta-tag game-meta-diff-{{ . }}">
+          {{ if eq . "approaching" }}🟢 Approaching{{ end }}
+          {{ if eq . "meeting" }}🟡 Meeting{{ end }}
+          {{ if eq . "exceeding" }}🔴 Exceeding{{ end }}
+        </span>
+        {{ end }}
+      </div>
+      <div class="game-info-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{ end }}

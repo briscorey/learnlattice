@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Function Machine"
 date: 2026-03-08
 description: "Feed numbers into a mystery machine. Watch what comes out. Can you guess the rule? This interactive game builds algebraic thinking from pattern recognition — starting with simple operations and progressing to quadratic and piecewise functions."
@@ -36,9 +37,7 @@ download_label: ""
 
 ## The Game
 
-<iframe src="/games/function-machine" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Function Machine"></iframe>
 
-[Open full screen](/games/function-machine)
 
 ## Classroom Use
 

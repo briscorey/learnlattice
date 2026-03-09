@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Reaction Rate Lab"
 date: 2026-03-08
 description: "Adjust temperature, concentration, surface area, and catalyst. Watch particles collide in real time. See which collisions have enough energy to react — and discover why reaction rates change."
@@ -34,9 +35,7 @@ download_label: ""
 
 ## The Game
 
-<iframe src="/games/reaction-rate-lab" style="width:100%;height:800px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Reaction Rate Lab"></iframe>
 
-[Open full screen](/games/reaction-rate-lab)
 
 ## Investigation
 

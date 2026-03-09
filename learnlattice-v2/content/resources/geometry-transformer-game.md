@@ -1,4 +1,5 @@
 ---
+layout: "game"
 title: "Geometry Transformer"
 date: 2026-03-08
 description: "Apply translations, rotations, reflections, and enlargements to shapes on a coordinate grid. See the transformation happen in real time with coordinate labels updating as you move the sliders."
@@ -36,9 +37,7 @@ download_label: ""
 
 ## The Game
 
-<iframe src="/games/geometry-transformer" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Geometry Transformer"></iframe>
 
-[Open full screen](/games/geometry-transformer)
 
 ## Investigation Questions
 
