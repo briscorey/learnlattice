@@ -9,7 +9,7 @@ h1{font-size:1.2rem;color:#a78bfa;font-weight:800;letter-spacing:1px}
 .stats{display:flex;gap:16px;font-size:.8rem}
 .stats span{color:#a78bfa;font-weight:600}
 .arena{max-width:640px;margin:0 auto;padding:24px}
-.q-card{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(59,130,246,.05));border:1px solid rgba(139,92,246,.2);border-radius:20px;padding:32px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+.q-card{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(59,130,246,.05));border:1px solid rgba(139,92,246,.2);border-radius:20px;padding:20px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden;max-width:640px;margin-left:auto;margin-right:auto}
 .q-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(139,92,246,.05),transparent 60%);pointer-events:none}
 .q-num{font-size:.6rem;text-transform:uppercase;letter-spacing:3px;color:rgba(139,92,246,.5);margin-bottom:12px}
 .q-text{font-size:1.3rem;font-weight:600;color:#e2e8f0;line-height:1.4;margin-bottom:8px}
@@ -41,7 +41,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
     <div class="q-num" id="qNum">Question 1</div>
     <div class="q-text" id="qText"></div>
     <div class="q-hint" id="qHint"></div>
-    <div class="slider-wrap">
+    <button class="hint-btn" onclick="document.getElementById('qHint').style.display='block';this.style.display='none'" style="padding:6px 14px;border-radius:8px;border:1px solid rgba(139,92,246,.2);background:rgba(139,92,246,.08);color:#a78bfa;font-size:.75rem;cursor:pointer;margin-bottom:12px;font-family:inherit">💡 Show Hint</button>
+<div class="slider-wrap">
       <div class="slider-label"><span id="sMin"></span><span id="sMax"></span></div>
       <input type="range" id="slider" min="0" max="100" value="50" oninput="updateGuess()">
     </div>
@@ -82,7 +83,7 @@ function loadQ(){
   document.getElementById('sMin').textContent=q.format(q.min);
   document.getElementById('sMax').textContent=q.format(q.max);
   document.getElementById('result').className='result';
-  document.getElementById('lockBtn').style.display='block';
+  document.getElementById('lockBtn').style.display='block';document.getElementById('qHint').style.display='none';var hb=document.querySelector('.hint-btn');if(hb)hb.style.display='inline-block';
   document.getElementById('qn').textContent=(qi+1)+' / '+questions.length;
   updateGuess();
 }

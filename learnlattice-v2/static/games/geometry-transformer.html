@@ -16,14 +16,14 @@ h1{font-size:1.2rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-b
 .main-area{flex:1;display:flex;overflow:hidden}
 .canvas-wrap{flex:1;position:relative}
 canvas{display:block;width:100%;height:100%;cursor:crosshair}
-.panel{width:220px;background:#0f172a;border-left:1px solid #1e293b;padding:14px;overflow-y:auto}
+.panel{width:220px;background:#0f172a;border-left:1px solid #1e293b;padding:12px;overflow-y:auto;overflow-x:hidden}
 .panel-title{font-size:.68rem;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 .transform-group{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
 .transform-group h3{font-size:.85rem;color:#e2e8f0;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.transform-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.transform-row label{font-size:.75rem;color:#94a3b8;width:60px;flex-shrink:0}
+.transform-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;overflow:hidden}
+.transform-row label{font-size:.72rem;color:#94a3b8;min-width:16px;flex-shrink:0;overflow:hidden}
 .transform-row input[type=range]{flex:1;accent-color:#0D9488}
-.transform-row .val{font-family:'Courier New',monospace;font-size:.75rem;color:#0D9488;width:40px;text-align:right}
+.transform-row .val{font-family:"Courier New",monospace;font-size:.72rem;color:#0D9488;width:32px;text-align:right;flex-shrink:0}
 .history{margin-top:12px}
 .history-item{font-size:.72rem;color:#94a3b8;padding:4px 8px;margin-bottom:3px;background:#1e293b;border-radius:6px;border:1px solid #334155}
 .coords{position:absolute;bottom:10px;left:10px;font-family:'Courier New',monospace;font-size:.72rem;color:#64748b;background:rgba(15,23,42,.8);padding:4px 10px;border-radius:6px;backdrop-filter:blur(4px)}

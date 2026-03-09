@@ -97,14 +97,22 @@ function loadLevel(){
   for(var i=1;i<=4;i++){
     var grp=document.createElement('div');grp.className='shape-group';
     var cv=document.createElement('canvas');cv.className='shape-canvas';cv.width=120;cv.height=100;
-    lv.draw(i,cv);
     grp.appendChild(cv);
-    grp.innerHTML+='<div class="shape-label">Term '+i+'</div><div class="shape-count">'+lv.terms[i-1]+'</div>';
+    var lbl=document.createElement('div');lbl.className='shape-label';lbl.textContent='Term '+i;
+    grp.appendChild(lbl);
+    var cnt=document.createElement('div');cnt.className='shape-count';cnt.textContent=lv.terms[i-1];
+    grp.appendChild(cnt);
     vis.appendChild(grp);
+    lv.draw(i,cv);
   }
   // Question mark for term to predict
   var grp2=document.createElement('div');grp2.className='shape-group';
-  grp2.innerHTML='<canvas class="shape-canvas" width="120" height="100" style="opacity:.3"></canvas><div class="shape-label">Term '+lv.predict+'</div><div class="shape-count" style="color:#f59e0b">?</div>';
+  var cv2=document.createElement('canvas');cv2.className='shape-canvas';cv2.width=120;cv2.height=100;cv2.style.opacity='0.3';
+  grp2.appendChild(cv2);
+  var lbl2=document.createElement('div');lbl2.className='shape-label';lbl2.textContent='Term '+lv.predict;
+  grp2.appendChild(lbl2);
+  var cnt2=document.createElement('div');cnt2.className='shape-count';cnt2.style.color='#f59e0b';cnt2.textContent='?';
+  grp2.appendChild(cnt2);
   vis.appendChild(grp2);
   // Table
   var th=document.getElementById('tHead');th.innerHTML='<th>n</th>';

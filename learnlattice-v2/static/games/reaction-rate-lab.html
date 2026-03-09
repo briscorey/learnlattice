@@ -17,9 +17,9 @@ h1{font-size:1.4rem;background:linear-gradient(135deg,#e11d48,#f43f5e);-webkit-b
 .control-row label{display:block;font-size:.72rem;color:#94a3b8;margin-bottom:4px}
 .control-row input[type=range]{width:100%;accent-color:#e11d48}
 .control-row .val{font-family:'Courier New',monospace;font-size:.85rem;color:#f43f5e;font-weight:700}
-.sim-area{flex:1;min-width:300px}
+.sim-area{flex:1;min-width:300px;overflow:hidden}
 .beaker{position:relative;width:100%;aspect-ratio:4/3;background:#0f172a;border:2px solid #334155;border-radius:0 0 16px 16px;border-top:none;overflow:hidden}
-.beaker::before{content:'';position:absolute;top:0;left:-10px;right:-10px;height:4px;background:#334155;border-radius:2px}
+.beaker::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#334155;border-radius:2px}
 .beaker-liquid{position:absolute;bottom:0;left:0;right:0;height:70%;transition:background .5s;border-radius:0 0 14px 14px}
 .particle{position:absolute;border-radius:50%;transition:none}
 .data-panel{margin-top:12px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
