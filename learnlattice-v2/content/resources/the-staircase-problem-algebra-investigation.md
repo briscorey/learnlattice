@@ -137,6 +137,11 @@ differentiated:
     the differences?
   meeting: Find the formula for the nth staircase. Test it for n = 20.
   exceeding: Prove WHY your formula works. Can you use a visual proof?
+journal_prompts:
+- At what point did the pattern become clear to you?
+- Was writing the formula or proving it harder? Why?
+- Did working with a partner change how you approached this?
+- If you had to teach someone this formula, how would you explain it?
 ---
 
 ## The Hook

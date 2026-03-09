@@ -35,6 +35,15 @@
       <span class="resource-thumb-type-icon">{{ $typeIcon }}</span>
       <span class="resource-thumb-type-label">{{ $resourceType }}</span>
     </div>
+    {{/* Hover preview */}}
+    <div class="resource-peek">
+      {{ with .Params.self_check }}<span class="peek-badge" title="Self-assessment checklist">✅</span>{{ end }}
+      {{ with .Params.hints }}<span class="peek-badge" title="Has hints">💡</span>{{ end }}
+      {{ with .Params.warmup }}<span class="peek-badge" title="Warm-up activity">🔥</span>{{ end }}
+      {{ with .Params.handout_url }}<span class="peek-badge" title="Printable handout">📄</span>{{ end }}
+      {{ with .Params.quick_check }}<span class="peek-badge" title="Quick check quiz">📊</span>{{ end }}
+      {{ with .Params.differentiated }}<span class="peek-badge" title="Differentiated tasks">🎯</span>{{ end }}
+    </div>
   </div>
   <div class="resource-body">
     <div class="resource-body-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</div>

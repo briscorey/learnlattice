@@ -104,6 +104,11 @@ listen_for:
 - level: 7-8
   phrase: The crystal size is direct evidence of cooling rate — this is an intrusive
     igneous rock that formed deep underground over thousands of years
+journal_prompts:
+- Before today, did you think rocks were all basically the same?
+- What clue in a rock's texture tells you the most about its history?
+- How is reading a rock like reading a story?
+- If you found an unknown rock, what would you check first?
 ---
 
 ## The Hook

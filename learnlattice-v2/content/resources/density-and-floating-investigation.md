@@ -131,6 +131,11 @@ differentiated:
   meeting: Predict float/sink for 5 objects BEFORE testing. Explain using density.
   exceeding: Why do ships float when they are made of steel? Explain using the concept
     of average density.
+journal_prompts:
+- What was the most surprising result in your experiments?
+- Did any of your predictions turn out wrong? What did you learn?
+- How does knowing about density change how you see everyday objects?
+- What would you test next if you had more time?
 ---
 
 ## The Hook

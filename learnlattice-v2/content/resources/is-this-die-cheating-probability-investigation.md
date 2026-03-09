@@ -140,6 +140,11 @@ differentiated:
     variation normal?
   exceeding: Pool class data. Compare 30 rolls vs 300 rolls. Why does the larger sample
     give more reliable results?
+journal_prompts:
+- Were your results what you expected? Why or why not?
+- How did pooling class data change your conclusion?
+- What does this investigation teach you about trusting small samples?
+- Where in real life do people draw conclusions from too little data?
 ---
 
 ## The Hook

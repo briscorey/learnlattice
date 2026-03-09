@@ -105,6 +105,11 @@ sentence_starters:
 warmup: Which country is taller — the UK or Germany? Show a bar chart where the UK
   bar is 65 million and Germany is 83 million, but the Y-axis starts at 60 million.
   The difference looks massive.
+journal_prompts:
+- What was the most deceptive graph you found today?
+- How did it feel to deliberately create a misleading graph?
+- Will you look at graphs differently after this lesson?
+- Where do you see misleading graphs in your daily life?
 ---
 
 ## The Hook

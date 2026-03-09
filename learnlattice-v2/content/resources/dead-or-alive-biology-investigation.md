@@ -138,6 +138,11 @@ differentiated:
   meeting: Apply all 7 criteria to fire AND a virus. Give evidence for each decision.
   exceeding: Are the MRS GREN criteria perfect? What problems does the virus case
     reveal about our definition of life?
+journal_prompts:
+- Did your opinion about fire change during this lesson? When?
+- Which MRS GREN criterion was the hardest to decide? Why?
+- Should the definition of 'alive' be changed? What would you change?
+- What other edge cases can you think of besides fire and viruses?
 ---
 
 ## The Hook

@@ -124,6 +124,11 @@ quick_check:
 - type: extend
   q: Why does adding one side always add exactly 180° to the angle sum?
   a: Each extra side creates one more triangle in the decomposition.
+journal_prompts:
+- When did the angle sum pattern become obvious to you?
+- Why is tearing triangle corners such a convincing demonstration?
+- What is the difference between checking cases and proving a rule?
+- Could this pattern ever break? What would that mean?
 ---
 
 ## The Hook

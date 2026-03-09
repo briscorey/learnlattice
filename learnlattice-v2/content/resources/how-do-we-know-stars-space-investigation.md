@@ -101,6 +101,11 @@ listen_for:
 - level: 7-8
   phrase: Apparent brightness follows an inverse square law — doubling the distance
     quarters the brightness, so we can calculate distance if we know the true luminosity
+journal_prompts:
+- What impressed you most about how scientists study stars?
+- Why is it remarkable that we know what stars are made of?
+- What assumptions do astronomers have to make?
+- What question about space do you most want answered?
 ---
 
 ## The Hook

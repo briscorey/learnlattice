@@ -228,6 +228,19 @@
       </details>
       {{ end }}
 
+      {{/* ── Journal Prompts ── */}}
+      {{ with .Params.journal_prompts }}
+      <details class="rs-journal">
+        <summary><span>📓 Reflection Journal</span></summary>
+        <div class="rs-journal-body">
+          <p class="rs-journal-intro">Take 2 minutes. Pick one question. Think, then write.</p>
+          {{ range . }}
+          <div class="rs-journal-prompt">{{ . }}</div>
+          {{ end }}
+        </div>
+      </details>
+      {{ end }}
+
       {{/* ── Investigation Sequence ── */}}
       {{ with .Params.sequence }}
       <div class="rs-sequence">
@@ -350,6 +363,24 @@
         <h3>📨 For Your Newsletter</h3>
         <p>{{ . }}</p>
         <button class="rs-copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+      </div>
+      {{ end }}
+
+      {{/* Mini Concept Map */}}
+      {{ $related := .Site.RegularPages.Related . | first 6 }}
+      {{ if $related }}
+      <div class="rs-sidebar-card rs-mini-map">
+        <h3>🗺️ Connected</h3>
+        <div class="rs-map-nodes">
+          <div class="rs-map-center">{{ .Title | truncate 25 "" }}</div>
+          {{ range $related }}
+          <a href="{{ .RelPermalink }}" class="rs-map-node" title="{{ .Title }}">
+            <span class="rs-map-dot"></span>
+            <span>{{ .Title | truncate 30 "" }}</span>
+          </a>
+          {{ end }}
+        </div>
+        <a href="/concept-map/" class="rs-map-full">Full concept map →</a>
       </div>
       {{ end }}
     </aside>

@@ -10537,3 +10537,249 @@ html.dark .rs-parent-summary { background: rgba(37,99,235,0.06); }
   .rs-qc-answer[open] p { display: block; }
   .rs-copy-btn { display: none; }
 }
+
+/* ═══════════════════════════════════════════
+   PHASE 5 — Journal, Mini Map, Previews,
+   Sequences
+   ═══════════════════════════════════════════ */
+
+/* ── Journal Prompts ── */
+.rs-journal {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.rs-journal summary {
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--ink);
+  background: var(--surface-warm);
+  list-style: none;
+}
+.rs-journal summary::-webkit-details-marker { display: none; }
+.rs-journal-body { padding: 14px 18px; }
+.rs-journal-intro {
+  font-size: .82rem;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.rs-journal-prompt {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: var(--surface-card);
+  border-left: 3px solid #8b5cf6;
+  border-radius: 0 8px 8px 0;
+  font-size: .85rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ── Mini Concept Map (sidebar) ── */
+.rs-mini-map h3 { color: var(--teal); }
+.rs-map-nodes { display: flex; flex-direction: column; gap: 4px; }
+.rs-map-center {
+  padding: 8px 12px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 8px;
+  font-size: .78rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.rs-map-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: .75rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: all .15s;
+  line-height: 1.3;
+}
+.rs-map-node:hover { background: var(--teal-wash); color: var(--teal); }
+.rs-map-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+  transition: background .15s;
+}
+.rs-map-node:hover .rs-map-dot { background: var(--teal); }
+.rs-map-full {
+  display: block;
+  margin-top: 8px;
+  font-size: .72rem;
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ── Resource Card Peek Preview ── */
+.resource-peek {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  background: linear-gradient(transparent, rgba(15,23,42,0.85));
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .25s, transform .25s;
+}
+.resource-card:hover .resource-peek {
+  opacity: 1;
+  transform: translateY(0);
+}
+.peek-badge {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Sequences Page ── */
+.seq-hero {
+  padding: 56px 24px 36px;
+  text-align: center;
+  background: var(--surface-warm);
+  border-bottom: 1px solid var(--border);
+}
+.seq-hero-inner { max-width: 640px; margin: 0 auto; }
+.seq-hero-kicker {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.seq-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.seq-hero p { color: var(--ink-muted); font-size: .92rem; }
+
+.seq-pathways { padding: 32px 24px; }
+.seq-pathways-inner { max-width: 900px; margin: 0 auto; }
+
+.seq-pathway {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.seq-pathway-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.seq-pathway-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal-wash);
+  border-radius: 14px;
+}
+.seq-pathway-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.seq-pathway-header p {
+  font-size: .78rem;
+  color: var(--ink-muted);
+}
+
+.seq-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.seq-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--border);
+  font-size: 1.2rem;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+.seq-node {
+  flex: 1;
+  min-width: 160px;
+  padding: 14px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .2s;
+  display: flex;
+  flex-direction: column;
+}
+.seq-node:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.seq-node-start { border-left: 3px solid var(--teal); }
+.seq-node-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .72rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.seq-node span:not(.seq-node-num) {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.seq-node small {
+  font-size: .72rem;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 700px) {
+  .seq-flow { flex-direction: column; gap: 8px; }
+  .seq-arrow { transform: rotate(90deg); padding: 4px 0; justify-content: center; }
+}
+
+/* ── Dark mode ── */
+html.dark .rs-journal summary { background: #1e293b; }
+html.dark .rs-journal-prompt { background: #0f172a; }
+html.dark .seq-pathway { border-color: #334155; }
+html.dark .seq-node { background: #0f172a; border-color: #334155; }

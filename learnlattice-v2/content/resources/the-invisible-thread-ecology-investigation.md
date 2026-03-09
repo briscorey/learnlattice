@@ -109,6 +109,11 @@ warm_up:
   activity: Trace your breakfast back to a plant. Toast → wheat → sun. Eggs → chicken
     → grain → sun. You are connected to the sun in 3 steps.
   time: 3 minutes
+journal_prompts:
+- Which organism's removal surprised you the most?
+- Why is the keystone species often not the biggest or strongest?
+- How does this change how you think about conservation?
+- What would happen if you added a new species to the web?
 ---
 
 ## The Hook

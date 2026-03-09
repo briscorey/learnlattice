@@ -118,6 +118,11 @@ quick_check:
 - type: extend
   q: Can two different fractions ALWAYS be compared? What method works every time?
   a: Yes — find a common denominator, or convert both to decimals.
+journal_prompts:
+- What was confusing about comparing fractions at first?
+- What method did you find most reliable for comparing?
+- When in real life do you need to compare fractions?
+- What would you tell someone who thinks 1/3 is less than 1/4?
 ---
 
 ## The Hook

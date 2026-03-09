@@ -102,6 +102,11 @@ misconceptions:
   why: We cannot write infinitely many 9s
   truth: 0.999... is a precisely defined mathematical object. The ellipsis means the
     pattern continues without end. Mathematics handles infinity rigorously.
+journal_prompts:
+- Do you believe 0.999... = 1 now? What convinced you (or didn't)?
+- Which step of the proof felt the most uncomfortable?
+- How did other people's arguments change your thinking?
+- What does this teach you about infinity?
 ---
 
 ## The Hook

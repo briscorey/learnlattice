@@ -136,6 +136,11 @@ differentiated:
   meeting: How long to spend $1,000,000 at $1 per second? Convert to hours, then days.
   exceeding: How long for $1 million, $1 billion, and $1 trillion? Compare the three
     answers. What surprises you?
+journal_prompts:
+- What surprised you most about how long a million seconds actually is?
+- Where in your calculation did you feel most uncertain?
+- What real-world comparison helped you check your answer?
+- What new question does this investigation make you want to ask?
 ---
 
 ## The Hook
