@@ -113,6 +113,31 @@ exit_ticket:
 - Name the 7 characteristics of life (MRS GREN).
 - Is a virus alive? Give your verdict and one reason.
 - What is one weakness of using MRS GREN to define life?
+quick_check:
+- type: recall
+  q: Name 4 of the 7 MRS GREN characteristics.
+  a: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition
+- type: apply
+  q: A car moves, uses fuel, and produces exhaust. Is it alive? Which criteria does
+    it fail?
+  a: Not alive — fails Growth, Reproduction, Sensitivity (no voluntary response)
+- type: extend
+  q: Why do scientists disagree about whether viruses are alive?
+  a: Viruses reproduce but only inside host cells. They don't respire, grow, or respond
+    independently.
+parent_summary: 'Your child is exploring what makes something alive by testing edge
+  cases against the 7 characteristics of life (MRS GREN). They will debate whether
+  fire and viruses are alive. Ask them: can you name the 7 characteristics?'
+sequence:
+  prev: null
+  next: /resources/grade-6-habitats-investigation/
+  next_label: Micro-Habitats Under a Log
+  unit: Living Things
+differentiated:
+  approaching: List the 7 characteristics. For each one, write YES or NO for fire.
+  meeting: Apply all 7 criteria to fire AND a virus. Give evidence for each decision.
+  exceeding: Are the MRS GREN criteria perfect? What problems does the virus case
+    reveal about our definition of life?
 ---
 
 ## The Hook

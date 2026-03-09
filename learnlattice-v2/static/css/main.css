@@ -10336,3 +10336,204 @@ html.dark .seasonal-banner { background: linear-gradient(135deg, rgba(13,148,136
   color: var(--ink-muted);
 }
 .stu-progress-summary strong { color: var(--teal); }
+
+/* ═══════════════════════════════════════════
+   PHASE 4 — Quick Check, Diff Tasks,
+   Sequences, Parent Summary
+   ═══════════════════════════════════════════ */
+
+/* ── Quick Assessment Snapshot ── */
+.rs-quickcheck {
+  margin-top: 20px;
+  padding: 18px;
+  background: rgba(37,99,235,0.04);
+  border: 1px solid rgba(37,99,235,0.15);
+  border-radius: var(--radius);
+}
+.rs-quickcheck-header {
+  font-size: .82rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 14px;
+}
+.rs-quickcheck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+.rs-qc-card {
+  padding: 14px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  border-top: 3px solid #94a3b8;
+}
+.rs-qc-recall { border-top-color: #22c55e; }
+.rs-qc-apply { border-top-color: #f59e0b; }
+.rs-qc-extend { border-top-color: #ef4444; }
+.rs-qc-type {
+  font-size: .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.rs-qc-recall .rs-qc-type { color: #22c55e; }
+.rs-qc-apply .rs-qc-type { color: #f59e0b; }
+.rs-qc-extend .rs-qc-type { color: #ef4444; }
+.rs-qc-q {
+  font-size: .88rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.rs-qc-answer summary {
+  font-size: .72rem;
+  color: var(--teal);
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+.rs-qc-answer summary::-webkit-details-marker { display: none; }
+.rs-qc-answer p {
+  font-size: .82rem;
+  color: var(--ink-muted);
+  margin-top: 6px;
+  padding: 8px;
+  background: var(--surface-warm);
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+/* ── Differentiated Task Cards ── */
+.rs-diff {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.rs-diff summary {
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--ink);
+  background: var(--surface-warm);
+  list-style: none;
+}
+.rs-diff summary::-webkit-details-marker { display: none; }
+.rs-diff-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 14px;
+}
+@media (max-width: 700px) { .rs-diff-body { grid-template-columns: 1fr; } }
+.rs-diff-card {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.rs-diff-approaching { background: rgba(34,197,94,0.04); border-color: rgba(34,197,94,0.2); }
+.rs-diff-meeting { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.2); }
+.rs-diff-exceeding { background: rgba(239,68,68,0.04); border-color: rgba(239,68,68,0.2); }
+.rs-diff-level {
+  font-size: .68rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.rs-diff-card p {
+  font-size: .82rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ── Investigation Sequence ── */
+.rs-sequence {
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.rs-seq-label {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+.rs-seq-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.rs-seq-link {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+}
+a.rs-seq-prev {
+  color: var(--ink-muted);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+}
+a.rs-seq-prev:hover { border-color: var(--teal); color: var(--teal); }
+a.rs-seq-next {
+  color: #fff;
+  background: var(--teal);
+}
+a.rs-seq-next:hover { background: #0a7c72; }
+.rs-seq-start {
+  color: var(--teal);
+  font-size: .75rem;
+  font-weight: 600;
+  background: rgba(13,148,136,0.08);
+  border: 1px solid rgba(13,148,136,0.2);
+}
+
+/* ── Parent Summary (sidebar) ── */
+.rs-parent-summary {
+  background: rgba(37,99,235,0.04);
+  border-color: rgba(37,99,235,0.15);
+}
+.rs-parent-summary h3 { color: #2563eb; border-bottom-color: rgba(37,99,235,0.1); }
+.rs-parent-summary p {
+  font-size: .82rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.rs-copy-btn {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+  color: var(--ink-muted);
+  font-size: .72rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .2s;
+}
+.rs-copy-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ── Dark mode adjustments ── */
+html.dark .rs-quickcheck { background: rgba(37,99,235,0.06); }
+html.dark .rs-diff-approaching { background: rgba(34,197,94,0.06); }
+html.dark .rs-diff-meeting { background: rgba(245,158,11,0.06); }
+html.dark .rs-diff-exceeding { background: rgba(239,68,68,0.06); }
+html.dark .rs-parent-summary { background: rgba(37,99,235,0.06); }
+
+/* ── Print ── */
+@media print {
+  .rs-quickcheck { page-break-inside: avoid; }
+  .rs-diff-body { grid-template-columns: 1fr; }
+  .rs-qc-answer[open] p { display: block; }
+  .rs-copy-btn { display: none; }
+}

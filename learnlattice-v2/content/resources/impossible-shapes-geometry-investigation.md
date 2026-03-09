@@ -114,6 +114,16 @@ exit_ticket:
 - What is the angle sum of a hexagon?
 - A regular pentagon has 5 equal angles. What is each angle?
 - Can you have a polygon where every angle is 170°? Why or why not?
+quick_check:
+- type: recall
+  q: What do the interior angles of a triangle add up to?
+  a: 180°
+- type: apply
+  q: What is the angle sum of a hexagon (6 sides)?
+  a: (6-2) × 180 = 720°
+- type: extend
+  q: Why does adding one side always add exactly 180° to the angle sum?
+  a: Each extra side creates one more triangle in the decomposition.
 ---
 
 ## The Hook

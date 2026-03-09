@@ -114,6 +114,32 @@ exit_ticket:
 - How many times would you need to roll a die to be confident it's fair?
 - What's the difference between theoretical and experimental probability?
 - If you rolled a 6 five times in a row, would you suspect cheating? Why or why not?
+quick_check:
+- type: recall
+  q: What is the theoretical probability of rolling a 3 on a fair die?
+  a: 1/6 ≈ 0.167
+- type: apply
+  q: You roll a die 60 times. How many 4s do you EXPECT?
+  a: 60 × 1/6 = 10
+- type: extend
+  q: You get twelve 6s in 60 rolls. Is the die unfair? How would you decide?
+  a: Expected is 10, got 12. Possible by chance. Need more rolls or a statistical
+    test to be sure.
+parent_summary: 'Your child is learning about probability by testing whether a die
+  is fair. They roll it many times, record results, and compare to what they expect.
+  Ask them: if you roll a die 60 times, how many 6s should you get?'
+sequence:
+  prev: null
+  next: /resources/grade-8-probability-two-events/
+  next_label: Two Dice, One Question
+  unit: Probability & Statistics
+differentiated:
+  approaching: Roll the die 30 times. Count how many times each number appears. Is
+    it roughly equal?
+  meeting: Calculate experimental probability for each number. Compare to 1/6. Is
+    variation normal?
+  exceeding: Pool class data. Compare 30 rolls vs 300 rolls. Why does the larger sample
+    give more reliable results?
 ---
 
 ## The Hook

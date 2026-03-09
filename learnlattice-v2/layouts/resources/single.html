@@ -191,22 +191,52 @@
       </div>
       {{ end }}
 
-      {{/* ── What to Listen For ── */}}
-      {{ with .Params.listen_for }}
-      <details class="rs-listen-for">
-        <summary>
-          <span>👂 What to Listen For (while circulating)</span>
-        </summary>
-        <div class="rs-listen-body">
+      {{/* ── Quick Assessment Snapshot ── */}}
+      {{ with .Params.quick_check }}
+      <div class="rs-quickcheck">
+        <div class="rs-quickcheck-header">📊 Quick Check — Show on whiteboards</div>
+        <div class="rs-quickcheck-grid">
           {{ range . }}
-          <div class="rs-listen-item rs-listen-{{ .level | urlize }}">
-            <div class="rs-listen-level">Level {{ .level }}</div>
-            <div class="rs-listen-phrase">"{{ .phrase }}"</div>
-            <div class="rs-listen-means">{{ .means }}</div>
+          <div class="rs-qc-card rs-qc-{{ .type }}">
+            <div class="rs-qc-type">{{ .type }}</div>
+            <div class="rs-qc-q">{{ .q }}</div>
+            <details class="rs-qc-answer"><summary>Answer</summary><p>{{ .a }}</p></details>
           </div>
           {{ end }}
         </div>
+      </div>
+      {{ end }}
+
+      {{/* ── Differentiated Task Cards ── */}}
+      {{ with .Params.differentiated }}
+      <details class="rs-diff">
+        <summary><span>🎯 Differentiated Tasks</span></summary>
+        <div class="rs-diff-body">
+          <div class="rs-diff-card rs-diff-approaching">
+            <div class="rs-diff-level">🟢 Approaching</div>
+            <p>{{ .approaching }}</p>
+          </div>
+          <div class="rs-diff-card rs-diff-meeting">
+            <div class="rs-diff-level">🟡 Meeting</div>
+            <p>{{ .meeting }}</p>
+          </div>
+          <div class="rs-diff-card rs-diff-exceeding">
+            <div class="rs-diff-level">🔴 Exceeding</div>
+            <p>{{ .exceeding }}</p>
+          </div>
+        </div>
       </details>
+      {{ end }}
+
+      {{/* ── Investigation Sequence ── */}}
+      {{ with .Params.sequence }}
+      <div class="rs-sequence">
+        <div class="rs-seq-label">📍 Investigation Sequence · {{ .unit }}</div>
+        <div class="rs-seq-nav">
+          {{ with .prev }}<a href="{{ . }}" class="rs-seq-link rs-seq-prev">← Previous</a>{{ else }}<span class="rs-seq-link rs-seq-start">▶ Start here</span>{{ end }}
+          {{ with .next }}<a href="{{ . }}" class="rs-seq-link rs-seq-next">{{ $.Params.sequence.next_label }} →</a>{{ end }}
+        </div>
+      </div>
       {{ end }}
 
       {{/* ── I'm Stuck hints ── */}}
@@ -311,6 +341,15 @@
           <div class="rs-misconception-truth">Actually: {{ .truth }}</div>
         </div>
         {{ end }}
+      </div>
+      {{ end }}
+
+      {{/* Parent-Friendly Summary */}}
+      {{ with .Params.parent_summary }}
+      <div class="rs-sidebar-card rs-parent-summary">
+        <h3>📨 For Your Newsletter</h3>
+        <p>{{ . }}</p>
+        <button class="rs-copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
       </div>
       {{ end }}
     </aside>

@@ -108,6 +108,16 @@ exit_ticket:
 - 3 pizzas shared between 7 people. How much does each person get?
 - Is 3/7 bigger or smaller than 1/2? How do you know without a calculator?
 - Draw a picture showing 2/5 of a rectangle.
+quick_check:
+- type: recall
+  q: 'Which is bigger: 2/5 or 3/8?'
+  a: 2/5 = 16/40, 3/8 = 15/40. So 2/5 is bigger.
+- type: apply
+  q: 3 people share 2 pizzas. 5 people share 3 pizzas. Who gets more?
+  a: 2/3 vs 3/5. 2/3 ≈ 0.667, 3/5 = 0.6. First group gets more.
+- type: extend
+  q: Can two different fractions ALWAYS be compared? What method works every time?
+  a: Yes — find a common denominator, or convert both to decimals.
 ---
 
 ## The Hook

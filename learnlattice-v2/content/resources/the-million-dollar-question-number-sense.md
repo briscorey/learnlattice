@@ -111,6 +111,31 @@ exit_ticket:
 - What unit did you convert to? Why that unit?
 - Was your estimate close to the calculated answer? What surprised you?
 - If someone offered you a million dollars in coins, what would you say?
+quick_check:
+- type: recall
+  q: How many seconds are in one day?
+  a: 86,400
+- type: apply
+  q: If you earn $1 per second, how much do you earn in one hour?
+  a: $3,600
+- type: extend
+  q: About how many years is one billion seconds? Show your reasoning.
+  a: About 31.7 years
+parent_summary: 'This week your child is investigating how big a million really is.
+  They will estimate, calculate, and convert units to answer: if you spent $1 per
+  second, how long to spend a million? Ask them: how long is a million seconds in
+  days?'
+sequence:
+  prev: null
+  next: /resources/zero-point-nine-repeating-decimals-investigation/
+  next_label: Does 0.999... = 1?
+  unit: Number Sense
+differentiated:
+  approaching: How long to spend $1,000 at $1 per second? Use a calculator. Show your
+    steps.
+  meeting: How long to spend $1,000,000 at $1 per second? Convert to hours, then days.
+  exceeding: How long for $1 million, $1 billion, and $1 trillion? Compare the three
+    answers. What surprises you?
 ---
 
 ## The Hook

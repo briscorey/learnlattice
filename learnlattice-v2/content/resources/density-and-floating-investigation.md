@@ -106,6 +106,31 @@ exit_ticket:
 - A block has mass 80g and volume 100cm³. Will it float? How do you know?
 - Why does a steel ship float when a steel ball sinks?
 - 'Rate your confidence in calculating density: 1 (not sure) to 5 (totally got it)'
+quick_check:
+- type: recall
+  q: What is the formula for density?
+  a: Density = mass ÷ volume
+- type: apply
+  q: A block has mass 60g and volume 20cm³. Will it float in water?
+  a: Density = 3.0 g/cm³ — it sinks (greater than 1.0)
+- type: extend
+  q: Why does ice float on water even though both are H₂O?
+  a: Ice is less dense because water molecules form a crystal structure with gaps
+parent_summary: 'Your child is learning about density — why some objects float and
+  others sink. They will measure mass and volume, calculate density, and predict whether
+  objects float before testing. Ask them: why does a peeled orange sink when the whole
+  orange floats?'
+sequence:
+  prev: null
+  next: /resources/grade-8-conservation-of-mass-investigation/
+  next_label: Where Did the Mass Go?
+  unit: Properties of Matter
+differentiated:
+  approaching: Measure mass and volume of 3 objects. Calculate density. Do they float
+    or sink?
+  meeting: Predict float/sink for 5 objects BEFORE testing. Explain using density.
+  exceeding: Why do ships float when they are made of steel? Explain using the concept
+    of average density.
 ---
 
 ## The Hook

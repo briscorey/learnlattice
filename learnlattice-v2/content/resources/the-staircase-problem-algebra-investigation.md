@@ -114,6 +114,29 @@ exit_ticket:
 - What is the 50th triangular number? Show your working.
 - How did you find your formula — guess and check, or reasoning?
 - Where else might triangular numbers appear in real life?
+quick_check:
+- type: recall
+  q: How many blocks in a 5-step staircase?
+  a: '15'
+- type: apply
+  q: Use the formula to find the number of blocks in a 10-step staircase.
+  a: 10 × 11 ÷ 2 = 55
+- type: extend
+  q: A staircase uses 210 blocks. How many steps does it have?
+  a: 20 steps (20 × 21 ÷ 2 = 210)
+parent_summary: 'Your child is exploring number patterns using staircase shapes. They
+  build staircases from blocks, count the blocks, look for patterns, and try to write
+  a formula. Ask them: how many blocks for a 10-step staircase?'
+sequence:
+  prev: null
+  next: /resources/impossible-shapes-geometry-investigation/
+  next_label: Impossible Shapes
+  unit: Patterns & Algebra
+differentiated:
+  approaching: Build staircases 1 to 5. Count the blocks. What do you notice about
+    the differences?
+  meeting: Find the formula for the nth staircase. Test it for n = 20.
+  exceeding: Prove WHY your formula works. Can you use a visual proof?
 ---
 
 ## The Hook
