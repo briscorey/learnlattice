@@ -166,7 +166,7 @@
 <script>
 var investigations = [
   {{ range $investigations }}
-  {title: {{ .Title | jsonify }}, desc: {{ (.Description | default .Summary | truncate 140) | jsonify }}, url: {{ .RelPermalink | jsonify }}, subject: {{ with .Params.subjects }}{{ index . 0 | jsonify }}{{ else }}""{{ end }} },
+  {title: {{ printf "%q" .Title | safeJS }}, desc: {{ printf "%q" (.Description | default .Summary | truncate 140) | safeJS }}, url: {{ printf "%q" .RelPermalink | safeJS }}, subject: {{ with .Params.subjects }}{{ printf "%q" (index . 0) | safeJS }}{{ else }}""{{ end }} },
   {{ end }}
 ];
 
