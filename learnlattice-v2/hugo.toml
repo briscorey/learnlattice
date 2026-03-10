@@ -162,7 +162,30 @@ summaryLength = 30
       url = "/assessment/"
       description = "Criteria, exemplars, rubrics."
 
-  
+  [params.home]
+    hero_eyebrow = "Free MYP Mathematics & Science Resources"
+    hero_title = "The best lessons start with a question students <em>actually want to answer</em>"
+    hero_primary_label = "Browse Resources"
+    hero_primary_url = "/resources/"
+    hero_secondary_label = "Start with a subject"
+    hero_secondary_url = "/subjects/mathematics/"
+    hero_panel_title = "Find what you need"
+    hero_panel_copy = "Every resource here has been taught, revised, and taught again. Browse by MYP subject, grade level, or resource type."
+    myp_math_title = "MYP Mathematics"
+    myp_math_subtitle = "Seven topic branches from number sense to statistics — all built around genuine mathematical thinking, not procedure-following."
+    myp_science_title = "MYP Sciences"
+    myp_science_subtitle = "Five disciplines, each with resources designed around evidence, argumentation, and the habits of mind of working scientists."
+    programs_title = "Organised for how teachers actually plan"
+    programs_subtitle = "By subject for unit planning. By grade for curriculum coverage. By format when you know exactly what you need."
+    grades_title = "Grade Collections"
+    grades_subtitle = "Complete by-grade libraries from Grade 6 to Grade 9 — every resource mapped to the year level where it lands best."
+    browse_title = "Browse by format"
+    browse_subtitle = "Already know what kind of resource you need? Go straight to it."
+    latest_title = "Recently Added"
+    latest_link_label = "See all resources"
+    latest_link_url = "/resources/"
+    topics_title = "Browse by Topic"
+
   [[params.featured_subjects]]
     title = "Science"
     key = "science"
