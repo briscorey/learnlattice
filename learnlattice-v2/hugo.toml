@@ -78,6 +78,14 @@ summaryLength = 30
       icon = "🌿"
       url = "/subjects/ecology/"
       description = "Ecosystems, food webs, biodiversity."
+  [[params.featured_subjects]]
+    title = "Physics"
+    key = "physics"
+    color = "blue"
+    icon = "⚡"
+    url = "/subjects/physics/"
+    audience = "Investigations for MYP Grades 6–9"
+
 
   [[params.nav_dropdowns]]
     key = "grades"
