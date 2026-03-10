@@ -29,18 +29,23 @@
         {{ with $subject }}<a href="/subjects/{{ . | urlize }}/">{{ . }}</a><span class="bc-sep">›</span>{{ end }}
         <span aria-current="page">{{ .Title | truncate 45 }}</span>
       </nav>
-      <div class="rs-meta-row">
-        {{ with $subject }}<span class="rs-subject rc-text-{{ $subjectColor }}">{{ . }}</span>{{ end }}
-        {{ with index .Params.resource_types 0 }}<span class="rs-type">{{ . }}</span>{{ end }}
-        {{ with .Params.difficulty }}<span class="resource-difficulty resource-difficulty--{{ . }}">{{ if eq . "approaching" }}🟢 Approaching{{ end }}{{ if eq . "meeting" }}🟡 Meeting{{ end }}{{ if eq . "exceeding" }}🔴 Exceeding{{ end }}</span>{{ end }}
-        {{ $words := .WordCount }}{{ if gt $words 100 }}<span class="rs-reading-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>{{ math.Round (div (float $words) 200.0) }} min read</span>{{ end }}
-      </div>
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.hook }}<p class="rs-hook">"{{ . }}"</p>{{ else }}{{ with .Description }}<p class="rs-desc">{{ . }}</p>{{ end }}{{ end }}
-      <div class="rs-actions">
-        <button class="classroom-mode-btn" id="classroomModeBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Present</button>
-        <button onclick="window.print()" class="rs-print-btn">🖨 Print</button>
-        {{ with .Params.handout_url }}<a href="{{ . }}" target="_blank" class="rs-handout-link">📄 Handout</a>{{ end }}
+
+      <div class="rs-hero-block">
+        <div class="rs-hero-main">
+          <div class="rs-meta-row">
+            {{ with $subject }}<span class="rs-subject rc-text-{{ $subjectColor }}">{{ . | upper }}</span>{{ end }}
+            {{ with index .Params.resource_types 0 }}<span class="rs-type">{{ . }}</span>{{ end }}
+            {{ with .Params.difficulty }}<span class="resource-difficulty resource-difficulty--{{ . }}">{{ if eq . "approaching" }}🟢 Approaching{{ end }}{{ if eq . "meeting" }}🟡 Meeting{{ end }}{{ if eq . "exceeding" }}🔴 Exceeding{{ end }}</span>{{ end }}
+            {{ $words := .WordCount }}{{ if gt $words 100 }}<span class="rs-reading-time">{{ math.Round (div (float $words) 200.0) }} min read</span>{{ end }}
+          </div>
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.hook }}<p class="rs-hook">{{ . }}</p>{{ else }}{{ with .Description }}<p class="rs-desc">{{ . }}</p>{{ end }}{{ end }}
+        </div>
+        <div class="rs-hero-actions">
+          <button class="classroom-mode-btn" id="classroomModeBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Present</button>
+          <button onclick="window.print()" class="rs-print-btn">🖨 Print</button>
+          {{ with .Params.handout_url }}<a href="{{ . }}" target="_blank" class="rs-handout-link">📄 Handout</a>{{ end }}
+        </div>
       </div>
     </div>
   </div>
