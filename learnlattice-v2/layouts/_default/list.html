@@ -1,7 +1,4 @@
 {{ define "main" }}
-<!-- DEBUG: Section={{ .Section }} Title={{ .Title }} IsNode={{ .IsNode }} -->
-{{ if .IsNode }}<!-- DEBUG: Data.Singular={{ .Data.Singular }} Data.Plural={{ .Data.Plural }} -->{{ end }}
-
 
 {{ $featuredSubjects := .Site.Params.featured_subjects }}
 {{ $subjectLookup := newScratch }}
