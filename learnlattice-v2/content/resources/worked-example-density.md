@@ -24,9 +24,9 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/calculating-density" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Calculating Density"></iframe>
+<iframe src="/resources/worked-example-density/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Calculating Density"></iframe>
 
-[Open full screen](/worked-examples/calculating-density)
+[Open full screen](/resources/worked-example-density/)
 
 ## When to Use This
 

@@ -27,7 +27,7 @@ statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help
 
 ## Overview
 
-This lab activity extends the [Grade 7 Electromagnetism and Circuits Unit](/resources/grade-7-electromagnetism-and-circuits-unit/) with two focused practical investigations: one on how electromagnet strength varies with coil turns and current, and one on identifying and explaining circuit faults. Both are designed for a standard 80-minute double lesson.
+This lab activity extends the [Grade 7 Electromagnetism and Circuits Unit]() with two focused practical investigations: one on how electromagnet strength varies with coil turns and current, and one on identifying and explaining circuit faults. Both are designed for a standard 80-minute double lesson.
 
 ---
 

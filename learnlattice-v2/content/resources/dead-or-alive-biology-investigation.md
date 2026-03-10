@@ -31,7 +31,6 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
-handout_url: "/handouts/dead-or-alive"
 teacher_moves:
   - title: "Start with fire"
     description: "Is fire alive? It grows, it consumes, it responds, it reproduces (spreads). Let students argue for 5 minutes before introducing MRS GREN."

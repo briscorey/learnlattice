@@ -27,6 +27,6 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/line-of-best-fit" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Line of Best Fit"></iframe>
+<iframe src="/resources/worked-example-line-of-best-fit/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Line of Best Fit"></iframe>
 
-[Open full screen](/worked-examples/line-of-best-fit)
+[Open full screen](/resources/worked-example-line-of-best-fit/)

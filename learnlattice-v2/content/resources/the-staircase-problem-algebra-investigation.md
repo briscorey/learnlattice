@@ -32,7 +32,6 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
-handout_url: "/handouts/staircase"
 teacher_moves:
   - title: "Build with blocks first"
     description: "Physical blocks for the first 5 staircases. Students who build before they count find the pattern faster than students who just look at numbers."

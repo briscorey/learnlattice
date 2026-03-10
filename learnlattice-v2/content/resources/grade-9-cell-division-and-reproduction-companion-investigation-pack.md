@@ -28,7 +28,7 @@ statement_of_inquiry: "Living systems maintain balance through interconnected pr
 
 ## Overview
 
-This companion investigation pack extends [Grade 9 Cell Division and Reproduction Unit](/resources/grade-9-cell-division-and-reproduction-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion investigation pack extends [Grade 9 Cell Division and Reproduction Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

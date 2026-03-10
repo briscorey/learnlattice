@@ -28,7 +28,7 @@ statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help
 
 ## Overview
 
-This companion lab activity extends [Grade 6 Force and Motion Unit](/resources/grade-6-force-and-motion-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion lab activity extends [Grade 6 Force and Motion Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

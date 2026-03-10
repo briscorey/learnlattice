@@ -27,6 +27,6 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/mean-from-table" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Mean from a Frequency Table"></iframe>
+<iframe src="/resources/worked-example-mean-frequency/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Mean from a Frequency Table"></iframe>
 
-[Open full screen](/worked-examples/mean-from-table)
+[Open full screen](/resources/worked-example-mean-frequency/)

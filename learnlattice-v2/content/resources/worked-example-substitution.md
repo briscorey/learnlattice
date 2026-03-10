@@ -27,6 +27,6 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/substitution" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Substituting into a Formula"></iframe>
+<iframe src="/resources/worked-example-substitution/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Substituting into a Formula"></iframe>
 
-[Open full screen](/worked-examples/substitution)
+[Open full screen](/resources/worked-example-substitution/)

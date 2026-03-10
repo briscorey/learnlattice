@@ -100,7 +100,7 @@ differentiated:
 
 ## Overview
 
-This investigation pack gives students hands-on practice with the core skill of geology: building an explanation from incomplete, indirect evidence. It extends the [Grade 7 Earth's Dynamic Crust Unit](/resources/grade-7-earths-dynamic-crust-unit/) with two structured investigations — one focused on earthquake triangulation, one on evaluating tectonic evidence quality.
+This investigation pack gives students hands-on practice with the core skill of geology: building an explanation from incomplete, indirect evidence. It extends the [Grade 7 Earth's Dynamic Crust Unit]() with two structured investigations — one focused on earthquake triangulation, one on evaluating tectonic evidence quality.
 
 ---
 

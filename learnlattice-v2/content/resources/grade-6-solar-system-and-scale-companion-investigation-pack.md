@@ -29,7 +29,7 @@ statement_of_inquiry: "Observing patterns in the cosmos reveals relationships th
 
 ## Overview
 
-This companion investigation pack extends [Grade 6 Solar System and Scale Unit](/resources/grade-6-solar-system-and-scale-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion investigation pack extends [Grade 6 Solar System and Scale Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

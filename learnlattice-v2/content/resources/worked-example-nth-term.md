@@ -25,9 +25,9 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/nth-term" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Finding the nth Term"></iframe>
+<iframe src="/resources/worked-example-nth-term/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Finding the nth Term"></iframe>
 
-[Open full screen](/worked-examples/nth-term)
+[Open full screen](/resources/worked-example-nth-term/)
 
 ## When to Use This
 

@@ -28,7 +28,7 @@ statement_of_inquiry: "Understanding how matter changes at the particle level ex
 
 ## Overview
 
-This companion investigation pack extends [Grade 9 Atomic Theory and Periodic Patterns Unit](/resources/grade-9-atomic-theory-and-periodic-patterns-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion investigation pack extends [Grade 9 Atomic Theory and Periodic Patterns Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

@@ -27,6 +27,6 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/unit-conversion" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Unit Conversion"></iframe>
+<iframe src="/resources/worked-example-unit-conversion/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Unit Conversion"></iframe>
 
-[Open full screen](/worked-examples/unit-conversion)
+[Open full screen](/resources/worked-example-unit-conversion/)

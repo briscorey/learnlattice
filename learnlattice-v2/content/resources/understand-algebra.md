@@ -27,9 +27,9 @@ download_label: ""
 
 ## The Explainer
 
-<iframe src="/understand/algebra" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Algebra: The Balance Scale"></iframe>
+<iframe src="/resources/understand-algebra/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Algebra: The Balance Scale"></iframe>
 
-[Open full screen](/understand/algebra)
+[Open full screen](/resources/understand-algebra/)
 
 ## When to Use This
 

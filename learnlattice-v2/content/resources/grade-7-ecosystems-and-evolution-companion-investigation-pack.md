@@ -101,7 +101,7 @@ differentiated:
 
 ## Overview
 
-This investigation pack gives students a structured but open-ended inquiry into how a real population's traits change when its environment shifts. It extends the [Grade 7 Ecosystems and Evolution Unit](/resources/grade-7-ecosystems-and-evolution-unit/) by moving students from understanding natural selection conceptually to applying it to data they collect and interpret themselves.
+This investigation pack gives students a structured but open-ended inquiry into how a real population's traits change when its environment shifts. It extends the [Grade 7 Ecosystems and Evolution Unit]() by moving students from understanding natural selection conceptually to applying it to data they collect and interpret themselves.
 
 ---
 

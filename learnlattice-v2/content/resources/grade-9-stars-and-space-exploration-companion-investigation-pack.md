@@ -28,7 +28,7 @@ statement_of_inquiry: "Observing patterns in the cosmos reveals relationships th
 
 ## Overview
 
-This companion investigation pack extends [Grade 9 Stars and Space Exploration Unit](/resources/grade-9-stars-and-space-exploration-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion investigation pack extends [Grade 9 Stars and Space Exploration Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

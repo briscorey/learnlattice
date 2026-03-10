@@ -30,7 +30,6 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
-handout_url: "/handouts/probability-die"
 teacher_moves:
   - title: "Roll before you calculate"
     description: "30 rolls per group. Results on the board. THEN ask: do these look fair? Students must form an opinion before the statistics tell them the answer."

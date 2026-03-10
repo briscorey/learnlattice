@@ -27,6 +27,6 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/percentage-change" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Percentage Change"></iframe>
+<iframe src="/resources/worked-example-percentage-change/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Percentage Change"></iframe>
 
-[Open full screen](/worked-examples/percentage-change)
+[Open full screen](/resources/worked-example-percentage-change/)

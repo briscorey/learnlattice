@@ -27,6 +27,6 @@ download_label: ""
 
 ## The Worked Example
 
-<iframe src="/worked-examples/pythagoras" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Pythagoras' Theorem"></iframe>
+<iframe src="/resources/worked-example-pythagoras/" style="width:100%;height:750px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Worked Example: Pythagoras' Theorem"></iframe>
 
-[Open full screen](/worked-examples/pythagoras)
+[Open full screen](/resources/worked-example-pythagoras/)

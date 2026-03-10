@@ -26,7 +26,6 @@ statement_of_inquiry: "The relationship between mass and volume determines wheth
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""
 download_label: "Investigation Pack PDF"
-handout_url: "/handouts/density"
 hints:
   - "Measure the mass of the object on a balance. Record it in grams."
   - "Measure the volume using water displacement: put water in a measuring cylinder, note the level, add the object, note the new level. The difference is the volume."

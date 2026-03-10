@@ -26,9 +26,9 @@ download_label: ""
 
 ## The Explainer
 
-<iframe src="/understand/particles" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="How Do Particles Behave?"></iframe>
+<iframe src="/resources/understand-particles/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="How Do Particles Behave?"></iframe>
 
-[Open full screen](/understand/particles)
+[Open full screen](/resources/understand-particles/)
 
 ## When to Use This
 

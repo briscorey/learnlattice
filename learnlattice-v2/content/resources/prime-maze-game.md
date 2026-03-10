@@ -40,7 +40,7 @@ game_url: ""
 - Recognise patterns across number ranges
 ---
 <div style="text-align:center; margin: 24px 0;">
-  <a href="/prime-composite-maze/" style="display:inline-flex; align-items:center; gap:10px; padding: 14px 28px; background: linear-gradient(135deg,#0d9488,#0f766e); color:#fff; border-radius:16px; font-weight:700; text-decoration:none; font-size:1.05rem; box-shadow:0 14px 30px rgba(13,148,136,0.3);">
+  <a href="/games/" style="display:inline-flex; align-items:center; gap:10px; padding: 14px 28px; background: linear-gradient(135deg,#0d9488,#0f766e); color:#fff; border-radius:16px; font-weight:700; text-decoration:none; font-size:1.05rem; box-shadow:0 14px 30px rgba(13,148,136,0.3);">
     🎮 Play Prime Maze
   </a>
 </div>

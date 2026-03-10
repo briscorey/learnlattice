@@ -29,7 +29,7 @@ statement_of_inquiry: "Understanding how matter changes at the particle level ex
 
 ## Overview
 
-This companion lab activity extends [Grade 6 Mixtures and Separation Unit](/resources/grade-6-mixtures-and-separation-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion lab activity extends [Grade 6 Mixtures and Separation Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

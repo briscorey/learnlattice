@@ -26,9 +26,9 @@ download_label: ""
 
 ## The Explainer
 
-<iframe src="/understand/density" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="What Makes Things Float or Sink?"></iframe>
+<iframe src="/resources/understand-density/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="What Makes Things Float or Sink?"></iframe>
 
-[Open full screen](/understand/density)
+[Open full screen](/resources/understand-density/)
 
 ## When to Use This
 

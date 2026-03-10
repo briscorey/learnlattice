@@ -27,7 +27,7 @@ statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help
 
 ## Overview
 
-This companion lab activity extends [Grade 8 Light and Optical Systems Unit](/resources/grade-8-light-and-optical-systems-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion lab activity extends [Grade 8 Light and Optical Systems Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

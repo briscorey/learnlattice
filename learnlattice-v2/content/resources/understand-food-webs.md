@@ -19,6 +19,6 @@ download_url: ""
 download_label: ""
 ---
 
-<iframe src="/understand/food-webs" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Food Webs"></iframe>
+<iframe src="/resources/understand-food-webs/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Food Webs"></iframe>
 
-[Open full screen](/understand/food-webs)
+[Open full screen](/resources/understand-food-webs/)

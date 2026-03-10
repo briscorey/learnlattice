@@ -19,6 +19,6 @@ download_url: ""
 download_label: ""
 ---
 
-<iframe src="/understand/forces" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="How Do Forces Work?"></iframe>
+<iframe src="/resources/understand-forces/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="How Do Forces Work?"></iframe>
 
-[Open full screen](/understand/forces)
+[Open full screen](/resources/understand-forces/)

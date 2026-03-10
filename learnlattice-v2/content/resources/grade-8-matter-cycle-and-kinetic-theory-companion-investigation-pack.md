@@ -28,7 +28,7 @@ statement_of_inquiry: "Understanding how matter changes at the particle level ex
 
 ## Overview
 
-This companion investigation pack extends [Grade 8 Matter Cycle and Kinetic Theory Unit](/resources/grade-8-matter-cycle-and-kinetic-theory-unit/) with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
+This companion investigation pack extends [Grade 8 Matter Cycle and Kinetic Theory Unit]() with a tighter evidence-collection cycle, student recording structures, and follow-up prompts that keep the inquiry focused on explanation rather than procedure.
 
 ## What's Included
 

@@ -29,7 +29,6 @@ btc_practices:
   - "Thinking Tasks"
 download_url: ""
 download_label: "Investigation Pack PDF"
-handout_url: "/handouts/million-dollar"
 teacher_moves:
   - title: "Don't give the answer"
     description: "When students ask 'how much does a million dollars weigh?' say 'I don't know. How would you find out?' The investigation IS the finding out."
