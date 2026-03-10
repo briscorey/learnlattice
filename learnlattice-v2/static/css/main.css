@@ -162,3 +162,10 @@ html.dark .subj-card:hover{border-color:var(--teal)}
   .subj-grid-section{padding:16px}
   .subj-grid{grid-template-columns:1fr;gap:12px}
 }
+
+/* ═══ MATH BRANCH CARDS ═══ */
+.subj-card--branch{border-left:3px solid var(--teal);padding:28px}
+.subj-card--branch h3{font-size:1.3rem;margin-bottom:6px}
+.subj-card-branch-icon{font-size:1.6rem;line-height:1}
+.subj-card-count{font-size:.7rem;color:var(--teal);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.subj-card--branch:hover{border-left-color:var(--teal)}

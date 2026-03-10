@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students plot coordinates to find hidden treasure on a grid, then create their own treasure maps for classmates to solve."
 subjects:
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 6"
 resource_types:

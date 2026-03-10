@@ -4,7 +4,7 @@ date: 2026-03-03
 description: "If you spent one million dollars at one dollar per second, how long would it take? This investigation uses a single provocative question to build scale reasoning, estimation fluency, and scientific notation across number sense."
 subjects:
   - "Mathematics"
-math_topic: "Number Sense"
+math_topic: Number Sense
 year_levels:
   - "Grade 6"
   - "Grade 7"

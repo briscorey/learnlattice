@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students create a scale drawing of their classroom and calculate real distances from the drawing."
 subjects:
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 7"
 resource_types:

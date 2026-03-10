@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students compare percentage discounts across shops. Which deal is really the best? A practical percentages investigation."
 subjects:
   - "Mathematics"
+math_topic: Fractions
+
 year_levels:
   - "Grade 7"
 resource_types:

@@ -5,6 +5,8 @@ date: 2026-03-09
 description: "An interactive fraction comparison wall with 10 challenge questions. See fractions as coloured bars, compare sizes visually, find equivalents, and add fractions with understanding."
 subjects:
   - "Mathematics"
+math_topic: Fractions
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

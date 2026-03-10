@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Using clinometers and trigonometry to measure heights of buildings and trees without climbing them."
 subjects:
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 9"
 resource_types:

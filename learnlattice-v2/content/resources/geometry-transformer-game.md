@@ -5,7 +5,7 @@ date: 2026-03-08
 description: "Apply translations, rotations, reflections, and enlargements to shapes on a coordinate grid. See the transformation happen in real time with coordinate labels updating as you move the sliders."
 subjects:
   - "Mathematics"
-math_topic: "Geometry"
+math_topic: Geometry
 year_levels:
   - "Grade 7"
   - "Grade 8"

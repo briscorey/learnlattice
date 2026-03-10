@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Finding missing sides of right triangles step by step. Three problems including a real-world ladder scenario."
 subjects:
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

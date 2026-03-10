@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Converting between mm, cm, m, and km using the chain method with powers of 10."
 subjects:
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

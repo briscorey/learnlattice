@@ -5,6 +5,8 @@ date: 2026-03-09
 description: "Focused study sessions before a test. Pick a subject, get flashcards pulled from real investigations. Self-assess each card, missed cards come back. 92 questions across 7 subjects."
 subjects:
   - "Mathematics"
+math_topic: Number Sense
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

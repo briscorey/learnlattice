@@ -5,6 +5,8 @@ date: 2026-03-09
 description: "A logic simulator for algebraic thinking. Observe input-output pairs, discover the hidden rule, then predict new outputs. 10 levels from linear to exponential — tests pattern recognition and formula writing."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

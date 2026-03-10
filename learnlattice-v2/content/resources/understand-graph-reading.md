@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "An interactive graph where you drag points and read values. What does the slope mean? What do flat sections mean?"
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

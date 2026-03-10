@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Replace letters with numbers and evaluate. Three formulas from v=u+at to E=half mv squared."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

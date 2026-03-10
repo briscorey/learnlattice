@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Compare simple and compound interest over 5, 10, and 30 years. Students discover why exponential growth matters for their future."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 8"
 resource_types:

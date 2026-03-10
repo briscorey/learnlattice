@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Change two fractions and see them compared visually. The bar chart makes it obvious which is larger."
 subjects:
   - "Mathematics"
+math_topic: Fractions
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

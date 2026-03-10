@@ -5,6 +5,8 @@ date: 2026-03-09
 description: "Quick-fire Fermi estimation challenges. How many grains of rice in a mug? How many heartbeats per day? Use a logarithmic slider to lock in your best guess. Builds number sense and scale reasoning."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

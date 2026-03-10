@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students draw circles, measure angles, and discover that the angle at the centre is twice the angle at the circumference."
 subjects:
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 9"
 resource_types:

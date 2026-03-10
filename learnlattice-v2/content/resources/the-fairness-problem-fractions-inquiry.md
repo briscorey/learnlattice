@@ -4,7 +4,7 @@ date: 2026-03-03
 description: "Three people share 2 pizzas. Two people share 1 pizza. Who gets more? This single question opens an investigation into fractions as division, fair sharing, and the multiple representations that make fractions so powerful — and so confusing."
 subjects:
   - "Mathematics"
-math_topic: "Fractions"
+math_topic: Fractions
 year_levels:
   - "Grade 6"
   - "Grade 7"

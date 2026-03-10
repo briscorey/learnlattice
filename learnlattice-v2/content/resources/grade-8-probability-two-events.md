@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students roll two dice 100 times and record the sum. The distribution is not uniform. Why? Leads to sample space diagrams."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 8"
 resource_types:

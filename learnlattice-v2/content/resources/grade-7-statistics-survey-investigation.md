@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students design, conduct, and analyse a real survey. From writing unbiased questions to presenting findings with appropriate graphs."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 7"
 resource_types:

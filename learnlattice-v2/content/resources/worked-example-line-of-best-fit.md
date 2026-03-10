@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "How to draw a line of best fit through scattered data — through the middle, not point to point."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

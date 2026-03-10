@@ -4,7 +4,7 @@ date: 2026-03-08
 description: "Step-by-step walkthrough of solving linear equations. Click to reveal one step at a time. 4 problems from simple to equations with brackets and variables on both sides."
 subjects:
   - "Mathematics"
-math_topic: "Algebra"
+math_topic: Algebra
 year_levels:
   - "Grade 7"
   - "Grade 8"

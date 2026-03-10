@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Three student responses to a statistics investigation asking whether a newspaper headline is supported by the data. From accepting the claim at face value to critically evaluating sample size and methodology."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
   - "Statistics"
 year_levels:
   - "Grade 8"

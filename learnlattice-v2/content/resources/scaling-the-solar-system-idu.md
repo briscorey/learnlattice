@@ -6,7 +6,7 @@ subjects:
   - "Mathematics"
   - "Science"
   - "Space Science"
-math_topic: "Number Sense"
+math_topic: Number Sense
 year_levels:
   - "Grade 6"
   - "Grade 7"

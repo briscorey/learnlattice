@@ -18,27 +18,27 @@ summaryLength = 30
     [[params.nav_dropdowns.items]]
       title = "Number Sense"
       icon = "🔢"
-      url = "/subjects/mathematics/#number-sense"
+      url = "/subjects/number-sense/"
       description = "Place value, exponents, number systems."
     [[params.nav_dropdowns.items]]
       title = "Fractions & Ratios"
       icon = "½"
-      url = "/subjects/mathematics/#fractions"
+      url = "/subjects/fractions/"
       description = "Fractions, ratios, proportional reasoning."
     [[params.nav_dropdowns.items]]
       title = "Geometry"
       icon = "📐"
-      url = "/subjects/mathematics/#geometry"
+      url = "/subjects/geometry/"
       description = "Shape, measurement, tessellations, Pythagoras."
     [[params.nav_dropdowns.items]]
       title = "Algebra"
       icon = "𝑥"
-      url = "/subjects/mathematics/#algebra"
+      url = "/subjects/algebra/"
       description = "Patterns, equations, functions."
     [[params.nav_dropdowns.items]]
-      title = "Probability & Statistics"
+      title = "Statistics & Probability"
       icon = "🎲"
-      url = "/subjects/mathematics/#probability"
+      url = "/subjects/statistics/"
       description = "Data analysis, chance, inference."
 
   [[params.nav_dropdowns]]
@@ -87,6 +87,45 @@ summaryLength = 30
     audience = "Investigations for MYP Grades 6–9"
 
 
+  [[params.featured_subjects]]
+    title = "Number Sense"
+    key = "number-sense"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/number-sense/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Fractions & Ratios"
+    key = "fractions"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/fractions/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Algebra"
+    key = "algebra"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/algebra/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Geometry"
+    key = "geometry"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/geometry/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Statistics & Probability"
+    key = "statistics"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/statistics/"
+    audience = "MYP Mathematics Grades 6-9"
   [[params.nav_dropdowns]]
     key = "grades"
     [[params.nav_dropdowns.items]]

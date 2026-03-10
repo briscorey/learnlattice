@@ -5,7 +5,7 @@ date: 2026-03-08
 description: "Roll fair dice, loaded dice, coins, and octahedrons. Compare experimental and theoretical probability in real time. How many rolls do you need to prove a die is loaded?"
 subjects:
   - "Mathematics"
-math_topic: "Probability"
+math_topic: Statistics
 year_levels:
   - "Grade 6"
   - "Grade 7"

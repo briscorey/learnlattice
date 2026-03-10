@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Flip a coin 100 times. Roll a die 200 times. Watch experimental probability converge towards theoretical."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

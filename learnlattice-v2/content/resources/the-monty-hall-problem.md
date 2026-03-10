@@ -5,7 +5,7 @@ description: There are three doors. Behind one is a car. You pick Door 1. The ho
   to newspapers, and a genuine crisis in probabilistic reasoning. Run the simulation. Prove the answer. Survive the argument.
 subjects:
 - Mathematics
-math_topic: Probability
+math_topic: Statistics
 year_levels:
 - Grade 8
 - Grade 9

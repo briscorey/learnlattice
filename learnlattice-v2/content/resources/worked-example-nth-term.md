@@ -4,7 +4,7 @@ date: 2026-03-08
 description: "How to go from a number pattern to an algebraic formula. Step-by-step reveal with 3 sequences — increasing, large difference, and decreasing."
 subjects:
   - "Mathematics"
-math_topic: "Algebra"
+math_topic: Algebra
 year_levels:
   - "Grade 7"
   - "Grade 8"

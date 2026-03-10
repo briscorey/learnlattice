@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students discover that 2 + 3 × 4 gives different answers depending on the order. BIDMAS emerges from the confusion."
 subjects:
   - "Mathematics"
+math_topic: Fractions
+
 year_levels:
   - "Grade 6"
 resource_types:

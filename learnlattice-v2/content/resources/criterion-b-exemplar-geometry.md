@@ -5,6 +5,7 @@ description: Three student responses investigating the angle sum of polygons. Fr
 subjects:
 - Mathematics
 - Geometry
+math_topic: Geometry
 year_levels:
 - Grade 8
 - Grade 9

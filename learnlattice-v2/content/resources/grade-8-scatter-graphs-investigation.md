@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students collect height and armspan data for the class, plot a scatter graph, draw a line of best fit, and test the claim that armspan equals height."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 8"
 resource_types:

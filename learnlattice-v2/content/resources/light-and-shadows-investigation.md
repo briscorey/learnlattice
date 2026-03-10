@@ -6,6 +6,8 @@ subjects:
   - "Physics"
   - "Science"
   - "Mathematics"
+math_topic: Geometry
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

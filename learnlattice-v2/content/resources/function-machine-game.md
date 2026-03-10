@@ -5,7 +5,7 @@ date: 2026-03-08
 description: "Feed numbers into a mystery machine. Watch what comes out. Can you guess the rule? This interactive game builds algebraic thinking from pattern recognition — starting with simple operations and progressing to quadratic and piecewise functions."
 subjects:
   - "Mathematics"
-math_topic: "Algebra"
+math_topic: Algebra
 year_levels:
   - "Grade 6"
   - "Grade 7"

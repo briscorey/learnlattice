@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Three student presentations of a geometric proof. From informal description to structured logical argument with diagrams."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
   - "Geometry"
 year_levels:
   - "Grade 8"

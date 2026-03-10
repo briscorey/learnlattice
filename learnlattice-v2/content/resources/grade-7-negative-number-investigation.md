@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Using real weather data from cities around the world to explore negative number operations in context."
 subjects:
   - "Mathematics"
+math_topic: Fractions
+
 year_levels:
   - "Grade 7"
 resource_types:

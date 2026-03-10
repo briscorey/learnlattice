@@ -23,7 +23,57 @@
 {{ if and $isSubject (gt (len $subjectMeta) 0) }}
 
 {{ $color := index $subjectMeta "color" | default "teal" }}
-{{ $subjectResources := where (where .Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .Title) }}
+
+{{/* Detect math branches and filter accordingly */}}
+{{ $mathTopicMap := dict "Number Sense" "Number Sense" "Fractions & Ratios" "Fractions" "Algebra" "Algebra" "Geometry" "Geometry" "Statistics & Probability" "Statistics" }}
+{{ $mathTopic := index $mathTopicMap .Title }}
+{{ $subjectResources := slice }}
+{{ if $mathTopic }}
+  {{ $subjectResources = where (where .Site.RegularPages "Section" "resources") "Params.math_topic" $mathTopic }}
+{{ else }}
+  {{ $subjectResources = where (where .Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .Title) }}
+{{ end }}
+
+{{/* For main Mathematics page, show branch links instead of all 70 */}}
+{{ $isMathOverview := eq .Title "Mathematics" }}
+{{ if $isMathOverview }}
+{{ $mathBranches := slice
+  (dict "title" "Algebra" "slug" "algebra" "icon" "𝑥" "desc" "Patterns, equations, functions")
+  (dict "title" "Statistics & Probability" "slug" "statistics" "icon" "🎲" "desc" "Data, chance, inference")
+  (dict "title" "Geometry" "slug" "geometry" "icon" "📐" "desc" "Shape, angle, measurement")
+  (dict "title" "Fractions & Ratios" "slug" "fractions" "icon" "½" "desc" "Parts, wholes, proportions")
+  (dict "title" "Number Sense" "slug" "number-sense" "icon" "🔢" "desc" "Place value, estimation, systems")
+}}
+{{ $allMath := where (where .Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice "Mathematics") }}
+<div class="subj-hero" data-color="{{ $color }}">
+  <div class="subj-hero-inner">
+    <div class="subj-hero-left">
+      <h1 class="subj-hero-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="subj-hero-desc">{{ . }}</p>{{ end }}
+    </div>
+    <div class="subj-hero-stats">
+      <span class="subj-hero-count">{{ len $allMath }}</span>
+      <span class="subj-hero-label">investigations</span>
+    </div>
+  </div>
+</div>
+<section class="subj-grid-section">
+  <div class="subj-grid">
+    {{ range $mathBranches }}
+    {{ $topicKey := index $mathTopicMap .title | default .title }}
+    {{ $branchResources := where $allMath "Params.math_topic" $topicKey }}
+    <a class="subj-card subj-card--branch" href="/subjects/{{ .slug }}/">
+      <div class="subj-card-top">
+        <span class="subj-card-branch-icon">{{ .icon }}</span>
+        <span class="subj-card-count">{{ len $branchResources }} investigations</span>
+      </div>
+      <h3>{{ .title }}</h3>
+      <p class="subj-card-desc">{{ .desc }}</p>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ else }}
 
 {{/* Compact hero */}}
 <div class="subj-hero" data-color="{{ $color }}">
@@ -102,6 +152,8 @@ function filterGrade(grade, btn) {
   document.getElementById('subjEmpty').style.display = shown === 0 ? 'block' : 'none';
 }
 </script>
+
+{{ end }}{{/* end isMathOverview else */}}
 
 {{/* ═══ GRADE PAGE ═══ */}}
 {{ else if $isGrade }}

@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Step-by-step percentage increase, decrease, and reverse percentage calculations with 3 problems."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Walk a character along a number line. Addition moves right. Subtraction moves left. See negative numbers as directions."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

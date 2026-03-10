@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Modelling the shape of a bridge arch using quadratic functions. Students collect measurements and fit a curve."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 9"
 resource_types:

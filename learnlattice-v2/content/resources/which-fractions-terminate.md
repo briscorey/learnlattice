@@ -5,7 +5,7 @@ description: 1/2 = 0.5. 1/3 = 0.333... 1/4 = 0.25. 1/6 = 0.1666... Why do some f
   fluency between fraction and decimal representations.
 subjects:
 - Mathematics
-math_topic: Decimals
+math_topic: Fractions
 year_levels:
 - Grade 6
 - Grade 7

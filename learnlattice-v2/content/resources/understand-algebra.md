@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "An equation is a balance. Whatever you do to one side you must do to the other. Solve by keeping the scale level."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 6"
   - "Grade 7"

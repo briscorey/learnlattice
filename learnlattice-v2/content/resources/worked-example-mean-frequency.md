@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Multiply, add products, divide by total. The most common statistics calculation explained clearly."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

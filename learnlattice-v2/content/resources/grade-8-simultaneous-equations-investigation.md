@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Two mobile phone plans cost different amounts. When is each plan cheaper? Students find the intersection algebraically and graphically."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 8"
 resource_types:

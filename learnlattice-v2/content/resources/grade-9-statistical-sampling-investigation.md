@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Students use the capture-recapture method with beads in a bag to estimate population size. Connects probability to ecology."
 subjects:
   - "Mathematics"
+math_topic: Statistics
+
 year_levels:
   - "Grade 9"
 resource_types:

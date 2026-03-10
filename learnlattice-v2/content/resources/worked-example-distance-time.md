@@ -4,6 +4,8 @@ date: 2026-03-08
 description: "Speed equals gradient. Flat means stationary. Reading and interpreting real graph scenarios."
 subjects:
   - "Mathematics"
+math_topic: Algebra
+
 year_levels:
   - "Grade 7"
   - "Grade 8"

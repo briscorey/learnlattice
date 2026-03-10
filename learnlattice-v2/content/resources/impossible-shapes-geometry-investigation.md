@@ -4,7 +4,7 @@ date: 2026-03-03
 description: "Can you draw a triangle where all three angles are 90°? On a football, you can. This investigation uses the geometry of spheres, impossible objects, and non-Euclidean space to reveal that the rules of geometry aren't universal — they depend on where you are."
 subjects:
   - "Mathematics"
-math_topic: "Geometry"
+math_topic: Geometry
 year_levels:
   - "Grade 7"
   - "Grade 8"

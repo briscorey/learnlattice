@@ -5,6 +5,8 @@ date: 2026-03-09
 description: "A Phaser 3 physics platformer where you jump between platforms and solve math problems to climb higher. Progressive difficulty from basic arithmetic to algebra. Built with real arcade physics, particle effects, and camera follow."
 subjects:
   - "Mathematics"
+math_topic: Number Sense
+
 year_levels:
   - "Grade 6"
   - "Grade 7"
