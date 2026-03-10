@@ -47,92 +47,38 @@ summaryLength = 30
       title = "All Sciences"
       icon = "🔬"
       url = "/subjects/science/"
-      description = "Browse all MYP science resources."
+      description = "Browse all 120+ science investigations."
     [[params.nav_dropdowns.items]]
       title = "Biology"
       icon = "🧬"
       url = "/subjects/biology/"
-      description = "Cells, body systems, adaptation."
+      description = "Cells, systems, adaptation, inheritance."
     [[params.nav_dropdowns.items]]
       title = "Chemistry"
       icon = "⚗️"
       url = "/subjects/chemistry/"
-      description = "Reactions, particles, properties of matter."
+      description = "Reactions, particles, acids, materials."
     [[params.nav_dropdowns.items]]
       title = "Physics"
       icon = "⚡"
-      url = "/subjects/science/#physics"
-      description = "Forces, energy, waves, circuits, magnetism."
+      url = "/subjects/physics/"
+      description = "Forces, energy, waves, circuits."
     [[params.nav_dropdowns.items]]
       title = "Earth Science"
       icon = "🌍"
       url = "/subjects/earth-science/"
-      description = "Rocks, tectonics, climate, earth systems."
+      description = "Rocks, tectonics, earthquakes."
     [[params.nav_dropdowns.items]]
       title = "Space Science"
       icon = "🪐"
       url = "/subjects/space-science/"
-      description = "Moon phases, solar system, stellar evidence."
+      description = "Stars, planets, orbits."
     [[params.nav_dropdowns.items]]
       title = "Ecology"
       icon = "🌿"
       url = "/subjects/ecology/"
       description = "Ecosystems, food webs, biodiversity."
-  [[params.featured_subjects]]
-    title = "Science"
-    key = "science"
-    color = "sky"
-    icon = "🔬"
-    url = "/subjects/science/"
-    audience = "MYP Science Grades 6-9"
-  [[params.featured_subjects]]
-    title = "Physics"
-    key = "physics"
-    color = "blue"
-    icon = "⚡"
-    url = "/subjects/physics/"
-    audience = "Investigations for MYP Grades 6–9"
 
-
-  [[params.featured_subjects]]
-    title = "Number Sense"
-    key = "number-sense"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/number-sense/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Fractions & Ratios"
-    key = "fractions"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/fractions/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Algebra"
-    key = "algebra"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/algebra/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Geometry"
-    key = "geometry"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/geometry/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Statistics & Probability"
-    key = "statistics"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/statistics/"
-    audience = "MYP Mathematics Grades 6-9"
   [[params.nav_dropdowns]]
     key = "grades"
     [[params.nav_dropdowns.items]]
@@ -199,7 +145,7 @@ summaryLength = 30
       title = "Student Hub"
       icon = "🎓"
       url = "/students/"
-      description = "Learn, practise, play, explore."
+      description = "Your starting point for learning."
     [[params.nav_dropdowns.items]]
       title = "Revision Mode"
       icon = "📖"
@@ -209,301 +155,14 @@ summaryLength = 30
       title = "Visual Vocabulary"
       icon = "🔤"
       url = "/vocabulary/"
-      description = "102 key terms with visual definitions."
+      description = "102 key terms with pictures."
     [[params.nav_dropdowns.items]]
       title = "Assessment Toolkit"
       icon = "📋"
       url = "/assessment/"
-      description = "Rubrics, exemplars, moderation guides."
+      description = "Criteria, exemplars, rubrics."
 
-
-
-  [params.home]
-    hero_eyebrow = "Free MYP Mathematics & Science Resources"
-    hero_title = "The best lessons start with a question students <em>actually want to answer</em>"
-    hero_primary_label = "Browse Resources"
-    hero_primary_url = "/resources/"
-    hero_secondary_label = "Start with a subject"
-    hero_secondary_url = "/subjects/mathematics/"
-    hero_panel_title = "Find what you need"
-    hero_panel_copy = "Every resource here has been taught, revised, and taught again. Browse by MYP subject, grade level, or resource type."
-    myp_math_title = "MYP Mathematics"
-    myp_math_subtitle = "Seven topic branches from number sense to statistics — all built around genuine mathematical thinking, not procedure-following."
-    myp_science_title = "MYP Sciences"
-    myp_science_subtitle = "Five disciplines, each with resources designed around evidence, argumentation, and the habits of mind of working scientists."
-    programs_title = "Organised for how teachers actually plan"
-    programs_subtitle = "By subject for unit planning. By grade for curriculum coverage. By format when you know exactly what you need."
-    grades_title = "Grade Collections"
-    grades_subtitle = "Complete by-grade libraries from Grade 6 to Grade 9 — every resource mapped to the year level where it lands best."
-    browse_title = "Browse by format"
-    browse_subtitle = "Already know what kind of resource you need? Go straight to it."
-    latest_title = "Recently Added"
-    latest_link_label = "See all resources"
-    latest_link_url = "/resources/"
-    topics_title = "Browse by Topic"
-    pathways_title = "Topic Pathways"
-    pathways_copy = "Each topic now opens into multiple branches so teachers can build lessons through concepts, investigations, and assessment moves."
-    featured_title = "Built for inquiry-based classrooms"
-    featured_copy = "Every resource is designed with Understanding by Design principles. Provoke thinking first, then build conceptual understanding through guided investigation."
-    featured_link_label = "Learn Our Approach →"
-    featured_link_url = "/about/"
-
-  [[params.featured_subjects]]
-    title = "Mathematics"
-    key = "mathematics"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/mathematics/"
-    description = "Number, algebra, geometry, statistics and probability — designed around genuine mathematical thinking, not procedure-following."
-    image = "/img/topics/mathematics.svg"
-    poster = "/img/topics/mathematics.svg"
-    video = ""
-    audience = "7 topic branches · MYP Years 1–5 · Criterion A–D coverage"
-
-  [[params.featured_subjects]]
-    title = "Biology"
-    key = "biology"
-    color = "sky"
-    icon = "🧬"
-    url = "/subjects/biology/"
-    description = "Cells, transport, respiration, and adaptation — where the microscopic explains the visible."
-    image = "/img/topics/biology.svg"
-    poster = "/img/topics/biology.svg"
-    video = ""
-    audience = "Observation-first · Systems thinking · MYP Criteria A–D"
-
-  [[params.featured_subjects]]
-    title = "Ecology"
-    key = "ecology"
-    color = "teal"
-    icon = "🌿"
-    url = "/subjects/ecology/"
-    description = "Food webs, biodiversity, fieldwork, climate, and systems stability — where one change ripples through everything."
-    image = "/img/topics/ecology.svg"
-    poster = "/img/topics/ecology.svg"
-    video = ""
-    audience = "Real data · Systems thinking · Fieldwork design"
-
-  [[params.featured_subjects]]
-    title = "Space Science"
-    key = "space-science"
-    color = "amber"
-    icon = "🪐"
-    url = "/subjects/space-science/"
-    description = "Orbits, phases, gravity, seasons, and planetary evidence — where scale itself is the lesson."
-    image = "/img/topics/space-science.svg"
-    poster = "/img/topics/space-science.svg"
-    video = ""
-    audience = "Model-based reasoning · Scale thinking · Evidence from distance"
-
-  [[params.featured_subjects]]
-    title = "Earth Science"
-    key = "earth-science"
-    color = "amber"
-    icon = "🌍"
-    url = "/subjects/earth-science/"
-    description = "Earthquakes, volcanoes, plate tectonics, and climate — explained from evidence outward, never from definition inward."
-    image = "/img/topics/earth-science.svg"
-    poster = "/img/topics/earth-science.svg"
-    video = ""
-    audience = "Evidence-first · Deep time · Seismic data analysis"
-
-  [[params.featured_subjects]]
-    title = "Chemistry"
-    key = "chemistry"
-    color = "rose"
-    icon = "⚗️"
-    url = "/subjects/chemistry/"
-    description = "Mixtures, reactions, acids and bases, and particle-based reasoning"
-    image = "/img/topics/chemistry.svg"
-    poster = "/img/topics/chemistry.svg"
-    video = ""
-    audience = "Labs, particles, and visible change"
-
-  [[params.topic_pathways]]
-    title = "Linear Relationships"
-    subject = "Mathematics"
-    color = "teal"
-    summary = "Students move from noticing regularity to modelling real systems with equations, graphs, and rate-of-change arguments."
-    url = "/tags/algebra/"
-    terms = ["Algebra", "Mathematics", "Criterion D"]
-
-    [[params.topic_pathways.branches]]
-      title = "Pattern to Rule"
-      detail = "Generalise tables and visual growth patterns into linear rules."
-      url = "/resources/linear-relationships-inquiry-unit/"
-
-    [[params.topic_pathways.branches]]
-      title = "Graph Stories"
-      detail = "Interpret slope and intercept through journeys, costs, and changing quantities."
-      url = "/subjects/mathematics/"
-
-    [[params.topic_pathways.branches]]
-      title = "Model Critique"
-      detail = "Compare competing equations and decide which one best fits a context."
-      url = "/tags/criterion-d/"
-
-  [[params.topic_pathways]]
-    title = "Earthquake Systems"
-    subject = "Earth Science"
-    color = "amber"
-    summary = "Learners trace how pressure, plate movement, and seismic evidence combine into a connected earth-systems explanation."
-    url = "/tags/plate-tectonics/"
-    terms = ["Plate Tectonics", "Volcanoes", "Earth Science", "Criterion B"]
-
-    [[params.topic_pathways.branches]]
-      title = "Boundary Types"
-      detail = "Map convergent, divergent, and transform boundaries to surface events."
-      url = "/resources/earthquake-mechanics-investigation/"
-
-    [[params.topic_pathways.branches]]
-      title = "Wave Evidence"
-      detail = "Use P-wave and S-wave timing gaps to locate unseen epicentres."
-      url = "/tags/criterion-b/"
-
-    [[params.topic_pathways.branches]]
-      title = "Risk and Prediction"
-      detail = "Evaluate which warning signals are useful, weak, or misleading."
-      url = "/subjects/earth-science/"
-
-  [[params.topic_pathways]]
-    title = "Separation of Mixtures"
-    subject = "Chemistry"
-    color = "rose"
-    summary = "Each branch builds from simple physical sorting to evidence-based choices about which separation method fits a mixture."
-    url = "/tags/mixtures/"
-    terms = ["Mixtures", "Chemistry", "Chemical Reactions", "Criterion C"]
-
-    [[params.topic_pathways.branches]]
-      title = "Observable Properties"
-      detail = "Use solubility, particle size, and boiling point as decision criteria."
-      url = "/resources/separation-techniques-lab-series/"
-
-    [[params.topic_pathways.branches]]
-      title = "Technique Selection"
-      detail = "Choose between filtration, distillation, and chromatography with justification."
-      url = "/subjects/chemistry/"
-
-    [[params.topic_pathways.branches]]
-      title = "Lab Reliability"
-      detail = "Analyse contamination, yield loss, and procedural errors in practical work."
-      url = "/tags/criterion-c/"
-
-  [[params.topic_pathways]]
-    title = "Scientific Inquiry"
-    subject = "Science"
-    color = "sky"
-    summary = "A cross-disciplinary pathway focused on asking sharper questions, designing investigations, and defending claims with evidence."
-    url = "/subjects/science/"
-    terms = ["Science", "Criterion B", "Criterion C", "Criterion D"]
-
-    [[params.topic_pathways.branches]]
-      title = "Question Design"
-      detail = "Turn broad curiosities into measurable, testable inquiry questions."
-      url = "/tags/criterion-b/"
-
-    [[params.topic_pathways.branches]]
-      title = "Evidence Handling"
-      detail = "Sort raw observations into patterns, anomalies, and usable conclusions."
-      url = "/resources/earthquake-mechanics-investigation/"
-
-    [[params.topic_pathways.branches]]
-      title = "Argument Building"
-      detail = "Support claims with data, model limitations, and counterexamples."
-      url = "/resources/separation-techniques-lab-series/"
-
-  [[params.topic_pathways]]
-    title = "Cell Systems"
-    subject = "Biology"
-    color = "sky"
-    summary = "Students connect cell structure, transport, and energy transfer to explain how living systems stay stable and responsive."
-    url = "/tags/biology/"
-    terms = ["Biology", "Cells", "Homeostasis", "Science", "Criterion B", "Criterion C"]
-
-    [[params.topic_pathways.branches]]
-      title = "Cell Structure"
-      detail = "Compare specialised cells and link organelles to function."
-      url = "/resources/cell-systems-and-microscopy-inquiry/"
-
-    [[params.topic_pathways.branches]]
-      title = "Membrane Transport"
-      detail = "Model diffusion, osmosis, and active transport using observable evidence."
-      url = "/tags/homeostasis/"
-
-    [[params.topic_pathways.branches]]
-      title = "Energy in Cells"
-      detail = "Trace how respiration and photosynthesis support system balance."
-      url = "/subjects/science/"
-
-  [[params.topic_pathways]]
-    title = "Ecology Networks"
-    subject = "Ecology"
-    color = "teal"
-    summary = "Food webs, population data, and human impact studies branch into a wider systems view of ecosystems."
-    url = "/tags/ecology/"
-    terms = ["Ecology", "Ecosystems", "Biodiversity", "Science", "Criterion D"]
-
-    [[params.topic_pathways.branches]]
-      title = "Energy Flow"
-      detail = "Track biomass and energy losses through trophic levels and food webs."
-      url = "/resources/ecosystem-energy-and-biodiversity-study/"
-
-    [[params.topic_pathways.branches]]
-      title = "Field Data"
-      detail = "Use quadrats, transects, and sampling choices to study habitats."
-      url = "/tags/biodiversity/"
-
-    [[params.topic_pathways.branches]]
-      title = "Human Impact"
-      detail = "Evaluate how land use and climate pressure reshape ecosystem stability."
-      url = "/subjects/science/"
-
-  [[params.topic_pathways]]
-    title = "Space Science"
-    subject = "Space Science"
-    color = "amber"
-    summary = "Orbital motion, scale models, and observation evidence branch into explanations for seasons, phases, and solar-system patterns."
-    url = "/tags/space-science/"
-    terms = ["Space Science", "Astronomy", "Forces", "Science", "Criterion B", "Criterion D"]
-
-    [[params.topic_pathways.branches]]
-      title = "Orbit and Gravity"
-      detail = "Explain motion in space using balanced force and gravitational attraction."
-      url = "/resources/orbits-seasons-and-scale-models-unit/"
-
-    [[params.topic_pathways.branches]]
-      title = "Cycles and Patterns"
-      detail = "Connect phases, eclipses, and seasons to predictable system geometry."
-      url = "/tags/astronomy/"
-
-    [[params.topic_pathways.branches]]
-      title = "Scale and Evidence"
-      detail = "Use models to reason about distances too large to experience directly."
-      url = "/subjects/science/"
-
-  [[params.topic_pathways]]
-    title = "Chemical Change"
-    subject = "Chemistry"
-    color = "rose"
-    summary = "Students branch from particle models into reaction evidence, conservation of matter, and practical decision-making in the lab."
-    url = "/tags/chemical-change/"
-    terms = ["Chemistry", "Chemical Change", "Reactions", "Particles", "Criterion C", "Criterion D"]
-
-    [[params.topic_pathways.branches]]
-      title = "Particle Collisions"
-      detail = "Use particle diagrams to explain why reactions happen and speed up."
-      url = "/resources/particle-model-and-chemical-change-unit/"
-
-    [[params.topic_pathways.branches]]
-      title = "Reaction Evidence"
-      detail = "Interpret gas, temperature, precipitate, and colour changes as evidence."
-      url = "/tags/chemical-reactions/"
-
-    [[params.topic_pathways.branches]]
-      title = "Conservation Reasoning"
-      detail = "Balance symbolic equations with mass data from practical experiments."
-      url = "/subjects/chemistry/"
-
+  
 [taxonomies]
   tag = "tags"
   subject = "subjects"

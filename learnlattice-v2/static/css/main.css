@@ -249,3 +249,11 @@ html.dark .sp-help{background:#0f172a;border-color:#334155}
   .sp-help-topics{gap:8px}
   .sp-topic{padding:10px 14px;font-size:.82rem}
 }
+
+/* ═══ AUDIT FIXES ═══ */
+
+
+/* Homepage overflow fix */
+html{overflow-x:hidden}
+.ka-home-hero{overflow:hidden;position:relative}
+.hero-glow{position:absolute;pointer-events:none}
