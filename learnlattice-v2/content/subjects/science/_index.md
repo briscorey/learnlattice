@@ -1,5 +1,4 @@
 ---
 title: "Science"
-description: "MYP science resources across five disciplines — biology, ecology, earth science, space science, and chemistry — each designed around the practices of real scientific thinking: observing anomalies, generating hypotheses, and arguing from evidence."
-layout: "science"
+description: "MYP science resources across six disciplines — biology, chemistry, physics, ecology, earth science, and space science — each built around real scientific thinking."
 ---

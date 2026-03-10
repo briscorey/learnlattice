@@ -36,6 +36,7 @@
 
 {{/* For main Mathematics page, show branch links instead of all 70 */}}
 {{ $isMathOverview := eq .Title "Mathematics" }}
+{{ $isScienceOverview := eq .Title "Science" }}
 {{ if $isMathOverview }}
 {{ $mathBranches := slice
   (dict "title" "Algebra" "slug" "algebra" "icon" "𝑥" "desc" "Patterns, equations, functions")
@@ -62,6 +63,44 @@
     {{ range $mathBranches }}
     {{ $topicKey := index $mathTopicMap .title | default .title }}
     {{ $branchResources := where $allMath "Params.math_topic" $topicKey }}
+    <a class="subj-card subj-card--branch" href="/subjects/{{ .slug }}/">
+      <div class="subj-card-top">
+        <span class="subj-card-branch-icon">{{ .icon }}</span>
+        <span class="subj-card-count">{{ len $branchResources }} investigations</span>
+      </div>
+      <h3>{{ .title }}</h3>
+      <p class="subj-card-desc">{{ .desc }}</p>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+{{ else if $isScienceOverview }}
+{{ $scienceBranches := slice
+  (dict "title" "Biology" "slug" "biology" "icon" "🧬" "desc" "Cells, systems, adaptation, inheritance")
+  (dict "title" "Chemistry" "slug" "chemistry" "icon" "⚗️" "desc" "Reactions, particles, acids, materials")
+  (dict "title" "Physics" "slug" "physics" "icon" "⚡" "desc" "Forces, energy, waves, circuits")
+  (dict "title" "Ecology" "slug" "ecology" "icon" "🌿" "desc" "Ecosystems, food webs, biodiversity")
+  (dict "title" "Earth Science" "slug" "earth-science" "icon" "🌍" "desc" "Rocks, tectonics, earthquakes, volcanoes")
+  (dict "title" "Space Science" "slug" "space-science" "icon" "🪐" "desc" "Orbits, stars, planets, exploration")
+}}
+{{ $allScience := where (where .Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice "Biology" "Chemistry" "Physics" "Ecology" "Earth Science" "Space Science" "Science") }}
+<div class="subj-hero" data-color="{{ $color }}">
+  <div class="subj-hero-inner">
+    <div class="subj-hero-left">
+      <h1 class="subj-hero-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="subj-hero-desc">{{ . }}</p>{{ end }}
+    </div>
+    <div class="subj-hero-stats">
+      <span class="subj-hero-count">{{ len $allScience }}</span>
+      <span class="subj-hero-label">investigations</span>
+    </div>
+  </div>
+</div>
+<section class="subj-grid-section">
+  <div class="subj-grid">
+    {{ range $scienceBranches }}
+    {{ $branchResources := where (where $.Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .title) }}
     <a class="subj-card subj-card--branch" href="/subjects/{{ .slug }}/">
       <div class="subj-card-top">
         <span class="subj-card-branch-icon">{{ .icon }}</span>
