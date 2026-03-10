@@ -163,6 +163,62 @@ summaryLength = 30
       description = "Criteria, exemplars, rubrics."
 
   
+  [[params.featured_subjects]]
+    title = "Science"
+    key = "science"
+    color = "sky"
+    icon = "🔬"
+    url = "/subjects/science/"
+    audience = "MYP Science Grades 6-9"
+  [[params.featured_subjects]]
+    title = "Physics"
+    key = "physics"
+    color = "blue"
+    icon = "⚡"
+    url = "/subjects/physics/"
+    audience = "Investigations for MYP Grades 6–9"
+
+
+  [[params.featured_subjects]]
+    title = "Number Sense"
+    key = "number-sense"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/number-sense/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Fractions & Ratios"
+    key = "fractions"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/fractions/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Algebra"
+    key = "algebra"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/algebra/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Geometry"
+    key = "geometry"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/geometry/"
+    audience = "MYP Mathematics Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Statistics & Probability"
+    key = "statistics"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/statistics/"
+    audience = "MYP Mathematics Grades 6-9"
+
 [taxonomies]
   tag = "tags"
   subject = "subjects"
@@ -252,3 +308,108 @@ summaryLength = 30
 
 [minify]
   disableHTML = true
+
+  [[params.featured_subjects]]
+    title = "Physics"
+    key = "physics"
+    color = "blue"
+    icon = "⚡"
+    url = "/subjects/physics/"
+    audience = "Forces, energy, waves, circuits"
+
+  [[params.featured_subjects]]
+    title = "Mathematics"
+    key = "mathematics"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/mathematics/"
+    audience = "5 topic branches · MYP Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Science"
+    key = "science"
+    color = "sky"
+    icon = "🔬"
+    url = "/subjects/science/"
+    audience = "6 disciplines · MYP Grades 6-9"
+
+  [[params.featured_subjects]]
+    title = "Biology"
+    key = "biology"
+    color = "sky"
+    icon = "🧬"
+    url = "/subjects/biology/"
+    audience = "Cells, systems, adaptation, inheritance"
+
+  [[params.featured_subjects]]
+    title = "Ecology"
+    key = "ecology"
+    color = "teal"
+    icon = "🌿"
+    url = "/subjects/ecology/"
+    audience = "Ecosystems, food webs, biodiversity"
+
+  [[params.featured_subjects]]
+    title = "Space Science"
+    key = "space-science"
+    color = "amber"
+    icon = "🪐"
+    url = "/subjects/space-science/"
+    audience = "Orbits, stars, planets, exploration"
+
+  [[params.featured_subjects]]
+    title = "Earth Science"
+    key = "earth-science"
+    color = "amber"
+    icon = "🌍"
+    url = "/subjects/earth-science/"
+    audience = "Rocks, tectonics, earthquakes, volcanoes"
+
+  [[params.featured_subjects]]
+    title = "Chemistry"
+    key = "chemistry"
+    color = "rose"
+    icon = "⚗️"
+    url = "/subjects/chemistry/"
+    audience = "Reactions, particles, acids, materials"
+
+  [[params.featured_subjects]]
+    title = "Number Sense"
+    key = "number-sense"
+    color = "teal"
+    icon = "🔢"
+    url = "/subjects/number-sense/"
+    audience = "Place value, estimation, number systems"
+
+  [[params.featured_subjects]]
+    title = "Fractions & Ratios"
+    key = "fractions"
+    color = "teal"
+    icon = "½"
+    url = "/subjects/fractions/"
+    audience = "Parts, wholes, proportions"
+
+  [[params.featured_subjects]]
+    title = "Algebra"
+    key = "algebra"
+    color = "teal"
+    icon = "𝑥"
+    url = "/subjects/algebra/"
+    audience = "Patterns, equations, functions"
+
+  [[params.featured_subjects]]
+    title = "Geometry"
+    key = "geometry"
+    color = "teal"
+    icon = "📐"
+    url = "/subjects/geometry/"
+    audience = "Shape, angle, measurement"
+
+  [[params.featured_subjects]]
+    title = "Statistics & Probability"
+    key = "statistics"
+    color = "teal"
+    icon = "🎲"
+    url = "/subjects/statistics/"
+    audience = "Data, chance, inference"
+
