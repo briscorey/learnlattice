@@ -106,3 +106,59 @@ html.dark .resource-content h2::before{opacity:.7}
   .rs-hero-actions>*{flex:1}
   .rs-hero-main h1{font-size:1.5rem !important}
 }
+
+/* ═══ SUBJECT PAGE REDESIGN ═══ */
+.subj-hero{padding:36px 32px 28px;border-bottom:2px solid var(--border);background:var(--surface-warm)}
+.subj-hero[data-color="teal"]{border-bottom-color:#0D9488}
+.subj-hero[data-color="sky"]{border-bottom-color:#0284C7}
+.subj-hero[data-color="green"]{border-bottom-color:#16a34a}
+.subj-hero[data-color="rose"]{border-bottom-color:#e11d48}
+.subj-hero[data-color="amber"]{border-bottom-color:#d97706}
+.subj-hero[data-color="violet"]{border-bottom-color:#7c3aed}
+.subj-hero[data-color="emerald"]{border-bottom-color:#059669}
+.subj-hero-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.subj-hero-left{flex:1;min-width:0}
+.subj-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
+.subj-hero-desc{font-size:.92rem;color:var(--ink-muted);line-height:1.5;max-width:600px;margin:0}
+.subj-hero-stats{text-align:center;flex-shrink:0}
+.subj-hero-count{display:block;font-family:'DM Serif Display',serif;font-size:3rem;color:var(--teal);line-height:1}
+.subj-hero-label{font-size:.7rem;color:var(--ink-muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+
+.subj-filters{padding:12px 32px;border-bottom:1px solid var(--border);background:var(--surface-card);position:sticky;top:64px;z-index:50;backdrop-filter:blur(12px)}
+.subj-filters-inner{max-width:1200px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subj-pill{padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);background:none;font-family:inherit;font-size:.82rem;font-weight:500;color:var(--ink-muted);cursor:pointer;white-space:nowrap;transition:all .15s}
+.subj-pill:hover{border-color:var(--teal);color:var(--ink)}
+.subj-pill.active{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:600}
+.subj-pill-count{font-size:.68rem;opacity:.7;margin-left:2px}
+
+.subj-grid-section{max-width:1200px;margin:0 auto;padding:24px 32px}
+.subj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.subj-card{display:flex;flex-direction:column;padding:22px;background:var(--surface-card);border:1.5px solid var(--border);border-radius:14px;text-decoration:none;color:inherit;transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s,border-color .2s}
+.subj-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--teal)}
+.subj-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.subj-card-type{font-size:.68rem;font-weight:600;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.5px}
+.subj-card-diff{font-size:.75rem}
+.subj-card h3{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--ink);line-height:1.25;margin-bottom:8px;letter-spacing:-.01em}
+.subj-card-hook{font-size:.82rem;color:var(--teal);font-style:italic;line-height:1.5;margin:0 0 12px;flex:1}
+.subj-card-desc{font-size:.82rem;color:var(--ink-muted);line-height:1.5;margin:0 0 12px;flex:1}
+.subj-card-footer{display:flex;align-items:center;gap:6px;margin-top:auto}
+.subj-card-grade{font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface-warm);border:1px solid var(--border);color:var(--ink-muted)}
+.subj-card-badge{font-size:.85rem;margin-left:auto}
+
+.subj-empty{text-align:center;padding:48px 24px;color:var(--ink-muted);font-size:.9rem}
+.subj-empty button{background:none;border:none;color:var(--teal);font-weight:600;cursor:pointer;font-family:inherit;text-decoration:underline}
+
+html.dark .subj-hero{background:#1e293b}
+html.dark .subj-filters{background:rgba(15,23,42,.9)}
+html.dark .subj-card{background:#1e293b;border-color:#334155}
+html.dark .subj-card:hover{border-color:var(--teal)}
+
+@media(max-width:640px){
+  .subj-hero{padding:24px 16px 20px}
+  .subj-hero-inner{flex-direction:column;align-items:flex-start;gap:12px}
+  .subj-hero-stats{display:flex;align-items:baseline;gap:8px}
+  .subj-hero-count{font-size:2rem}
+  .subj-filters{padding:10px 16px;top:0}
+  .subj-grid-section{padding:16px}
+  .subj-grid{grid-template-columns:1fr;gap:12px}
+}

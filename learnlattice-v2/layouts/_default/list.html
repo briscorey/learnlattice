@@ -1,71 +1,121 @@
 {{ define "main" }}
+
 {{ $featuredSubjects := .Site.Params.featured_subjects }}
 {{ $subjectLookup := newScratch }}
 {{ range $featuredSubjects }}
   {{ $subjectLookup.Set (lower .title) . }}
 {{ end }}
 {{ $subjectMeta := dict }}
+{{ $isSubject := false }}
 {{ if and .IsNode (eq .Data.Singular "subject") }}
+  {{ $isSubject = true }}
   {{ with $subjectLookup.Get (lower .Title) }}
     {{ $subjectMeta = . }}
   {{ end }}
 {{ end }}
 
-{{ if and $subjectMeta (gt (len $subjectMeta) 0) }}
-<section class="page-hero page-hero-subject" data-color="{{ index $subjectMeta "color" }}" id="overview">
-  <div class="page-hero-copy">
-    <div class="page-hero-kicker">MYP Subject Collection</div>
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    {{ with index $subjectMeta "audience" }}
-    <div class="page-hero-note">{{ . }}</div>
-    {{ end }}
-  </div>
-</section>
+{{ $isGrade := false }}
+{{ if and .IsNode (eq .Data.Singular "year_level") }}
+  {{ $isGrade = true }}
+{{ end }}
 
+{{/* ═══ SUBJECT PAGE (Biology, Chemistry, etc) ═══ */}}
+{{ if and $isSubject (gt (len $subjectMeta) 0) }}
+
+{{ $color := index $subjectMeta "color" | default "teal" }}
 {{ $subjectResources := where (where .Site.RegularPages "Section" "resources") "Params.subjects" "intersect" (slice .Title) }}
-{{ if gt (len $subjectResources) 0 }}
-<div class="subject-list-meta reveal">
-  <div class="subject-list-meta-inner">
-    <span class="subject-list-count">{{ len $subjectResources }} resource{{ if gt (len $subjectResources) 1 }}s{{ end }} in this collection</span>
-    <div class="subject-list-types">
-      {{ $types := slice "Unit Plan" "Worksheet" "Investigation Pack" "Lab Activity" "Interactive Game" }}
-      {{ range $types }}
-        {{ $t := . }}
-        {{ $tc := len (where $subjectResources "Params.resource_types" "intersect" (slice $t)) }}
-        {{ if gt $tc 0 }}
-        <span class="subject-list-type-pill">{{ $tc }} {{ $t }}{{ if gt $tc 1 }}s{{ end }}</span>
-        {{ end }}
-      {{ end }}
+
+{{/* Compact hero */}}
+<div class="subj-hero" data-color="{{ $color }}">
+  <div class="subj-hero-inner">
+    <div class="subj-hero-left">
+      <h1 class="subj-hero-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="subj-hero-desc">{{ . }}</p>{{ end }}
+    </div>
+    <div class="subj-hero-stats">
+      <span class="subj-hero-count">{{ len $subjectResources }}</span>
+      <span class="subj-hero-label">investigations</span>
     </div>
   </div>
 </div>
-{{ end }}
-{{ else if and .IsNode (eq .Data.Singular "year_level") }}
-<section class="page-hero page-hero-subject" data-color="teal">
-  <div class="page-hero-copy">
-    <div class="page-hero-kicker">Grade Collections Collection</div>
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    <div class="page-hero-note">Browse grade-level unit plans alongside companion worksheets, labs, and inquiry packs connected to MYP criteria.</div>
+
+{{/* Grade filter pills */}}
+{{ $grades := slice "Grade 6" "Grade 7" "Grade 8" "Grade 9" }}
+<div class="subj-filters" id="subjFilters">
+  <div class="subj-filters-inner">
+    <button class="subj-pill active" data-grade="all" onclick="filterGrade('all',this)">All</button>
+    {{ range $grades }}
+    {{ $count := len (where $subjectResources "Params.year_levels" "intersect" (slice .)) }}
+    {{ if gt $count 0 }}
+    <button class="subj-pill" data-grade="{{ . | urlize }}" onclick="filterGrade('{{ . | urlize }}',this)">{{ . }} <span class="subj-pill-count">{{ $count }}</span></button>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+{{/* Investigation grid */}}
+<section class="subj-grid-section">
+  <div class="subj-grid" id="subjGrid">
+    {{ range $subjectResources.ByDate.Reverse }}
+    {{ $rType := "" }}{{ with .Params.resource_types }}{{ $rType = index . 0 }}{{ end }}
+    {{ $grades := "" }}{{ range .Params.year_levels }}{{ $grades = printf "%s %s" $grades (. | urlize) }}{{ end }}
+    <a class="subj-card" href="{{ .RelPermalink }}" data-grades="{{ $grades }}" data-type="{{ $rType | urlize }}">
+      <div class="subj-card-top">
+        <span class="subj-card-type">
+          {{ if eq $rType "Investigation Pack" }}🔍{{ else if eq $rType "Interactive Game" }}🎮{{ else if eq $rType "Lab Activity" }}🧪{{ else if eq $rType "Visual Explainer" }}💡{{ else if eq $rType "Worked Example" }}✏️{{ else }}📄{{ end }}
+          {{ $rType }}
+        </span>
+        {{ with .Params.difficulty }}
+        <span class="subj-card-diff subj-card-diff--{{ . }}">
+          {{ if eq . "approaching" }}🟢{{ else if eq . "meeting" }}🟡{{ else }}🔴{{ end }}
+        </span>
+        {{ end }}
+      </div>
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.hook }}<p class="subj-card-hook">{{ . }}</p>{{ else }}<p class="subj-card-desc">{{ .Description | truncate 100 }}</p>{{ end }}
+      <div class="subj-card-footer">
+        {{ range first 2 .Params.year_levels }}<span class="subj-card-grade">{{ . }}</span>{{ end }}
+        {{ if .Params.warmup }}<span class="subj-card-badge" title="Full teaching layer">🧭</span>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  <div class="subj-empty" id="subjEmpty" style="display:none">
+    No investigations match this filter. <button onclick="filterGrade('all',document.querySelector('[data-grade=all]'))">Show all</button>
   </div>
 </section>
-{{ else }}
-<div class="page-header">
-  <h1>{{ .Title }}</h1>
-  {{ with .Description }}<p>{{ . }}</p>{{ end }}
-</div>
-{{ end }}
 
-{{ partial "topic-pathways.html" (dict
-  "page" .
-  "mode" "compact"
-  "headline" "Topic Branches"
-  "copy" "These branches expand this topic into connected investigations, modelling moves, and assessment pathways."
-) }}
+<script>
+function filterGrade(grade, btn) {
+  document.querySelectorAll('.subj-pill').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  var cards = document.querySelectorAll('.subj-card');
+  var shown = 0;
+  cards.forEach(function(card) {
+    if (grade === 'all' || card.dataset.grades.indexOf(grade) > -1) {
+      card.style.display = '';
+      shown++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.getElementById('subjEmpty').style.display = shown === 0 ? 'block' : 'none';
+}
+</script>
 
+{{/* ═══ GRADE PAGE ═══ */}}
+{{ else if $isGrade }}
+
+{{ if eq .Title "Grade Collections Grades 6-9" }}
+{{/* Grade index page */}}
+<section class="page-hero page-hero-subject" data-color="teal">
+  <div class="page-hero-copy">
+    <div class="page-hero-kicker">Browse by Grade</div>
+    <h1>Grade Collections</h1>
+    <p>{{ .Description }}</p>
+  </div>
+</section>
 <section class="section">
-  {{ if and (eq .Section "year-levels") (eq .Title "Grade Collections Grades 6-9") }}
   {{ $gradePages := slice
     (.Site.GetPage "/year-levels/grade-6")
     (.Site.GetPage "/year-levels/grade-7")
@@ -74,25 +124,53 @@
   }}
   <div class="taxonomy-grid">
     {{ range $gradePages }}
-      {{ if . }}
-      {{ $count := len (where (where $.Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title)) }}
-      <a class="taxonomy-card" href="{{ .RelPermalink }}">
-        <div class="taxonomy-card-count">{{ $count }} resources</div>
-        <h2>{{ .Title }}</h2>
-        <p>{{ .Description | default "Browse this collection of inquiry-based resources." }}</p>
-      </a>
-      {{ end }}
+    {{ if . }}
+    {{ $count := len (where (where $.Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title)) }}
+    <a class="taxonomy-card" href="{{ .RelPermalink }}">
+      <div class="taxonomy-card-count">{{ $count }} resources</div>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Description | default "Browse this collection of inquiry-based resources." }}</p>
+    </a>
+    {{ end }}
     {{ end }}
   </div>
-  {{ else }}
-  {{ $pages := .RegularPages.ByDate.Reverse }}
-  {{ if and (eq .Section "year-levels") (ne .Title "Grade Collections Grades 6-9") }}
-    {{ $pages = where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title) }}
-  {{ else if and .IsSection (gt (len .Pages) 0) }}
-    {{ $pages = .Pages.ByDate.Reverse }}
-  {{ end }}
+</section>
 
-  {{ if $pages }}
+{{ else }}
+{{/* Individual grade page */}}
+{{ $pages := where (where .Site.RegularPages "Section" "resources") "Params.year_levels" "intersect" (slice .Title) }}
+<div class="subj-hero" data-color="teal">
+  <div class="subj-hero-inner">
+    <div class="subj-hero-left">
+      <h1 class="subj-hero-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="subj-hero-desc">{{ . }}</p>{{ end }}
+    </div>
+    <div class="subj-hero-stats">
+      <span class="subj-hero-count">{{ len $pages }}</span>
+      <span class="subj-hero-label">investigations</span>
+    </div>
+  </div>
+</div>
+<section class="subj-grid-section">
+  <div class="subj-grid">
+    {{ range $pages }}
+    {{ if eq .Section "resources" }}
+      {{ partial "resource-card.html" . }}
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{/* ═══ GENERIC LIST PAGE ═══ */}}
+{{ else }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ if $pages }}
+<section class="section">
   <div class="resources-grid">
     {{ range $pages }}
       {{ if eq .Section "resources" }}
@@ -100,10 +178,8 @@
       {{ end }}
     {{ end }}
   </div>
-  {{ else }}
-  <p style="color: var(--ink-muted); font-weight: 300;">No resources found in this category yet. Check back soon!</p>
-  {{ end }}
-  {{ end }}
 </section>
+{{ end }}
+{{ end }}
 
 {{ end }}
