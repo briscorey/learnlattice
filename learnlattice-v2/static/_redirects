@@ -1,1 +1,27 @@
 https://www.learnlattice.org/* https://learnlattice.org/:splat 301
+
+# Redirect deleted pages to their replacements
+/middle-school-science-topics/* /subjects/science/ 301
+/middle-school-math-topics/* /subjects/mathematics/ 301
+/prime-composite-maze/* /resources/prime-maze-game/ 301
+/understand/algebra /resources/understand-algebra/ 301
+/understand/density /resources/understand-density/ 301
+/understand/energy /resources/understand-energy/ 301
+/understand/food-webs /resources/understand-food-webs/ 301
+/understand/forces /resources/understand-forces/ 301
+/understand/fractions /resources/understand-fractions/ 301
+/understand/graph-reading /resources/understand-graph-reading/ 301
+/understand/negative-numbers /resources/understand-negative-numbers/ 301
+/understand/particles /resources/understand-particles/ 301
+/understand/probability /resources/understand-probability/ 301
+/worked-examples/calculating-density /resources/worked-example-density/ 301
+/worked-examples/distance-time-graphs /resources/worked-example-distance-time/ 301
+/worked-examples/line-of-best-fit /resources/worked-example-line-of-best-fit/ 301
+/worked-examples/mean-from-table /resources/worked-example-mean-frequency/ 301
+/worked-examples/nth-term /resources/worked-example-nth-term/ 301
+/worked-examples/percentage-change /resources/worked-example-percentage-change/ 301
+/worked-examples/pythagoras /resources/worked-example-pythagoras/ 301
+/worked-examples/solving-linear-equation /resources/worked-example-linear-equations/ 301
+/worked-examples/substitution /resources/worked-example-substitution/ 301
+/worked-examples/unit-conversion /resources/worked-example-unit-conversion/ 301
+/handouts/* /resources/ 301
