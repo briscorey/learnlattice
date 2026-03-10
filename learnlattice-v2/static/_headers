@@ -1,20 +1,26 @@
+# Cache HTML pages for 1 hour, stale-while-revalidate for instant loads
 /*
-  Cache-Control: public, max-age=0, must-revalidate
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
-/*.html
-  Cache-Control: no-store
-  X-Frame-Options: SAMEORIGIN
-
+# Cache CSS/JS for 1 year (they have version hashes in URLs)
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
 /js/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Cache images for 1 month
 /img/*
+  Cache-Control: public, max-age=2592000
+
+# Cache fonts for 1 year
+/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Cache game assets for 1 week
 /games/*
-  Cache-Control: no-store, no-cache, must-revalidate
+  Cache-Control: public, max-age=604800
+
+# Cache revision data for 1 day
+/js/revision-data.json
+  Cache-Control: public, max-age=86400
