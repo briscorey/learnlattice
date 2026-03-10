@@ -536,3 +536,6 @@ summaryLength = 30
   term = ["HTML"]
 
 
+
+[minify]
+  disableHTML = true
