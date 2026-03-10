@@ -4,116 +4,133 @@
 {{ $explainers := where $allResources "Params.resource_types" "intersect" (slice "Visual Explainer") }}
 {{ $workedExamples := where $allResources "Params.resource_types" "intersect" (slice "Worked Example") }}
 {{ $games := where $allResources "Params.resource_types" "intersect" (slice "Interactive Game") }}
+{{ $investigations := where $allResources "Params.resource_types" "intersect" (slice "Investigation Pack") }}
 
-<section class="stu-hero">
-  <div class="stu-hero-inner">
-    <h1>What are you working on today?</h1>
-    <div id="visit-streak" style="margin-bottom:8px"></div>
-    <p>Pick where you want to start. No login. No tracking. Just learning.</p>
-  </div>
-</section>
+<div class="sp-page">
 
-<section class="stu-grid-section">
-  <div class="stu-grid">
-
-    <a href="/students/help/" class="stu-card stu-card-learn">
-      <div class="stu-card-icon">💡</div>
-      <h2>Learn</h2>
-      <p>Don't understand something? Start here. Visual explanations that make concepts click.</p>
-      <span class="stu-card-count">{{ len $explainers }} explainers</span>
-    </a>
-
-    <a href="/students/practise/" class="stu-card stu-card-practise">
-      <div class="stu-card-icon">✏️</div>
-      <h2>Practise</h2>
-      <p>Worked examples that show you every step. Go at your own pace.</p>
-      <span class="stu-card-count">{{ len $workedExamples }} examples</span>
-    </a>
-
-    <a href="/games/" class="stu-card stu-card-play">
-      <div class="stu-card-icon">🎮</div>
-      <h2>Play</h2>
-      <p>Games where the learning IS the game. No scores. No pressure.</p>
-      <span class="stu-card-count">{{ len $games }} games</span>
-    </a>
-
-    <a href="/revision/" class="stu-card stu-card-revise">
-      <div class="stu-card-icon">📖</div>
-      <h2>Revise</h2>
-      <p>Focused study sessions. Flashcards, quizzes, and formula practice pulled from real investigations.</p>
-      <span class="stu-card-count">102 vocab · 41 questions</span>
-    </a>
-
-    <a href="/resources/" class="stu-card stu-card-explore">
-      <div class="stu-card-icon">🎲</div>
-      <h2>Browse All</h2>
-      <p>Not sure where to start? Let us surprise you with something interesting.</p>
-      <span class="stu-card-count">Surprise me</span>
-    </a>
-
-  </div>
-</section>
-
-<section class="stu-help-preview">
-  <div class="stu-help-inner">
-    <h2>I don't understand...</h2>
-    <p>Click what's confusing you. We'll explain it visually.</p>
-    <div class="stu-help-grid">
-      {{ $helpTopics := slice
-        (dict "label" "Negative numbers" "url" "/students/help/#negative-numbers" "icon" "➖")
-        (dict "label" "Fractions" "url" "/students/help/#fractions" "icon" "½")
-        (dict "label" "Algebra" "url" "/students/help/#algebra" "icon" "𝑥")
-        (dict "label" "Graphs" "url" "/students/help/#graphs" "icon" "📈")
-        (dict "label" "Probability" "url" "/students/help/#probability" "icon" "🎲")
-        (dict "label" "Density" "url" "/students/help/#density" "icon" "⚖️")
-        (dict "label" "Forces" "url" "/students/help/#forces" "icon" "💪")
-        (dict "label" "Energy" "url" "/students/help/#energy" "icon" "⚡")
-        (dict "label" "Particles" "url" "/students/help/#particles" "icon" "⚛️")
-        (dict "label" "Food webs" "url" "/students/help/#food-webs" "icon" "🌿")
-      }}
-      {{ range $helpTopics }}
-      <a href="{{ .url }}" class="stu-help-chip">
-        <span>{{ .icon }}</span>
-        {{ .label }}
-      </a>
-      {{ end }}
+  {{/* ── HERO — big, warm, inviting ── */}}
+  <section class="sp-hero">
+    <div class="sp-hero-inner">
+      <div class="sp-hero-glow"></div>
+      <h1 class="sp-hero-title">What are you<br>working on?</h1>
+      <p class="sp-hero-sub">No login. No tracking. Just pick where you want to start.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Daily Question -->
-<section style="padding:16px 24px;max-width:500px;margin:0 auto">
-  <div id="daily-question"></div>
-</section>
+  {{/* ── MAIN GRID — the 4 pathways ── */}}
+  <section class="sp-paths">
+    <div class="sp-paths-grid">
 
-<section class="stu-progress">
-  <h2>Your Session</h2>
-  <div class="stu-progress-grid">
-    <a href="/understand/negative-numbers" class="stu-progress-node" data-href="/understand/negative-numbers" title="Negative Numbers">➖</a>
-    <a href="/understand/fractions" class="stu-progress-node" data-href="/understand/fractions" title="Fractions">½</a>
-    <a href="/understand/algebra" class="stu-progress-node" data-href="/understand/algebra" title="Algebra">𝑥</a>
-    <a href="/understand/graph-reading" class="stu-progress-node" data-href="/understand/graph-reading" title="Graphs">📈</a>
-    <a href="/understand/probability" class="stu-progress-node" data-href="/understand/probability" title="Probability">🎲</a>
-    <a href="/understand/density" class="stu-progress-node" data-href="/understand/density" title="Density">⚖️</a>
-    <a href="/understand/forces" class="stu-progress-node" data-href="/understand/forces" title="Forces">💪</a>
-    <a href="/understand/energy" class="stu-progress-node" data-href="/understand/energy" title="Energy">⚡</a>
-    <a href="/understand/particles" class="stu-progress-node" data-href="/understand/particles" title="Particles">⚛️</a>
-    <a href="/understand/food-webs" class="stu-progress-node" data-href="/understand/food-webs" title="Food Webs">🌿</a>
-    <a href="/vocabulary/" class="stu-progress-node" data-href="/vocabulary/" title="Vocabulary">🔤</a>
-    {{ range (where (where .Site.RegularPages "Section" "resources") "Params.resource_types" "intersect" (slice "Interactive Game")) }}
-    <a href="{{ .RelPermalink }}" class="stu-progress-node" data-href="/games/{{ .File.ContentBaseName | replaceRE `-game$` `` }}.html" title="{{ .Title }}">🎮</a>
-    {{ end }}
-  </div>
-  <div class="stu-progress-summary">Start exploring to light up nodes</div>
-</section>
+      <a href="/students/help/" class="sp-path sp-path--learn">
+        <div class="sp-path-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="sp-path-content">
+          <h2>Learn</h2>
+          <p>Visual explanations that make concepts click. Start here if something doesn't make sense yet.</p>
+        </div>
+        <span class="sp-path-meta">{{ len $explainers }} explainers →</span>
+      </a>
 
-<section class="stu-vocab-teaser">
-  <div class="stu-vocab-inner">
-    <h2>Need a word explained?</h2>
-    <p>102 key terms with visual definitions.</p>
-    <a href="/vocabulary/" class="stu-vocab-link">Open Visual Vocabulary →</a>
-  </div>
-</section>
+      <a href="/students/practise/" class="sp-path sp-path--practise">
+        <div class="sp-path-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+        </div>
+        <div class="sp-path-content">
+          <h2>Practise</h2>
+          <p>Step-by-step worked examples. Reveal each step when you're ready. Go at your own pace.</p>
+        </div>
+        <span class="sp-path-meta">{{ len $workedExamples }} examples →</span>
+      </a>
 
-{{ partial "newsletter.html" . }}
+      <a href="/games/" class="sp-path sp-path--play">
+        <div class="sp-path-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m-2-2v4"/><circle cx="17" cy="10" r="1"/><circle cx="15" cy="14" r="1"/></svg>
+        </div>
+        <div class="sp-path-content">
+          <h2>Play</h2>
+          <p>Interactive games where the maths and science IS the game. No grades. No pressure.</p>
+        </div>
+        <span class="sp-path-meta">{{ len $games }} games →</span>
+      </a>
+
+      <a href="/revision/" class="sp-path sp-path--revise">
+        <div class="sp-path-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="sp-path-content">
+          <h2>Revise</h2>
+          <p>Timed study sessions. Flashcards, quizzes, and formula practice pulled from real investigations.</p>
+        </div>
+        <span class="sp-path-meta">102 vocab · 41 questions →</span>
+      </a>
+
+    </div>
+  </section>
+
+  {{/* ── QUICK HELP — "I don't understand..." ── */}}
+  <section class="sp-help">
+    <div class="sp-help-inner">
+      <h2 class="sp-help-title">I don't understand...</h2>
+      <div class="sp-help-topics">
+        {{ $topics := slice
+          (dict "label" "Negative numbers" "url" "/resources/understand-negative-numbers/" "icon" "➖")
+          (dict "label" "Fractions" "url" "/resources/understand-fractions/" "icon" "½")
+          (dict "label" "Algebra" "url" "/resources/understand-algebra/" "icon" "𝑥")
+          (dict "label" "Graphs" "url" "/resources/understand-graph-reading/" "icon" "📈")
+          (dict "label" "Probability" "url" "/resources/understand-probability/" "icon" "🎲")
+          (dict "label" "Density" "url" "/resources/understand-density/" "icon" "⚖️")
+          (dict "label" "Forces" "url" "/resources/understand-forces/" "icon" "💪")
+          (dict "label" "Energy" "url" "/resources/understand-energy/" "icon" "⚡")
+          (dict "label" "Particles" "url" "/resources/understand-particles/" "icon" "⚛️")
+          (dict "label" "Food webs" "url" "/resources/understand-food-webs/" "icon" "🌿")
+        }}
+        {{ range $topics }}
+        <a href="{{ .url }}" class="sp-topic">
+          <span class="sp-topic-icon">{{ .icon }}</span>
+          <span class="sp-topic-label">{{ .label }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ── FEATURED INVESTIGATIONS ── */}}
+  <section class="sp-featured">
+    <div class="sp-featured-inner">
+      <h2>Try something fascinating</h2>
+      <div class="sp-featured-grid">
+        {{ $featured := slice
+          (dict "title" "The Monty Hall Problem" "desc" "A game show. Three doors. One prize. Should you switch?" "url" "/resources/the-monty-hall-problem/" "accent" "#7c3aed")
+          (dict "title" "The Egg Drop Challenge" "desc" "Protect a raw egg from a 3-metre drop. Paper and tape only." "url" "/resources/the-egg-drop-challenge/" "accent" "#2563eb")
+          (dict "title" "The Colour-Changing Cabbage" "desc" "One vegetable. Six liquids. A rainbow of chemistry." "url" "/resources/the-colour-changing-cabbage/" "accent" "#e11d48")
+          (dict "title" "The Power of Doubling" "desc" "Would you take $1 million or a penny that doubles for 30 days?" "url" "/resources/the-power-of-doubling/" "accent" "#d97706")
+          (dict "title" "The Pizza Problem" "desc" "A 16-inch pizza is not just bigger — it is almost TWO 12-inch pizzas." "url" "/resources/the-pizza-problem/" "accent" "#0d9488")
+          (dict "title" "Can You Find a Planet?" "desc" "7 planets discovered 40 light-years away. Nobody has ever seen them." "url" "/resources/can-you-find-a-planet/" "accent" "#059669")
+        }}
+        {{ range $featured }}
+        <a href="{{ .url }}" class="sp-pick">
+          <div class="sp-pick-accent" style="background:{{ .accent }}"></div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .desc }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ── VOCABULARY LINK ── */}}
+  <section class="sp-vocab">
+    <a href="/vocabulary/" class="sp-vocab-card">
+      <span class="sp-vocab-icon">📖</span>
+      <div>
+        <strong>Visual Vocabulary</strong>
+        <span>102 key terms with pictures and simple definitions</span>
+      </div>
+      <span class="sp-vocab-arrow">→</span>
+    </a>
+  </section>
+
+</div>
+
 {{ end }}
