@@ -3,8 +3,9 @@
 {{/* ── HERO ── */}}
 <section class="about-hero">
   <div class="about-hero-inner">
+    <div class="about-hero-kicker">About the teacher behind LearnLattice</div>
     <h1 class="about-hero-title">The classroom should feel like the students are doing mathematics — not watching it.</h1>
-    <p class="about-hero-sub">MYP Mathematics &amp; Science educator. 13 years in classrooms across two continents. Currently at Nanjing International School.</p>
+    <p class="about-hero-sub">MYP Mathematics &amp; Science educator. 13 years in classrooms across two continents. Currently teaching at Nanjing International School.</p>
     <div class="about-hero-tags">
       <span class="about-tag">MYP Mathematics</span>
       <span class="about-tag">MYP Sciences</span>
@@ -17,6 +18,7 @@
 {{/* ── PHILOSOPHY ── */}}
 <section class="about-beliefs reveal">
   <div class="about-section-inner">
+    <div class="about-section-label">Teaching philosophy</div>
     <h2 class="about-section-title">What I believe about learning</h2>
     <div class="about-beliefs-grid">
       <div class="about-belief-card">
@@ -38,11 +40,12 @@
   </div>
 </section>
 
-{{/* ── WHY THIS EXISTS + HOW IT WAS BUILT ── */}}
+{{/* ── WHY THIS EXISTS ── */}}
 <section class="about-origin reveal">
   <div class="about-section-inner">
     <div class="about-origin-inner">
       <div class="about-origin-copy">
+        <div class="about-section-label">Origin story</div>
         <h2 class="about-section-title">Why LearnLattice exists</h2>
         <p>I was planning a Grade 7 proportional reasoning unit and needed tasks that were genuinely open — low enough for students building fraction fluency, high enough for students ready for rate of change. Everything I found was too procedural or too thin on MYP alignment.</p>
         <p>So I built the task I needed. Then the next one. After two years of accumulating things I had actually used in a classroom, I built the site to share them. Every resource here has been taught, revised after watching students struggle, and taught again.</p>
@@ -60,7 +63,7 @@
           <span class="about-origin-stat-label">Free resources</span>
         </div>
         <div class="about-origin-stat">
-          <span class="about-origin-stat-num">50</span>
+          <span class="about-origin-stat-num">50+</span>
           <span class="about-origin-stat-label">Full lesson-in-a-box</span>
         </div>
         <div class="about-origin-stat">
@@ -76,38 +79,33 @@
   </div>
 </section>
 
-{{/* ── CURRENTLY SEEKING ── */}}
-<section class="about-seeking reveal">
-  <div class="about-seeking-inner">
-    <div class="about-seeking-copy">
-      <h2>Open to the right opportunity from August 2027.</h2>
-      <p>Seeking a position at a Tier-1 or Tier-2 IB World School teaching MYP Mathematics and/or Sciences at middle school level. Australian-Italian, full flexibility on location.</p>
-      <a href="mailto:hello@learnlattice.org" class="btn-primary about-cta">
-        Get in touch
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+{{/* ── WRITING & SPEAKING ── */}}
+{{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+<section class="about-writing reveal">
+  <div class="about-section-inner">
+    <div class="about-section-label">Writing &amp; speaking</div>
+    <h2 class="about-section-title">Ideas from the classroom</h2>
+    <p class="about-section-copy">I write about what works and what doesn't — from the perspective of someone still teaching every day. No theory without practice, no practice without reflection.</p>
+
+    <div class="about-writing-grid">
+      {{ range first 3 $blogPosts }}
+      <a href="{{ .RelPermalink }}" class="about-writing-card">
+        {{ with .Params.pillar }}<span class="about-writing-pillar">{{ . }}</span>{{ end }}
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description | truncate 100 }}</p>
       </a>
+      {{ end }}
     </div>
-    <div class="about-seeking-list">
-      <div class="about-seeking-detail">
-        <span class="about-seeking-detail-label">Subjects</span>
-        <span>MYP Mathematics · MYP Sciences</span>
-      </div>
-      <div class="about-seeking-detail">
-        <span class="about-seeking-detail-label">Year levels</span>
-        <span>Grades 6–10</span>
-      </div>
-      <div class="about-seeking-detail">
-        <span class="about-seeking-detail-label">Available</span>
-        <span>August 2027</span>
-      </div>
-      <div class="about-seeking-detail">
-        <span class="about-seeking-detail-label">Experience</span>
-        <span>13 years · 10 public + 3 international</span>
-      </div>
-      <div class="about-seeking-detail">
-        <span class="about-seeking-detail-label">Citizenship</span>
-        <span>Australian · Italian (EU)</span>
-      </div>
+
+    <div class="about-writing-links">
+      <a href="/blog/" class="about-writing-link">
+        Read all posts
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/beijing-2026/" class="about-writing-link">
+        Beijing AI in Action 2026
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -117,7 +115,7 @@
   <div class="about-section-inner">
     <div class="about-contact-inner">
       <h2>Get in touch</h2>
-      <p>Suggestions, errors, collaboration ideas, or a conversation about teaching.</p>
+      <p>Suggestions, corrections, collaboration ideas, or a conversation about teaching — I'd love to hear from you.</p>
       <a href="mailto:hello@learnlattice.org" class="about-contact-email">hello@learnlattice.org</a>
     </div>
   </div>

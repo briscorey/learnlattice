@@ -1020,3 +1020,19 @@ html.dark .student-grade-tile[data-grade="9"] .student-grade-num {
   background: rgba(251,113,133,0.15);
   color: #fb7185;
 }
+
+/* ── About: Writing & Speaking section ── */
+.about-writing{padding:80px 0;border-bottom:1px solid var(--border)}
+.about-writing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.about-writing-card{display:flex;flex-direction:column;padding:24px;background:var(--surface-card);border:1.5px solid var(--border);border-radius:16px;text-decoration:none;color:inherit;transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s,border-color .2s}
+.about-writing-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--teal)}
+.about-writing-pillar{display:inline-block;padding:3px 10px;background:var(--teal-wash);border-radius:12px;font-size:.68rem;font-weight:600;color:var(--teal);margin-bottom:10px;align-self:flex-start}
+.about-writing-card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);line-height:1.3;margin-bottom:8px}
+.about-writing-card p{font-size:.82rem;color:var(--ink-muted);line-height:1.5;flex:1}
+.about-writing-links{display:flex;gap:24px;margin-top:24px}
+.about-writing-link{font-size:.88rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:6px;transition:gap .2s}
+.about-writing-link:hover{gap:10px}
+html.dark .about-writing-card{background:#1e293b;border-color:#334155}
+html.dark .about-writing-card:hover{border-color:var(--teal)}
+@media (max-width:768px){.about-writing-grid{grid-template-columns:1fr}}
+@media (max-width:1024px){.about-writing-grid{grid-template-columns:1fr 1fr}.about-writing{padding:56px 0}.about-section-inner{padding:0 32px}}
