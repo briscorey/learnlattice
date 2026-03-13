@@ -1,0 +1,250 @@
+<div class="fw-game-wrap" style="max-width:720px;margin:2rem auto;font-family:sans-serif;">
+<style>
+.fw-game-wrap *{box-sizing:border-box;}
+#fw-canvas{width:100%;display:block;border-radius:10px;cursor:default;background:#d6eaf4;}
+.fw-hud{display:flex;gap:8px;margin:10px 0 8px;flex-wrap:wrap;align-items:center;}
+.fw-stat{background:#f3f4f0;border:1px solid #ddd;border-radius:6px;padding:5px 12px;font-size:13px;color:#555;}
+.fw-stat b{color:#222;font-weight:600;}
+.fw-msg{min-height:48px;padding:10px 14px;background:#f7f8f5;border-radius:8px;border:1px solid #ddd;font-size:13px;color:#555;line-height:1.6;margin-top:10px;}
+.fw-msg.good{border-color:#5a8f3c;color:#2a5a1a;background:#eaf3de;}
+.fw-msg.bad {border-color:#b84c2b;color:#7a2e15;background:#faece7;}
+.fw-msg.info{border-color:#378add;color:#0c447c;background:#e6f1fb;}
+.fw-btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.fw-btns button{padding:7px 16px;font-size:13px;border-radius:6px;border:1px solid #ccc;background:#fff;cursor:pointer;color:#333;font-weight:500;}
+.fw-btns button:hover{background:#f0f0f0;}
+.fw-btns button:disabled{opacity:0.4;cursor:default;}
+.fw-btns button.primary{background:#2d6a4f;color:#fff;border-color:#2d6a4f;}
+.fw-btns button.primary:hover{background:#245a42;}
+.fw-concept{margin-top:18px;padding:14px 16px;background:#eaf3de;border-left:3px solid #5a8f3c;border-radius:0 8px 8px 0;font-size:13px;color:#2a5a1a;line-height:1.6;display:none;}
+.fw-concept b{color:#1a3d10;}
+.fw-progress{display:flex;gap:6px;margin-bottom:10px;}
+.fw-pip{width:32px;height:6px;border-radius:3px;background:#ddd;}
+.fw-pip.done{background:#5a8f3c;}
+.fw-pip.active{background:#c47a1e;}
+</style>
+
+<div class="fw-progress" id="fw-pips"></div>
+
+<div class="fw-hud">
+  <div class="fw-stat">Score: <b id="fw-score">0</b></div>
+  <div class="fw-stat">Round: <b id="fw-round">1</b> / 6</div>
+  <div class="fw-stat" id="fw-mode">Mode: <b>Build</b></div>
+  <div class="fw-stat" style="margin-left:auto;cursor:pointer;" onclick="fwHelp()">? How to play</div>
+</div>
+
+<canvas id="fw-canvas" height="440"></canvas>
+
+<div class="fw-msg" id="fw-msg">Welcome to <b>Food Web Builder</b>! Drag from one organism to another to show who eats whom. Build the complete web, then hit <b>Check web</b>.</div>
+
+<div class="fw-btns">
+  <button class="primary" onclick="fwCheck()" id="fw-check-btn">Check web</button>
+  <button onclick="fwHint()" id="fw-hint-btn">Hint (−5 pts)</button>
+  <button onclick="fwNext()" id="fw-next-btn" style="display:none">Next round →</button>
+  <button onclick="fwReset()">Reset round</button>
+</div>
+
+<div class="fw-concept" id="fw-concept"></div>
+</div>
+
+<script>
+(function(){
+const C=document.getElementById('fw-canvas');
+const ctx=C.getContext('2d');
+const W=680,H=440;
+C.width=W;C.height=H;
+
+const ROUNDS=[
+  {title:"Build a simple food chain",hint:"Grass is eaten by rabbits. Rabbits are eaten by foxes.",
+   nodes:[
+    {id:'grass', x:120,y:340,r:34,icon:'🌿',label:'Grass', color:'#5a8f3c',role:'producer'},
+    {id:'rabbit',x:340,y:220,r:34,icon:'🐇',label:'Rabbit',color:'#c47a1e',role:'primary'},
+    {id:'fox',   x:560,y:100,r:34,icon:'🦊',label:'Fox',   color:'#b84c2b',role:'secondary'},
+   ],
+   correct:[['grass','rabbit'],['rabbit','fox']],
+   concept:"<b>Food chains</b> transfer energy in one direction — from producers (plants) up through consumers. About 90% of energy is lost at each step, which is why there are always fewer predators than prey."},
+
+  {title:"Who eats whom?",hint:"Leaves feed caterpillars. Caterpillars feed birds. Birds feed hawks.",
+   nodes:[
+    {id:'leaves',     x:100,y:360,r:32,icon:'🍃',label:'Leaves',     color:'#5a8f3c',role:'producer'},
+    {id:'caterpillar',x:300,y:270,r:32,icon:'🐛',label:'Caterpillar',color:'#c47a1e',role:'primary'},
+    {id:'bird',       x:200,y:130,r:32,icon:'🐦',label:'Bird',       color:'#b84c2b',role:'secondary'},
+    {id:'hawk',       x:480,y:80, r:34,icon:'🦅',label:'Hawk',       color:'#4a3fa0',role:'apex'},
+   ],
+   correct:[['leaves','caterpillar'],['caterpillar','bird'],['bird','hawk']],
+   concept:"<b>Trophic levels</b> describe an organism's position in the web. Longer chains mean energy passes through more levels — but each transfer loses heat as waste, so top predators need huge territories to survive."},
+
+  {title:"Build a web — multiple paths",hint:"Berries feed deer AND mice. Deer are eaten by wolves. Mice are eaten by foxes AND owls.",
+   nodes:[
+    {id:'berries',x:110,y:380,r:30,icon:'🍓',label:'Berries',color:'#5a8f3c',role:'producer'},
+    {id:'deer',   x:340,y:290,r:32,icon:'🦌',label:'Deer',   color:'#c47a1e',role:'primary'},
+    {id:'mouse',  x:120,y:230,r:30,icon:'🐭',label:'Mouse',  color:'#c47a1e',role:'primary'},
+    {id:'wolf',   x:560,y:170,r:32,icon:'🐺',label:'Wolf',   color:'#b84c2b',role:'secondary'},
+    {id:'fox2',   x:340,y:110,r:30,icon:'🦊',label:'Fox',    color:'#b84c2b',role:'secondary'},
+    {id:'owl',    x:120,y:80, r:30,icon:'🦉',label:'Owl',    color:'#4a3fa0',role:'apex'},
+   ],
+   correct:[['berries','deer'],['berries','mouse'],['deer','wolf'],['mouse','fox2'],['mouse','owl']],
+   concept:"<b>Web redundancy</b> is what makes ecosystems resilient. When multiple species fill similar roles, losing one doesn't collapse the whole system. A food web with more pathways can absorb more disturbance."},
+
+  {title:"The apex predator",hint:"Plankton feeds fish. Fish feeds seal. Seal feeds killer whale — the apex predator.",
+   nodes:[
+    {id:'plankton',x:100,y:380,r:30,icon:'🌊',label:'Plankton',color:'#5a8f3c',role:'producer'},
+    {id:'fish',    x:280,y:290,r:30,icon:'🐟',label:'Fish',    color:'#c47a1e',role:'primary'},
+    {id:'seal',    x:460,y:190,r:32,icon:'🦭',label:'Seal',    color:'#b84c2b',role:'secondary'},
+    {id:'orca',    x:340,y:80, r:38,icon:'🐋',label:'Orca',    color:'#4a3fa0',role:'apex'},
+   ],
+   correct:[['plankton','fish'],['fish','seal'],['seal','orca']],
+   concept:"<b>Apex predators</b> regulate entire ecosystems from the top down. Removing them triggers a <em>trophic cascade</em> — prey overpopulate, overgraze, and the web collapses from the bottom up. Wolves returning to Yellowstone changed river courses."},
+
+  {title:"Spot the omnivore",hint:"Bears eat both berries AND salmon. Salmon eat smaller fish. Smaller fish eat algae.",
+   nodes:[
+    {id:'algae',   x:80, y:380,r:28,icon:'🌿',label:'Algae',   color:'#5a8f3c',role:'producer'},
+    {id:'berries2',x:480,y:380,r:28,icon:'🍓',label:'Berries', color:'#5a8f3c',role:'producer'},
+    {id:'sfish',   x:180,y:260,r:30,icon:'🐠',label:'Sm. fish',color:'#c47a1e',role:'primary'},
+    {id:'salmon',  x:350,y:200,r:32,icon:'🐡',label:'Salmon',  color:'#b84c2b',role:'secondary'},
+    {id:'bear',    x:560,y:110,r:36,icon:'🐻',label:'Bear',    color:'#4a3fa0',role:'apex'},
+   ],
+   correct:[['algae','sfish'],['sfish','salmon'],['salmon','bear'],['berries2','bear']],
+   concept:"<b>Omnivores</b> feed at multiple trophic levels simultaneously. Bears eat berries (producer) and salmon (secondary consumer) — which means they occupy different positions in the web depending on what they're eating."},
+
+  {title:"The complete forest web",hint:"Grass/leaves feed deer, insects, rabbits. Insects feed birds. Rabbits & birds feed foxes. Deer & rabbits feed wolves. Eagles eat fox, wolf, and bird.",
+   nodes:[
+    {id:'fgrass', x:80, y:400,r:28,icon:'🌿',label:'Grass',  color:'#5a8f3c',role:'producer'},
+    {id:'fleaves',x:260,y:400,r:28,icon:'🍃',label:'Leaves', color:'#5a8f3c',role:'producer'},
+    {id:'fdeer',  x:480,y:300,r:30,icon:'🦌',label:'Deer',   color:'#c47a1e',role:'primary'},
+    {id:'finsect',x:130,y:270,r:28,icon:'🐛',label:'Insects',color:'#c47a1e',role:'primary'},
+    {id:'frabbit',x:330,y:300,r:30,icon:'🐇',label:'Rabbit', color:'#c47a1e',role:'primary'},
+    {id:'fbird',  x:130,y:150,r:28,icon:'🐦',label:'Bird',   color:'#b84c2b',role:'secondary'},
+    {id:'ffox',   x:340,y:160,r:30,icon:'🦊',label:'Fox',    color:'#b84c2b',role:'secondary'},
+    {id:'fwolf',  x:530,y:160,r:30,icon:'🐺',label:'Wolf',   color:'#b84c2b',role:'secondary'},
+    {id:'feagle', x:340,y:55, r:36,icon:'🦅',label:'Eagle',  color:'#4a3fa0',role:'apex'},
+   ],
+   correct:[
+    ['fgrass','fdeer'],['fgrass','finsect'],['fgrass','frabbit'],
+    ['fleaves','fdeer'],['fleaves','finsect'],
+    ['finsect','fbird'],['fbird','ffox'],['frabbit','ffox'],
+    ['fdeer','fwolf'],['frabbit','fwolf'],
+    ['ffox','feagle'],['fwolf','feagle'],['fbird','feagle']
+   ],
+   concept:"<b>Real food webs</b> are dense networks with many cross-connections. Every strand removed weakens the structure — but redundancy means some loss can be absorbed. The more biodiverse an ecosystem, the more resilient it is to disturbance."},
+];
+
+let round=0,score=0,hintUsed=false,playerEdges=[],dragging=null,dragX=0,dragY=0,checked=false,particles=[],hoveredNode=null,animId;
+
+function getRound(){return ROUNDS[round];}
+function getNode(id){return getRound().nodes.find(n=>n.id===id);}
+function hitTest(mx,my){for(const n of getRound().nodes){const dx=mx-n.x,dy=my-n.y;if(Math.sqrt(dx*dx+dy*dy)<n.r+6)return n;}return null;}
+function edgeExists(a,b){return playerEdges.some(e=>(e[0]===a&&e[1]===b)||(e[0]===b&&e[1]===a));}
+
+function drawBG(){
+  ctx.fillStyle='#c8dde8';ctx.fillRect(0,0,W,260);
+  ctx.fillStyle='#c8dba0';ctx.fillRect(0,260,W,H-260);
+  ctx.beginPath();
+  for(let x=0;x<=W;x+=35){const y=258+Math.sin(x*0.05)*7;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+  ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();ctx.fillStyle='#a8c870';ctx.fill();
+  for(let i=0;i<5;i++){ctx.beginPath();ctx.ellipse(70+i*120,185+Math.sin(i*1.3)*20,36+i*4,17,0,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.42)';ctx.fill();}
+  for(let i=0;i<7;i++){const tx=40+i*90,ty=261;ctx.beginPath();ctx.moveTo(tx,ty);ctx.quadraticCurveTo(tx-7,ty-22,tx,ty-40);ctx.quadraticCurveTo(tx+7,ty-22,tx,ty);ctx.fillStyle=`rgba(55,105,40,${0.28+i%3*0.08})`;ctx.fill();}
+}
+
+function drawEdge(a,b,color,alpha,width){
+  const na=getNode(a),nb=getNode(b);if(!na||!nb)return;
+  ctx.save();ctx.globalAlpha=alpha;ctx.strokeStyle=color;ctx.lineWidth=width;
+  const mx=(na.x+nb.x)/2-(nb.y-na.y)*0.25,my=(na.y+nb.y)/2+(nb.x-na.x)*0.25;
+  ctx.beginPath();ctx.moveTo(na.x,na.y);ctx.quadraticCurveTo(mx,my,nb.x,nb.y);ctx.stroke();
+  const t=0.82;
+  const ax=(1-t)*(1-t)*na.x+2*(1-t)*t*mx+t*t*nb.x,ay=(1-t)*(1-t)*na.y+2*(1-t)*t*my+t*t*nb.y;
+  const bx2=(1-0.75)*(1-0.75)*na.x+2*(1-0.75)*0.75*mx+0.75*0.75*nb.x,by2=(1-0.75)*(1-0.75)*na.y+2*(1-0.75)*0.75*my+0.75*0.75*nb.y;
+  const ang=Math.atan2(ay-by2,ax-bx2);
+  ctx.save();ctx.translate(ax,ay);ctx.rotate(ang);ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(-9,4.5);ctx.lineTo(-9,-4.5);ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.restore();ctx.restore();
+}
+
+function drawNode(n){
+  if(n===hoveredNode){ctx.beginPath();ctx.arc(n.x,n.y,n.r+10,0,Math.PI*2);ctx.fillStyle=n.color+'44';ctx.fill();}
+  ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle=n.color;ctx.fill();
+  ctx.strokeStyle='rgba(0,0,0,0.22)';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.font=`${Math.round(n.r*0.72)}px sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText(n.icon,n.x,n.y-5);
+  ctx.font='500 11px sans-serif';ctx.fillStyle='#fff';ctx.fillText(n.label,n.x,n.y+n.r*0.6);
+}
+
+function spawnParticles(x,y,color){for(let i=0;i<12;i++){const a=Math.random()*Math.PI*2,s=1.5+Math.random()*3;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:1,color});}}
+
+function render(){
+  ctx.clearRect(0,0,W,H);drawBG();
+  if(!checked){playerEdges.forEach(([a,b])=>drawEdge(a,b,'rgba(80,80,80,0.55)',1,2));}
+  else{
+    const r=getRound();
+    playerEdges.forEach(([a,b])=>{const ok=r.correct.some(([ca,cb])=>(ca===a&&cb===b)||(ca===b&&cb===a));drawEdge(a,b,ok?'#5a8f3c':'#b84c2b',0.9,ok?3:2.5);});
+    r.correct.forEach(([ca,cb])=>{if(!playerEdges.some(([a,b])=>(a===ca&&b===cb)||(a===cb&&b===ca)))drawEdge(ca,cb,'#378add',0.7,2.5);});
+  }
+  if(dragging){ctx.save();ctx.globalAlpha=0.55;ctx.strokeStyle='#888';ctx.lineWidth=2;ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(dragging.x,dragging.y);ctx.lineTo(dragX,dragY);ctx.stroke();ctx.setLineDash([]);ctx.restore();}
+  getRound().nodes.forEach(n=>drawNode(n));
+  particles=particles.filter(p=>p.life>0);
+  particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,3,0,Math.PI*2);ctx.globalAlpha=p.life;ctx.fillStyle=p.color;ctx.fill();ctx.globalAlpha=1;p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.life-=0.035;});
+  animId=requestAnimationFrame(render);
+}
+
+function setMsg(t,cls=''){const el=document.getElementById('fw-msg');el.innerHTML=t;el.className='fw-msg'+(cls?' '+cls:'');}
+function updateHUD(){document.getElementById('fw-score').textContent=score;document.getElementById('fw-round').textContent=round+1;}
+
+function updatePips(){
+  const wrap=document.getElementById('fw-pips');wrap.innerHTML='';
+  for(let i=0;i<ROUNDS.length;i++){const d=document.createElement('div');d.className='fw-pip'+(i<round?' done':i===round?' active':'');wrap.appendChild(d);}
+}
+
+function fwCheck(){
+  if(checked)return;checked=true;
+  const r=getRound();let hits=0,misses=0,extras=0;
+  r.correct.forEach(([ca,cb])=>{if(playerEdges.some(([a,b])=>(a===ca&&b===cb)||(a===cb&&b===ca)))hits++;else misses++;});
+  playerEdges.forEach(([a,b])=>{if(!r.correct.some(([ca,cb])=>(ca===a&&cb===b)||(ca===b&&cb===a)))extras++;});
+  const pts=Math.max(0,hits*10-misses*5-extras*5-(hintUsed?5:0));
+  score+=pts;updateHUD();
+  const conceptEl=document.getElementById('fw-concept');
+  conceptEl.innerHTML=r.concept;conceptEl.style.display='block';
+  if(misses===0&&extras===0){
+    getRound().nodes.forEach(n=>spawnParticles(n.x,n.y,n.color));
+    setMsg(`<b>Perfect web!</b> +${pts} points. Read the concept below.`,'good');
+  } else if(hits>0){
+    setMsg(`${hits} correct ✓, ${misses} missed (blue), ${extras} wrong (red). +${pts} pts. Read the concept below.`,misses>0?'bad':'info');
+  } else {
+    setMsg(`No correct links yet. Check the hint or try again.`,'bad');
+  }
+  document.getElementById('fw-next-btn').style.display=round<ROUNDS.length-1?'':'none';
+  document.getElementById('fw-check-btn').disabled=true;
+}
+
+function fwHint(){hintUsed=true;setMsg('Hint: '+getRound().hint,'info');}
+
+function fwNext(){
+  if(round>=ROUNDS.length-1)return;
+  round++;playerEdges=[];checked=false;hintUsed=false;
+  document.getElementById('fw-check-btn').disabled=false;
+  document.getElementById('fw-next-btn').style.display='none';
+  document.getElementById('fw-concept').style.display='none';
+  updateHUD();updatePips();
+  setMsg(`<b>Round ${round+1}:</b> ${getRound().title} — drag between creatures to connect them!`);
+}
+
+function fwReset(){
+  playerEdges=[];checked=false;hintUsed=false;
+  document.getElementById('fw-check-btn').disabled=false;
+  document.getElementById('fw-next-btn').style.display='none';
+  document.getElementById('fw-concept').style.display='none';
+  setMsg(`<b>Round ${round+1}:</b> ${getRound().title} — drag between creatures to connect them!`);
+}
+
+function fwHelp(){setMsg('Drag from one creature to another to draw a connection. Drag the same pair again to remove it. <b>Green</b> = correct, <b>Red</b> = wrong, <b>Blue</b> = missed. Hit Check when ready.','info');}
+
+function getScale(){return W/C.getBoundingClientRect().width;}
+
+C.addEventListener('mousedown',e=>{if(checked)return;const s=getScale(),r=C.getBoundingClientRect();const n=hitTest((e.clientX-r.left)*s,(e.clientY-r.top)*s);if(n){dragging=n;dragX=n.x;dragY=n.y;}});
+C.addEventListener('mousemove',e=>{const s=getScale(),r=C.getBoundingClientRect();const mx=(e.clientX-r.left)*s,my=(e.clientY-r.top)*s;hoveredNode=hitTest(mx,my);C.style.cursor=hoveredNode?'crosshair':'default';if(dragging){dragX=mx;dragY=my;}});
+C.addEventListener('mouseup',e=>{if(!dragging||checked){dragging=null;return;}const s=getScale(),r=C.getBoundingClientRect();const t=hitTest((e.clientX-r.left)*s,(e.clientY-r.top)*s);if(t&&t!==dragging){if(!edgeExists(dragging.id,t.id)){playerEdges.push([dragging.id,t.id]);spawnParticles((dragging.x+t.x)/2,(dragging.y+t.y)/2,'#aaa');}else{playerEdges=playerEdges.filter(([a,b])=>!((a===dragging.id&&b===t.id)||(a===t.id&&b===dragging.id)));}}dragging=null;});
+C.addEventListener('touchstart',e=>{e.preventDefault();const t=e.touches[0];C.dispatchEvent(new MouseEvent('mousedown',{clientX:t.clientX,clientY:t.clientY}));},{passive:false});
+C.addEventListener('touchmove',e=>{e.preventDefault();const t=e.touches[0];C.dispatchEvent(new MouseEvent('mousemove',{clientX:t.clientX,clientY:t.clientY}));},{passive:false});
+C.addEventListener('touchend',e=>{e.preventDefault();const t=e.changedTouches[0];C.dispatchEvent(new MouseEvent('mouseup',{clientX:t.clientX,clientY:t.clientY}));},{passive:false});
+
+updateHUD();updatePips();
+setMsg(`<b>Round 1:</b> ${getRound().title} — drag between creatures to connect them, then hit <b>Check web</b>.`);
+render();
+})();
+</script>
