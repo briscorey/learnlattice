@@ -20,7 +20,8 @@
     <div class="cb-filter-group">
       <label>Criterion</label>
       <div class="cb-pills" data-filter="criterion">
-        <button class="cb-pill active" data-val="B" style="--pc:#2563eb">B — Investigating</button>
+        <button class="cb-pill active" data-val="A" style="--pc:#0D9488">A — Knowing</button>
+        <button class="cb-pill" data-val="B" style="--pc:#2563eb">B — Investigating</button>
         <button class="cb-pill" data-val="C" style="--pc:#16a34a">C — Communicating</button>
         <button class="cb-pill" data-val="D" style="--pc:#d97706">D — Applying</button>
       </div>
@@ -55,6 +56,56 @@
 <script>
 var comments = {
   math: {
+    A: {
+      "1-2": {
+        strength: [
+          "[Name] can recall basic mathematical facts and definitions when prompted, showing early engagement with key terminology.",
+          "[Name] demonstrates a willingness to attempt problems using known techniques, even when understanding is still developing.",
+          "[Name] can identify familiar mathematical concepts in straightforward contexts and is building a foundation of core knowledge."
+        ],
+        growth: [
+          "To progress, [Name] should practise explaining mathematical concepts in their own words rather than only restating definitions.",
+          "[Name] would benefit from regular retrieval practice to strengthen recall of key formulas and vocabulary.",
+          "A next step for [Name] is to connect concepts to specific worked examples, explaining not just what a rule is but how to use it."
+        ]
+      },
+      "3-4": {
+        strength: [
+          "[Name] demonstrates adequate knowledge of mathematical concepts and can apply standard procedures to familiar problem types.",
+          "[Name] uses mathematical terminology correctly in most contexts and can explain what a formula or rule does.",
+          "[Name] can select appropriate techniques for routine problems and shows consistent understanding of foundational topics."
+        ],
+        growth: [
+          "To reach higher levels, [Name] should focus on explaining why a method works, not just how to perform it.",
+          "[Name] would benefit from practising problems that require transferring knowledge to slightly unfamiliar contexts.",
+          "A productive next step is for [Name] to make connections between related concepts, such as linking fractions, decimals, and percentages."
+        ]
+      },
+      "5-6": {
+        strength: [
+          "[Name] demonstrates substantial understanding of mathematical concepts and can apply knowledge to both familiar and some unfamiliar situations.",
+          "[Name] explains mathematical ideas clearly, making connections between related concepts and justifying the methods chosen.",
+          "[Name] selects and applies appropriate techniques with confidence and can reason through multi-step problems independently."
+        ],
+        growth: [
+          "To reach the highest levels, [Name] should evaluate the strengths and limitations of different mathematical approaches.",
+          "[Name] would benefit from exploring problems where multiple valid methods exist and comparing which is most efficient.",
+          "A next step is for [Name] to transfer understanding across topics and disciplines, applying mathematical reasoning to unfamiliar real-world contexts."
+        ]
+      },
+      "7-8": {
+        strength: [
+          "[Name] demonstrates excellent knowledge and understanding, applying mathematical concepts with precision in both familiar and unfamiliar contexts.",
+          "[Name] makes insightful connections across mathematical topics and can evaluate the strengths and limitations of different approaches.",
+          "[Name] transfers understanding to new situations with confidence, using precise mathematical language and demonstrating deep conceptual reasoning."
+        ],
+        growth: [
+          "[Name] could extend their excellence by mentoring peers and articulating their reasoning process to support others' understanding.",
+          "To continue growing, [Name] might explore connections between mathematics and other disciplines, applying their strong conceptual foundation to interdisciplinary problems.",
+          "[Name] could deepen their work by exploring edge cases and counter-examples that test the boundaries of mathematical generalisations."
+        ]
+      }
+    },
     B: {
       "1-2": {
         strength: [
@@ -119,6 +170,12 @@ var comments = {
     }
   },
   science: {
+    A: {
+      "1-2": {strength:["[Name] can recall basic scientific facts and terminology when prompted, showing early familiarity with key concepts.","[Name] demonstrates a willingness to engage with scientific ideas and can identify familiar concepts in simple contexts."],growth:["To progress, [Name] should practise explaining scientific concepts in their own words rather than only recalling definitions.","[Name] would benefit from connecting scientific vocabulary to real-world examples to strengthen understanding."]},
+      "3-4": {strength:["[Name] demonstrates adequate knowledge of scientific concepts and can apply understanding to explain familiar phenomena.","[Name] uses scientific terminology appropriately in most contexts and can describe processes such as photosynthesis or energy transfer with reasonable accuracy."],growth:["To reach higher levels, [Name] should focus on explaining why scientific processes occur, not just describing what happens.","[Name] would benefit from practising the transfer of knowledge to unfamiliar contexts, such as applying understanding of forces to new scenarios."]},
+      "5-6": {strength:["[Name] demonstrates substantial understanding of scientific concepts, making connections between ideas and applying knowledge to both familiar and some unfamiliar situations.","[Name] explains scientific phenomena clearly using correct terminology and can link cause and effect across multiple concepts."],growth:["To reach the highest levels, [Name] should evaluate competing scientific explanations and discuss the limitations of scientific models.","[Name] would benefit from exploring how scientific concepts apply across different disciplines and real-world contexts."]},
+      "7-8": {strength:["[Name] demonstrates excellent knowledge and understanding of scientific concepts, applying them with precision to unfamiliar and complex situations.","[Name] makes insightful connections across scientific disciplines, evaluates the strengths and limitations of scientific models, and communicates understanding with clarity and depth."],growth:["[Name] could extend their excellence by exploring the historical development of scientific ideas and how evidence has changed our understanding over time.","To continue growing, [Name] might investigate interdisciplinary applications of scientific knowledge, connecting biology, chemistry, and physics concepts."]}
+    },
     B: {
       "1-2": {strength:["[Name] is beginning to engage with scientific investigations, making simple observations with teacher guidance.","[Name] can follow a structured investigation procedure and record basic observations."],growth:["[Name] should develop the ability to identify variables in an experiment and begin to explain why controlling variables matters.","A next step is for [Name] to practise describing patterns in data using specific numbers rather than general statements."]},
       "3-4": {strength:["[Name] can design simple investigations with identifiable independent and dependent variables, collecting data and presenting it in basic tables and graphs.","[Name] describes patterns in experimental data and can state general relationships between variables."],growth:["[Name] should focus on explaining patterns using scientific concepts, not just describing what the data shows.","To improve, [Name] should practise evaluating the reliability of their data by considering the number of trials and the consistency of results."]},
@@ -140,7 +197,7 @@ var comments = {
   }
 };
 
-var state = {subject:'math', criterion:'B', level:'3-4', focus:'strength'};
+var state = {subject:'math', criterion:'A', level:'3-4', focus:'strength'};
 
 document.querySelectorAll('.cb-pill').forEach(function(btn){
   btn.addEventListener('click', function(){

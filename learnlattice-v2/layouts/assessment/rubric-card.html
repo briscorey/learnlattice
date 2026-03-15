@@ -315,9 +315,13 @@
     <p>Annotated student responses showing what each level looks like in a real investigation.</p>
     <div class="resources-grid">
       {{ $tag := printf "Criterion %s" $criterion }}
-      {{ $exemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
-      {{ range first 4 $exemplars }}
+      {{ $annotated := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
+      {{ $critExemplars := where $annotated "Params.tags" "intersect" (slice $tag) }}
+      {{ range first 6 $critExemplars }}
         {{ partial "resource-card.html" . }}
+      {{ end }}
+      {{ if eq (len $critExemplars) 0 }}
+        <p style="color:var(--ink-muted);text-align:center;grid-column:1/-1">Exemplars for Criterion {{ $criterion }} coming soon.</p>
       {{ end }}
     </div>
   </div>

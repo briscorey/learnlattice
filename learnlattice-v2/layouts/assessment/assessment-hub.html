@@ -8,8 +8,26 @@
   </div>
 </section>
 
+{{/* ── Quick reference strip ── */}}
+<div class="assess-strip">
+  <div class="assess-strip-inner">
+    <div class="assess-strip-item" style="--asc:#0D9488"><span class="assess-strip-letter">A</span><span class="assess-strip-name">Knowing &amp; Understanding</span></div>
+    <div class="assess-strip-item" style="--asc:#2563eb"><span class="assess-strip-letter">B</span><span class="assess-strip-name">Investigating Patterns</span></div>
+    <div class="assess-strip-item" style="--asc:#16a34a"><span class="assess-strip-letter">C</span><span class="assess-strip-name">Communicating</span></div>
+    <div class="assess-strip-item" style="--asc:#d97706"><span class="assess-strip-letter">D</span><span class="assess-strip-name">Applying in Real-Life</span></div>
+  </div>
+</div>
+
 <section class="assess-grid-section">
   <div class="assess-grid">
+
+    <a href="/assessment/criterion-a/" class="assess-card" style="--ac: #0D9488">
+      <div class="assess-card-badge" style="background: #0D9488">A</div>
+      <h2>Criterion A</h2>
+      <h3>Knowing and Understanding</h3>
+      <p>Selecting and applying knowledge, demonstrating understanding of concepts, and using mathematical and scientific terminology.</p>
+      <span class="assess-card-cta">Open rubric card →</span>
+    </a>
 
     <a href="/assessment/criterion-b/" class="assess-card" style="--ac: #2563eb">
       <div class="assess-card-badge" style="background: #2563eb">B</div>
@@ -50,12 +68,32 @@
   <div class="assess-exemplars-inner">
     <h2>Annotated Student Work</h2>
     <p>Real student responses at levels 3-4, 5-6, and 7-8 — with detailed annotations explaining every level.</p>
-    <div class="resources-grid">
-      {{ $exemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
-      {{ range $exemplars }}
-        {{ partial "resource-card.html" . }}
+
+    {{ $allExemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
+
+    {{ range $criterion := slice "A" "B" "C" "D" }}
+      {{ $tag := printf "Criterion %s" $criterion }}
+      {{ $critExemplars := where $allExemplars "Params.tags" "intersect" (slice $tag) }}
+      {{ if gt (len $critExemplars) 0 }}
+      <div style="margin-bottom:28px">
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;font-size:.82rem;font-weight:700;color:#fff;
+          {{ if eq $criterion "A" }}background:#0D9488{{ end }}
+          {{ if eq $criterion "B" }}background:#2563eb{{ end }}
+          {{ if eq $criterion "C" }}background:#16a34a{{ end }}
+          {{ if eq $criterion "D" }}background:#d97706{{ end }}
+          ">{{ $criterion }}</span>
+          Criterion {{ $criterion }} Exemplars
+          <span style="font-size:.72rem;color:var(--ink-muted);font-weight:400;font-family:'JetBrains Mono',monospace">{{ len $critExemplars }}</span>
+        </h3>
+        <div class="resources-grid">
+          {{ range $critExemplars }}
+            {{ partial "resource-card.html" . }}
+          {{ end }}
+        </div>
+      </div>
       {{ end }}
-    </div>
+    {{ end }}
   </div>
 </section>
 
