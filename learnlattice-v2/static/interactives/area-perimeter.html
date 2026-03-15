@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Area &amp; Perimeter — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.shape-btns{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.sb{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.82rem;font-family:inherit;transition:all .15s}.sb:hover{border-color:#0D9488}.sb.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}.canvas-wrap{background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;display:flex;justify-content:center;padding:16px}canvas{border-radius:8px}.sliders{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}.srow{display:flex;align-items:center;gap:10px;justify-content:center}.srow label{font-size:.82rem;color:#94a3b8;min-width:60px;text-align:right}.srow input[type=range]{width:160px;accent-color:#0D9488}.srow .sv{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:50px}.results{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}.rbox{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.rbox-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:6px}.rbox-num{font-family:'Courier New',monospace;font-size:1.4rem;font-weight:700}.rbox-area .rbox-num{color:#0D9488}.rbox-peri .rbox-num{color:#d97706}.rbox-formula{font-size:.75rem;color:#94a3b8;margin-top:4px}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<h1>Area &amp; Perimeter</h1>
+<p class="sub">Pick a shape. Drag the sliders. Watch the area (space inside) and perimeter (distance around) change.</p>
+<div class="app">
+  <div class="shape-btns">
+    <button class="sb on" onclick="pick('rect')">Rectangle</button>
+    <button class="sb" onclick="pick('tri')">Triangle</button>
+    <button class="sb" onclick="pick('circle')">Circle</button>
+    <button class="sb" onclick="pick('trap')">Trapezium</button>
+  </div>
+  <div class="canvas-wrap"><canvas id="cv" width="300" height="220"></canvas></div>
+  <div class="sliders" id="sliders"></div>
+  <div class="results">
+    <div class="rbox rbox-area"><div class="rbox-label">Area</div><div class="rbox-num" id="areaNum">—</div><div class="rbox-formula" id="areaF"></div></div>
+    <div class="rbox rbox-peri"><div class="rbox-label">Perimeter</div><div class="rbox-num" id="periNum">—</div><div class="rbox-formula" id="periF"></div></div>
+  </div>
+  <div class="info" id="info"><strong>Area</strong> = space inside (measured in cm²). <strong>Perimeter</strong> = distance around the edge (measured in cm).</div>
+</div>
+<script>
+var shape='rect',dims={w:8,h:5,r:5,b:6,a:4};
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+function pick(s){shape=s;document.querySelectorAll('.sb').forEach(b=>b.classList.remove('on'));event.target.classList.add('on');buildSliders();draw();}
+function buildSliders(){
+  var sl=document.getElementById('sliders');
+  if(shape==='rect')sl.innerHTML=mkSlider('w','Width',1,15,dims.w)+mkSlider('h','Height',1,12,dims.h);
+  else if(shape==='tri')sl.innerHTML=mkSlider('b','Base',1,15,dims.b)+mkSlider('h','Height',1,12,dims.h);
+  else if(shape==='circle')sl.innerHTML=mkSlider('r','Radius',1,10,dims.r);
+  else sl.innerHTML=mkSlider('a','Top',1,12,dims.a)+mkSlider('b','Bottom',2,15,dims.b)+mkSlider('h','Height',1,10,dims.h);
+}
+function mkSlider(k,label,min,max,val){return '<div class="srow"><label>'+label+':</label><input type="range" min="'+min+'" max="'+max+'" value="'+val+'" oninput="setDim(\''+k+'\',this.value)"><span class="sv" id="sv_'+k+'">'+val+' cm</span></div>';}
+function setDim(k,v){dims[k]=+v;document.getElementById('sv_'+k).textContent=v+' cm';draw();}
+function draw(){
+  ctx.clearRect(0,0,300,220);ctx.fillStyle='rgba(13,148,136,.12)';ctx.strokeStyle='#0D9488';ctx.lineWidth=2;
+  var cx=150,cy=110,sc=16;
+  if(shape==='rect'){var w=dims.w*sc,h=dims.h*sc;ctx.fillRect(cx-w/2,cy-h/2,w,h);ctx.strokeRect(cx-w/2,cy-h/2,w,h);lbl(cx,cy-h/2-8,dims.w+' cm');lbl(cx+w/2+20,cy,dims.h+' cm');var A=dims.w*dims.h,P=2*(dims.w+dims.h);show(A,dims.w+'×'+dims.h,P,'2×('+dims.w+'+'+dims.h+')');}
+  else if(shape==='tri'){var b=dims.b*sc,h=dims.h*sc;ctx.beginPath();ctx.moveTo(cx-b/2,cy+h/2);ctx.lineTo(cx+b/2,cy+h/2);ctx.lineTo(cx,cy-h/2);ctx.closePath();ctx.fill();ctx.stroke();lbl(cx,cy+h/2+16,dims.b+' cm');lbl(cx-b/2-28,cy,dims.h+' cm');var A=dims.b*dims.h/2;var s=Math.sqrt((dims.b/2)**2+dims.h**2);var P=dims.b+2*Math.round(s*10)/10;show(Math.round(A*10)/10,'½×'+dims.b+'×'+dims.h,Math.round(P*10)/10,dims.b+'+2×'+Math.round(s*10)/10);}
+  else if(shape==='circle'){var r=dims.r*sc;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+r,cy);ctx.stroke();ctx.setLineDash([]);lbl(cx+r/2,cy-10,dims.r+' cm');var A=Math.PI*dims.r**2;var P=2*Math.PI*dims.r;show(Math.round(A*10)/10,'π×'+dims.r+'²',Math.round(P*10)/10,'2π×'+dims.r);}
+  else{var a=dims.a*sc,b=dims.b*sc,h=dims.h*sc;var off=(b-a)/2;ctx.beginPath();ctx.moveTo(cx-b/2,cy+h/2);ctx.lineTo(cx+b/2,cy+h/2);ctx.lineTo(cx+a/2,cy-h/2);ctx.lineTo(cx-a/2,cy-h/2);ctx.closePath();ctx.fill();ctx.stroke();lbl(cx,cy-h/2-8,dims.a+' cm');lbl(cx,cy+h/2+16,dims.b+' cm');var A=(dims.a+dims.b)*dims.h/2;var side=Math.sqrt(off/sc*off/sc+dims.h**2);var P=dims.a+dims.b+2*Math.round(side*10)/10;show(Math.round(A*10)/10,'½×('+dims.a+'+'+dims.b+')×'+dims.h,Math.round(P*10)/10,dims.a+'+'+dims.b+'+2×'+Math.round(side*10)/10);}
+}
+function lbl(x,y,t){ctx.font='bold 11px Courier New';ctx.fillStyle='#94a3b8';ctx.textAlign='center';ctx.fillText(t,x,y);}
+function show(a,af,p,pf){document.getElementById('areaNum').textContent=a+' cm²';document.getElementById('areaF').textContent=af;document.getElementById('periNum').textContent=p+' cm';document.getElementById('periF').textContent=pf;}
+buildSliders();draw();
+</script></body></html>

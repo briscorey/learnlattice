@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Cells — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#22c55e,#22c55eaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.type-btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px}.tb{padding:8px 20px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.tb:hover{border-color:#22c55e}.tb.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.cell-area{position:relative;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;height:300px;overflow:hidden}.cell-shape{position:absolute;border:3px solid #22c55e;border-radius:50%;background:rgba(34,197,94,.04)}.org{position:absolute;padding:6px 10px;background:#1e293b;border:1.5px solid #334155;border-radius:8px;font-size:.72rem;cursor:pointer;transition:all .2s;user-select:none;white-space:nowrap;z-index:2}.org:hover,.org.active{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac;box-shadow:0 0 10px rgba(34,197,94,.2)}.org-dot{position:absolute;width:10px;height:10px;border-radius:50%;z-index:1}.info-panel{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;min-height:100px}.info-name{font-size:1rem;font-weight:700;color:#22c55e;margin-bottom:4px}.info-found{font-size:.7rem;color:#64748b;margin-bottom:8px}.info-desc{font-size:.85rem;color:#94a3b8;line-height:1.6}.info-fun{margin-top:8px;padding:8px 12px;background:rgba(34,197,94,.06);border-radius:8px;border-left:3px solid #22c55e;font-size:.78rem;color:#94a3b8;font-style:italic}.legend{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:12px;font-size:.68rem;color:#64748b}.legend span{padding:2px 8px;border-radius:4px;background:#1e293b;border:1px solid #334155}</style></head><body>
+<h1>Inside a Cell</h1>
+<p class="sub">Click each part to learn what it does. Switch between animal and plant cells.</p>
+<div class="app">
+  <div class="type-btns">
+    <button class="tb on" onclick="setType('animal')">🔬 Animal Cell</button>
+    <button class="tb" onclick="setType('plant')">🌱 Plant Cell</button>
+  </div>
+  <div class="cell-area" id="cellArea"></div>
+  <div class="info-panel" id="infoPanel">
+    <div class="info-name">Click a part to learn about it</div>
+    <div class="info-desc">Each organelle has a specific job. Together they keep the cell alive.</div>
+  </div>
+  <div class="legend" id="legend"></div>
+</div>
+<script>
+var parts={
+  nucleus:{x:50,y:45,color:'#3b82f6',label:'Nucleus',found:'both',desc:'The control centre. Contains DNA — the instructions for making proteins and running the cell.',fun:'If the cell were a school, the nucleus would be the principal\'s office.'},
+  membrane:{x:85,y:50,color:'#f59e0b',label:'Cell Membrane',found:'both',desc:'A thin flexible barrier around the cell. Controls what enters and leaves — like a security gate.',fun:'It lets water and oxygen in, but keeps harmful things out.'},
+  cytoplasm:{x:30,y:65,color:'#94a3b8',label:'Cytoplasm',found:'both',desc:'Jelly-like substance filling the cell. Most chemical reactions happen here.',fun:'Think of it as the "factory floor" where all the work gets done.'},
+  mitochondria:{x:65,y:30,color:'#ef4444',label:'Mitochondria',found:'both',desc:'The powerhouse! Releases energy from glucose through respiration. Glucose + Oxygen → CO₂ + Water + Energy.',fun:'Muscle cells have thousands of mitochondria because they need so much energy.'},
+  ribosome:{x:35,y:35,color:'#a855f7',label:'Ribosomes',found:'both',desc:'Tiny protein factories. They read the DNA instructions and build proteins from amino acids.',fun:'You have millions of ribosomes working right now, making the proteins your body needs.'},
+  vacuole:{x:50,y:60,color:'#06b6d4',label:'Vacuole',found:'both',desc:'Storage space. In plant cells, there\'s one large permanent vacuole filled with cell sap.',fun:'Plant vacuoles are huge — they push everything else to the edges of the cell.'},
+  cellwall:{x:15,y:50,color:'#22c55e',label:'Cell Wall',found:'plant',desc:'A rigid outer layer made of cellulose. Gives the plant cell its fixed shape and support.',fun:'This is why plants can stand upright without bones!'},
+  chloroplast:{x:70,y:65,color:'#16a34a',label:'Chloroplast',found:'plant',desc:'Where photosynthesis happens. Contains chlorophyll (green pigment) that absorbs sunlight. Sunlight + CO₂ + Water → Glucose + Oxygen.',fun:'Chloroplasts are the reason plants are green.'}
+};
+var cellType='animal',active=null;
+function setType(t){cellType=t;document.querySelectorAll('.tb').forEach(function(b){b.classList.toggle('on',b.textContent.includes(t==='animal'?'Animal':'Plant'))});render();}
+function render(){
+  var area=document.getElementById('cellArea');
+  var isPlant=cellType==='plant';
+  var html='';
+  // Cell shape
+  if(isPlant) html+='<div style="position:absolute;inset:8px;border:3px solid #22c55e;border-radius:8px;background:rgba(34,197,94,.03)"></div>';
+  html+='<div class="cell-shape" style="'+(isPlant?'inset:16px;border-radius:8px':'left:15%;top:10%;width:70%;height:80%')+'"></div>';
+  // Organelles
+  Object.keys(parts).forEach(function(k){
+    var p=parts[k];
+    if(p.found==='plant'&&!isPlant) return;
+    html+='<div class="org'+(active===k?' active':'')+'" style="left:'+p.x+'%;top:'+p.y+'%;transform:translate(-50%,-50%);border-color:'+p.color+'" onclick="select(\''+k+'\')">'+
+      '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+p.color+';margin-right:5px"></span>'+p.label+'</div>';
+  });
+  area.innerHTML=html;
+  // Legend
+  var leg=document.getElementById('legend');
+  leg.innerHTML=Object.keys(parts).filter(function(k){return parts[k].found==='both'||(parts[k].found==='plant'&&isPlant)}).map(function(k){return '<span style="border-color:'+parts[k].color+'"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:'+parts[k].color+';margin-right:3px"></span>'+parts[k].label+'</span>'}).join('');
+}
+function select(k){
+  active=k;
+  var p=parts[k];
+  var panel=document.getElementById('infoPanel');
+  panel.innerHTML='<div class="info-name" style="color:'+p.color+'">'+p.label+'</div>'+
+    '<div class="info-found">Found in: '+(p.found==='both'?'Animal & Plant cells':'Plant cells only')+'</div>'+
+    '<div class="info-desc">'+p.desc+'</div>'+
+    '<div class="info-fun">'+p.fun+'</div>';
+  render();
+}
+render();
+</script></body></html>

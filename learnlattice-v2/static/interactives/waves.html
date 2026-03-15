@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Waves — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#3b82f6,#3b82f6aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.row{display:flex;align-items:center;gap:10px;margin-bottom:12px;justify-content:center}.row label{font-size:.82rem;color:#94a3b8;min-width:100px;text-align:right}.row input[type=range]{width:160px;accent-color:#3b82f6}.row .rv{font-family:'Courier New',monospace;color:#3b82f6;font-weight:700;min-width:70px;font-size:.9rem}.wave-wrap{background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;padding:8px;display:flex;justify-content:center}canvas{border-radius:8px}.readings{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.rd{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.rd-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:4px;font-weight:700}.rd-val{font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700}.rd-unit{font-size:.68rem;color:#64748b}.c-freq .rd-val{color:#3b82f6}.c-amp .rd-val{color:#22c55e}.c-wl .rd-val{color:#d97706}.presets{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.pre{padding:7px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s}.pre:hover{border-color:#3b82f6;color:#93c5fd}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#3b82f6}</style></head><body>
+<h1>Waves: See the Shape</h1>
+<p class="sub">Adjust frequency and amplitude. Watch the wave change. Higher frequency = more waves. Higher amplitude = taller waves.</p>
+<div class="app">
+  <div class="row"><label>Frequency:</label><input type="range" id="freqSlider" min="0.5" max="5" step="0.1" value="2" oninput="update()"><span class="rv" id="freqVal">2.0 Hz</span></div>
+  <div class="row"><label>Amplitude:</label><input type="range" id="ampSlider" min="10" max="80" value="50" oninput="update()"><span class="rv" id="ampVal">50 units</span></div>
+  <div class="presets">
+    <button class="pre" onclick="preset(1,30)">🔈 Quiet low</button>
+    <button class="pre" onclick="preset(2,50)">🔊 Normal</button>
+    <button class="pre" onclick="preset(4,60)">📢 High pitched</button>
+    <button class="pre" onclick="preset(0.8,80)">🐋 Whale song</button>
+    <button class="pre" onclick="preset(4.5,20)">🦇 Bat squeak</button>
+  </div>
+  <div class="wave-wrap"><canvas id="cv" width="520" height="200"></canvas></div>
+  <div class="readings">
+    <div class="rd c-freq"><div class="rd-label">Frequency</div><div class="rd-val" id="rdF">2.0</div><div class="rd-unit">Hz (waves/sec)</div></div>
+    <div class="rd c-amp"><div class="rd-label">Amplitude</div><div class="rd-val" id="rdA">50</div><div class="rd-unit">units (height)</div></div>
+    <div class="rd c-wl"><div class="rd-label">Wavelength</div><div class="rd-val" id="rdW">—</div><div class="rd-unit">units (peak to peak)</div></div>
+  </div>
+  <div class="info" id="info"><strong>Frequency</strong> = how many waves per second (Hz). <strong>Amplitude</strong> = how tall the wave is. <strong>Wavelength</strong> = distance from one peak to the next.</div>
+</div>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d'),t=0;
+function preset(f,a){document.getElementById('freqSlider').value=f;document.getElementById('ampSlider').value=a;update();}
+function update(){
+  var freq=+document.getElementById('freqSlider').value;
+  var amp=+document.getElementById('ampSlider').value;
+  document.getElementById('freqVal').textContent=freq.toFixed(1)+' Hz';
+  document.getElementById('ampVal').textContent=amp+' units';
+  document.getElementById('rdF').textContent=freq.toFixed(1);
+  document.getElementById('rdA').textContent=amp;
+  var wl=Math.round(520/freq/2);
+  document.getElementById('rdW').textContent=Math.round(100/freq)+' units';
+  var desc='';
+  if(freq>=3)desc='High frequency = short wavelength. Think high-pitched sounds or blue/violet light.';
+  else if(freq>=1.5)desc='Medium frequency. A normal speaking voice is around 300 Hz.';
+  else desc='Low frequency = long wavelength. Think bass sounds or red light.';
+  desc+=' Amplitude '+(amp>60?'is high — a loud sound or bright light.':amp>30?'is moderate.':'is low — a quiet sound or dim light.');
+  document.getElementById('info').innerHTML='<strong>'+desc+'</strong>';
+}
+function draw(){
+  t+=0.03;
+  ctx.clearRect(0,0,520,200);
+  var freq=+document.getElementById('freqSlider').value;
+  var amp=+document.getElementById('ampSlider').value;
+  var cy=100;
+  // Grid
+  ctx.strokeStyle='#1e293b';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(520,cy);ctx.stroke();
+  ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(0,cy-amp);ctx.lineTo(520,cy-amp);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(0,cy+amp);ctx.lineTo(520,cy+amp);ctx.stroke();
+  ctx.setLineDash([]);
+  // Labels
+  ctx.font='10px Courier New';ctx.fillStyle='#64748b';ctx.textAlign='left';
+  ctx.fillText('rest',2,cy-4);
+  ctx.fillStyle='#22c55e';ctx.fillText('amplitude',2,cy-amp-4);
+  // Wave
+  ctx.strokeStyle='#3b82f6';ctx.lineWidth=2.5;ctx.beginPath();
+  for(var x=0;x<520;x++){
+    var y=cy+Math.sin((x/520*freq*Math.PI*2)+t*freq*2)*amp;
+    if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  // Wavelength marker
+  var wlPx=520/freq/2;
+  if(wlPx>40&&wlPx<400){
+    ctx.strokeStyle='#d97706';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);
+    var startX=Math.round((-t*freq*2%(Math.PI*2)+Math.PI*2)%(Math.PI*2)/(Math.PI*2)*wlPx*2);
+    if(startX<0)startX+=wlPx*2;
+    if(startX+wlPx*2<520){
+      ctx.beginPath();ctx.moveTo(startX,cy+amp+16);ctx.lineTo(startX+wlPx*2,cy+amp+16);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(startX,cy+amp+10);ctx.lineTo(startX,cy+amp+22);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(startX+wlPx*2,cy+amp+10);ctx.lineTo(startX+wlPx*2,cy+amp+22);ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle='#d97706';ctx.font='bold 10px Courier New';ctx.textAlign='center';
+      ctx.fillText('wavelength',startX+wlPx,cy+amp+32);
+    }
+    ctx.setLineDash([]);
+  }
+  requestAnimationFrame(draw);
+}
+update();draw();
+</script></body></html>

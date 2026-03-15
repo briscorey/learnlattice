@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Circuits — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#d97706,#d97706aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.row{display:flex;align-items:center;gap:10px;margin-bottom:12px;justify-content:center}.row label{font-size:.82rem;color:#94a3b8;min-width:100px;text-align:right}.row input[type=range]{width:160px;accent-color:#d97706}.row .rv{font-family:'Courier New',monospace;color:#d97706;font-weight:700;min-width:60px;font-size:.95rem}.circuit{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px;display:flex;justify-content:center}canvas{border-radius:8px}.readings{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.rd{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.rd-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:4px;font-weight:700}.rd-val{font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700}.rd-unit{font-size:.7rem;color:#64748b}.rd-v .rd-val{color:#d97706}.rd-i .rd-val{color:#22c55e}.rd-r .rd-val{color:#3b82f6}.formula{text-align:center;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;margin-bottom:16px;font-family:'Courier New',monospace}.formula-main{font-size:1.2rem;font-weight:700;color:#d97706;margin-bottom:4px}.formula-sub{font-size:.82rem;color:#94a3b8}.sw{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:16px}.sw-btn{padding:8px 20px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.82rem;font-weight:600;transition:all .15s}.sw-on{border:1.5px solid #22c55e;background:rgba(34,197,94,.12);color:#86efac}.sw-off{border:1.5px solid #ef4444;background:rgba(239,68,68,.1);color:#fca5a5}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#d97706}</style></head><body>
+<h1>Ohm's Law: V = I × R</h1>
+<p class="sub">Adjust voltage and resistance. Watch the current change. Ohm's Law connects them all.</p>
+<div class="app">
+  <div class="sw"><button class="sw-btn sw-on" id="swBtn" onclick="toggleSw()">⚡ Circuit: ON</button></div>
+  <div class="row"><label>Voltage (V):</label><input type="range" id="vSlider" min="1" max="24" value="12" step="0.5" oninput="calc()"><span class="rv" id="vVal">12 V</span></div>
+  <div class="row"><label>Resistance (Ω):</label><input type="range" id="rSlider" min="1" max="100" value="20" oninput="calc()"><span class="rv" id="rVal">20 Ω</span></div>
+  <div class="circuit"><canvas id="cv" width="300" height="180"></canvas></div>
+  <div class="readings">
+    <div class="rd rd-v"><div class="rd-label">Voltage</div><div class="rd-val" id="rdV">12</div><div class="rd-unit">volts (V)</div></div>
+    <div class="rd rd-i"><div class="rd-label">Current</div><div class="rd-val" id="rdI">0.6</div><div class="rd-unit">amps (A)</div></div>
+    <div class="rd rd-r"><div class="rd-label">Resistance</div><div class="rd-val" id="rdR">20</div><div class="rd-unit">ohms (Ω)</div></div>
+  </div>
+  <div class="formula"><div class="formula-main" id="fMain">V = I × R → 12 = 0.6 × 20</div><div class="formula-sub" id="fSub">Rearranged: I = V ÷ R → I = 12 ÷ 20 = 0.6 A</div></div>
+  <div class="info" id="info">
+    <strong>Voltage</strong> = the push (like water pressure). <strong>Current</strong> = the flow (like water flowing). <strong>Resistance</strong> = how hard it is to flow (like a narrow pipe).
+  </div>
+</div>
+<script>
+var swOn=true,cv=document.getElementById('cv'),ctx=cv.getContext('2d'),particles=[];
+function toggleSw(){swOn=!swOn;var b=document.getElementById('swBtn');if(swOn){b.className='sw-btn sw-on';b.textContent='⚡ Circuit: ON';}else{b.className='sw-btn sw-off';b.textContent='Circuit: OFF';}calc();}
+function calc(){
+  var V=+document.getElementById('vSlider').value;
+  var R=+document.getElementById('rSlider').value;
+  var I=swOn?Math.round(V/R*1000)/1000:0;
+  document.getElementById('vVal').textContent=V+' V';
+  document.getElementById('rVal').textContent=R+' Ω';
+  document.getElementById('rdV').textContent=V;
+  document.getElementById('rdI').textContent=I;
+  document.getElementById('rdR').textContent=R;
+  document.getElementById('fMain').textContent='V = I × R → '+V+' = '+I+' × '+R;
+  document.getElementById('fSub').textContent='I = V ÷ R → I = '+V+' ÷ '+R+' = '+I+' A';
+  var brightness=swOn?Math.min(1,I/1.5):0;
+  document.getElementById('info').innerHTML=swOn?
+    'Current = <strong>'+I+' A</strong>. '+(I>1?'High current — bright bulb!':I>0.3?'Medium current — normal brightness.':'Low current — dim bulb.')+' '+(R>50?'High resistance limits the flow.':''):'Switch is <strong>OFF</strong>. No current flows. The circuit is broken.';
+  drawCircuit(V,I,R,brightness);
+}
+function drawCircuit(V,I,R,br){
+  ctx.clearRect(0,0,300,180);ctx.strokeStyle='#334155';ctx.lineWidth=2;
+  // Wire path
+  ctx.beginPath();ctx.moveTo(40,40);ctx.lineTo(260,40);ctx.lineTo(260,140);ctx.lineTo(40,140);ctx.lineTo(40,40);ctx.stroke();
+  // Battery
+  ctx.fillStyle='#d97706';ctx.fillRect(30,60,20,4);ctx.fillRect(36,55,8,14);ctx.font='bold 10px Courier New';ctx.fillStyle='#d97706';ctx.textAlign='center';ctx.fillText(V+'V',40,85);
+  // Resistor
+  ctx.strokeStyle='#3b82f6';ctx.lineWidth=2;ctx.beginPath();
+  for(var i=0;i<5;i++){ctx.lineTo(130+i*12,35);ctx.lineTo(136+i*12,45);}
+  ctx.stroke();ctx.strokeStyle='#334155';ctx.font='10px Courier New';ctx.fillStyle='#3b82f6';ctx.fillText(R+'Ω',155,28);
+  // Bulb
+  var glow=br>0?'rgba(253,224,71,'+(br*.6)+')':'rgba(100,116,139,.2)';
+  ctx.beginPath();ctx.arc(260,90,16,0,Math.PI*2);ctx.fillStyle=glow;ctx.fill();ctx.strokeStyle=br>0?'#fcd34d':'#334155';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.fillStyle=br>0?'#fcd34d':'#64748b';ctx.font='bold 10px sans-serif';ctx.textAlign='center';ctx.fillText('💡',260,94);
+  // Current arrows
+  if(swOn&&I>0){
+    ctx.fillStyle='rgba(34,197,94,.7)';
+    var t=Date.now()/1000;
+    for(var i=0;i<8;i++){
+      var angle=((t*I*2+i/8)*Math.PI*2)%(Math.PI*2);
+      var x,y;
+      if(angle<Math.PI/2){x=40+220*(angle/(Math.PI/2));y=40;}
+      else if(angle<Math.PI){x=260;y=40+100*((angle-Math.PI/2)/(Math.PI/2));}
+      else if(angle<Math.PI*1.5){x=260-220*((angle-Math.PI)/(Math.PI/2));y=140;}
+      else{x=40;y=140-100*((angle-Math.PI*1.5)/(Math.PI/2));}
+      ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill();
+    }
+  }
+}
+// Animation loop for current particles
+function animate(){drawCircuit(+document.getElementById('vSlider').value,swOn?+(document.getElementById('rdI').textContent):0,+document.getElementById('rSlider').value,swOn?Math.min(1,+(document.getElementById('rdI').textContent)/1.5):0);requestAnimationFrame(animate);}
+calc();animate();
+</script></body></html>

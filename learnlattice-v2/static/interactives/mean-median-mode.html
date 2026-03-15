@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Mean, Median &amp; Mode — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.dot-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px;min-height:80px}.dot-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;min-height:40px}.dot{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#1e293b;border:1.5px solid #334155;font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:#e2e8f0;cursor:pointer;transition:all .15s;user-select:none}.dot:hover{border-color:#ef4444;background:rgba(239,68,68,.1)}.dot-add{border-style:dashed;border-color:#0D9488;color:#0D9488;font-size:1.2rem;cursor:pointer}.dot-add:hover{background:rgba(13,148,136,.1)}.controls{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.stat-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:6px;font-weight:700}.stat-num{font-family:'Courier New',monospace;font-size:1.5rem;font-weight:700}.stat-mean .stat-num{color:#0D9488}.stat-median .stat-num{color:#d97706}.stat-mode .stat-num{color:#8b5cf6}.stat-calc{font-size:.7rem;color:#64748b;margin-top:4px;word-break:break-all}.sorted{margin-bottom:12px;text-align:center;font-size:.82rem;color:#94a3b8;min-height:20px}.sorted span{font-family:'Courier New',monospace}.sorted .mid{color:#d97706;font-weight:700;text-decoration:underline}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<h1>Mean, Median &amp; Mode</h1>
+<p class="sub">Click numbers to add data. Click a dot to remove it. Watch the three averages update.</p>
+<div class="app">
+  <div class="controls">
+    <button class="btn" onclick="addVal(1)">+1</button>
+    <button class="btn" onclick="addVal(2)">+2</button>
+    <button class="btn" onclick="addVal(3)">+3</button>
+    <button class="btn" onclick="addVal(4)">+4</button>
+    <button class="btn" onclick="addVal(5)">+5</button>
+    <button class="btn" onclick="addVal(6)">+6</button>
+    <button class="btn" onclick="addVal(7)">+7</button>
+    <button class="btn" onclick="addVal(8)">+8</button>
+    <button class="btn" onclick="addVal(9)">+9</button>
+    <button class="btn" onclick="addVal(10)">+10</button>
+    <button class="btn" style="border-color:#ef4444;color:#fca5a5" onclick="reset()">Clear</button>
+  </div>
+  <div class="dot-area"><div class="dot-row" id="dots"></div></div>
+  <div class="sorted" id="sorted"></div>
+  <div class="stats">
+    <div class="stat stat-mean"><div class="stat-label">Mean</div><div class="stat-num" id="meanNum">—</div><div class="stat-calc" id="meanCalc"></div></div>
+    <div class="stat stat-median"><div class="stat-label">Median</div><div class="stat-num" id="medNum">—</div><div class="stat-calc" id="medCalc"></div></div>
+    <div class="stat stat-mode"><div class="stat-label">Mode</div><div class="stat-num" id="modeNum">—</div><div class="stat-calc" id="modeCalc"></div></div>
+  </div>
+  <div class="info" id="info">Add some numbers to get started. <strong>Mean</strong> = total ÷ count. <strong>Median</strong> = middle value. <strong>Mode</strong> = most common.</div>
+</div>
+<script>
+var data=[3,5,7,5,4];
+function render(){
+  var el=document.getElementById('dots');
+  el.innerHTML=data.map(function(v,i){return '<div class="dot" onclick="removeVal('+i+')">'+v+'</div>'}).join('');
+  if(data.length===0){document.getElementById('sorted').innerHTML='';document.getElementById('meanNum').textContent='—';document.getElementById('medNum').textContent='—';document.getElementById('modeNum').textContent='—';document.getElementById('meanCalc').textContent='';document.getElementById('medCalc').textContent='';document.getElementById('modeCalc').textContent='';document.getElementById('info').innerHTML='Add some numbers to get started.';return;}
+  var s=data.slice().sort(function(a,b){return a-b});
+  var total=s.reduce(function(a,b){return a+b},0);
+  var mean=Math.round(total/s.length*100)/100;
+  var median;
+  if(s.length%2===1)median=s[Math.floor(s.length/2)];
+  else median=Math.round((s[s.length/2-1]+s[s.length/2])/2*100)/100;
+  var freq={};s.forEach(function(v){freq[v]=(freq[v]||0)+1});
+  var maxF=Math.max.apply(null,Object.values(freq));
+  var modes=Object.keys(freq).filter(function(k){return freq[k]===maxF&&maxF>1}).map(Number);
+  // Sorted display with middle highlighted
+  var midIdx=Math.floor(s.length/2);
+  var sortedHtml=s.map(function(v,i){
+    var cls='';
+    if(s.length%2===1&&i===midIdx)cls='mid';
+    else if(s.length%2===0&&(i===midIdx-1||i===midIdx))cls='mid';
+    return '<span'+(cls?' class="'+cls+'"':'')+'>'+v+'</span>';
+  }).join(', ');
+  document.getElementById('sorted').innerHTML='Sorted: '+sortedHtml;
+  document.getElementById('meanNum').textContent=mean;
+  document.getElementById('meanCalc').textContent=total+' ÷ '+s.length;
+  document.getElementById('medNum').textContent=median;
+  document.getElementById('medCalc').textContent=s.length%2===1?'middle value':'average of middle two';
+  document.getElementById('modeNum').textContent=modes.length?modes.join(', '):'none';
+  document.getElementById('modeCalc').textContent=modes.length?'appears '+maxF+' times':'all equal frequency';
+  document.getElementById('info').innerHTML='<strong>Mean</strong> = '+total+' ÷ '+s.length+' = <strong>'+mean+'</strong>. <strong>Median</strong> = <strong>'+median+'</strong> ('+s.length+' values, '+(s.length%2===1?'middle is position '+Math.ceil(s.length/2):'average positions '+s.length/2+' & '+(s.length/2+1))+').';
+}
+function addVal(v){if(data.length<20)data.push(v);render();}
+function removeVal(i){data.splice(i,1);render();}
+function reset(){data=[];render();}
+render();
+</script></body></html>
