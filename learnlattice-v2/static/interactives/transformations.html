@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Transformations — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.mode-btns{display:flex;gap:6px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}.mb{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.82rem;font-family:inherit;transition:all .15s}.mb:hover{border-color:#0D9488}.mb.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}.controls{display:flex;gap:8px;justify-content:center;margin-bottom:12px;flex-wrap:wrap;align-items:center}.controls label{font-size:.82rem;color:#94a3b8}.controls select,.controls input[type=number]{padding:5px 10px;border-radius:6px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-family:inherit;font-size:.85rem}.grid-wrap{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:12px;margin-bottom:16px;display:flex;justify-content:center}canvas{border-radius:8px}.btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488}.btn-go{border-color:#0D9488;color:#5eead4}.desc{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center;margin-bottom:12px}.desc strong{color:#0D9488}.mapping{font-family:'Courier New',monospace;font-size:.82rem;color:#64748b;text-align:center;min-height:20px;margin-bottom:12px}</style></head><body>
+<h1>Transformations</h1>
+<p class="sub">Pick a transformation. Adjust the settings. Click Apply to see the shape move.</p>
+<div class="app">
+  <div class="mode-btns">
+    <button class="mb on" data-m="translate" onclick="setMode('translate')">↗ Translation</button>
+    <button class="mb" data-m="reflect" onclick="setMode('reflect')">🪞 Reflection</button>
+    <button class="mb" data-m="rotate" onclick="setMode('rotate')">↻ Rotation</button>
+  </div>
+  <div class="controls" id="controls"></div>
+  <div class="grid-wrap"><canvas id="cv" width="360" height="360"></canvas></div>
+  <div class="mapping" id="mapping"></div>
+  <div class="btns">
+    <button class="btn btn-go" onclick="apply()">▶ Apply</button>
+    <button class="btn" onclick="reset()">Reset</button>
+  </div>
+  <div class="desc" id="desc"><strong>Translation</strong> = sliding the shape without rotating or flipping. Every point moves the same distance in the same direction.</div>
+</div>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d'),SIZE=360,RANGE=7,STEP=SIZE/(RANGE*2);
+var mode='translate';
+var original=[[1,1],[4,1],[4,3],[1,3]]; // rectangle
+var current=original.map(function(p){return p.slice();});
+var transformed=null;
+
+function setMode(m){mode=m;document.querySelectorAll('.mb').forEach(function(b){b.classList.toggle('on',b.dataset.m===m)});buildControls();transformed=null;current=original.map(function(p){return p.slice()});draw();}
+function buildControls(){
+  var c=document.getElementById('controls');
+  if(mode==='translate') c.innerHTML='<label>Right:</label><input type="number" id="tx" value="3" min="-6" max="6" style="width:50px"><label>Up:</label><input type="number" id="ty" value="2" min="-6" max="6" style="width:50px">';
+  else if(mode==='reflect') c.innerHTML='<label>Mirror line:</label><select id="rline"><option value="y">y-axis (x=0)</option><option value="x">x-axis (y=0)</option><option value="yx">y = x</option></select>';
+  else c.innerHTML='<label>Angle:</label><select id="rangle"><option value="90">90° clockwise</option><option value="180">180°</option><option value="270">270° clockwise</option></select><label>About:</label><select id="rcentre"><option value="origin">Origin</option></select>';
+  updateDesc();
+}
+function updateDesc(){
+  var d=document.getElementById('desc');
+  if(mode==='translate') d.innerHTML='<strong>Translation</strong> slides the shape. Every point moves the same distance. The shape stays the same size and orientation.';
+  else if(mode==='reflect') d.innerHTML='<strong>Reflection</strong> flips the shape over a mirror line. The image is the same distance from the line as the original, but on the other side.';
+  else d.innerHTML='<strong>Rotation</strong> turns the shape around a fixed point. You need to specify the angle and the centre of rotation.';
+}
+function apply(){
+  if(mode==='translate'){
+    var tx=+(document.getElementById('tx').value||0),ty=+(document.getElementById('ty').value||0);
+    transformed=current.map(function(p){return [p[0]+tx,p[1]+ty]});
+  } else if(mode==='reflect'){
+    var line=document.getElementById('rline').value;
+    transformed=current.map(function(p){
+      if(line==='y') return [-p[0],p[1]];
+      if(line==='x') return [p[0],-p[1]];
+      return [p[1],p[0]]; // y=x
+    });
+  } else {
+    var angle=+(document.getElementById('rangle').value);
+    var rad=-angle*Math.PI/180;
+    transformed=current.map(function(p){
+      return [Math.round(p[0]*Math.cos(rad)-p[1]*Math.sin(rad)),Math.round(p[0]*Math.sin(rad)+p[1]*Math.cos(rad))];
+    });
+  }
+  // Show mapping
+  var m=document.getElementById('mapping');
+  m.textContent=current.map(function(p,i){return '('+p[0]+','+p[1]+') → ('+transformed[i][0]+','+transformed[i][1]+')'}).join('   ');
+  draw();
+}
+function reset(){transformed=null;current=original.map(function(p){return p.slice()});document.getElementById('mapping').textContent='';draw();}
+
+function draw(){
+  ctx.clearRect(0,0,SIZE,SIZE);
+  // Grid
+  ctx.strokeStyle='#1e293b';ctx.lineWidth=1;
+  for(var i=-RANGE;i<=RANGE;i++){
+    ctx.beginPath();ctx.moveTo(tc(i,-RANGE)[0],tc(i,-RANGE)[1]);ctx.lineTo(tc(i,RANGE)[0],tc(i,RANGE)[1]);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tc(-RANGE,i)[0],tc(-RANGE,i)[1]);ctx.lineTo(tc(RANGE,i)[0],tc(RANGE,i)[1]);ctx.stroke();
+  }
+  ctx.strokeStyle='#475569';ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(tc(0,-RANGE)[0],tc(0,-RANGE)[1]);ctx.lineTo(tc(0,RANGE)[0],tc(0,RANGE)[1]);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(tc(-RANGE,0)[0],tc(-RANGE,0)[1]);ctx.lineTo(tc(RANGE,0)[0],tc(RANGE,0)[1]);ctx.stroke();
+  // Mirror line
+  if(mode==='reflect'&&document.getElementById('rline')){
+    ctx.strokeStyle='rgba(168,85,247,.4)';ctx.lineWidth=2;ctx.setLineDash([6,4]);
+    var line=document.getElementById('rline').value;
+    if(line==='y'){ctx.beginPath();ctx.moveTo(SIZE/2,0);ctx.lineTo(SIZE/2,SIZE);ctx.stroke();}
+    else if(line==='x'){ctx.beginPath();ctx.moveTo(0,SIZE/2);ctx.lineTo(SIZE,SIZE/2);ctx.stroke();}
+    else{ctx.beginPath();ctx.moveTo(0,SIZE);ctx.lineTo(SIZE,0);ctx.stroke();}
+    ctx.setLineDash([]);
+  }
+  // Original shape
+  drawShape(current,'#3b82f6','rgba(59,130,246,.15)');
+  // Transformed shape
+  if(transformed) drawShape(transformed,'#22c55e','rgba(34,197,94,.15)');
+  // Labels
+  ctx.font='9px Courier New';ctx.fillStyle='#64748b';ctx.textAlign='center';
+  for(var i=-RANGE;i<=RANGE;i++){if(i===0)continue;var p=tc(i,0);ctx.fillText(i,p[0],p[1]+12);p=tc(0,i);ctx.fillText(i,p[0]-12,p[1]+4);}
+}
+function drawShape(pts,stroke,fill){
+  ctx.beginPath();
+  pts.forEach(function(p,i){var c=tc(p[0],p[1]);if(i===0)ctx.moveTo(c[0],c[1]);else ctx.lineTo(c[0],c[1]);});
+  ctx.closePath();ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke();
+  pts.forEach(function(p){var c=tc(p[0],p[1]);ctx.beginPath();ctx.arc(c[0],c[1],4,0,Math.PI*2);ctx.fillStyle=stroke;ctx.fill();});
+}
+function tc(x,y){return [SIZE/2+x*STEP,SIZE/2-y*STEP];}
+buildControls();draw();
+</script></body></html>

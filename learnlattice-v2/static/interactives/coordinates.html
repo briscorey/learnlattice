@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Coordinates — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.grid-wrap{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:12px;margin-bottom:16px;display:flex;justify-content:center}canvas{cursor:crosshair;border-radius:8px}.coord-display{text-align:center;font-family:'Courier New',monospace;font-size:1.4rem;font-weight:700;color:#0D9488;margin-bottom:12px;min-height:32px}.points-list{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:12px;min-height:28px}.pt-tag{padding:4px 10px;border-radius:6px;background:#1e293b;border:1px solid #334155;font-size:.72rem;font-family:'Courier New',monospace;color:#e2e8f0;cursor:pointer;transition:all .15s}.pt-tag:hover{border-color:#ef4444;background:rgba(239,68,68,.1)}.btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488}.challenge{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;text-align:center}.ch-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#d97706;font-weight:700;margin-bottom:6px}.ch-text{font-size:1rem;color:#e2e8f0;margin-bottom:8px}.ch-result{font-size:.85rem;font-weight:600;min-height:20px}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<h1>Coordinates: Plot the Point</h1>
+<p class="sub">Click the grid to plot points. Read coordinates as (x, y) — across first, then up.</p>
+<div class="app">
+  <div class="coord-display" id="coordDisplay">Click the grid</div>
+  <div class="grid-wrap"><canvas id="cv" width="360" height="360"></canvas></div>
+  <div class="points-list" id="pointsList"></div>
+  <div class="btns">
+    <button class="btn" onclick="clearAll()">Clear all</button>
+    <button class="btn" onclick="newChallenge()">🎯 New challenge</button>
+    <button class="btn" onclick="toggleQuad()">Show quadrants</button>
+  </div>
+  <div class="challenge" id="challenge" style="display:none">
+    <div class="ch-label">Challenge</div>
+    <div class="ch-text" id="chText">Plot the point (3, 4)</div>
+    <div class="ch-result" id="chResult"></div>
+  </div>
+  <div class="info" id="info"><strong>Coordinates</strong> are written as <strong>(x, y)</strong>. The x-value tells you how far across. The y-value tells you how far up. The centre is called the <strong>origin (0, 0)</strong>.</div>
+</div>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var points=[],showQuad=false,target=null,SIZE=360,RANGE=8,STEP=SIZE/(RANGE*2);
+
+function drawGrid(){
+  ctx.clearRect(0,0,SIZE,SIZE);
+  ctx.strokeStyle='#1e293b';ctx.lineWidth=1;
+  for(var i=-RANGE;i<=RANGE;i++){
+    var p=toCanvas(i,-RANGE),p2=toCanvas(i,RANGE);
+    ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p2[0],p2[1]);ctx.stroke();
+    p=toCanvas(-RANGE,i);p2=toCanvas(RANGE,i);
+    ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p2[0],p2[1]);ctx.stroke();
+  }
+  // Axes
+  ctx.strokeStyle='#475569';ctx.lineWidth=2;
+  var ox=toCanvas(0,-RANGE),ox2=toCanvas(0,RANGE);
+  ctx.beginPath();ctx.moveTo(ox[0],ox[1]);ctx.lineTo(ox2[0],ox2[1]);ctx.stroke();
+  var oy=toCanvas(-RANGE,0),oy2=toCanvas(RANGE,0);
+  ctx.beginPath();ctx.moveTo(oy[0],oy[1]);ctx.lineTo(oy2[0],oy2[1]);ctx.stroke();
+  // Axis labels
+  ctx.font='10px Courier New';ctx.fillStyle='#64748b';ctx.textAlign='center';
+  for(var i=-RANGE;i<=RANGE;i++){
+    if(i===0)continue;
+    var px=toCanvas(i,0);ctx.fillText(i,px[0],px[1]+14);
+    var py=toCanvas(0,i);ctx.fillText(i,py[0]-14,py[1]+4);
+  }
+  ctx.fillStyle='#475569';ctx.fillText('x',SIZE-8,SIZE/2+14);ctx.fillText('y',SIZE/2-14,12);
+  ctx.fillText('O',SIZE/2-10,SIZE/2+14);
+  // Quadrant labels
+  if(showQuad){
+    ctx.font='bold 14px sans-serif';ctx.globalAlpha=0.15;
+    ctx.fillStyle='#3b82f6';ctx.fillText('Q1',SIZE*0.75,SIZE*0.25);
+    ctx.fillStyle='#22c55e';ctx.fillText('Q2',SIZE*0.25,SIZE*0.25);
+    ctx.fillStyle='#f59e0b';ctx.fillText('Q3',SIZE*0.25,SIZE*0.75);
+    ctx.fillStyle='#ef4444';ctx.fillText('Q4',SIZE*0.75,SIZE*0.75);
+    ctx.globalAlpha=1;
+  }
+  // Target
+  if(target){
+    var tp=toCanvas(target[0],target[1]);
+    ctx.beginPath();ctx.arc(tp[0],tp[1],12,0,Math.PI*2);ctx.strokeStyle='rgba(217,119,6,.4)';ctx.lineWidth=2;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+  }
+  // Points
+  points.forEach(function(pt,i){
+    var p=toCanvas(pt[0],pt[1]);
+    ctx.beginPath();ctx.arc(p[0],p[1],6,0,Math.PI*2);ctx.fillStyle='#0D9488';ctx.fill();
+    ctx.strokeStyle='#5eead4';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.font='bold 10px Courier New';ctx.fillStyle='#5eead4';ctx.textAlign='center';
+    ctx.fillText('('+pt[0]+','+pt[1]+')',p[0],p[1]-12);
+  });
+}
+function toCanvas(x,y){return [SIZE/2+x*STEP,SIZE/2-y*STEP];}
+function toGrid(cx,cy){return [Math.round((cx-SIZE/2)/STEP),Math.round((SIZE/2-cy)/STEP)];}
+
+cv.addEventListener('click',function(e){
+  var rect=cv.getBoundingClientRect();
+  var cx=(e.clientX-rect.left)*(SIZE/rect.width),cy=(e.clientY-rect.top)*(SIZE/rect.height);
+  var g=toGrid(cx,cy);
+  if(g[0]<-RANGE||g[0]>RANGE||g[1]<-RANGE||g[1]>RANGE)return;
+  points.push(g);
+  document.getElementById('coordDisplay').textContent='('+g[0]+', '+g[1]+')';
+  // Check challenge
+  if(target&&g[0]===target[0]&&g[1]===target[1]){
+    document.getElementById('chResult').innerHTML='<span style="color:#22c55e">✓ Correct!</span>';
+    target=null;
+  } else if(target){
+    document.getElementById('chResult').innerHTML='<span style="color:#ef4444">Not quite — try ('+target[0]+', '+target[1]+')</span>';
+  }
+  renderPoints();drawGrid();
+});
+function renderPoints(){
+  document.getElementById('pointsList').innerHTML=points.map(function(p,i){return '<span class="pt-tag" onclick="removePoint('+i+')">('+p[0]+','+p[1]+') ×</span>'}).join('');
+}
+function removePoint(i){points.splice(i,1);renderPoints();drawGrid();document.getElementById('coordDisplay').textContent=points.length?'('+points[points.length-1][0]+', '+points[points.length-1][1]+')':'Click the grid';}
+function clearAll(){points=[];target=null;renderPoints();drawGrid();document.getElementById('coordDisplay').textContent='Click the grid';document.getElementById('challenge').style.display='none';}
+function toggleQuad(){showQuad=!showQuad;drawGrid();}
+function newChallenge(){
+  var x=Math.floor(Math.random()*13)-6,y=Math.floor(Math.random()*13)-6;
+  target=[x,y];
+  document.getElementById('challenge').style.display='';
+  document.getElementById('chText').textContent='Plot the point ('+x+', '+y+')';
+  document.getElementById('chResult').textContent='';
+  drawGrid();
+}
+drawGrid();
+</script></body></html>

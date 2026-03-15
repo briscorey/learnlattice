@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Genetics — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#22c55e,#22c55eaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:500px}.parents{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.parent{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:center}.parent-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:8px}.parent-icon{font-size:1.5rem;margin-bottom:8px}.parent-geno{font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700;color:#22c55e;margin-bottom:8px}.parent-select{display:flex;gap:6px;justify-content:center}.ps{padding:6px 14px;border-radius:6px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:'Courier New',monospace;font-weight:700;transition:all .15s}.ps:hover{border-color:#22c55e}.ps.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.punnett{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px}.punnett-grid{display:grid;grid-template-columns:60px 1fr 1fr;grid-template-rows:40px 1fr 1fr;gap:2px;margin-bottom:12px}.pg-cell{display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:'Courier New',monospace;font-weight:700;font-size:1rem;min-height:56px}.pg-header{background:transparent;color:#64748b;font-size:.82rem}.pg-corner{background:transparent}.pg-dad{color:#3b82f6}.pg-mum{color:#ef4444}.pg-off{background:#1e293b;border:1px solid #334155;transition:all .3s}.pg-BB{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3);color:#86efac}.pg-Bb{background:rgba(217,119,6,.12);border-color:rgba(217,119,6,.25);color:#fcd34d}.pg-bb{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.25);color:#fca5a5}.results{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.res{padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.res-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:4px}.res-val{font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700}.res-pct{font-size:.75rem;color:#64748b;margin-top:2px}.trait-box{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.trait-btns{display:flex;gap:6px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}.trb{padding:6px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s}.trb:hover{border-color:#22c55e}.trb.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.trait-desc{font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.5}.trait-desc strong{color:#22c55e}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#22c55e}</style></head><body>
+<h1>Punnett Squares</h1>
+<p class="sub">Pick parent genotypes. See the possible offspring and their probabilities.</p>
+<div class="app">
+  <div class="trait-box">
+    <div class="trait-btns">
+      <button class="trb on" onclick="setTrait('eye')">👁 Eye colour</button>
+      <button class="trb" onclick="setTrait('pea')">🌱 Pea shape</button>
+      <button class="trb" onclick="setTrait('tongue')">👅 Tongue roll</button>
+    </div>
+    <div class="trait-desc" id="traitDesc"><strong>B</strong> = brown eyes (dominant). <strong>b</strong> = blue eyes (recessive). You need two copies of <strong>b</strong> to have blue eyes.</div>
+  </div>
+  <div class="parents">
+    <div class="parent"><div class="parent-label">Parent 1 (Father)</div><div class="parent-icon">👨</div><div class="parent-geno" id="dadGeno">Bb</div><div class="parent-select"><button class="ps" onclick="setDad('BB')">BB</button><button class="ps on" onclick="setDad('Bb')">Bb</button><button class="ps" onclick="setDad('bb')">bb</button></div></div>
+    <div class="parent"><div class="parent-label">Parent 2 (Mother)</div><div class="parent-icon">👩</div><div class="parent-geno" id="mumGeno">Bb</div><div class="parent-select"><button class="ps" onclick="setMum('BB')">BB</button><button class="ps on" onclick="setMum('Bb')">Bb</button><button class="ps" onclick="setMum('bb')">bb</button></div></div>
+  </div>
+  <div class="punnett">
+    <div class="punnett-grid" id="pGrid"></div>
+  </div>
+  <div class="results" id="results"></div>
+  <div class="info" id="info"><strong>Dominant</strong> alleles (B) only need one copy to show. <strong>Recessive</strong> alleles (b) need two copies (bb) to show the trait.</div>
+</div>
+<script>
+var dad='Bb',mum='Bb',D='B',d='b';
+var traits={
+  eye:{D:'B',d:'b',dom:'Brown eyes',rec:'Blue eyes',desc:'<strong>B</strong> = brown eyes (dominant). <strong>b</strong> = blue eyes (recessive). You need two copies of <strong>b</strong> to have blue eyes.'},
+  pea:{D:'R',d:'r',dom:'Round peas',rec:'Wrinkled peas',desc:'<strong>R</strong> = round (dominant). <strong>r</strong> = wrinkled (recessive). Mendel discovered this with pea plants in 1866.'},
+  tongue:{D:'T',d:'t',dom:'Can roll tongue',rec:'Cannot roll tongue',desc:'<strong>T</strong> = tongue rolling (dominant). <strong>t</strong> = no roll (recessive). Try it — can you roll your tongue?'}
+};
+var curTrait='eye';
+function setTrait(t){curTrait=t;D=traits[t].D;d=traits[t].d;document.querySelectorAll('.trb').forEach(function(b){b.classList.toggle('on',b.textContent.includes(t==='eye'?'Eye':t==='pea'?'Pea':'Tongue'))});document.getElementById('traitDesc').innerHTML=traits[t].desc;dad=D+d;mum=D+d;updateParentBtns();calc();}
+function setDad(g){dad=g;updateParentBtns();calc();}
+function setMum(g){mum=g;updateParentBtns();calc();}
+function updateParentBtns(){
+  document.getElementById('dadGeno').textContent=dad;
+  document.getElementById('mumGeno').textContent=mum;
+  var dbtns=document.querySelectorAll('.parent')[0].querySelectorAll('.ps');
+  dbtns[0].textContent=D+D;dbtns[1].textContent=D+d;dbtns[2].textContent=d+d;
+  dbtns.forEach(function(b){b.classList.toggle('on',b.textContent===dad)});
+  var mbtns=document.querySelectorAll('.parent')[1].querySelectorAll('.ps');
+  mbtns[0].textContent=D+D;mbtns[1].textContent=D+d;mbtns[2].textContent=d+d;
+  mbtns.forEach(function(b){b.classList.toggle('on',b.textContent===mum)});
+}
+function calc(){
+  var da=dad.split(''),ma=mum.split('');
+  var grid=document.getElementById('pGrid');
+  var offspring=[];
+  grid.innerHTML=
+    '<div class="pg-cell pg-corner">×</div><div class="pg-cell pg-header pg-dad">'+da[0]+'</div><div class="pg-cell pg-header pg-dad">'+da[1]+'</div>';
+  for(var i=0;i<2;i++){
+    grid.innerHTML+='<div class="pg-cell pg-header pg-mum">'+ma[i]+'</div>';
+    for(var j=0;j<2;j++){
+      var alleles=[da[j],ma[i]].sort();
+      var geno=alleles.join('');
+      offspring.push(geno);
+      var cls='pg-off';
+      if(geno===D+D)cls+=' pg-BB';
+      else if(geno===D+d||geno===d+D)cls+=' pg-Bb';
+      else cls+=' pg-bb';
+      grid.innerHTML+='<div class="pg-cell '+cls+'">'+geno+'</div>';
+    }
+  }
+  // Count
+  var counts={};offspring.forEach(function(g){var k=g.split('').sort().join('');counts[k]=(counts[k]||0)+1});
+  var t=traits[curTrait];
+  var domCount=(counts[D+D]||0)+(counts[D+d]||0);
+  var recCount=counts[d+d]||0;
+  var res=document.getElementById('results');
+  res.innerHTML='';
+  [[D+D,t.dom,'#22c55e'],[D+d,t.dom+' (carrier)','#d97706'],[d+d,t.rec,'#ef4444']].forEach(function(r){
+    var c=counts[r[0]]||0;
+    res.innerHTML+='<div class="res"><div class="res-label">'+r[0]+'</div><div class="res-val" style="color:'+r[2]+'">'+c+'/4</div><div class="res-pct">'+Math.round(c/4*100)+'% — '+r[1]+'</div></div>';
+  });
+  document.getElementById('info').innerHTML='<strong>'+t.dom+'</strong>: '+(domCount*25)+'% chance. <strong>'+t.rec+'</strong>: '+(recCount*25)+'% chance. '+(counts[D+d]?'<strong>'+(counts[D+d]*25)+'%</strong> are carriers — they look '+t.dom.toLowerCase()+' but carry the recessive allele.':'');
+}
+updateParentBtns();calc();
+</script></body></html>

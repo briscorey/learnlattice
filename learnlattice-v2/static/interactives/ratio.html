@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Ratio — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.row{display:flex;align-items:center;gap:10px;margin-bottom:12px;justify-content:center}.row label{font-size:.82rem;color:#94a3b8;min-width:50px;text-align:right}.row input[type=range]{width:140px;accent-color:#0D9488}.row .rv{font-family:'Courier New',monospace;font-weight:700;min-width:30px;font-size:1rem}.rv-a{color:#3b82f6}.rv-b{color:#f59e0b}.bar-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px}.bar-label{text-align:center;font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700;margin-bottom:12px;color:#e2e8f0}.bar-track{display:flex;height:48px;border-radius:10px;overflow:hidden;border:1px solid #334155;margin-bottom:8px}.bar-a{background:#3b82f6;transition:flex .3s;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff}.bar-b{background:#f59e0b;transition:flex .3s;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff}.bar-pcts{display:flex;justify-content:space-between;font-size:.72rem;color:#64748b}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}.st{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.st-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:4px;font-weight:700}.st-val{font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700;color:#0D9488}.presets{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.pre{padding:6px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s}.pre:hover{border-color:#0D9488;color:#5eead4}.total-row{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:16px}.total-row label{font-size:.82rem;color:#94a3b8}.total-row input{width:70px;padding:6px 10px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-family:'Courier New',monospace;font-size:1rem;text-align:center}.total-row .tv{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;font-size:1rem}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<h1>Ratio: See the Split</h1>
+<p class="sub">Adjust the two parts. Change the total. Watch how the ratio divides everything up.</p>
+<div class="app">
+  <div class="row"><label style="color:#3b82f6">Part A:</label><input type="range" id="aSlider" min="1" max="10" value="2" oninput="calc()"><span class="rv rv-a" id="aVal">2</span></div>
+  <div class="row"><label style="color:#f59e0b">Part B:</label><input type="range" id="bSlider" min="1" max="10" value="3" oninput="calc()"><span class="rv rv-b" id="bVal">3</span></div>
+  <div class="presets">
+    <button class="pre" onclick="set(1,1)">1:1</button>
+    <button class="pre" onclick="set(1,2)">1:2</button>
+    <button class="pre" onclick="set(2,3)">2:3</button>
+    <button class="pre" onclick="set(3,4)">3:4</button>
+    <button class="pre" onclick="set(1,4)">1:4</button>
+    <button class="pre" onclick="set(5,3)">5:3</button>
+  </div>
+  <div class="bar-area">
+    <div class="bar-label" id="ratioLabel">2 : 3</div>
+    <div class="bar-track"><div class="bar-a" id="barA">2</div><div class="bar-b" id="barB">3</div></div>
+    <div class="bar-pcts"><span id="pctA">40%</span><span id="pctB">60%</span></div>
+  </div>
+  <div class="total-row"><label>If total =</label><input type="number" id="totalInput" value="30" min="1" max="1000" onchange="calc()"><label>then A =</label><span class="tv" id="tvA">12</span><label>and B =</label><span class="tv" id="tvB">18</span></div>
+  <div class="stats">
+    <div class="st"><div class="st-label">Total parts</div><div class="st-val" id="stParts">5</div></div>
+    <div class="st"><div class="st-label">Simplest form</div><div class="st-val" id="stSimple">2 : 3</div></div>
+    <div class="st"><div class="st-label">A as fraction</div><div class="st-val" id="stFracA">2/5</div></div>
+    <div class="st"><div class="st-label">B as fraction</div><div class="st-val" id="stFracB">3/5</div></div>
+  </div>
+  <div class="info" id="info"><strong>Ratio</strong> compares two quantities. <strong>2:3</strong> means "for every 2 of A, there are 3 of B." Total parts = 5.</div>
+</div>
+<script>
+function gcd(a,b){return b?gcd(b,a%b):a;}
+function set(a,b){document.getElementById('aSlider').value=a;document.getElementById('bSlider').value=b;calc();}
+function calc(){
+  var a=+document.getElementById('aSlider').value,b=+document.getElementById('bSlider').value;
+  var total=+document.getElementById('totalInput').value||1;
+  var parts=a+b,g=gcd(a,b);
+  document.getElementById('aVal').textContent=a;
+  document.getElementById('bVal').textContent=b;
+  document.getElementById('ratioLabel').textContent=a+' : '+b;
+  document.getElementById('barA').style.flex=a;document.getElementById('barA').textContent=a;
+  document.getElementById('barB').style.flex=b;document.getElementById('barB').textContent=b;
+  document.getElementById('pctA').textContent=Math.round(a/parts*100)+'%';
+  document.getElementById('pctB').textContent=Math.round(b/parts*100)+'%';
+  document.getElementById('stParts').textContent=parts;
+  document.getElementById('stSimple').textContent=(a/g)+' : '+(b/g);
+  document.getElementById('stFracA').textContent=a+'/'+parts;
+  document.getElementById('stFracB').textContent=b+'/'+parts;
+  var va=Math.round(total*a/parts*100)/100,vb=Math.round(total*b/parts*100)/100;
+  document.getElementById('tvA').textContent=va;
+  document.getElementById('tvB').textContent=vb;
+  document.getElementById('info').innerHTML='<strong>'+a+' : '+b+'</strong> means '+parts+' total parts. Each part = '+total+' ÷ '+parts+' = <strong>'+Math.round(total/parts*100)/100+'</strong>. So A gets '+a+' parts = <strong>'+va+'</strong> and B gets '+b+' parts = <strong>'+vb+'</strong>.';
+}
+calc();
+</script></body></html>

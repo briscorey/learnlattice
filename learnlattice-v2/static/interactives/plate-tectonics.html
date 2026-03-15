@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Plate Tectonics — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#d97706,#d97706aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.type-btns{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.tb{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.tb:hover{border-color:#d97706}.tb.on{border-color:#d97706;background:rgba(217,119,6,.12);color:#fcd34d}.scene{background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;position:relative;height:240px;overflow:hidden}.plate{position:absolute;bottom:0;height:80px;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:rgba(255,255,255,.7);transition:left .6s cubic-bezier(.22,1,.36,1),width .6s;cursor:default}.plate-l{background:linear-gradient(180deg,#78350f,#92400e);left:10%;width:38%}.plate-r{background:linear-gradient(180deg,#1e3a5f,#1e40af);right:10%;width:38%;left:52%}.mantle{position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(180deg,#dc2626,#7f1d1d);border-radius:0 0 12px 12px;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:rgba(255,255,255,.4)}.boundary{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:4px;height:80px;z-index:2}.effect{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:2rem;z-index:3;transition:opacity .3s;text-align:center}.arrows{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;padding:0 16%;font-size:1.5rem;color:rgba(255,255,255,.2);pointer-events:none;transform:translateY(-50%)}.surface{position:absolute;bottom:80px;left:0;right:0;height:2px;background:#64748b}.result{padding:18px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.res-name{font-size:1.1rem;font-weight:700;color:#d97706;margin-bottom:6px}.res-type{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:8px}.res-desc{font-size:.85rem;color:#94a3b8;line-height:1.6;margin-bottom:8px}.res-examples{font-size:.78rem;color:#64748b}.res-examples strong{color:#94a3b8}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#d97706}</style></head><body>
+<h1>Plate Tectonics</h1>
+<p class="sub">Click a boundary type. Watch the plates move. See what happens where they meet.</p>
+<div class="app">
+  <div class="type-btns">
+    <button class="tb on" onclick="pick('convergent')">💥 Convergent</button>
+    <button class="tb" onclick="pick('divergent')">↔ Divergent</button>
+    <button class="tb" onclick="pick('transform')">⇄ Transform</button>
+    <button class="tb" onclick="pick('subduction')">⬇ Subduction</button>
+  </div>
+  <div class="scene" id="scene">
+    <div class="arrows" id="arrows"><span>→</span><span>←</span></div>
+    <div class="effect" id="effect">🌋</div>
+    <div class="surface"></div>
+    <div class="plate plate-l" id="plateL">Continental</div>
+    <div class="plate plate-r" id="plateR">Continental</div>
+    <div class="boundary" id="boundary"></div>
+    <div class="mantle">~ mantle ~</div>
+  </div>
+  <div class="result" id="result">
+    <div class="res-name">Convergent Boundary</div>
+    <div class="res-type">Plates push together</div>
+    <div class="res-desc">When two plates collide, the crust crumples upward forming fold mountains. Enormous pressure builds and is released as earthquakes.</div>
+    <div class="res-examples"><strong>Real examples:</strong> Himalayas (India + Eurasia), Alps (Africa + Europe)</div>
+  </div>
+  <div class="info"><strong>Earth's surface</strong> is made of ~15 tectonic plates that float on the mantle. They move 2–10 cm per year — about as fast as your fingernails grow.</div>
+</div>
+<script>
+var types={
+  convergent:{name:'Convergent Boundary',type:'Plates push together',desc:'When two plates collide, the crust crumples upward forming fold mountains. Enormous pressure builds and is released as earthquakes.',examples:'Himalayas (India + Eurasia), Alps (Africa + Europe)',emoji:'⛰️',lPos:'12%',rPos:'50%',arrows:'→ ←',lLabel:'Continental',rLabel:'Continental',color:'#ef4444'},
+  divergent:{name:'Divergent Boundary',type:'Plates pull apart',desc:'When plates move apart, magma rises from the mantle to fill the gap, creating new crust. This forms mid-ocean ridges and rift valleys.',examples:'Mid-Atlantic Ridge, East African Rift Valley',emoji:'🌊',lPos:'2%',rPos:'60%',arrows:'← →',lLabel:'Oceanic',rLabel:'Oceanic',color:'#3b82f6'},
+  transform:{name:'Transform Boundary',type:'Plates slide past each other',desc:'Plates grind sideways past each other. The friction locks them in place until stress builds up and releases suddenly — causing earthquakes.',examples:'San Andreas Fault (California), Alpine Fault (New Zealand)',emoji:'💥',lPos:'10%',rPos:'52%',arrows:'↑ ↓',lLabel:'Pacific',rLabel:'N. American',color:'#f59e0b'},
+  subduction:{name:'Subduction Zone',type:'Oceanic plate dives under continental',desc:'The denser oceanic plate sinks beneath the lighter continental plate into the mantle. This creates deep ocean trenches, volcanic arcs, and powerful earthquakes.',examples:'Ring of Fire, Mariana Trench, Andes Mountains',emoji:'🌋',lPos:'8%',rPos:'46%',arrows:'→ ←',lLabel:'Oceanic',rLabel:'Continental',color:'#a855f7'}
+};
+function pick(t){
+  document.querySelectorAll('.tb').forEach(function(b){b.classList.remove('on')});
+  event.target.classList.add('on');
+  var d=types[t];
+  document.getElementById('plateL').style.left=d.lPos;
+  document.getElementById('plateR').style.left=d.rPos;
+  document.getElementById('plateL').textContent=d.lLabel;
+  document.getElementById('plateR').textContent=d.rLabel;
+  document.getElementById('effect').textContent=d.emoji;
+  document.getElementById('arrows').innerHTML='<span>'+d.arrows.split(' ')[0]+'</span><span>'+d.arrows.split(' ')[1]+'</span>';
+  document.getElementById('boundary').style.background=d.color;
+  if(t==='subduction'){
+    document.getElementById('plateL').style.height='70px';
+    document.getElementById('plateL').style.bottom='30px';
+    document.getElementById('plateR').style.height='80px';
+    document.getElementById('plateR').style.bottom='0';
+  } else {
+    document.getElementById('plateL').style.height='80px';
+    document.getElementById('plateL').style.bottom='0';
+    document.getElementById('plateR').style.height='80px';
+    document.getElementById('plateR').style.bottom='0';
+  }
+  document.getElementById('result').innerHTML=
+    '<div class="res-name">'+d.name+'</div>'+
+    '<div class="res-type">'+d.type+'</div>'+
+    '<div class="res-desc">'+d.desc+'</div>'+
+    '<div class="res-examples"><strong>Real examples:</strong> '+d.examples+'</div>';
+}
+</script></body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Chemical Reactions — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#ef4444,#ef4444aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.eq-btns{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.eqb{padding:7px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s}.eqb:hover{border-color:#ef4444}.eqb.on{border-color:#ef4444;background:rgba(239,68,68,.12);color:#fca5a5}.equation-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px}.eq-display{text-align:center;margin-bottom:16px}.eq-text{font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700;color:#e2e8f0;margin-bottom:4px}.eq-name{font-size:.78rem;color:#64748b}.coefficients{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;margin-bottom:16px}.coeff-group{display:flex;align-items:center;gap:2px}.coeff-btn{width:28px;height:28px;border-radius:6px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.85rem;font-family:inherit;display:flex;align-items:center;justify-content:center;transition:all .12s}.coeff-btn:hover{border-color:#ef4444;background:#0f172a}.coeff-val{font-family:'Courier New',monospace;font-size:1.1rem;font-weight:700;color:#ef4444;min-width:24px;text-align:center}.coeff-formula{font-family:'Courier New',monospace;font-size:.88rem;color:#94a3b8}.arrow-sym{font-size:1.2rem;color:#64748b;padding:0 6px}.plus-sym{color:#64748b;padding:0 4px}.atom-count{display:grid;grid-template-columns:1fr auto 1fr;gap:4px;margin-bottom:16px;font-size:.82rem}.ac-side{padding:10px;background:#1e293b;border-radius:8px}.ac-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:6px;text-align:center}.ac-row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #0f172a}.ac-el{font-weight:700}.ac-n{font-family:'Courier New',monospace}.ac-match{color:#22c55e}.ac-miss{color:#ef4444}.ac-eq{display:flex;align-items:center;font-size:1.2rem;color:#64748b;padding:0 8px}.status{text-align:center;padding:14px;border-radius:10px;margin-bottom:12px;font-weight:700;font-size:.95rem}.status-yes{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:#86efac}.status-no{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#fca5a5}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#ef4444}</style></head><body>
+<h1>Balancing Chemical Equations</h1>
+<p class="sub">Adjust the coefficients so both sides have the same number of each atom. No atoms are created or destroyed!</p>
+<div class="app">
+  <div class="eq-btns" id="eqBtns"></div>
+  <div class="equation-area">
+    <div class="eq-display"><div class="eq-text" id="eqText"></div><div class="eq-name" id="eqName"></div></div>
+    <div class="coefficients" id="coeffs"></div>
+    <div class="atom-count" id="atomCount"></div>
+    <div class="status" id="status"></div>
+  </div>
+  <div class="info"><strong>Conservation of mass:</strong> atoms are never created or destroyed in a chemical reaction. The number of each type of atom must be the same on both sides.</div>
+</div>
+<script>
+var equations=[
+  {name:'Hydrogen + Oxygen → Water',reactants:[{f:'H₂',atoms:{H:2}},{f:'O₂',atoms:{O:2}}],products:[{f:'H₂O',atoms:{H:2,O:1}}],answer:[2,1,2]},
+  {name:'Iron + Oxygen → Iron Oxide (rust)',reactants:[{f:'Fe',atoms:{Fe:1}},{f:'O₂',atoms:{O:2}}],products:[{f:'Fe₂O₃',atoms:{Fe:2,O:3}}],answer:[4,3,2]},
+  {name:'Methane + Oxygen → CO₂ + Water',reactants:[{f:'CH₄',atoms:{C:1,H:4}},{f:'O₂',atoms:{O:2}}],products:[{f:'CO₂',atoms:{C:1,O:2}},{f:'H₂O',atoms:{H:2,O:1}}],answer:[1,2,1,2]},
+  {name:'Magnesium + HCl → MgCl₂ + Hydrogen',reactants:[{f:'Mg',atoms:{Mg:1}},{f:'HCl',atoms:{H:1,Cl:1}}],products:[{f:'MgCl₂',atoms:{Mg:1,Cl:2}},{f:'H₂',atoms:{H:2}}],answer:[1,2,1,1]},
+  {name:'Sodium + Water → NaOH + Hydrogen',reactants:[{f:'Na',atoms:{Na:1}},{f:'H₂O',atoms:{H:2,O:1}}],products:[{f:'NaOH',atoms:{Na:1,O:1,H:1}},{f:'H₂',atoms:{H:2}}],answer:[2,2,2,1]}
+];
+var cur=0,coeffs=[];
+
+function init(){
+  document.getElementById('eqBtns').innerHTML=equations.map(function(e,i){return '<button class="eqb'+(i===0?' on':'')+'" onclick="pickEq('+i+')">'+e.reactants.map(function(r){return r.f}).join(' + ')+' → '+e.products.map(function(p){return p.f}).join(' + ')+'</button>'}).join('');
+  loadEq(0);
+}
+function pickEq(i){cur=i;document.querySelectorAll('.eqb').forEach(function(b,j){b.classList.toggle('on',j===i)});loadEq(i);}
+function loadEq(i){
+  var eq=equations[i];
+  coeffs=eq.reactants.concat(eq.products).map(function(){return 1});
+  render();
+}
+function setCoeff(idx,delta){coeffs[idx]=Math.max(1,Math.min(6,coeffs[idx]+delta));render();}
+function render(){
+  var eq=equations[cur],all=eq.reactants.concat(eq.products);
+  // Equation display
+  var parts=all.map(function(c,i){return (coeffs[i]>1?coeffs[i]:'')+c.f});
+  var rStr=parts.slice(0,eq.reactants.length).join(' + ');
+  var pStr=parts.slice(eq.reactants.length).join(' + ');
+  document.getElementById('eqText').textContent=rStr+' → '+pStr;
+  document.getElementById('eqName').textContent=eq.name;
+  // Coefficient controls
+  document.getElementById('coeffs').innerHTML=all.map(function(c,i){
+    var sep=i===eq.reactants.length-1?'<span class="arrow-sym">→</span>':(i<all.length-1?'<span class="plus-sym">+</span>':'');
+    return '<div class="coeff-group"><button class="coeff-btn" onclick="setCoeff('+i+',-1)">−</button><span class="coeff-val">'+coeffs[i]+'</span><button class="coeff-btn" onclick="setCoeff('+i+',1)">+</button><span class="coeff-formula">'+c.f+'</span></div>'+sep;
+  }).join('');
+  // Count atoms
+  var elements=new Set();
+  all.forEach(function(c){Object.keys(c.atoms).forEach(function(e){elements.add(e)})});
+  var elArr=Array.from(elements);
+  var left={},right={};
+  eq.reactants.forEach(function(c,i){Object.keys(c.atoms).forEach(function(e){left[e]=(left[e]||0)+c.atoms[e]*coeffs[i]})});
+  eq.products.forEach(function(c,i){var ci=i+eq.reactants.length;Object.keys(c.atoms).forEach(function(e){right[e]=(right[e]||0)+c.atoms[e]*coeffs[ci]})});
+  var balanced=true;
+  var leftHtml='<div class="ac-label">Reactants</div>'+elArr.map(function(e){var l=left[e]||0,r=right[e]||0;var cls=l===r?'ac-match':'ac-miss';if(l!==r)balanced=false;return '<div class="ac-row"><span class="ac-el">'+e+'</span><span class="ac-n '+cls+'">'+l+'</span></div>'}).join('');
+  var rightHtml='<div class="ac-label">Products</div>'+elArr.map(function(e){var l=left[e]||0,r=right[e]||0;var cls=l===r?'ac-match':'ac-miss';return '<div class="ac-row"><span class="ac-el">'+e+'</span><span class="ac-n '+cls+'">'+r+'</span></div>'}).join('');
+  document.getElementById('atomCount').innerHTML='<div class="ac-side">'+leftHtml+'</div><div class="ac-eq">=?</div><div class="ac-side">'+rightHtml+'</div>';
+  document.getElementById('status').className='status '+(balanced?'status-yes':'status-no');
+  document.getElementById('status').textContent=balanced?'✓ Balanced! Same atoms on both sides.':'✗ Not balanced yet — keep adjusting.';
+}
+init();
+</script></body></html>
