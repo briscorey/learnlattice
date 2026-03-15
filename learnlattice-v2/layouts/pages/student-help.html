@@ -3,49 +3,183 @@
 <section class="stu-hero">
   <div class="stu-hero-inner">
     <h1>I don't understand...</h1>
-    <p>Click what's confusing you. Each topic has a visual explainer, worked examples, and practice.</p>
+    <p>Pick a topic. Play with the interactive. Then try the practice links.</p>
     <a href="/students/" class="stu-back">← Back to Student Home</a>
   </div>
 </section>
 
-<section class="shelp-topics">
-{{ $topics := slice
-  (dict "id" "negative-numbers" "title" "Negative Numbers" "icon" "➖" "color" "teal" "tagline" "Numbers below zero. Adding goes right, subtracting goes left." "explainer" "/resources/understand-negative-numbers/" "worked" "/resources/worked-example-linear-equations/" "links" (slice (dict "label" "Algebra balance scale" "url" "/resources/understand-algebra/") (dict "label" "Solving equations step by step" "url" "/resources/worked-example-linear-equations/")))
-  (dict "id" "fractions" "title" "Fractions" "icon" "½" "color" "teal" "tagline" "Which is bigger, 2/3 or 3/5? See them side by side." "explainer" "/resources/understand-fractions/" "worked" "/resources/worked-example-percentage-change/" "links" (slice (dict "label" "Percentage change step by step" "url" "/resources/worked-example-percentage-change/") (dict "label" "The Fairness Problem" "url" "/resources/the-fairness-problem-fractions-inquiry/")))
-  (dict "id" "algebra" "title" "Algebra" "icon" "𝑥" "color" "teal" "tagline" "An equation is a balance. Keep both sides equal." "explainer" "/resources/understand-algebra/" "worked" "/resources/worked-example-linear-equations/" "links" (slice (dict "label" "Function Machine game" "url" "/resources/function-machine-game/") (dict "label" "nth term step by step" "url" "/resources/worked-example-nth-term/")))
-  (dict "id" "graphs" "title" "Reading Graphs" "icon" "📈" "color" "teal" "tagline" "Gradient means speed. Flat means stopped. Line going down means returning." "explainer" "/resources/understand-graph-reading/" "worked" "/resources/worked-example-distance-time/" "links" (slice (dict "label" "Line of best fit" "url" "/resources/worked-example-line-of-best-fit/") (dict "label" "Does Height Predict Armspan?" "url" "/resources/grade-8-scatter-graphs-investigation/")))
-  (dict "id" "probability" "title" "Probability" "icon" "🎲" "color" "amber" "tagline" "Flip a coin 100 times. Watch it get closer to 50/50." "explainer" "/resources/understand-probability/" "worked" "" "links" (slice (dict "label" "Probability Simulator game" "url" "/resources/probability-simulator-game/") (dict "label" "Is This Die Cheating?" "url" "/resources/is-this-die-cheating-probability-investigation/")))
-  (dict "id" "density" "title" "Density" "icon" "⚖️" "color" "blue" "tagline" "Drop objects in water. If density < 1.0, it floats." "explainer" "/resources/understand-density/" "worked" "/resources/worked-example-density/" "links" (slice (dict "label" "Density calculation step by step" "url" "/resources/worked-example-density/") (dict "label" "The Sinking Orange" "url" "/resources/density-and-floating-investigation/")))
-  (dict "id" "forces" "title" "Forces" "icon" "💪" "color" "blue" "tagline" "Push a box. Add friction. See Newton's laws happen." "explainer" "/resources/understand-forces/" "worked" "" "links" (slice (dict "label" "The Feather and the Hammer" "url" "/resources/forces-and-falling-investigation/") (dict "label" "The Impossible Lift" "url" "/resources/simple-machines-investigation/")))
-  (dict "id" "energy" "title" "Energy Transfer" "icon" "⚡" "color" "amber" "tagline" "Drag the efficiency slider. Watch energy flow." "explainer" "/resources/understand-energy/" "worked" "" "links" (slice (dict "label" "Where Does the Energy Go?" "url" "/resources/energy-transfer-investigation/") (dict "label" "Substituting into E = ½mv²" "url" "/resources/worked-example-substitution/")))
-  (dict "id" "particles" "title" "Particles" "icon" "⚛️" "color" "rose" "tagline" "Solid, liquid, gas. Drag the temperature slider." "explainer" "/resources/understand-particles/" "worked" "" "links" (slice (dict "label" "Reaction Rate Lab game" "url" "/resources/reaction-rate-lab-game/") (dict "label" "The Disappearing Candle" "url" "/resources/the-disappearing-candle-chemistry-investigation/")))
-  (dict "id" "food-webs" "title" "Food Webs" "icon" "🌿" "color" "emerald" "tagline" "Remove a species. Watch the chains break." "explainer" "/resources/understand-food-webs/" "worked" "" "links" (slice (dict "label" "Food Web Builder game" "url" "/resources/food-web-builder-game/") (dict "label" "The Invisible Thread" "url" "/resources/the-invisible-thread-ecology-investigation/")))
-}}
-
-{{ range $topics }}
-<div class="shelp-topic" id="{{ .id }}">
-  <div class="shelp-topic-header">
-    <span class="shelp-topic-icon">{{ .icon }}</span>
-    <div>
-      <h2>{{ .title }}</h2>
-      <p>{{ .tagline }}</p>
-    </div>
+<section class="shelp-section">
+  <div class="shelp-nav" id="shelpNav">
+    <button class="shelp-pill active" data-idx="0">➖ Negatives</button>
+    <button class="shelp-pill" data-idx="1">½ Fractions</button>
+    <button class="shelp-pill" data-idx="2">𝑥 Algebra</button>
+    <button class="shelp-pill" data-idx="3">📈 Graphs</button>
+    <button class="shelp-pill" data-idx="4">🎲 Probability</button>
+    <button class="shelp-pill" data-idx="5">⚖️ Density</button>
+    <button class="shelp-pill" data-idx="6">💪 Forces</button>
+    <button class="shelp-pill" data-idx="7">⚡ Energy</button>
+    <button class="shelp-pill" data-idx="8">⚛️ Particles</button>
+    <button class="shelp-pill" data-idx="9">🌿 Food Webs</button>
   </div>
-  <div class="shelp-topic-body">
-    <div class="shelp-explainer">
-      <iframe src="{{ .explainer }}" style="width:100%;height:500px;border:none;border-radius:12px;background:#0a0f1a" loading="lazy" title="{{ .title }}"></iframe>
-    </div>
-    <div class="shelp-links">
-      <h3>Try next</h3>
-      {{ range .links }}
-      <a href="{{ .url }}" class="shelp-link">{{ .label }} →</a>
-      {{ end }}
-    </div>
-  </div>
-</div>
-{{ end }}
 
+  <div class="shelp-stage" id="shelpStage"></div>
 </section>
 
 {{ partial "newsletter.html" . }}
+
+<style>
+.shelp-section { max-width:900px; margin:0 auto; padding:0 24px 48px; }
+
+.shelp-nav {
+  display:flex; gap:6px; flex-wrap:wrap; justify-content:center;
+  padding:16px 0 24px; border-bottom:1px solid var(--border); margin-bottom:24px;
+}
+.shelp-pill {
+  padding:8px 16px; border-radius:10px; border:1.5px solid var(--border);
+  background:var(--surface-card); color:var(--ink-muted); font-size:.82rem;
+  font-weight:500; cursor:pointer; font-family:inherit; transition:all .15s;
+  white-space:nowrap;
+}
+.shelp-pill:hover { border-color:var(--teal); color:var(--teal); }
+.shelp-pill.active { background:var(--teal); border-color:var(--teal); color:#fff; font-weight:600; }
+
+.shelp-stage { min-height:400px; }
+
+.shelp-card {
+  background:var(--surface-card); border:1px solid var(--border);
+  border-radius:20px; overflow:hidden; animation:shelpFade .3s ease;
+}
+@keyframes shelpFade { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+.shelp-card-header {
+  display:flex; align-items:center; gap:14px;
+  padding:20px 24px; background:var(--surface-warm);
+  border-bottom:1px solid var(--border);
+}
+.shelp-card-icon {
+  font-size:1.8rem; width:48px; height:48px; display:flex;
+  align-items:center; justify-content:center; background:var(--teal-wash);
+  border-radius:12px; flex-shrink:0;
+}
+.shelp-card-header h2 {
+  font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--ink);
+  margin-bottom:2px;
+}
+.shelp-card-header p { font-size:.85rem; color:var(--ink-muted); line-height:1.4; }
+
+.shelp-frame-wrap {
+  position:relative; width:100%; background:#0a0f1a;
+  border-bottom:1px solid var(--border);
+}
+.shelp-frame { width:100%; height:480px; border:none; display:block; }
+.shelp-frame-actions {
+  position:absolute; top:12px; right:12px; display:flex; gap:6px; z-index:2;
+}
+.shelp-frame-btn {
+  padding:5px 12px; border-radius:7px; border:1px solid rgba(255,255,255,.15);
+  background:rgba(15,23,42,.8); color:rgba(255,255,255,.6);
+  font-size:.7rem; font-weight:600; cursor:pointer; font-family:inherit;
+  backdrop-filter:blur(6px); transition:all .15s;
+}
+.shelp-frame-btn:hover { background:rgba(15,23,42,.95); color:#fff; border-color:var(--teal); }
+
+.shelp-links-section { padding:18px 24px; }
+.shelp-links-title {
+  font-size:.68rem; text-transform:uppercase; letter-spacing:1.5px;
+  color:var(--ink-muted); font-weight:700; margin-bottom:10px;
+}
+.shelp-links-grid { display:flex; flex-direction:column; gap:6px; }
+.shelp-link {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; background:var(--surface-warm); border:1px solid var(--border);
+  border-radius:10px; text-decoration:none; color:var(--ink); font-size:.88rem;
+  font-weight:500; transition:all .15s;
+}
+.shelp-link:hover { border-color:var(--teal); background:var(--teal-wash); color:var(--teal); }
+.shelp-link-arrow { color:var(--ink-muted); transition:transform .15s; }
+.shelp-link:hover .shelp-link-arrow { transform:translateX(3px); color:var(--teal); }
+
+@media (max-width:640px) {
+  .shelp-nav { gap:4px; }
+  .shelp-pill { padding:6px 12px; font-size:.75rem; }
+  .shelp-frame { height:400px; }
+  .shelp-card-header { padding:16px 18px; }
+  .shelp-links-section { padding:14px 18px; }
+  .shelp-card-header h2 { font-size:1.1rem; }
+}
+@media (max-width:480px) {
+  .shelp-frame { height:360px; }
+  .shelp-pill { font-size:12px !important; padding:5px 10px; }
+}
+@media (prefers-reduced-motion:reduce) { .shelp-card { animation:none; } }
+
+html.dark .shelp-pill { background:#1e293b; border-color:#334155; }
+html.dark .shelp-pill.active { background:var(--teal); border-color:var(--teal); color:#fff; }
+html.dark .shelp-card { background:#1e293b; border-color:#334155; }
+html.dark .shelp-card-header { background:#0f172a; border-color:#334155; }
+html.dark .shelp-link { background:#0f172a; border-color:#334155; }
+html.dark .shelp-link:hover { border-color:var(--teal); background:rgba(20,184,166,.08); }
+</style>
+
+<script>
+(function(){
+var topics = [
+  {title:"Negative Numbers",icon:"\u2796",tagline:"Numbers below zero. Adding goes right, subtracting goes left.",src:"/understand/negative-numbers.html",links:[{label:"Algebra balance scale",url:"/resources/understand-algebra/"},{label:"Solving equations step by step",url:"/resources/worked-example-linear-equations/"}]},
+  {title:"Fractions",icon:"\u00bd",tagline:"Which is bigger, 2/3 or 3/5? See them side by side.",src:"/understand/fractions.html",links:[{label:"Percentage change step by step",url:"/resources/worked-example-percentage-change/"},{label:"The Fairness Problem",url:"/resources/the-fairness-problem-fractions-inquiry/"}]},
+  {title:"Algebra",icon:"\ud835\udc65",tagline:"An equation is a balance. Keep both sides equal.",src:"/understand/algebra.html",links:[{label:"Function Machine game",url:"/resources/function-machine-game/"},{label:"nth term step by step",url:"/resources/worked-example-nth-term/"}]},
+  {title:"Reading Graphs",icon:"\ud83d\udcc8",tagline:"Gradient means speed. Flat means stopped. Line going down means returning.",src:"/understand/graph-reading.html",links:[{label:"Line of best fit",url:"/resources/worked-example-line-of-best-fit/"},{label:"Does Height Predict Armspan?",url:"/resources/grade-8-scatter-graphs-investigation/"}]},
+  {title:"Probability",icon:"\ud83c\udfb2",tagline:"Flip a coin 100 times. Watch it get closer to 50/50.",src:"/understand/probability.html",links:[{label:"Probability Simulator game",url:"/resources/probability-simulator-game/"},{label:"Is This Die Cheating?",url:"/resources/is-this-die-cheating-probability-investigation/"}]},
+  {title:"Density",icon:"\u2696\ufe0f",tagline:"Drop objects in water. If density < 1.0, it floats.",src:"/understand/density.html",links:[{label:"Density calculation step by step",url:"/resources/worked-example-density/"},{label:"The Sinking Orange",url:"/resources/density-and-floating-investigation/"}]},
+  {title:"Forces",icon:"\ud83d\udcaa",tagline:"Push a box. Add friction. See Newton\u2019s laws happen.",src:"/understand/forces.html",links:[{label:"The Feather and the Hammer",url:"/resources/forces-and-falling-investigation/"},{label:"The Impossible Lift",url:"/resources/simple-machines-investigation/"}]},
+  {title:"Energy Transfer",icon:"\u26a1",tagline:"Drag the efficiency slider. Watch energy flow.",src:"/understand/energy.html",links:[{label:"Where Does the Energy Go?",url:"/resources/energy-transfer-investigation/"},{label:"Substituting into E = \u00bdmv\u00b2",url:"/resources/worked-example-substitution/"}]},
+  {title:"Particles",icon:"\u269b\ufe0f",tagline:"Solid, liquid, gas. Drag the temperature slider.",src:"/understand/particles.html",links:[{label:"Reaction Rate Lab game",url:"/resources/reaction-rate-lab-game/"},{label:"The Disappearing Candle",url:"/resources/the-disappearing-candle-chemistry-investigation/"}]},
+  {title:"Food Webs",icon:"\ud83c\udf3f",tagline:"Remove a species. Watch the chains break.",src:"/understand/food-webs.html",links:[{label:"Food Web Builder game",url:"/resources/food-web-builder-game/"},{label:"The Invisible Thread",url:"/resources/the-invisible-thread-ecology-investigation/"}]}
+];
+
+var cur = 0;
+var stage = document.getElementById('shelpStage');
+
+function show(idx) {
+  cur = idx;
+  var t = topics[idx];
+  document.querySelectorAll('.shelp-pill').forEach(function(p,i){ p.classList.toggle('active', i===idx); });
+
+  stage.innerHTML =
+    '<div class="shelp-card">' +
+      '<div class="shelp-card-header">' +
+        '<span class="shelp-card-icon">' + t.icon + '</span>' +
+        '<div><h2>' + t.title + '</h2><p>' + t.tagline + '</p></div>' +
+      '</div>' +
+      '<div class="shelp-frame-wrap">' +
+        '<div class="shelp-frame-actions">' +
+          '<button class="shelp-frame-btn" onclick="window.open(topics['+idx+'].src,\'_blank\')">Open full screen \u2197</button>' +
+        '</div>' +
+        '<iframe class="shelp-frame" src="' + t.src + '" loading="lazy" title="' + t.title + '"></iframe>' +
+      '</div>' +
+      '<div class="shelp-links-section">' +
+        '<div class="shelp-links-title">Try next</div>' +
+        '<div class="shelp-links-grid">' +
+          t.links.map(function(l){ return '<a href="'+l.url+'" class="shelp-link"><span>'+l.label+'</span><span class="shelp-link-arrow">\u2192</span></a>'; }).join('') +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+// expose topics for full-screen button
+window.topics = topics;
+
+document.querySelectorAll('.shelp-pill').forEach(function(p){
+  p.addEventListener('click', function(){ show(parseInt(this.dataset.idx)); });
+});
+
+document.addEventListener('keydown', function(e){
+  if(document.activeElement && document.activeElement.tagName === 'IFRAME') return;
+  if(e.key === 'ArrowRight') { e.preventDefault(); show((cur+1) % topics.length); }
+  if(e.key === 'ArrowLeft') { e.preventDefault(); show((cur-1+topics.length) % topics.length); }
+});
+
+show(0);
+})();
+</script>
+
 {{ end }}
