@@ -60,4 +60,13 @@
 </section>
 
 {{ partial "newsletter.html" . }}
+
+{{ with .Content }}
+<section class="seo-content-section">
+  <div class="seo-content-inner">
+    {{ . }}
+  </div>
+</section>
+{{ end }}
+
 {{ end }}
