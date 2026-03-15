@@ -27,6 +27,8 @@
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"></noscript>
   {{ end }}
   {{ block "head" . }}{{ end }}
+  <!-- Plausible Analytics — cookie-free, GDPR compliant -->
+  <script defer data-domain="learnlattice.org" src="https://plausible.io/js/script.js"></script>
   <script>try{if(localStorage.getItem('ll-dark')==='1')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
 <body{{ with .Params.body_class }} class="{{ . }}"{{ end }}{{ if eq .Section "resources" }}{{ with .Params.subjects }} data-subject="{{ index . 0 | urlize }}"{{ end }}{{ else if eq .Section "games" }} data-subject="games"{{ end }}>

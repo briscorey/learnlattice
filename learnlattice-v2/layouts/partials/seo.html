@@ -248,3 +248,54 @@
 }
 </script>
 {{- end }}
+
+{{/* ── BreadcrumbList structured data (all non-home pages) ── */}}
+{{- if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL }}"
+    }
+    {{- if $isResource }}
+    {{- with index (.Params.subjects | default (slice)) 0 }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ . }}",
+      "item": "{{ $.Site.BaseURL }}subjects/{{ . | urlize }}/"
+    }
+    {{- end }},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ .Title }}"
+    }
+    {{- else if $isBlog }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Craft",
+      "item": "{{ .Site.BaseURL }}blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ .Title }}"
+    }
+    {{- else }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Title }}"
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}

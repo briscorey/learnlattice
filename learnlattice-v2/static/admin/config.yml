@@ -3,82 +3,245 @@ backend:
   repo: briscorey/learnlattice
   branch: main
 
-media_folder: "static/uploads"
+media_folder: "learnlattice-v2/static/uploads"
 public_folder: "/uploads"
+
+# Editorial workflow — creates draft branches for review before publishing
+publish_mode: editorial_workflow
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
   - name: "resources"
     label: "Resources"
-    folder: "content/resources"
+    folder: "learnlattice-v2/content/resources"
     create: true
     slug: "{{slug}}"
+    sortable_fields: ["title", "date", "subjects"]
+    summary: "{{title}} — {{subjects}} — {{year_levels}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Description", name: "description", widget: "text", hint: "1–2 sentences. This appears on cards, in search results, and in meta tags." }
+
       - label: "Subject"
         name: "subjects"
         widget: "select"
         multiple: true
         options:
           - "Mathematics"
-          - "Science"
           - "Biology"
-          - "Ecology"
-          - "Space Science"
-          - "Earth Science"
           - "Chemistry"
+          - "Physics"
+          - "Earth Science"
+          - "Space Science"
+          - "Ecology"
+
+      - label: "Math Topic"
+        name: "math_topic"
+        widget: "select"
+        required: false
+        options:
+          - "Number Sense"
+          - "Fractions"
+          - "Algebra"
+          - "Geometry"
+          - "Statistics"
+          - "Measurement"
+          - "Functions"
+        hint: "Only for Mathematics resources"
+
       - label: "Year Level"
         name: "year_levels"
         widget: "select"
         multiple: true
         options:
+          - "Grade 6"
+          - "Grade 7"
+          - "Grade 8"
+          - "Grade 9"
           - "MYP Year 1"
           - "MYP Year 2"
           - "MYP Year 3"
           - "MYP Year 4"
-          - "MYP Year 5"
+
       - label: "Resource Type"
         name: "resource_types"
         widget: "select"
         multiple: true
         options:
-          - "Unit Plan"
-          - "Worksheet"
+          - "Investigation Pack"
+          - "Interactive Game"
+          - "Visual Explainer"
+          - "Step by Step"
           - "Lab Activity"
+          - "Annotated Student Work"
+          - "Exemplars"
+          - "Companion Resource"
           - "Assessment"
-          - "Lesson Plan"
-          - "Game"
-          - "Reference"
+          - "Unit Plan"
+          - "Simulation Activity"
+          - "Case Study"
+          - "Data Analysis"
+          - "Comparison Task"
+          - "Fieldwork Study"
+
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
-        hint: "Add topic tags like: Algebra, Cells, Ecology, Space Science, Reaction Rates, etc."
-      - label: "Formula (displayed on card)"
+        hint: "Subject tags AND criterion tags, e.g.: Algebra, Criterion B, Criterion C"
+
+      - label: "Key Concept"
+        name: "key-concepts"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - "Change"
+          - "Communication"
+          - "Evidence"
+          - "Form"
+          - "Logic"
+          - "Patterns"
+          - "Relationships"
+          - "Representation"
+          - "Systems"
+
+      - label: "Global Context"
+        name: "global-contexts"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - "Identities and Relationships"
+          - "Orientation in Space and Time"
+          - "Personal and Cultural Expression"
+          - "Scientific and Technical Innovation"
+          - "Globalization and Sustainability"
+          - "Fairness and Development"
+
+      - label: "Statement of Inquiry"
+        name: "statement_of_inquiry"
+        widget: "string"
+        required: false
+        hint: "The conceptual understanding students will develop through this investigation"
+
+      - label: "Formula (card display)"
         name: "formula"
         widget: "string"
         required: false
-        hint: "Short formula or text shown on the resource card thumbnail"
+        hint: "Short formula shown on the card thumbnail, e.g. y = mx + c"
+
+      - label: "Difficulty"
+        name: "difficulty"
+        widget: "select"
+        default: "meeting"
+        options:
+          - { label: "🟢 Approaching", value: "approaching" }
+          - { label: "🟡 Meeting", value: "meeting" }
+          - { label: "🔴 Exceeding", value: "exceeding" }
+
+      - label: "Duration"
+        name: "duration"
+        widget: "select"
+        default: "1–2 lessons"
+        options:
+          - "1 lesson"
+          - "1–2 lessons"
+          - "2 lessons"
+          - "2–3 lessons"
+          - "3–4 lessons"
+          - "4–5 lessons"
+
+      - label: "Warm-up Activity"
+        name: "warmup"
+        widget: "text"
+        required: false
+        hint: "Brief warm-up to open the lesson"
+
+      - label: "Teacher Moves"
+        name: "teacher_moves"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+
+      - label: "Hints (progressive)"
+        name: "hints"
+        widget: "list"
+        required: false
+        hint: "Scaffolded hints revealed one at a time"
+
+      - label: "BTC Practices"
+        name: "btc_practices"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - "Visibly Random Groups"
+          - "Vertical Non-Permanent Surfaces"
+          - "Thinking Tasks"
+          - "Consolidation from the Bottom"
+          - "Meaningful Notes"
+
       - label: "Download File"
         name: "download_url"
         widget: "file"
         required: false
-        hint: "Upload a PDF, DOCX, or other file for download"
+
       - label: "Download Label"
         name: "download_label"
         widget: "string"
         required: false
-        default: "PDF document"
-        hint: "Description of the download file"
+        default: "Investigation Pack PDF"
+
+      - label: "Handout PDF"
+        name: "handout_url"
+        widget: "file"
+        required: false
+
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog (Craft)"
+    folder: "learnlattice-v2/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Pillar"
+        name: "pillar"
+        widget: "select"
+        options:
+          - { label: "Craft — Teaching Practice", value: "craft" }
+          - { label: "Thinking — Mental Models", value: "thinking" }
+          - { label: "IB Practice — MYP Specific", value: "ib-practice" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "Reading Time"
+        name: "reading_time"
+        widget: "string"
+        required: false
+        hint: "e.g. 8 min read"
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "pages"
     label: "Pages"
-    folder: "content/pages"
+    folder: "learnlattice-v2/content/pages"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Layout", name: "layout", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }

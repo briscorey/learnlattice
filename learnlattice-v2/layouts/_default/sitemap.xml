@@ -29,9 +29,27 @@
     {{- else if eq .Section "assessment" }}
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    {{- else if eq .Section "games" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     {{- else if and .IsNode (eq .Data.Singular "subject") }}
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    {{- else if and .IsNode (eq .Data.Singular "year_level") }}
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    {{- else if in .RelPermalink "/browse/" }}
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    {{- else if in .RelPermalink "/new/" }}
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    {{- else if in .RelPermalink "/search/" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    {{- else if in .RelPermalink "/students/" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     {{- else }}
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
