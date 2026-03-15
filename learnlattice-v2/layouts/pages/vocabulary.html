@@ -6,164 +6,480 @@
     <h1>Visual Vocabulary</h1>
     <p>Every key term from MYP Mathematics and Science — explained with visuals, not just words.</p>
     <div class="vocab-search-wrap">
-      <input type="text" id="vocabSearch" class="vocab-search" placeholder="Search for a term..." oninput="filterVocab()">
+      <input type="text" id="vocabSearch" class="vocab-search" placeholder="Search 102 terms..." oninput="filterVocab()">
     </div>
   </div>
 </section>
 
+{{/* ── FILTER BAR ── */}}
 <section class="vocab-filters">
   <div class="vocab-filters-inner">
-    <button class="vocab-filter active" data-subj="all" onclick="filterSubj('all',this)">All</button>
-    <button class="vocab-filter" data-subj="math" onclick="filterSubj('math',this)">🔢 Mathematics</button>
-    <button class="vocab-filter" data-subj="science" onclick="filterSubj('science',this)">🔬 Science</button>
+    <div class="vf-row vf-row-subject">
+      <button class="vocab-filter active" data-subj="all" onclick="filterSubj('all',this)">All</button>
+      <button class="vocab-filter" data-subj="math" onclick="filterSubj('math',this)">🔢 Maths</button>
+      <button class="vocab-filter" data-subj="science" onclick="filterSubj('science',this)">🔬 Science</button>
+    </div>
+    <div class="vf-row vf-row-topic" id="topicRow">
+      <!-- populated by JS -->
+    </div>
   </div>
 </section>
 
+{{/* ── A–Z JUMP BAR ── */}}
+<div class="vaz-bar" id="azBar"></div>
+
+{{/* ── TOOLBAR: count + random + flashcard toggle ── */}}
+<div class="vtool-bar">
+  <span class="vtool-count" id="vocabCount">102 terms</span>
+  <div class="vtool-actions">
+    <button class="vtool-btn" id="randomBtn" onclick="showRandom()" title="Random term">🎲 Random</button>
+    <button class="vtool-btn" id="flashBtn" onclick="toggleFlashcard()" title="Flashcard mode">🃏 Flashcard</button>
+  </div>
+</div>
+
+{{/* ── FLASHCARD MODE ── */}}
+<div class="vflash-overlay" id="flashOverlay" style="display:none">
+  <div class="vflash-card" id="flashCard" onclick="flipCard()">
+    <div class="vflash-front" id="flashFront"></div>
+    <div class="vflash-back" id="flashBack"></div>
+  </div>
+  <div class="vflash-nav">
+    <button class="vflash-btn" onclick="flashPrev()">← Prev</button>
+    <span class="vflash-counter" id="flashCounter">1 / 102</span>
+    <button class="vflash-btn" onclick="flashNext()">Next →</button>
+  </div>
+  <button class="vflash-close" onclick="toggleFlashcard()">✕ Close</button>
+  <p class="vflash-hint">Click the card to flip it. Arrow keys to navigate.</p>
+</div>
+
+{{/* ── CARDS GRID ── */}}
 <section class="vocab-grid-section">
   <div class="vocab-grid" id="vocabGrid"></div>
+  <div class="vocab-empty" id="vocabEmpty" style="display:none">No terms match your search.</div>
 </section>
 
 {{ partial "newsletter.html" . }}
 
 <script>
 var vocab = [
-  {term:"Variable",def:"A letter (like x or n) that represents a number we don't know yet.",visual:"🔤",subj:"math",example:"In 3x + 1 = 10, the variable is x.",link:"/resources/understand-algebra/"},
-  {term:"Constant",def:"A number that does not change. It stays the same in every case.",visual:"🔒",subj:"math",example:"In T(n) = 3n + 2, the constant is 2."},
-  {term:"Coefficient",def:"The number multiplied by a variable.",visual:"×",subj:"math",example:"In 5x, the coefficient is 5."},
-  {term:"Mean",def:"Add up all the values, divide by how many there are. The average.",visual:"📊",subj:"math",example:"Mean of 3, 7, 5 = (3+7+5) ÷ 3 = 5."},
-  {term:"Median",def:"The middle value when all numbers are in order.",visual:"↕️",subj:"math",example:"In 2, 5, 8, 9, 12 — the median is 8."},
-  {term:"Mode",def:"The value that appears most often.",visual:"🔁",subj:"math",example:"In 3, 5, 5, 7, 9 — the mode is 5."},
-  {term:"Ratio",def:"A comparison between two quantities. How many of one thing for each of another.",visual:"⚖️",subj:"math",example:"3 red : 5 blue means for every 3 red there are 5 blue."},
-  {term:"Proportional",def:"Two quantities that increase at the same rate. When one doubles, the other doubles.",visual:"📈",subj:"math",example:"Bounce height is proportional to drop height."},
-  {term:"Linear",def:"A relationship that makes a straight line on a graph. Constant rate of change.",visual:"📏",subj:"math",example:"y = 2x + 1 is linear. The graph is a straight line."},
-  {term:"Gradient",def:"How steep a line is. Rise divided by run.",visual:"⛰️",subj:"math",example:"A line going up 3 for every 1 across has gradient 3."},
-  {term:"Common Difference",def:"The amount added each time in a number sequence.",visual:"➕",subj:"math",example:"In 4, 7, 10, 13... the common difference is 3."},
-  {term:"Density",def:"How much mass is packed into a given volume. Dense things are heavy for their size.",visual:"🧱",subj:"science",example:"Steel is dense (7.9 g/cm³). Cork is not (0.24 g/cm³).",link:"/resources/understand-density/"},
-  {term:"Mass",def:"The amount of matter in an object. Measured in grams or kilograms.",visual:"⚖️",subj:"science",example:"A 1 kg bag of sugar has the same mass everywhere — even on the Moon."},
-  {term:"Volume",def:"The amount of space an object takes up. Measured in cm³ or mL.",visual:"📦",subj:"science",example:"A cube 10 cm × 10 cm × 10 cm has a volume of 1000 cm³."},
-  {term:"Hypothesis",def:"A testable prediction about what you think will happen and why.",visual:"💭",subj:"science",example:"If I increase temperature, the reaction rate will increase because particles move faster."},
-  {term:"Variable (Science)",def:"Something that can change in an experiment. Three types: independent, dependent, controlled.",visual:"🔀",subj:"science",example:"Independent = what you change. Dependent = what you measure. Controlled = what you keep the same."},
-  {term:"Frequency",def:"How many times something happens in a given time period. In waves: vibrations per second (Hz).",visual:"〰️",subj:"science",example:"A 440 Hz sound wave vibrates 440 times per second.",link:"/resources/waves-and-sound-investigation/"},
-  {term:"Wavelength",def:"The distance between two consecutive peaks (or troughs) of a wave.",visual:"🌊",subj:"science",example:"Red light has a longer wavelength than blue light."},
-  {term:"Amplitude",def:"The height of a wave from the resting position to the peak. Bigger amplitude = louder/brighter.",visual:"📶",subj:"science",example:"A loud sound has a large amplitude. A quiet sound has a small amplitude."},
-  {term:"Ecosystem",def:"A community of living things and the non-living environment they interact with.",visual:"🌿",subj:"science",example:"A pond ecosystem includes fish, plants, water, sunlight, and bacteria.",link:"/resources/grade-6-schoolyard-ecosystem-investigation/"},
-  {term:"Reactant",def:"A substance that is used up in a chemical reaction. It goes in.",visual:"⬅️",subj:"science",example:"In burning: fuel + oxygen are reactants."},
-  {term:"Product",def:"A substance that is made in a chemical reaction. It comes out.",visual:"➡️",subj:"science",example:"In burning: carbon dioxide + water are products."},
-  {term:"Catalyst",def:"A substance that speeds up a reaction without being used up itself.",visual:"⚡",subj:"science",example:"Enzymes are biological catalysts. They make reactions in your body fast enough to keep you alive.",link:"/resources/reaction-rate-lab-game/"},
-  {term:"Photosynthesis",def:"The process plants use to convert sunlight, water, and CO₂ into glucose and oxygen.",visual:"☀️🌱",subj:"science",example:"Without photosynthesis, there would be no oxygen in the atmosphere."},
-  {term:"Probability",def:"How likely something is to happen. Measured from 0 (impossible) to 1 (certain).",visual:"🎲",subj:"math",example:"The probability of rolling a 6 on a fair die is 1/6 ≈ 0.167.",link:"/resources/probability-simulator-game/"},
-  {term:"Exponential Growth",def:"Growth that multiplies by the same factor each time. Gets very big very fast.",visual:"🚀",subj:"math",example:"Bacteria doubling every 20 minutes: 1 → 2 → 4 → 8 → 16 → ...",link:"/resources/population-prediction-idu/"},
-  {term:"Conduction",def:"Heat transfer through direct contact. Particles vibrate and pass energy to neighbours.",visual:"🤝",subj:"science",example:"A metal spoon in hot soup gets hot — heat conducts through the metal.",link:"/resources/heat-transfer-investigation/"},
-  {term:"Convection",def:"Heat transfer through fluid movement. Hot fluid rises, cool fluid sinks.",visual:"♨️",subj:"science",example:"Hot air rises above a radiator, cool air flows in to replace it."},
-  {term:"Radiation",def:"Heat transfer through electromagnetic waves. No medium needed.",visual:"☀️",subj:"science",example:"The Sun heats the Earth through radiation across empty space."},
-  {term:"Tessellation",def:"A pattern of shapes that fit together with no gaps and no overlaps.",visual:"🔷",subj:"math",example:"Only three regular shapes tessellate: triangles, squares, and hexagons.",link:"/resources/grade-6-tessellation-explorer-investigation/"},
-  {term:"Equation",def:"A mathematical sentence with an equals sign. Both sides have the same value.",visual:"=",subj:"math",example:"3x + 1 = 10 is an equation. x = 3 makes both sides equal 10."},
-  {term:"Expression",def:"Numbers and letters combined with operations — but NO equals sign.",visual:"📝",subj:"math",example:"3x + 1 is an expression. It is not an equation because there is no = sign."},
-  {term:"Integer",def:"A whole number. Can be positive, negative, or zero.",visual:"🔢",subj:"math",example:"-3, 0, 7, and 142 are all integers. 0.5 is not."},
-  {term:"Rational Number",def:"Any number that can be written as a fraction a/b where a and b are integers.",visual:"½",subj:"math",example:"0.75 = 3/4 (rational). π cannot be written as a fraction (irrational)."},
-  {term:"Prime Number",def:"A number greater than 1 that has exactly two factors: 1 and itself.",visual:"🔑",subj:"math",example:"2, 3, 5, 7, 11 are prime. 4 is not (factors: 1, 2, 4).",link:"/resources/prime-maze-game/"},
-  {term:"Factor",def:"A number that divides exactly into another number with no remainder.",visual:"÷",subj:"math",example:"The factors of 12 are: 1, 2, 3, 4, 6, 12."},
-  {term:"Multiple",def:"The result of multiplying a number by any integer.",visual:"×",subj:"math",example:"Multiples of 5: 5, 10, 15, 20, 25, ..."},
-  {term:"Area",def:"The amount of space inside a 2D shape. Measured in square units.",visual:"⬛",subj:"math",example:"A rectangle 4cm × 3cm has area = 12 cm²."},
-  {term:"Perimeter",def:"The total distance around the outside of a shape.",visual:"🔲",subj:"math",example:"A rectangle 4cm × 3cm has perimeter = 14 cm."},
-  {term:"Circumference",def:"The distance around a circle. Calculated as C = πd or C = 2πr.",visual:"⭕",subj:"math",example:"A circle with diameter 10 cm has circumference ≈ 31.4 cm."},
-  {term:"Diameter",def:"The distance across a circle through the centre. Twice the radius.",visual:"↔️",subj:"math",example:"If radius = 5 cm, diameter = 10 cm."},
-  {term:"Radius",def:"The distance from the centre of a circle to its edge. Half the diameter.",visual:"📏",subj:"math",example:"If diameter = 10 cm, radius = 5 cm."},
-  {term:"Parallel",def:"Lines that are always the same distance apart. They never meet.",visual:"‖",subj:"math",example:"Railway tracks are parallel. They run side by side."},
-  {term:"Perpendicular",def:"Lines that meet at exactly 90 degrees (a right angle).",visual:"⊥",subj:"math",example:"The corner of a page is where two perpendicular edges meet."},
-  {term:"Symmetry",def:"When one half of a shape is a mirror image of the other half.",visual:"🦋",subj:"math",example:"A butterfly has one line of symmetry — left mirrors right."},
-  {term:"Translation",def:"Sliding a shape to a new position without rotating or flipping it.",visual:"➡️",subj:"math",example:"Move every point 3 right and 2 up: (x,y) → (x+3, y+2).",link:"/resources/geometry-transformer-game/"},
-  {term:"Rotation",def:"Turning a shape around a fixed point by a certain angle.",visual:"↻",subj:"math",example:"Rotate 90° clockwise: (x,y) → (y, -x).",link:"/resources/geometry-transformer-game/"},
-  {term:"Reflection",def:"Flipping a shape over a line to create a mirror image.",visual:"🪞",subj:"math",example:"Reflect in the y-axis: (x,y) → (-x, y).",link:"/resources/geometry-transformer-game/"},
-  {term:"Scale Factor",def:"The number you multiply by to enlarge or reduce a shape.",visual:"🔍",subj:"math",example:"Scale factor 2 means every length doubles. Scale factor 0.5 means every length halves."},
-  {term:"Sequence",def:"An ordered list of numbers that follow a rule.",visual:"1️⃣",subj:"math",example:"2, 5, 8, 11, 14, ... is a sequence with common difference 3.",link:"/resources/worked-example-nth-term/"},
-  {term:"Function",def:"A rule that takes an input and produces exactly one output.",visual:"⚙️",subj:"math",example:"f(x) = 2x + 1. Input 3 → output 7.",link:"/resources/function-machine-game/"},
-  {term:"Inequality",def:"A statement that one value is greater than, less than, or not equal to another.",visual:"≠",subj:"math",example:"x > 5 means x is any number greater than 5."},
-  {term:"Coordinates",def:"Two numbers (x, y) that describe a position on a grid.",visual:"📍",subj:"math",example:"(3, 5) means 3 across and 5 up from the origin."},
-  {term:"Origin",def:"The point (0, 0) where the x-axis and y-axis cross.",visual:"⊕",subj:"math",example:"All coordinates are measured from the origin."},
-  {term:"Intercept",def:"Where a line crosses an axis. Y-intercept is where x = 0.",visual:"✖️",subj:"math",example:"y = 3x + 2 has y-intercept = 2 (the line crosses the y-axis at 2)."},
-  {term:"Correlation",def:"A relationship between two variables. Positive: both increase. Negative: one increases as the other decreases.",visual:"📈📉",subj:"math",example:"Height and shoe size have positive correlation. Temperature and hot chocolate sales have negative correlation."},
-  {term:"Outlier",def:"A data point that is far away from the others. It does not fit the pattern.",visual:"⚠️",subj:"math",example:"Test scores: 72, 75, 78, 80, 81, 12. The 12 is an outlier."},
-  {term:"Range",def:"The difference between the highest and lowest values in a dataset.",visual:"↕️",subj:"math",example:"Data: 3, 7, 12, 15, 20. Range = 20 − 3 = 17."},
-  {term:"Sample",def:"A smaller group selected from a larger population to study.",visual:"🧪",subj:"math",example:"Asking 50 students about lunch preferences is a sample. The whole school is the population."},
-  {term:"Cell",def:"The basic unit of life. All living things are made of cells.",visual:"🔬",subj:"science",example:"Your body contains about 37 trillion cells. Each one is alive."},
-  {term:"Nucleus",def:"The control centre of a cell. Contains DNA.",visual:"🎯",subj:"science",example:"The nucleus tells the cell what proteins to make.",link:"/resources/cell-explorer-game/"},
-  {term:"Mitochondria",def:"The powerhouses of the cell. They release energy from glucose through respiration.",visual:"⚡",subj:"science",example:"Muscle cells have lots of mitochondria because they need lots of energy."},
-  {term:"Chloroplast",def:"Found in plant cells only. Where photosynthesis happens.",visual:"🌿",subj:"science",example:"Chloroplasts contain chlorophyll, which absorbs light and makes plants green."},
-  {term:"Diffusion",def:"The movement of particles from an area of high concentration to low concentration.",visual:"💨",subj:"science",example:"Perfume spreading across a room is diffusion — particles move from the bottle to the air."},
-  {term:"Osmosis",def:"The movement of water molecules through a partially permeable membrane from dilute to concentrated solution.",visual:"💧",subj:"science",example:"Plant roots absorb water by osmosis — water moves from wet soil into the root cells."},
-  {term:"Respiration",def:"The chemical process that releases energy from glucose in every living cell. Not the same as breathing.",visual:"🫁",subj:"science",example:"Glucose + Oxygen → Carbon Dioxide + Water + Energy. This happens in mitochondria."},
-  {term:"Compound",def:"A substance made of two or more different elements chemically bonded together.",visual:"🔗",subj:"science",example:"Water (H₂O) is a compound — hydrogen and oxygen bonded together."},
-  {term:"Element",def:"A substance made of only one type of atom. Cannot be broken down further by chemical means.",visual:"⚛️",subj:"science",example:"Gold (Au), oxygen (O), and carbon (C) are elements."},
-  {term:"Atom",def:"The smallest particle of an element that still has the properties of that element.",visual:"⚛️",subj:"science",example:"A gold atom is the smallest piece of gold possible."},
-  {term:"Molecule",def:"Two or more atoms bonded together.",visual:"🔗",subj:"science",example:"O₂ is a molecule (two oxygen atoms). H₂O is also a molecule."},
-  {term:"Ion",def:"An atom that has gained or lost electrons, giving it an electrical charge.",visual:"⊕⊖",subj:"science",example:"Na⁺ is a sodium ion (lost 1 electron). Cl⁻ is a chloride ion (gained 1 electron)."},
-  {term:"pH",def:"A scale from 0 to 14 measuring how acidic or alkaline a substance is. 7 is neutral.",visual:"🧪",subj:"science",example:"Lemon juice ≈ pH 2 (acidic). Water = pH 7 (neutral). Bleach ≈ pH 12 (alkaline)."},
-  {term:"Chemical Reaction",def:"A process where reactants are transformed into products. Bonds break and new bonds form.",visual:"💥",subj:"science",example:"Burning wood: wood + oxygen → carbon dioxide + water + heat."},
-  {term:"Exothermic",def:"A reaction that releases energy (usually heat) to the surroundings.",visual:"🔥",subj:"science",example:"Burning, neutralisation, and respiration are exothermic — they give out heat."},
-  {term:"Endothermic",def:"A reaction that absorbs energy from the surroundings, making them feel cold.",visual:"❄️",subj:"science",example:"Photosynthesis and dissolving ammonium nitrate are endothermic."},
-  {term:"Current",def:"The flow of electrical charge through a circuit. Measured in amperes (A).",visual:"⚡",subj:"science",example:"More current = brighter bulb. Current is the same everywhere in a series circuit.",link:"/resources/circuit-builder-game/"},
-  {term:"Voltage",def:"The push that drives current around a circuit. Measured in volts (V).",visual:"🔋",subj:"science",example:"A 12V battery pushes harder than a 1.5V battery. More voltage = more current (if resistance stays the same)."},
-  {term:"Resistance",def:"How much a component opposes the flow of current. Measured in ohms (Ω).",visual:"🚧",subj:"science",example:"A thin wire has more resistance than a thick wire. More resistance = less current."},
-  {term:"Force",def:"A push or a pull. Measured in newtons (N). Can change speed, direction, or shape.",visual:"💪",subj:"science",example:"Gravity pulls you down (your weight in N). The floor pushes you up (normal force)."},
-  {term:"Gravity",def:"The force of attraction between any two masses. On Earth: 9.8 N/kg.",visual:"🌍",subj:"science",example:"A 1 kg object weighs about 9.8 N on Earth but only 1.6 N on the Moon."},
-  {term:"Friction",def:"A force that opposes motion between two surfaces in contact.",visual:"✋",subj:"science",example:"Rough surfaces have more friction. Ice has very little friction."},
-  {term:"Speed",def:"How fast something is moving. Distance divided by time.",visual:"🏃",subj:"science",example:"If you run 100m in 12.5 seconds, your speed = 100 ÷ 12.5 = 8 m/s.",link:"/resources/worked-example-distance-time/"},
-  {term:"Acceleration",def:"How quickly speed is changing. Measured in m/s².",visual:"🚀",subj:"science",example:"Going from 0 to 20 m/s in 5 seconds = acceleration of 4 m/s²."},
-  {term:"Kinetic Energy",def:"The energy an object has because it is moving. KE = ½mv².",visual:"🏎️",subj:"science",example:"A fast car has more kinetic energy than a slow one. Doubling speed quadruples KE."},
-  {term:"Potential Energy",def:"Stored energy due to position or condition. Gravitational PE = mgh.",visual:"⬆️",subj:"science",example:"A ball held high has gravitational PE. When dropped, PE converts to KE."},
-  {term:"Tectonic Plates",def:"Giant slabs of rock that make up Earth's surface. They move slowly over the mantle.",visual:"🌍",subj:"science",example:"The Pacific Plate moves about 7-10 cm per year — roughly as fast as your fingernails grow.",link:"/resources/tectonic-puzzle-game/"},
-  {term:"Earthquake",def:"A sudden shaking of the ground caused by tectonic plate movement.",visual:"💥",subj:"science",example:"Earthquakes happen at plate boundaries where plates push together, pull apart, or slide past each other."},
-  {term:"Volcano",def:"An opening in Earth's crust where molten rock (magma) reaches the surface.",visual:"🌋",subj:"science",example:"Volcanoes often form at subduction zones where one plate slides under another."},
-  {term:"Erosion",def:"The wearing away and transport of rock and soil by wind, water, or ice.",visual:"🌊",subj:"science",example:"Rivers erode their banks. Glaciers carve valleys. Wind shapes desert rocks."},
-  {term:"Weathering",def:"The breaking down of rock in place — without movement. Physical, chemical, or biological.",visual:"🪨",subj:"science",example:"Freeze-thaw: water gets into cracks, freezes, expands, and breaks the rock apart."},
-  {term:"Fossil",def:"The preserved remains or traces of ancient organisms found in rock.",visual:"🦴",subj:"science",example:"Fossils of the same species on different continents are evidence that the continents were once joined."},
-  {term:"Natural Selection",def:"The process where organisms better adapted to their environment survive and reproduce more.",visual:"🦎",subj:"science",example:"Darker moths survived better on soot-covered trees during the Industrial Revolution."},
-  {term:"Adaptation",def:"A feature of an organism that helps it survive in its environment.",visual:"🐪",subj:"science",example:"A camel's hump stores fat (not water). Long eyelashes keep out sand. Both are adaptations to desert life."},
-  {term:"Food Chain",def:"A sequence showing what eats what. Energy flows from producer to consumers.",visual:"🔗",subj:"science",example:"Grass → Rabbit → Fox → Eagle. Each arrow means 'is eaten by'.",link:"/resources/food-web-builder-game/"},
-  {term:"Producer",def:"An organism that makes its own food from sunlight (photosynthesis). Always at the start of a food chain.",visual:"🌱",subj:"science",example:"Grass, trees, algae, and phytoplankton are all producers."},
-  {term:"Consumer",def:"An organism that gets energy by eating other organisms.",visual:"🐾",subj:"science",example:"Primary consumers eat producers. Secondary consumers eat primary consumers."},
-  {term:"Decomposer",def:"An organism that breaks down dead matter, returning nutrients to the soil.",visual:"🍄",subj:"science",example:"Fungi and bacteria are decomposers. Without them, dead material would pile up forever."},
-  {term:"Biodiversity",def:"The variety of different species in an area. Higher biodiversity = healthier ecosystem.",visual:"🌍",subj:"science",example:"A tropical rainforest has high biodiversity. A monoculture farm has very low biodiversity.",link:"/resources/grade-6-schoolyard-ecosystem-investigation/"},
-  {term:"Habitat",def:"The natural environment where an organism lives.",visual:"🏠",subj:"science",example:"A pond is a habitat for frogs. A desert is a habitat for cacti."},
-  {term:"Niche",def:"The specific role an organism plays in its ecosystem — what it eats, where it lives, when it is active.",visual:"🎭",subj:"science",example:"Two species cannot occupy the same niche in the same habitat for long — one will outcompete the other."},
-  {term:"Renewable Energy",def:"Energy from sources that are naturally replenished. Will not run out.",visual:"♻️",subj:"science",example:"Solar, wind, hydroelectric, and geothermal are renewable. Coal and gas are not."},
-  {term:"Greenhouse Effect",def:"When certain gases trap heat in the atmosphere, warming the planet.",visual:"🌡️",subj:"science",example:"CO₂ and methane are greenhouse gases. Some greenhouse effect is natural and necessary. Too much causes warming."},
+  {term:"Variable",def:"A letter (like x or n) that represents a number we don't know yet.",visual:"🔤",subj:"math",topic:"algebra",example:"In 3x + 1 = 10, the variable is x.",link:"/resources/understand-algebra/"},
+  {term:"Constant",def:"A number that does not change. It stays the same in every case.",visual:"🔒",subj:"math",topic:"algebra",example:"In T(n) = 3n + 2, the constant is 2."},
+  {term:"Coefficient",def:"The number multiplied by a variable.",visual:"×",subj:"math",topic:"algebra",example:"In 5x, the coefficient is 5."},
+  {term:"Mean",def:"Add up all the values, divide by how many there are. The average.",visual:"📊",subj:"math",topic:"statistics",example:"Mean of 3, 7, 5 = (3+7+5) ÷ 3 = 5."},
+  {term:"Median",def:"The middle value when all numbers are in order.",visual:"↕️",subj:"math",topic:"statistics",example:"In 2, 5, 8, 9, 12 — the median is 8."},
+  {term:"Mode",def:"The value that appears most often.",visual:"🔁",subj:"math",topic:"statistics",example:"In 3, 5, 5, 7, 9 — the mode is 5."},
+  {term:"Ratio",def:"A comparison between two quantities. How many of one thing for each of another.",visual:"⚖️",subj:"math",topic:"statistics",example:"3 red : 5 blue means for every 3 red there are 5 blue."},
+  {term:"Proportional",def:"Two quantities that increase at the same rate. When one doubles, the other doubles.",visual:"📈",subj:"math",topic:"statistics",example:"Bounce height is proportional to drop height."},
+  {term:"Linear",def:"A relationship that makes a straight line on a graph. Constant rate of change.",visual:"📏",subj:"math",topic:"algebra",example:"y = 2x + 1 is linear. The graph is a straight line."},
+  {term:"Gradient",def:"How steep a line is. Rise divided by run.",visual:"⛰️",subj:"math",topic:"algebra",example:"A line going up 3 for every 1 across has gradient 3."},
+  {term:"Common Difference",def:"The amount added each time in a number sequence.",visual:"➕",subj:"math",topic:"algebra",example:"In 4, 7, 10, 13... the common difference is 3."},
+  {term:"Density",def:"How much mass is packed into a given volume. Dense things are heavy for their size.",visual:"🧱",subj:"science",topic:"physics",example:"Steel is dense (7.9 g/cm³). Cork is not (0.24 g/cm³).",link:"/resources/understand-density/"},
+  {term:"Mass",def:"The amount of matter in an object. Measured in grams or kilograms.",visual:"⚖️",subj:"science",topic:"physics",example:"A 1 kg bag of sugar has the same mass everywhere — even on the Moon."},
+  {term:"Volume",def:"The amount of space an object takes up. Measured in cm³ or mL.",visual:"📦",subj:"science",topic:"physics",example:"A cube 10 cm × 10 cm × 10 cm has a volume of 1000 cm³."},
+  {term:"Hypothesis",def:"A testable prediction about what you think will happen and why.",visual:"💭",subj:"science",topic:"skills",example:"If I increase temperature, the reaction rate will increase because particles move faster."},
+  {term:"Variable (Science)",def:"Something that can change in an experiment. Three types: independent, dependent, controlled.",visual:"🔀",subj:"science",topic:"skills",example:"Independent = what you change. Dependent = what you measure. Controlled = what you keep the same."},
+  {term:"Frequency",def:"How many times something happens in a given time period. In waves: vibrations per second (Hz).",visual:"〰️",subj:"science",topic:"physics",example:"A 440 Hz sound wave vibrates 440 times per second.",link:"/resources/waves-and-sound-investigation/"},
+  {term:"Wavelength",def:"The distance between two consecutive peaks (or troughs) of a wave.",visual:"🌊",subj:"science",topic:"physics",example:"Red light has a longer wavelength than blue light."},
+  {term:"Amplitude",def:"The height of a wave from the resting position to the peak. Bigger amplitude = louder/brighter.",visual:"📶",subj:"science",topic:"physics",example:"A loud sound has a large amplitude. A quiet sound has a small amplitude."},
+  {term:"Ecosystem",def:"A community of living things and the non-living environment they interact with.",visual:"🌿",subj:"science",topic:"biology",example:"A pond ecosystem includes fish, plants, water, sunlight, and bacteria.",link:"/resources/grade-6-schoolyard-ecosystem-investigation/"},
+  {term:"Reactant",def:"A substance that is used up in a chemical reaction. It goes in.",visual:"⬅️",subj:"science",topic:"chemistry",example:"In burning: fuel + oxygen are reactants."},
+  {term:"Product",def:"A substance that is made in a chemical reaction. It comes out.",visual:"➡️",subj:"science",topic:"chemistry",example:"In burning: carbon dioxide + water are products."},
+  {term:"Catalyst",def:"A substance that speeds up a reaction without being used up itself.",visual:"⚡",subj:"science",topic:"chemistry",example:"Enzymes are biological catalysts. They make reactions in your body fast enough to keep you alive.",link:"/resources/reaction-rate-lab-game/"},
+  {term:"Photosynthesis",def:"The process plants use to convert sunlight, water, and CO₂ into glucose and oxygen.",visual:"☀️🌱",subj:"science",topic:"biology",example:"Without photosynthesis, there would be no oxygen in the atmosphere."},
+  {term:"Probability",def:"How likely something is to happen. Measured from 0 (impossible) to 1 (certain).",visual:"🎲",subj:"math",topic:"statistics",example:"The probability of rolling a 6 on a fair die is 1/6 ≈ 0.167.",link:"/resources/probability-simulator-game/"},
+  {term:"Exponential Growth",def:"Growth that multiplies by the same factor each time. Gets very big very fast.",visual:"🚀",subj:"math",topic:"number",example:"Bacteria doubling every 20 minutes: 1 → 2 → 4 → 8 → 16 → ...",link:"/resources/population-prediction-idu/"},
+  {term:"Conduction",def:"Heat transfer through direct contact. Particles vibrate and pass energy to neighbours.",visual:"🤝",subj:"science",topic:"physics",example:"A metal spoon in hot soup gets hot — heat conducts through the metal.",link:"/resources/heat-transfer-investigation/"},
+  {term:"Convection",def:"Heat transfer through fluid movement. Hot fluid rises, cool fluid sinks.",visual:"♨️",subj:"science",topic:"physics",example:"Hot air rises above a radiator, cool air flows in to replace it."},
+  {term:"Radiation",def:"Heat transfer through electromagnetic waves. No medium needed.",visual:"☀️",subj:"science",topic:"physics",example:"The Sun heats the Earth through radiation across empty space."},
+  {term:"Tessellation",def:"A pattern of shapes that fit together with no gaps and no overlaps.",visual:"🔷",subj:"math",topic:"geometry",example:"Only three regular shapes tessellate: triangles, squares, and hexagons.",link:"/resources/grade-6-tessellation-explorer-investigation/"},
+  {term:"Equation",def:"A mathematical sentence with an equals sign. Both sides have the same value.",visual:"=",subj:"math",topic:"algebra",example:"3x + 1 = 10 is an equation. x = 3 makes both sides equal 10."},
+  {term:"Expression",def:"Numbers and letters combined with operations — but NO equals sign.",visual:"📝",subj:"math",topic:"algebra",example:"3x + 1 is an expression. It is not an equation because there is no = sign."},
+  {term:"Integer",def:"A whole number. Can be positive, negative, or zero.",visual:"🔢",subj:"math",topic:"number",example:"-3, 0, 7, and 142 are all integers. 0.5 is not."},
+  {term:"Rational Number",def:"Any number that can be written as a fraction a/b where a and b are integers.",visual:"½",subj:"math",topic:"number",example:"0.75 = 3/4 (rational). π cannot be written as a fraction (irrational)."},
+  {term:"Prime Number",def:"A number greater than 1 that has exactly two factors: 1 and itself.",visual:"🔑",subj:"math",topic:"number",example:"2, 3, 5, 7, 11 are prime. 4 is not (factors: 1, 2, 4).",link:"/resources/prime-maze-game/"},
+  {term:"Factor",def:"A number that divides exactly into another number with no remainder.",visual:"÷",subj:"math",topic:"number",example:"The factors of 12 are: 1, 2, 3, 4, 6, 12."},
+  {term:"Multiple",def:"The result of multiplying a number by any integer.",visual:"×",subj:"math",topic:"number",example:"Multiples of 5: 5, 10, 15, 20, 25, ..."},
+  {term:"Area",def:"The amount of space inside a 2D shape. Measured in square units.",visual:"⬛",subj:"math",topic:"geometry",example:"A rectangle 4cm × 3cm has area = 12 cm²."},
+  {term:"Perimeter",def:"The total distance around the outside of a shape.",visual:"🔲",subj:"math",topic:"geometry",example:"A rectangle 4cm × 3cm has perimeter = 14 cm."},
+  {term:"Circumference",def:"The distance around a circle. Calculated as C = πd or C = 2πr.",visual:"⭕",subj:"math",topic:"geometry",example:"A circle with diameter 10 cm has circumference ≈ 31.4 cm."},
+  {term:"Diameter",def:"The distance across a circle through the centre. Twice the radius.",visual:"↔️",subj:"math",topic:"geometry",example:"If radius = 5 cm, diameter = 10 cm."},
+  {term:"Radius",def:"The distance from the centre of a circle to its edge. Half the diameter.",visual:"📏",subj:"math",topic:"geometry",example:"If diameter = 10 cm, radius = 5 cm."},
+  {term:"Parallel",def:"Lines that are always the same distance apart. They never meet.",visual:"‖",subj:"math",topic:"geometry",example:"Railway tracks are parallel. They run side by side."},
+  {term:"Perpendicular",def:"Lines that meet at exactly 90 degrees (a right angle).",visual:"⊥",subj:"math",topic:"geometry",example:"The corner of a page is where two perpendicular edges meet."},
+  {term:"Symmetry",def:"When one half of a shape is a mirror image of the other half.",visual:"🦋",subj:"math",topic:"geometry",example:"A butterfly has one line of symmetry — left mirrors right."},
+  {term:"Translation",def:"Sliding a shape to a new position without rotating or flipping it.",visual:"➡️",subj:"math",topic:"geometry",example:"Move every point 3 right and 2 up: (x,y) → (x+3, y+2).",link:"/resources/geometry-transformer-game/"},
+  {term:"Rotation",def:"Turning a shape around a fixed point by a certain angle.",visual:"↻",subj:"math",topic:"geometry",example:"Rotate 90° clockwise: (x,y) → (y, -x).",link:"/resources/geometry-transformer-game/"},
+  {term:"Reflection",def:"Flipping a shape over a line to create a mirror image.",visual:"🪞",subj:"math",topic:"geometry",example:"Reflect in the y-axis: (x,y) → (-x, y).",link:"/resources/geometry-transformer-game/"},
+  {term:"Scale Factor",def:"The number you multiply by to enlarge or reduce a shape.",visual:"🔍",subj:"math",topic:"geometry",example:"Scale factor 2 means every length doubles. Scale factor 0.5 means every length halves."},
+  {term:"Sequence",def:"An ordered list of numbers that follow a rule.",visual:"1️⃣",subj:"math",topic:"algebra",example:"2, 5, 8, 11, 14, ... is a sequence with common difference 3.",link:"/resources/worked-example-nth-term/"},
+  {term:"Function",def:"A rule that takes an input and produces exactly one output.",visual:"⚙️",subj:"math",topic:"algebra",example:"f(x) = 2x + 1. Input 3 → output 7.",link:"/resources/function-machine-game/"},
+  {term:"Inequality",def:"A statement that one value is greater than, less than, or not equal to another.",visual:"≠",subj:"math",topic:"algebra",example:"x > 5 means x is any number greater than 5."},
+  {term:"Coordinates",def:"Two numbers (x, y) that describe a position on a grid.",visual:"📍",subj:"math",topic:"algebra",example:"(3, 5) means 3 across and 5 up from the origin."},
+  {term:"Origin",def:"The point (0, 0) where the x-axis and y-axis cross.",visual:"⊕",subj:"math",topic:"algebra",example:"All coordinates are measured from the origin."},
+  {term:"Intercept",def:"Where a line crosses an axis. Y-intercept is where x = 0.",visual:"✖️",subj:"math",topic:"algebra",example:"y = 3x + 2 has y-intercept = 2 (the line crosses the y-axis at 2)."},
+  {term:"Correlation",def:"A relationship between two variables. Positive: both increase. Negative: one increases as the other decreases.",visual:"📈📉",subj:"math",topic:"statistics",example:"Height and shoe size have positive correlation. Temperature and hot chocolate sales have negative correlation."},
+  {term:"Outlier",def:"A data point that is far away from the others. It does not fit the pattern.",visual:"⚠️",subj:"math",topic:"statistics",example:"Test scores: 72, 75, 78, 80, 81, 12. The 12 is an outlier."},
+  {term:"Range",def:"The difference between the highest and lowest values in a dataset.",visual:"↕️",subj:"math",topic:"statistics",example:"Data: 3, 7, 12, 15, 20. Range = 20 − 3 = 17."},
+  {term:"Sample",def:"A smaller group selected from a larger population to study.",visual:"🧪",subj:"math",topic:"statistics",example:"Asking 50 students about lunch preferences is a sample. The whole school is the population."},
+  {term:"Cell",def:"The basic unit of life. All living things are made of cells.",visual:"🔬",subj:"science",topic:"biology",example:"Your body contains about 37 trillion cells. Each one is alive."},
+  {term:"Nucleus",def:"The control centre of a cell. Contains DNA.",visual:"🎯",subj:"science",topic:"biology",example:"The nucleus tells the cell what proteins to make.",link:"/resources/cell-explorer-game/"},
+  {term:"Mitochondria",def:"The powerhouses of the cell. They release energy from glucose through respiration.",visual:"⚡",subj:"science",topic:"biology",example:"Muscle cells have lots of mitochondria because they need lots of energy."},
+  {term:"Chloroplast",def:"Found in plant cells only. Where photosynthesis happens.",visual:"🌿",subj:"science",topic:"biology",example:"Chloroplasts contain chlorophyll, which absorbs light and makes plants green."},
+  {term:"Diffusion",def:"The movement of particles from an area of high concentration to low concentration.",visual:"💨",subj:"science",topic:"biology",example:"Perfume spreading across a room is diffusion — particles move from the bottle to the air."},
+  {term:"Osmosis",def:"The movement of water molecules through a partially permeable membrane from dilute to concentrated solution.",visual:"💧",subj:"science",topic:"biology",example:"Plant roots absorb water by osmosis — water moves from wet soil into the root cells."},
+  {term:"Respiration",def:"The chemical process that releases energy from glucose in every living cell. Not the same as breathing.",visual:"🫁",subj:"science",topic:"biology",example:"Glucose + Oxygen → Carbon Dioxide + Water + Energy. This happens in mitochondria."},
+  {term:"Compound",def:"A substance made of two or more different elements chemically bonded together.",visual:"🔗",subj:"science",topic:"chemistry",example:"Water (H₂O) is a compound — hydrogen and oxygen bonded together."},
+  {term:"Element",def:"A substance made of only one type of atom. Cannot be broken down further by chemical means.",visual:"⚛️",subj:"science",topic:"chemistry",example:"Gold (Au), oxygen (O), and carbon (C) are elements."},
+  {term:"Atom",def:"The smallest particle of an element that still has the properties of that element.",visual:"⚛️",subj:"science",topic:"chemistry",example:"A gold atom is the smallest piece of gold possible."},
+  {term:"Molecule",def:"Two or more atoms bonded together.",visual:"🔗",subj:"science",topic:"chemistry",example:"O₂ is a molecule (two oxygen atoms). H₂O is also a molecule."},
+  {term:"Ion",def:"An atom that has gained or lost electrons, giving it an electrical charge.",visual:"⊕⊖",subj:"science",topic:"chemistry",example:"Na⁺ is a sodium ion (lost 1 electron). Cl⁻ is a chloride ion (gained 1 electron)."},
+  {term:"pH",def:"A scale from 0 to 14 measuring how acidic or alkaline a substance is. 7 is neutral.",visual:"🧪",subj:"science",topic:"chemistry",example:"Lemon juice ≈ pH 2 (acidic). Water = pH 7 (neutral). Bleach ≈ pH 12 (alkaline)."},
+  {term:"Chemical Reaction",def:"A process where reactants are transformed into products. Bonds break and new bonds form.",visual:"💥",subj:"science",topic:"chemistry",example:"Burning wood: wood + oxygen → carbon dioxide + water + heat."},
+  {term:"Exothermic",def:"A reaction that releases energy (usually heat) to the surroundings.",visual:"🔥",subj:"science",topic:"chemistry",example:"Burning, neutralisation, and respiration are exothermic — they give out heat."},
+  {term:"Endothermic",def:"A reaction that absorbs energy from the surroundings, making them feel cold.",visual:"❄️",subj:"science",topic:"chemistry",example:"Photosynthesis and dissolving ammonium nitrate are endothermic."},
+  {term:"Current",def:"The flow of electrical charge through a circuit. Measured in amperes (A).",visual:"⚡",subj:"science",topic:"physics",example:"More current = brighter bulb. Current is the same everywhere in a series circuit.",link:"/resources/circuit-builder-game/"},
+  {term:"Voltage",def:"The push that drives current around a circuit. Measured in volts (V).",visual:"🔋",subj:"science",topic:"physics",example:"A 12V battery pushes harder than a 1.5V battery. More voltage = more current (if resistance stays the same)."},
+  {term:"Resistance",def:"How much a component opposes the flow of current. Measured in ohms (Ω).",visual:"🚧",subj:"science",topic:"physics",example:"A thin wire has more resistance than a thick wire. More resistance = less current."},
+  {term:"Force",def:"A push or a pull. Measured in newtons (N). Can change speed, direction, or shape.",visual:"💪",subj:"science",topic:"physics",example:"Gravity pulls you down (your weight in N). The floor pushes you up (normal force)."},
+  {term:"Gravity",def:"The force of attraction between any two masses. On Earth: 9.8 N/kg.",visual:"🌍",subj:"science",topic:"physics",example:"A 1 kg object weighs about 9.8 N on Earth but only 1.6 N on the Moon."},
+  {term:"Friction",def:"A force that opposes motion between two surfaces in contact.",visual:"✋",subj:"science",topic:"physics",example:"Rough surfaces have more friction. Ice has very little friction."},
+  {term:"Speed",def:"How fast something is moving. Distance divided by time.",visual:"🏃",subj:"science",topic:"physics",example:"If you run 100m in 12.5 seconds, your speed = 100 ÷ 12.5 = 8 m/s.",link:"/resources/worked-example-distance-time/"},
+  {term:"Acceleration",def:"How quickly speed is changing. Measured in m/s².",visual:"🚀",subj:"science",topic:"physics",example:"Going from 0 to 20 m/s in 5 seconds = acceleration of 4 m/s²."},
+  {term:"Kinetic Energy",def:"The energy an object has because it is moving. KE = ½mv².",visual:"🏎️",subj:"science",topic:"physics",example:"A fast car has more kinetic energy than a slow one. Doubling speed quadruples KE."},
+  {term:"Potential Energy",def:"Stored energy due to position or condition. Gravitational PE = mgh.",visual:"⬆️",subj:"science",topic:"physics",example:"A ball held high has gravitational PE. When dropped, PE converts to KE."},
+  {term:"Tectonic Plates",def:"Giant slabs of rock that make up Earth's surface. They move slowly over the mantle.",visual:"🌍",subj:"science",topic:"earth",example:"The Pacific Plate moves about 7-10 cm per year — roughly as fast as your fingernails grow.",link:"/resources/tectonic-puzzle-game/"},
+  {term:"Earthquake",def:"A sudden shaking of the ground caused by tectonic plate movement.",visual:"💥",subj:"science",topic:"earth",example:"Earthquakes happen at plate boundaries where plates push together, pull apart, or slide past each other."},
+  {term:"Volcano",def:"An opening in Earth's crust where molten rock (magma) reaches the surface.",visual:"🌋",subj:"science",topic:"earth",example:"Volcanoes often form at subduction zones where one plate slides under another."},
+  {term:"Erosion",def:"The wearing away and transport of rock and soil by wind, water, or ice.",visual:"🌊",subj:"science",topic:"earth",example:"Rivers erode their banks. Glaciers carve valleys. Wind shapes desert rocks."},
+  {term:"Weathering",def:"The breaking down of rock in place — without movement. Physical, chemical, or biological.",visual:"🪨",subj:"science",topic:"earth",example:"Freeze-thaw: water gets into cracks, freezes, expands, and breaks the rock apart."},
+  {term:"Fossil",def:"The preserved remains or traces of ancient organisms found in rock.",visual:"🦴",subj:"science",topic:"earth",example:"Fossils of the same species on different continents are evidence that the continents were once joined."},
+  {term:"Natural Selection",def:"The process where organisms better adapted to their environment survive and reproduce more.",visual:"🦎",subj:"science",topic:"biology",example:"Darker moths survived better on soot-covered trees during the Industrial Revolution."},
+  {term:"Adaptation",def:"A feature of an organism that helps it survive in its environment.",visual:"🐪",subj:"science",topic:"biology",example:"A camel's hump stores fat (not water). Long eyelashes keep out sand. Both are adaptations to desert life."},
+  {term:"Food Chain",def:"A sequence showing what eats what. Energy flows from producer to consumers.",visual:"🔗",subj:"science",topic:"biology",example:"Grass → Rabbit → Fox → Eagle. Each arrow means 'is eaten by'.",link:"/resources/food-web-builder-game/"},
+  {term:"Producer",def:"An organism that makes its own food from sunlight (photosynthesis). Always at the start of a food chain.",visual:"🌱",subj:"science",topic:"biology",example:"Grass, trees, algae, and phytoplankton are all producers."},
+  {term:"Consumer",def:"An organism that gets energy by eating other organisms.",visual:"🐾",subj:"science",topic:"biology",example:"Primary consumers eat producers. Secondary consumers eat primary consumers."},
+  {term:"Decomposer",def:"An organism that breaks down dead matter, returning nutrients to the soil.",visual:"🍄",subj:"science",topic:"biology",example:"Fungi and bacteria are decomposers. Without them, dead material would pile up forever."},
+  {term:"Biodiversity",def:"The variety of different species in an area. Higher biodiversity = healthier ecosystem.",visual:"🌍",subj:"science",topic:"biology",example:"A tropical rainforest has high biodiversity. A monoculture farm has very low biodiversity.",link:"/resources/grade-6-schoolyard-ecosystem-investigation/"},
+  {term:"Habitat",def:"The natural environment where an organism lives.",visual:"🏠",subj:"science",topic:"biology",example:"A pond is a habitat for frogs. A desert is a habitat for cacti."},
+  {term:"Niche",def:"The specific role an organism plays in its ecosystem — what it eats, where it lives, when it is active.",visual:"🎭",subj:"science",topic:"biology",example:"Two species cannot occupy the same niche in the same habitat for long — one will outcompete the other."},
+  {term:"Renewable Energy",def:"Energy from sources that are naturally replenished. Will not run out.",visual:"♻️",subj:"science",topic:"earth",example:"Solar, wind, hydroelectric, and geothermal are renewable. Coal and gas are not."},
+  {term:"Greenhouse Effect",def:"When certain gases trap heat in the atmosphere, warming the planet.",visual:"🌡️",subj:"science",topic:"earth",example:"CO₂ and methane are greenhouse gases. Some greenhouse effect is natural and necessary. Too much causes warming."},
 ];
-
 var activeSubj = 'all';
+var activeTopic = 'all';
+var flashMode = false;
+var flashIdx = 0;
+var flashFiltered = [];
+
+var topicLabels = {
+  algebra:'Algebra', geometry:'Geometry', statistics:'Data & Stats', number:'Number',
+  biology:'Biology', chemistry:'Chemistry', physics:'Physics', earth:'Earth Science', skills:'Skills'
+};
+var topicIcons = {
+  algebra:'𝑥', geometry:'📐', statistics:'📊', number:'🔢',
+  biology:'🧬', chemistry:'⚗️', physics:'⚡', earth:'🌍', skills:'🔬'
+};
+
+// Build topic sub-filter buttons
+function buildTopicRow() {
+  var row = document.getElementById('topicRow');
+  var topics = {};
+  vocab.forEach(function(v) {
+    if (v.topic && (activeSubj === 'all' || v.subj === activeSubj)) {
+      topics[v.topic] = (topics[v.topic] || 0) + 1;
+    }
+  });
+  row.innerHTML = '';
+  var sortedTopics = Object.keys(topics).sort(function(a,b) { return topics[b] - topics[a]; });
+  if (sortedTopics.length > 1) {
+    var allBtn = document.createElement('button');
+    allBtn.className = 'vocab-topic-btn' + (activeTopic === 'all' ? ' active' : '');
+    allBtn.textContent = 'All topics';
+    allBtn.onclick = function() { activeTopic = 'all'; filterVocab(); };
+    row.appendChild(allBtn);
+  }
+  sortedTopics.forEach(function(t) {
+    var btn = document.createElement('button');
+    btn.className = 'vocab-topic-btn' + (activeTopic === t ? ' active' : '');
+    btn.innerHTML = (topicIcons[t] || '') + ' ' + (topicLabels[t] || t) + ' <span class="vtb-count">' + topics[t] + '</span>';
+    btn.onclick = function() { activeTopic = t; filterVocab(); };
+    row.appendChild(btn);
+  });
+}
+
+// Build A-Z jump bar
+function buildAZBar(items) {
+  var bar = document.getElementById('azBar');
+  var letters = {};
+  items.forEach(function(v) { letters[v.term[0].toUpperCase()] = true; });
+  var allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  bar.innerHTML = allLetters.map(function(l) {
+    return letters[l]
+      ? '<button class="vaz-letter vaz-active" onclick="jumpTo(\''+l+'\')">' + l + '</button>'
+      : '<span class="vaz-letter vaz-dim">' + l + '</span>';
+  }).join('');
+}
+
+function jumpTo(letter) {
+  var el = document.getElementById('az-' + letter);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 function renderVocab(items) {
   var grid = document.getElementById('vocabGrid');
+  var empty = document.getElementById('vocabEmpty');
   grid.innerHTML = '';
+  
+  // Sort alphabetically
+  items.sort(function(a,b) { return a.term.localeCompare(b.term); });
+  
+  // Update count
+  document.getElementById('vocabCount').textContent = items.length + ' term' + (items.length !== 1 ? 's' : '');
+  
+  if (items.length === 0) {
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+  
+  // Build A-Z bar
+  buildAZBar(items);
+  
+  var lastLetter = '';
   items.forEach(function(v) {
+    var firstLetter = v.term[0].toUpperCase();
+    if (firstLetter !== lastLetter) {
+      var divider = document.createElement('div');
+      divider.className = 'vaz-divider';
+      divider.id = 'az-' + firstLetter;
+      divider.textContent = firstLetter;
+      grid.appendChild(divider);
+      lastLetter = firstLetter;
+    }
+    
     var card = document.createElement('div');
     card.className = 'vocab-card';
     card.dataset.subj = v.subj;
+    card.dataset.topic = v.topic || '';
     var linkHtml = v.link ? '<a href="'+v.link+'" class="vocab-link">See it in action →</a>' : '';
-    card.innerHTML = '<div class="vocab-visual">' + v.visual + '</div><h3>' + v.term + '</h3><p class="vocab-def">' + v.def + '</p><p class="vocab-example">"' + v.example + '"</p>' + linkHtml;
+    var topicHtml = v.topic ? '<span class="vocab-topic-tag">' + (topicLabels[v.topic] || v.topic) + '</span>' : '';
+    card.innerHTML = '<div class="vocab-card-top"><span class="vocab-visual">' + v.visual + '</span>' + topicHtml + '</div><h3>' + v.term + '</h3><p class="vocab-def">' + v.def + '</p><p class="vocab-example">"' + v.example + '"</p>' + linkHtml;
     grid.appendChild(card);
   });
+  
+  flashFiltered = items;
 }
 
 function filterVocab() {
   var q = document.getElementById('vocabSearch').value.toLowerCase();
   var filtered = vocab.filter(function(v) {
     var matchSubj = activeSubj === 'all' || v.subj === activeSubj;
-    var matchSearch = !q || v.term.toLowerCase().includes(q) || v.def.toLowerCase().includes(q);
-    return matchSubj && matchSearch;
+    var matchTopic = activeTopic === 'all' || v.topic === activeTopic;
+    var matchSearch = !q || v.term.toLowerCase().includes(q) || v.def.toLowerCase().includes(q) || (v.example && v.example.toLowerCase().includes(q));
+    return matchSubj && matchTopic && matchSearch;
   });
+  buildTopicRow();
   renderVocab(filtered);
 }
 
 function filterSubj(s, btn) {
   activeSubj = s;
-  document.querySelectorAll('.vocab-filter').forEach(function(b){b.classList.remove('active')});
+  activeTopic = 'all'; // reset topic when subject changes
+  document.querySelectorAll('.vf-row-subject .vocab-filter').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   filterVocab();
 }
 
+// Random term
+function showRandom() {
+  var pool = flashFiltered.length ? flashFiltered : vocab;
+  var v = pool[Math.floor(Math.random() * pool.length)];
+  document.getElementById('vocabSearch').value = v.term;
+  filterVocab();
+  // Scroll to the card
+  setTimeout(function() {
+    var cards = document.querySelectorAll('.vocab-card h3');
+    cards.forEach(function(h) {
+      if (h.textContent === v.term) h.closest('.vocab-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }, 100);
+}
+
+// Flashcard mode
+function toggleFlashcard() {
+  flashMode = !flashMode;
+  var overlay = document.getElementById('flashOverlay');
+  overlay.style.display = flashMode ? 'flex' : 'none';
+  document.body.style.overflow = flashMode ? 'hidden' : '';
+  if (flashMode) {
+    flashIdx = 0;
+    if (!flashFiltered.length) flashFiltered = vocab.slice();
+    showFlashcard();
+  }
+}
+
+function showFlashcard() {
+  var v = flashFiltered[flashIdx];
+  if (!v) return;
+  document.getElementById('flashFront').innerHTML = '<span class="vflash-visual">' + v.visual + '</span><span class="vflash-term">' + v.term + '</span>';
+  document.getElementById('flashBack').innerHTML = '<p class="vflash-def">' + v.def + '</p><p class="vflash-example">"' + v.example + '"</p>';
+  document.getElementById('flashCounter').textContent = (flashIdx + 1) + ' / ' + flashFiltered.length;
+  document.getElementById('flashCard').classList.remove('flipped');
+}
+
+function flipCard() {
+  document.getElementById('flashCard').classList.toggle('flipped');
+}
+
+function flashNext() {
+  flashIdx = (flashIdx + 1) % flashFiltered.length;
+  showFlashcard();
+}
+
+function flashPrev() {
+  flashIdx = (flashIdx - 1 + flashFiltered.length) % flashFiltered.length;
+  showFlashcard();
+}
+
+// Keyboard navigation for flashcards
+document.addEventListener('keydown', function(e) {
+  if (!flashMode) return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); flashNext(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); flashPrev(); }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Enter') { e.preventDefault(); flipCard(); }
+  if (e.key === 'Escape') { toggleFlashcard(); }
+});
+
+buildTopicRow();
 renderVocab(vocab);
 </script>
+
+<style>
+/* ── Topic sub-filters ── */
+.vf-row { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; }
+.vf-row-topic { margin-top:8px; }
+.vocab-topic-btn {
+  padding:5px 12px; border-radius:100px; border:1px solid var(--border);
+  background:var(--surface-card); color:var(--ink-muted); font-size:.72rem;
+  font-weight:500; cursor:pointer; font-family:inherit; transition:all .15s;
+}
+.vocab-topic-btn:hover { border-color:var(--teal); color:var(--teal); }
+.vocab-topic-btn.active { background:var(--teal-wash); border-color:var(--teal); color:var(--teal); font-weight:600; }
+.vtb-count {
+  font-size:.6rem; background:var(--surface-warm); padding:1px 5px;
+  border-radius:8px; margin-left:3px; color:var(--ink-muted);
+}
+.vocab-topic-btn.active .vtb-count { background:rgba(13,148,136,0.15); color:var(--teal); }
+html.dark .vocab-topic-btn { background:#1e293b; border-color:#334155; }
+html.dark .vocab-topic-btn.active { background:rgba(20,184,166,0.12); }
+
+/* ── A-Z jump bar ── */
+.vaz-bar {
+  display:flex; gap:2px; justify-content:center; flex-wrap:wrap;
+  padding:10px 24px; max-width:700px; margin:0 auto;
+}
+.vaz-letter {
+  width:28px; height:28px; display:flex; align-items:center; justify-content:center;
+  font-size:.7rem; font-weight:600; border-radius:6px; border:none; font-family:inherit;
+}
+.vaz-active {
+  background:var(--surface-card); color:var(--ink); cursor:pointer;
+  border:1px solid var(--border); transition:all .12s;
+}
+.vaz-active:hover { background:var(--teal-wash); color:var(--teal); border-color:var(--teal); }
+.vaz-dim { color:var(--border); }
+
+/* ── Toolbar ── */
+.vtool-bar {
+  display:flex; align-items:center; justify-content:space-between;
+  max-width:1000px; margin:0 auto; padding:8px 24px;
+}
+.vtool-count { font-size:.78rem; color:var(--ink-muted); font-weight:500; }
+.vtool-actions { display:flex; gap:6px; }
+.vtool-btn {
+  padding:6px 14px; border-radius:8px; border:1px solid var(--border);
+  background:var(--surface-card); color:var(--ink-muted); font-size:.75rem;
+  font-weight:600; cursor:pointer; font-family:inherit; transition:all .15s;
+}
+.vtool-btn:hover { border-color:var(--teal); color:var(--teal); }
+html.dark .vtool-btn { background:#1e293b; border-color:#334155; }
+
+/* ── A-Z dividers in grid ── */
+.vaz-divider {
+  grid-column: 1 / -1; font-family:'DM Serif Display',serif;
+  font-size:1.4rem; color:var(--teal); padding:20px 0 6px; 
+  border-bottom:1px solid var(--border); margin-bottom:4px; scroll-margin-top:80px;
+}
+
+/* ── Topic tags on cards ── */
+.vocab-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.vocab-topic-tag {
+  font-size:.58rem; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  padding:2px 8px; border-radius:6px; background:var(--surface-warm);
+  color:var(--ink-muted); border:1px solid var(--border);
+}
+
+/* ── Empty state ── */
+.vocab-empty { text-align:center; padding:40px 24px; color:var(--ink-muted); font-size:.9rem; }
+
+/* ── Flashcard overlay ── */
+.vflash-overlay {
+  position:fixed; inset:0; z-index:10000; background:rgba(10,15,26,0.92);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:24px; backdrop-filter:blur(8px);
+}
+.vflash-card {
+  width:100%; max-width:480px; min-height:260px; perspective:800px;
+  cursor:pointer; position:relative;
+}
+.vflash-front, .vflash-back {
+  position:absolute; inset:0; backface-visibility:hidden;
+  border-radius:20px; padding:40px 32px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.vflash-front {
+  background:linear-gradient(135deg,#1e293b,#334155); border:2px solid #475569;
+  color:#e2e8f0;
+}
+.vflash-back {
+  background:linear-gradient(135deg,#0D9488,#0a7c72); border:2px solid #14b8a6;
+  color:#fff; transform:rotateY(180deg);
+}
+.vflash-card.flipped .vflash-front { transform:rotateY(-180deg); }
+.vflash-card.flipped .vflash-back { transform:rotateY(0); }
+.vflash-visual { font-size:3rem; margin-bottom:16px; }
+.vflash-term { font-family:'DM Serif Display',serif; font-size:2rem; }
+.vflash-def { font-size:1.1rem; line-height:1.6; margin-bottom:16px; }
+.vflash-example { font-size:.88rem; opacity:.8; font-style:italic; line-height:1.5; }
+.vflash-nav { display:flex; align-items:center; gap:20px; margin-top:24px; }
+.vflash-btn {
+  padding:10px 20px; border-radius:10px; border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.08); color:#e2e8f0; font-size:.88rem;
+  font-weight:600; cursor:pointer; font-family:inherit; transition:all .15s;
+}
+.vflash-btn:hover { background:rgba(255,255,255,0.15); }
+.vflash-counter { color:rgba(255,255,255,0.5); font-size:.82rem; }
+.vflash-close {
+  margin-top:20px; padding:8px 20px; border-radius:8px; border:1px solid rgba(255,255,255,0.15);
+  background:none; color:rgba(255,255,255,0.5); cursor:pointer; font-size:.78rem; font-family:inherit;
+}
+.vflash-close:hover { color:#fff; }
+.vflash-hint { color:rgba(255,255,255,0.25); font-size:.72rem; margin-top:12px; }
+
+@media (max-width:640px) {
+  .vaz-bar { gap:1px; padding:8px 12px; }
+  .vaz-letter { width:24px; height:24px; font-size:.6rem; }
+  .vflash-term { font-size:1.5rem; }
+  .vflash-def { font-size:.95rem; }
+  .vflash-card { min-height:220px; }
+  .vtool-bar { flex-direction:column; gap:8px; align-items:stretch; }
+  .vtool-actions { justify-content:center; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .vflash-front, .vflash-back { transition:none; }
+}
+</style>
 
 {{ end }}
