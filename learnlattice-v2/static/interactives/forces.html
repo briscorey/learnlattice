@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Forces — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#2563eb,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.sim{width:100%;max-width:600px}.scene{position:relative;height:300px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;overflow:hidden}.ground{position:absolute;bottom:0;left:0;right:0;height:40px;background:#334155;border-top:2px solid #475569}.obj{position:absolute;width:60px;height:60px;background:#2563eb;border-radius:10px;bottom:40px;transition:left .05s linear;display:flex;align-items:center;justify-content:center;font-size:1.4rem}.arrow{position:absolute;display:flex;align-items:center;font-size:.72rem;font-weight:700;transition:opacity .2s}.arrow-right{color:#22c55e}.arrow-left{color:#ef4444}.arrow-up{color:#f59e0b}.arrow-down{color:#94a3b8}.controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}.ctrl{padding:10px 20px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s;user-select:none}.ctrl:hover{border-color:#2563eb;color:#e2e8f0}.ctrl:active,.ctrl.on{background:#2563eb;border-color:#2563eb;color:#fff}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#2563eb}.info .hl{color:#22c55e}</style></head><body>
+<h1>How Do Forces Work?</h1>
+<p class="sub">Push the box. Add friction. See what happens when forces are balanced and unbalanced.</p>
+<div class="sim">
+  <div class="scene" id="scene">
+    <div class="obj" id="obj" style="left:270px">📦</div>
+    <div class="arrow arrow-right" id="arrowR" style="display:none;top:110px;font-size:1.2rem">→→→</div>
+    <div class="arrow arrow-left" id="arrowL" style="display:none;top:110px;font-size:1.2rem">←←←</div>
+    <div class="arrow arrow-down" id="arrowD" style="left:290px;top:170px">↓ Weight</div>
+    <div class="arrow arrow-up" id="arrowU" style="left:278px;top:80px">↑ Normal</div>
+    <div class="ground"></div>
+  </div>
+  <div class="controls">
+    <button class="ctrl" id="pushR" onmousedown="startPush('right')" onmouseup="stopPush()" onmouseleave="stopPush()">Push Right →</button>
+    <button class="ctrl" id="pushL" onmousedown="startPush('left')" onmouseup="stopPush()" onmouseleave="stopPush()">← Push Left</button>
+    <button class="ctrl" id="fricBtn" onclick="toggleFriction()">Friction: OFF</button>
+    <button class="ctrl" onclick="resetSim()">Reset</button>
+  </div>
+  <div class="info" id="info"><strong>Newton's First Law:</strong> An object stays still (or keeps moving) unless a force acts on it. Push the box to see forces in action.</div>
+</div>
+<script>
+var pos=270,vel=0,pushing=null,friction=false,raf;
+var obj=document.getElementById('obj'),arrowR=document.getElementById('arrowR'),arrowL=document.getElementById('arrowL');
+function startPush(dir){pushing=dir;arrowR.style.display=dir==='right'?'block':'none';arrowL.style.display=dir==='left'?'block':'none';if(dir==='right'){arrowR.style.left=(pos+70)+'px'}else{arrowL.style.left=(pos-50)+'px'}}
+function stopPush(){pushing=null;arrowR.style.display='none';arrowL.style.display='none'}
+function toggleFriction(){friction=!friction;document.getElementById('fricBtn').textContent='Friction: '+(friction?'ON':'OFF');document.getElementById('fricBtn').classList.toggle('on',friction)}
+function resetSim(){pos=270;vel=0;pushing=null;obj.style.left=pos+'px';arrowR.style.display='none';arrowL.style.display='none';updateInfo()}
+function updateInfo(){var info=document.getElementById('info');if(pushing&&!friction)info.innerHTML='<strong>Unbalanced force</strong> → the box <span class="hl">accelerates</span>. No friction means it will keep speeding up.';else if(pushing&&friction)info.innerHTML='<strong>Push vs friction</strong> → if push > friction, the box accelerates. If push = friction, it moves at <span class="hl">constant speed</span>.';else if(!pushing&&Math.abs(vel)>0.1&&!friction)info.innerHTML='<strong>No forces</strong> → the box keeps moving at <span class="hl">constant speed</span> (Newton\'s First Law).';else if(!pushing&&Math.abs(vel)>0.1&&friction)info.innerHTML='<strong>Friction only</strong> → the box <span class="hl">decelerates</span> and eventually stops.';else info.innerHTML='<strong>Balanced forces:</strong> Weight pulls down, normal force pushes up. No horizontal force = no horizontal motion.'}
+function step(){var acc=0;if(pushing==='right')acc+=0.3;if(pushing==='left')acc-=0.3;if(friction&&Math.abs(vel)>0.01)acc-=Math.sign(vel)*0.1;else if(friction&&Math.abs(vel)<=0.01&&!pushing)vel=0;vel+=acc;pos+=vel;if(pos<0){pos=0;vel=0}if(pos>540){pos=540;vel=0}obj.style.left=pos+'px';if(pushing==='right')arrowR.style.left=(pos+70)+'px';if(pushing==='left')arrowL.style.left=(pos-50)+'px';document.getElementById('arrowD').style.left=(pos+20)+'px';document.getElementById('arrowU').style.left=(pos+8)+'px';updateInfo();raf=requestAnimationFrame(step)}
+step();
+</script></body></html>

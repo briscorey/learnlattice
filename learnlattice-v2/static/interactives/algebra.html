@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understand Algebra — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}
+h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}
+.scale-area{width:100%;max-width:600px}
+.equation-display{text-align:center;font-family:'Courier New',monospace;font-size:1.6rem;color:#14b8a6;padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;margin-bottom:20px}
+.scale{position:relative;height:200px;margin-bottom:20px}
+.scale-beam{position:absolute;top:60px;left:50px;right:50px;height:6px;background:#475569;border-radius:3px;transform-origin:center center;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.scale-fulcrum{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:30px solid #334155}
+.scale-pan{position:absolute;top:40px;width:120px;padding:8px;min-height:60px;background:#1e293b;border:1px solid #334155;border-radius:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:flex-start;align-content:flex-start;justify-content:center;transition:top .5s}
+.scale-pan.left{left:20px}
+.scale-pan.right{right:20px}
+.scale-item{padding:4px 10px;border-radius:6px;font-size:.85rem;font-weight:700;font-family:'Courier New',monospace}
+.scale-item.num{background:#334155;color:#fbbf24}
+.scale-item.var{background:#0D9488;color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+.act-btn{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.8rem;transition:all .15s;font-family:inherit}
+.act-btn:hover{border-color:#0D9488;color:#e2e8f0}
+.act-btn:disabled{opacity:.3;cursor:default}
+.message{text-align:center;padding:12px;font-size:.9rem;min-height:40px}
+.message.solved{color:#22c55e;font-weight:700}
+.message.hint{color:#f59e0b}
+.problems{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.prob-btn{padding:6px 14px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:'Courier New',monospace;transition:all .15s}
+.prob-btn:hover{border-color:#0D9488;color:#e2e8f0}
+.prob-btn.active{background:#0D9488;border-color:#0D9488;color:#fff}
+.history{margin-top:12px;font-size:.72rem;color:#64748b;text-align:center;min-height:20px}
+</style>
+</head>
+<body>
+<h1>Algebra: The Balance Scale</h1>
+<p class="subtitle">An equation is a balance. Whatever you do to one side, you must do to the other. Solve for x by keeping the scale balanced.</p>
+
+<div class="scale-area">
+  <div class="equation-display" id="equation">2x + 3 = 11</div>
+
+  <div class="scale">
+    <div class="scale-beam" id="beam"></div>
+    <div class="scale-pan left" id="leftPan"></div>
+    <div class="scale-pan right" id="rightPan"></div>
+    <div class="scale-fulcrum"></div>
+  </div>
+
+  <div class="actions">
+    <button class="act-btn" onclick="doAction('sub1')">−1 both sides</button>
+    <button class="act-btn" onclick="doAction('sub3')">−3 both sides</button>
+    <button class="act-btn" onclick="doAction('sub5')">−5 both sides</button>
+    <button class="act-btn" onclick="doAction('div2')">÷2 both sides</button>
+    <button class="act-btn" onclick="doAction('div3')">÷3 both sides</button>
+    <button class="act-btn" onclick="doAction('div4')">÷4 both sides</button>
+  </div>
+
+  <div class="message" id="message">Remove the numbers from the left side to isolate x.</div>
+  <div class="history" id="history"></div>
+
+  <div class="problems">
+    <button class="prob-btn active" onclick="loadProblem(0)">2x + 3 = 11</button>
+    <button class="prob-btn" onclick="loadProblem(1)">3x + 5 = 20</button>
+    <button class="prob-btn" onclick="loadProblem(2)">4x − 2 = 14</button>
+    <button class="prob-btn" onclick="loadProblem(3)">5x + 1 = 26</button>
+  </div>
+</div>
+
+<script>
+var problems = [
+  {left:{coeff:2,const:3},right:11,solution:4},
+  {left:{coeff:3,const:5},right:20,solution:5},
+  {left:{coeff:4,const:-2},right:14,solution:4},
+  {left:{coeff:5,const:1},right:26,solution:5},
+];
+var current = 0, state, steps;
+
+function loadProblem(i){
+  current = i;
+  state = {lCoeff:problems[i].left.coeff, lConst:problems[i].left.const, right:problems[i].right};
+  steps = [];
+  document.querySelectorAll('.prob-btn').forEach(function(b,j){b.classList.toggle('active',j===i)});
+  render();
+  document.getElementById('message').textContent = 'Remove the numbers from the left side to isolate x.';
+  document.getElementById('message').className = 'message';
+  document.getElementById('history').textContent = '';
+}
+
+function render(){
+  // Equation display
+  var lStr = '';
+  if(state.lCoeff!==0){
+    lStr = (state.lCoeff===1?'':state.lCoeff) + 'x';
+  }
+  if(state.lConst>0) lStr += ' + ' + state.lConst;
+  else if(state.lConst<0) lStr += ' − ' + Math.abs(state.lConst);
+  document.getElementById('equation').textContent = lStr + ' = ' + state.right;
+
+  // Scale pans
+  var lPan = document.getElementById('leftPan');
+  var rPan = document.getElementById('rightPan');
+  lPan.innerHTML = '';
+  rPan.innerHTML = '';
+
+  for(var c=0;c<state.lCoeff;c++){
+    var el=document.createElement('span');el.className='scale-item var';el.textContent='x';lPan.appendChild(el);
+  }
+  if(state.lConst!==0){
+    var el2=document.createElement('span');el2.className='scale-item num';el2.textContent=state.lConst>0?'+'+state.lConst:state.lConst;lPan.appendChild(el2);
+  }
+  var el3=document.createElement('span');el3.className='scale-item num';el3.textContent=state.right;rPan.appendChild(el3);
+
+  // Beam tilt
+  var diff = (state.lCoeff * problems[current].solution + state.lConst) - state.right;
+  document.getElementById('beam').style.transform = 'rotate('+Math.max(-8,Math.min(8,diff))+'deg)';
+
+  // Check solved
+  if(state.lCoeff===1 && state.lConst===0){
+    document.getElementById('message').textContent = '✓ Solved! x = ' + state.right;
+    document.getElementById('message').className = 'message solved';
+  }
+}
+
+function doAction(action){
+  if(state.lCoeff===1 && state.lConst===0) return;
+  var desc = '';
+  switch(action){
+    case 'sub1': state.lConst-=1; state.right-=1; desc='−1 both sides'; break;
+    case 'sub3': state.lConst-=3; state.right-=3; desc='−3 both sides'; break;
+    case 'sub5': state.lConst-=5; state.right-=5; desc='−5 both sides'; break;
+    case 'div2': if(state.lCoeff%2===0&&state.right%2===0&&state.lConst%2===0){state.lCoeff/=2;state.right/=2;state.lConst/=2;desc='÷2 both sides'}else{document.getElementById('message').textContent='💡 That doesn\'t divide evenly. Try a different operation.';document.getElementById('message').className='message hint';return}break;
+    case 'div3': if(state.lCoeff%3===0&&state.right%3===0&&state.lConst%3===0){state.lCoeff/=3;state.right/=3;state.lConst/=3;desc='÷3 both sides'}else{document.getElementById('message').textContent='💡 That doesn\'t divide evenly. Try a different operation.';document.getElementById('message').className='message hint';return}break;
+    case 'div4': if(state.lCoeff%4===0&&state.right%4===0&&state.lConst%4===0){state.lCoeff/=4;state.right/=4;state.lConst/=4;desc='÷4 both sides'}else{document.getElementById('message').textContent='💡 That doesn\'t divide evenly. Try a different operation.';document.getElementById('message').className='message hint';return}break;
+  }
+  steps.push(desc);
+  document.getElementById('history').textContent = 'Steps: ' + steps.join(' → ');
+  document.getElementById('message').textContent = '';
+  document.getElementById('message').className = 'message';
+  render();
+}
+
+loadProblem(0);
+</script>
+</body>
+</html>
