@@ -1,631 +1,185 @@
 /* ═══════════════════════════════════════════════════════════════
-   LEARNLATTICE VISUAL DESIGN SYSTEM v2
-   ═══════════════════════════════════════════════════════════════
-   Layers on top of main.css. Adds:
-   1. Subject-coded color system (math/science/games)
-   2. Fluid typography scale with clamp()
-   3. Four-stage progress colors (Khan Academy pattern)
-   4. Refined spacing rhythm (4px base)
-   5. Enhanced card micro-interactions
-   6. prefers-reduced-motion audit
-   7. Dark mode refinements (#121212 bg, desaturated accents)
-   8. Criterion color formalization
+   LEARNLATTICE VISUAL DESIGN SYSTEM v2.1
+   Visible overrides on main.css — every rule produces a 
+   noticeable design change on the live site.
    ═══════════════════════════════════════════════════════════════ */
 
-/* ─── 1. SUBJECT-CODED COLOR SYSTEM ─────────────────────────── */
-
 :root {
-  /* Math = Blue */
-  --math-600: #2B5BD6;
-  --math-500: #3B6DF0;
-  --math-400: #5B85F5;
-  --math-200: #B8CCF9;
-  --math-100: #E3ECFD;
-  --math-50:  #F2F6FE;
-
-  /* Science = Green */
-  --sci-600: #0A8060;
-  --sci-500: #0EA573;
-  --sci-400: #2DB88A;
-  --sci-200: #A0E4C8;
-  --sci-100: #D6F5E8;
-  --sci-50:  #EFFAF4;
-
-  /* Games = Purple */
-  --game-600: #7040E0;
-  --game-500: #8B5CF6;
-  --game-400: #A37CF8;
-  --game-200: #D4C2FB;
-  --game-100: #EDE5FD;
-  --game-50:  #F7F3FE;
-
-  /* Criterion colors (formalized) */
+  --math-500: #3566E8;
+  --math-100: rgba(53,102,232,0.08);
+  --sci-500: #0D9968;
+  --sci-100: rgba(13,153,104,0.08);
+  --game-500: #7C4DFF;
+  --game-100: rgba(124,77,255,0.08);
   --crit-a: #D97706;
-  --crit-a-bg: rgba(217, 119, 6, 0.08);
-  --crit-b: #3B6DF0;
-  --crit-b-bg: rgba(59, 109, 240, 0.08);
-  --crit-c: #0EA573;
-  --crit-c-bg: rgba(14, 165, 115, 0.08);
+  --crit-b: #3566E8;
+  --crit-c: #0D9968;
   --crit-d: #8B5CF6;
-  --crit-d-bg: rgba(139, 92, 246, 0.08);
-
-  /* Progress system (Khan Academy-inspired) */
-  --progress-empty:   #E2E5EA;
-  --progress-started:  #F59E0B;
-  --progress-proficient: #10B981;
-  --progress-mastered: #3B6DF0;
-
-  /* Active subject — default to site teal, overridden per-page */
-  --subject: var(--teal);
-  --subject-light: var(--teal-bright);
-  --subject-bg: var(--teal-wash);
-  --subject-glow: rgba(13, 148, 136, 0.12);
-
-  /* Refined spacing tokens */
-  --sp-1: 4px;
-  --sp-2: 8px;
-  --sp-3: 12px;
-  --sp-4: 16px;
-  --sp-5: 20px;
-  --sp-6: 24px;
-  --sp-8: 32px;
-  --sp-10: 40px;
-  --sp-12: 48px;
-  --sp-16: 64px;
+  --vs-shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --vs-shadow-card-hover: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+  --vs-shadow-nav: 0 1px 3px rgba(0,0,0,0.04);
+  --vs-radius: 14px;
 }
 
-/* Subject overrides — applied via body class or data attribute */
-[data-subject="mathematics"],
-.subject-math {
-  --subject: var(--math-500);
-  --subject-light: var(--math-400);
-  --subject-bg: var(--math-100);
-  --subject-glow: rgba(59, 109, 240, 0.12);
-}
+/* ── GLOBAL TYPOGRAPHY ── */
+body { font-size: clamp(0.9375rem, 0.9rem + 0.18vw, 1.0625rem) !important; line-height: 1.7 !important; letter-spacing: -0.006em; }
+.ka-home-copy h1, .page-hero h1, .about-hero-title, .explore-hero h1 { letter-spacing: -0.04em !important; line-height: 1.06 !important; }
+.resource-content, .blog-single-body { max-width: 68ch !important; }
 
-[data-subject="science"],
-[data-subject="biology"],
-[data-subject="chemistry"],
-[data-subject="physics"],
-[data-subject="earth-science"],
-[data-subject="space-science"],
-[data-subject="ecology"],
-.subject-science {
-  --subject: var(--sci-500);
-  --subject-light: var(--sci-400);
-  --subject-bg: var(--sci-100);
-  --subject-glow: rgba(14, 165, 115, 0.12);
-}
+/* ── NAV ── */
+nav { height: 58px !important; box-shadow: var(--vs-shadow-nav) !important; border-bottom-color: rgba(0,0,0,0.06) !important; }
+.nav-brand { gap: 10px !important; }
+.nav-logo-svg { width: 34px !important; height: 34px !important; }
+.nav-title { font-size: 20px !important; }
+.nav-link { font-size: 13.5px !important; border-radius: 8px; transition: color 0.15s, background 0.15s !important; }
+.nav-link:hover { background: var(--surface-warm); }
+.nav-search { border-radius: 10px !important; padding: 7px 14px !important; gap: 7px !important; border-color: rgba(0,0,0,0.08) !important; transition: border-color 0.2s, box-shadow 0.2s !important; }
+.nav-search:hover { border-color: var(--teal) !important; box-shadow: 0 0 0 3px rgba(13,148,136,0.06) !important; }
 
-[data-subject="games"],
-.subject-games {
-  --subject: var(--game-500);
-  --subject-light: var(--game-400);
-  --subject-bg: var(--game-100);
-  --subject-glow: rgba(139, 92, 246, 0.12);
-}
+/* ── HOMEPAGE ── */
+.ka-home-hero { padding-top: 72px !important; padding-bottom: 40px !important; }
+.stats { padding-top: 28px !important; padding-bottom: 28px !important; }
+.stats::before { background: linear-gradient(135deg, #0C3B36 0%, #0D4540 40%, #0A524B 100%) !important; }
+.stat-num { font-size: clamp(40px, 4vw, 56px) !important; }
+.section { padding-bottom: 56px !important; }
+.section-title { font-size: clamp(26px, 3vw, 34px) !important; letter-spacing: -0.03em !important; }
+.section-subtitle { font-size: 15px !important; line-height: 1.65 !important; }
 
+.home-featured-card { border-width: 1.5px !important; border-radius: 18px !important; padding: 28px !important; box-shadow: var(--vs-shadow-card) !important; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.2s !important; }
+.home-featured-card:hover { transform: translateY(-5px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
+.home-promise-card { border-radius: var(--vs-radius) !important; padding: 26px 24px !important; box-shadow: var(--vs-shadow-card) !important; }
+.student-entry-inner { border-radius: 24px !important; padding: 44px !important; }
+.student-grade-tile { border-radius: 16px !important; padding: 22px 18px !important; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.2s !important; }
+.student-grade-tile:hover { transform: translateY(-4px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
+.home-blog-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.2s !important; }
+.home-blog-card:hover { transform: translateY(-4px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
+.philosophy-pill { padding: 22px 28px !important; }
 
-/* ─── 2. FLUID TYPOGRAPHY ───────────────────────────────────── */
+/* ── RESOURCE CARDS ── */
+.resource-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; border-color: rgba(0,0,0,0.06) !important; transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s, border-color 0.22s !important; }
+.resource-card:hover { transform: translateY(-5px) !important; box-shadow: var(--vs-shadow-card-hover) !important; border-color: rgba(13,148,136,0.3) !important; }
+.resource-card[data-subject="teal"]:hover { border-color: rgba(53,102,232,0.35) !important; }
+.resource-card[data-subject="green"]:hover, .resource-card[data-subject="sky"]:hover, .resource-card[data-subject="emerald"]:hover { border-color: rgba(13,153,104,0.35) !important; }
+.resource-card[data-subject="rose"]:hover { border-color: rgba(225,29,72,0.25) !important; }
+.resource-card[data-subject="amber"]:hover { border-color: rgba(217,119,6,0.3) !important; }
+.resource-card[data-subject="blue"]:hover { border-color: rgba(37,99,235,0.3) !important; }
+.resource-card[data-subject="violet"]:hover { border-color: rgba(124,58,237,0.25) !important; }
+.resource-thumb { height: 130px !important; }
+.resource-body { padding: 16px 18px 18px !important; }
+.resource-body h3 { font-size: 1.05rem !important; margin-bottom: 6px !important; line-height: 1.3 !important; }
+.resource-body p { font-size: 0.82rem !important; line-height: 1.5 !important; margin-bottom: 12px !important; }
+.resources-grid { gap: 18px !important; }
 
-body {
-  font-size: clamp(0.9375rem, 0.875rem + 0.15vw, 1.0625rem); /* 15–17px */
-  line-height: 1.65;
-}
+/* ── BROWSE PAGE ── */
+.browse-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; border-color: rgba(0,0,0,0.06) !important; padding: 20px 22px !important; transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s, border-color 0.22s !important; }
+.browse-card:hover { transform: translateY(-5px) !important; box-shadow: var(--vs-shadow-card-hover) !important; border-color: rgba(13,148,136,0.3) !important; }
+.browse-hero { padding: 52px 24px 32px !important; }
+.browse-hero h1 { letter-spacing: -0.03em !important; }
+.browse-filters { border-right: none !important; }
+.browse-filter-option { border-radius: 8px !important; padding: 6px 8px !important; }
+.browse-chip { border-radius: 20px !important; }
+.browse-results { gap: 16px !important; }
+.browse-search-bar { border-radius: var(--vs-radius) !important; }
 
-/* Heading scale — fluid with tighter tracking at larger sizes */
-h1, .text-display {
-  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-}
-h2, .text-title {
-  font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-h3, .text-heading {
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-}
+/* ── WHAT'S NEW ── */
+.new-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; transition: transform 0.22s cubic-bezier(0.16,1,0.3,1), box-shadow 0.22s, border-color 0.2s !important; }
+.new-card:hover { transform: translateX(6px) !important; box-shadow: var(--vs-shadow-card-hover) !important; border-color: var(--teal) !important; }
 
-/* Prose max-width for readability */
-.resource-content,
-.blog-single-body,
-.eal-inner,
-.conf-inner {
-  max-width: 65ch;
-}
+/* ── SUBJECT PAGES ── */
+.subj-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; padding: 24px !important; transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s, border-color 0.22s !important; }
+.subj-card:hover { transform: translateY(-5px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
+.subj-hero { padding: 40px 32px 32px !important; }
+.subj-pill { border-radius: 10px !important; padding: 8px 18px !important; }
 
-/* Resource card body — tighter for density */
-.resource-body p,
-.browse-card p,
-.subj-card-desc,
-.subj-card-hook {
-  line-height: 1.5;
-}
+/* ── EXPLORE PAGE ── */
+.explore-subject-card { border-radius: 16px !important; box-shadow: var(--vs-shadow-card) !important; transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s, border-color 0.22s !important; }
+.explore-subject-card:hover { transform: translateY(-5px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
+.explore-grade-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s !important; }
+.explore-grade-card:hover { transform: translateY(-4px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
 
-/* Mono text — slightly larger for legibility */
-.nav-search kbd,
-.search-footer kbd,
-.browse-kbd,
-.filter-count,
-.browse-filter-count,
-.pf-filter-count {
-  font-family: 'JetBrains Mono', monospace;
-  font-feature-settings: 'tnum' 1;
-}
+/* ── GAMES ── */
+.gcard { border-radius: 16px !important; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.22s !important; }
+.gcard:hover { transform: translateY(-7px) !important; box-shadow: 0 24px 48px rgba(0,0,0,0.35) !important; }
 
+/* ── INVESTIGATION PAGES — SUBJECT-CODED ── */
+body[data-subject="mathematics"] .rs-header { border-bottom-color: var(--math-500) !important; }
+body[data-subject="biology"] .rs-header, body[data-subject="ecology"] .rs-header { border-bottom-color: var(--sci-500) !important; }
+body[data-subject="chemistry"] .rs-header { border-bottom-color: #e11d48 !important; }
+body[data-subject="physics"] .rs-header { border-bottom-color: #2563eb !important; }
+body[data-subject="earth-science"] .rs-header { border-bottom-color: #d97706 !important; }
+body[data-subject="space-science"] .rs-header { border-bottom-color: #7c3aed !important; }
 
-/* ─── 3. SUBJECT-TINTED NAV ACTIVE STATE ────────────────────── */
+body[data-subject="mathematics"] .reading-progress-fill { background: linear-gradient(90deg, var(--math-500), #60a5fa) !important; }
+body[data-subject="biology"] .reading-progress-fill, body[data-subject="ecology"] .reading-progress-fill { background: linear-gradient(90deg, var(--sci-500), #6ee7b7) !important; }
+body[data-subject="chemistry"] .reading-progress-fill { background: linear-gradient(90deg, #e11d48, #fda4af) !important; }
+body[data-subject="physics"] .reading-progress-fill { background: linear-gradient(90deg, #2563eb, #93c5fd) !important; }
 
-/* Nav link active state uses subject color */
-.nav-link.active {
-  color: var(--subject) !important;
-}
+body[data-subject="mathematics"] .rs-sidebar-card { border-top: 3px solid rgba(53,102,232,0.3) !important; }
+body[data-subject="biology"] .rs-sidebar-card, body[data-subject="ecology"] .rs-sidebar-card { border-top: 3px solid rgba(13,153,104,0.3) !important; }
+body[data-subject="chemistry"] .rs-sidebar-card { border-top: 3px solid rgba(225,29,72,0.3) !important; }
+body[data-subject="physics"] .rs-sidebar-card { border-top: 3px solid rgba(37,99,235,0.3) !important; }
 
-/* Nav dropdown hover uses subject glow */
-.nav-mega-card:hover,
-.nav-mega-card:focus-visible {
-  background: var(--subject-glow) !important;
-}
+/* ── BLOG ── */
+.blog-card { border-radius: var(--vs-radius) !important; box-shadow: var(--vs-shadow-card) !important; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.2s !important; }
+.blog-card:hover { transform: translateY(-4px) !important; box-shadow: var(--vs-shadow-card-hover) !important; }
 
-/* Subj subnav active uses subject */
-.subj-subnav-link.active {
-  color: var(--subject);
-  background: var(--subject-glow);
-}
+/* ── NEWSLETTER ── */
+.newsletter-cta { border-radius: 18px !important; box-shadow: var(--vs-shadow-card) !important; }
 
+/* ── FOOTER ── */
+footer { border-top-color: rgba(0,0,0,0.06) !important; }
 
-/* ─── 4. CRITERION BADGE SYSTEM ─────────────────────────────── */
+/* ── STAGGER ENTRANCE ── */
+.stagger-grid > * { opacity: 0; transform: translateY(16px); animation: vsStaggerIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.stagger-grid > *:nth-child(1) { animation-delay: 0.03s; }
+.stagger-grid > *:nth-child(2) { animation-delay: 0.06s; }
+.stagger-grid > *:nth-child(3) { animation-delay: 0.09s; }
+.stagger-grid > *:nth-child(4) { animation-delay: 0.12s; }
+.stagger-grid > *:nth-child(5) { animation-delay: 0.15s; }
+.stagger-grid > *:nth-child(6) { animation-delay: 0.18s; }
+.stagger-grid > *:nth-child(7) { animation-delay: 0.21s; }
+.stagger-grid > *:nth-child(8) { animation-delay: 0.24s; }
+.stagger-grid > *:nth-child(9) { animation-delay: 0.27s; }
+.stagger-grid > *:nth-child(10) { animation-delay: 0.30s; }
+.stagger-grid > *:nth-child(11) { animation-delay: 0.33s; }
+.stagger-grid > *:nth-child(12) { animation-delay: 0.36s; }
+@keyframes vsStaggerIn { to { opacity: 1; transform: translateY(0); } }
 
-.crit-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 6px;
-  border-radius: 5px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.02em;
-}
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1) !important; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── CRITERION BADGES ── */
+.crit-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 5px; font-size: 0.68rem; font-weight: 700; color: #fff; }
 .crit-badge--a { background: var(--crit-a); }
 .crit-badge--b { background: var(--crit-b); }
 .crit-badge--c { background: var(--crit-c); }
 .crit-badge--d { background: var(--crit-d); }
 
-/* Criterion soft badges (for filter chips, sidebar) */
-.crit-soft--a { background: var(--crit-a-bg); color: var(--crit-a); border: 1px solid rgba(217,119,6,0.2); }
-.crit-soft--b { background: var(--crit-b-bg); color: var(--crit-b); border: 1px solid rgba(59,109,240,0.2); }
-.crit-soft--c { background: var(--crit-c-bg); color: var(--crit-c); border: 1px solid rgba(14,165,115,0.2); }
-.crit-soft--d { background: var(--crit-d-bg); color: var(--crit-d); border: 1px solid rgba(139,92,246,0.2); }
-
-
-/* ─── 5. PROGRESS INDICATORS ────────────────────────────────── */
-
-.progress-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--progress-empty);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-.progress-dot--started  { background: var(--progress-started); }
-.progress-dot--proficient { background: var(--progress-proficient); }
-.progress-dot--mastered { background: var(--progress-mastered); transform: scale(1.2); }
-
-.progress-bar {
-  height: 4px;
-  border-radius: 2px;
-  background: var(--progress-empty);
-  overflow: hidden;
-}
-.progress-bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.progress-bar-fill--started  { background: var(--progress-started); }
-.progress-bar-fill--proficient { background: var(--progress-proficient); }
-.progress-bar-fill--mastered { background: linear-gradient(90deg, var(--progress-proficient), var(--progress-mastered)); }
-
-
-/* ─── 6. ENHANCED CARD INTERACTIONS ─────────────────────────── */
-
-/* Subject-tinted border glow on hover */
-.resource-card:hover {
-  border-color: color-mix(in srgb, var(--sc, var(--teal)) 50%, transparent) !important;
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.06),
-    0 0 0 1px color-mix(in srgb, var(--sc, var(--teal)) 15%, transparent) !important;
-}
-
-.browse-card:hover {
-  border-color: color-mix(in srgb, var(--teal) 50%, transparent);
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.06),
-    0 0 0 1px color-mix(in srgb, var(--teal) 12%, transparent);
-}
-
-/* Smoother card lift — cubic-bezier for natural feel */
-.resource-card,
-.browse-card,
-.subj-card,
-.explore-subject-card,
-.gcard,
-.assess-card,
-.home-blog-card,
-.about-influence-card,
-.new-card {
-  transition:
-    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.2s ease !important;
-}
-
-/* Investigation content: scroll-triggered section reveals */
-.inv-section-reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.inv-section-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Staggered card entrance — use on grids */
-.stagger-grid > * {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: staggerIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.stagger-grid > *:nth-child(1)  { animation-delay: 0.05s; }
-.stagger-grid > *:nth-child(2)  { animation-delay: 0.1s; }
-.stagger-grid > *:nth-child(3)  { animation-delay: 0.15s; }
-.stagger-grid > *:nth-child(4)  { animation-delay: 0.2s; }
-.stagger-grid > *:nth-child(5)  { animation-delay: 0.25s; }
-.stagger-grid > *:nth-child(6)  { animation-delay: 0.3s; }
-.stagger-grid > *:nth-child(7)  { animation-delay: 0.35s; }
-.stagger-grid > *:nth-child(8)  { animation-delay: 0.4s; }
-.stagger-grid > *:nth-child(9)  { animation-delay: 0.45s; }
-.stagger-grid > *:nth-child(10) { animation-delay: 0.5s; }
-.stagger-grid > *:nth-child(11) { animation-delay: 0.55s; }
-.stagger-grid > *:nth-child(12) { animation-delay: 0.6s; }
-
-@keyframes staggerIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* ─── 7. SECTION HEADERS WITH SUBJECT ACCENT ────────────────── */
-
-.section-accent-bar {
-  position: relative;
-  padding-left: 16px;
-}
-.section-accent-bar::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 4px;
-  bottom: 4px;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--subject);
-}
-
-/* Hero kickers — use subject color */
-.browse-hero-kicker,
-.new-hero-kicker,
-.pf-hero-kicker {
-  color: var(--subject);
-}
-
-
-/* ─── 8. ENHANCED INVESTIGATION PAGE ────────────────────────── */
-
-/* Reading progress bar uses subject color */
-.reading-progress-fill {
-  background: linear-gradient(
-    90deg,
-    var(--sc, var(--teal)),
-    color-mix(in srgb, var(--sc, var(--teal)) 60%, #fcd34d)
-  ) !important;
-}
-
-/* TOC active link uses subject color */
-.rs-toc-link.active {
-  color: var(--sc, var(--teal));
-  background: color-mix(in srgb, var(--sc, var(--teal)) 6%, transparent);
-  border-left-color: var(--sc, var(--teal));
-}
-
-/* Section heading accent bar uses subject */
-.resource-content h2::before {
-  background: var(--sc, var(--teal));
-}
-
-/* Blockquote border uses subject */
-.resource-content blockquote {
-  border-left-color: var(--sc, var(--teal));
-}
-
-
-/* ─── 9. RESPONSIVE REFINEMENTS ─────────────────────────────── */
-
-/* Ensure content doesn't exceed viewport on small screens */
-@media (max-width: 480px) {
-  .resource-content,
-  .blog-single-body {
-    font-size: 0.95rem;
-    line-height: 1.65;
-  }
-
-  /* Tighter card padding on mobile */
-  .browse-card,
-  .resource-card .resource-body {
-    padding: 14px !important;
-  }
-
-  /* Full-bleed hero sections on mobile */
-  .browse-hero,
-  .new-hero,
-  .explore-hero {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-/* Tablet refinements */
-@media (min-width: 481px) and (max-width: 900px) {
-  .browse-results {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  .new-month-grid {
-    gap: 8px;
-  }
-}
-
-
-/* ─── 10. PREFERS-REDUCED-MOTION ────────────────────────────── */
-
+/* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion: reduce) {
-  /* Disable all transitions and animations */
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  /* Ensure content is visible without animation */
-  .reveal,
-  .micro-reveal,
-  .inv-section-reveal,
-  .stagger-grid > * {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  /* Remove decorative motion */
-  .hero-glow,
-  .resource-card::after,
-  .gcard::before {
-    display: none !important;
-  }
-
-  /* Keep functional indicators visible */
-  .reading-progress-fill {
-    transition: width 0ms !important;
-  }
-
-  /* Card hovers still work, just no motion */
-  .resource-card:hover,
-  .browse-card:hover,
-  .subj-card:hover,
-  .gcard:hover {
-    transform: none !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .reveal, .micro-reveal, .stagger-grid > * { opacity: 1 !important; transform: none !important; }
+  .hero-glow, .resource-card::after, .gcard::before { display: none !important; }
+  .resource-card:hover, .browse-card:hover, .subj-card:hover, .gcard:hover, .explore-subject-card:hover { transform: none !important; }
 }
 
+/* ── DARK MODE ── */
+html.dark { --vs-shadow-card: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15); --vs-shadow-card-hover: 0 12px 28px rgba(0,0,0,0.3), 0 4px 10px rgba(0,0,0,0.2); --vs-shadow-nav: 0 1px 3px rgba(0,0,0,0.3); }
+html.dark body { background: #10121A !important; }
+html.dark nav { background: rgba(16, 18, 26, 0.88) !important; border-bottom-color: rgba(255,255,255,0.06) !important; }
+html.dark .lattice-bg { opacity: 0.035 !important; }
+html.dark footer { background: #161820 !important; border-top-color: rgba(255,255,255,0.06) !important; }
+html.dark .resource-card, html.dark .browse-card, html.dark .subj-card, html.dark .new-card, html.dark .explore-subject-card, html.dark .explore-grade-card, html.dark .home-blog-card, html.dark .home-featured-card, html.dark .blog-card, html.dark .home-promise-card { background: #1A1D26 !important; border-color: rgba(255,255,255,0.06) !important; }
+html.dark .resource-card:hover, html.dark .browse-card:hover, html.dark .subj-card:hover, html.dark .new-card:hover, html.dark .home-blog-card:hover, html.dark .blog-card:hover { border-color: rgba(20,184,166,0.25) !important; }
+html.dark .browse-filters, html.dark .browse-search-bar, html.dark .nav-search { background: #1A1D26 !important; border-color: rgba(255,255,255,0.08) !important; }
+html.dark .browse-hero, html.dark .new-hero, html.dark .explore-hero, html.dark .subj-hero, html.dark .grade-hero { background: #161820 !important; }
+html.dark .student-entry-inner { background: linear-gradient(135deg, rgba(20,184,166,0.04), #1A1D26) !important; border-color: rgba(255,255,255,0.06) !important; }
+html.dark .student-grade-tile { background: #10121A !important; border-color: rgba(255,255,255,0.06) !important; }
+html.dark .ka-start-panel { background: #1A1D26 !important; border-color: rgba(255,255,255,0.06) !important; }
+html.dark .ka-start-link { background: #10121A !important; border-color: rgba(255,255,255,0.06) !important; }
+html.dark .stats::before { background: linear-gradient(135deg, #0A1A18 0%, #0D2420 40%, #0A2A25 100%) !important; }
+html.dark .search-modal { background: rgba(16, 18, 26, 0.97) !important; border-color: rgba(255,255,255,0.08) !important; }
 
-/* ─── 11. DARK MODE REFINEMENTS ─────────────────────────────── */
-
-html.dark {
-  /* Darker background — less blue, reduces halation */
-  --surface: #111318;
-  --surface-warm: #181B22;
-  --surface-card: #1A1D25;
-
-  /* Subject colors: desaturated 15% for dark mode */
-  --math-500: #5B85F5;
-  --math-100: rgba(91, 133, 245, 0.12);
-  --sci-500: #2DB88A;
-  --sci-100: rgba(45, 184, 138, 0.12);
-  --game-500: #A37CF8;
-  --game-100: rgba(163, 124, 248, 0.12);
-
-  /* Criterion colors: slightly brighter for dark bg contrast */
-  --crit-a: #F59E0B;
-  --crit-b: #5B85F5;
-  --crit-c: #2DB88A;
-  --crit-d: #A37CF8;
-  --crit-a-bg: rgba(245, 158, 11, 0.1);
-  --crit-b-bg: rgba(91, 133, 245, 0.1);
-  --crit-c-bg: rgba(45, 184, 138, 0.1);
-  --crit-d-bg: rgba(163, 124, 248, 0.1);
-
-  /* Progress: brighter for dark */
-  --progress-empty: #2A2D36;
-  --progress-started: #FBBF24;
-  --progress-proficient: #34D399;
-  --progress-mastered: #5B85F5;
-}
-
-/* Dark mode body background */
-html.dark body {
-  background: #111318;
-}
-
-/* Dark mode nav — deeper, less blue */
-html.dark nav {
-  background: rgba(17, 19, 24, 0.88);
-}
-
-/* Dark mode cards — subtle distinction from bg */
-html.dark .resource-card,
-html.dark .browse-card,
-html.dark .subj-card,
-html.dark .explore-subject-card,
-html.dark .new-card {
-  background: #1A1D25;
-  border-color: #282B35;
-}
-
-html.dark .resource-card:hover,
-html.dark .browse-card:hover,
-html.dark .subj-card:hover {
-  border-color: color-mix(in srgb, var(--sc, var(--teal)) 40%, transparent);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.3),
-    0 0 0 1px color-mix(in srgb, var(--sc, var(--teal)) 12%, transparent);
-}
-
-/* Dark mode surfaces */
-html.dark .browse-filters,
-html.dark .browse-search-bar {
-  background: #1A1D25;
-  border-color: #282B35;
-}
-
-html.dark .browse-filter-option:hover {
-  background: #22252E;
-}
-
-html.dark .browse-chip {
-  border-color: var(--teal);
-  background: rgba(13, 148, 136, 0.1);
-}
-
-/* Dark mode lattice background — even subtler */
-html.dark .lattice-bg {
-  opacity: 0.04;
-  background-image: radial-gradient(circle at 1px 1px, #3A3D48 1px, transparent 0);
-}
-
-/* Dark mode search overlay */
-html.dark .search-modal {
-  background: rgba(17, 19, 24, 0.97);
-  border-color: #282B35;
-}
-
-/* Dark mode footer */
-html.dark footer {
-  background: #181B22;
-  border-color: #282B35;
-}
-
-
-/* ─── 12. UTILITY CLASSES ───────────────────────────────────── */
-
-/* Subject text colors — use in templates */
-.text-math    { color: var(--math-500); }
-.text-science { color: var(--sci-500); }
-.text-games   { color: var(--game-500); }
-.text-crit-a  { color: var(--crit-a); }
-.text-crit-b  { color: var(--crit-b); }
-.text-crit-c  { color: var(--crit-c); }
-.text-crit-d  { color: var(--crit-d); }
-
-/* Subject background colors */
-.bg-math    { background: var(--math-50); }
-.bg-science { background: var(--sci-50); }
-.bg-games   { background: var(--game-50); }
-
-/* Max-width prose container */
-.prose-width {
-  max-width: 65ch;
-}
-
-/* Visually hidden but accessible */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* Focus ring — consistent across all interactive elements */
-:focus-visible {
-  outline: 2px solid var(--subject, var(--teal));
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-
-/* ─── 13. BROWSE + NEW PAGE REFINEMENTS ─────────────────────── */
-
-/* Browse page: subject-coded card borders */
-.browse-card[data-subjects*="Mathematics"]:hover {
-  border-color: color-mix(in srgb, var(--math-500) 50%, transparent);
-}
-.browse-card[data-subjects*="Biology"]:hover,
-.browse-card[data-subjects*="Chemistry"]:hover,
-.browse-card[data-subjects*="Physics"]:hover,
-.browse-card[data-subjects*="Earth"]:hover,
-.browse-card[data-subjects*="Space"]:hover,
-.browse-card[data-subjects*="Ecology"]:hover {
-  border-color: color-mix(in srgb, var(--sci-500) 50%, transparent);
-}
-
-/* What's New: timeline rail color */
-.new-timeline-inner {
-  border-left-color: color-mix(in srgb, var(--teal) 30%, var(--border));
-}
-
-.new-month-dot {
-  background: var(--teal);
-  box-shadow: 0 0 0 3px var(--surface), 0 0 8px var(--subject-glow);
-}
-
-/* New card hover — slide right */
-.new-card:hover {
-  transform: translateX(4px);
-  border-color: var(--teal);
-}
-
-
-/* ─── 14. PRINT REFINEMENTS ─────────────────────────────────── */
-
-@media print {
-  /* Subject colors print as grayscale-safe */
-  .crit-badge--a, .crit-badge--b, .crit-badge--c, .crit-badge--d {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* Remove all visual-system decorative elements */
-  .progress-dot,
-  .progress-bar,
-  .reading-progress,
-  .stagger-grid > * {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
+/* ── PRINT ── */
+@media print { .stagger-grid > * { animation: none !important; opacity: 1 !important; transform: none !important; } }
