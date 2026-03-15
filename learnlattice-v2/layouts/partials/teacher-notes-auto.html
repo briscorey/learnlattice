@@ -1,0 +1,187 @@
+{{/* Teacher Notes — auto-rendered consolidated panel */}}
+{{ $p := .Params }}
+{{ $hasTeacher := or $p.teacher_moves $p.misconceptions $p.listen_for $p.differentiated $p.sentence_starters }}
+{{ $hasAssessment := or $p.quick_check $p.exit_ticket $p.self_check }}
+{{ $hasContent := or $hasTeacher $hasAssessment $p.warmup $p.timeline }}
+
+{{ if $hasContent }}
+<div class="tn-wrapper tn-collapsed">
+  <div class="tn-header" role="button" tabindex="0" aria-expanded="false" onclick="this.parentElement.classList.toggle('tn-collapsed');this.setAttribute('aria-expanded',this.parentElement.classList.contains('tn-collapsed')?'false':'true')">
+    <div class="tn-header-left">
+      <span class="tn-icon">📋</span>
+      <div>
+        <h2 class="tn-title">Teacher Notes</h2>
+        <p class="tn-subtitle">
+          {{ $count := 0 }}
+          {{ with $p.teacher_moves }}{{ $count = add $count (len .) }}{{ end }}
+          {{ with $p.misconceptions }}{{ $count = add $count (len .) }}{{ end }}
+          {{ with $p.listen_for }}{{ $count = add $count (len .) }}{{ end }}
+          How to use this resource · {{ $count }} teaching cues · scaffolding · assessment
+        </p>
+      </div>
+    </div>
+    <svg class="tn-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+
+  <div class="tn-body">
+
+    {{/* HOW TO USE */}}
+    <div class="tn-section">
+      <h3>How to use this resource</h3>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      <p class="tn-meta">
+        {{ with $p.duration }}<strong>Duration:</strong> {{ . }} · {{ end }}
+        {{ with $p.difficulty }}<strong>Level:</strong> {{ . | humanize }} · {{ end }}
+        {{ with $p.key_concept }}<strong>Key concept:</strong> {{ . }} · {{ end }}
+        {{ with $p.global_context }}<strong>Global context:</strong> {{ . }}{{ end }}
+      </p>
+      {{ with $p.statement_of_inquiry }}<p class="tn-soi"><em>Statement of inquiry: {{ . }}</em></p>{{ end }}
+    </div>
+
+    {{/* WARM-UP */}}
+    {{ with $p.warmup }}
+    <div class="tn-section tn-warmup">
+      <h3>🔥 Warm-up connector <span style="font-weight:400;font-size:.75rem;color:var(--ink-muted)">(5 min)</span></h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{/* TIMELINE */}}
+    {{ with $p.timeline }}
+    <div class="tn-section">
+      <h3>⏱ Suggested timeline</h3>
+      <div class="tn-timeline">
+        {{ $phases := split . " | " }}
+        {{ range $phases }}
+          {{ $parts := split . ": " }}
+          <div class="tn-phase">
+            <span class="tn-phase-time">{{ index $parts 0 }}</span>
+            <span>{{ if gt (len $parts) 1 }}{{ index $parts 1 }}{{ else }}{{ index $parts 0 }}{{ end }}</span>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* SCAFFOLDING */}}
+    {{ with $p.differentiated }}
+    <div class="tn-section">
+      <h3>🎯 Scaffolding &amp; differentiation</h3>
+      <div class="tn-diff-grid">
+        <div class="tn-diff tn-diff-approaching"><span class="tn-diff-label">Approaching</span><p>{{ .approaching }}</p></div>
+        <div class="tn-diff tn-diff-meeting"><span class="tn-diff-label">Meeting</span><p>{{ .meeting }}</p></div>
+        <div class="tn-diff tn-diff-exceeding"><span class="tn-diff-label">Exceeding</span><p>{{ .exceeding }}</p></div>
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* TEACHER MOVES */}}
+    {{ with $p.teacher_moves }}
+    <div class="tn-section">
+      <h3>🧭 Teacher moves</h3>
+      {{ range . }}<div class="tn-move"><strong>{{ .title }}</strong><p>{{ .description }}</p></div>{{ end }}
+    </div>
+    {{ end }}
+
+    {{/* MISCONCEPTIONS */}}
+    {{ with $p.misconceptions }}
+    <div class="tn-section">
+      <h3>⚠️ Common misconceptions</h3>
+      {{ range . }}
+      <div class="tn-misconception">
+        <div class="tn-myth">"{{ .myth }}"</div>
+        {{ with .why }}<div class="tn-why">{{ . }}</div>{{ end }}
+        <div class="tn-truth">→ {{ .truth }}</div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* LISTEN FOR */}}
+    {{ with $p.listen_for }}
+    <div class="tn-section">
+      <h3>👂 What to listen for</h3>
+      <p class="tn-intro">Student phrases that signal understanding at different levels:</p>
+      {{ range . }}
+      <div class="tn-listen">
+        <span class="tn-listen-level tn-listen--{{ .level | urlize }}">{{ .level }}</span>
+        <span class="tn-listen-phrase">"{{ .phrase }}"</span>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* SENTENCE STARTERS */}}
+    {{ with $p.sentence_starters }}
+    <div class="tn-section">
+      <h3>✏️ Sentence starters by level</h3>
+      <div class="tn-starters">
+        {{ with .approaching }}<div class="tn-starter-group"><h4>Approaching</h4>{{ range . }}<div class="tn-starter">"{{ . }}"</div>{{ end }}</div>{{ end }}
+        {{ with .meeting }}<div class="tn-starter-group"><h4>Meeting</h4>{{ range . }}<div class="tn-starter">"{{ . }}"</div>{{ end }}</div>{{ end }}
+        {{ with .exceeding }}<div class="tn-starter-group"><h4>Exceeding</h4>{{ range . }}<div class="tn-starter">"{{ . }}"</div>{{ end }}</div>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* ASSESSMENT */}}
+    {{ if or $p.quick_check $p.exit_ticket }}
+    <div class="tn-section">
+      <h3>📊 Assessment checkpoints</h3>
+      {{ with $p.quick_check }}
+      <div class="tn-checks">
+        {{ range . }}
+        <div class="tn-check tn-check--{{ .type }}">
+          <span class="tn-check-type">{{ .type }}</span>
+          <p>{{ .q }}</p>
+          <details><summary>Expected answer</summary><p>{{ .a }}</p></details>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ with $p.exit_ticket }}
+      <div class="tn-exit">
+        <h4>🎫 Exit ticket (last 3 minutes)</h4>
+        {{ range $i, $q := . }}<div class="tn-exit-q"><span class="tn-exit-num">{{ add $i 1 }}</span>{{ $q }}</div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* BTC PRACTICES */}}
+    {{ with $p.btc_practices }}
+    <div class="tn-section">
+      <h3>🏗 Building Thinking Classrooms</h3>
+      <div class="tn-btc-tags">{{ range . }}<span class="tn-btc-tag">{{ . }}</span>{{ end }}</div>
+    </div>
+    {{ end }}
+
+    {{/* ATL SKILLS */}}
+    <div class="tn-section">
+      <h3>🎯 ATL skills addressed</h3>
+      <div class="tn-atl-tags">
+        {{ $tags := .Params.tags }}
+        {{ $hasCritB := false }}{{ $hasCritC := false }}{{ $hasCritD := false }}
+        {{ range $tags }}
+          {{ if eq . "Criterion B" }}{{ $hasCritB = true }}{{ end }}
+          {{ if eq . "Criterion C" }}{{ $hasCritC = true }}{{ end }}
+          {{ if eq . "Criterion D" }}{{ $hasCritD = true }}{{ end }}
+        {{ end }}
+        {{ if $hasCritB }}<span class="tn-atl-tag tn-atl-thinking">Critical thinking</span><span class="tn-atl-tag tn-atl-thinking">Transfer</span>{{ end }}
+        {{ if $hasCritC }}<span class="tn-atl-tag tn-atl-comm">Communication</span>{{ end }}
+        {{ if $hasCritD }}<span class="tn-atl-tag tn-atl-social">Collaboration</span><span class="tn-atl-tag tn-atl-research">Information literacy</span>{{ end }}
+        {{ with $p.self_check }}<span class="tn-atl-tag tn-atl-self">Self-management</span><span class="tn-atl-tag tn-atl-self">Reflection</span>{{ end }}
+      </div>
+    </div>
+
+    {{/* PARENT SUMMARY */}}
+    {{ with $p.parent_summary }}
+    <div class="tn-section tn-parent">
+      <h3>📨 Parent newsletter blurb</h3>
+      <p>{{ . }}</p>
+      <button class="tn-copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy to clipboard',1500)">Copy to clipboard</button>
+    </div>
+    {{ end }}
+
+  </div>
+</div>
+{{ end }}

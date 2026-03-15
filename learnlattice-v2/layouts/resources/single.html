@@ -56,6 +56,9 @@
     </div>
   </div>
 
+  {{/* ── TEACHER NOTES — NRICH-style consolidated panel ── */}}
+  {{ partial "teacher-notes-auto.html" . }}
+
   {{/* ── TEACHER TOOLKIT — compact tabbed bar ── */}}
   {{ if or .Params.warmup .Params.timeline .Params.listen_for .Params.teacher_moves .Params.misconceptions }}
   <div class="rs-toolkit">
