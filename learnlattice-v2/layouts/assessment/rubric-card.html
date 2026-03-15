@@ -19,6 +19,79 @@
 <section class="rubric-grid-section" style="--rc: {{ $color }}">
   <div class="rubric-grid">
 
+  {{ if eq $criterion "A" }}
+    <div class="rubric-level" data-level="1-2">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">1–2</span>
+        <span class="rubric-level-label">Limited</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student selects and applies mathematical problem-solving techniques to discover simple patterns. States predictions consistent with those patterns.</p>
+        <h3>What this means in practice</h3>
+        <ul>
+          <li>Recalls basic facts or definitions when prompted</li>
+          <li>Identifies a mathematical concept but cannot explain it</li>
+          <li>Attempts to use terminology but with frequent errors</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"Algebra is when you use letters instead of numbers."</div>
+      </div>
+    </div>
+    <div class="rubric-level" data-level="3-4">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">3–4</span>
+        <span class="rubric-level-label">Adequate</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student applies mathematical problem-solving techniques to recognise patterns, describes them as relationships or rules, and draws conclusions consistent with findings.</p>
+        <h3>What this means in practice</h3>
+        <ul>
+          <li>Explains a concept using correct vocabulary most of the time</li>
+          <li>Connects a concept to a specific example</li>
+          <li>Describes what a rule or formula does, even if the explanation is incomplete</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"The mean is the total divided by how many values. It gives the average of the data."</div>
+      </div>
+    </div>
+    <div class="rubric-level" data-level="5-6">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">5–6</span>
+        <span class="rubric-level-label">Substantial</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student selects and applies problem-solving techniques to discover complex patterns, describes them as relationships or general rules consistent with correct findings, and verifies and justifies these.</p>
+        <h3>What this means in practice</h3>
+        <ul>
+          <li>Explains why a concept works, not just what it is</li>
+          <li>Makes connections between related concepts</li>
+          <li>Uses mathematical reasoning to support understanding</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"The mean is affected by outliers because every value contributes to the total. The median resists outliers because it only depends on position, not magnitude."</div>
+      </div>
+    </div>
+    <div class="rubric-level rubric-level-top" data-level="7-8">
+      <div class="rubric-level-header">
+        <span class="rubric-level-num">7–8</span>
+        <span class="rubric-level-label">Excellent</span>
+      </div>
+      <div class="rubric-descriptor">
+        <h3>What the IB says</h3>
+        <p>The student selects and applies problem-solving techniques to discover complex patterns, describes them as general rules consistent with findings, and provides proof of the generalisation.</p>
+        <h3>What this means in practice</h3>
+        <ul>
+          <li>Explains concepts at a deep level with precise language</li>
+          <li>Transfers understanding to unfamiliar contexts</li>
+          <li>Evaluates the strengths and limitations of mathematical models</li>
+          <li>Makes connections across topics and disciplines</li>
+        </ul>
+        <div class="rubric-student-voice"><span class="rubric-voice-label">Student might write:</span>"Standard deviation measures spread by computing how far each value sits from the mean. Two data sets can have the same mean but very different standard deviations — which is why the mean alone never tells the full story."</div>
+        <div class="rubric-key-distinction"><strong>The key distinction:</strong> At 5-6, the student explains a concept correctly. At 7-8, the student explains why the concept matters, when it breaks down, and how it connects to other ideas.</div>
+      </div>
+    </div>
+  {{ end }}
+
   {{ if eq $criterion "B" }}
     <div class="rubric-level" data-level="1-2">
       <div class="rubric-level-header">
@@ -227,6 +300,14 @@
 
   </div>
 </section>
+
+{{ with .Content }}
+<section class="rubric-seo-content" style="--rc: {{ $color }}">
+  <div class="rubric-seo-inner">
+    {{ . }}
+  </div>
+</section>
+{{ end }}
 
 <section class="rubric-exemplars">
   <div class="rubric-exemplars-inner">

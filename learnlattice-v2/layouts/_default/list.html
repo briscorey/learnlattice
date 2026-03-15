@@ -273,4 +273,13 @@ function filterGrade(grade, btn) {
 {{ end }}
 {{ end }}
 
+{{/* SEO content section — renders markdown body from _index.md */}}
+{{ with .Content }}
+<section class="seo-content-section">
+  <div class="seo-content-inner">
+    {{ . }}
+  </div>
+</section>
+{{ end }}
+
 {{ end }}
