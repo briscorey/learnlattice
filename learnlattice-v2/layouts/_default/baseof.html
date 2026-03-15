@@ -20,7 +20,7 @@
   {{ partial "critical-css.html" . }}
   {{/* Main CSS loaded non-blocking — won't delay first paint */}}
   {{/* Non-blocking font loading — reduced weights */}}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
   {{/* KaTeX — only load on resource pages (saves ~150KB on non-resource pages) */}}
   {{ if and (eq .Section "resources") (not (eq (.Params.layout | default "") "game")) }}
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" onload="this.onload=null;this.rel='stylesheet'">
