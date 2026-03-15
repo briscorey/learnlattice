@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Word Wall Generator — LearnLattice</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:560px}.app{width:100%;max-width:640px}
+.topic-btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.tb{padding:6px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;transition:all .12s}
+.tb:hover{border-color:#0D9488}.tb.on{border-color:#0D9488;background:rgba(13,148,136,.12);color:#5eead4}
+.wall-title{text-align:center;font-family:'Courier New',monospace;font-size:1.1rem;font-weight:700;color:#0D9488;margin-bottom:16px}
+.wall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:16px}
+.word-card{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center;transition:all .15s}
+.word-card:hover{border-color:#0D9488}
+.wc-term{font-size:1rem;font-weight:700;color:#e2e8f0;margin-bottom:4px}
+.wc-def{font-size:.78rem;color:#94a3b8;line-height:1.4}
+.wc-example{font-size:.7rem;color:#64748b;margin-top:4px;font-style:italic}
+.wc-zh{font-size:.82rem;color:#0D9488;margin-top:4px;font-weight:600}
+.lang-toggle{display:flex;gap:6px;justify-content:center;margin-bottom:16px}
+.lang-btn{padding:4px 12px;border-radius:6px;border:1px solid #334155;background:#1e293b;color:#64748b;cursor:pointer;font-size:.7rem;font-family:inherit;transition:all .12s}
+.lang-btn:hover{border-color:#0D9488}.lang-btn.on{border-color:#0D9488;background:rgba(13,148,136,.12);color:#5eead4}
+.print-btn{display:block;margin:0 auto 16px;padding:10px 24px;border-radius:10px;border:1.5px solid #0D9488;background:rgba(13,148,136,.1);color:#5eead4;cursor:pointer;font-size:.85rem;font-weight:600;font-family:inherit;transition:all .15s}
+.print-btn:hover{background:#0D9488;color:#fff}
+.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}
+.info strong{color:#0D9488}
+@media print{body{background:#fff;color:#000;padding:10px}.app{max-width:100%}.topic-btns,.lang-toggle,.print-btn,.info,.sub,h1{display:none}.wall-grid{grid-template-columns:repeat(3,1fr);gap:8px}.word-card{border:1.5px solid #ccc;background:#fff;padding:10px}.wc-term{color:#000}.wc-def{color:#444}.wc-example{color:#666}.wc-zh{color:#0D9488}.wall-title{color:#000;display:block}}
+</style></head><body>
+<h1>Word Wall Generator</h1>
+<p class="sub">Pick a topic. Print the word wall for your classroom or hand it out to students.</p>
+<div class="app">
+  <div class="topic-btns" id="topicBtns"></div>
+  <div class="lang-toggle">
+    <button class="lang-btn on" onclick="setLang('en')">English only</button>
+    <button class="lang-btn" onclick="setLang('zh')">English + 中文</button>
+    <button class="lang-btn" onclick="setLang('ko')">English + 한국어</button>
+  </div>
+  <div class="wall-title" id="wallTitle"></div>
+  <div class="wall-grid" id="wallGrid"></div>
+  <button class="print-btn" onclick="window.print()">🖨 Print this word wall</button>
+  <div class="info"><strong>Tip for teachers:</strong> Print and laminate. Stick on the wall before the unit starts. Point to terms during lessons. Students can photograph it for home study.</div>
+</div>
+<script>
+var topics={
+"Negative Numbers":[
+  {t:"Integer",d:"A whole number (positive, negative, or zero)",ex:"-3, 0, 7",zh:"整数",ko:"정수"},
+  {t:"Negative",d:"A number less than zero",ex:"-5 is negative",zh:"负数",ko:"음수"},
+  {t:"Positive",d:"A number greater than zero",ex:"8 is positive",zh:"正数",ko:"양수"},
+  {t:"Number line",d:"A line showing numbers in order",ex:"← -3 -2 -1 0 1 2 3 →",zh:"数轴",ko:"수직선"},
+  {t:"Absolute value",d:"Distance from zero (always positive)",ex:"|−5| = 5",zh:"绝对值",ko:"절댓값"},
+  {t:"Opposite",d:"Same distance from zero, other side",ex:"Opposite of 4 is −4",zh:"相反数",ko:"반대수"}
+],
+"Fractions":[
+  {t:"Numerator",d:"The top number in a fraction",ex:"In 3/4, the numerator is 3",zh:"分子",ko:"분자"},
+  {t:"Denominator",d:"The bottom number in a fraction",ex:"In 3/4, the denominator is 4",zh:"分母",ko:"분모"},
+  {t:"Equivalent",d:"Fractions with the same value",ex:"1/2 = 2/4 = 3/6",zh:"等价的",ko:"동치"},
+  {t:"Simplify",d:"Reduce to the smallest form",ex:"6/8 → 3/4",zh:"简化",ko:"약분"},
+  {t:"Improper fraction",d:"Numerator bigger than denominator",ex:"7/4",zh:"假分数",ko:"가분수"},
+  {t:"Mixed number",d:"A whole number and a fraction",ex:"1 3/4",zh:"带分数",ko:"대분수"}
+],
+"Algebra":[
+  {t:"Variable",d:"A letter representing an unknown",ex:"x, y, n",zh:"变量",ko:"변수"},
+  {t:"Expression",d:"Numbers and letters with operations",ex:"3x + 5",zh:"表达式",ko:"식"},
+  {t:"Equation",d:"Two expressions joined by =",ex:"2x + 1 = 9",zh:"方程",ko:"방정식"},
+  {t:"Coefficient",d:"The number before a variable",ex:"In 5x, coefficient is 5",zh:"系数",ko:"계수"},
+  {t:"Substitute",d:"Replace a letter with a number",ex:"If x=3, then 2x=6",zh:"代入",ko:"대입"},
+  {t:"Solve",d:"Find the value of the unknown",ex:"2x=10 → x=5",zh:"求解",ko:"풀다"},
+  {t:"Term",d:"A single part of an expression",ex:"In 3x+2, terms are 3x and 2",zh:"项",ko:"항"},
+  {t:"Expand",d:"Multiply out brackets",ex:"2(x+3) = 2x+6",zh:"展开",ko:"전개"}
+],
+"Density":[
+  {t:"Density",d:"Mass per unit volume",ex:"ρ = m/v",zh:"密度",ko:"밀도"},
+  {t:"Mass",d:"Amount of matter (grams, kg)",ex:"The block has mass 50g",zh:"质量",ko:"질량"},
+  {t:"Volume",d:"Space an object takes up (cm³)",ex:"The box is 100 cm³",zh:"体积",ko:"부피"},
+  {t:"Float",d:"Stay on the surface of a liquid",ex:"Wood floats on water",zh:"漂浮",ko:"뜨다"},
+  {t:"Sink",d:"Fall to the bottom of a liquid",ex:"Iron sinks in water",zh:"下沉",ko:"가라앉다"},
+  {t:"Displacement",d:"Water rises when object goes in",ex:"Used to measure volume",zh:"排水量",ko:"배수량"}
+],
+"Forces":[
+  {t:"Force",d:"A push or pull (measured in N)",ex:"Gravity is a force",zh:"力",ko:"힘"},
+  {t:"Newton (N)",d:"The unit of force",ex:"Weight = 500 N",zh:"牛顿",ko:"뉴턴"},
+  {t:"Friction",d:"Force opposing movement",ex:"Brakes use friction",zh:"摩擦力",ko:"마찰력"},
+  {t:"Gravity",d:"Force pulling objects toward Earth",ex:"g = 10 N/kg",zh:"重力",ko:"중력"},
+  {t:"Balanced",d:"Forces are equal — no acceleration",ex:"Book on table",zh:"平衡的",ko:"평형"},
+  {t:"Unbalanced",d:"Net force causes acceleration",ex:"Car speeding up",zh:"不平衡的",ko:"비평형"},
+  {t:"Weight",d:"Force of gravity on an object",ex:"W = m × g",zh:"重量",ko:"무게"},
+  {t:"Mass",d:"Amount of matter (doesn't change)",ex:"Mass is 50 kg everywhere",zh:"质量",ko:"질량"}
+],
+"Cells":[
+  {t:"Cell",d:"The basic unit of all living things",ex:"Animal cell, plant cell",zh:"细胞",ko:"세포"},
+  {t:"Nucleus",d:"Control centre containing DNA",ex:"Holds genetic instructions",zh:"细胞核",ko:"핵"},
+  {t:"Membrane",d:"Thin layer around the cell",ex:"Controls what enters/leaves",zh:"细胞膜",ko:"세포막"},
+  {t:"Mitochondria",d:"Releases energy from glucose",ex:"The 'powerhouse'",zh:"线粒体",ko:"미토콘드리아"},
+  {t:"Chloroplast",d:"Where photosynthesis happens",ex:"Only in plant cells",zh:"叶绿体",ko:"엽록체"},
+  {t:"Cell wall",d:"Rigid outer layer (plants only)",ex:"Made of cellulose",zh:"细胞壁",ko:"세포벽"},
+  {t:"Cytoplasm",d:"Jelly-like substance inside cell",ex:"Where reactions happen",zh:"细胞质",ko:"세포질"},
+  {t:"Organelle",d:"A specialised part inside a cell",ex:"Nucleus, mitochondria",zh:"细胞器",ko:"세포소기관"}
+],
+"Waves":[
+  {t:"Frequency",d:"Number of waves per second (Hz)",ex:"f = 500 Hz",zh:"频率",ko:"주파수"},
+  {t:"Wavelength",d:"Distance: one peak to the next",ex:"λ = 0.5 m",zh:"波长",ko:"파장"},
+  {t:"Amplitude",d:"Height of wave from rest",ex:"Bigger = louder/brighter",zh:"振幅",ko:"진폭"},
+  {t:"Wave speed",d:"How fast the wave travels",ex:"v = f × λ",zh:"波速",ko:"파속"},
+  {t:"Pitch",d:"How high or low a sound is",ex:"High frequency = high pitch",zh:"音调",ko:"음높이"},
+  {t:"Period",d:"Time for one complete wave",ex:"T = 1/f",zh:"周期",ko:"주기"}
+],
+"Chemical Reactions":[
+  {t:"Reactant",d:"Substance that goes into a reaction",ex:"Left side of the arrow",zh:"反应物",ko:"반응물"},
+  {t:"Product",d:"Substance produced by a reaction",ex:"Right side of the arrow",zh:"生成物",ko:"생성물"},
+  {t:"Balanced",d:"Same atoms on both sides",ex:"2H₂ + O₂ → 2H₂O",zh:"平衡的",ko:"균형"},
+  {t:"Coefficient",d:"Number in front of a formula",ex:"The 2 in 2H₂O",zh:"系数",ko:"계수"},
+  {t:"Conservation",d:"Mass is never created/destroyed",ex:"Total mass stays the same",zh:"守恒",ko:"보존"},
+  {t:"Atom",d:"Smallest particle of an element",ex:"H, O, Fe, Na",zh:"原子",ko:"원자"}
+],
+"Genetics":[
+  {t:"Gene",d:"A section of DNA coding for a trait",ex:"Gene for eye colour",zh:"基因",ko:"유전자"},
+  {t:"Allele",d:"A version of a gene",ex:"B (brown) and b (blue)",zh:"等位基因",ko:"대립유전자"},
+  {t:"Dominant",d:"Shows with just one copy",ex:"B in Bb → brown eyes",zh:"显性的",ko:"우성"},
+  {t:"Recessive",d:"Needs two copies to show",ex:"bb → blue eyes",zh:"隐性的",ko:"열성"},
+  {t:"Genotype",d:"The alleles an organism has",ex:"BB, Bb, or bb",zh:"基因型",ko:"유전자형"},
+  {t:"Phenotype",d:"The visible trait",ex:"Brown eyes, blue eyes",zh:"表现型",ko:"표현형"},
+  {t:"Punnett square",d:"Grid showing possible offspring",ex:"Bb × Bb → 3:1 ratio",zh:"庞尼特方格",ko:"퍼넷 사각형"}
+]
+};
+
+var curTopic=Object.keys(topics)[0],curLang='en';
+
+function init(){
+  var el=document.getElementById('topicBtns');
+  Object.keys(topics).forEach(function(t,i){
+    el.innerHTML+='<button class="tb'+(i===0?' on':'')+'" onclick="setTopic(\''+t+'\')">'+t+'</button>';
+  });
+  render();
+}
+function setTopic(t){curTopic=t;document.querySelectorAll('.tb').forEach(function(b){b.classList.toggle('on',b.textContent===t)});render();}
+function setLang(l){curLang=l;document.querySelectorAll('.lang-btn').forEach(function(b,i){b.classList.toggle('on',['en','zh','ko'][i]===l)});render();}
+
+function render(){
+  var words=topics[curTopic];
+  document.getElementById('wallTitle').textContent='Word Wall: '+curTopic+' ('+words.length+' terms)';
+  document.getElementById('wallGrid').innerHTML=words.map(function(w){
+    var zh=curLang==='zh'&&w.zh?'<div class="wc-zh">'+w.zh+'</div>':'';
+    var ko=curLang==='ko'&&w.ko?'<div class="wc-zh">'+w.ko+'</div>':'';
+    return '<div class="word-card"><div class="wc-term">'+w.t+'</div><div class="wc-def">'+w.d+'</div><div class="wc-example">'+w.ex+'</div>'+zh+ko+'</div>';
+  }).join('');
+}
+init();
+</script></body></html>
