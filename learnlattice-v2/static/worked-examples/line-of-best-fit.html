@@ -1,14 +1,64 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Worked Example: Drawing a Line of Best Fit — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}.sub{color:#94a3b8;font-size:.85rem;margin-bottom:24px;text-align:center;max-width:500px}.card{max-width:540px;width:100%;padding:24px;background:#1e293b;border:1px solid #334155;border-radius:12px;text-align:left;line-height:1.7;font-size:.88rem;color:#94a3b8}.card h2{font-size:1rem;color:#e2e8f0;margin:16px 0 8px}.card h2:first-child{margin-top:0}.card .math{font-family:'Courier New',monospace;color:#14b8a6;background:#0f172a;padding:8px 14px;border-radius:8px;margin:8px 0;text-align:center;font-size:1rem}.card strong{color:#e2e8f0}.card .hl{color:#f59e0b}.card p{margin:6px 0}.card table{color:#94a3b8}.card th{color:#e2e8f0}</style></head><body>
-<h1>Drawing a Line of Best Fit</h1><p class="sub">A straight line through the middle of scattered data points.</p>
-<div class="card">
-<h2>Step 1: Plot all data points</h2>
-<p>Plot each (x, y) pair as a dot. Do NOT connect them.</p>
-<h2>Step 2: Look at the overall trend</h2>
-<p>Going up = positive. Going down = negative. Scattered = no correlation.</p>
-<h2>Step 3: Draw the line</h2>
-<p>Use a ruler. The line should pass through the <strong>middle</strong> of the cloud with roughly <strong>equal points above and below</strong>.</p>
-<h2>Step 4: Check for anomalies</h2>
-<p>Any point dramatically far from the line might be an <span class="hl">anomaly</span>.</p>
-<p><strong>Common mistake:</strong> Connecting the first and last point. A line of best fit represents the overall trend, not point-to-point.</p>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Drawing a Line of Best Fit — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center;max-width:520px}
+.example{width:100%;max-width:560px}
+.problem{padding:20px;background:#1e293b;border:2px solid #0D9488;border-radius:12px;text-align:center;margin-bottom:20px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#0D9488;margin-bottom:8px}
+.problem-text{font-size:.95rem;color:#e2e8f0;line-height:1.6}
+.steps{display:flex;flex-direction:column}
+.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}
+.step.revealed{border-color:#334155}
+.step.current{border-color:#0D9488}
+.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step:not(.revealed) .step-num{background:#334155;color:#64748b}
+.step.revealed .step-num{background:#0D9488;color:#fff}
+.step-title{font-size:.85rem;color:#94a3b8}
+.step.revealed .step-title{color:#e2e8f0}
+.step-body{display:none;padding:0 16px 16px}
+.step.revealed .step-body{display:block}
+.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
+.step-math{font-family:'Courier New',monospace;font-size:1.05rem;color:#14b8a6;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math .hl{color:#f59e0b}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#0D9488;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#0a7c72}
+.btn-next.done{background:#22c55e}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
+.pdot.on{background:#0D9488}
+.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s;font-family:inherit}
+.nav button:hover{border-color:#0D9488}
+.nav button.on{background:#0D9488;color:#fff;border-color:#0D9488}
+.tip{margin-top:16px;padding:12px 16px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;font-size:.78rem;color:#fbbf24;line-height:1.5}
+.tip strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;color:#f59e0b}
+</style>
+</head>
+<body>
+<h1>Drawing a Line of Best Fit</h1>
+<p class="subtitle">A straight line through the middle of scattered data — not connecting the dots.</p>
+<div class="example">
+  <div class="problem"><div class="problem-label">Draw the line</div><div class="problem-text" id="ptext"></div></div>
+  <div class="progress" id="prog"></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn-next" id="btn" onclick="next()">Show next step</button>
+  <div class="nav" id="nav"></div>
+  <div class="tip"><strong>Common mistake</strong>The line does NOT have to pass through any actual data point. It shows the overall trend, not individual values.</div>
+</div>
+<script>
+var P=[{"text": "Height (cm) vs Armspan (cm) data: (150,148), (155,157), (160,159), (162,164), (165,163), (170,172), (175,170), (178,179). Draw and use a line of best fit.", "steps": [{"t": "Plot all points", "e": "Plot each (height, armspan) pair as a dot. Do NOT connect them with lines.", "m": "8 points plotted on scatter graph"}, {"t": "Look at the trend", "e": "As height increases, armspan generally increases. This is a positive correlation.", "m": "Trend: <span class=\"hl\">positive correlation</span>"}, {"t": "Draw the line", "e": "Use a ruler. The line passes through the MIDDLE of the cloud with roughly equal points above and below.", "m": "Line from ~(148, 146) to ~(180, 180)"}, {"t": "Check for anomalies", "e": "Point (155, 157) sits above the line but not dramatically. No clear anomalies here.", "m": "No anomalies identified"}, {"t": "Use the line to predict", "e": "For someone 168 cm tall, read across from 168 on the x-axis to the line, then down to the y-axis.", "m": "Predicted armspan \u2248 <span class=\"hl\">167 cm</span>"}]}, {"text": "Temperature (\u00b0C) vs Ice cream sales: (15,20), (18,35), (20,40), (22,55), (25,50), (28,70), (30,80), (32,75). One point looks wrong. Which one?", "steps": [{"t": "Plot the data", "e": "Temperature on x-axis, sales on y-axis.", "m": "8 points plotted"}, {"t": "Identify the trend", "e": "Sales generally increase with temperature \u2014 positive correlation.", "m": "Trend: <span class=\"hl\">positive correlation</span>"}, {"t": "Draw the line of best fit", "e": "Straight line through the middle. Equal points above and below.", "m": "Line from ~(15, 18) to ~(32, 82)"}, {"t": "Spot the anomaly", "e": "At 25\u00b0C, sales are only 50 \u2014 but the line predicts about 58. This point sits noticeably below the line.", "m": "Anomaly: <span class=\"hl\">(25, 50)</span> \u2014 below expected"}, {"t": "Explain the anomaly", "e": "Maybe it rained that day, or it was a weekday. Anomalies have reasons \u2014 they're not just 'wrong.'", "m": "Possible cause: weather, day of week, or event"}]}];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('ptext').innerHTML=P[i].text;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='\u2713 Complete \u2014 try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script>
+</body>
+</html>

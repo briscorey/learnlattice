@@ -1,17 +1,64 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Worked Example: Reading Distance-Time Graphs — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}.sub{color:#94a3b8;font-size:.85rem;margin-bottom:24px;text-align:center;max-width:500px}.card{max-width:540px;width:100%;padding:24px;background:#1e293b;border:1px solid #334155;border-radius:12px;text-align:left;line-height:1.7;font-size:.88rem;color:#94a3b8}.card h2{font-size:1rem;color:#e2e8f0;margin:16px 0 8px}.card h2:first-child{margin-top:0}.card .math{font-family:'Courier New',monospace;color:#14b8a6;background:#0f172a;padding:8px 14px;border-radius:8px;margin:8px 0;text-align:center;font-size:1rem}.card strong{color:#e2e8f0}.card .hl{color:#f59e0b}.card p{margin:6px 0}.card table{color:#94a3b8}.card th{color:#e2e8f0}</style></head><body>
-<h1>Reading Distance-Time Graphs</h1><p class="sub">Speed equals gradient. Flat means stationary. Steep means fast.</p>
-<div class="card">
-<h2>Rule 1: Gradient = Speed</h2>
-<div class="math">Speed = distance ÷ time = rise ÷ run</div>
-<p>Steeper line = faster. Gentle slope = slower.</p>
-<h2>Rule 2: Flat = Stationary</h2>
-<p>A horizontal line means not moving. Distance stays the same.</p>
-<h2>Rule 3: Going down = Returning</h2>
-<p>Line going down means moving back towards the start.</p>
-<h2>Example</h2>
-<p>0-10 min: line from 0 to 2 km | 10-15 min: flat at 2 km | 15-25 min: line from 2 km to 0</p>
-<div class="math">Phase 1: 2÷10 = <span class="hl">0.2 km/min</span> = 12 km/h</div>
-<div class="math">Phase 2: <span class="hl">stationary</span></div>
-<div class="math">Phase 3: 2÷10 = <span class="hl">0.2 km/min</span> (returning)</div>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Reading Distance-Time Graphs — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center;max-width:520px}
+.example{width:100%;max-width:560px}
+.problem{padding:20px;background:#1e293b;border:2px solid #0D9488;border-radius:12px;text-align:center;margin-bottom:20px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#0D9488;margin-bottom:8px}
+.problem-text{font-size:.95rem;color:#e2e8f0;line-height:1.6}
+.steps{display:flex;flex-direction:column}
+.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}
+.step.revealed{border-color:#334155}
+.step.current{border-color:#0D9488}
+.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step:not(.revealed) .step-num{background:#334155;color:#64748b}
+.step.revealed .step-num{background:#0D9488;color:#fff}
+.step-title{font-size:.85rem;color:#94a3b8}
+.step.revealed .step-title{color:#e2e8f0}
+.step-body{display:none;padding:0 16px 16px}
+.step.revealed .step-body{display:block}
+.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
+.step-math{font-family:'Courier New',monospace;font-size:1.05rem;color:#14b8a6;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math .hl{color:#f59e0b}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#0D9488;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#0a7c72}
+.btn-next.done{background:#22c55e}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
+.pdot.on{background:#0D9488}
+.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s;font-family:inherit}
+.nav button:hover{border-color:#0D9488}
+.nav button.on{background:#0D9488;color:#fff;border-color:#0D9488}
+.tip{margin-top:16px;padding:12px 16px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;font-size:.78rem;color:#fbbf24;line-height:1.5}
+.tip strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;color:#f59e0b}
+</style>
+</head>
+<body>
+<h1>Reading Distance-Time Graphs</h1>
+<p class="subtitle">Speed equals gradient. Flat means stationary. Steep means fast.</p>
+<div class="example">
+  <div class="problem"><div class="problem-label">Read the graph</div><div class="problem-text" id="ptext"></div></div>
+  <div class="progress" id="prog"></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn-next" id="btn" onclick="next()">Show next step</button>
+  <div class="nav" id="nav"></div>
+  <div class="tip"><strong>Common mistake</strong>Rest time IS included in average speed. Students often forget the stationary phase.</div>
+</div>
+<script>
+var P=[{"text": "A cyclist rides for 10 minutes covering 2 km, rests for 5 minutes, then returns home in 10 minutes. Calculate the speed for each phase.", "steps": [{"t": "Identify Phase 1", "e": "From 0 to 10 min, the line goes from 0 km to 2 km. This is the outward journey.", "m": "Phase 1: 0\u219210 min, 0\u21922 km"}, {"t": "Calculate speed (Phase 1)", "e": "Speed = distance \u00f7 time. Convert to useful units.", "m": "Speed = 2 \u00f7 10 = <span class=\"hl\">0.2 km/min</span> = 12 km/h"}, {"t": "Identify Phase 2", "e": "From 10 to 15 min, the line is flat at 2 km. No distance change means stationary.", "m": "Phase 2: flat line \u2192 <span class=\"hl\">stationary</span> (speed = 0)"}, {"t": "Identify Phase 3", "e": "From 15 to 25 min, the line goes from 2 km back to 0 km. The line goes down \u2014 returning.", "m": "Phase 3: 15\u219225 min, 2\u21920 km (returning)"}, {"t": "Calculate speed (Phase 3)", "e": "Distance covered = 2 km, time = 10 min. Same speed, opposite direction.", "m": "Speed = 2 \u00f7 10 = <span class=\"hl\">0.2 km/min</span> = 12 km/h"}]}, {"text": "A runner goes 800 m in 4 minutes, stops for 2 minutes, then walks 400 m in 6 minutes. What was their average speed for the entire journey?", "steps": [{"t": "Find total distance", "e": "Add all distances together \u2014 running + walking.", "m": "Total distance = 800 + 400 = <span class=\"hl\">1200 m</span>"}, {"t": "Find total time", "e": "Add all time periods \u2014 including the rest.", "m": "Total time = 4 + 2 + 6 = <span class=\"hl\">12 min</span>"}, {"t": "Calculate average speed", "e": "Average speed = total distance \u00f7 total time. Rest time IS included.", "m": "Average speed = 1200 \u00f7 12 = <span class=\"hl\">100 m/min</span>"}, {"t": "Convert to km/h", "e": "Multiply m/min by 60, divide by 1000.", "m": "100 \u00d7 60 \u00f7 1000 = <span class=\"hl\">6 km/h</span>"}]}];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('ptext').innerHTML=P[i].text;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='\u2713 Complete \u2014 try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script>
+</body>
+</html>

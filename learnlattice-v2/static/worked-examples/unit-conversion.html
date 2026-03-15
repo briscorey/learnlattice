@@ -1,15 +1,64 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Worked Example: Unit Conversion — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}.sub{color:#94a3b8;font-size:.85rem;margin-bottom:24px;text-align:center;max-width:500px}.card{max-width:540px;width:100%;padding:24px;background:#1e293b;border:1px solid #334155;border-radius:12px;text-align:left;line-height:1.7;font-size:.88rem;color:#94a3b8}.card h2{font-size:1rem;color:#e2e8f0;margin:16px 0 8px}.card h2:first-child{margin-top:0}.card .math{font-family:'Courier New',monospace;color:#14b8a6;background:#0f172a;padding:8px 14px;border-radius:8px;margin:8px 0;text-align:center;font-size:1rem}.card strong{color:#e2e8f0}.card .hl{color:#f59e0b}.card p{margin:6px 0}.card table{color:#94a3b8}.card th{color:#e2e8f0}</style></head><body>
-<h1>Unit Conversion</h1><p class="sub">Converting between mm, cm, m, and km using powers of 10.</p>
-<div class="card">
-<h2>The Chain</h2>
-<div class="math">mm →÷10→ cm →÷100→ m →÷1000→ km</div>
-<h2>Example 1: 3,500 mm to metres</h2>
-<div class="math">3500 mm ÷ 10 = 350 cm</div>
-<div class="math">350 cm ÷ 100 = <span class="hl">3.5 m</span></div>
-<h2>Example 2: 0.45 km to centimetres</h2>
-<div class="math">0.45 km × 1000 = 450 m</div>
-<div class="math">450 m × 100 = <span class="hl">45,000 cm</span></div>
-<h2>The Rule</h2>
-<p>Going to <strong>smaller</strong> units → <strong>multiply</strong> (more of a smaller unit)<br>Going to <strong>bigger</strong> units → <strong>divide</strong> (fewer of a bigger unit)</p>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Converting Units — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center;max-width:520px}
+.example{width:100%;max-width:560px}
+.problem{padding:20px;background:#1e293b;border:2px solid #0D9488;border-radius:12px;text-align:center;margin-bottom:20px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#0D9488;margin-bottom:8px}
+.problem-text{font-size:.95rem;color:#e2e8f0;line-height:1.6}
+.steps{display:flex;flex-direction:column}
+.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}
+.step.revealed{border-color:#334155}
+.step.current{border-color:#0D9488}
+.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step:not(.revealed) .step-num{background:#334155;color:#64748b}
+.step.revealed .step-num{background:#0D9488;color:#fff}
+.step-title{font-size:.85rem;color:#94a3b8}
+.step.revealed .step-title{color:#e2e8f0}
+.step-body{display:none;padding:0 16px 16px}
+.step.revealed .step-body{display:block}
+.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
+.step-math{font-family:'Courier New',monospace;font-size:1.05rem;color:#14b8a6;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math .hl{color:#f59e0b}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#0D9488;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#0a7c72}
+.btn-next.done{background:#22c55e}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
+.pdot.on{background:#0D9488}
+.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s;font-family:inherit}
+.nav button:hover{border-color:#0D9488}
+.nav button.on{background:#0D9488;color:#fff;border-color:#0D9488}
+.tip{margin-top:16px;padding:12px 16px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;font-size:.78rem;color:#fbbf24;line-height:1.5}
+.tip strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;color:#f59e0b}
+</style>
+</head>
+<body>
+<h1>Converting Units</h1>
+<p class="subtitle">Multiply to go smaller. Divide to go bigger. Use the chain method.</p>
+<div class="example">
+  <div class="problem"><div class="problem-label">Convert the units</div><div class="problem-text" id="ptext"></div></div>
+  <div class="progress" id="prog"></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn-next" id="btn" onclick="next()">Show next step</button>
+  <div class="nav" id="nav"></div>
+  <div class="tip"><strong>Common mistake</strong>Going to a SMALLER unit = multiply (more of them). Going to a BIGGER unit = divide (fewer of them).</div>
+</div>
+<script>
+var P=[{"text": "Convert 3.5 km to metres, then to centimetres.", "steps": [{"t": "Write the conversion factor", "e": "1 km = 1000 m. To go from km to m, multiply by 1000.", "m": "1 km = <span class=\"hl\">1000</span> m"}, {"t": "Convert km \u2192 m", "e": "3.5 \u00d7 1000 = move decimal 3 places right.", "m": "3.5 km = 3.5 \u00d7 1000 = <span class=\"hl\">3500 m</span>"}, {"t": "Write the next factor", "e": "1 m = 100 cm. To go from m to cm, multiply by 100.", "m": "1 m = <span class=\"hl\">100</span> cm"}, {"t": "Convert m \u2192 cm", "e": "3500 \u00d7 100 = move decimal 2 places right.", "m": "3500 m = 3500 \u00d7 100 = <span class=\"hl\">350,000 cm</span>"}]}, {"text": "Convert 45,000 mL to litres.", "steps": [{"t": "Write the conversion factor", "e": "1 litre = 1000 mL. Going from small to big unit \u2014 divide.", "m": "1 L = <span class=\"hl\">1000</span> mL"}, {"t": "Divide", "e": "45,000 \u00f7 1000 = move decimal 3 places left.", "m": "45,000 mL \u00f7 1000 = <span class=\"hl\">45 L</span>"}]}, {"text": "Convert 2.4 hours to minutes and seconds.", "steps": [{"t": "Hours \u2192 minutes", "e": "1 hour = 60 minutes. Multiply by 60.", "m": "2.4 \u00d7 60 = <span class=\"hl\">144 minutes</span>"}, {"t": "Or split it", "e": "2 hours = 120 min. 0.4 hours = 0.4 \u00d7 60 = 24 min.", "m": "2 h + 0.4 h = 120 + 24 = <span class=\"hl\">144 min</span>"}, {"t": "Minutes \u2192 seconds", "e": "1 minute = 60 seconds.", "m": "144 \u00d7 60 = <span class=\"hl\">8,640 seconds</span>"}]}];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('ptext').innerHTML=P[i].text;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='\u2713 Complete \u2014 try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script>
+</body>
+</html>

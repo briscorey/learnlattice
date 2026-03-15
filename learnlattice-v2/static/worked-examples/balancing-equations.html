@@ -3,58 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Worked Example: Substituting into a Formula — LearnLattice</title>
+<title>Worked Example: Balancing Chemical Equations — LearnLattice</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
-h1{font-size:1.4rem;background:linear-gradient(135deg,#7c3aed,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#e11d48,#fb7185);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
 .subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center;max-width:520px}
 .example{width:100%;max-width:560px}
-.problem{padding:20px;background:#1e293b;border:2px solid #7c3aed;border-radius:12px;text-align:center;margin-bottom:20px}
-.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#7c3aed;margin-bottom:8px}
+.problem{padding:20px;background:#1e293b;border:2px solid #e11d48;border-radius:12px;text-align:center;margin-bottom:20px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#e11d48;margin-bottom:8px}
 .problem-text{font-size:.95rem;color:#e2e8f0;line-height:1.6}
 .steps{display:flex;flex-direction:column}
 .step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}
 .step.revealed{border-color:#334155}
-.step.current{border-color:#7c3aed}
+.step.current{border-color:#e11d48}
 .step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}
 .step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
 .step:not(.revealed) .step-num{background:#334155;color:#64748b}
-.step.revealed .step-num{background:#7c3aed;color:#fff}
+.step.revealed .step-num{background:#e11d48;color:#fff}
 .step-title{font-size:.85rem;color:#94a3b8}
 .step.revealed .step-title{color:#e2e8f0}
 .step-body{display:none;padding:0 16px 16px}
 .step.revealed .step-body{display:block}
 .step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
-.step-math{font-family:'Courier New',monospace;font-size:1.05rem;color:#a78bfa;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math{font-family:'Courier New',monospace;font-size:1.05rem;color:#fb7185;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
 .step-math .hl{color:#f59e0b}
-.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#7c3aed;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
-.btn-next:hover{background:#6d28d9}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#e11d48;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#be123c}
 .btn-next.done{background:#22c55e}
 .progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
 .pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
-.pdot.on{background:#7c3aed}
+.pdot.on{background:#e11d48}
 .nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
 .nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s;font-family:inherit}
-.nav button:hover{border-color:#7c3aed}
-.nav button.on{background:#7c3aed;color:#fff;border-color:#7c3aed}
+.nav button:hover{border-color:#e11d48}
+.nav button.on{background:#e11d48;color:#fff;border-color:#e11d48}
 .tip{margin-top:16px;padding:12px 16px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;font-size:.78rem;color:#fbbf24;line-height:1.5}
 .tip strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;color:#f59e0b}
 </style>
 </head>
 <body>
-<h1>Substituting into a Formula</h1>
-<p class="subtitle">Replace every letter with its number. Follow BIDMAS. Show every step.</p>
+<h1>Balancing Chemical Equations</h1>
+<p class="subtitle">Same number of each atom on both sides. Only change the big numbers, never the small ones.</p>
 <div class="example">
-  <div class="problem"><div class="problem-label">Evaluate the formula</div><div class="problem-text" id="ptext"></div></div>
+  <div class="problem"><div class="problem-label">Balance the equation</div><div class="problem-text" id="ptext"></div></div>
   <div class="progress" id="prog"></div>
   <div class="steps" id="steps"></div>
   <button class="btn-next" id="btn" onclick="next()">Show next step</button>
   <div class="nav" id="nav"></div>
-  <div class="tip"><strong>Common mistake</strong>Always do indices (powers) before multiplication. In ½mv², calculate v² FIRST, then multiply by m, then by ½.</div>
+  <div class="tip"><strong>Common mistake</strong>Only change the BIG number in front of the formula (coefficient). Never change the small subscript numbers — that changes the substance itself.</div>
 </div>
 <script>
-var P=[{"text": "Find v when u = 3, a = 10, t = 4.<br>Formula: <b>v = u + at</b>", "steps": [{"t": "Write the formula", "e": "Start by writing out the formula clearly.", "m": "v = u + at"}, {"t": "Substitute the values", "e": "Replace u with 3, a with 10, t with 4.", "m": "v = <span class=\"hl\">3</span> + <span class=\"hl\">10</span> \u00d7 <span class=\"hl\">4</span>"}, {"t": "Apply BIDMAS", "e": "Multiplication before addition. Do 10 \u00d7 4 first.", "m": "v = 3 + <span class=\"hl\">40</span>"}, {"t": "Calculate", "e": "Now add.", "m": "v = <span class=\"hl\">43</span>"}]}, {"text": "Find E when m = 5, v = 6.<br>Formula: <b>E = \u00bdmv\u00b2</b>", "steps": [{"t": "Write the formula", "e": "Kinetic energy formula.", "m": "E = \u00bdmv\u00b2"}, {"t": "Substitute", "e": "Replace m with 5 and v with 6.", "m": "E = \u00bd \u00d7 <span class=\"hl\">5</span> \u00d7 <span class=\"hl\">6</span>\u00b2"}, {"t": "Square first (BIDMAS)", "e": "Indices before multiplication. 6\u00b2 = 36.", "m": "E = \u00bd \u00d7 5 \u00d7 <span class=\"hl\">36</span>"}, {"t": "Multiply", "e": "\u00bd \u00d7 5 = 2.5, then \u00d7 36.", "m": "E = 2.5 \u00d7 36 = <span class=\"hl\">90 J</span>"}]}, {"text": "Find s when u = 0, a = 9.8, t = 3.<br>Formula: <b>s = ut + \u00bdat\u00b2</b>", "steps": [{"t": "Write the formula", "e": "Displacement with uniform acceleration.", "m": "s = ut + \u00bdat\u00b2"}, {"t": "Substitute", "e": "u=0, a=9.8, t=3.", "m": "s = <span class=\"hl\">0</span>\u00d73 + \u00bd\u00d7<span class=\"hl\">9.8</span>\u00d7<span class=\"hl\">3</span>\u00b2"}, {"t": "Simplify ut", "e": "0 \u00d7 anything = 0. First term disappears.", "m": "s = 0 + \u00bd \u00d7 9.8 \u00d7 3\u00b2"}, {"t": "Square the time", "e": "3\u00b2 = 9.", "m": "s = \u00bd \u00d7 9.8 \u00d7 <span class=\"hl\">9</span>"}, {"t": "Calculate", "e": "\u00bd \u00d7 9.8 = 4.9. Then 4.9 \u00d7 9.", "m": "s = 4.9 \u00d7 9 = <span class=\"hl\">44.1 m</span>"}]}];
+var P=[{"text": "Balance: H\u2082 + O\u2082 \u2192 H\u2082O", "steps": [{"t": "Count atoms (unbalanced)", "e": "Left: 2H, 2O. Right: 2H, 1O. Oxygen is unbalanced.", "m": "Left: H=2, O=<span class=\"hl\">2</span> | Right: H=2, O=<span class=\"hl\">1</span>"}, {"t": "Fix oxygen", "e": "Put a 2 in front of H\u2082O to get 2 oxygens on the right.", "m": "H\u2082 + O\u2082 \u2192 <span class=\"hl\">2</span>H\u2082O"}, {"t": "Recount", "e": "Now right side has 4H and 2O. Left has 2H and 2O. Hydrogen is unbalanced.", "m": "Left: H=<span class=\"hl\">2</span>, O=2 | Right: H=<span class=\"hl\">4</span>, O=2"}, {"t": "Fix hydrogen", "e": "Put a 2 in front of H\u2082 to get 4 hydrogens on the left.", "m": "<span class=\"hl\">2</span>H\u2082 + O\u2082 \u2192 2H\u2082O"}, {"t": "Final check", "e": "Left: 4H, 2O. Right: 4H, 2O. Balanced!", "m": "<span class=\"hl\">2H\u2082 + O\u2082 \u2192 2H\u2082O</span> \u2713"}]}, {"text": "Balance: Fe + O\u2082 \u2192 Fe\u2082O\u2083", "steps": [{"t": "Count atoms", "e": "Left: 1Fe, 2O. Right: 2Fe, 3O. Both unbalanced.", "m": "Left: Fe=1, O=2 | Right: Fe=2, O=3"}, {"t": "Fix iron", "e": "Put 2 in front of Fe on the left to match 2 on the right. But we'll need to go bigger.", "m": "Try: multiply Fe\u2082O\u2083 by 2 \u2192 need 4Fe, 6O"}, {"t": "Balance iron", "e": "4 Fe on the right means we need 4 Fe on the left.", "m": "<span class=\"hl\">4</span>Fe + O\u2082 \u2192 <span class=\"hl\">2</span>Fe\u2082O\u2083"}, {"t": "Balance oxygen", "e": "Right has 6 O. Left has O\u2082, so we need 3 of them (3\u00d72=6).", "m": "4Fe + <span class=\"hl\">3</span>O\u2082 \u2192 2Fe\u2082O\u2083"}, {"t": "Final check", "e": "Left: 4Fe, 6O. Right: 4Fe, 6O. Balanced!", "m": "<span class=\"hl\">4Fe + 3O\u2082 \u2192 2Fe\u2082O\u2083</span> \u2713"}]}];
 var ci=0,ri=0;
 function load(i){ci=i;ri=0;document.getElementById('ptext').innerHTML=P[i].text;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
 function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='\u2713 Complete \u2014 try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}

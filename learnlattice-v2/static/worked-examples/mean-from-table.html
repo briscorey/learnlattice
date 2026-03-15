@@ -1,22 +1,64 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Worked Example: Mean from a Frequency Table — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}h1{font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}.sub{color:#94a3b8;font-size:.85rem;margin-bottom:24px;text-align:center;max-width:500px}.card{max-width:540px;width:100%;padding:24px;background:#1e293b;border:1px solid #334155;border-radius:12px;text-align:left;line-height:1.7;font-size:.88rem;color:#94a3b8}.card h2{font-size:1rem;color:#e2e8f0;margin:16px 0 8px}.card h2:first-child{margin-top:0}.card .math{font-family:'Courier New',monospace;color:#14b8a6;background:#0f172a;padding:8px 14px;border-radius:8px;margin:8px 0;text-align:center;font-size:1rem}.card strong{color:#e2e8f0}.card .hl{color:#f59e0b}.card p{margin:6px 0}.card table{color:#94a3b8}.card th{color:#e2e8f0}</style></head><body>
-<h1>Mean from a Frequency Table</h1><p class="sub">Multiply each value by its frequency, add the products, divide by total frequency.</p>
-<div class="card">
-<h2>The Data</h2>
-<p>Students were asked how many siblings they have:</p>
-<table style="width:100%;border-collapse:collapse;margin:8px 0"><tr style="border-bottom:1px solid #334155"><th style="text-align:left;padding:4px">Siblings</th><th style="text-align:right;padding:4px">Frequency</th></tr>
-<tr><td style="padding:4px">0</td><td style="text-align:right;padding:4px">5</td></tr>
-<tr><td style="padding:4px">1</td><td style="text-align:right;padding:4px">12</td></tr>
-<tr><td style="padding:4px">2</td><td style="text-align:right;padding:4px">8</td></tr>
-<tr><td style="padding:4px">3</td><td style="text-align:right;padding:4px">3</td></tr>
-<tr><td style="padding:4px">4</td><td style="text-align:right;padding:4px">2</td></tr></table>
-<h2>Step 1: Multiply value × frequency</h2>
-<div class="math">0×5=0, 1×12=12, 2×8=16, 3×3=9, 4×2=8</div>
-<h2>Step 2: Add the products</h2>
-<div class="math">0 + 12 + 16 + 9 + 8 = <span class="hl">45</span></div>
-<h2>Step 3: Add the frequencies</h2>
-<div class="math">5 + 12 + 8 + 3 + 2 = <span class="hl">30</span></div>
-<h2>Step 4: Divide</h2>
-<div class="math">Mean = 45 ÷ 30 = <span class="hl">1.5 siblings</span></div>
-<p><strong>Key insight:</strong> You cannot just add 0+1+2+3+4 and divide by 5. The frequencies matter.</p>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked Example: Mean from a Frequency Table — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
+h1{font-size:1.4rem;background:linear-gradient(135deg,#2563eb,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{font-size:.82rem;color:#94a3b8;margin-bottom:24px;text-align:center;max-width:520px}
+.example{width:100%;max-width:560px}
+.problem{padding:20px;background:#1e293b;border:2px solid #2563eb;border-radius:12px;text-align:center;margin-bottom:20px}
+.problem-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:#2563eb;margin-bottom:8px}
+.problem-text{font-size:.95rem;color:#e2e8f0;line-height:1.6}
+.steps{display:flex;flex-direction:column}
+.step{border:1px solid #1e293b;border-radius:10px;overflow:hidden;margin-bottom:8px}
+.step.revealed{border-color:#334155}
+.step.current{border-color:#2563eb}
+.step-header{display:flex;align-items:center;gap:10px;padding:12px 16px}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step:not(.revealed) .step-num{background:#334155;color:#64748b}
+.step.revealed .step-num{background:#2563eb;color:#fff}
+.step-title{font-size:.85rem;color:#94a3b8}
+.step.revealed .step-title{color:#e2e8f0}
+.step-body{display:none;padding:0 16px 16px}
+.step.revealed .step-body{display:block}
+.step-explain{font-size:.82rem;color:#94a3b8;line-height:1.6;margin-bottom:10px}
+.step-math{font-family:'Courier New',monospace;font-size:1.05rem;color:#60a5fa;background:#0f172a;padding:10px 16px;border-radius:8px;text-align:center}
+.step-math .hl{color:#f59e0b}
+.btn-next{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:16px}
+.btn-next:hover{background:#1d4ed8}
+.btn-next.done{background:#22c55e}
+.progress{display:flex;gap:4px;justify-content:center;margin-bottom:20px}
+.pdot{width:10px;height:10px;border-radius:50%;background:#334155;transition:background .3s}
+.pdot.on{background:#2563eb}
+.nav{display:flex;gap:6px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nav button{padding:6px 12px;border-radius:8px;border:1px solid #1e293b;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:.75rem;transition:all .15s;font-family:inherit}
+.nav button:hover{border-color:#2563eb}
+.nav button.on{background:#2563eb;color:#fff;border-color:#2563eb}
+.tip{margin-top:16px;padding:12px 16px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;font-size:.78rem;color:#fbbf24;line-height:1.5}
+.tip strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;color:#f59e0b}
+</style>
+</head>
+<body>
+<h1>Mean from a Frequency Table</h1>
+<p class="subtitle">Multiply each value by its frequency. Add the products. Divide by the total.</p>
+<div class="example">
+  <div class="problem"><div class="problem-label">Find the mean</div><div class="problem-text" id="ptext"></div></div>
+  <div class="progress" id="prog"></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn-next" id="btn" onclick="next()">Show next step</button>
+  <div class="nav" id="nav"></div>
+  <div class="tip"><strong>Common mistake</strong>Don't divide by the number of ROWS in the table. Divide by the TOTAL FREQUENCY (total number of data values).</div>
+</div>
+<script>
+var P=[{"text": "Students scored these marks on a quiz:<br>Score: 3 (freq: 2), 4 (freq: 5), 5 (freq: 8), 6 (freq: 4), 7 (freq: 1). Find the mean score.", "steps": [{"t": "Multiply value \u00d7 frequency", "e": "For each row, multiply the score by how many students got it.", "m": "3\u00d72=6, 4\u00d75=20, 5\u00d78=40, 6\u00d74=24, 7\u00d71=7"}, {"t": "Add all products", "e": "Sum of (value \u00d7 frequency) gives the total of all scores.", "m": "6 + 20 + 40 + 24 + 7 = <span class=\"hl\">97</span>"}, {"t": "Find total frequency", "e": "Add all frequencies \u2014 this is the total number of students.", "m": "2 + 5 + 8 + 4 + 1 = <span class=\"hl\">20</span>"}, {"t": "Divide", "e": "Mean = sum of products \u00f7 total frequency.", "m": "Mean = 97 \u00f7 20 = <span class=\"hl\">4.85</span>"}, {"t": "Interpret", "e": "The average quiz score was 4.85 out of 7. Most students scored 4 or 5.", "m": "Mean score = <span class=\"hl\">4.85</span> (between 4 and 5)"}]}, {"text": "Number of siblings: 0 (freq: 6), 1 (freq: 12), 2 (freq: 7), 3 (freq: 4), 4 (freq: 1). Find the mean number of siblings.", "steps": [{"t": "Multiply value \u00d7 frequency", "e": "0 siblings \u00d7 6 students = 0. 1 sibling \u00d7 12 students = 12. Continue for each row.", "m": "0\u00d76=0, 1\u00d712=12, 2\u00d77=14, 3\u00d74=12, 4\u00d71=4"}, {"t": "Add all products", "e": "Total siblings across all students.", "m": "0 + 12 + 14 + 12 + 4 = <span class=\"hl\">42</span>"}, {"t": "Find total frequency", "e": "Total students.", "m": "6 + 12 + 7 + 4 + 1 = <span class=\"hl\">30</span>"}, {"t": "Divide", "e": "Mean = total siblings \u00f7 total students.", "m": "Mean = 42 \u00f7 30 = <span class=\"hl\">1.4</span>"}, {"t": "Interpret", "e": "The average is 1.4 siblings \u2014 most students have 1 or 2.", "m": "Mean = <span class=\"hl\">1.4 siblings</span>"}]}];
+var ci=0,ri=0;
+function load(i){ci=i;ri=0;document.getElementById('ptext').innerHTML=P[i].text;var s=P[i].steps,c=document.getElementById('steps');c.innerHTML='';s.forEach(function(st,j){var d=document.createElement('div');d.className='step';d.id='s'+j;d.innerHTML='<div class="step-header"><div class="step-num">'+(j+1)+'</div><div class="step-title">'+st.t+'</div></div><div class="step-body"><div class="step-explain">'+st.e+'</div><div class="step-math">'+st.m+'</div></div>';c.appendChild(d)});var p=document.getElementById('prog');p.innerHTML='';s.forEach(function(){var d=document.createElement('div');d.className='pdot';p.appendChild(d)});var n=document.getElementById('nav');n.innerHTML='';P.forEach(function(pr,j){var b=document.createElement('button');b.className=j===i?'on':'';b.textContent='Problem '+(j+1);b.onclick=function(){load(j)};n.appendChild(b)});document.getElementById('btn').textContent='Show next step';document.getElementById('btn').className='btn-next';document.getElementById('btn').onclick=next}
+function next(){var s=P[ci].steps;if(ri>=s.length)return;var el=document.getElementById('s'+ri);el.classList.add('revealed','current');if(ri>0)document.getElementById('s'+(ri-1)).classList.remove('current');document.querySelectorAll('.pdot')[ri].classList.add('on');ri++;if(ri>=s.length){var b=document.getElementById('btn');b.textContent='\u2713 Complete \u2014 try another';b.className='btn-next done';b.onclick=function(){load((ci+1)%P.length)}}}
+load(0);
+</script>
+</body>
+</html>
