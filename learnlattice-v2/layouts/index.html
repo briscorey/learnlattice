@@ -392,42 +392,6 @@
     </div>
   </div>
 </section>
-
-<section class="section reveal">
-  <div class="section-header">
-    <h2 class="section-title">{{ $home.latest_title }}</h2>
-    <a href="{{ $home.latest_link_url }}" class="section-link">
-      {{ $home.latest_link_label }}
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-  </div>
-  <div class="resource-list resource-list-home">
-    {{ range first 6 $resources }}
-      {{ $subject := "" }}
-      {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
-      {{ $resourceType := "" }}
-      {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
-      <a class="resource-list-item" href="{{ .RelPermalink }}">
-        <div class="resource-list-main">
-          <div class="resource-list-top">
-            {{ with $subject }}<span class="resource-list-label">{{ . }}</span>{{ end }}
-            {{ with $resourceType }}<span class="resource-list-type">{{ . }}</span>{{ end }}
-          </div>
-          <h2>{{ .Title }}</h2>
-          <p>{{ .Description | default .Summary }}</p>
-        </div>
-        <div class="resource-list-meta">
-          {{ range first 2 .Params.year_levels }}
-            <span class="resource-tag">{{ . }}</span>
-          {{ end }}
-          {{ range first 2 .Params.tags }}
-            <span class="resource-tag">{{ . }}</span>
-          {{ end }}
-        </div>
-      </a>
-    {{ end }}
-  </div>
-</section>
 {{ end }}
 
 {{ if .Site.Taxonomies.tags }}
