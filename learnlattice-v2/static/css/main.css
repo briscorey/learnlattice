@@ -1136,3 +1136,14 @@ html.dark .about-writing-card{background:#1e293b;border-color:#334155}
   .about-numbers-item{flex:1 1 33%;border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:12px 8px}
   .about-numbers-item:nth-last-child(-n+2){border-bottom:none}
 }
+
+/* ── Related Resources (internal linking for SEO) ── */
+.related-resources{max-width:900px;margin:48px auto 32px;padding:0 24px}
+.related-resources h2{font-size:1.25rem;font-weight:600;margin-bottom:20px;color:var(--text-primary,#1a1a2e)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.related-card{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:10px;border:1px solid var(--border,#e5e7eb);text-decoration:none;transition:border-color .2s,box-shadow .2s}
+.related-card:hover{border-color:var(--accent,#0d9488);box-shadow:0 2px 8px rgba(13,148,136,.1)}
+.related-subject{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent,#0d9488)}
+.related-title{font-size:.95rem;font-weight:500;color:var(--text-primary,#1a1a2e);line-height:1.35}
+.related-meta{font-size:.75rem;color:var(--text-muted,#6b7280)}
+@media(max-width:600px){.related-grid{grid-template-columns:1fr}}

@@ -1,0 +1,42 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range .Data.Pages -}}
+    {{- $dominated := false -}}
+    {{/* Skip tag pages — thin content, waste crawl budget */}}
+    {{- if and .IsNode (eq .Data.Singular "tag") }}{{ $dominated = true }}{{ end -}}
+    {{/* Skip resource_type taxonomy pages */}}
+    {{- if and .IsNode (eq .Data.Singular "resource_type") }}{{ $dominated = true }}{{ end -}}
+    {{/* Skip /admin/ */}}
+    {{- if in .RelPermalink "/admin/" }}{{ $dominated = true }}{{ end -}}
+    {{/* Skip /pages/ list */}}
+    {{- if eq .RelPermalink "/pages/" }}{{ $dominated = true }}{{ end -}}
+    {{- if not $dominated }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    {{- end }}
+    {{- if eq .Section "resources" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    {{- else if eq .Section "blog" }}
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    {{- else if .IsHome }}
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    {{- else if eq .Section "assessment" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    {{- else if and .IsNode (eq .Data.Singular "subject") }}
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    {{- else }}
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    {{- end }}
+  </url>
+    {{- end -}}
+  {{- end }}
+</urlset>

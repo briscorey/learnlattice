@@ -1,0 +1,68 @@
+{{/* ── Related Resources: Internal linking for SEO ── */}}
+{{/* Shows 3-5 related resources based on shared subjects, tags, and year levels */}}
+
+{{ $current := . }}
+{{ $subject := "" }}
+{{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+{{ $yearLevels := .Params.year_levels | default slice }}
+{{ $tags := .Params.tags | default slice }}
+{{ $keyConcept := .Params.key_concept | default "" }}
+
+{{/* Score all other resources by relevance */}}
+{{ $scored := slice }}
+{{ range where (where .Site.RegularPages "Section" "resources") "Permalink" "ne" $current.Permalink }}
+  {{ $score := 0 }}
+  {{/* +3 for same subject */}}
+  {{ $rSubjects := .Params.subjects | default slice }}
+  {{ range $rSubjects }}
+    {{ if eq . $subject }}{{ $score = add $score 3 }}{{ end }}
+  {{ end }}
+  {{/* +2 for shared year level */}}
+  {{ $rYears := .Params.year_levels | default slice }}
+  {{ range $rYears }}
+    {{ $yr := . }}
+    {{ range $yearLevels }}
+      {{ if eq . $yr }}{{ $score = add $score 2 }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{/* +1 for each shared tag */}}
+  {{ $rTags := .Params.tags | default slice }}
+  {{ range $rTags }}
+    {{ $rt := . }}
+    {{ range $tags }}
+      {{ if eq . $rt }}{{ $score = add $score 1 }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{/* +2 for same key concept */}}
+  {{ if and (ne $keyConcept "") (eq (.Params.key_concept | default "") $keyConcept) }}
+    {{ $score = add $score 2 }}
+  {{ end }}
+  {{ if gt $score 2 }}
+    {{ $scored = $scored | append (dict "page" . "score" $score) }}
+  {{ end }}
+{{ end }}
+
+{{/* Sort by score descending and take top 5 */}}
+{{ $sorted := sort $scored "score" "desc" }}
+{{ $related := slice }}
+{{ range first 5 $sorted }}
+  {{ $related = $related | append .page }}
+{{ end }}
+
+{{ if gt (len $related) 0 }}
+<section class="related-resources" aria-labelledby="related-heading">
+  <h2 id="related-heading">Related Resources</h2>
+  <div class="related-grid">
+    {{ range $related }}
+    <a href="{{ .RelPermalink }}" class="related-card">
+      <span class="related-subject">{{ with index (.Params.subjects | default slice) 0 }}{{ . }}{{ end }}</span>
+      <span class="related-title">{{ .Title }}</span>
+      <span class="related-meta">
+        {{ with index (.Params.resource_types | default slice) 0 }}{{ . }}{{ end }}
+        {{ with index (.Params.year_levels | default slice) 0 }} · {{ . }}{{ end }}
+      </span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

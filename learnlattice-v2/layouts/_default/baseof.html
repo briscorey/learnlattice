@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Investigations{{ else }}{{ $t := .Title }}{{ if gt (len $t) 50 }}{{ $t }}{{ else }}{{ $t }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
-  <meta name="description" content="{{ with .Description }}{{ . | truncate 155 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{/* ── SEO-optimized title: {Title} | MYP {Subject} {Type} | LearnLattice ── */}}
+  <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Mathematics & Science Investigations{{ else }}{{ $t := .Title }}{{ $suffix := .Site.Title }}{{ if eq .Section "resources" }}{{ with index (.Params.subjects | default slice) 0 }}{{ $suffix = printf "MYP %s %s | LearnLattice" . (index ($.Params.resource_types | default (slice "Resource")) 0) }}{{ end }}{{ else if eq .Section "blog" }}{{ $suffix = "MYP Teaching Blog | LearnLattice" }}{{ else if eq .Section "assessment" }}{{ $suffix = "MYP Assessment Guide | LearnLattice" }}{{ else }}{{ $suffix = "LearnLattice" }}{{ end }}{{ printf "%s | %s" $t $suffix }}{{ end }}</title>
+  {{/* ── Meta description: click-worthy for teachers ── */}}
+  <meta name="description" content="{{ with .Description }}{{ . | truncate 155 }}{{ else }}{{ if eq .Section "resources" }}Free MYP {{ with index (.Params.subjects | default slice) 0 }}{{ . }}{{ end }} {{ with index (.Params.resource_types | default (slice "resource")) 0 }}{{ . | lower }}{{ end }} for {{ delimit (.Params.year_levels | default (slice "middle school")) ", " }}. Inquiry-based, classroom-ready, with teacher moves and EAL scaffolds.{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  {{/* ── noindex tag/taxonomy list pages to focus crawl budget ── */}}
+  {{ if and .IsNode (in (slice "tag" "resource_type") .Data.Singular) }}<meta name="robots" content="noindex, follow">{{ end }}
   <meta name="theme-color" content="#0D9488">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   {{ partial "seo.html" . }}
