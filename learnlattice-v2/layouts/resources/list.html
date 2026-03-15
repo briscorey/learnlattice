@@ -21,20 +21,20 @@
 
 <div class="resources-page-counts reveal">
   <div class="resources-page-counts-inner">
-    {{ $unitPlans := len (where $allPages "Params.resource_types" "intersect" (slice "Unit Plan")) }}
-    {{ $worksheets := len (where $allPages "Params.resource_types" "intersect" (slice "Worksheet")) }}
     {{ $labs := len (where $allPages "Params.resource_types" "intersect" (slice "Lab Activity")) }}
     {{ $invPacks := len (where $allPages "Params.resource_types" "intersect" (slice "Investigation Pack")) }}
     {{ $games := len (where $allPages "Params.resource_types" "intersect" (slice "Interactive Game")) }}
+    {{ $exemplars := len (where $allPages "Params.tags" "intersect" (slice "Annotated Student Work")) }}
+    {{ $explainers := len (where $allPages "Params.resource_types" "intersect" (slice "Visual Explainer")) }}
     <div class="rpc-stat"><span class="rpc-num">{{ len $allPages }}</span><span class="rpc-label">Total resources</span></div>
     <div class="rpc-divider"></div>
-    <div class="rpc-stat"><span class="rpc-num">{{ $unitPlans }}</span><span class="rpc-label">Unit Plans</span></div>
-    <div class="rpc-divider"></div>
-    <div class="rpc-stat"><span class="rpc-num">{{ $worksheets }}</span><span class="rpc-label">Worksheets</span></div>
-    <div class="rpc-divider"></div>
-    <div class="rpc-stat"><span class="rpc-num">{{ add $labs $invPacks }}</span><span class="rpc-label">Labs &amp; Investigations</span></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ add $labs $invPacks }}</span><span class="rpc-label">Investigations</span></div>
     <div class="rpc-divider"></div>
     <div class="rpc-stat"><span class="rpc-num">{{ $games }}</span><span class="rpc-label">Interactive Games</span></div>
+    <div class="rpc-divider"></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ $exemplars }}</span><span class="rpc-label">Annotated Exemplars</span></div>
+    <div class="rpc-divider"></div>
+    <div class="rpc-stat"><span class="rpc-num">{{ $explainers }}</span><span class="rpc-label">Visual Explainers</span></div>
   </div>
 </div>
 
