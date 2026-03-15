@@ -37,7 +37,9 @@ nav { height: 58px !important; box-shadow: var(--vs-shadow-nav) !important; bord
 .nav-search:hover { border-color: var(--teal) !important; box-shadow: 0 0 0 3px rgba(13,148,136,0.06) !important; }
 
 /* ── HOMEPAGE ── */
-.ka-home-hero { padding-top: 72px !important; padding-bottom: 40px !important; }
+.ka-home-hero { padding-top: 72px !important; padding-bottom: 40px !important; overflow: visible !important; }
+.ka-home-hero .hero-glow { overflow: hidden; }
+.ka-home-copy h1 { line-height: 1.12 !important; }
 .stats { padding-top: 28px !important; padding-bottom: 28px !important; }
 .stats::before { background: linear-gradient(135deg, #0C3B36 0%, #0D4540 40%, #0A524B 100%) !important; }
 .stat-num { font-size: clamp(40px, 4vw, 56px) !important; }
