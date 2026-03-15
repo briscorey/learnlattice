@@ -1,7 +1,6 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-.rev{font-family:'Bricolage Grotesque',sans-serif;min-height:calc(100vh - 65px);background:#0c0a14;color:#e8e0f0;display:flex;flex-direction:column}
+.rev{font-family:'Outfit',system-ui,sans-serif;min-height:calc(100vh - 65px);background:#0c0a14;color:#e8e0f0;display:flex;flex-direction:column}
 .rev *{box-sizing:border-box;margin:0;padding:0}
 
 /* ── Setup screen ── */
@@ -104,6 +103,27 @@
   .rev-card{min-height:240px}
   .rev-card-term{font-size:1.2rem}
 }
+
+/* ── Timer urgency ── */
+.rev-timer.warn{color:#fbbf24;animation:timerPulse 1s ease infinite}
+.rev-timer.danger{color:#ef4444;animation:timerPulse .5s ease infinite}
+@keyframes timerPulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* ── Keyboard hints ── */
+.rev-keys{font-size:.65rem;color:#4a3f60;text-align:center;padding:4px;letter-spacing:.5px}
+.rev-keys kbd{padding:1px 5px;border-radius:4px;background:#1e1830;border:1px solid #2a2440;font-family:inherit;font-size:.6rem;color:#6b5f80}
+
+/* ── Missed items review ── */
+.rev-missed{max-width:400px;margin:0 auto 20px;text-align:left;width:100%}
+.rev-missed-title{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#6b5f80;font-weight:700;margin-bottom:10px;text-align:center}
+.rev-missed-list{display:flex;flex-direction:column;gap:6px;max-height:200px;overflow-y:auto}
+.rev-missed-item{padding:10px 14px;border-radius:10px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);font-size:.82rem;color:#fca5a5}
+.rev-missed-item strong{color:#e8e0f0;display:block;margin-bottom:2px}
+
+/* ── Card title font ── */
+.rev-title{font-family:'DM Serif Display',serif}
+.rev-card-term{font-family:'DM Serif Display',serif}
+.rev-formula-title{font-family:'DM Serif Display',serif}
 </style>
 
 <div class="rev">
@@ -158,6 +178,7 @@
       </div>
       <div class="rev-topbar-right">
         <span class="rev-streak" id="revStreak"></span>
+        <span class="rev-card-count" id="revCardCount" style="font-size:.75rem;color:#6b5f80"></span>
         <span class="rev-score">Score: <span id="revScoreNum">0</span></span>
         <span class="rev-timer" id="revTimer">5:00</span>
       </div>
@@ -166,6 +187,7 @@
     <div class="rev-arena" id="revArena"></div>
     <div class="rev-tap" id="revTap"></div>
     <div class="rev-actions" id="revActions"></div>
+    <div class="rev-keys" id="revKeys">Press <kbd>Space</kbd> to flip · <kbd>←</kbd> didn't know · <kbd>→</kbd> knew it</div>
   </div>
 
   <!-- RESULTS -->
@@ -174,6 +196,10 @@
     <div class="rev-results-score" id="revFinalScore">0</div>
     <div class="rev-results-detail" id="revFinalDetail"></div>
     <div class="rev-results-msg" id="revFinalMsg"></div>
+    <div class="rev-missed" id="revMissed" style="display:none">
+      <div class="rev-missed-title">Terms to review:</div>
+      <div class="rev-missed-list" id="revMissedList"></div>
+    </div>
     <button class="rev-again" onclick="location.reload()">Study Again</button>
     <button class="rev-home" onclick="location.href='/students/'">Back to Student Hub</button>
   </div>
@@ -193,6 +219,7 @@ var timerInterval = null;
 var timeLeft = 0;
 var deck = [];
 var deckIndex = 0;
+var missed = [];
 
 // Load data
 fetch('/js/revision-data.json').then(r=>r.json()).then(function(d){
@@ -265,7 +292,7 @@ window.startSession = function(){
   if(deck.length === 0){ alert('No content available for this topic.'); return; }
 
   // Init session
-  score = 0; total = 0; streak = 0; maxStreak = 0; deckIndex = 0;
+  score = 0; total = 0; streak = 0; maxStreak = 0; deckIndex = 0; missed = [];
   timeLeft = selectedMins * 60;
   sessionActive = true;
 
@@ -289,7 +316,9 @@ function startTimer(){
 function updateTimerDisplay(){
   var m = Math.floor(timeLeft/60);
   var s = timeLeft%60;
-  document.getElementById('revTimer').textContent = m+':'+(s<10?'0':'')+s;
+  var el = document.getElementById('revTimer');
+  el.textContent = m+':'+(s<10?'0':'')+s;
+  el.className = 'rev-timer' + (timeLeft <= 10 ? ' danger' : timeLeft <= 30 ? ' warn' : '');
   var totalSecs = selectedMins * 60;
   var pct = ((totalSecs - timeLeft) / totalSecs * 100);
   document.getElementById('revProgressFill').style.width = pct + '%';
@@ -307,6 +336,7 @@ function showCard(){
   var arena = document.getElementById('revArena');
   var actions = document.getElementById('revActions');
   var tap = document.getElementById('revTap');
+  document.getElementById('revCardCount').textContent = (deckIndex+1) + ' / ' + deck.length;
 
   if(selectedMode === 'flashcards'){
     arena.innerHTML = '<div class="rev-card" id="revCard" onclick="flipCard()">' +
@@ -324,7 +354,7 @@ function showCard(){
     '</div>';
     actions.innerHTML = '';
     tap.textContent = 'Tap the card to flip it';
-    // Show know/skip buttons after flip
+    document.getElementById('revKeys').innerHTML = 'Press <kbd>Space</kbd> to flip · <kbd>←</kbd> didn\'t know · <kbd>→</kbd> knew it';
   }
   else if(selectedMode === 'quiz'){
     var answers = [item.a];
@@ -343,6 +373,7 @@ function showCard(){
     '</div>';
     actions.innerHTML = '';
     tap.textContent = 'Pick the correct answer';
+    document.getElementById('revKeys').innerHTML = 'Press <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> to answer · <kbd>Esc</kbd> to quit';
   }
   else { // formulas
     arena.innerHTML = '<div class="rev-card" id="revCard" onclick="flipCard()">' +
@@ -359,6 +390,7 @@ function showCard(){
     '</div>';
     actions.innerHTML = '';
     tap.textContent = 'Tap to reveal the formula';
+    document.getElementById('revKeys').innerHTML = 'Press <kbd>Space</kbd> to flip · <kbd>←</kbd> didn\'t know · <kbd>→</kbd> knew it';
   }
 }
 
@@ -378,7 +410,7 @@ window.flipCard = function(){
 
 window.cardResult = function(knew){
   if(knew){ score += 10; streak++; if(streak > maxStreak) maxStreak = streak; }
-  else { streak = 0; }
+  else { streak = 0; var item = deck[deckIndex]; missed.push({term: item.term || item.title || '', def: item.definition || item.formula || ''}); }
   updateUI();
   deckIndex++;
   showCard();
@@ -402,6 +434,8 @@ window.checkQuiz = function(btn, picked, correct){
   } else {
     btn.classList.add('wrong');
     streak = 0;
+    var item = deck[deckIndex];
+    missed.push({term: item.q || '', def: 'Answer: ' + decoded_correct});
   }
   updateUI();
 
@@ -427,7 +461,60 @@ window.endSession = function(){
             pct >= 40 ? 'Good start. Try again to improve your score.' :
             'This topic needs more practice. Review the investigations and try again.';
   document.getElementById('revFinalMsg').textContent = msg;
+
+  // Show missed items
+  if(missed.length > 0){
+    document.getElementById('revMissed').style.display = '';
+    var list = document.getElementById('revMissedList');
+    list.innerHTML = '';
+    missed.forEach(function(m){
+      var div = document.createElement('div');
+      div.className = 'rev-missed-item';
+      div.innerHTML = '<strong>' + m.term + '</strong>' + m.def;
+      list.appendChild(div);
+    });
+  }
 };
+
+// Keyboard shortcuts
+document.addEventListener('keydown', function(e){
+  if(!sessionActive) return;
+  var card = document.getElementById('revCard');
+
+  if(selectedMode === 'flashcards' || selectedMode === 'formulas'){
+    // Space or Enter to flip
+    if(e.key === ' ' || e.key === 'Enter'){
+      e.preventDefault();
+      if(card && !card.classList.contains('flipped')){
+        flipCard();
+      }
+    }
+    // Right arrow = knew it (only after flip)
+    if(e.key === 'ArrowRight' && card && card.classList.contains('flipped')){
+      e.preventDefault();
+      cardResult(true);
+    }
+    // Left arrow = didn't know (only after flip)
+    if(e.key === 'ArrowLeft' && card && card.classList.contains('flipped')){
+      e.preventDefault();
+      cardResult(false);
+    }
+  }
+
+  if(selectedMode === 'quiz'){
+    // 1-4 keys for quiz answers
+    if(e.key >= '1' && e.key <= '4'){
+      var btns = document.querySelectorAll('.rev-quiz-btn');
+      var idx = parseInt(e.key) - 1;
+      if(btns[idx] && btns[idx].onclick) btns[idx].click();
+    }
+  }
+
+  // Escape to quit
+  if(e.key === 'Escape'){
+    endSession();
+  }
+});
 
 })();
 </script>
