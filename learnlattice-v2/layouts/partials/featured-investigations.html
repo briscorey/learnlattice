@@ -1,0 +1,326 @@
+{{/* 
+  Featured Flagship Investigations
+  Displays 5 curated cross-disciplinary investigations on the homepage.
+  Shows: title, description, subject badges, year level, global context.
+  Design: horizontal scroll on mobile, 2+3 grid on desktop.
+*/}}
+
+{{ $flagships := slice }}
+
+{{/* Curated order — best conference demos first */}}
+{{ $slugs := slice 
+  "is-your-streaming-habit-sustainable"
+  "the-heat-island-effect"
+  "the-mathematics-of-gerrymandering"
+  "pandemic-math-modeling-disease-transmission"
+  "nutrition-labels-do-the-numbers-add-up"
+}}
+
+{{ range $slugs }}
+  {{ $page := $.Site.GetPage (printf "/resources/%s" .) }}
+  {{ if $page }}
+    {{ $flagships = $flagships | append $page }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $flagships) 0 }}
+<section class="featured-investigations" id="featured">
+  <div class="featured-inner">
+    <div class="featured-header">
+      <span class="featured-kicker">New This Month</span>
+      <h2>Cross-Disciplinary Flagships</h2>
+      <p>Investigations where Mathematics meets Science, data meets decisions, and every student has a reason to care.</p>
+    </div>
+
+    <div class="featured-grid">
+      {{ range $i, $p := $flagships }}
+      {{ $subjects := $p.Params.subjects | default slice }}
+      {{ $yearLevels := $p.Params.year_levels | default slice }}
+      {{ $globalContext := $p.Params.global_context | default "" }}
+      {{ $tags := $p.Params.tags | default slice }}
+      {{ $hook := $p.Params.hook | default "" }}
+
+      {{/* Determine primary subject for color coding */}}
+      {{ $subjectClass := "general" }}
+      {{ range $subjects }}
+        {{ if in (. | lower) "math" }}{{ $subjectClass = "mathematics" }}{{ end }}
+        {{ if in (. | lower) "science" }}{{ $subjectClass = "science" }}{{ end }}
+      {{ end }}
+      {{/* Cross-disciplinary gets a special class */}}
+      {{ $isCross := gt (len $subjects) 1 }}
+
+      <a class="featured-card{{ if $isCross }} featured-card--cross{{ end }}" 
+         href="{{ $p.RelPermalink }}" 
+         data-subject="{{ $subjectClass }}">
+        
+        {{/* Subject badges */}}
+        <div class="featured-card-badges">
+          {{ range $subjects }}
+          <span class="featured-badge featured-badge--{{ . | urlize }}">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        {{/* Title */}}
+        <h3 class="featured-card-title">{{ $p.Title }}</h3>
+
+        {{/* Hook or description */}}
+        {{ if $hook }}
+        <p class="featured-card-hook">{{ $hook | truncate 160 }}</p>
+        {{ else }}
+        <p class="featured-card-hook">{{ $p.Description | truncate 160 }}</p>
+        {{ end }}
+
+        {{/* Meta row */}}
+        <div class="featured-card-meta">
+          {{ with $globalContext }}
+          <span class="featured-meta-context">{{ . }}</span>
+          {{ end }}
+          {{ range first 2 $yearLevels }}
+          <span class="featured-meta-grade">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        {{/* Criteria tags */}}
+        <div class="featured-card-criteria">
+          {{ range $tags }}
+            {{ if hasPrefix . "Criterion" }}
+            {{ $letter := strings.TrimPrefix "Criterion " . }}
+            <span class="crit-dot crit-dot--{{ $letter | lower }}">{{ $letter }}</span>
+            {{ end }}
+          {{ end }}
+          {{ if $isCross }}
+          <span class="featured-cross-label">Cross-Disciplinary</span>
+          {{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+
+    <div class="featured-cta">
+      <a href="/browse/" class="featured-cta-btn">Browse All 365+ Investigations</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.featured-investigations {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  position: relative;
+}
+.featured-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+.featured-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.featured-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent, #0EA573);
+  background: var(--accent-soft, rgba(14,165,115,0.1));
+  padding: 0.25em 0.75em;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+.featured-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0 0 0.5rem;
+}
+.featured-header p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--text-muted, #64748B);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Grid: 2 top + 3 bottom on desktop, scroll on mobile ── */
+.featured-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .featured-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .featured-card:nth-child(1),
+  .featured-card:nth-child(2) {
+    grid-column: span 3;
+  }
+  .featured-card:nth-child(3),
+  .featured-card:nth-child(4),
+  .featured-card:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+/* ── Card ── */
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border, rgba(148,163,184,0.15));
+  background: var(--card-bg, rgba(255,255,255,0.6));
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), 
+              box-shadow 0.3s cubic-bezier(0.16,1,0.3,1),
+              border-color 0.3s ease;
+}
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border-color: var(--accent, #0EA573);
+}
+[data-theme="dark"] .featured-card {
+  background: var(--card-bg-dark, rgba(26,29,37,0.8));
+}
+[data-theme="dark"] .featured-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+/* Cross-disciplinary accent */
+.featured-card--cross {
+  border-left: 3px solid var(--accent, #0EA573);
+}
+
+/* ── Badges ── */
+.featured-card-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.featured-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2em 0.6em;
+  border-radius: 6px;
+  line-height: 1;
+}
+.featured-badge--mathematics {
+  background: rgba(59,109,240,0.1);
+  color: #3B6DF0;
+}
+.featured-badge--science {
+  background: rgba(14,165,115,0.1);
+  color: #0EA573;
+}
+[data-theme="dark"] .featured-badge--mathematics {
+  background: rgba(59,109,240,0.2);
+  color: #6B93F5;
+}
+[data-theme="dark"] .featured-badge--science {
+  background: rgba(14,165,115,0.2);
+  color: #34D399;
+}
+
+/* ── Content ── */
+.featured-card-title {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+.featured-card-hook {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted, #64748B);
+  margin: 0 0 auto;
+  padding-bottom: 1rem;
+}
+
+/* ── Meta ── */
+.featured-card-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.featured-meta-context,
+.featured-meta-grade {
+  font-size: 0.7rem;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  background: var(--surface-raised, rgba(148,163,184,0.08));
+  color: var(--text-muted, #64748B);
+}
+
+/* ── Criteria dots ── */
+.featured-card-criteria {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border, rgba(148,163,184,0.1));
+}
+.crit-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+.crit-dot--c { background: #0EA573; }
+.crit-dot--d { background: #8B5CF6; }
+.crit-dot--b { background: #3B82F6; }
+.crit-dot--a { background: #F59E0B; }
+.featured-cross-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent, #0EA573);
+  margin-left: auto;
+}
+
+/* ── CTA ── */
+.featured-cta {
+  text-align: center;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.featured-cta-btn {
+  display: inline-block;
+  padding: 0.75em 2em;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent, #0EA573);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.featured-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14,165,115,0.3);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .featured-card { transition: none; }
+  .featured-card:hover { transform: none; }
+  .featured-cta-btn { transition: none; }
+  .featured-cta-btn:hover { transform: none; }
+}
+</style>
+{{ end }}

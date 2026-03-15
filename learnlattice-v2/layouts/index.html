@@ -177,6 +177,9 @@
   </div>
 </section>
 
+<!-- ── FEATURED FLAGSHIP INVESTIGATIONS ── -->
+{{ partial "featured-investigations.html" . }}
+
 <!-- ── INVESTIGATION OF THE WEEK ── -->
 {{ $flagships := where $resources "Params.teacher_moves" "ne" nil }}
 {{ $featured := index $flagships 0 }}

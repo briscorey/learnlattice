@@ -1,0 +1,222 @@
+{{/*
+  Homepage Hero — Refined Value Proposition
+  Replace the existing hero section on index.html with this partial.
+  Call: {{ partial "homepage-hero.html" . }}
+*/}}
+
+{{ $resourceCount := len (where .Site.RegularPages "Section" "resources") }}
+{{ $gameCount := len (where .Site.RegularPages.ByTitle "Params.resource_types" "intersect" (slice "Interactive Game")) }}
+{{ $subjectCount := len .Site.Taxonomies.subjects }}
+
+<section class="hero-refined">
+  <div class="hero-refined-inner">
+    <div class="hero-refined-content">
+      <div class="hero-refined-kicker">
+        <span class="hero-kicker-dot"></span>
+        Free &middot; Open Access &middot; MYP-Aligned
+      </div>
+      
+      <h1 class="hero-refined-title">
+        Inquiry-based investigations for MYP Math&nbsp;&amp;&nbsp;Science
+      </h1>
+      
+      <p class="hero-refined-subtitle">
+        {{ $resourceCount }}+ classroom-ready investigations, tagged by criteria, scaffolded for every learner, and designed by a teacher who uses them. No login. No paywall.
+      </p>
+
+      <div class="hero-refined-actions">
+        <a href="/browse/" class="hero-btn hero-btn--primary">Browse Investigations</a>
+        <a href="/games/" class="hero-btn hero-btn--secondary">Play the Games</a>
+      </div>
+    </div>
+
+    {{/* Stats bar */}}
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">{{ $resourceCount }}+</span>
+        <span class="hero-stat-label">Investigations</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">10</span>
+        <span class="hero-stat-label">Interactive Games</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">6</span>
+        <span class="hero-stat-label">Grade Levels</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">4</span>
+        <span class="hero-stat-label">MYP Criteria</span>
+      </div>
+    </div>
+
+    {{/* Design philosophy one-liner */}}
+    <div class="hero-philosophy">
+      <p>Every investigation starts with a question worth answering, not a procedure to follow.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero-refined {
+  padding: clamp(4rem, 10vw, 7rem) 0 clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+}
+.hero-refined-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+}
+
+/* ── Kicker ── */
+.hero-refined-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent, #0EA573);
+  margin-bottom: 1.25rem;
+}
+.hero-kicker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #0EA573);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+/* ── Title ── */
+.hero-refined-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+/* ── Subtitle ── */
+.hero-refined-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--text-muted, #64748B);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+
+/* ── Buttons ── */
+.hero-refined-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.8em;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+.hero-btn--primary {
+  background: var(--accent, #0EA573);
+  color: white;
+  box-shadow: 0 4px 14px rgba(14,165,115,0.25);
+}
+.hero-btn--primary:hover {
+  box-shadow: 0 8px 24px rgba(14,165,115,0.35);
+}
+.hero-btn--secondary {
+  background: var(--surface-raised, rgba(148,163,184,0.08));
+  color: var(--text, #1E293B);
+  border: 1px solid var(--border, rgba(148,163,184,0.2));
+}
+.hero-btn--secondary:hover {
+  border-color: var(--accent, #0EA573);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+[data-theme="dark"] .hero-btn--secondary {
+  color: var(--text-dark, #E2E8F0);
+}
+
+/* ── Stats ── */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border, rgba(148,163,184,0.12));
+  border-bottom: 1px solid var(--border, rgba(148,163,184,0.12));
+  margin-bottom: 2rem;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-stat-number {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text, #1E293B);
+  line-height: 1.1;
+}
+[data-theme="dark"] .hero-stat-number {
+  color: var(--text-dark, #F1F5F9);
+}
+.hero-stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #94A3B8);
+  margin-top: 0.25rem;
+}
+.hero-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border, rgba(148,163,184,0.15));
+}
+@media (max-width: 480px) {
+  .hero-stats { flex-wrap: wrap; gap: 0.75rem; }
+  .hero-stat-divider { display: none; }
+  .hero-stat { flex: 0 0 45%; }
+}
+
+/* ── Philosophy ── */
+.hero-philosophy {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.hero-philosophy p {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-muted, #94A3B8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-kicker-dot { animation: none; }
+  .hero-btn { transition: none; }
+  .hero-btn:hover { transform: none; }
+}
+</style>
