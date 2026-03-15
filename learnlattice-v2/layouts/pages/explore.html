@@ -57,7 +57,7 @@
 
 {{/* ── SUBJECT CARDS ── */}}
 <section class="explore-subjects">
-  <div class="explore-subjects-grid">
+  <div class="explore-subjects-grid stagger-grid">
     {{ range $subjects }}
     {{ $count := len (where $allResources "Params.subjects" "intersect" (slice .name)) }}
     <a href="{{ .url }}" class="explore-subject-card rc-{{ .color }}">

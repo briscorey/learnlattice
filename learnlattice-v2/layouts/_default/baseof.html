@@ -29,7 +29,7 @@
   {{ block "head" . }}{{ end }}
   <script>try{if(localStorage.getItem('ll-dark')==='1')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
-<body{{ with .Params.body_class }} class="{{ . }}"{{ end }}>
+<body{{ with .Params.body_class }} class="{{ . }}"{{ end }}{{ if eq .Section "resources" }}{{ with .Params.subjects }} data-subject="{{ index . 0 | urlize }}"{{ end }}{{ else if eq .Section "games" }} data-subject="games"{{ end }}>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="lattice-bg"></div>
   {{ partial "header.html" . }}
