@@ -156,7 +156,11 @@ document.addEventListener('keydown',function(e){
   if(e.key==='ArrowLeft'){e.preventDefault();nav(-1);}
 });
 
-show(0);
+// Hash routing: /students/help/#algebra opens that topic
+var hashMap={};T.forEach(function(t,i){var slug=t.s.replace('/interactives/','').replace('.html','');hashMap[slug]=i;});
+function checkHash(){var h=location.hash.replace('#','');if(h&&hashMap[h]!==undefined)show(hashMap[h]);else show(0);}
+checkHash();
+window.addEventListener('hashchange',checkHash);
 })();
 </script>
 

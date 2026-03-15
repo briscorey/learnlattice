@@ -143,10 +143,32 @@
 
       {{ with .Params.parent_summary }}<div class="rs-sidebar-card rs-parent-summary"><h3>📨 Newsletter</h3><p>{{ . }}</p><button class="rs-copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>{{ end }}
 
+      {{/* ═══ POINT 4: Visual Explainer sidebar card ═══ */}}
+      {{ $interactiveSidebar := partial "interactive-map.html" . }}
+      {{ if $interactiveSidebar.slug }}
+      <a href="/students/help/#{{ $interactiveSidebar.slug }}" class="rs-sidebar-card rs-sidebar-interactive">
+        <span class="rs-si-icon">🔍</span>
+        <div>
+          <div class="rs-si-title">Visual Explainer</div>
+          <div class="rs-si-topic">Understand {{ $interactiveSidebar.title }}</div>
+        </div>
+        <span class="rs-si-arrow">→</span>
+      </a>
+      {{ end }}
+
       <div class="rs-sidebar-links"><a href="/students/" class="rs-sidebar-link">🎓 Students</a><a href="/revision/" class="rs-sidebar-link">📖 Revision</a><a href="/vocabulary/" class="rs-sidebar-link">🔤 Vocabulary</a></div>
     </aside>
   </div>
 </article>
+
+{{/* ═══ POINT 1: "Stuck?" floating button ═══ */}}
+{{ $interactive := partial "interactive-map.html" . }}
+{{ if $interactive.slug }}
+<a href="/students/help/#{{ $interactive.slug }}" class="stuck-fab" title="Try the {{ $interactive.title }} visual explainer">
+  <span class="stuck-fab-icon">?</span>
+  <span class="stuck-fab-label">Stuck? Try the interactive</span>
+</a>
+{{ end }}
 
 {{ partial "related-resources.html" . }}
 

@@ -1,0 +1,56 @@
+{{/* 
+  interactive-map.html
+  Returns the best matching interactive slug for a resource based on its topic/tags.
+  Usage: {{ partial "interactive-map.html" . }}
+  Returns a dict with .slug and .title, or empty string if no match.
+*/}}
+
+{{ $slug := "" }}
+{{ $title := "" }}
+{{ $mathTopic := .Params.math_topic | default "" }}
+{{ $sciTopic := .Params.science_topic | default "" }}
+{{ $tags := .Params.tags | default slice }}
+
+{{/* Math topic mapping */}}
+{{ if eq $mathTopic "Algebra" }}{{ $slug = "algebra" }}{{ $title = "Algebra" }}{{ end }}
+{{ if eq $mathTopic "Number" }}{{ $slug = "percentages" }}{{ $title = "Percentages" }}{{ end }}
+{{ if eq $mathTopic "Number Sense" }}{{ $slug = "negative-numbers" }}{{ $title = "Negative Numbers" }}{{ end }}
+{{ if eq $mathTopic "Fractions" }}{{ $slug = "fractions" }}{{ $title = "Fractions" }}{{ end }}
+{{ if eq $mathTopic "fractions" }}{{ $slug = "fractions" }}{{ $title = "Fractions" }}{{ end }}
+{{ if eq $mathTopic "Geometry" }}{{ $slug = "area-perimeter" }}{{ $title = "Area & Perimeter" }}{{ end }}
+{{ if eq $mathTopic "geometry" }}{{ $slug = "area-perimeter" }}{{ $title = "Area & Perimeter" }}{{ end }}
+{{ if eq $mathTopic "Statistics" }}{{ $slug = "mean-median-mode" }}{{ $title = "Averages" }}{{ end }}
+{{ if eq $mathTopic "statistics" }}{{ $slug = "mean-median-mode" }}{{ $title = "Averages" }}{{ end }}
+{{ if eq $mathTopic "functions" }}{{ $slug = "sequences" }}{{ $title = "Sequences" }}{{ end }}
+
+{{/* Refine by tags */}}
+{{ if in $tags "Probability" }}{{ $slug = "probability" }}{{ $title = "Probability" }}{{ end }}
+{{ if in $tags "Sequences" }}{{ $slug = "sequences" }}{{ $title = "Sequences" }}{{ end }}
+{{ if in $tags "Ratio" }}{{ $slug = "ratio" }}{{ $title = "Ratio" }}{{ end }}
+{{ if in $tags "Coordinates" }}{{ $slug = "coordinates" }}{{ $title = "Coordinates" }}{{ end }}
+{{ if in $tags "Graph Reading" }}{{ $slug = "graph-reading" }}{{ $title = "Reading Graphs" }}{{ end }}
+{{ if in $tags "Transformations" }}{{ $slug = "transformations" }}{{ $title = "Transformations" }}{{ end }}
+
+{{/* Science topic mapping */}}
+{{ if eq $sciTopic "Biology" }}{{ $slug = "cells" }}{{ $title = "Cells" }}{{ end }}
+{{ if eq $sciTopic "Chemistry" }}{{ $slug = "ph-scale" }}{{ $title = "pH Scale" }}{{ end }}
+{{ if eq $sciTopic "Physics" }}{{ $slug = "forces" }}{{ $title = "Forces" }}{{ end }}
+{{ if eq $sciTopic "Earth Science" }}{{ $slug = "plate-tectonics" }}{{ $title = "Plate Tectonics" }}{{ end }}
+
+{{/* Refine by tags for science */}}
+{{ if in $tags "Density" }}{{ $slug = "density" }}{{ $title = "Density" }}{{ end }}
+{{ if in $tags "Energy Transfer" }}{{ $slug = "energy" }}{{ $title = "Energy" }}{{ end }}
+{{ if in $tags "Forces" }}{{ $slug = "forces" }}{{ $title = "Forces" }}{{ end }}
+{{ if in $tags "Waves" }}{{ $slug = "waves" }}{{ $title = "Waves" }}{{ end }}
+{{ if in $tags "Circuits" }}{{ $slug = "circuits" }}{{ $title = "Circuits" }}{{ end }}
+{{ if in $tags "Particles" }}{{ $slug = "particles" }}{{ $title = "Particles" }}{{ end }}
+{{ if in $tags "Genetics" }}{{ $slug = "genetics" }}{{ $title = "Genetics" }}{{ end }}
+{{ if in $tags "Food Webs" }}{{ $slug = "food-webs" }}{{ $title = "Food Webs" }}{{ end }}
+{{ if in $tags "Ecology" }}{{ $slug = "food-webs" }}{{ $title = "Food Webs" }}{{ end }}
+{{ if in $tags "Chemical Reactions" }}{{ $slug = "chemical-reactions" }}{{ $title = "Chemical Reactions" }}{{ end }}
+{{ if in $tags "Acids" }}{{ $slug = "ph-scale" }}{{ $title = "pH Scale" }}{{ end }}
+
+{{/* Don't link to itself — skip if this IS a visual explainer */}}
+{{ if in $tags "Visual Explainer" }}{{ $slug = "" }}{{ end }}
+
+{{ return (dict "slug" $slug "title" $title) }}

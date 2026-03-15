@@ -143,6 +143,50 @@
 </div>
 
 {{/* Investigation grid */}}
+
+{{/* ═══ POINT 3: Topic-matched interactive banner ═══ */}}
+{{ $topicInteractiveMap := dict
+  "Algebra" "algebra"
+  "Number Sense" "negative-numbers"
+  "Fractions & Ratios" "fractions"
+  "Geometry" "area-perimeter"
+  "Statistics & Probability" "mean-median-mode"
+  "Statistics" "mean-median-mode"
+  "Biology" "cells"
+  "Chemistry" "ph-scale"
+  "Physics" "forces"
+  "Earth Science" "plate-tectonics"
+  "Ecology" "food-webs"
+  "Space Science" "plate-tectonics"
+}}
+{{ $topicInteractiveTitle := dict
+  "Algebra" "Algebra"
+  "Number Sense" "Negative Numbers"
+  "Fractions & Ratios" "Fractions"
+  "Geometry" "Area & Perimeter"
+  "Statistics & Probability" "Averages"
+  "Statistics" "Averages"
+  "Biology" "Cells"
+  "Chemistry" "pH Scale"
+  "Physics" "Forces"
+  "Earth Science" "Plate Tectonics"
+  "Ecology" "Food Webs"
+  "Space Science" "Plate Tectonics"
+}}
+{{ $matchedSlug := index $topicInteractiveMap .Title }}
+{{ $matchedTitle := index $topicInteractiveTitle .Title }}
+{{ if $matchedSlug }}
+<section class="subj-interactive-banner">
+  <a href="/students/help/#{{ $matchedSlug }}" class="sib-link">
+    <span class="sib-icon">🔍</span>
+    <div class="sib-text">
+      <strong>Before you start</strong> — make sure you understand <em>{{ $matchedTitle }}</em>
+    </div>
+    <span class="sib-arrow">Try the interactive →</span>
+  </a>
+</section>
+{{ end }}
+
 <section class="subj-grid-section">
   <div class="subj-grid" id="subjGrid">
     {{ range $subjectResources.ByDate.Reverse }}
