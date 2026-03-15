@@ -11,7 +11,7 @@ tags:
   - "Assessment Design"
   - "Mathematics"
   - "Building Thinking Classrooms"
-author: "Corey"
+author: "Corey Zocchi"
 reading_time: 14
 ---
 

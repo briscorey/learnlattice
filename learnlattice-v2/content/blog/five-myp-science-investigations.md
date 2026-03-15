@@ -2,7 +2,7 @@
 title: "5 MYP Science Investigations You Can Run This Week"
 date: 2026-03-08
 description: "You don't need a lab full of equipment to run a genuine MYP science investigation. These five lessons use everyday materials, require minimal setup, and produce real inquiry. Each one has been tested in an international school classroom with multilingual learners."
-author: "Corey"
+author: "Corey Zocchi"
 pillar: "MYP Science"
 tags:
   - "MYP Science"

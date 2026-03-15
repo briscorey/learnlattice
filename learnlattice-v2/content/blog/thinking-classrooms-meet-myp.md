@@ -11,7 +11,7 @@ tags:
   - "Lesson Design"
   - "Mathematics"
   - "Peter Liljedahl"
-author: "Corey"
+author: "Corey Zocchi"
 reading_time: 12
 ---
 

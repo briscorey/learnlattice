@@ -6,6 +6,7 @@ title = "LearnLattice"
 summaryLength = 30
 
 [params]
+  author = "Corey Zocchi"
   description = "Free, inquiry-driven resources for MYP mathematics and science. Built by a teacher, for teachers and students."
 
   [[params.nav_dropdowns]]

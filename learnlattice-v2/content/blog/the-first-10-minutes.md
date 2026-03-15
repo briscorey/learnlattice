@@ -9,7 +9,7 @@ tags:
   - "Engagement"
   - "Inquiry"
   - "Building Thinking Classrooms"
-author: "Corey"
+author: "Corey Zocchi"
 reading_time: 10
 ---
 
