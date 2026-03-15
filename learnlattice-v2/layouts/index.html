@@ -361,23 +361,6 @@
   </div>
 </section>
 
-<section class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">{{ $home.browse_title }}</h2>
-      <p class="section-subtitle">{{ $home.browse_subtitle }}</p>
-    </div>
-  </div>
-  <div class="ka-compact-grid">
-    {{ range $browseLinks }}
-    <a class="simple-link-card" href="{{ .url }}">
-      <h3>{{ .title }}</h3>
-      <p>{{ .copy }}</p>
-    </a>
-    {{ end }}
-  </div>
-</section>
-
 {{ if $resources }}
 <section class="home-promise reveal">
   <div class="home-promise-inner">
