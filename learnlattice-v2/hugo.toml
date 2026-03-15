@@ -268,9 +268,9 @@ summaryLength = 30
     url = "/games/"
     weight = 3
   [[menu.main]]
-    name = "Browse All"
-    identifier = "browse"
-    url = "/browse/"
+    name = "EAL"
+    identifier = "eal"
+    url = "/eal/"
     weight = 4
   [[menu.main]]
     name = "Craft"
