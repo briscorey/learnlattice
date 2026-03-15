@@ -67,7 +67,7 @@ The total energy in the system has not changed. But the *useful* energy (kinetic
 
 **Activity 1:** Students rub their hands together vigorously for 10 seconds. Hands feel warm. Ask: "Where did the thermal energy come from?" (Kinetic energy of moving hands → thermal energy via friction.)
 
-**Activity 2:** Drop the ball from 5 different heights. Measure bounce height each time. Calculate the percentage of energy "kept" at each bounce: $\text{efficiency} = \frac{\text{bounce height}}{\text{drop height}} \times 100\%$.
+**Activity 2:** Drop the ball from 5 different heights. Measure bounce height each time. Calculate the percentage of energy "kept" at each bounce: \\(\text{efficiency} = \frac{\text{bounce height}}{\text{drop height}} \times 100\%\\).
 
 **Activity 3:** Sankey diagrams. Students draw energy flow diagrams showing input energy, useful output, and wasted output for three everyday devices: a light bulb, a car engine, and a phone charger.
 

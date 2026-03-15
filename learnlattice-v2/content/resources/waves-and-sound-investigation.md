@@ -122,7 +122,7 @@ Sound is a longitudinal wave — a pattern of compressions and rarefactions in a
 
 ### Key relationships:
 - **Frequency** (Hz): how many vibrations per second. Higher frequency = higher pitch.
-- **Wavelength** (m): distance between consecutive compressions. Related to frequency by $v = f\lambda$.
+- **Wavelength** (m): distance between consecutive compressions. Related to frequency by \\(v = f\lambda\\).
 - **Amplitude**: how much the medium is displaced. Larger amplitude = louder sound.
 
 ---
@@ -132,7 +132,7 @@ Sound is a longitudinal wave — a pattern of compressions and rarefactions in a
 ### Part A — Criterion A: Knowing and understanding (Levels 1-4)
 
 1. Define frequency, wavelength, and amplitude in your own words.
-2. A sound wave has a frequency of 440 Hz (the note A). The speed of sound in air is 343 m/s. Calculate the wavelength using $\lambda = \frac{v}{f}$.
+2. A sound wave has a frequency of 440 Hz (the note A). The speed of sound in air is 343 m/s. Calculate the wavelength using \\(\lambda = \frac{v}{f}\\).
 
 ### Part B — Criterion B: Investigating patterns (Levels 3-6)
 
@@ -146,7 +146,7 @@ Using a tone generator app and the salt-on-speaker setup:
 
 The patterns you observed are called Chladni figures (named after Ernst Chladni, 1787). Research: these same patterns appear in vibrating metal plates, drum heads, and even the surface of stars.
 
-Explain why the same mathematical relationship ($v = f\lambda$) applies to sound waves, water waves, and light waves — even though these are very different phenomena. What does this tell us about the nature of waves?
+Explain why the same mathematical relationship (\\(v = f\lambda\\)) applies to sound waves, water waves, and light waves — even though these are very different phenomena. What does this tell us about the nature of waves?
 
 ---
 

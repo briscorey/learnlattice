@@ -120,10 +120,10 @@ A regular polygon tessellates if its interior angle divides exactly into 360°.
 
 $$\text{Interior angle} = \frac{(n-2) \times 180°}{n}$$
 
-- Triangle: $\frac{180°}{3} = 60°$. Does $60° \times 6 = 360°$? Yes. **Tessellates.**
-- Square: $\frac{360°}{4} = 90°$. Does $90° \times 4 = 360°$? Yes. **Tessellates.**
-- Pentagon: $\frac{540°}{5} = 108°$. Does $108°$ divide into $360°$? No. **Does not tessellate.**
-- Hexagon: $\frac{720°}{6} = 120°$. Does $120° \times 3 = 360°$? Yes. **Tessellates.**
+- Triangle: \\(\frac{180°}{3} = 60°\\). Does \\(60° \times 6 = 360°\\)? Yes. **Tessellates.**
+- Square: \\(\frac{360°}{4} = 90°\\). Does \\(90° \times 4 = 360°\\)? Yes. **Tessellates.**
+- Pentagon: \\(\frac{540°}{5} = 108°\\). Does \\(108°\\) divide into \\(360°\\)? No. **Does not tessellate.**
+- Hexagon: \\(\frac{720°}{6} = 120°\\). Does \\(120° \times 3 = 360°\\)? Yes. **Tessellates.**
 
 Only THREE regular polygons tessellate: triangle, square, hexagon. This is a beautiful result — and students can discover it themselves.
 

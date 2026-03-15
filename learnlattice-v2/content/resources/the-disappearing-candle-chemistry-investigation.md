@@ -233,7 +233,7 @@ This is *always* true in closed systems. When mass appears to be lost (burning c
 
 **The candle reaction (simplified):**
 
-Candle wax is approximately $C_{25}H_{52}$ (a long-chain hydrocarbon). Combustion in oxygen:
+Candle wax is approximately \\(C_{25}H_{52}\\) (a long-chain hydrocarbon). Combustion in oxygen:
 
 $$C_{25}H_{52} + 38O_2 \rightarrow 25CO_2 + 26H_2O$$
 
@@ -353,11 +353,11 @@ Your investigation must include:
 
 > *In 2021, global CO₂ emissions from fossil fuel combustion reached approximately 36.3 billion tonnes.*
 
-The main components of fossil fuels are hydrocarbons (compounds of carbon and hydrogen). When they combust: $\text{fuel} + \text{O}_2 \rightarrow \text{CO}_2 + \text{H}_2\text{O}$.
+The main components of fossil fuels are hydrocarbons (compounds of carbon and hydrogen). When they combust: \\(\text{fuel} + \text{O}_2 \rightarrow \text{CO}_2 + \text{H}_2\text{O}\\).
 
 1. Every carbon atom in a fossil fuel molecule produces one CO₂ molecule when burned. Carbon has an atomic mass of 12; CO₂ has a molecular mass of 44. What mass of CO₂ is produced per gram of carbon burned?
 
-2. If the atmosphere currently contains approximately $8.2 \times 10^{17}$ kg of CO₂ (a figure that increases by about 2 ppm per year), express the annual 36.3 billion tonnes of emissions as a percentage of atmospheric CO₂.
+2. If the atmosphere currently contains approximately \\(8.2 \times 10^{17}\\) kg of CO₂ (a figure that increases by about 2 ppm per year), express the annual 36.3 billion tonnes of emissions as a percentage of atmospheric CO₂.
 
 3. A news article claims: "Burning coal releases stored carbon back into the atmosphere — it was there before, we're just returning it." Is this statement chemically accurate? Is it an accurate argument against concern about emissions? Explain the distinction.
 

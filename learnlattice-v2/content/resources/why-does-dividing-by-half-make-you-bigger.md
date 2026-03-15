@@ -252,7 +252,7 @@ A student says: *"Dividing by a fraction less than 1 always gives you a bigger a
 
 **On Part D:** The answer to question 3 is a fraction greater than 1 (an improper fraction). Dividing by 3/2, for instance, gives a smaller answer than you started with. This is counterintuitive and worth spending time on.
 
-**On connecting to later algebra:** When students encounter expressions like $(3x) \div (x/2)$, they need the conceptual model. The rule "flip and multiply" without understanding produces errors in algebraic contexts that are very difficult to diagnose later.
+**On connecting to later algebra:** When students encounter expressions like \\((3x) \div (x/2)\\), they need the conceptual model. The rule "flip and multiply" without understanding produces errors in algebraic contexts that are very difficult to diagnose later.
 
 ---
 

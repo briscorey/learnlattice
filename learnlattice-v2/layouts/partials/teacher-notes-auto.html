@@ -5,7 +5,7 @@
 {{ $hasContent := or $hasTeacher $hasAssessment $p.warmup $p.timeline }}
 
 {{ if $hasContent }}
-<div class="tn-wrapper tn-collapsed">
+<div class="tn-container"><div class="tn-wrapper tn-collapsed">
   <div class="tn-header" role="button" tabindex="0" aria-expanded="false" onclick="this.parentElement.classList.toggle('tn-collapsed');this.setAttribute('aria-expanded',this.parentElement.classList.contains('tn-collapsed')?'false':'true')">
     <div class="tn-header-left">
       <span class="tn-icon">📋</span>
@@ -183,5 +183,5 @@
     {{ end }}
 
   </div>
-</div>
+</div></div>
 {{ end }}

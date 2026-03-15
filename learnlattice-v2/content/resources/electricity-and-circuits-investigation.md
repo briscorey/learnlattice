@@ -129,15 +129,15 @@ This diagnostic problem is the investigation.
 
 **Parallel circuit:** Components connected in separate branches. Each branch has its own path for current. If one branch breaks, the others continue working.
 
-### Ohm's Law: $V = IR$
+### Ohm's Law: \\(V = IR\\)
 
 - **V** = voltage (the push, measured in volts)
 - **I** = current (the flow, measured in amps)
 - **R** = resistance (the opposition, measured in ohms)
 
 ### Key relationships:
-- **Series:** $R_{\text{total}} = R_1 + R_2 + R_3$
-- **Parallel:** $\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$
+- **Series:** \\(R_{\text{total}} = R_1 + R_2 + R_3\\)
+- **Parallel:** \\(\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\\)
 
 ---
 
@@ -147,7 +147,7 @@ This diagnostic problem is the investigation.
 
 1. Draw a series circuit with a battery and 3 bulbs. Draw a parallel circuit with a battery and 3 bulbs.
 2. In which circuit does removing one bulb turn off all the others? Explain why.
-3. A circuit has a 12V battery and a resistance of 4Ω. Calculate the current using $I = \frac{V}{R}$.
+3. A circuit has a 12V battery and a resistance of 4Ω. Calculate the current using \\(I = \frac{V}{R}\\).
 
 ### Part B — Criterion B (Levels 3-6)
 

@@ -49,7 +49,7 @@ Students work in pairs on their own devices. Challenge them to determine how man
 Ask students to write a paragraph answering: *"A student rolls a die 10 times and gets three 6s. They say the die is loaded. Do you agree? Use evidence from the simulator to support your argument."*
 ---
 ## The Mathematics Behind It
-**Theoretical probability** tells us what *should* happen with a perfectly fair tool over infinite trials. For a fair six-sided die, each face has a probability of $\frac{1}{6} \approx 16.7\%$.
+**Theoretical probability** tells us what *should* happen with a perfectly fair tool over infinite trials. For a fair six-sided die, each face has a probability of \\(\frac{1}{6} \approx 16.7\%\\).
 **Experimental probability** tells us what *actually* happened in a finite number of trials. With only 10 rolls, it's common to see wild variation — one face might appear 40% of the time by pure chance.
 **The Law of Large Numbers** tells us that as the number of trials increases, experimental probability converges toward theoretical probability. This is why 30 rolls is often not enough to prove unfairness, but 500 rolls makes it obvious.
 The **fairness score** in the simulator uses a simplified chi-squared test — the same statistical method scientists use to determine whether observed data matches expected distributions.

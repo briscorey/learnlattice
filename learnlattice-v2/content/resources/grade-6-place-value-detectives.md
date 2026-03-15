@@ -107,9 +107,9 @@ Write on the board: **111**
 Ask: **"What number is this?"**
 
 Everyone says 111. Then reveal:
-- In base 10: $1 \times 100 + 1 \times 10 + 1 \times 1 = 111$
-- In base 2 (binary): $1 \times 4 + 1 \times 2 + 1 \times 1 = 7$
-- In base 5: $1 \times 25 + 1 \times 5 + 1 \times 1 = 31$
+- In base 10: \\(1 \times 100 + 1 \times 10 + 1 \times 1 = 111\\)
+- In base 2 (binary): \\(1 \times 4 + 1 \times 2 + 1 \times 1 = 7\\)
+- In base 5: \\(1 \times 25 + 1 \times 5 + 1 \times 1 = 31\\)
 
 **"The digits are the same. The number is completely different. Why?"**
 
@@ -123,7 +123,7 @@ In base 2 (binary), each place is worth 2 times: ones, twos, fours, eights...
 
 In base 5, each place is worth 5 times: ones, fives, twenty-fives...
 
-The general rule: in base $b$, the places are $b^0, b^1, b^2, b^3$...
+The general rule: in base \\(b\\), the places are \\(b^0, b^1, b^2, b^3\\)...
 
 This is the structure hiding inside every number. Base 10 is familiar. Binary runs every computer. Base 60 gives us 60 minutes in an hour (Babylonian).
 
@@ -138,13 +138,13 @@ This is the structure hiding inside every number. Base 10 is familiar. Binary ru
 
 ### Part B — Criterion B (Levels 3-6)
 1. In base 10, the number 999 is one less than the first 4-digit number. What is the largest 3-digit number in base 2? In base 5? In base 8?
-2. Describe the pattern: what is the largest number you can write with $n$ digits in base $b$? Write a general formula.
+2. Describe the pattern: what is the largest number you can write with \\(n\\) digits in base \\(b\\)? Write a general formula.
 3. In base 16 (hexadecimal), we need extra digits beyond 9. Computer scientists use A=10, B=11, C=12, D=13, E=14, F=15. Convert FF (base 16) to base 10.
 
 ### Part C — Criterion B (Levels 5-8)
 1. The Babylonians used base 60. We still use this for time (60 seconds in a minute, 60 minutes in an hour). Why might base 60 have been useful? (Hint: how many factors does 60 have compared to 10?)
-2. Prove that in any base $b$, the number $111$ (in that base) equals $b^2 + b + 1$.
-3. Is there a base where $111 = 100$ in base 10? Find it or prove it doesn't exist.
+2. Prove that in any base \\(b\\), the number $111$ (in that base) equals \\(b^2 + b + 1\\).
+3. Is there a base where \\(111 = 100\\) in base 10? Find it or prove it doesn't exist.
 
 ---
 

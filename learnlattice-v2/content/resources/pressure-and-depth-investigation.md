@@ -124,9 +124,9 @@ The answer is pressure. But students need to discover that the *same concept* ex
 
 ## Core Concept: Pressure in Fluids
 
-Pressure is force per unit area: $P = \frac{F}{A}$. In a fluid (liquid or gas), pressure increases with depth because there is more fluid above pushing down.
+Pressure is force per unit area: \\(P = \frac{F}{A}\\). In a fluid (liquid or gas), pressure increases with depth because there is more fluid above pushing down.
 
-The relationship is linear: $P = \rho g h$, where $\rho$ is the density of the fluid, $g$ is gravitational field strength (9.8 N/kg), and $h$ is the depth.
+The relationship is linear: \\(P = \rho g h\\), where \\(\rho\\) is the density of the fluid, \\(g\\) is gravitational field strength (9.8 N/kg), and \\(h\\) is the depth.
 
 ### Building the Concept
 
@@ -141,7 +141,7 @@ The relationship is linear: $P = \rho g h$, where $\rho$ is the density of the f
 ### Part A — Criterion D (Levels 1-4)
 
 1. Explain why the bottom hole in the bottle demonstration shoots water the furthest.
-2. A diver is at 10 metres depth in seawater (density = 1025 kg/m³). Calculate the water pressure using $P = \rho g h$.
+2. A diver is at 10 metres depth in seawater (density = 1025 kg/m³). Calculate the water pressure using \\(P = \rho g h\\).
 3. Why do deep-sea submarines need thicker walls than submarines designed for shallow water?
 
 ### Part B — Criterion B (Levels 3-6)
@@ -157,7 +157,7 @@ Using the bottle with holes at 5 different heights:
 The Mariana Trench is approximately 11,000 metres deep. Seawater density is 1025 kg/m³.
 1. Calculate the pressure at the bottom of the Mariana Trench
 2. Atmospheric pressure at sea level is approximately 101,325 Pa. How many times greater is the pressure at the bottom of the trench compared to atmospheric pressure?
-3. Explain why the relationship $P = \rho g h$ means that pressure increases linearly with depth, and justify why this makes engineering deep-sea vehicles exponentially more difficult (hint: think about what "linear pressure" means for wall thickness and material strength)
+3. Explain why the relationship \\(P = \rho g h\\) means that pressure increases linearly with depth, and justify why this makes engineering deep-sea vehicles exponentially more difficult (hint: think about what "linear pressure" means for wall thickness and material strength)
 
 ---
 

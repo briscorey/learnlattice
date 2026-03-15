@@ -1241,3 +1241,9 @@ html.dark .tn-warmup{background:rgba(249,115,22,.06)}
 html.dark .tn-parent{background:rgba(37,99,235,.04)}
 @media(max-width:768px){.tn-diff-grid,.tn-starters{grid-template-columns:1fr}.tn-header-left{gap:10px}.tn-title{font-size:1rem}}
 @media print{.tn-wrapper{border:1px solid #ccc}.tn-body{max-height:none !important}}
+
+/* ── Teacher Notes Container Fix ── */
+.tn-container{max-width:1200px;margin:0 auto;padding:0 32px}
+.tn-wrapper.tn-collapsed .tn-body{max-height:0 !important;padding-top:0 !important;padding-bottom:0 !important;overflow:hidden !important;border-top:none}
+.tn-body{transition:max-height .4s ease,padding .3s ease}
+@media(max-width:768px){.tn-container{padding:0 16px}}

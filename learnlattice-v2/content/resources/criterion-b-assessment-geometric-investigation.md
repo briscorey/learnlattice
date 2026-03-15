@@ -121,7 +121,7 @@ differentiated:
 
 **(b)** Organise your results in a table. Describe the pattern you observe between the number of sides and the angle sum. *[Criterion B strand ii]*
 
-**(c)** Write a general rule (formula) for the sum of interior angles of any polygon with $n$ sides. *[Criterion B strand ii]*
+**(c)** Write a general rule (formula) for the sum of interior angles of any polygon with \\(n\\) sides. *[Criterion B strand ii]*
 
 **(d)** Use your rule to predict the angle sum of a decagon (10 sides) and a 20-sided polygon. Verify one of your predictions. *[Criterion B strand iii]*
 
@@ -158,16 +158,16 @@ Measuring with a protractor shows effort but is imprecise and doesn't reveal the
 >
 > "I can split every polygon into triangles from one vertex. A quadrilateral splits into 2 triangles, a pentagon into 3, a hexagon into 4. The number of triangles is always 2 less than the number of sides."
 >
-> Rule: $S = (n - 2) \times 180°$
+> Rule: \\(S = (n - 2) \times 180°\\)
 >
-> Decagon: $(10 - 2) \times 180° = 1440°$ ✓
-> 20-gon: $(20 - 2) \times 180° = 3240°$
+> Decagon: \\((10 - 2) \times 180° = 1440°\\) ✓
+> 20-gon: \\((20 - 2) \times 180° = 3240°\\)
 >
-> "I verified the decagon by drawing one and splitting it into 8 triangles: $8 \times 180° = 1440°$ ✓"
+> "I verified the decagon by drawing one and splitting it into 8 triangles: \\(8 \times 180° = 1440°\\) ✓"
 
 ### Why this is Level 5–6:
 
-The table includes the triangle count — showing the student has identified the structural relationship, not just the numerical pattern. The formula is correct and properly derived from the triangle decomposition. Verification is done by an independent method (drawing and counting triangles). The work is well-organised and the generalisation is sound. However, the justification is implicit rather than explicit — the student shows the method works but doesn't fully explain WHY any polygon can be decomposed into $n - 2$ triangles.
+The table includes the triangle count — showing the student has identified the structural relationship, not just the numerical pattern. The formula is correct and properly derived from the triangle decomposition. Verification is done by an independent method (drawing and counting triangles). The work is well-organised and the generalisation is sound. However, the justification is implicit rather than explicit — the student shows the method works but doesn't fully explain WHY any polygon can be decomposed into \\(n - 2\\) triangles.
 
 ---
 
@@ -177,14 +177,14 @@ The table includes the triangle count — showing the student has identified the
 >
 > **Justification:**
 >
-> "From any single vertex of an $n$-sided polygon, I can draw diagonal lines to every other non-adjacent vertex. This creates triangles inside the polygon. I cannot draw a diagonal to the two vertices directly adjacent to my starting vertex (those are sides of the polygon, not diagonals), and I cannot draw a diagonal to myself. So the number of diagonals from one vertex is $n - 3$, and these diagonals divide the polygon into $n - 2$ triangles.
+> "From any single vertex of an \\(n\\)-sided polygon, I can draw diagonal lines to every other non-adjacent vertex. This creates triangles inside the polygon. I cannot draw a diagonal to the two vertices directly adjacent to my starting vertex (those are sides of the polygon, not diagonals), and I cannot draw a diagonal to myself. So the number of diagonals from one vertex is \\(n - 3\\), and these diagonals divide the polygon into \\(n - 2\\) triangles.
 >
-> Since each triangle has an angle sum of 180°, and the triangles fill the entire polygon without overlap, the total angle sum must be $(n - 2) \times 180°$.
+> Since each triangle has an angle sum of 180°, and the triangles fill the entire polygon without overlap, the total angle sum must be \\((n - 2) \times 180°\\).
 >
-> This works for ANY polygon — regular or irregular — because the triangle decomposition depends only on the number of vertices, not on the shape of the polygon. Even a very irregular hexagon still decomposes into exactly 4 triangles from any vertex, giving $720°$.
+> This works for ANY polygon — regular or irregular — because the triangle decomposition depends only on the number of vertices, not on the shape of the polygon. Even a very irregular hexagon still decomposes into exactly 4 triangles from any vertex, giving \\(720°\\).
 >
-> **Extension:** As $n$ gets very large, the polygon approaches a circle. The angle sum $(n - 2) \times 180°$ grows without bound, but each individual interior angle approaches 180°. This makes sense geometrically — the sides of the polygon become nearly straight, and each 'corner' is barely a corner at all."
+> **Extension:** As \\(n\\) gets very large, the polygon approaches a circle. The angle sum \\((n - 2) \times 180°\\) grows without bound, but each individual interior angle approaches 180°. This makes sense geometrically — the sides of the polygon become nearly straight, and each 'corner' is barely a corner at all."
 
 ### Why this is Level 7–8:
 
-The justification is a mathematical proof: it explains why $n - 2$ triangles are always formed (counting argument: $n$ vertices, minus the starting vertex, minus 2 adjacent vertices = $n - 3$ diagonals creating $n - 2$ triangles). The student explicitly addresses generality ("regular or irregular"). The extension about approaching a circle demonstrates mathematical thinking beyond the task requirements.
+The justification is a mathematical proof: it explains why \\(n - 2\\) triangles are always formed (counting argument: \\(n\\) vertices, minus the starting vertex, minus 2 adjacent vertices = \\(n - 3\\) diagonals creating \\(n - 2\\) triangles). The student explicitly addresses generality ("regular or irregular"). The extension about approaching a circle demonstrates mathematical thinking beyond the task requirements.

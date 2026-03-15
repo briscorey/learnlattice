@@ -37,16 +37,16 @@ Most people choose A. Let us see if that is wise.
 
 | Day | Amount | Total so far |
 |---|---|---|
-| 1 | $0.01 | $0.01 |
-| 5 | $0.16 | $0.31 |
-| 10 | $5.12 | $10.23 |
-| 15 | $163.84 | $327.67 |
-| 20 | $5,242.88 | $10,485.75 |
-| 25 | $167,772.16 | $335,544.31 |
-| 28 | $1,342,177.28 | $2,684,354.55 |
-| 30 | $5,368,709.12 | $10,737,418.23 |
+| 1 | \\(0.01 | \\)0.01 |
+| 5 | \\(0.16 | \\)0.31 |
+| 10 | \\(5.12 | \\)10.23 |
+| 15 | \\(163.84 | \\)327.67 |
+| 20 | \\(5,242.88 | \\)10,485.75 |
+| 25 | \\(167,772.16 | \\)335,544.31 |
+| 28 | \\(1,342,177.28 | \\)2,684,354.55 |
+| 30 | \\(5,368,709.12 | \\)10,737,418.23 |
 
-**Option B is worth over $10 million.** But on day 20 — two thirds of the way through — it was worth only $10,000. The growth is invisible for most of the journey, then explodes.
+**Option B is worth over \\(10 million.** But on day 20 — two thirds of the way through — it was worth only \\)10,000. The growth is invisible for most of the journey, then explodes.
 
 ---
 
@@ -54,7 +54,7 @@ Most people choose A. Let us see if that is wise.
 
 Legend says the inventor of chess asked the king for a reward: one grain of rice on the first square, two on the second, four on the third — doubling for all 64 squares.
 
-On square 64: $2^{63}$ = 9,223,372,036,854,775,808 grains. That is more rice than has been produced in all of human history.
+On square 64: \\(2^{63}\\) = 9,223,372,036,854,775,808 grains. That is more rice than has been produced in all of human history.
 
 ---
 

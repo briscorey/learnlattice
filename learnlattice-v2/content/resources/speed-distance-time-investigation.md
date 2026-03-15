@@ -50,7 +50,7 @@ Run the race. Time everyone. Then ask: **"What was the winner's speed?"**
 
 ## Core Concept: Speed, Distance, and Time
 
-Speed is the relationship between distance and time: $\text{speed} = \frac{\text{distance}}{\text{time}}$.
+Speed is the relationship between distance and time: \\(\text{speed} = \frac{\text{distance}}{\text{time}}\\).
 
 The Slow Race forces students to think about this relationship from an unusual direction: they know the distance (fixed), they want to maximise the time, so they must minimise their speed. This inversion makes the formula feel meaningful rather than abstract.
 
@@ -70,7 +70,7 @@ The Slow Race forces students to think about this relationship from an unusual d
 
 ### Part A — Criterion C: Communicating (Levels 1-4)
 
-1. Calculate your average speed in the Slow Race using $\text{speed} = \frac{\text{distance}}{\text{time}}$.
+1. Calculate your average speed in the Slow Race using \\(\text{speed} = \frac{\text{distance}}{\text{time}}\\).
 2. If you walked the same distance at double the speed, how long would it take? Show your working.
 3. Draw a distance-time graph for a person walking at constant speed.
 

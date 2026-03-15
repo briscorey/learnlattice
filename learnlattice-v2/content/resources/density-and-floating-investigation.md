@@ -154,7 +154,7 @@ The room goes quiet. Then the theories start. This is the investigation.
 
 ## Core Concept: Density
 
-Density is the relationship between mass and volume: $\rho = \frac{m}{V}$.
+Density is the relationship between mass and volume: \\(\rho = \frac{m}{V}\\).
 
 The orange peel is full of tiny air pockets — it acts like a life jacket. The peel is less dense than water. The fruit inside is denser than water. With the peel on, the average density of the whole orange is slightly less than water, so it floats. Remove the peel and the remaining fruit is denser than water, so it sinks.
 
@@ -168,7 +168,7 @@ An object floats if its density is **less** than the fluid it's in. It sinks if 
 ### Part A — Criterion C (Levels 1-4)
 
 1. Measure the mass and volume of 5 different objects (use a balance and water displacement).
-2. Calculate the density of each: $\rho = \frac{m}{V}$.
+2. Calculate the density of each: \\(\rho = \frac{m}{V}\\).
 3. Predict whether each will float or sink in water (density of water = 1.0 g/cm³). Test your predictions.
 
 ### Part B — Criterion B (Levels 3-6)

@@ -222,7 +222,7 @@ Every object above absolute zero (−273°C) emits electromagnetic radiation. Th
 
 $$\lambda_{\text{max}} = \frac{b}{T}$$
 
-where $b = 2.9 \times 10^{-3}$ m·K (Wien's displacement constant) and $T$ is temperature in Kelvin.
+where \\(b = 2.9 \times 10^{-3}\\) m·K (Wien's displacement constant) and \\(T\\) is temperature in Kelvin.
 
 **What this means for stars:**
 
@@ -262,11 +262,11 @@ If a light source moves toward or away from an observer, the wavelength appears 
 
 ### Part A — The Colour-Temperature Connection
 
-Using Wien's Law ($\lambda_{\text{max}} = b/T$ where $b = 2.9 \times 10^{-3}$ m·K):
+Using Wien's Law (\\(\lambda_{\text{max}} = b/T\\) where \\(b = 2.9 \times 10^{-3}\\) m·K):
 
 1. Calculate the peak emission wavelength for each star in the table below. Identify the colour and whether it falls in the UV, visible, or IR range.
 
-| Star | Temperature (K) | $\lambda_{\text{max}}$ (m) | $\lambda_{\text{max}}$ (nm) | Colour/Region |
+| Star | Temperature (K) | \\(\lambda_{\text{max}}\\) (m) | \\(\lambda_{\text{max}}\\) (nm) | Colour/Region |
 |------|----------------|--------------------------|---------------------------|--------------|
 | Betelgeuse | 3,500 | | | |
 | Sun | 5,778 | | | |
@@ -308,7 +308,7 @@ The radial velocity method for detecting exoplanets works as follows: a planet's
 1. Plot this data. Describe the pattern.
 2. What is the period of the signal (time between identical velocity values)? What does this represent astronomically?
 3. The amplitude of the wobble is ~19 m/s. Jupiter causes the Sun to wobble at ~13 m/s. What does this suggest about the mass of the unseen planet relative to Jupiter?
-4. This planet orbits its star every ~50 days. Using Kepler's Third Law ($T^2 \propto r^3$), compare this to Earth's 365-day orbit. Is this planet closer to or farther from its star than Earth is from the Sun?
+4. This planet orbits its star every ~50 days. Using Kepler's Third Law (\\(T^2 \propto r^3\\)), compare this to Earth's 365-day orbit. Is this planet closer to or farther from its star than Earth is from the Sun?
 5. Given its orbital distance and assuming a star similar to the Sun: would liquid water be possible on the surface? Explain.
 
 ### Part D — The Comte Problem (Criterion D)
@@ -375,7 +375,7 @@ The point: everything we know about stars comes from light. We have never touche
 
 **Watch for:** Students who don't understand why different elements produce different spectra. Use the analogy: "Every element has a fingerprint. Instead of ridges on skin, it's lines in light." Give them printed spectra of hydrogen, helium, and sodium and ask them to match to "mystery star" spectra.
 
-**Watch for:** Students who find Wien's Law calculation difficult. The formula itself is simple ($\lambda_{max} = b/T$), but the concept — that colour tells you temperature — is the insight worth protecting. A student who says "blue stars are hotter" has the concept, even if they can't calculate the peak wavelength.
+**Watch for:** Students who find Wien's Law calculation difficult. The formula itself is simple (\\(\lambda_{max} = b/T\\)), but the concept — that colour tells you temperature — is the insight worth protecting. A student who says "blue stars are hotter" has the concept, even if they can't calculate the peak wavelength.
 
 **Do not say:** "This is called spectroscopy." Let students do spectroscopy first. The word comes after the practice.
 

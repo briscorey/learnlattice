@@ -120,7 +120,7 @@ Write on the board:
 
 Let students estimate. Most will guess thousands, maybe millions.
 
-The answer: $2^{72} \approx 4.7 \times 10^{21}$ bacteria. If each weighs about $10^{-12}$ grams, the total mass would be approximately 4,700 kg — after just ONE DAY from a single cell.
+The answer: \\(2^{72} \approx 4.7 \times 10^{21}\\) bacteria. If each weighs about \\(10^{-12}\\) grams, the total mass would be approximately 4,700 kg — after just ONE DAY from a single cell.
 
 After 48 hours, the colony would outweigh the Earth.
 
@@ -132,10 +132,10 @@ Ask: **"So why isn't the world buried in bacteria?"**
 
 ### The Mathematics
 
-Exponential growth follows the pattern $N = N_0 \times 2^{t/d}$, where:
-- $N_0$ = initial population
-- $t$ = time elapsed
-- $d$ = doubling time
+Exponential growth follows the pattern \\(N = N_0 \times 2^{t/d}\\), where:
+- \\(N_0\\) = initial population
+- \\(t\\) = time elapsed
+- \\(d\\) = doubling time
 
 This produces a J-shaped curve — slow at first, then explosively fast.
 
@@ -158,7 +158,7 @@ The result is a **logistic growth curve** (S-shaped) — exponential at first, t
 
 1. Starting with 1 bacterium that divides every 20 minutes, calculate the population at 20-minute intervals for 4 hours. Record in a table.
 2. Plot your data on a graph. Describe the shape of the curve.
-3. Use the formula $N = 2^{t/d}$ to calculate the population after 8 hours (where $t = 480$ min and $d = 20$ min).
+3. Use the formula \\(N = 2^{t/d}\\) to calculate the population after 8 hours (where \\(t = 480\\) min and \\(d = 20\\) min).
 
 ### Part B — Criterion B (Levels 3-6)
 

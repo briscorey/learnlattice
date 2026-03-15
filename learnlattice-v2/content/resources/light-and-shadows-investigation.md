@@ -53,7 +53,7 @@ Plant a metre stick vertically in the ground (or tape it to a flat surface in su
 3. Record both values
 
 ### Analysis
-Plot shadow length against time. Plot shadow length against Sun angle. The relationship between angle and shadow length is: $\text{shadow} = \frac{\text{height}}{\tan(\text{angle})}$.
+Plot shadow length against time. Plot shadow length against Sun angle. The relationship between angle and shadow length is: \\(\text{shadow} = \frac{\text{height}}{\tan(\text{angle})}\\).
 
 ---
 
@@ -70,7 +70,7 @@ Plot shadow length against time. Plot shadow length against Sun angle. The relat
 3. Use the pattern to predict the shadow length at a Sun angle you didn't measure. Check your prediction if possible.
 
 ### Part C — Criterion B (Levels 5-8)
-1. Show mathematically why the relationship between Sun angle and shadow length follows $L = \frac{h}{\tan(\theta)}$.
+1. Show mathematically why the relationship between Sun angle and shadow length follows \\(L = \frac{h}{\tan(\theta)}\\).
 2. The ancient Greek Eratosthenes used shadow measurements to calculate the circumference of the Earth in 240 BCE. Research his method and explain how measuring a shadow at noon in two different cities gives you the size of the planet.
 
 ---

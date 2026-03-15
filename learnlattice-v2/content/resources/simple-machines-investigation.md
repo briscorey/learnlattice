@@ -62,7 +62,7 @@ Move the teacher to the far end. The student can no longer lift. **"Why?"**
 
 A lever amplifies force — but it does so by increasing the distance over which the effort is applied. This is the fundamental trade-off of all simple machines: you cannot get more work out than you put in, but you can trade force for distance.
 
-**Mechanical advantage** = $\frac{\text{load}}{\text{effort}}$. A lever with MA = 3 means you need only one-third the force — but you must push three times the distance.
+**Mechanical advantage** = \\(\frac{\text{load}}{\text{effort}}\\). A lever with MA = 3 means you need only one-third the force — but you must push three times the distance.
 
 ### Three classes of levers:
 - **Class 1:** Fulcrum between effort and load (seesaw, crowbar)

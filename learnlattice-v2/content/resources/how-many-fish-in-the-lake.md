@@ -126,7 +126,7 @@ This is the constraint that makes capture-recapture necessary.
 
 $$\frac{\text{marked in second sample}}{\text{total in second sample}} = \frac{\text{total originally marked}}{\text{estimated total population}}$$
 
-So: $N \approx \frac{M \times n}{m}$
+So: \\(N \approx \frac{M \times n}{m}\\)
 
 Where:
 - M = total originally marked

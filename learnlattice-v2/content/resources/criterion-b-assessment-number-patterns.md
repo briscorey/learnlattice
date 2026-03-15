@@ -132,7 +132,7 @@ Each figure adds 2 tiles to the previous figure, extending the L-shape.
 
 **(b)** Organise your results in a table showing Figure number and number of tiles for Figures 1 through 6. Describe the pattern you see. *[Criterion B strand ii: describe patterns as general rules]*
 
-**(c)** Write a general rule (formula) that gives the number of tiles $T$ for any Figure number $n$. *[Criterion B strand ii: describe patterns as general rules]*
+**(c)** Write a general rule (formula) that gives the number of tiles \\(T\\) for any Figure number \\(n\\). *[Criterion B strand ii: describe patterns as general rules]*
 
 **(d)** Use your rule to find the number of tiles in Figure 50 and Figure 100. *[Criterion B strand iii: verify and justify]*
 
@@ -164,7 +164,7 @@ Each figure adds 2 tiles to the previous figure, extending the L-shape.
 
 **Strand iii (1-2):** No justification is attempted. The student cannot apply the rule to Figure 50 because their recursive rule requires computing all previous terms.
 
-**What's missing to reach 5-6:** A general rule in the form $T = \text{something involving } n$. A table that shows the relationship between figure number and tile count. Any attempt at justification.
+**What's missing to reach 5-6:** A general rule in the form \\(T = \text{something involving } n\\). A table that shows the relationship between figure number and tile count. Any attempt at justification.
 
 ---
 
@@ -185,22 +185,22 @@ Each figure adds 2 tiles to the previous figure, extending the L-shape.
 >
 > "Each time the figure number goes up by 1, the tiles go up by 2. The tiles are always 1 less than double the figure number."
 >
-> Rule: $T = 2n - 1$
+> Rule: \\(T = 2n - 1\\)
 >
-> Figure 50: $T = 2(50) - 1 = 99$ tiles
-> Figure 100: $T = 2(100) - 1 = 199$ tiles
+> Figure 50: \\(T = 2(50) - 1 = 99\\) tiles
+> Figure 100: \\(T = 2(100) - 1 = 199\\) tiles
 >
-> "I can verify this works: for Figure 3, $T = 2(3) - 1 = 5$ ✓ and for Figure 6, $T = 2(6) - 1 = 11$ ✓"
+> "I can verify this works: for Figure 3, \\(T = 2(3) - 1 = 5\\) ✓ and for Figure 6, \\(T = 2(6) - 1 = 11\\) ✓"
 
 ### Why this is Level 5–6:
 
 **Strand i (5-6):** Correct drawings, clear table, organised approach. The problem-solving technique is well selected and applied.
 
-**Strand ii (5-6):** The pattern is described correctly ("1 less than double the figure number") and expressed as a general rule $T = 2n - 1$. This is a genuine generalisation — it works for any figure number without needing to calculate previous terms.
+**Strand ii (5-6):** The pattern is described correctly ("1 less than double the figure number") and expressed as a general rule \\(T = 2n - 1\\). This is a genuine generalisation — it works for any figure number without needing to calculate previous terms.
 
 **Strand iii (5-6):** The student verifies the rule by substituting known values back into the formula. This demonstrates that the rule produces correct results for tested cases. However, verification is not the same as justification — the student shows the rule WORKS but doesn't explain WHY it works.
 
-**What's missing to reach 7-8:** A justification that connects the rule to the structure of the pattern. Why does each figure add 2? Why does the formula $2n - 1$ describe this? A structural explanation linking the algebra to the geometry of the L-shapes.
+**What's missing to reach 7-8:** A justification that connects the rule to the structure of the pattern. Why does each figure add 2? Why does the formula \\(2n - 1\\) describe this? A structural explanation linking the algebra to the geometry of the L-shapes.
 
 ---
 
@@ -208,19 +208,19 @@ Each figure adds 2 tiles to the previous figure, extending the L-shape.
 
 > **Student C's work:**
 >
-> [Correct drawings, table, and rule: $T = 2n - 1$]
+> [Correct drawings, table, and rule: \\(T = 2n - 1\\)]
 >
 > Figure 50: 99 tiles ✓ Figure 100: 199 tiles ✓
 >
 > **Justification:**
 >
-> "Each L-shape can be thought of as two arms extending from a corner tile. The corner tile is always 1 tile. Each arm has length $n - 1$ (because Figure 1 has no arms, Figure 2 has arms of length 1, Figure 3 has arms of length 2, etc.).
+> "Each L-shape can be thought of as two arms extending from a corner tile. The corner tile is always 1 tile. Each arm has length \\(n - 1\\) (because Figure 1 has no arms, Figure 2 has arms of length 1, Figure 3 has arms of length 2, etc.).
 >
 > So the total is: 1 (corner) + 2(n - 1) = 1 + 2n - 2 = 2n - 1.
 >
-> This means $T = 2n - 1$ will work for ANY figure number, not just the ones I tested, because every L-shape has the same structure: one corner tile plus two arms of length $n - 1$.
+> This means \\(T = 2n - 1\\) will work for ANY figure number, not just the ones I tested, because every L-shape has the same structure: one corner tile plus two arms of length \\(n - 1\\).
 >
-> I can also verify this makes sense at the extremes: Figure 1 ($n = 1$) gives $T = 1$, which is just the corner tile with no arms. As $n$ gets very large, the number of tiles approaches $2n$ because the single corner tile becomes negligible compared to the two arms."
+> I can also verify this makes sense at the extremes: Figure 1 (\\(n = 1\\)) gives \\(T = 1\\), which is just the corner tile with no arms. As \\(n\\) gets very large, the number of tiles approaches \\(2n\\) because the single corner tile becomes negligible compared to the two arms."
 
 ### Why this is Level 7–8:
 
@@ -228,7 +228,7 @@ Each figure adds 2 tiles to the previous figure, extending the L-shape.
 
 **Strand ii (7-8):** The general rule is correct and clearly stated with proper mathematical notation.
 
-**Strand iii (7-8):** This is where level 7-8 is distinguished. The student doesn't just verify — they **justify**. They explain the structural reason why $T = 2n - 1$: the L-shape decomposes into a corner plus two arms. This is a mathematical argument that proves the rule works for all cases, not just the tested ones. The limit behaviour analysis ("as $n$ gets large, $T$ approaches $2n$") shows sophisticated mathematical thinking.
+**Strand iii (7-8):** This is where level 7-8 is distinguished. The student doesn't just verify — they **justify**. They explain the structural reason why \\(T = 2n - 1\\): the L-shape decomposes into a corner plus two arms. This is a mathematical argument that proves the rule works for all cases, not just the tested ones. The limit behaviour analysis ("as \\(n\\) gets large, \\(T\\) approaches \\(2n\\)") shows sophisticated mathematical thinking.
 
 **The key distinction:** Verification says "my rule gives the right answer when I test it." Justification says "here is WHY my rule must be correct for all cases." This is the difference between level 5-6 and level 7-8 in Criterion B.
 

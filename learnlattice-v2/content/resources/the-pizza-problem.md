@@ -25,8 +25,8 @@ warmup: "Double the length of a square's sides. Does the area double? Draw it an
 
 Two pizzas. Same thickness. Same toppings.
 
-- **12-inch pizza:** $12 (that is $1 per inch, seems fair)
-- **16-inch pizza:** $16 (also $1 per inch)
+- **12-inch pizza:** \\(12 (that is \\)1 per inch, seems fair)
+- **16-inch pizza:** \\(16 (also \\)1 per inch)
 
 Which is the better deal?
 
@@ -40,8 +40,8 @@ $$A = \pi r^2$$
 
 | Pizza | Diameter | Radius | Area | Price | Price per sq inch |
 |---|---|---|---|---|---|
-| Small | 12 in | 6 in | 113.1 sq in | $12 | $0.106 |
-| Large | 16 in | 8 in | 201.1 sq in | $16 | $0.080 |
+| Small | 12 in | 6 in | 113.1 sq in | \\(12 | \\)0.106 |
+| Large | 16 in | 8 in | 201.1 sq in | \\(16 | \\)0.080 |
 
 The 16-inch pizza has **78% more food** but costs only **33% more**. It is dramatically better value.
 

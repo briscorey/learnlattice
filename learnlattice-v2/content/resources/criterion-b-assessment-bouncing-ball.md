@@ -153,7 +153,7 @@ The hypothesis is testable but the scientific reasoning ("because of more energy
 >
 > **Data:** [Table with averages and ranges. Calculated efficiency for each height.]
 >
-> **Conclusion:** Bounce height increases proportionally with drop height. The efficiency is approximately 62% at all heights, suggesting a constant proportion of energy is lost to heat and sound at each bounce. The relationship is linear: $\text{bounce} \approx 0.62 \times \text{drop height}$.
+> **Conclusion:** Bounce height increases proportionally with drop height. The efficiency is approximately 62% at all heights, suggesting a constant proportion of energy is lost to heat and sound at each bounce. The relationship is linear: \\(\text{bounce} \approx 0.62 \times \text{drop height}\\).
 >
 > **Evaluation:** The main error was judging the top of the bounce. Using slow-motion video reduced this but didn't eliminate it. I could improve by using a motion sensor instead of visual measurement.
 
@@ -169,7 +169,7 @@ Falls short of 7-8 because the efficiency calculation, while excellent, doesn't 
 
 > [Includes everything from Response B, plus:]
 >
-> **Extended analysis:** I plotted drop height vs. bounce height and drew a line of best fit. The $R^2$ value is 0.997, confirming a very strong linear relationship. However, the efficiency decreases slightly at higher drop heights (64% at 20cm, 61% at 100cm), suggesting that energy losses increase at higher impact speeds — possibly because greater deformation of the ball produces more thermal energy.
+> **Extended analysis:** I plotted drop height vs. bounce height and drew a line of best fit. The \\(R^2\\) value is 0.997, confirming a very strong linear relationship. However, the efficiency decreases slightly at higher drop heights (64% at 20cm, 61% at 100cm), suggesting that energy losses increase at higher impact speeds — possibly because greater deformation of the ball produces more thermal energy.
 >
 > **Evaluation:** My results assume the ball returns to the same point each bounce, but in reality the ball drifts horizontally. At higher drop heights, this horizontal drift is larger, which could slightly reduce the measured vertical bounce height. A controlled improvement would be to drop the ball inside a transparent tube to eliminate horizontal movement.
 >

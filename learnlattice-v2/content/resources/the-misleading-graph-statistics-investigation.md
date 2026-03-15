@@ -237,7 +237,7 @@ The **mean** (arithmetic average) is easily pulled by extreme values. The **medi
 | Worker 6 | $48,000 |
 | CEO | $620,000 |
 
-**Mean salary:** ($35,000 + $38,000 + $41,000 + $43,000 + $44,000 + $48,000 + $620,000) ÷ 7 = **$121,286**
+**Mean salary:** (\\(35,000 + \\)38,000 + \\(41,000 + \\)43,000 + \\(44,000 + \\)48,000 + \\(620,000) ÷ 7 = **\\)121,286**
 
 **Median salary:** The middle value = **$43,000**
 

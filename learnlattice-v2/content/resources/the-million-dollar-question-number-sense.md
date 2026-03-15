@@ -258,20 +258,20 @@ Students encounter scientific notation as a *solution to a real problem*: writin
 
 **Core rule:** A number in scientific notation is written as:
 $$a \times 10^n$$
-where $1 \leq a < 10$ and $n$ is an integer.
+where \\(1 \leq a < 10\\) and \\(n\\) is an integer.
 
 **Worked examples:**
 
-1. $3,400,000 = 3.4 \times 10^6$ — move the decimal point 6 places left
-2. $0.000052 = 5.2 \times 10^{-5}$ — move the decimal point 5 places right
-3. $1,000,000,000 = 1 \times 10^9$ — exactly one billion
+1. \\(3,400,000 = 3.4 \times 10^6\\) — move the decimal point 6 places left
+2. \\(0.000052 = 5.2 \times 10^{-5}\\) — move the decimal point 5 places right
+3. \\(1,000,000,000 = 1 \times 10^9\\) — exactly one billion
 
 **Comparing with scientific notation:**
-Which is larger — $4.2 \times 10^7$ or $8.1 \times 10^6$?
-- Compare the exponents first: $10^7 > 10^6$
-- So $4.2 \times 10^7 > 8.1 \times 10^6$, regardless of the coefficient
+Which is larger — \\(4.2 \times 10^7\\) or \\(8.1 \times 10^6\\)?
+- Compare the exponents first: \\(10^7 > 10^6\\)
+- So \\(4.2 \times 10^7 > 8.1 \times 10^6\\), regardless of the coefficient
 
-> **Common misconception:** Students often think $8.1 \times 10^6$ is larger because 8.1 > 4.2. Address this explicitly: the exponent determines the *order of magnitude*. An 8 with six zeros is still smaller than a 4 with seven zeros.
+> **Common misconception:** Students often think \\(8.1 \times 10^6\\) is larger because 8.1 > 4.2. Address this explicitly: the exponent determines the *order of magnitude*. An 8 with six zeros is still smaller than a 4 with seven zeros.
 
 ---
 
@@ -281,7 +281,7 @@ Which is larger — $4.2 \times 10^7$ or $8.1 \times 10^6$?
 
 Working in groups, solve these problems using estimation first, then calculation. Show your reasoning at every step.
 
-1. A millionaire spends $1 every second. A billionaire also spends $1 every second. They start at the same time. How much has the billionaire spent when the millionaire runs out?
+1. A millionaire spends \\(1 every second. A billionaire also spends \\)1 every second. They start at the same time. How much has the billionaire spent when the millionaire runs out?
 
 2. The world population is approximately 8 × 10⁹ people. The world's wealthiest person has approximately $2 × 10¹¹. If this wealth were divided equally, how much would each person receive? Is that meaningful?
 
@@ -300,7 +300,7 @@ Each group receives a set of "large number cards" containing quantities like:
 
 ### Part C — The Design Challenge (Criterion D Task)
 
-> *A local government is deciding between two infrastructure projects. Project A costs $4.5 million. Project B costs $2.3 billion. A newspaper headline reads: "New Project Costs Nearly Twice as Much as Previous Proposal."*
+> *A local government is deciding between two infrastructure projects. Project A costs \\(4.5 million. Project B costs \\)2.3 billion. A newspaper headline reads: "New Project Costs Nearly Twice as Much as Previous Proposal."*
 
 1. Is the headline mathematically accurate? What might be misleading about it?
 2. Using scientific notation, express both costs and calculate the actual ratio.
@@ -318,7 +318,7 @@ Each group receives a set of "large number cards" containing quantities like:
 **Checkpoint 2 — Mid-investigation discussion:**
 Put this on the board: "The US national debt is approximately $3.3 × 10¹³. Describe this number three different ways: in words, as a decimal, and in terms of how many millions it represents."
 
-*What you're listening for:* fluency converting between representations, and recognition that $10¹³$ is ten million millions.
+*What you're listening for:* fluency converting between representations, and recognition that \\(10¹³\\) is ten million millions.
 
 ---
 

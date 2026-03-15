@@ -197,15 +197,15 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 >
 > The slight variation in the ratio (0.575 to 0.600) is likely due to measurement uncertainty — it is difficult to read the exact bounce height by eye.
 >
-> **(ii)** Best-fit model: $h_b = 0.591 \times h_d$
+> **(ii)** Best-fit model: \\(h_b = 0.591 \times h_d\\)
 >
 > I chose a proportional model (no y-intercept) because physically, if you drop the ball from 0 cm, it should bounce 0 cm. A model with a y-intercept would predict a non-zero bounce from a zero drop, which is physically meaningless.
 >
-> **(iii)** At 150 cm: $h_b = 0.591 \times 150 = 88.7$ cm.
+> **(iii)** At 150 cm: \\(h_b = 0.591 \times 150 = 88.7\\) cm.
 >
 > This is an extrapolation — the prediction lies outside my data range (20-100 cm). I have two concerns: first, at higher drops the ball may deform more on impact, which could change the energy transfer and lower the ratio. Second, my data suggests the ratio may already be slightly decreasing at higher drop heights (0.600 at 20 cm vs 0.590 at 100 cm), which could mean the relationship is not perfectly linear. I would rate this prediction as moderately reliable but would want to test it.
 >
-> **(iv)** The ball never returns to its original height because energy is transformed during the collision. Before the bounce, the ball has gravitational potential energy $E_p = mgh$. During impact, some of this is converted to:
+> **(iv)** The ball never returns to its original height because energy is transformed during the collision. Before the bounce, the ball has gravitational potential energy \\(E_p = mgh\\). During impact, some of this is converted to:
 > - Thermal energy (ball and surface warm)
 > - Sound energy (audible bounce)
 > - Deformation energy (ball compresses)

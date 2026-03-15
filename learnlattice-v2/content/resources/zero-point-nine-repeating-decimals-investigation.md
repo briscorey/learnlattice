@@ -232,31 +232,31 @@ The answer depends on what we mean by the "..." in 0.999... — and in our real 
 We know:
 $$\frac{1}{3} = 0.333...$$
 
-We can verify: $0.333... \times 3 = 0.999...$
+We can verify: \\(0.333... \times 3 = 0.999...\\)
 
-But also: $\frac{1}{3} \times 3 = \frac{3}{3} = 1$
+But also: \\(\frac{1}{3} \times 3 = \frac{3}{3} = 1\\)
 
-Therefore: $0.999... = 1$
+Therefore: \\(0.999... = 1\\)
 
 *Why this proof works:* If 0.333... is a valid representation of ⅓, and multiplication must give consistent results, then 0.999... must equal 1.
 
 ### Proof 2 — The Algebraic Argument (Most elegant)
 
-Let $x = 0.999...$
+Let \\(x = 0.999...\\)
 
-Then $10x = 9.999...$
+Then \\(10x = 9.999...\\)
 
-Subtract: $10x - x = 9.999... - 0.999...$
+Subtract: \\(10x - x = 9.999... - 0.999...\\)
 
 $$9x = 9$$
 
 $$x = 1$$
 
-Therefore $0.999... = 1$.
+Therefore \\(0.999... = 1\\).
 
 *Why this proof works:* Multiplying an infinitely repeating decimal by 10 shifts all the digits, allowing subtraction to cancel the repeating part. This technique generalises to expressing any repeating decimal as a fraction.
 
-> **Formative checkpoint:** Use this method to prove that $0.111... = \frac{1}{9}$ and that $0.727272... = \frac{72}{99} = \frac{8}{11}$.
+> **Formative checkpoint:** Use this method to prove that \\(0.111... = \frac{1}{9}\\) and that \\(0.727272... = \frac{72}{99} = \frac{8}{11}\\).
 
 ### Proof 3 — The Number Line Argument (Most geometric)
 
@@ -272,12 +272,12 @@ There is no such number. You cannot write one down, even in principle. Therefore
 
 $$0.999... = \sum_{n=1}^{\infty} \frac{9}{10^n} = \frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + ...$$
 
-This is a geometric series with first term $a = \frac{9}{10}$ and common ratio $r = \frac{1}{10}$.
+This is a geometric series with first term \\(a = \frac{9}{10}\\) and common ratio \\(r = \frac{1}{10}\\).
 
-Sum of an infinite geometric series (when $|r| < 1$):
+Sum of an infinite geometric series (when \\(|r| < 1\\)):
 $$S = \frac{a}{1-r} = \frac{9/10}{1 - 1/10} = \frac{9/10}{9/10} = 1$$
 
-Therefore $0.999... = 1$.
+Therefore \\(0.999... = 1\\).
 
 ---
 
@@ -286,7 +286,7 @@ Therefore $0.999... = 1$.
 ### Part A — The Proofs in Your Own Words
 
 1. Write Proof 1 (the fraction argument) in your own words, as if explaining it to a student in the year below you.
-2. Work through Proof 2 (the algebraic argument) for $0.444...$ Does it equal $\frac{4}{9}$? Check your answer.
+2. Work through Proof 2 (the algebraic argument) for $0.444...$ Does it equal \\(\frac{4}{9}\\)? Check your answer.
 3. Apply the algebraic method to $0.181818...$. What fraction does this equal?
 4. Which of the four proofs do you find most convincing? Why?
 
@@ -355,7 +355,7 @@ Write a letter to a sceptical friend who refuses to believe that 0.999... = 1. Y
 
 **On Student E's response in Part C:** This is the most important one to address carefully. The response "0.999... approaches 1 but never reaches it" confuses the *process* of computing more and more terms with the *value* that the notation represents. 0.999... is not a process. It is a number. It is the limit of the process. And that limit is 1.
 
-**On the challenge in Part B:** $\frac{1}{7} = 0.142857142857...$ and multiplying by 2, 3, 4, 5, 6 gives cyclic permutations of the same digits. This is a remarkable property of 7 as a prime, and connecting it to decimal expansion is a wonderful extension that rewards curiosity.
+**On the challenge in Part B:** \\(\frac{1}{7} = 0.142857142857...\\) and multiplying by 2, 3, 4, 5, 6 gives cyclic permutations of the same digits. This is a remarkable property of 7 as a prime, and connecting it to decimal expansion is a wonderful extension that rewards curiosity.
 
 **On which proofs to use:** With Grade 7–8, Proofs 1 and 2 are most accessible and satisfying. Proof 3 (the density argument) requires abstract thinking about real numbers but is conceptually the most fundamental. Proof 4 is appropriate for Grade 9 students who have seen geometric series. All four should be *shown* to all students, but mastery expected only at the appropriate level.
 

@@ -120,7 +120,7 @@ This is where the argument starts. Most students believe gravity pulls heavier o
 
 Most students arrive with the Aristotelian model: heavier things fall faster because gravity pulls them more. This is intuitive, observable (in air), and wrong (in vacuum).
 
-The key insight: gravity *does* pull more on heavier objects (more force), but heavier objects also have more inertia (more resistance to acceleration). These two effects cancel exactly, producing the same acceleration for all objects: $a = g = 9.8 \text{ m/s}^2$.
+The key insight: gravity *does* pull more on heavier objects (more force), but heavier objects also have more inertia (more resistance to acceleration). These two effects cancel exactly, producing the same acceleration for all objects: \\(a = g = 9.8 \text{ m/s}^2\\).
 
 ### Building the Concept
 
@@ -130,7 +130,7 @@ The key insight: gravity *does* pull more on heavier objects (more force), but h
 
 **Step 3:** The answer is that air resistance changed. The crumpled paper has less surface area exposed to air. This leads to the critical distinction: in the absence of air resistance, all objects fall at the same rate.
 
-**Step 4:** Show the equation: $F_{\text{gravity}} = mg$. But also: $F = ma$, so $mg = ma$, which means $g = a$. Mass cancels. The acceleration due to gravity is the same for all objects.
+**Step 4:** Show the equation: \\(F_{\text{gravity}} = mg\\). But also: \\(F = ma\\), so \\(mg = ma\\), which means \\(g = a\\). Mass cancels. The acceleration due to gravity is the same for all objects.
 
 ---
 
@@ -138,7 +138,7 @@ The key insight: gravity *does* pull more on heavier objects (more force), but h
 
 ### Part A — Criterion D: Applying physics in real-life contexts (Levels 1-4)
 
-1. A bowling ball and a tennis ball are dropped from the top of a building (ignore air resistance). Which hits the ground first? Explain using the equation $a = g$.
+1. A bowling ball and a tennis ball are dropped from the top of a building (ignore air resistance). Which hits the ground first? Explain using the equation \\(a = g\\).
 2. Now consider air resistance. A skydiver falls at a constant speed (terminal velocity). Draw a force diagram showing the forces acting on them. What must be true about the forces for velocity to be constant?
 
 ### Part B — Criterion B: Investigating patterns (Levels 3-6)
@@ -153,7 +153,7 @@ Record your data. Describe the pattern. Does mass affect fall time when shape is
 
 ### Part C — Criterion B: Generalisation and justification (Levels 5-8)
 
-Using your experimental data and the equation $F = mg$:
+Using your experimental data and the equation \\(F = mg\\):
 1. Explain mathematically why all objects experience the same gravitational acceleration regardless of mass.
 2. Explain why this is NOT what we observe in everyday life (the role of air resistance).
 3. Predict what would happen if you repeated your experiment on the Moon (where there is no atmosphere). Justify your prediction.

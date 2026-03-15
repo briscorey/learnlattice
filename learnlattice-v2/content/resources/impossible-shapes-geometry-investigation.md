@@ -283,7 +283,7 @@ Using the diagram below (a triangle with a parallel line through the top vertex)
 **A3 — Polygon extension:**
 If a triangle's angles sum to 180°, what do the angles of a quadrilateral sum to? A pentagon? A hexagon? Find the pattern. Write the rule for an n-sided polygon.
 
-*[Rule: $(n-2) \times 180°$. Students should derive this by seeing that any polygon can be divided into (n-2) triangles.]*
+*[Rule: \\((n-2) \times 180°\\). Students should derive this by seeing that any polygon can be divided into (n-2) triangles.]*
 
 ### Part B — The Sphere Problem
 

@@ -283,17 +283,17 @@ But the rectangle is made of **two staircases**. So one staircase is:
 $$\text{Staircase of n steps} = \frac{n(n+1)}{2}$$
 
 **Check with our table:**
-- n=3: $\frac{3 \times 4}{2} = \frac{12}{2} = 6$ ✓
-- n=5: $\frac{5 \times 6}{2} = \frac{30}{2} = 15$ ✓
-- n=100: $\frac{100 \times 101}{2} = \frac{10100}{2} = 5050$
+- n=3: \\(\frac{3 \times 4}{2} = \frac{12}{2} = 6\\) ✓
+- n=5: \\(\frac{5 \times 6}{2} = \frac{30}{2} = 15\\) ✓
+- n=100: \\(\frac{100 \times 101}{2} = \frac{10100}{2} = 5050\\)
 
 ### The Algebraic Generalisation
 
-The formula $\frac{n(n+1)}{2}$ can be expanded:
+The formula \\(\frac{n(n+1)}{2}\\) can be expanded:
 
 $$\frac{n(n+1)}{2} = \frac{n^2 + n}{2}$$
 
-This is a **quadratic expression** in $n$ — the highest power is $n^2$. This is why the second differences in the table are constant (a property of all quadratic sequences).
+This is a **quadratic expression** in \\(n\\) — the highest power is \\(n^2\\). This is why the second differences in the table are constant (a property of all quadratic sequences).
 
 > **Formative checkpoint:** Give students this table with two missing values and one wrong value. Ask them to identify and correct the error, and explain how they know.
 
@@ -329,7 +329,7 @@ Add the sequence 1 + 2 + 3 + ... + 100 by pairing first with last, second with s
 Draw a 100 × 101 grid of squares. Show how this connects to two staircases. Use this to find the formula.
 
 **Method 3 — The formula:**
-Use $\frac{n(n+1)}{2}$ with n = 100. Verify it gives the same answer as Methods 1 and 2.
+Use \\(\frac{n(n+1)}{2}\\) with n = 100. Verify it gives the same answer as Methods 1 and 2.
 
 ### Part C — Extensions and New Problems
 
@@ -346,7 +346,7 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 1. Draw the first 4 steps of this new staircase.
 2. Build a table of values.
 3. Find a formula for the total number of blocks in an n-step version of this design.
-4. Explain how this formula relates to the original $\frac{n(n+1)}{2}$ formula.
+4. Explain how this formula relates to the original \\(\frac{n(n+1)}{2}\\) formula.
 5. Design your own variation. Write the formula for your design and explain where it comes from.
 
 ---
@@ -355,7 +355,7 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 
 **Checkpoint 1:** After students find the pattern numerically, but before showing Gauss's method. "Can you prove your formula works — not just for n=5, but for any n?" This surfaces the idea that pattern-checking isn't the same as proof.
 
-**Checkpoint 2:** After the rectangle method. "The formula $\frac{n(n+1)}{2}$ — why is there a 2 in the denominator? What does the 2 represent in the diagram?" Students who understand the geometry will answer: we made two staircases and divided by 2.
+**Checkpoint 2:** After the rectangle method. "The formula \\(\frac{n(n+1)}{2}\\) — why is there a 2 in the denominator? What does the 2 represent in the diagram?" Students who understand the geometry will answer: we made two staircases and divided by 2.
 
 **Checkpoint 3:** After Part C. "Is the sequence 1, 3, 6, 10, 15 arithmetic, geometric, or neither? How do you know?" — This connects staircase numbers to the broader classification of sequences.
 
@@ -431,4 +431,4 @@ Show the rectangle method on the board: two staircases forming an n × (n+1) rec
 
 ---
 
-> **The bigger idea:** The staircase problem introduces students to the most powerful move in mathematics: replacing a specific calculation with a general argument. Once you have $\frac{n(n+1)}{2}$, you never have to count blocks again — for any staircase. The formula doesn't just solve the problem; it solves *all problems of this type at once*. This is what algebra is. Not "find x." Replace counting with understanding.
+> **The bigger idea:** The staircase problem introduces students to the most powerful move in mathematics: replacing a specific calculation with a general argument. Once you have \\(\frac{n(n+1)}{2}\\), you never have to count blocks again — for any staircase. The formula doesn't just solve the problem; it solves *all problems of this type at once*. This is what algebra is. Not "find x." Replace counting with understanding.
