@@ -152,22 +152,22 @@
       "targetName": "MYP Mathematics and Sciences",
       "targetUrl": "https://www.ibo.org/programmes/middle-years-programme/"
     }
-    {{- with .Params.key_concept }},
+    {{- with index .Params "key-concepts" }}{{ with index . 0 }},
     {
       "@type": "AlignmentObject",
       "alignmentType": "educationalSubject",
       "educationalFramework": "IB MYP Key Concepts",
       "targetName": "{{ . }}"
     }
-    {{- end }}
-    {{- with .Params.global_context }},
+    {{- end }}{{ end }}
+    {{- with index .Params "global-contexts" }}{{ with index . 0 }},
     {
       "@type": "AlignmentObject",
       "alignmentType": "educationalSubject",
       "educationalFramework": "IB MYP Global Contexts",
       "targetName": "{{ . }}"
     }
-    {{- end }}
+    {{- end }}{{ end }}
     {{- range .Params.tags }}{{ if in (. | lower) "criterion" }},
     {
       "@type": "AlignmentObject",
@@ -180,9 +180,9 @@
   {{- with .Params.statement_of_inquiry }}
   "abstract": "{{ . | htmlEscape }}",
   {{- end }}
-  {{- with .Params.key_concept }}
+  {{- with index .Params "key-concepts" }}{{ with index . 0 }}
   "keywords": "{{ . }}, IB MYP, Middle Years Programme",
-  {{- end }}
+  {{- end }}{{ end }}
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
 }

@@ -18,8 +18,10 @@ tags:
 formula: "glucose + O2 <-> CO2 + H2O"
 download_url: ""
 download_label: "Comparison Task PDF"
-key_concept: "Systems"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 ---
 

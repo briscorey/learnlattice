@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Ecology"
-key_concept: "Systems"
-global_context: "Globalization and Sustainability"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "Even the smallest patch of ground is an ecosystem with producers, consumers, and decomposers interacting in a web of relationships."
 difficulty: "approaching"
 hook: "One square metre of your school grounds contains an entire ecosystem — plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"

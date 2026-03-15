@@ -17,8 +17,10 @@ tags:
 formula: "variation + pressure -> selection"
 download_url: ""
 download_label: "Case Study PDF"
-key_concept: "Systems"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 ---
 

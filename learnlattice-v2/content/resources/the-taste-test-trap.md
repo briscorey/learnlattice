@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Logic"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "Statistical significance means distinguishing a real effect from random chance — and the threshold for 'convincing' is higher than most people think."
 difficulty: "exceeding"
 hook: "A student claims they can tell the difference between two brands of cola. You test them — they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"

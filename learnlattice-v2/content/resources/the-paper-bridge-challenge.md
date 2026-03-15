@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Physics"
-key_concept: "Form"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The strength of a structure depends not just on the material, but on its form — and engineers use this principle to build bridges from surprisingly weak materials."
 difficulty: "approaching"
 hook: "A flat sheet of paper cannot support a pencil. But fold it the right way and it holds a textbook. The material did not change. The shape did. How much weight can your paper bridge hold?"

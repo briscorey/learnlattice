@@ -21,7 +21,7 @@ tags:
 - Criterion B
 - Criterion D
 key_concept: Relationships
-global_context: Globalisation and Sustainability
+global_context: Globalization and Sustainability
 statement_of_inquiry: Systematic sampling allows us to estimate quantities we cannot directly measure — a fundamental skill in science, ecology, and policy.
 formula: N ≈ (M × n) / m
 download_url: ''

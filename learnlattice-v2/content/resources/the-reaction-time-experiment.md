@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Relationships"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "Comparing two data sets requires more than looking at averages — the spread and overlap of the data determine whether a difference is meaningful."
 difficulty: "meeting"
 hook: "Your partner drops a ruler. You catch it. The distance it falls tells you your reaction time — in milliseconds. But is your dominant hand actually faster? Only data can answer that."

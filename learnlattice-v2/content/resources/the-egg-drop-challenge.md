@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Physics"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Impulse — the product of force and time — determines whether an impact causes damage. Increasing the time of impact reduces the force."
 difficulty: "exceeding"
 hook: "A raw egg dropped from 3 metres will smash. But astronauts survive re-entry at 28,000 km/h. The physics is the same. Design a container that protects an egg from a 3-metre drop using only paper and tape."

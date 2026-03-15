@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Exponential growth starts slowly but eventually overwhelms any linear growth — and recognising the pattern early is one of the most useful skills in mathematics."
 difficulty: "meeting"
 hook: "Choose: $1 million today, or one penny that doubles every day for 30 days? The penny option is worth over $5 million by day 30. But on day 20, it was only worth $5,000. Exponential growth is invisible until it is not."

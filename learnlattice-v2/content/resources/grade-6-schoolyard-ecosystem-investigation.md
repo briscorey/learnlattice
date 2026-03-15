@@ -17,8 +17,10 @@ tags:
   - "Observation"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Systems"
-global_context: "Globalisation and Sustainability"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "Even the most familiar environments contain systems of interdependence that become visible only through careful, structured observation."
 formula: "Species richness = number of different species in a defined area"
 download_url: ""

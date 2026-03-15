@@ -18,8 +18,10 @@ tags:
   - "Estimation"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Relationships"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "The way we represent and communicate large quantities shapes how we understand inequality."
 formula: "10⁶ → 10⁹ → 10¹²"
 

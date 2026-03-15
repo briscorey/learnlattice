@@ -18,8 +18,10 @@ tags:
   - "Biodiversity"
   - "Interdependence"
   - "Interactive"
-key_concept: "Systems"
-global_context: "Globalisation and Sustainability"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "Removing a single component from an interconnected system can have effects that cascade far beyond the point of removal."
 formula: "Energy transfer: ~10% between trophic levels"
 download_url: ""

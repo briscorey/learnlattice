@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Space Science"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "When direct observation is impossible, scientists use indirect evidence — and the quality of the inference depends on the quality of the data."
 difficulty: "exceeding"
 hook: "In 2017, NASA discovered 7 Earth-sized planets orbiting a star 40 light-years away. Nobody has ever seen them. How do you discover a planet you cannot see?"

@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Form"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Numbers are not just symbols — they are positions and movements, and walking the number line makes arithmetic physical."
 difficulty: "approaching"
 hook: "Stand in the middle of the room. That is zero. Walk 3 steps right — you are at +3. Walk 5 steps left — you are at -2. You just did subtraction with your feet. Now: what is -3 + 5?"

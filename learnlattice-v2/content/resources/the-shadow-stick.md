@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Relationships"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Similar triangles connect the geometry of shadows to the measurement of objects too large to measure directly."
 difficulty: "meeting"
 hook: "2,200 years ago, a Greek librarian measured the circumference of the Earth using a stick and its shadow. His answer was within 2% of the modern value. You can repeat his experiment today."

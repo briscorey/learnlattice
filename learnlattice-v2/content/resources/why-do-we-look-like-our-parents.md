@@ -14,8 +14,10 @@ tags:
   - "Inheritance"
   - "Probability"
   - "Criterion B"
-key_concept: "Relationships"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "The characteristics we inherit depend on the combination of information from both parents — and chance determines which combination we receive."
 difficulty: "meeting"
 hook: "Identical twins share 100% of their DNA. Siblings share only 50%. But siblings come from the same two parents. Where does the other 50% go?"

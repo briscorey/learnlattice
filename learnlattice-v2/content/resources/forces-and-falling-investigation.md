@@ -19,8 +19,10 @@ tags:
   - "Air Resistance"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The relationship between forces acting on an object determines how it moves — and what we observe depends on the conditions we test."
 formula: "F = mg · a = 9.8 m/s²"
 download_url: ""

@@ -22,8 +22,10 @@ tags:
   - "Measurement"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Relationships"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "The relationship between the angle of light and the length of shadows follows a mathematical pattern that connects geometry to Earth's rotation."
 formula: "shadow length = object height ÷ tan(angle of light)"
 download_url: ""

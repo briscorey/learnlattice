@@ -19,8 +19,10 @@ tags:
   - "Non-Euclidean Geometry"
   - "Criterion A"
   - "Criterion B"
-key_concept: "Form"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The properties of geometric forms depend on the space in which they exist — and questioning assumptions is how mathematics advances."
 formula: "angle sum of triangle = 180° (in flat space)"
 

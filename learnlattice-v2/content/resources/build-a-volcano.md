@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Earth Science"
-key_concept: "Change"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Models help us visualise processes we cannot directly observe — but every model has limitations that must be acknowledged."
 difficulty: "approaching"
 hook: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"

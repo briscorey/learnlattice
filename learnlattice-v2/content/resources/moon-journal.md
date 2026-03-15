@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Space Science"
-key_concept: "Change"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Patterns in the sky are predictable because they result from the geometry of orbits — and observing these patterns connects us to every civilisation in history."
 difficulty: "approaching"
 hook: "The Moon changes shape every night — but it is always a sphere. Draw what you see for 28 nights, and discover the pattern that ancient civilisations used to build their calendars."

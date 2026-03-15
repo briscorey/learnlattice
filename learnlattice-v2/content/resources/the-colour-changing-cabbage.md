@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Chemistry"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Indicators reveal invisible properties of substances — and colour change is evidence of chemical difference."
 difficulty: "approaching"
 hook: "Red cabbage juice turns pink in lemon juice and green in baking soda. But it is the same liquid. What is it detecting?"

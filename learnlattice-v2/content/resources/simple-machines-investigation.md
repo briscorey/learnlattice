@@ -19,8 +19,10 @@ tags:
   - "Mechanical Advantage"
   - "Criterion A"
   - "Criterion D"
-key_concept: "Systems"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Simple systems can amplify human capability — and the trade-off between force and distance reveals a fundamental principle of physics."
 formula: "MA = load ÷ effort · work = force × distance"
 download_url: ""

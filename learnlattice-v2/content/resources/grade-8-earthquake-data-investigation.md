@@ -10,8 +10,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Plate Tectonics"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding relationships between concepts allows us to make predictions and solve real problems."
 formula: ""
 difficulty: "meeting"

@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Physics"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The period of a pendulum depends on a single variable — and discovering which one requires systematic investigation of all three."
 difficulty: "meeting"
 hook: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings — the weight, the angle, or the length? Only one of these matters. Which one?"

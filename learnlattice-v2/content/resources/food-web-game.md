@@ -17,11 +17,13 @@ tags:
   - "Trophic Levels"
   - "Ecology"
   - "Interactive"
-key_concept: "Systems"
+key-concepts:
+  - "Systems"
 related_concepts:
   - "Consequences"
   - "Relationships"
-global_context: "Fairness and Development"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "The relationships within systems have consequences that extend beyond individual organisms."
 difficulty: "meeting"
 download_url: ""

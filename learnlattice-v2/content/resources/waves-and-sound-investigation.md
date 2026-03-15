@@ -19,8 +19,10 @@ tags:
   - "Frequency"
   - "Criterion A"
   - "Criterion B"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The relationship between wave properties and the phenomena we observe reveals patterns that extend far beyond sound."
 formula: "v = fλ (wave speed = frequency × wavelength)"
 download_url: ""

@@ -15,8 +15,10 @@ tags:
   - "Data Collection"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Systems"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "The human body is a system of interconnected parts — and exercise reveals how those parts communicate."
 difficulty: "meeting"
 hook: "You breathe without thinking. But try holding your breath after sprinting. Your body takes over. Who is really in charge — you or your cells?"

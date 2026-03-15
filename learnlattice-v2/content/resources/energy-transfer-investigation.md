@@ -19,8 +19,10 @@ tags:
   - "Motion"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Systems"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "In any system, energy transformations follow predictable patterns — and the energy that seems to disappear has always gone somewhere."
 formula: "E_total = E_kinetic + E_potential + E_thermal"
 download_url: ""

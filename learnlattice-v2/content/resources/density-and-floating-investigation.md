@@ -20,8 +20,10 @@ tags:
   - "Measurement"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The relationship between mass and volume determines whether objects float or sink — and appearances can be misleading."
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""

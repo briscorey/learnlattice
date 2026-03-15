@@ -17,8 +17,10 @@ tags:
 formula: "more collisions -> faster reaction"
 download_url: ""
 download_label: "Lab Activity PDF"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
 ---
 

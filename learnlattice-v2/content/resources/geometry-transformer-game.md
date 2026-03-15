@@ -17,8 +17,10 @@ tags:
   - "Transformations"
   - "Coordinates"
   - "Interactive"
-key_concept: "Form"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Transformations change the position and size of shapes while preserving or altering their essential properties — and understanding which properties change reveals the nature of each transformation."
 formula: "Rotation: (x,y) → (x cos θ − y sin θ, x sin θ + y cos θ)"
 difficulty: "meeting"

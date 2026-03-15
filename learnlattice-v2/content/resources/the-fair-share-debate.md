@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Relationships"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "Equivalent fractions represent the same quantity — and understanding equivalence is the foundation of all fraction reasoning."
 difficulty: "approaching"
 hook: "Two students split a pizza. One cuts it into 6 pieces and takes 3. The other cuts it into 8 pieces and takes 4. They both say they took half. Who is right?"

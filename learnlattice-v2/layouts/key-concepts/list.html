@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<section class="concept-hub-hero">
+  <div class="concept-hub-inner">
+    <div class="concept-hub-kicker">IB MYP Framework</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</section>
+
+{{ with .Content }}
+<section class="seo-content-section">
+  <div class="seo-content-inner">{{ . }}</div>
+</section>
+{{ end }}
+
+<section class="concept-grid-section">
+  <div class="concept-grid-inner">
+    {{ $data := dict
+      "Relationships" (dict "icon" "🔗" "color" "teal")
+      "Systems" (dict "icon" "⚙️" "color" "blue")
+      "Logic" (dict "icon" "🧠" "color" "violet")
+      "Change" (dict "icon" "📈" "color" "amber")
+      "Form" (dict "icon" "🔷" "color" "rose")
+      "Patterns" (dict "icon" "🔄" "color" "green")
+    }}
+
+    <div class="concept-cards">
+      {{ range .Data.Terms.Alphabetical }}
+        {{ $meta := index $data .Page.Title }}
+        {{ $count := .Count }}
+        <a href="{{ .Page.Permalink }}" class="concept-card concept-card--{{ with $meta }}{{ .color }}{{ else }}teal{{ end }}">
+          <span class="concept-card-icon">{{ with $meta }}{{ .icon }}{{ else }}📎{{ end }}</span>
+          <h2>{{ .Page.Title }}</h2>
+          <p>{{ .Page.Description }}</p>
+          <span class="concept-card-count">{{ $count }} resource{{ if ne $count 1 }}s{{ end }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.concept-hub-hero{padding:48px 24px 28px;text-align:center;background:var(--surface-warm);border-bottom:1px solid var(--border)}
+.concept-hub-inner{max-width:680px;margin:0 auto}
+.concept-hub-kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:600;margin-bottom:8px}
+.concept-hub-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4vw,2.4rem);color:var(--ink);margin-bottom:8px}
+.concept-hub-hero p{color:var(--ink-muted);font-size:.92rem;line-height:1.5}
+.concept-grid-section{max-width:1100px;margin:0 auto;padding:32px 24px 80px}
+.concept-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.concept-card{display:flex;flex-direction:column;padding:28px;background:var(--surface-card);border:1.5px solid var(--border);border-radius:18px;text-decoration:none;color:inherit;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,border-color .2s;position:relative;overflow:hidden}
+.concept-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:18px 18px 0 0}
+.concept-card--teal::before{background:linear-gradient(90deg,#0a7c72,#5eead4)}
+.concept-card--blue::before{background:linear-gradient(90deg,#2563eb,#93c5fd)}
+.concept-card--violet::before{background:linear-gradient(90deg,#7c3aed,#c4b5fd)}
+.concept-card--amber::before{background:linear-gradient(90deg,#d97706,#fcd34d)}
+.concept-card--rose::before{background:linear-gradient(90deg,#e11d48,#fda4af)}
+.concept-card--green::before{background:linear-gradient(90deg,#16a34a,#86efac)}
+.concept-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:var(--border-hover)}
+.concept-card-icon{font-size:2rem;margin-bottom:12px}
+.concept-card h2{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:8px}
+.concept-card p{font-size:.85rem;color:var(--ink-muted);line-height:1.55;flex:1;margin-bottom:12px}
+.concept-card-count{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--teal);font-weight:600}
+html.dark .concept-card{background:var(--surface-card);border-color:var(--border)}
+@media(max-width:640px){.concept-cards{grid-template-columns:1fr}}
+</style>
+
+{{ end }}

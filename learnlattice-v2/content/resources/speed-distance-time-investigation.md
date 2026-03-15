@@ -22,8 +22,10 @@ tags:
   - "Data"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Relationships"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "The relationship between distance and time reveals fundamental patterns about how objects move — and how we measure movement."
 formula: "speed = distance ÷ time"
 download_url: ""

@@ -27,8 +27,10 @@ tags:
   - "Interactive"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Logical reasoning helps us evaluate claims about fairness by comparing what we observe with what we expect."
 formula: "P(event) = favourable outcomes ÷ total outcomes"
 game_url: "/games/probability-simulator.html?embed=1"

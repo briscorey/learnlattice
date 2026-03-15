@@ -21,8 +21,10 @@ tags:
   - "Systems Thinking"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Systems"
-global_context: "Globalisation and Sustainability"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "In ecological systems, every effect has causes that extend far beyond what direct observation can reveal."
 formula: "trophic cascade: predator removal → prey explosion → vegetation collapse"
 

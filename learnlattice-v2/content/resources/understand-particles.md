@@ -15,8 +15,10 @@ tags:
   - "Visual Explainer"
   - "Understanding"
   - "Interactive"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Visual interaction makes invisible concepts visible."
 formula: ""
 difficulty: "approaching"

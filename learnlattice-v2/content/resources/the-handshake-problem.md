@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Generalisation is the heart of algebra — finding a rule that works for any number, not just the one in front of you."
 difficulty: "meeting"
 hook: "If 30 people are in a room and everyone shakes hands with everyone else, how many handshakes happen? Can you find the answer WITHOUT counting every single one?"

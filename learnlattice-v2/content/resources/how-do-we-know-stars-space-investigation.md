@@ -19,8 +19,10 @@ tags:
   - "Scale"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Evidence"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Evidence"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Every observation of the universe beyond Earth requires building knowledge from the properties of light rather than from direct contact."
 formula: "λ_max = b/T (Wien's Displacement Law: peak wavelength → star temperature)"
 

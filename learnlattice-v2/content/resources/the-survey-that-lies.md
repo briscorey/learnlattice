@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Logic"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "Data does not lie — but the way it is collected, presented, and interpreted can be deeply misleading."
 difficulty: "meeting"
 hook: "90% of students prefer our school lunches! (Survey of 10 students. All were on the school council. The question was: 'Don't you love the new menu?') Can you spot every trick?"

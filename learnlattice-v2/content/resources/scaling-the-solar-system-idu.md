@@ -23,8 +23,10 @@ tags:
   - "Criterion B"
   - "Criterion C"
   - "Criterion D"
-key_concept: "Relationships"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "The relationships between quantities at vastly different scales can only be understood through proportional reasoning — and the results consistently defy our expectations."
 formula: "scale factor = model size ÷ actual size"
 download_url: ""

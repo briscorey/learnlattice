@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Form"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "Fractions represent the relationship between parts and wholes — and the same fraction can look completely different depending on how you divide."
 difficulty: "approaching"
 hook: "Three friends share 2 chocolate bars equally. Each person gets 2/3 of a bar. But HOW do you cut 2 bars into 3 equal pieces? There are at least 4 different ways — and they all give the same answer."

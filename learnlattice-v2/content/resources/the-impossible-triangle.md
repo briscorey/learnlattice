@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Form"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Not all measurements can form a triangle — and the constraint that determines which ones work reveals a fundamental property of space."
 difficulty: "meeting"
 hook: "Can you build a triangle with sides 3cm, 4cm, and 10cm? Try it. You cannot. Why not? And can you find the rule that tells you which triangles are possible?"

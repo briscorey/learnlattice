@@ -19,8 +19,10 @@ tags:
   - "Sample Size"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Logic"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "The logic we use to evaluate fairness depends on how much evidence we are willing to gather."
 formula: "P(E) = favourable outcomes / total outcomes"
 

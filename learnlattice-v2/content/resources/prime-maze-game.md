@@ -22,8 +22,10 @@ tags:
 formula: "Prime = exactly 2 factors"
 download_url: ""
 download_label: ""
-key_concept: "Form"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The form and structure of numbers shapes how we understand quantity and scale."
 game_url: ""
 ---

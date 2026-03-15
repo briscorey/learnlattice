@@ -32,8 +32,8 @@
       <p class="tn-meta">
         {{ with $p.duration }}<strong>Duration:</strong> {{ . }} · {{ end }}
         {{ with $p.difficulty }}<strong>Level:</strong> {{ . | humanize }} · {{ end }}
-        {{ with $p.key_concept }}<strong>Key concept:</strong> {{ . }} · {{ end }}
-        {{ with $p.global_context }}<strong>Global context:</strong> {{ . }}{{ end }}
+        {{ with index $p "key-concepts" }}{{ range . }}<strong>Key concept:</strong> <a href="/key-concepts/{{ . | urlize }}/" style="color:var(--teal)">{{ . }}</a> · {{ end }}{{ end }}
+        {{ with index $p "global-contexts" }}{{ range . }}<strong>Global context:</strong> <a href="/global-contexts/{{ . | urlize }}/" style="color:var(--teal)">{{ . }}</a>{{ end }}{{ end }}
       </p>
       {{ with $p.statement_of_inquiry }}<p class="tn-soi"><em>Statement of inquiry: {{ . }}</em></p>{{ end }}
     </div>

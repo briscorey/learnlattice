@@ -19,8 +19,10 @@ tags:
   - "Mean and Median"
   - "Criterion C"
   - "Criterion D"
-key_concept: "Representation"
-global_context: "Globalisation and Sustainability"
+key-concepts:
+  - "Representation"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "The way data is represented determines what questions it can answer — and what stories it can tell."
 formula: "mean ≠ median when data is skewed"
 

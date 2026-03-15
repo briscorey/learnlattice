@@ -19,8 +19,10 @@ tags:
   - "Assessment"
   - "Exemplars"
   - "Annotated Student Work"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The quality of reasoning determines the quality of the conclusion."
 formula: ""
 difficulty: "meeting"

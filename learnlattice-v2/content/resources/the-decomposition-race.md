@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Ecology"
-key_concept: "Change"
-global_context: "Globalization and Sustainability"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "Decomposition is a biological process driven by living organisms — and materials that cannot be decomposed accumulate in the environment."
 difficulty: "meeting"
 hook: "Bury a banana peel and a plastic bag side by side. Check back in two weeks. One has vanished. The other looks exactly the same. Why?"

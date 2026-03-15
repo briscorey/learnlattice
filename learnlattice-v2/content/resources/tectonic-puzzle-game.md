@@ -18,8 +18,10 @@ tags:
   - "Earth Science"
   - "Evidence"
   - "Interactive"
-key_concept: "Change"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Evidence from multiple sources can be combined to reconstruct events that happened millions of years before any human existed."
 formula: ""
 download_url: ""

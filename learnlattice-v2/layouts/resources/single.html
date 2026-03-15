@@ -23,7 +23,7 @@
   <div data-pagefind-filter="subject:{{ $subject }}"></div>
   {{ with index .Params.resource_types 0 }}<div data-pagefind-filter="type:{{ . }}"></div>{{ end }}
   {{ range .Params.year_levels }}<div data-pagefind-filter="grade:{{ . }}"></div>{{ end }}
-  {{ with .Params.key_concept }}<div data-pagefind-filter="concept:{{ . }}"></div>{{ end }}
+  {{ with index .Params "key-concepts" }}{{ range . }}<div data-pagefind-filter="concept:{{ . }}"></div>{{ end }}{{ end }}
   {{ range .Params.tags }}{{ if hasPrefix . "Criterion" }}<div data-pagefind-filter="criterion:{{ . }}"></div>{{ end }}{{ end }}
   <div data-pagefind-meta="title:{{ .Title }}, description:{{ .Description | default "" | truncate 150 }}, subject:{{ $subject }}, image:/img/subjects/{{ $svgFile }}.svg"></div>
   <div class="reading-progress"><div class="reading-progress-fill" id="readingProgress"></div></div>
@@ -121,7 +121,7 @@
         </div>
       </div>
 
-      <div class="rs-sidebar-card"><h3>At a Glance</h3><dl class="rs-glance">{{ with $subject }}<div class="rs-glance-row"><dt>Subject</dt><dd>{{ . }}</dd></div>{{ end }}{{ with index .Params.year_levels 0 }}<div class="rs-glance-row"><dt>Grade</dt><dd>{{ . }}{{ with index $.Params.year_levels 1 }} & {{ . }}{{ end }}</dd></div>{{ end }}{{ with .Params.key_concept }}<div class="rs-glance-row"><dt>Key Concept</dt><dd>{{ . }}</dd></div>{{ end }}{{ with .Params.global_context }}<div class="rs-glance-row"><dt>Global Context</dt><dd>{{ . }}</dd></div>{{ end }}</dl>{{ with .Params.formula }}<div class="rs-formula">{{ . }}</div>{{ end }}{{ with .Params.statement_of_inquiry }}<div class="rs-soi"><span class="rs-soi-label">Statement of Inquiry</span>{{ . }}</div>{{ end }}</div>
+      <div class="rs-sidebar-card"><h3>At a Glance</h3><dl class="rs-glance">{{ with $subject }}<div class="rs-glance-row"><dt>Subject</dt><dd>{{ . }}</dd></div>{{ end }}{{ with index .Params.year_levels 0 }}<div class="rs-glance-row"><dt>Grade</dt><dd>{{ . }}{{ with index $.Params.year_levels 1 }} & {{ . }}{{ end }}</dd></div>{{ end }}{{ with index .Params "key-concepts" }}{{ range . }}<div class="rs-glance-row"><dt>Key Concept</dt><dd><a href="/key-concepts/{{ . | urlize }}/" style="color:var(--teal);font-weight:600;text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}{{ with index .Params "global-contexts" }}{{ range . }}<div class="rs-glance-row"><dt>Global Context</dt><dd><a href="/global-contexts/{{ . | urlize }}/" style="color:var(--teal);text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}</dl>{{ with .Params.formula }}<div class="rs-formula">{{ . }}</div>{{ end }}{{ with .Params.statement_of_inquiry }}<div class="rs-soi"><span class="rs-soi-label">Statement of Inquiry</span>{{ . }}</div>{{ end }}</div>
 
       {{/* EAL SUPPORT */}}
       <div class="rs-sidebar-card rs-eal">

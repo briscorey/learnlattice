@@ -16,8 +16,10 @@ tags:
   - "Particles"
   - "Chemistry"
   - "Interactive"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The rate of chemical change depends on the conditions we control — and particle theory explains why each factor matters."
 formula: "rate = successful collisions ÷ time"
 difficulty: "meeting"

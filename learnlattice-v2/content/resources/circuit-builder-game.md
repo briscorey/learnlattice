@@ -16,8 +16,10 @@ tags:
   - "Electricity"
   - "Ohm's Law"
   - "Interactive"
-key_concept: "Systems"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how components connect within a system allows us to predict and control the flow of energy."
 formula: "V = IR"
 difficulty: "meeting"

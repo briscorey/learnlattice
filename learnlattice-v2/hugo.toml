@@ -247,6 +247,8 @@ summaryLength = 30
   subject = "subjects"
   year_level = "year-levels"
   resource_type = "resource-types"
+  key_concepts = "key-concepts"
+  global_contexts = "global-contexts"
 
 [menu]
   [[menu.main]]

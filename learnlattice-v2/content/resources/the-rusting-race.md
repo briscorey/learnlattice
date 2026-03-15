@@ -15,8 +15,10 @@ tags:
   - "Variables"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Chemical change is not random — it depends on specific conditions that can be identified, controlled, and predicted."
 difficulty: "approaching"
 hook: "A brand-new iron nail and a rusty one weigh different amounts. The rusty one is heavier. Where did the extra mass come from?"

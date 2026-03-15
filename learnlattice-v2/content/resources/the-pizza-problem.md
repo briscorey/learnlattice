@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Relationships"
-global_context: "Fairness and Development"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Fairness and Development"
 statement_of_inquiry: "When dimensions scale linearly, area scales quadratically — and this non-linear relationship leads to deeply counterintuitive results."
 difficulty: "meeting"
 hook: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close — and the answer reveals why area grows faster than you think."

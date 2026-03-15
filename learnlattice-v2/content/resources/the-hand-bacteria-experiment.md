@@ -14,8 +14,10 @@ tags:
   - "Health"
   - "Criterion C"
   - "Variables"
-key_concept: "Change"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "Microorganisms are invisible but their effects are measurable — and understanding them changes our daily behaviour."
 difficulty: "approaching"
 hook: "Your hands look clean right now. But there are more bacteria on your fingertips than people in your city. Can soap actually remove them?"

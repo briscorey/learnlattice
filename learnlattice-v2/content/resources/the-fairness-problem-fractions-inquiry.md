@@ -18,8 +18,10 @@ tags:
   - "Multiple Representations"
   - "Criterion A"
   - "Criterion D"
-key_concept: "Form"
-global_context: "Identities and Relationships"
+key-concepts:
+  - "Form"
+global-contexts:
+  - "Identities and Relationships"
 statement_of_inquiry: "The form in which we represent a quantity determines what relationships we can see."
 formula: "a ÷ b = a/b"
 

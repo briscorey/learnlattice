@@ -20,7 +20,7 @@ tags:
 - Real-World Application
 - Annotated Student Work
 key_concept: Systems
-global_context: Globalisation and Sustainability
+global_context: Globalization and Sustainability
 statement_of_inquiry: Applying scientific understanding to real-world decisions requires evaluating evidence, considering multiple perspectives, and accepting that the 'best' answer depends on context.
 formula: ''
 difficulty: exceeding

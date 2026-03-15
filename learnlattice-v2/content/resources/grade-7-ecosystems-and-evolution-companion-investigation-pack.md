@@ -23,7 +23,7 @@ formula: variation + selection -> change over time
 download_url: ''
 download_label: Companion Resource PDF
 key_concept: Systems
-global_context: Globalisation and Sustainability
+global_context: Globalization and Sustainability
 statement_of_inquiry: Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance.
 hook: Remove one species. Watch the whole ecosystem change.
 warmup: 'Show students a simple example related to grade 7 ecosystems and evolution companion investigation pack. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion.'

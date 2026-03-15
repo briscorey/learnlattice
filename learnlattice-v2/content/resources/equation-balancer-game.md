@@ -21,8 +21,10 @@ tags:
   - "Interactive"
   - "Criterion A"
   - "Criterion D"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The relationships between reactants and products reveal the fundamental principle that matter is conserved in every chemical change."
 formula: "reactants → products (atoms in = atoms out)"
 game_url: "/games/equation-balancer.html?embed=1"

@@ -17,8 +17,10 @@ tags:
 formula: "distance + atmosphere + temperature"
 download_url: ""
 download_label: "Investigation Pack PDF"
-key_concept: "Relationships"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."
 ---
 

@@ -21,8 +21,10 @@ tags:
   - "Scientific Reasoning"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific explanations for things we cannot observe directly must be built from multiple independent lines of converging evidence."
 formula: "convergent + divergent + transform boundaries → earthquakes, volcanoes, mountains"
 

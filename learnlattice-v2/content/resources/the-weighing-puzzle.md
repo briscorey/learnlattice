@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Equations are statements about balance — and the physical balance scale is the concrete model that makes algebraic manipulation intuitive."
 difficulty: "meeting"
 hook: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation — without writing one."

@@ -19,8 +19,10 @@ tags:
   - "Fractions"
   - "Criterion A"
   - "Criterion C"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The logical structure of our number system determines which representations are equivalent — even when intuition disagrees."
 formula: "1/3 = 0.333... → 3 × 0.333... = 0.999... = 1"
 

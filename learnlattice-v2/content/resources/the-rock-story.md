@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Earth Science"
-key_concept: "Change"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Rocks record the processes that formed them — and reading those records reveals Earth's history."
 difficulty: "approaching"
 hook: "Every rock is a time capsule. A pebble on the beach might contain minerals that formed in a volcano, were compressed for millions of years, then eroded by a river. Can you read its story?"

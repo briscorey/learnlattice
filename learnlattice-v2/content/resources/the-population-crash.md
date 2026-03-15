@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Ecology"
-key_concept: "Systems"
-global_context: "Globalization and Sustainability"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Globalization and Sustainability"
 statement_of_inquiry: "Populations grow exponentially when resources are abundant, but all ecosystems have carrying capacities — and exceeding them leads to collapse."
 difficulty: "exceeding"
 hook: "A population of deer doubles every year on an island with no predators. Year 1: 10. Year 2: 20. Year 3: 40. Year 10: 10,240. By year 15, they are all dead. What happened?"

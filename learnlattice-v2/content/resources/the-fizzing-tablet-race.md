@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Chemistry"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The rate of a chemical reaction depends on the energy and frequency of particle collisions — and temperature is a measure of that energy."
 difficulty: "meeting"
 hook: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot one finishes in half the time. Why does temperature make reactions faster?"

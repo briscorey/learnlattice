@@ -19,8 +19,10 @@ tags:
   - "Conductors"
   - "Criterion B"
   - "Criterion D"
-key_concept: "Change"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Our perception of temperature change depends not on the temperature of objects but on how quickly energy transfers between them and us."
 formula: "Rate of heat transfer depends on: thermal conductivity, temperature difference, surface area, thickness"
 download_url: ""

@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Patterns in how shapes grow reveal algebraic relationships that connect geometry to number."
 difficulty: "approaching"
 hook: "Build a square from tiles. Now build a bigger square around it. How many tiles did you add? Build another layer. See the pattern? You just discovered something mathematicians call the difference of squares."

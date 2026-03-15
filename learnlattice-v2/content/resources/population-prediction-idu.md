@@ -24,7 +24,7 @@ tags:
 - Criterion B
 - Criterion D
 key_concept: Systems
-global_context: Globalisation and Sustainability
+global_context: Globalization and Sustainability
 statement_of_inquiry: Exponential patterns in natural systems eventually encounter limits — and understanding those limits requires both mathematical models and ecological thinking.
 formula: N = N₀ × 2^(t/d) where d = doubling time
 download_url: ''

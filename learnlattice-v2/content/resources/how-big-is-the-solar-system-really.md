@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Space Science"
-key_concept: "Relationships"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "The solar system is far larger and emptier than any diagram suggests — and building a scale model is the only way to feel the vastness."
 difficulty: "approaching"
 hook: "If Earth were the size of a marble, Jupiter would be a basketball. And the Sun would be over a kilometre away. Can you build a scale model that fits in your school?"

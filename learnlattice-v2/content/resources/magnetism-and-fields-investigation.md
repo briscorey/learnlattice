@@ -19,8 +19,10 @@ tags:
   - "Electromagnetism"
   - "Criterion A"
   - "Criterion B"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Invisible forces follow predictable spatial patterns — and mapping those patterns allows us to predict behaviour we cannot directly observe."
 formula: "Field lines: N → S (outside the magnet)"
 download_url: ""

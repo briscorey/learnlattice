@@ -19,8 +19,10 @@ tags:
   - "Communication"
   - "Lab Reports"
   - "Annotated Student Work"
-key_concept: "Communication"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Communication"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "The clarity of scientific communication determines whether findings can be understood, evaluated, and built upon by others."
 formula: ""
 difficulty: "meeting"

@@ -20,8 +20,10 @@ tags:
   - "Interactive"
   - "Game"
   - "Phaser"
-key_concept: "Logic"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Logic"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Mathematical fluency enables confident problem-solving under pressure."
 formula: ""
 difficulty: "meeting"

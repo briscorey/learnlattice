@@ -17,8 +17,10 @@ tags:
   - "Solar System"
   - "Criterion B"
   - "Criterion C"
-key_concept: "Change"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Change"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Regular observation of change over time reveals patterns that allow us to predict future events — even in objects as distant as the Moon."
 formula: "Lunar cycle ≈ 29.5 days"
 download_url: ""

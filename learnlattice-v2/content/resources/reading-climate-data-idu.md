@@ -25,7 +25,7 @@ tags:
 - Criterion C
 - Criterion D
 key_concept: Change
-global_context: Globalisation and Sustainability
+global_context: Globalization and Sustainability
 statement_of_inquiry: Statistical analysis of real-world data reveals patterns of change that are invisible to casual observation — and the significance of those patterns depends on context, not just magnitude.
 formula: mean anomaly = observed temperature − baseline average
 download_url: ''

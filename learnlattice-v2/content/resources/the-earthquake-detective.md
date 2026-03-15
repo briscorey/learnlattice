@@ -11,8 +11,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Earth Science"
-key_concept: "Systems"
-global_context: "Orientation in Space and Time"
+key-concepts:
+  - "Systems"
+global-contexts:
+  - "Orientation in Space and Time"
 statement_of_inquiry: "Earthquake waves travel at predictable speeds — and the time delay between stations reveals the distance to the epicentre."
 difficulty: "meeting"
 hook: "Three seismograph stations detect the same earthquake at different times. Using only the time differences and a compass, can you locate exactly where it happened?"

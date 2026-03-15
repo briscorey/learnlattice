@@ -21,7 +21,7 @@ tags:
 - Annotated Student Work
 - Critical Thinking
 key_concept: Relationships
-global_context: Globalisation and Sustainability
+global_context: Globalization and Sustainability
 statement_of_inquiry: Statistical claims in media can be evaluated by collecting our own data, analysing patterns, and comparing our findings to the original claim.
 formula: mean, median, IQR, sample size considerations
 download_url: ''

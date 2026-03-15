@@ -12,8 +12,10 @@ resource_types:
   - "Investigation Pack"
 tags:
   - "Mathematics"
-key_concept: "Relationships"
-global_context: "Scientific and Technical Innovation"
+key-concepts:
+  - "Relationships"
+global-contexts:
+  - "Scientific and Technical Innovation"
 statement_of_inquiry: "Large numbers only make sense when connected to physical quantities we can see, touch, and measure."
 difficulty: "approaching"
 hook: "How many grains of rice would it take to fill your classroom from floor to ceiling? Most people guess a few million. The real answer is in the billions. How far off is your intuition?"
