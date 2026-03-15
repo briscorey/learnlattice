@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Energy Transfer — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#f59e0b,#f59e0baa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:600px}.display{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.coin{font-size:3rem;margin-bottom:8px}.counts{display:flex;justify-content:center;gap:24px;font-family:'Courier New',monospace;font-size:1rem;color:#94a3b8}.pct{font-family:'Courier New',monospace;font-size:1.2rem;color:#f59e0b;font-weight:700;margin-top:8px}.bar-wrap{height:24px;background:#1e293b;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid #334155}.bar{height:100%;background:#f59e0b;border-radius:12px;transition:width .3s}.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btns button{padding:8px 18px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.btns button:hover{border-color:#f59e0b;background:#0f172a}.info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#f59e0b}.hl{color:#f59e0b;font-weight:700}.neg{color:#ef4444;font-weight:700}.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center}.slider-row label{font-size:.85rem;color:#94a3b8}.slider-row input{width:200px;accent-color:#f59e0b}.slider-row span{font-family:'Courier New',monospace;color:#f59e0b;font-weight:700;min-width:40px}.pos{text-align:center;font-family:'Courier New',monospace;font-size:1.3rem;color:#e2e8f0;margin-bottom:16px}.line{display:flex;gap:2px;justify-content:center;margin-bottom:16px;overflow-x:auto;padding:8px 0}.tick{min-width:28px;height:40px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#64748b;border-radius:6px;background:#1e293b;border:1px solid transparent}.tick.current{background:#f59e0b;color:#fff;font-weight:700;border-color:#f59e0b}.tick.zero{border-color:#475569}.web{position:relative;height:300px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:12px}.sp{position:absolute;padding:6px 10px;background:#1e293b;border:1px solid #334155;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;transform:translate(-50%,-50%);white-space:nowrap;user-select:none}.sp:hover{border-color:#059669;background:#0f172a}.sp.affected{border-color:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.3)}.history{font-size:.78rem;color:#64748b;text-align:center}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#f59e0b,#f59e0baa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:600px}.display{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.coin{font-size:3rem;margin-bottom:8px}.counts{display:flex;justify-content:center;gap:24px;font-family:'Courier New',monospace;font-size:1rem;color:#94a3b8}.pct{font-family:'Courier New',monospace;font-size:1.2rem;color:#f59e0b;font-weight:700;margin-top:8px}.bar-wrap{height:24px;background:#1e293b;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid #334155}.bar{height:100%;background:#f59e0b;border-radius:12px;transition:width .3s}.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btns button{padding:8px 18px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.btns button:hover{border-color:#f59e0b;background:#0f172a}.info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#f59e0b}.hl{color:#f59e0b;font-weight:700}.neg{color:#ef4444;font-weight:700}.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center}.slider-row label{font-size:.85rem;color:#94a3b8}.slider-row input{width:200px;accent-color:#f59e0b}.slider-row span{font-family:'Courier New',monospace;color:#f59e0b;font-weight:700;min-width:40px}.pos{text-align:center;font-family:'Courier New',monospace;font-size:1.3rem;color:#e2e8f0;margin-bottom:16px}.line{display:flex;gap:2px;justify-content:center;margin-bottom:16px;overflow-x:auto;padding:8px 0}.tick{min-width:28px;height:40px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#64748b;border-radius:6px;background:#1e293b;border:1px solid transparent}.tick.current{background:#f59e0b;color:#fff;font-weight:700;border-color:#f59e0b}.tick.zero{border-color:#475569}.web{position:relative;height:300px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:12px}.sp{position:absolute;padding:6px 10px;background:#1e293b;border:1px solid #334155;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;transform:translate(-50%,-50%);white-space:nowrap;user-select:none}.sp:hover{border-color:#059669;background:#0f172a}.sp.affected{border-color:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.3)}.history{font-size:.78rem;color:#64748b;text-align:center}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Where Does the Energy Go?</h1>
 <p class="sub">Every energy transfer wastes some energy as heat. Drag the slider to see how efficiency changes the flow.</p>
 <div class="app">
@@ -7,6 +33,20 @@
   <canvas id="canvas" width="500" height="250" style="width:100%;border-radius:10px;background:#0f172a"></canvas>
   <div class="info" id="info">At <strong>60%</strong> efficiency, 60% of the input energy becomes useful output. The other 40% is wasted as heat.</div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Kinetic energy<span class="ll-vd"><strong>Kinetic energy</strong>: Energy of motion: KE = ½mv²</span></span><span class="ll-vt">Gravitational PE<span class="ll-vd"><strong>Gravitational PE</strong>: Stored energy due to height: GPE = mgh</span></span><span class="ll-vt">Conservation<span class="ll-vd"><strong>Conservation</strong>: Energy is never created or destroyed — only transferred</span></span><span class="ll-vt">Efficiency<span class="ll-vd"><strong>Efficiency</strong>: Useful output ÷ total input × 100%</span></span></div><div class="ll-dyk">The Sun converts 4 million tonnes of matter into energy every second using E = mc². It has enough fuel for another 5 billion years.</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. KE = ½mv². Mass = 2kg, speed = 3m/s. KE?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">18 J</button><button class="ll-opt" onclick="llCheck(this,0)">6 J</button><button class="ll-opt" onclick="llCheck(this,0)">3 J</button><button class="ll-opt" onclick="llCheck(this,1)">9 J</button></div></div>
+<div class="ll-q"><p>2. A ball is held 10m high (mass 0.5kg, g=10). What is its GPE?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">500 J</button><button class="ll-opt" onclick="llCheck(this,0)">100 J</button><button class="ll-opt" onclick="llCheck(this,0)">5 J</button><button class="ll-opt" onclick="llCheck(this,1)">50 J</button></div></div>
+<div class="ll-q"><p>3. Energy cannot be created or destroyed. This is the law of...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">Conservation of energy</button><button class="ll-opt" onclick="llCheck(this,0)">Motion</button><button class="ll-opt" onclick="llCheck(this,0)">Thermodynamics</button><button class="ll-opt" onclick="llCheck(this,0)">Gravity</button></div></div>
+<div class="ll-q"><p>4. A machine has 80J input and 60J useful output. What is its efficiency?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">133%</button><button class="ll-opt" onclick="llCheck(this,1)">75%</button><button class="ll-opt" onclick="llCheck(this,0)">60%</button><button class="ll-opt" onclick="llCheck(this,0)">80%</button></div></div>
+<div class="ll-q"><p>5. If you double the speed, the kinetic energy...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Doubles</button><button class="ll-opt" onclick="llCheck(this,1)">Quadruples (×4)</button><button class="ll-opt" onclick="llCheck(this,0)">Stays the same</button><button class="ll-opt" onclick="llCheck(this,0)">Triples</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">A rollercoaster car (500kg) starts at 30m high with zero speed. At the bottom, what is its maximum speed? (Assume no friction, g=10)</div><div class="ll-ext-q">Why can no machine ever be 100% efficient? What happens to the 'lost' energy?</div></div></div>
+
 <script>
 var c=document.getElementById('canvas'),ctx=c.getContext('2d');
 function draw(){var e=+document.getElementById('eff').value;document.getElementById('effVal').textContent=e+'%';
@@ -31,4 +71,21 @@ if(e>80)info.innerHTML='At <strong>'+e+'%</strong> efficiency, almost all energy
 else if(e>40)info.innerHTML='At <strong>'+e+'%</strong> efficiency, '+(100-e)+'% is wasted as heat. A car engine is about 25-30% efficient.';
 else info.innerHTML='At <strong>'+e+'%</strong> efficiency, most energy is wasted! An incandescent light bulb is only about 5% efficient at producing light.';}
 draw();
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>

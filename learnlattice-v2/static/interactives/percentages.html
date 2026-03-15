@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Percentages — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.row{display:flex;align-items:center;gap:12px;margin-bottom:14px;justify-content:center}.row label{font-size:.85rem;color:#94a3b8;min-width:90px;text-align:right}.row input[type=range]{width:180px;accent-color:#0D9488}.row .val{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:50px;font-size:1rem}.bar-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px}.bar-label{display:flex;justify-content:space-between;font-size:.75rem;color:#64748b;margin-bottom:6px}.bar-track{height:32px;background:#1e293b;border-radius:8px;overflow:hidden;position:relative;border:1px solid #334155}.bar-fill{height:100%;border-radius:8px;transition:width .3s,background .3s}.bar-original{background:#0D9488}.bar-change{position:absolute;top:0;height:100%;transition:left .3s,width .3s;border-radius:0 8px 8px 0;opacity:.7}.bar-increase{background:#22c55e}.bar-decrease{background:#ef4444}.result-box{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.result-num{font-family:'Courier New',monospace;font-size:2rem;font-weight:700;color:#0D9488;margin-bottom:4px}.result-calc{font-size:.85rem;color:#94a3b8}.btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488;background:#0f172a}.btn.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.row{display:flex;align-items:center;gap:12px;margin-bottom:14px;justify-content:center}.row label{font-size:.85rem;color:#94a3b8;min-width:90px;text-align:right}.row input[type=range]{width:180px;accent-color:#0D9488}.row .val{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:50px;font-size:1rem}.bar-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px}.bar-label{display:flex;justify-content:space-between;font-size:.75rem;color:#64748b;margin-bottom:6px}.bar-track{height:32px;background:#1e293b;border-radius:8px;overflow:hidden;position:relative;border:1px solid #334155}.bar-fill{height:100%;border-radius:8px;transition:width .3s,background .3s}.bar-original{background:#0D9488}.bar-change{position:absolute;top:0;height:100%;transition:left .3s,width .3s;border-radius:0 8px 8px 0;opacity:.7}.bar-increase{background:#22c55e}.bar-decrease{background:#ef4444}.result-box{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.result-num{font-family:'Courier New',monospace;font-size:2rem;font-weight:700;color:#0D9488;margin-bottom:4px}.result-calc{font-size:.85rem;color:#94a3b8}.btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488;background:#0f172a}.btn.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Percentages: See the Change</h1>
 <p class="sub">Adjust the original value and percentage. Watch how the bar and result change.</p>
 <div class="app">
@@ -23,6 +49,20 @@
   </div>
   <div class="info" id="info"><strong>Percent</strong> means "per hundred." So 25% of 200 means 25 out of every 100 — that's <strong>50</strong>.</div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Percentage<span class="ll-vd"><strong>Percentage</strong>: A number out of 100. 'Per cent' literally means 'per hundred'</span></span><span class="ll-vt">Multiplier<span class="ll-vd"><strong>Multiplier</strong>: The number you multiply by: 1.2 for 20% increase, 0.8 for 20% decrease</span></span><span class="ll-vt">Percentage point<span class="ll-vd"><strong>Percentage point</strong>: The difference between two percentages: 30% to 35% is 5 percentage points</span></span></div><div class="ll-dyk">Banks use compound percentages — interest on interest. At 7% annual interest, your money doubles in about 10 years (the Rule of 72).</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. What is 20% of 80?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">60</button><button class="ll-opt" onclick="llCheck(this,1)">16</button><button class="ll-opt" onclick="llCheck(this,0)">8</button><button class="ll-opt" onclick="llCheck(this,0)">20</button></div></div>
+<div class="ll-q"><p>2. A shirt costs $40 and is 25% off. What's the sale price?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">$35</button><button class="ll-opt" onclick="llCheck(this,0)">$10</button><button class="ll-opt" onclick="llCheck(this,0)">$15</button><button class="ll-opt" onclick="llCheck(this,1)">$30</button></div></div>
+<div class="ll-q"><p>3. If 30 out of 50 students passed, what percentage passed?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">30%</button><button class="ll-opt" onclick="llCheck(this,0)">80%</button><button class="ll-opt" onclick="llCheck(this,0)">50%</button><button class="ll-opt" onclick="llCheck(this,1)">60%</button></div></div>
+<div class="ll-q"><p>4. A population grows from 200 to 250. What's the % increase?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">20%</button><button class="ll-opt" onclick="llCheck(this,1)">25%</button><button class="ll-opt" onclick="llCheck(this,0)">50%</button><button class="ll-opt" onclick="llCheck(this,0)">12.5%</button></div></div>
+<div class="ll-q"><p>5. What multiplier represents a 15% decrease?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">×1.85</button><button class="ll-opt" onclick="llCheck(this,0)">×0.15</button><button class="ll-opt" onclick="llCheck(this,1)">×0.85</button><button class="ll-opt" onclick="llCheck(this,0)">×1.15</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">A shop offers '30% off, then an extra 20% off the sale price.' Is that the same as 50% off? Prove your answer with a $100 item.</div><div class="ll-ext-q">If something increases by 10% then decreases by 10%, do you get back to the original? Explain why or why not.</div></div></div>
+
 <script>
 var mode='increase';
 function setMode(m){mode=m;document.querySelectorAll('.btn').forEach(b=>b.classList.remove('on'));document.getElementById('btn'+{increase:'Inc',decrease:'Dec',of:'Of'}[m]).classList.add('on');update();}
@@ -51,4 +91,21 @@ function update(){
   else document.getElementById('info').innerHTML='<strong>'+pct+'%</strong> of '+orig+' is <strong>'+pctPart+'</strong>. Take it away: '+orig+' − '+pctPart+' = <strong>'+Math.round(result*100)/100+'</strong>. The multiplier is <strong>×'+(1-pct/100).toFixed(2)+'</strong>.';
 }
 update();
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>

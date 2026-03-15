@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Mean, Median &amp; Mode — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.dot-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px;min-height:80px}.dot-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;min-height:40px}.dot{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#1e293b;border:1.5px solid #334155;font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:#e2e8f0;cursor:pointer;transition:all .15s;user-select:none}.dot:hover{border-color:#ef4444;background:rgba(239,68,68,.1)}.dot-add{border-style:dashed;border-color:#0D9488;color:#0D9488;font-size:1.2rem;cursor:pointer}.dot-add:hover{background:rgba(13,148,136,.1)}.controls{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.stat-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:6px;font-weight:700}.stat-num{font-family:'Courier New',monospace;font-size:1.5rem;font-weight:700}.stat-mean .stat-num{color:#0D9488}.stat-median .stat-num{color:#d97706}.stat-mode .stat-num{color:#8b5cf6}.stat-calc{font-size:.7rem;color:#64748b;margin-top:4px;word-break:break-all}.sorted{margin-bottom:12px;text-align:center;font-size:.82rem;color:#94a3b8;min-height:20px}.sorted span{font-family:'Courier New',monospace}.sorted .mid{color:#d97706;font-weight:700;text-decoration:underline}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.dot-area{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px;min-height:80px}.dot-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;min-height:40px}.dot{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#1e293b;border:1.5px solid #334155;font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:#e2e8f0;cursor:pointer;transition:all .15s;user-select:none}.dot:hover{border-color:#ef4444;background:rgba(239,68,68,.1)}.dot-add{border-style:dashed;border-color:#0D9488;color:#0D9488;font-size:1.2rem;cursor:pointer}.dot-add:hover{background:rgba(13,148,136,.1)}.controls{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.btn{padding:7px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}.btn:hover{border-color:#0D9488}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.stat-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:6px;font-weight:700}.stat-num{font-family:'Courier New',monospace;font-size:1.5rem;font-weight:700}.stat-mean .stat-num{color:#0D9488}.stat-median .stat-num{color:#d97706}.stat-mode .stat-num{color:#8b5cf6}.stat-calc{font-size:.7rem;color:#64748b;margin-top:4px;word-break:break-all}.sorted{margin-bottom:12px;text-align:center;font-size:.82rem;color:#94a3b8;min-height:20px}.sorted span{font-family:'Courier New',monospace}.sorted .mid{color:#d97706;font-weight:700;text-decoration:underline}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Mean, Median &amp; Mode</h1>
 <p class="sub">Click numbers to add data. Click a dot to remove it. Watch the three averages update.</p>
 <div class="app">
@@ -25,6 +51,20 @@
   </div>
   <div class="info" id="info">Add some numbers to get started. <strong>Mean</strong> = total ÷ count. <strong>Median</strong> = middle value. <strong>Mode</strong> = most common.</div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Mean<span class="ll-vd"><strong>Mean</strong>: Total ÷ count. Affected by every value.</span></span><span class="ll-vt">Median<span class="ll-vd"><strong>Median</strong>: The middle value when sorted. Resistant to outliers.</span></span><span class="ll-vt">Mode<span class="ll-vd"><strong>Mode</strong>: The most common value. Can be more than one.</span></span><span class="ll-vt">Outlier<span class="ll-vd"><strong>Outlier</strong>: A value far from the rest that can skew the mean</span></span></div><div class="ll-dyk">The 'average' salary is often reported as the median, not the mean, because a few billionaires would skew the mean way up!</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. Find the mean of 4, 6, 8, 10, 12.</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">10</button><button class="ll-opt" onclick="llCheck(this,1)">8</button><button class="ll-opt" onclick="llCheck(this,0)">6</button><button class="ll-opt" onclick="llCheck(this,0)">7</button></div></div>
+<div class="ll-q"><p>2. Find the median of 3, 7, 1, 9, 5.</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">5</button><button class="ll-opt" onclick="llCheck(this,0)">9</button><button class="ll-opt" onclick="llCheck(this,0)">7</button><button class="ll-opt" onclick="llCheck(this,0)">3</button></div></div>
+<div class="ll-q"><p>3. Find the mode of 2, 5, 3, 5, 7, 5, 1.</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">2</button><button class="ll-opt" onclick="llCheck(this,1)">5</button><button class="ll-opt" onclick="llCheck(this,0)">7</button><button class="ll-opt" onclick="llCheck(this,0)">3</button></div></div>
+<div class="ll-q"><p>4. Which average is most affected by outliers?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Median</button><button class="ll-opt" onclick="llCheck(this,1)">Mean</button><button class="ll-opt" onclick="llCheck(this,0)">Range</button><button class="ll-opt" onclick="llCheck(this,0)">Mode</button></div></div>
+<div class="ll-q"><p>5. Data: 10, 10, 10, 10, 50. The mean is 18. Is this a good summary?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Yes</button><button class="ll-opt" onclick="llCheck(this,1)">No — the median (10) is better here</button><button class="ll-opt" onclick="llCheck(this,0)">No — the mode is better</button><button class="ll-opt" onclick="llCheck(this,0)">Can't tell</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">Create a dataset of 7 numbers where the mean, median, and mode are all different values.</div><div class="ll-ext-q">A class average is 72%. A new student scores 95%. With 25 students now in the class, what is the new average? Show your working.</div></div></div>
+
 <script>
 var data=[3,5,7,5,4];
 function render(){
@@ -61,4 +101,21 @@ function addVal(v){if(data.length<20)data.push(v);render();}
 function removeVal(i){data.splice(i,1);render();}
 function reset(){data=[];render();}
 render();
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>

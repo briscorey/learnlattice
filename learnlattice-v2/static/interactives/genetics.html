@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Genetics — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#22c55e,#22c55eaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:500px}.parents{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.parent{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:center}.parent-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:8px}.parent-icon{font-size:1.5rem;margin-bottom:8px}.parent-geno{font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700;color:#22c55e;margin-bottom:8px}.parent-select{display:flex;gap:6px;justify-content:center}.ps{padding:6px 14px;border-radius:6px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:'Courier New',monospace;font-weight:700;transition:all .15s}.ps:hover{border-color:#22c55e}.ps.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.punnett{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px}.punnett-grid{display:grid;grid-template-columns:60px 1fr 1fr;grid-template-rows:40px 1fr 1fr;gap:2px;margin-bottom:12px}.pg-cell{display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:'Courier New',monospace;font-weight:700;font-size:1rem;min-height:56px}.pg-header{background:transparent;color:#64748b;font-size:.82rem}.pg-corner{background:transparent}.pg-dad{color:#3b82f6}.pg-mum{color:#ef4444}.pg-off{background:#1e293b;border:1px solid #334155;transition:all .3s}.pg-BB{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3);color:#86efac}.pg-Bb{background:rgba(217,119,6,.12);border-color:rgba(217,119,6,.25);color:#fcd34d}.pg-bb{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.25);color:#fca5a5}.results{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.res{padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.res-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:4px}.res-val{font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700}.res-pct{font-size:.75rem;color:#64748b;margin-top:2px}.trait-box{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.trait-btns{display:flex;gap:6px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}.trb{padding:6px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s}.trb:hover{border-color:#22c55e}.trb.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.trait-desc{font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.5}.trait-desc strong{color:#22c55e}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#22c55e}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#22c55e,#22c55eaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:500px}.parents{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.parent{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:center}.parent-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:8px}.parent-icon{font-size:1.5rem;margin-bottom:8px}.parent-geno{font-family:'Courier New',monospace;font-size:1.3rem;font-weight:700;color:#22c55e;margin-bottom:8px}.parent-select{display:flex;gap:6px;justify-content:center}.ps{padding:6px 14px;border-radius:6px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:'Courier New',monospace;font-weight:700;transition:all .15s}.ps:hover{border-color:#22c55e}.ps.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.punnett{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px}.punnett-grid{display:grid;grid-template-columns:60px 1fr 1fr;grid-template-rows:40px 1fr 1fr;gap:2px;margin-bottom:12px}.pg-cell{display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:'Courier New',monospace;font-weight:700;font-size:1rem;min-height:56px}.pg-header{background:transparent;color:#64748b;font-size:.82rem}.pg-corner{background:transparent}.pg-dad{color:#3b82f6}.pg-mum{color:#ef4444}.pg-off{background:#1e293b;border:1px solid #334155;transition:all .3s}.pg-BB{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3);color:#86efac}.pg-Bb{background:rgba(217,119,6,.12);border-color:rgba(217,119,6,.25);color:#fcd34d}.pg-bb{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.25);color:#fca5a5}.results{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.res{padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.res-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;font-weight:700;margin-bottom:4px}.res-val{font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700}.res-pct{font-size:.75rem;color:#64748b;margin-top:2px}.trait-box{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.trait-btns{display:flex;gap:6px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}.trb{padding:6px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s}.trb:hover{border-color:#22c55e}.trb.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.trait-desc{font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.5}.trait-desc strong{color:#22c55e}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#22c55e}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Punnett Squares</h1>
 <p class="sub">Pick parent genotypes. See the possible offspring and their probabilities.</p>
 <div class="app">
@@ -21,6 +47,20 @@
   <div class="results" id="results"></div>
   <div class="info" id="info"><strong>Dominant</strong> alleles (B) only need one copy to show. <strong>Recessive</strong> alleles (b) need two copies (bb) to show the trait.</div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Allele<span class="ll-vd"><strong>Allele</strong>: A version of a gene — e.g. B (brown) and b (blue)</span></span><span class="ll-vt">Dominant<span class="ll-vd"><strong>Dominant</strong>: Only needs one copy to show: B in Bb still gives brown eyes</span></span><span class="ll-vt">Recessive<span class="ll-vd"><strong>Recessive</strong>: Needs two copies to show: only bb gives blue eyes</span></span><span class="ll-vt">Genotype<span class="ll-vd"><strong>Genotype</strong>: The alleles an organism has (BB, Bb, or bb)</span></span><span class="ll-vt">Phenotype<span class="ll-vd"><strong>Phenotype</strong>: The physical trait you can see (brown eyes, blue eyes)</span></span></div><div class="ll-dyk">Gregor Mendel, a monk, discovered genetics by growing 29,000 pea plants over 8 years. His work was ignored for 35 years!</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. In a Bb × Bb cross, what fraction of offspring are bb?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">3/4</button><button class="ll-opt" onclick="llCheck(this,0)">1/2</button><button class="ll-opt" onclick="llCheck(this,1)">1/4 (25%)</button><button class="ll-opt" onclick="llCheck(this,0)">0</button></div></div>
+<div class="ll-q"><p>2. What does 'heterozygous' mean?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">Two different alleles (e.g. Bb)</button><button class="ll-opt" onclick="llCheck(this,0)">No alleles</button><button class="ll-opt" onclick="llCheck(this,0)">Three alleles</button><button class="ll-opt" onclick="llCheck(this,0)">Two same alleles</button></div></div>
+<div class="ll-q"><p>3. Brown eyes (B) are dominant over blue (b). A Bb parent has which eye colour?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">Brown</button><button class="ll-opt" onclick="llCheck(this,0)">Green</button><button class="ll-opt" onclick="llCheck(this,0)">Both</button><button class="ll-opt" onclick="llCheck(this,0)">Blue</button></div></div>
+<div class="ll-q"><p>4. What is the genotype of a blue-eyed person?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Bb</button><button class="ll-opt" onclick="llCheck(this,0)">bB</button><button class="ll-opt" onclick="llCheck(this,1)">bb</button><button class="ll-opt" onclick="llCheck(this,0)">BB</button></div></div>
+<div class="ll-q"><p>5. In BB × bb, what percentage of offspring are carriers?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">0%</button><button class="ll-opt" onclick="llCheck(this,0)">25%</button><button class="ll-opt" onclick="llCheck(this,1)">100%</button><button class="ll-opt" onclick="llCheck(this,0)">50%</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">Two brown-eyed parents have a blue-eyed child. Explain how this is possible using a Punnett square.</div><div class="ll-ext-q">Cystic fibrosis is recessive (ff). Both parents are carriers (Ff). What is the probability their child will have CF? If they have 4 children, will exactly 1 have CF?</div></div></div>
+
 <script>
 var dad='Bb',mum='Bb',D='B',d='b';
 var traits={
@@ -75,4 +115,21 @@ function calc(){
   document.getElementById('info').innerHTML='<strong>'+t.dom+'</strong>: '+(domCount*25)+'% chance. <strong>'+t.rec+'</strong>: '+(recCount*25)+'% chance. '+(counts[D+d]?'<strong>'+(counts[D+d]*25)+'%</strong> are carriers — they look '+t.dom.toLowerCase()+' but carry the recessive allele.':'');
 }
 updateParentBtns();calc();
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>

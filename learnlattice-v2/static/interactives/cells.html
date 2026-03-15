@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Cells — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#22c55e,#22c55eaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.type-btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px}.tb{padding:8px 20px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.tb:hover{border-color:#22c55e}.tb.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.cell-area{position:relative;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;height:300px;overflow:hidden}.cell-shape{position:absolute;border:3px solid #22c55e;border-radius:50%;background:rgba(34,197,94,.04)}.org{position:absolute;padding:6px 10px;background:#1e293b;border:1.5px solid #334155;border-radius:8px;font-size:.72rem;cursor:pointer;transition:all .2s;user-select:none;white-space:nowrap;z-index:2}.org:hover,.org.active{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac;box-shadow:0 0 10px rgba(34,197,94,.2)}.org-dot{position:absolute;width:10px;height:10px;border-radius:50%;z-index:1}.info-panel{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;min-height:100px}.info-name{font-size:1rem;font-weight:700;color:#22c55e;margin-bottom:4px}.info-found{font-size:.7rem;color:#64748b;margin-bottom:8px}.info-desc{font-size:.85rem;color:#94a3b8;line-height:1.6}.info-fun{margin-top:8px;padding:8px 12px;background:rgba(34,197,94,.06);border-radius:8px;border-left:3px solid #22c55e;font-size:.78rem;color:#94a3b8;font-style:italic}.legend{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:12px;font-size:.68rem;color:#64748b}.legend span{padding:2px 8px;border-radius:4px;background:#1e293b;border:1px solid #334155}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#22c55e,#22c55eaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.type-btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px}.tb{padding:8px 20px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.tb:hover{border-color:#22c55e}.tb.on{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}.cell-area{position:relative;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;height:300px;overflow:hidden}.cell-shape{position:absolute;border:3px solid #22c55e;border-radius:50%;background:rgba(34,197,94,.04)}.org{position:absolute;padding:6px 10px;background:#1e293b;border:1.5px solid #334155;border-radius:8px;font-size:.72rem;cursor:pointer;transition:all .2s;user-select:none;white-space:nowrap;z-index:2}.org:hover,.org.active{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac;box-shadow:0 0 10px rgba(34,197,94,.2)}.org-dot{position:absolute;width:10px;height:10px;border-radius:50%;z-index:1}.info-panel{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;min-height:100px}.info-name{font-size:1rem;font-weight:700;color:#22c55e;margin-bottom:4px}.info-found{font-size:.7rem;color:#64748b;margin-bottom:8px}.info-desc{font-size:.85rem;color:#94a3b8;line-height:1.6}.info-fun{margin-top:8px;padding:8px 12px;background:rgba(34,197,94,.06);border-radius:8px;border-left:3px solid #22c55e;font-size:.78rem;color:#94a3b8;font-style:italic}.legend{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:12px;font-size:.68rem;color:#64748b}.legend span{padding:2px 8px;border-radius:4px;background:#1e293b;border:1px solid #334155}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Inside a Cell</h1>
 <p class="sub">Click each part to learn what it does. Switch between animal and plant cells.</p>
 <div class="app">
@@ -14,6 +40,20 @@
   </div>
   <div class="legend" id="legend"></div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Organelle<span class="ll-vd"><strong>Organelle</strong>: A specialised structure inside a cell with a specific function</span></span><span class="ll-vt">Nucleus<span class="ll-vd"><strong>Nucleus</strong>: Contains DNA — the instructions for making proteins</span></span><span class="ll-vt">Mitochondria<span class="ll-vd"><strong>Mitochondria</strong>: Releases energy from glucose through aerobic respiration</span></span><span class="ll-vt">Chloroplast<span class="ll-vd"><strong>Chloroplast</strong>: Where photosynthesis occurs — only in plant cells</span></span></div><div class="ll-dyk">Your body contains about 37 trillion cells. Every second, 3.8 million cells die and are replaced. You get an entirely new skeleton every 10 years!</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. Which organelle is the 'powerhouse' of the cell?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Chloroplast</button><button class="ll-opt" onclick="llCheck(this,0)">Ribosome</button><button class="ll-opt" onclick="llCheck(this,0)">Nucleus</button><button class="ll-opt" onclick="llCheck(this,1)">Mitochondria</button></div></div>
+<div class="ll-q"><p>2. Which part is found in plant cells but NOT animal cells?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Nucleus</button><button class="ll-opt" onclick="llCheck(this,0)">Cell membrane</button><button class="ll-opt" onclick="llCheck(this,0)">Cytoplasm</button><button class="ll-opt" onclick="llCheck(this,1)">Cell wall</button></div></div>
+<div class="ll-q"><p>3. Where is DNA found?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">Nucleus</button><button class="ll-opt" onclick="llCheck(this,0)">Cell membrane</button><button class="ll-opt" onclick="llCheck(this,0)">Cytoplasm</button><button class="ll-opt" onclick="llCheck(this,0)">Ribosome</button></div></div>
+<div class="ll-q"><p>4. What is the function of ribosomes?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Controlling the cell</button><button class="ll-opt" onclick="llCheck(this,0)">Storing water</button><button class="ll-opt" onclick="llCheck(this,1)">Making proteins</button><button class="ll-opt" onclick="llCheck(this,0)">Releasing energy</button></div></div>
+<div class="ll-q"><p>5. The cell membrane controls what enters and leaves. What is this called?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Rigid</button><button class="ll-opt" onclick="llCheck(this,1)">Selectively permeable</button><button class="ll-opt" onclick="llCheck(this,0)">Waterproof</button><button class="ll-opt" onclick="llCheck(this,0)">Transparent</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">Why do muscle cells have more mitochondria than skin cells? What about root hair cells — which organelles would they have more or fewer of?</div><div class="ll-ext-q">If you removed the cell wall from a plant cell and placed it in pure water, what would happen? Use the term 'osmosis' in your answer.</div></div></div>
+
 <script>
 var parts={
   nucleus:{x:50,y:45,color:'#3b82f6',label:'Nucleus',found:'both',desc:'The control centre. Contains DNA — the instructions for making proteins and running the cell.',fun:'If the cell were a school, the nucleus would be the principal\'s office.'},
@@ -57,4 +97,21 @@ function select(k){
   render();
 }
 render();
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>

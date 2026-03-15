@@ -22,6 +22,32 @@ h1{font-size:1.5rem;background:linear-gradient(135deg,#e11d48,#f43f5e);-webkit-b
 .state-label{position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:1.1rem;font-weight:700;color:#f43f5e;opacity:.4;pointer-events:none;text-transform:uppercase;letter-spacing:2px}
 .info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6}
 .info strong{color:#e11d48}
+
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
 </style>
 </head>
 <body>
@@ -46,6 +72,20 @@ h1{font-size:1.5rem;background:linear-gradient(135deg,#e11d48,#f43f5e);-webkit-b
     <strong>Liquid (25°C):</strong> Particles are close together but can slide past each other. They vibrate and move around, but stay roughly the same distance apart. This is why liquids take the shape of their container but keep a fixed volume.
   </div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Diffusion<span class="ll-vd"><strong>Diffusion</strong>: Particles spreading from high to low concentration</span></span><span class="ll-vt">State change<span class="ll-vd"><strong>State change</strong>: Solid ↔ liquid ↔ gas, driven by energy changes</span></span><span class="ll-vt">Kinetic energy<span class="ll-vd"><strong>Kinetic energy</strong>: Energy of movement — particles always have some</span></span><span class="ll-vt">Brownian motion<span class="ll-vd"><strong>Brownian motion</strong>: Random zigzag movement caused by particle collisions</span></span></div><div class="ll-dyk">At absolute zero (−273.15°C), particles would theoretically stop moving completely. Scientists have cooled atoms to within billionths of a degree of absolute zero!</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. In which state are particles closest together?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Liquid</button><button class="ll-opt" onclick="llCheck(this,0)">Gas</button><button class="ll-opt" onclick="llCheck(this,0)">Plasma</button><button class="ll-opt" onclick="llCheck(this,1)">Solid</button></div></div>
+<div class="ll-q"><p>2. When a solid melts, what happens to the particles?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">They shrink</button><button class="ll-opt" onclick="llCheck(this,0)">They stop moving</button><button class="ll-opt" onclick="llCheck(this,1)">They gain energy and start sliding past each other</button><button class="ll-opt" onclick="llCheck(this,0)">They break apart</button></div></div>
+<div class="ll-q"><p>3. Gas particles move...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Not at all</button><button class="ll-opt" onclick="llCheck(this,0)">Slowly</button><button class="ll-opt" onclick="llCheck(this,0)">In straight lines only</button><button class="ll-opt" onclick="llCheck(this,1)">Randomly in all directions at high speed</button></div></div>
+<div class="ll-q"><p>4. What is it called when a liquid becomes a gas?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Condensation</button><button class="ll-opt" onclick="llCheck(this,1)">Evaporation/Boiling</button><button class="ll-opt" onclick="llCheck(this,0)">Freezing</button><button class="ll-opt" onclick="llCheck(this,0)">Melting</button></div></div>
+<div class="ll-q"><p>5. During a change of state, the temperature...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">Stays constant (energy breaks bonds)</button><button class="ll-opt" onclick="llCheck(this,0)">Decreases</button><button class="ll-opt" onclick="llCheck(this,0)">Increases</button><button class="ll-opt" onclick="llCheck(this,0)">Fluctuates</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">Explain why you can smell perfume from across a room using the particle model. Why does it happen faster in a warm room?</div><div class="ll-ext-q">Pressure increases when you heat a gas in a sealed container. Explain this using particles — what exactly are they doing differently?</div></div></div>
+
 
 <script>
 var box=document.getElementById('box');

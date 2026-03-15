@@ -32,6 +32,32 @@ h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-b
 .prob-btn:hover{border-color:#0D9488;color:#e2e8f0}
 .prob-btn.active{background:#0D9488;border-color:#0D9488;color:#fff}
 .history{margin-top:12px;font-size:.72rem;color:#64748b;text-align:center;min-height:20px}
+
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
 </style>
 </head>
 <body>
@@ -67,6 +93,20 @@ h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#14b8a6);-webkit-b
     <button class="prob-btn" onclick="loadProblem(3)">5x + 1 = 26</button>
   </div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Variable<span class="ll-vd"><strong>Variable</strong>: A letter representing an unknown number: x, y, n</span></span><span class="ll-vt">Coefficient<span class="ll-vd"><strong>Coefficient</strong>: The number in front of a variable: in 5x, the coefficient is 5</span></span><span class="ll-vt">Expression<span class="ll-vd"><strong>Expression</strong>: Numbers and letters combined with operations — no equals sign</span></span><span class="ll-vt">Equation<span class="ll-vd"><strong>Equation</strong>: Two expressions connected by = sign: 3x + 1 = 10</span></span></div><div class="ll-dyk">The word 'algebra' comes from the Arabic 'al-jabr' meaning 'reunion of broken parts.' It was developed by al-Khwarizmi around 820 AD.</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. Solve: 2x + 3 = 11</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">x = 3</button><button class="ll-opt" onclick="llCheck(this,0)">x = 5.5</button><button class="ll-opt" onclick="llCheck(this,0)">x = 7</button><button class="ll-opt" onclick="llCheck(this,1)">x = 4</button></div></div>
+<div class="ll-q"><p>2. Simplify: 3a + 2a − a</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">3a</button><button class="ll-opt" onclick="llCheck(this,0)">5a</button><button class="ll-opt" onclick="llCheck(this,0)">6a</button><button class="ll-opt" onclick="llCheck(this,1)">4a</button></div></div>
+<div class="ll-q"><p>3. If y = 3x + 1, what is y when x = 4?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">13</button><button class="ll-opt" onclick="llCheck(this,0)">12</button><button class="ll-opt" onclick="llCheck(this,0)">15</button><button class="ll-opt" onclick="llCheck(this,0)">7</button></div></div>
+<div class="ll-q"><p>4. Expand: 2(x + 5)</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">2x + 10</button><button class="ll-opt" onclick="llCheck(this,0)">2x + 7</button><button class="ll-opt" onclick="llCheck(this,0)">x + 10</button><button class="ll-opt" onclick="llCheck(this,0)">2x + 5</button></div></div>
+<div class="ll-q"><p>5. Solve: 5x − 3 = 2x + 9</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">x = 6</button><button class="ll-opt" onclick="llCheck(this,0)">x = 2</button><button class="ll-opt" onclick="llCheck(this,0)">x = 3</button><button class="ll-opt" onclick="llCheck(this,1)">x = 4</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">Create an equation where the answer is x = −3. Can you make one that requires at least 3 steps to solve?</div><div class="ll-ext-q">A rectangle has perimeter 36 cm. Its length is 3 cm more than its width. Write an equation and solve for both dimensions.</div></div></div>
+
 
 <script>
 var problems = [

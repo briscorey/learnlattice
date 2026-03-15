@@ -1,11 +1,51 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Graph Reading — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:600px}.display{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.coin{font-size:3rem;margin-bottom:8px}.counts{display:flex;justify-content:center;gap:24px;font-family:'Courier New',monospace;font-size:1rem;color:#94a3b8}.pct{font-family:'Courier New',monospace;font-size:1.2rem;color:#0D9488;font-weight:700;margin-top:8px}.bar-wrap{height:24px;background:#1e293b;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid #334155}.bar{height:100%;background:#0D9488;border-radius:12px;transition:width .3s}.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btns button{padding:8px 18px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.btns button:hover{border-color:#0D9488;background:#0f172a}.info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}.hl{color:#0D9488;font-weight:700}.neg{color:#ef4444;font-weight:700}.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center}.slider-row label{font-size:.85rem;color:#94a3b8}.slider-row input{width:200px;accent-color:#0D9488}.slider-row span{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:40px}.pos{text-align:center;font-family:'Courier New',monospace;font-size:1.3rem;color:#e2e8f0;margin-bottom:16px}.line{display:flex;gap:2px;justify-content:center;margin-bottom:16px;overflow-x:auto;padding:8px 0}.tick{min-width:28px;height:40px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#64748b;border-radius:6px;background:#1e293b;border:1px solid transparent}.tick.current{background:#0D9488;color:#fff;font-weight:700;border-color:#0D9488}.tick.zero{border-color:#475569}.web{position:relative;height:300px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:12px}.sp{position:absolute;padding:6px 10px;background:#1e293b;border:1px solid #334155;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;transform:translate(-50%,-50%);white-space:nowrap;user-select:none}.sp:hover{border-color:#059669;background:#0f172a}.sp.affected{border-color:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.3)}.history{font-size:.78rem;color:#64748b;text-align:center}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:600px}.display{text-align:center;padding:20px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px}.coin{font-size:3rem;margin-bottom:8px}.counts{display:flex;justify-content:center;gap:24px;font-family:'Courier New',monospace;font-size:1rem;color:#94a3b8}.pct{font-family:'Courier New',monospace;font-size:1.2rem;color:#0D9488;font-weight:700;margin-top:8px}.bar-wrap{height:24px;background:#1e293b;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid #334155}.bar{height:100%;background:#0D9488;border-radius:12px;transition:width .3s}.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.btns button{padding:8px 18px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;cursor:pointer;font-size:.85rem;font-family:inherit;transition:all .15s}.btns button:hover{border-color:#0D9488;background:#0f172a}.info{margin-top:16px;padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.85rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}.hl{color:#0D9488;font-weight:700}.neg{color:#ef4444;font-weight:700}.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center}.slider-row label{font-size:.85rem;color:#94a3b8}.slider-row input{width:200px;accent-color:#0D9488}.slider-row span{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:40px}.pos{text-align:center;font-family:'Courier New',monospace;font-size:1.3rem;color:#e2e8f0;margin-bottom:16px}.line{display:flex;gap:2px;justify-content:center;margin-bottom:16px;overflow-x:auto;padding:8px 0}.tick{min-width:28px;height:40px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#64748b;border-radius:6px;background:#1e293b;border:1px solid transparent}.tick.current{background:#0D9488;color:#fff;font-weight:700;border-color:#0D9488}.tick.zero{border-color:#475569}.web{position:relative;height:300px;background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:12px}.sp{position:absolute;padding:6px 10px;background:#1e293b;border:1px solid #334155;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;transform:translate(-50%,-50%);white-space:nowrap;user-select:none}.sp:hover{border-color:#059669;background:#0f172a}.sp.affected{border-color:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.3)}.history{font-size:.78rem;color:#64748b;text-align:center}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Reading Graphs</h1>
 <p class="sub">Hover over the graph. Read the coordinates. What does each section tell you?</p>
 <div class="app">
   <canvas id="canvas" width="500" height="350" style="width:100%;border-radius:10px;background:#0f172a;cursor:crosshair"></canvas>
   <div class="info" id="info">Hover over the graph to read values. The <strong>gradient</strong> (steepness) tells you the rate of change.</div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Gradient<span class="ll-vd"><strong>Gradient</strong>: Steepness of a line: rise ÷ run</span></span><span class="ll-vt">Intercept<span class="ll-vd"><strong>Intercept</strong>: Where the line crosses an axis</span></span><span class="ll-vt">Linear<span class="ll-vd"><strong>Linear</strong>: A straight-line relationship with constant rate of change</span></span><span class="ll-vt">Correlation<span class="ll-vd"><strong>Correlation</strong>: The relationship between two variables on a scatter graph</span></span></div><div class="ll-dyk">GPS satellites use the relationship between distance, speed, and time to calculate your position — 24 satellites doing graph reading in real time!</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. On a distance-time graph, a flat line means the object is...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Moving at constant speed</button><button class="ll-opt" onclick="llCheck(this,1)">Stationary</button><button class="ll-opt" onclick="llCheck(this,0)">Speeding up</button><button class="ll-opt" onclick="llCheck(this,0)">Slowing down</button></div></div>
+<div class="ll-q"><p>2. A steeper line on a distance-time graph means...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Same speed</button><button class="ll-opt" onclick="llCheck(this,0)">Slower speed</button><button class="ll-opt" onclick="llCheck(this,0)">Stopping</button><button class="ll-opt" onclick="llCheck(this,1)">Faster speed</button></div></div>
+<div class="ll-q"><p>3. The gradient of a distance-time graph gives you the...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Distance</button><button class="ll-opt" onclick="llCheck(this,0)">Acceleration</button><button class="ll-opt" onclick="llCheck(this,0)">Time</button><button class="ll-opt" onclick="llCheck(this,1)">Speed</button></div></div>
+<div class="ll-q"><p>4. A line going down on a distance-time graph means...</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Speeding up</button><button class="ll-opt" onclick="llCheck(this,0)">Getting lost</button><button class="ll-opt" onclick="llCheck(this,0)">Stopping</button><button class="ll-opt" onclick="llCheck(this,1)">Returning to start</button></div></div>
+<div class="ll-q"><p>5. If gradient = rise/run, and rise = 20 and run = 4, what is the speed?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">80 m/s</button><button class="ll-opt" onclick="llCheck(this,0)">16 m/s</button><button class="ll-opt" onclick="llCheck(this,1)">5 m/s</button><button class="ll-opt" onclick="llCheck(this,0)">24 m/s</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">Draw a distance-time graph for this journey: walk for 5 min, wait for a bus for 3 min, ride the bus for 2 min. Which section is steepest?</div><div class="ll-ext-q">Can a distance-time graph ever go below the x-axis? Explain why or why not.</div></div></div>
+
 <script>
 var c=document.getElementById('canvas'),ctx=c.getContext('2d');
 var data=[{x:0,y:0},{x:2,y:3},{x:4,y:3},{x:6,y:8},{x:8,y:8},{x:10,y:4}];
@@ -45,4 +85,21 @@ else if(xv<6)info.innerHTML='<strong>4-6 min:</strong> Moving again, steeper thi
 else if(xv<8)info.innerHTML='<strong>6-8 min:</strong> Another flat section. Stationary at 8 km.';
 else info.innerHTML='<strong>8-10 min:</strong> Going <strong>back</strong> (distance decreasing). Returning towards the start at 2 km/min.';
 });
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>

@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Understand Area &amp; Perimeter — LearnLattice</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.shape-btns{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.sb{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.82rem;font-family:inherit;transition:all .15s}.sb:hover{border-color:#0D9488}.sb.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}.canvas-wrap{background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;display:flex;justify-content:center;padding:16px}canvas{border-radius:8px}.sliders{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}.srow{display:flex;align-items:center;gap:10px;justify-content:center}.srow label{font-size:.82rem;color:#94a3b8;min-width:60px;text-align:right}.srow input[type=range]{width:160px;accent-color:#0D9488}.srow .sv{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:50px}.results{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}.rbox{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.rbox-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:6px}.rbox-num{font-family:'Courier New',monospace;font-size:1.4rem;font-weight:700}.rbox-area .rbox-num{color:#0D9488}.rbox-peri .rbox-num{color:#d97706}.rbox-formula{font-size:.75rem;color:#94a3b8;margin-top:4px}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}</style></head><body>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}h1{font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#0D9488aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}.sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px;text-align:center;max-width:500px}.app{width:100%;max-width:560px}.shape-btns{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}.sb{padding:8px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.82rem;font-family:inherit;transition:all .15s}.sb:hover{border-color:#0D9488}.sb.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}.canvas-wrap{background:#0f172a;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;display:flex;justify-content:center;padding:16px}canvas{border-radius:8px}.sliders{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}.srow{display:flex;align-items:center;gap:10px;justify-content:center}.srow label{font-size:.82rem;color:#94a3b8;min-width:60px;text-align:right}.srow input[type=range]{width:160px;accent-color:#0D9488}.srow .sv{font-family:'Courier New',monospace;color:#0D9488;font-weight:700;min-width:50px}.results{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}.rbox{padding:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;text-align:center}.rbox-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:6px}.rbox-num{font-family:'Courier New',monospace;font-size:1.4rem;font-weight:700}.rbox-area .rbox-num{color:#0D9488}.rbox-peri .rbox-num{color:#d97706}.rbox-formula{font-size:.75rem;color:#94a3b8;margin-top:4px}.info{padding:14px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;font-size:.82rem;color:#94a3b8;line-height:1.6;text-align:center}.info strong{color:#0D9488}
+.ll-tabs{display:flex;gap:4px;justify-content:center;margin:20px 0 12px;flex-wrap:wrap}
+.ll-tab{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:600;transition:all .15s}
+.ll-tab:hover{border-color:#0D9488}
+.ll-tab.on{border-color:#0D9488;background:rgba(13,148,136,.15);color:#5eead4}
+.ll-panel{display:none}.ll-panel.show{display:block}
+.ll-quiz{margin:8px 0}.ll-q{margin-bottom:12px;padding:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px}
+.ll-q p{font-size:.88rem;color:#e2e8f0;margin-bottom:8px;font-weight:500}
+.ll-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ll-opt{padding:8px 12px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.78rem;font-family:inherit;transition:all .15s;text-align:left}
+.ll-opt:hover{border-color:#0D9488;color:#e2e8f0}
+.ll-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.15);color:#86efac;cursor:default}
+.ll-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.1);color:#fca5a5;cursor:default}
+.ll-score{text-align:center;padding:12px;font-size:.85rem;color:#94a3b8;font-weight:600}
+.ll-score strong{color:#0D9488}
+.ll-extend{margin:8px 0}
+.ll-ext-q{padding:14px;background:#0f172a;border:1px solid rgba(168,85,247,.2);border-left:3px solid #8b5cf6;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.85rem;color:#c4b5fd;line-height:1.6}
+.ll-ext-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:#8b5cf6;font-weight:700;margin-bottom:8px}
+.ll-vocab{margin:16px 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ll-vt{padding:5px 12px;border-radius:7px;background:#1e293b;border:1px solid #334155;font-size:.72rem;color:#94a3b8;cursor:help;position:relative;transition:all .15s}
+.ll-vt:hover{border-color:#0D9488;color:#5eead4}
+.ll-vt .ll-vd{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:220px;padding:8px 10px;background:#0f172a;border:1px solid #0D9488;border-radius:8px;font-size:.72rem;color:#94a3b8;line-height:1.4;z-index:10;text-align:center;pointer-events:none}
+.ll-vt:hover .ll-vd{display:block}
+.ll-dyk{margin:12px 0;padding:10px 14px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;font-size:.78rem;color:#fcd34d;line-height:1.5;text-align:center}
+.ll-dyk::before{content:'💡 ';font-size:1rem}
+@media(max-width:480px){.ll-opts{grid-template-columns:1fr}.ll-vt .ll-vd{width:180px}}
+</style></head><body>
 <h1>Area &amp; Perimeter</h1>
 <p class="sub">Pick a shape. Drag the sliders. Watch the area (space inside) and perimeter (distance around) change.</p>
 <div class="app">
@@ -17,6 +43,20 @@
   </div>
   <div class="info" id="info"><strong>Area</strong> = space inside (measured in cm²). <strong>Perimeter</strong> = distance around the edge (measured in cm).</div>
 </div>
+<div class="ll-tabs">
+<button class="ll-tab on" data-t="explore" onclick="llTab('explore')">🔍 Explore</button>
+<button class="ll-tab" data-t="practice" onclick="llTab('practice')">✏️ Practice</button>
+<button class="ll-tab" data-t="extend" onclick="llTab('extend')">🚀 Extend</button>
+</div>
+<div class="ll-panel show" id="ll-explore"><div class="ll-vocab"><span class="ll-vt">Area<span class="ll-vd"><strong>Area</strong>: Space inside a shape, measured in square units (cm², m²)</span></span><span class="ll-vt">Perimeter<span class="ll-vd"><strong>Perimeter</strong>: Distance around the edge, measured in linear units (cm, m)</span></span><span class="ll-vt">Circumference<span class="ll-vd"><strong>Circumference</strong>: Perimeter of a circle: C = πd or C = 2πr</span></span><span class="ll-vt">π (pi)<span class="ll-vd"><strong>π (pi)</strong>: ≈3.14159... The ratio of circumference to diameter for any circle</span></span></div><div class="ll-dyk">A circle gives you the most area for a given perimeter. That's why bubbles are round — nature is efficient!</div></div>
+<div class="ll-panel" id="ll-practice"><div class="ll-quiz"><div class="ll-q"><p>1. Area of a rectangle 6cm × 4cm?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">10 cm²</button><button class="ll-opt" onclick="llCheck(this,1)">24 cm²</button><button class="ll-opt" onclick="llCheck(this,0)">24 cm</button><button class="ll-opt" onclick="llCheck(this,0)">20 cm²</button></div></div>
+<div class="ll-q"><p>2. Perimeter of a square with side 5cm?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">10 cm</button><button class="ll-opt" onclick="llCheck(this,0)">25 cm</button><button class="ll-opt" onclick="llCheck(this,1)">20 cm</button><button class="ll-opt" onclick="llCheck(this,0)">25 cm²</button></div></div>
+<div class="ll-q"><p>3. Area of a triangle with base 10 and height 6?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">30 cm</button><button class="ll-opt" onclick="llCheck(this,0)">60 cm²</button><button class="ll-opt" onclick="llCheck(this,0)">16 cm²</button><button class="ll-opt" onclick="llCheck(this,1)">30 cm²</button></div></div>
+<div class="ll-q"><p>4. A circle has radius 7cm. What is its area? (π ≈ 3.14)</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,1)">≈153.9 cm²</button><button class="ll-opt" onclick="llCheck(this,0)">≈21.98 cm</button><button class="ll-opt" onclick="llCheck(this,0)">≈44 cm²</button><button class="ll-opt" onclick="llCheck(this,0)">≈49 cm²</button></div></div>
+<div class="ll-q"><p>5. Two shapes have the same area. Must they have the same perimeter?</p><div class="ll-opts"><button class="ll-opt" onclick="llCheck(this,0)">Only for circles</button><button class="ll-opt" onclick="llCheck(this,1)">No</button><button class="ll-opt" onclick="llCheck(this,0)">Only for rectangles</button><button class="ll-opt" onclick="llCheck(this,0)">Yes</button></div></div>
+<div class="ll-score" id="llScore"></div></div></div>
+<div class="ll-panel" id="ll-extend"><div class="ll-extend"><div class="ll-ext-label">🚀 Extension Challenges</div><div class="ll-ext-q">A farmer has 40m of fencing. What rectangle dimensions give the maximum area? Is there a non-rectangle shape that gives even more?</div><div class="ll-ext-q">A pizza with diameter 12 inches costs $10. A pizza with diameter 16 inches costs $15. Which is better value per square inch?</div></div></div>
+
 <script>
 var shape='rect',dims={w:8,h:5,r:5,b:6,a:4};
 var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
@@ -41,4 +81,21 @@ function draw(){
 function lbl(x,y,t){ctx.font='bold 11px Courier New';ctx.fillStyle='#94a3b8';ctx.textAlign='center';ctx.fillText(t,x,y);}
 function show(a,af,p,pf){document.getElementById('areaNum').textContent=a+' cm²';document.getElementById('areaF').textContent=af;document.getElementById('periNum').textContent=p+' cm';document.getElementById('periF').textContent=pf;}
 buildSliders();draw();
+
+var llAnswered=0,llCorrect=0;
+function llCheck(btn,correct){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  var parent=btn.parentElement;
+  parent.querySelectorAll('.ll-opt').forEach(function(b){
+    b.style.pointerEvents='none';
+    if(b.onclick.toString().includes(',1)'))b.classList.add('correct');
+  });
+  if(!correct)btn.classList.add('wrong');
+  llAnswered++;if(correct)llCorrect++;
+  document.getElementById('llScore').innerHTML='Score: <strong>'+llCorrect+'/'+llAnswered+'</strong>';
+}
+function llTab(t){
+  document.querySelectorAll('.ll-tab').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+  document.querySelectorAll('.ll-panel').forEach(function(p){p.classList.toggle('show',p.id==='ll-'+t)});
+}
 </script></body></html>
