@@ -1,0 +1,128 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ $recent := first 30 ($allResources.ByDate.Reverse) }}
+
+{{/* Group by month */}}
+{{ $months := slice }}
+{{ $currentMonth := "" }}
+{{ range $recent }}
+  {{ $month := .Date.Format "January 2006" }}
+  {{ if ne $month $currentMonth }}
+    {{ $currentMonth = $month }}
+    {{ $months = $months | append $month }}
+  {{ end }}
+{{ end }}
+
+<section class="new-hero">
+  <div class="new-hero-inner">
+    <div class="new-hero-kicker">What's New</div>
+    <h1>Recently added resources</h1>
+    <p>The latest MYP investigations, games, and tools — freshly published and classroom-ready.</p>
+  </div>
+</section>
+
+<section class="new-timeline">
+  <div class="new-timeline-inner">
+    {{ range $months }}
+      {{ $month := . }}
+      <div class="new-month">
+        <div class="new-month-label">
+          <div class="new-month-dot"></div>
+          <h2>{{ $month }}</h2>
+        </div>
+        <div class="new-month-grid">
+          {{ range $recent }}
+            {{ if eq (.Date.Format "January 2006") $month }}
+              {{ $subject := "general" }}
+              {{ $subjectLabel := "" }}
+              {{ $resourceType := "" }}
+              {{ with .Params.subjects }}{{ $subject = index . 0 | urlize }}{{ $subjectLabel = index . 0 }}{{ end }}
+              {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+
+              {{ $subjectColor := "teal" }}
+              {{ if eq $subject "biology" }}{{ $subjectColor = "green" }}{{ end }}
+              {{ if eq $subject "chemistry" }}{{ $subjectColor = "rose" }}{{ end }}
+              {{ if eq $subject "physics" }}{{ $subjectColor = "blue" }}{{ end }}
+              {{ if eq $subject "earth-science" }}{{ $subjectColor = "amber" }}{{ end }}
+              {{ if eq $subject "space-science" }}{{ $subjectColor = "violet" }}{{ end }}
+              {{ if eq $subject "ecology" }}{{ $subjectColor = "emerald" }}{{ end }}
+
+              <a href="{{ .RelPermalink }}" class="new-card">
+                <div class="new-card-date">{{ .Date.Format "Jan 2" }}</div>
+                <div class="new-card-body">
+                  <div class="new-card-head">
+                    <span class="new-card-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</span>
+                    <span class="new-card-type">{{ $resourceType }}</span>
+                  </div>
+                  <h3>{{ .Title }}</h3>
+                  <p>{{ .Description | default .Summary | truncate 120 }}</p>
+                  <div class="new-card-tags">
+                    {{ range first 2 .Params.year_levels }}
+                      <span class="new-tag">{{ . }}</span>
+                    {{ end }}
+                    {{ range .Params.tags }}
+                      {{ if hasPrefix . "Criterion" }}
+                        {{ $letter := replaceRE `Criterion ` `` . | lower }}
+                        <span class="browse-crit-badge browse-crit-{{ $letter }}">{{ replaceRE `Criterion ` `` . }}</span>
+                      {{ end }}
+                    {{ end }}
+                  </div>
+                </div>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    <div class="new-end">
+      <a href="/browse/" class="new-end-link">Browse all {{ len $allResources }} resources →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.new-hero{padding:48px 24px 28px;text-align:center;background:var(--surface-warm);border-bottom:1px solid var(--border)}
+.new-hero-inner{max-width:580px;margin:0 auto}
+.new-hero-kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:700;margin-bottom:8px;font-family:'Outfit',sans-serif}
+.new-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--ink);margin-bottom:8px}
+.new-hero p{color:var(--ink-muted);font-size:.92rem;line-height:1.5}
+
+.new-timeline{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+.new-timeline-inner{position:relative;padding-left:32px;border-left:2px solid var(--border)}
+
+.new-month{margin-bottom:40px}
+.new-month-label{display:flex;align-items:center;gap:12px;margin-bottom:16px;position:relative;margin-left:-33px}
+.new-month-dot{width:12px;height:12px;border-radius:50%;background:var(--teal);border:3px solid var(--surface);flex-shrink:0;z-index:1}
+.new-month-label h2{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--ink);margin:0}
+
+.new-month-grid{display:flex;flex-direction:column;gap:10px}
+
+.new-card{display:flex;gap:16px;padding:16px 18px;background:var(--surface-card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:inherit;transition:transform .2s cubic-bezier(.16,1,.3,1),border-color .2s,box-shadow .2s}
+.new-card:hover{transform:translateX(4px);border-color:var(--teal);box-shadow:var(--shadow-sm)}
+
+.new-card-date{font-size:.72rem;font-family:'JetBrains Mono',monospace;color:var(--ink-muted);white-space:nowrap;padding-top:2px;min-width:44px}
+.new-card-body{flex:1;min-width:0}
+.new-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
+.new-card-subject{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+.new-card-type{font-size:.62rem;color:var(--ink-muted);font-weight:500}
+.new-card h3{font-family:'DM Serif Display',serif;font-size:.95rem;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.new-card p{font-size:.78rem;color:var(--ink-muted);line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.new-card-tags{display:flex;flex-wrap:wrap;gap:4px}
+.new-tag{font-size:.6rem;padding:2px 7px;border-radius:5px;background:var(--surface-warm);border:1px solid var(--border);color:var(--ink-muted)}
+
+.new-end{text-align:center;padding:24px 0;margin-left:-33px}
+.new-end-link{font-size:.88rem;font-weight:600;color:var(--teal);text-decoration:none;transition:color .15s}
+.new-end-link:hover{color:var(--teal-dark)}
+
+html.dark .new-card{background:var(--surface-card);border-color:var(--border)}
+html.dark .new-card:hover{border-color:var(--teal)}
+
+@media(max-width:600px){
+  .new-card{flex-direction:column;gap:4px}
+  .new-card-date{min-width:auto}
+}
+</style>
+
+{{ end }}

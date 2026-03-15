@@ -1,0 +1,547 @@
+{{ define "main" }}
+
+{{ $allResources := where .Site.RegularPages "Section" "resources" }}
+{{ $totalCount := len $allResources }}
+
+{{/* Collect all filter values with counts */}}
+{{ $subjects := dict }}
+{{ $grades := dict }}
+{{ $types := dict }}
+{{ $criteria := slice "Criterion A" "Criterion B" "Criterion C" "Criterion D" }}
+{{ $contexts := .Site.Taxonomies.global_contexts }}
+
+{{ range $allResources }}
+  {{ range .Params.subjects }}
+    {{ $subjects = merge $subjects (dict . 1) }}
+  {{ end }}
+  {{ range .Params.year_levels }}
+    {{ $grades = merge $grades (dict . 1) }}
+  {{ end }}
+  {{ range .Params.resource_types }}
+    {{ $types = merge $types (dict . 1) }}
+  {{ end }}
+{{ end }}
+
+{{/* ── HERO ── */}}
+<section class="browse-hero">
+  <div class="browse-hero-inner">
+    <div class="browse-hero-kicker">Browse All Resources</div>
+    <h1>Find exactly what you need</h1>
+    <p>{{ $totalCount }} free investigations, games, and tools — filter by subject, grade, criterion, context, or type.</p>
+  </div>
+</section>
+
+{{/* ── MAIN LAYOUT ── */}}
+<section class="browse-section">
+  <div class="browse-inner">
+    <div class="browse-layout">
+
+      {{/* ── LEFT: FILTER SIDEBAR ── */}}
+      <aside class="browse-filters" id="browseFilters">
+        <div class="browse-filters-head">
+          <h2>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filters
+          </h2>
+          <button class="browse-clear-all" id="browseClearAll" style="display:none">Clear all</button>
+        </div>
+
+        {{/* Subject */}}
+        <div class="browse-filter-group" data-filter="subject">
+          <button class="browse-filter-toggle" aria-expanded="true">
+            <span>Subject</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="browse-filter-options">
+            {{ range .Site.Taxonomies.subjects }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              <label class="browse-filter-option">
+                <input type="checkbox" data-key="subject" data-value="{{ $name }}">
+                <span class="browse-filter-name">{{ $name }}</span>
+                <span class="browse-filter-count">{{ $count }}</span>
+              </label>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* Year Level */}}
+        <div class="browse-filter-group" data-filter="grade">
+          <button class="browse-filter-toggle" aria-expanded="true">
+            <span>Year Level</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="browse-filter-options">
+            {{ range .Site.Taxonomies.year_levels }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              <label class="browse-filter-option">
+                <input type="checkbox" data-key="grade" data-value="{{ $name }}">
+                <span class="browse-filter-name">{{ $name }}</span>
+                <span class="browse-filter-count">{{ $count }}</span>
+              </label>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* Criterion */}}
+        <div class="browse-filter-group" data-filter="criterion">
+          <button class="browse-filter-toggle" aria-expanded="true">
+            <span>Criterion</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="browse-filter-options">
+            {{ range (slice "Criterion A" "Criterion B" "Criterion C" "Criterion D") }}
+              {{ $tag := . }}
+              {{ $pages := where $allResources "Params.tags" "intersect" (slice $tag) }}
+              <label class="browse-filter-option" data-criterion="{{ . }}">
+                <input type="checkbox" data-key="criterion" data-value="{{ . }}">
+                <span class="browse-crit-dot browse-crit-{{ replaceRE `Criterion ` `` . | lower }}"></span>
+                <span class="browse-filter-name">{{ . }}</span>
+                <span class="browse-filter-count">{{ len $pages }}</span>
+              </label>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* Global Context */}}
+        <div class="browse-filter-group" data-filter="context">
+          <button class="browse-filter-toggle" aria-expanded="false">
+            <span>Global Context</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="browse-filter-options" style="display:none">
+            {{ range .Site.Taxonomies.global_contexts }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              <label class="browse-filter-option">
+                <input type="checkbox" data-key="context" data-value="{{ $name }}">
+                <span class="browse-filter-name">{{ $name }}</span>
+                <span class="browse-filter-count">{{ $count }}</span>
+              </label>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* Resource Type */}}
+        <div class="browse-filter-group" data-filter="type">
+          <button class="browse-filter-toggle" aria-expanded="false">
+            <span>Resource Type</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="browse-filter-options" style="display:none">
+            {{ range .Site.Taxonomies.resource_types }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              <label class="browse-filter-option">
+                <input type="checkbox" data-key="type" data-value="{{ $name }}">
+                <span class="browse-filter-name">{{ $name }}</span>
+                <span class="browse-filter-count">{{ $count }}</span>
+              </label>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* Key Concept */}}
+        <div class="browse-filter-group" data-filter="concept">
+          <button class="browse-filter-toggle" aria-expanded="false">
+            <span>Key Concept</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="browse-filter-options" style="display:none">
+            {{ range .Site.Taxonomies.key_concepts }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              <label class="browse-filter-option">
+                <input type="checkbox" data-key="concept" data-value="{{ $name }}">
+                <span class="browse-filter-name">{{ $name }}</span>
+                <span class="browse-filter-count">{{ $count }}</span>
+              </label>
+            {{ end }}
+          </div>
+        </div>
+      </aside>
+
+      {{/* ── RIGHT: SEARCH + RESULTS ── */}}
+      <div class="browse-results-area">
+        {{/* Search bar */}}
+        <div class="browse-search-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;color:var(--ink-muted)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="browseInput" class="browse-input" placeholder="Search investigations, topics, subjects…" autocomplete="off" spellcheck="false">
+          <kbd class="browse-kbd">⌘K</kbd>
+        </div>
+
+        {{/* Active filter chips */}}
+        <div class="browse-chips" id="browseChips"></div>
+
+        {{/* Status */}}
+        <div class="browse-status" id="browseStatus">
+          <span id="browseCount">{{ $totalCount }} resources</span>
+        </div>
+
+        {{/* Results grid */}}
+        <div class="browse-results" id="browseResults">
+          {{ range $allResources.ByDate.Reverse }}
+            {{ $subject := "general" }}
+            {{ $subjectLabel := "" }}
+            {{ $resourceType := "" }}
+            {{ with .Params.subjects }}{{ $subject = index . 0 | urlize }}{{ $subjectLabel = index . 0 }}{{ end }}
+            {{ with .Params.resource_types }}{{ $resourceType = index . 0 }}{{ end }}
+
+            {{ $subjectColor := "teal" }}
+            {{ if eq $subject "mathematics" }}{{ $subjectColor = "teal" }}{{ end }}
+            {{ if eq $subject "biology" }}{{ $subjectColor = "green" }}{{ end }}
+            {{ if eq $subject "chemistry" }}{{ $subjectColor = "rose" }}{{ end }}
+            {{ if eq $subject "physics" }}{{ $subjectColor = "blue" }}{{ end }}
+            {{ if eq $subject "earth-science" }}{{ $subjectColor = "amber" }}{{ end }}
+            {{ if eq $subject "space-science" }}{{ $subjectColor = "violet" }}{{ end }}
+            {{ if eq $subject "ecology" }}{{ $subjectColor = "emerald" }}{{ end }}
+
+            <a href="{{ .RelPermalink }}" class="browse-card"
+               data-subjects="{{ delimit (.Params.subjects | default slice) "," }}"
+               data-grades="{{ delimit (.Params.year_levels | default slice) "," }}"
+               data-types="{{ delimit (.Params.resource_types | default slice) "," }}"
+               data-tags="{{ delimit (.Params.tags | default slice) "," }}"
+               data-contexts="{{ delimit (.Params.global_contexts | default slice) "," }}"
+               data-concepts="{{ delimit ((.Params.key_concepts) | default slice) "," }}"
+               data-title="{{ .Title | lower }}"
+               data-desc="{{ .Description | lower }}"
+            >
+              <div class="browse-card-head">
+                <span class="browse-card-subject rc-text-{{ $subjectColor }}">{{ $subjectLabel }}</span>
+                <span class="browse-card-type">{{ $resourceType }}</span>
+              </div>
+              <h3>{{ .Title }}</h3>
+              <p>{{ .Description | default .Summary | truncate 130 }}</p>
+              <div class="browse-card-meta">
+                {{ range first 2 .Params.year_levels }}
+                  <span class="browse-card-tag">{{ . }}</span>
+                {{ end }}
+                {{ range .Params.tags }}
+                  {{ if hasPrefix . "Criterion" }}
+                    {{ $letter := replaceRE `Criterion ` `` . | lower }}
+                    <span class="browse-crit-badge browse-crit-{{ $letter }}">{{ replaceRE `Criterion ` `` . }}</span>
+                  {{ end }}
+                {{ end }}
+                {{ with .Params.difficulty }}
+                  <span class="browse-card-diff browse-card-diff--{{ . }}">{{ . }}</span>
+                {{ end }}
+              </div>
+            </a>
+          {{ end }}
+        </div>
+
+        {{/* Empty state */}}
+        <div class="browse-empty" id="browseEmpty" style="display:none">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.25;margin-bottom:16px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p class="browse-empty-title">No resources match your filters</p>
+          <p class="browse-empty-sub">Try removing some filters or changing your search.</p>
+          <button class="browse-empty-clear" id="browseEmptyClear">Clear all filters</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* Mobile filter button */}}
+    <button class="browse-mobile-filter-btn" id="browseMobileToggle">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      Filters <span id="browseMobileCount"></span>
+    </button>
+  </div>
+</section>
+
+<style>
+/* ─── BROWSE HERO ─── */
+.browse-hero{padding:48px 24px 28px;text-align:center;background:var(--surface-warm);border-bottom:1px solid var(--border)}
+.browse-hero-inner{max-width:620px;margin:0 auto}
+.browse-hero-kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:700;margin-bottom:8px;font-family:'Outfit',sans-serif}
+.browse-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--ink);margin-bottom:8px}
+.browse-hero p{color:var(--ink-muted);font-size:.92rem;line-height:1.5}
+
+/* ─── LAYOUT ─── */
+.browse-section{max-width:1240px;margin:0 auto;padding:0 24px 80px}
+.browse-inner{position:relative}
+.browse-layout{display:grid;grid-template-columns:256px 1fr;gap:32px;align-items:start;padding-top:28px}
+
+/* ─── FILTER SIDEBAR ─── */
+.browse-filters{position:sticky;top:76px;max-height:calc(100vh - 90px);overflow-y:auto;display:flex;flex-direction:column;gap:4px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.browse-filters::-webkit-scrollbar{width:4px}
+.browse-filters::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.browse-filters-head{display:flex;align-items:center;justify-content:space-between;padding:0 0 12px;border-bottom:1px solid var(--border);margin-bottom:8px}
+.browse-filters-head h2{font-size:.82rem;font-weight:700;display:flex;align-items:center;gap:6px;color:var(--ink);font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.browse-clear-all{border:none;background:none;color:var(--teal);font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit;padding:4px 8px;border-radius:6px;transition:background .15s}
+.browse-clear-all:hover{background:var(--teal-wash)}
+
+/* Filter groups */
+.browse-filter-group{border-bottom:1px solid var(--border);padding:6px 0}
+.browse-filter-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;border:none;background:none;cursor:pointer;padding:8px 4px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--ink-muted);font-family:'Outfit',sans-serif}
+.browse-filter-toggle svg{transition:transform .2s;flex-shrink:0}
+.browse-filter-toggle[aria-expanded="false"] svg{transform:rotate(-90deg)}
+.browse-filter-options{display:flex;flex-direction:column;gap:1px;padding:0 0 4px}
+.browse-filter-option{display:flex;align-items:center;gap:8px;padding:5px 6px;border-radius:6px;font-size:.84rem;color:var(--ink);cursor:pointer;transition:background .12s}
+.browse-filter-option:hover{background:var(--surface-warm)}
+.browse-filter-option input[type="checkbox"]{accent-color:var(--teal);width:15px;height:15px;flex-shrink:0;cursor:pointer}
+.browse-filter-option input:checked + .browse-filter-name{color:var(--teal);font-weight:600}
+.browse-filter-name{flex:1}
+.browse-filter-count{font-size:.68rem;color:var(--ink-muted);font-family:'JetBrains Mono',monospace;min-width:20px;text-align:right}
+
+/* Criterion dots */
+.browse-crit-dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+.browse-crit-a{background:#D97706}
+.browse-crit-b{background:#3566E8}
+.browse-crit-c{background:#0D9968}
+.browse-crit-d{background:#8B5CF6}
+
+/* ─── SEARCH BAR ─── */
+.browse-search-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1.5px solid var(--border);border-radius:12px;background:var(--surface-card);transition:border-color .2s,box-shadow .2s;margin-bottom:12px}
+.browse-search-bar:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.1)}
+.browse-input{flex:1;border:none;background:none;font-family:inherit;font-size:.95rem;color:var(--ink);outline:none}
+.browse-input::placeholder{color:var(--ink-muted)}
+.browse-kbd{font-size:.68rem;padding:2px 7px;border-radius:5px;border:1px solid var(--border);background:var(--surface-warm);color:var(--ink-muted);font-family:'JetBrains Mono',monospace;font-weight:600}
+
+/* ─── ACTIVE CHIPS ─── */
+.browse-chips{display:flex;flex-wrap:wrap;gap:6px;min-height:0;transition:min-height .2s}
+.browse-chips:not(:empty){margin-bottom:12px}
+.browse-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px 4px 12px;border-radius:99px;font-size:.75rem;font-weight:600;border:1px solid var(--teal);background:var(--teal-wash);color:var(--teal);cursor:pointer;font-family:inherit;transition:all .15s}
+.browse-chip:hover{background:rgba(13,148,136,.15)}
+.browse-chip svg{width:12px;height:12px}
+.browse-chips-clear{padding:4px 10px;border-radius:99px;font-size:.72rem;font-weight:500;border:none;background:none;color:var(--ink-muted);cursor:pointer;font-family:inherit}
+.browse-chips-clear:hover{color:var(--ink)}
+
+/* ─── STATUS ─── */
+.browse-status{font-size:.82rem;color:var(--ink-muted);margin-bottom:16px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:8px}
+
+/* ─── RESULT CARDS ─── */
+.browse-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.browse-card{display:flex;flex-direction:column;padding:18px 20px;background:var(--surface-card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:inherit;transition:transform .2s cubic-bezier(.16,1,.3,1),border-color .2s,box-shadow .2s}
+.browse-card:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:var(--shadow-md)}
+.browse-card[data-hidden="true"]{display:none}
+.browse-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.browse-card-subject{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+.browse-card-type{font-size:.65rem;color:var(--ink-muted);font-weight:500}
+.browse-card h3{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);line-height:1.3;margin-bottom:6px}
+.browse-card p{font-size:.8rem;color:var(--ink-muted);line-height:1.5;flex:1;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.browse-card-meta{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.browse-card-tag{font-size:.62rem;padding:2px 8px;border-radius:5px;background:var(--surface-warm);border:1px solid var(--border);color:var(--ink-muted)}
+.browse-crit-badge{font-size:.62rem;padding:2px 8px;border-radius:5px;color:#fff;font-weight:700}
+.browse-crit-badge.browse-crit-a{background:#D97706}
+.browse-crit-badge.browse-crit-b{background:#3566E8}
+.browse-crit-badge.browse-crit-c{background:#0D9968}
+.browse-crit-badge.browse-crit-d{background:#8B5CF6}
+.browse-card-diff{font-size:.62rem;padding:2px 8px;border-radius:5px;text-transform:capitalize}
+.browse-card-diff--approaching{background:#d1fae5;color:#065f46}
+.browse-card-diff--meeting{background:#fef3c7;color:#92400e}
+.browse-card-diff--exceeding{background:#fee2e2;color:#991b1b}
+html.dark .browse-card-diff--approaching{background:rgba(16,185,129,.15);color:#6ee7b7}
+html.dark .browse-card-diff--meeting{background:rgba(245,158,11,.15);color:#fcd34d}
+html.dark .browse-card-diff--exceeding{background:rgba(239,68,68,.15);color:#fca5a5}
+
+/* ─── EMPTY STATE ─── */
+.browse-empty{text-align:center;padding:60px 24px;grid-column:1/-1}
+.browse-empty-title{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.browse-empty-sub{font-size:.88rem;color:var(--ink-muted);margin-bottom:16px}
+.browse-empty-clear{padding:8px 20px;border-radius:8px;border:none;background:var(--teal);color:#fff;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit}
+
+/* ─── MOBILE ─── */
+.browse-mobile-filter-btn{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:12px 24px;background:var(--teal);color:#fff;border:none;border-radius:100px;font-family:inherit;font-size:.86rem;font-weight:600;cursor:pointer;box-shadow:0 4px 20px rgba(13,148,136,.3);z-index:50;gap:6px;align-items:center}
+.browse-mobile-filter-btn svg{flex-shrink:0}
+
+/* ─── DARK MODE ─── */
+html.dark .browse-search-bar{background:var(--surface-card);border-color:var(--border)}
+html.dark .browse-card{background:var(--surface-card);border-color:var(--border)}
+html.dark .browse-card:hover{border-color:var(--teal)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:820px){
+  .browse-layout{grid-template-columns:1fr}
+  .browse-filters{display:none;position:fixed;inset:0;z-index:200;background:var(--surface);padding:24px;overflow-y:auto;max-height:100vh}
+  .browse-filters.open{display:flex}
+  .browse-mobile-filter-btn{display:flex}
+}
+@media(max-width:520px){
+  .browse-results{grid-template-columns:1fr}
+}
+</style>
+
+<script>
+(function() {
+  var input     = document.getElementById('browseInput');
+  var results   = document.getElementById('browseResults');
+  var chipsEl   = document.getElementById('browseChips');
+  var countEl   = document.getElementById('browseCount');
+  var emptyEl   = document.getElementById('browseEmpty');
+  var clearAll  = document.getElementById('browseClearAll');
+  var emptyClear = document.getElementById('browseEmptyClear');
+  var mobileBtn = document.getElementById('browseMobileToggle');
+  var mobileCount = document.getElementById('browseMobileCount');
+  var filtersEl = document.getElementById('browseFilters');
+  var cards     = Array.from(results.querySelectorAll('.browse-card'));
+  var checkboxes = Array.from(document.querySelectorAll('.browse-filter-option input'));
+  var debounce;
+
+  /* ── Toggle filter sections ── */
+  document.querySelectorAll('.browse-filter-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      var opts = btn.nextElementSibling;
+      opts.style.display = expanded ? 'none' : '';
+    });
+  });
+
+  /* ── Run filter + search ── */
+  function run() {
+    var q = (input.value || '').trim().toLowerCase();
+    var active = {};
+    checkboxes.forEach(function(cb) {
+      if (cb.checked) {
+        var k = cb.dataset.key;
+        if (!active[k]) active[k] = [];
+        active[k].push(cb.dataset.value);
+      }
+    });
+
+    var hasFilters = Object.keys(active).length > 0;
+    var hasQuery = q.length > 0;
+    clearAll.style.display = hasFilters ? '' : 'none';
+
+    /* Build chips */
+    var chipHTML = '';
+    Object.keys(active).forEach(function(key) {
+      active[key].forEach(function(val) {
+        chipHTML += '<button class="browse-chip" data-key="' + key + '" data-value="' + val + '">' +
+          val + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
+      });
+    });
+    if (hasFilters) {
+      chipHTML += '<button class="browse-chips-clear" id="chipsClearAll">Clear all</button>';
+    }
+    chipsEl.innerHTML = chipHTML;
+
+    /* Chip click handlers */
+    chipsEl.querySelectorAll('.browse-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var k = chip.dataset.key;
+        var v = chip.dataset.value;
+        checkboxes.forEach(function(cb) {
+          if (cb.dataset.key === k && cb.dataset.value === v) cb.checked = false;
+        });
+        run();
+      });
+    });
+    var chipsClear = document.getElementById('chipsClearAll');
+    if (chipsClear) chipsClear.addEventListener('click', clearAllFilters);
+
+    /* Filter cards */
+    var visible = 0;
+    cards.forEach(function(card) {
+      var show = true;
+
+      /* Text search */
+      if (hasQuery) {
+        var title = card.dataset.title || '';
+        var desc  = card.dataset.desc || '';
+        var tags  = (card.dataset.tags || '').toLowerCase();
+        var subj  = (card.dataset.subjects || '').toLowerCase();
+        if (title.indexOf(q) === -1 && desc.indexOf(q) === -1 && tags.indexOf(q) === -1 && subj.indexOf(q) === -1) {
+          show = false;
+        }
+      }
+
+      /* Facet filters */
+      if (show && active.subject) {
+        var cardSubjects = (card.dataset.subjects || '').split(',');
+        var match = active.subject.some(function(s) { return cardSubjects.indexOf(s) !== -1; });
+        if (!match) show = false;
+      }
+      if (show && active.grade) {
+        var cardGrades = (card.dataset.grades || '').split(',');
+        var match = active.grade.some(function(g) { return cardGrades.indexOf(g) !== -1; });
+        if (!match) show = false;
+      }
+      if (show && active.criterion) {
+        var cardTags = (card.dataset.tags || '').split(',');
+        var match = active.criterion.some(function(c) { return cardTags.indexOf(c) !== -1; });
+        if (!match) show = false;
+      }
+      if (show && active.context) {
+        var cardContexts = (card.dataset.contexts || '').split(',');
+        var match = active.context.some(function(c) { return cardContexts.indexOf(c) !== -1; });
+        if (!match) show = false;
+      }
+      if (show && active.type) {
+        var cardTypes = (card.dataset.types || '').split(',');
+        var match = active.type.some(function(t) { return cardTypes.indexOf(t) !== -1; });
+        if (!match) show = false;
+      }
+      if (show && active.concept) {
+        var cardConcepts = (card.dataset.concepts || '').split(',');
+        var match = active.concept.some(function(c) { return cardConcepts.indexOf(c) !== -1; });
+        if (!match) show = false;
+      }
+
+      card.dataset.hidden = show ? 'false' : 'true';
+      if (show) visible++;
+    });
+
+    countEl.textContent = visible + ' resource' + (visible !== 1 ? 's' : '');
+    emptyEl.style.display = visible === 0 ? '' : 'none';
+    results.style.display = visible === 0 ? 'none' : '';
+
+    /* Mobile count badge */
+    var filterCount = Object.values(active).reduce(function(sum, arr) { return sum + arr.length; }, 0);
+    mobileCount.textContent = filterCount > 0 ? '(' + filterCount + ')' : '';
+  }
+
+  function clearAllFilters() {
+    checkboxes.forEach(function(cb) { cb.checked = false; });
+    input.value = '';
+    run();
+  }
+
+  /* Event listeners */
+  checkboxes.forEach(function(cb) { cb.addEventListener('change', run); });
+  input.addEventListener('input', function() {
+    clearTimeout(debounce);
+    debounce = setTimeout(run, 120);
+  });
+  clearAll.addEventListener('click', clearAllFilters);
+  emptyClear.addEventListener('click', clearAllFilters);
+
+  /* Mobile filter toggle */
+  mobileBtn.addEventListener('click', function() {
+    var open = filtersEl.classList.toggle('open');
+    mobileBtn.innerHTML = open
+      ? 'Apply filters'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg> Filters <span id="browseMobileCount">' + (mobileCount.textContent || '') + '</span>';
+    if (!open) {
+      mobileCount = document.getElementById('browseMobileCount');
+      run();
+    }
+  });
+
+  /* Parse URL params for pre-filtered views */
+  var params = new URLSearchParams(window.location.search);
+  ['subject','grade','criterion','context','type','concept'].forEach(function(key) {
+    var val = params.get(key);
+    if (val) {
+      checkboxes.forEach(function(cb) {
+        if (cb.dataset.key === key && cb.dataset.value === val) cb.checked = true;
+      });
+    }
+  });
+
+  var qParam = params.get('q');
+  if (qParam) input.value = qParam;
+
+  /* Initial run */
+  run();
+
+  /* ⌘K focus — click on kbd triggers main search overlay */
+  document.querySelector('.browse-kbd').addEventListener('click', function() {
+    var trigger = document.getElementById('search-trigger');
+    if (trigger) trigger.click();
+  });
+})();
+</script>
+
+{{ end }}

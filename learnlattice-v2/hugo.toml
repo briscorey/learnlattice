@@ -263,24 +263,24 @@ summaryLength = 30
     url = "/subjects/science/"
     weight = 2
   [[menu.main]]
-    name = "Grades"
-    identifier = "grades"
-    url = "/year-levels/"
-    weight = 3
-  [[menu.main]]
     name = "Games"
     identifier = "games"
     url = "/games/"
+    weight = 3
+  [[menu.main]]
+    name = "Browse All"
+    identifier = "browse"
+    url = "/browse/"
     weight = 4
+  [[menu.main]]
+    name = "Craft"
+    identifier = "blog"
+    url = "/blog/"
+    weight = 5
   [[menu.main]]
     name = "Students"
     identifier = "students"
     url = "/students/"
-    weight = 5
-  [[menu.main]]
-    name = "Blog"
-    identifier = "blog"
-    url = "/blog/"
     weight = 6
   [[menu.main]]
     name = "About"

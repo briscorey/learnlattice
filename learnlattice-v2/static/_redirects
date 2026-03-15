@@ -1,5 +1,9 @@
 https://www.learnlattice.org/* https://learnlattice.org/:splat 301
 
+# Navigation architecture redirects
+/explore/ /browse/ 301
+/grades/ /year-levels/ 301
+
 # Redirect deleted pages to their replacements
 /middle-school-science-topics/* /subjects/science/ 301
 /middle-school-math-topics/* /subjects/mathematics/ 301
