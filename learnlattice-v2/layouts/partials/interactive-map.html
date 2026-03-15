@@ -37,13 +37,13 @@
 {{ if eq $sciTopic "Physics" }}{{ $slug = "forces" }}{{ $title = "Forces" }}{{ end }}
 {{ if eq $sciTopic "Earth Science" }}{{ $slug = "plate-tectonics" }}{{ $title = "Plate Tectonics" }}{{ end }}
 
-{{/* Refine by tags for science */}}
-{{ if in $tags "Density" }}{{ $slug = "density" }}{{ $title = "Density" }}{{ end }}
+{{/* Refine by tags for science — order matters: more specific tags last (they win) */}}
+{{ if in $tags "Particles" }}{{ $slug = "particles" }}{{ $title = "Particles" }}{{ end }}
 {{ if in $tags "Energy Transfer" }}{{ $slug = "energy" }}{{ $title = "Energy" }}{{ end }}
 {{ if in $tags "Forces" }}{{ $slug = "forces" }}{{ $title = "Forces" }}{{ end }}
 {{ if in $tags "Waves" }}{{ $slug = "waves" }}{{ $title = "Waves" }}{{ end }}
 {{ if in $tags "Circuits" }}{{ $slug = "circuits" }}{{ $title = "Circuits" }}{{ end }}
-{{ if in $tags "Particles" }}{{ $slug = "particles" }}{{ $title = "Particles" }}{{ end }}
+{{ if in $tags "Density" }}{{ $slug = "density" }}{{ $title = "Density" }}{{ end }}
 {{ if in $tags "Genetics" }}{{ $slug = "genetics" }}{{ $title = "Genetics" }}{{ end }}
 {{ if in $tags "Food Webs" }}{{ $slug = "food-webs" }}{{ $title = "Food Webs" }}{{ end }}
 {{ if in $tags "Ecology" }}{{ $slug = "food-webs" }}{{ $title = "Food Webs" }}{{ end }}
