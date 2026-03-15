@@ -3,179 +3,143 @@
 <section class="stu-hero">
   <div class="stu-hero-inner">
     <h1>I don't understand...</h1>
-    <p>Pick a topic. Play with the interactive. Then try the practice links.</p>
+    <p>Pick a topic and play with the interactive.</p>
     <a href="/students/" class="stu-back">← Back to Student Home</a>
   </div>
 </section>
 
-<section class="shelp-section">
-  <div class="shelp-nav" id="shelpNav">
-    <button class="shelp-pill active" data-idx="0">➖ Negatives</button>
-    <button class="shelp-pill" data-idx="1">½ Fractions</button>
-    <button class="shelp-pill" data-idx="2">𝑥 Algebra</button>
-    <button class="shelp-pill" data-idx="3">📈 Graphs</button>
-    <button class="shelp-pill" data-idx="4">🎲 Probability</button>
-    <button class="shelp-pill" data-idx="5">⚖️ Density</button>
-    <button class="shelp-pill" data-idx="6">💪 Forces</button>
-    <button class="shelp-pill" data-idx="7">⚡ Energy</button>
-    <button class="shelp-pill" data-idx="8">⚛️ Particles</button>
-    <button class="shelp-pill" data-idx="9">🌿 Food Webs</button>
-  </div>
-
-  <div class="shelp-stage" id="shelpStage"></div>
+<section class="sh-section">
+  <div class="sh-pills" id="shPills"></div>
+  <div class="sh-viewer" id="shViewer"></div>
 </section>
 
 {{ partial "newsletter.html" . }}
 
 <style>
-.shelp-section { max-width:900px; margin:0 auto; padding:0 24px 48px; }
+.sh-section { max-width:960px; margin:0 auto; padding:0 24px 48px; }
 
-.shelp-nav {
+/* ── Pills ── */
+.sh-pills {
   display:flex; gap:6px; flex-wrap:wrap; justify-content:center;
-  padding:16px 0 24px; border-bottom:1px solid var(--border); margin-bottom:24px;
+  padding:12px 0 20px;
 }
-.shelp-pill {
-  padding:8px 16px; border-radius:10px; border:1.5px solid var(--border);
-  background:var(--surface-card); color:var(--ink-muted); font-size:.82rem;
-  font-weight:500; cursor:pointer; font-family:inherit; transition:all .15s;
-  white-space:nowrap;
+.sh-p {
+  padding:7px 14px; border-radius:100px; border:1.5px solid var(--border);
+  background:var(--surface-card); color:var(--ink-muted); font-size:.8rem;
+  font-weight:500; cursor:pointer; font-family:inherit; transition:all .12s;
+  white-space:nowrap; display:inline-flex; align-items:center; gap:5px;
 }
-.shelp-pill:hover { border-color:var(--teal); color:var(--teal); }
-.shelp-pill.active { background:var(--teal); border-color:var(--teal); color:#fff; font-weight:600; }
+.sh-p:hover { border-color:var(--teal); color:var(--teal); }
+.sh-p.on { background:var(--teal); border-color:var(--teal); color:#fff; font-weight:600; }
 
-.shelp-stage { min-height:400px; }
+/* ── Viewer ── */
+.sh-viewer { border-radius:16px; overflow:hidden; border:1px solid var(--border); background:#0a0f1a; position:relative; }
 
-.shelp-card {
-  background:var(--surface-card); border:1px solid var(--border);
-  border-radius:20px; overflow:hidden; animation:shelpFade .3s ease;
-}
-@keyframes shelpFade { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-
-.shelp-card-header {
-  display:flex; align-items:center; gap:14px;
-  padding:20px 24px; background:var(--surface-warm);
-  border-bottom:1px solid var(--border);
-}
-.shelp-card-icon {
-  font-size:1.8rem; width:48px; height:48px; display:flex;
-  align-items:center; justify-content:center; background:var(--teal-wash);
-  border-radius:12px; flex-shrink:0;
-}
-.shelp-card-header h2 {
-  font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--ink);
-  margin-bottom:2px;
-}
-.shelp-card-header p { font-size:.85rem; color:var(--ink-muted); line-height:1.4; }
-
-.shelp-frame-wrap {
-  position:relative; width:100%; background:#0a0f1a;
-  border-bottom:1px solid var(--border);
-}
-.shelp-frame { width:100%; height:480px; border:none; display:block; }
-.shelp-frame-actions {
-  position:absolute; top:12px; right:12px; display:flex; gap:6px; z-index:2;
-}
-.shelp-frame-btn {
-  padding:5px 12px; border-radius:7px; border:1px solid rgba(255,255,255,.15);
-  background:rgba(15,23,42,.8); color:rgba(255,255,255,.6);
-  font-size:.7rem; font-weight:600; cursor:pointer; font-family:inherit;
-  backdrop-filter:blur(6px); transition:all .15s;
-}
-.shelp-frame-btn:hover { background:rgba(15,23,42,.95); color:#fff; border-color:var(--teal); }
-
-.shelp-links-section { padding:18px 24px; }
-.shelp-links-title {
-  font-size:.68rem; text-transform:uppercase; letter-spacing:1.5px;
-  color:var(--ink-muted); font-weight:700; margin-bottom:10px;
-}
-.shelp-links-grid { display:flex; flex-direction:column; gap:6px; }
-.shelp-link {
+.sh-bar {
   display:flex; align-items:center; justify-content:space-between;
-  padding:12px 16px; background:var(--surface-warm); border:1px solid var(--border);
-  border-radius:10px; text-decoration:none; color:var(--ink); font-size:.88rem;
-  font-weight:500; transition:all .15s;
+  padding:10px 16px; background:rgba(15,23,42,.95); border-bottom:1px solid #1e293b;
+  gap:12px; min-height:44px;
 }
-.shelp-link:hover { border-color:var(--teal); background:var(--teal-wash); color:var(--teal); }
-.shelp-link-arrow { color:var(--ink-muted); transition:transform .15s; }
-.shelp-link:hover .shelp-link-arrow { transform:translateX(3px); color:var(--teal); }
+.sh-bar-left { display:flex; align-items:center; gap:8px; min-width:0; }
+.sh-bar-icon { font-size:1.2rem; flex-shrink:0; }
+.sh-bar-title { font-family:'DM Serif Display',serif; font-size:.95rem; color:#e2e8f0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sh-bar-right { display:flex; gap:6px; flex-shrink:0; }
+.sh-btn {
+  padding:5px 12px; border-radius:7px; border:1px solid #334155;
+  background:#1e293b; color:#94a3b8; font-size:.68rem; font-weight:600;
+  cursor:pointer; font-family:inherit; transition:all .12s; white-space:nowrap;
+}
+.sh-btn:hover { border-color:#14b8a6; color:#14b8a6; }
 
+.sh-frame { width:100%; border:none; display:block; background:#0a0f1a; }
+
+.sh-links {
+  display:flex; gap:8px; padding:10px 16px; background:rgba(15,23,42,.95);
+  border-top:1px solid #1e293b; flex-wrap:wrap; align-items:center;
+}
+.sh-links-label { font-size:.6rem; text-transform:uppercase; letter-spacing:1.5px; color:#475569; font-weight:700; margin-right:4px; }
+.sh-link {
+  padding:5px 12px; border-radius:7px; background:#1e293b; border:1px solid #334155;
+  color:#94a3b8; font-size:.75rem; text-decoration:none; font-weight:500;
+  transition:all .12s;
+}
+.sh-link:hover { border-color:#14b8a6; color:#14b8a6; }
+
+/* ── Responsive ── */
 @media (max-width:640px) {
-  .shelp-nav { gap:4px; }
-  .shelp-pill { padding:6px 12px; font-size:.75rem; }
-  .shelp-frame { height:400px; }
-  .shelp-card-header { padding:16px 18px; }
-  .shelp-links-section { padding:14px 18px; }
-  .shelp-card-header h2 { font-size:1.1rem; }
+  .sh-pills { gap:4px; }
+  .sh-p { padding:6px 11px; font-size:.72rem; }
+  .sh-bar { padding:8px 12px; }
+  .sh-bar-title { font-size:.85rem; }
+  .sh-links { padding:8px 12px; }
 }
 @media (max-width:480px) {
-  .shelp-frame { height:360px; }
-  .shelp-pill { font-size:12px !important; padding:5px 10px; }
+  .sh-p { font-size:12px !important; padding:5px 9px; }
+  .sh-btn { font-size:11px !important; }
 }
-@media (prefers-reduced-motion:reduce) { .shelp-card { animation:none; } }
 
-html.dark .shelp-pill { background:#1e293b; border-color:#334155; }
-html.dark .shelp-pill.active { background:var(--teal); border-color:var(--teal); color:#fff; }
-html.dark .shelp-card { background:#1e293b; border-color:#334155; }
-html.dark .shelp-card-header { background:#0f172a; border-color:#334155; }
-html.dark .shelp-link { background:#0f172a; border-color:#334155; }
-html.dark .shelp-link:hover { border-color:var(--teal); background:rgba(20,184,166,.08); }
+html.dark .sh-p { background:#1e293b; border-color:#334155; }
+html.dark .sh-p.on { background:var(--teal); border-color:var(--teal); }
+html.dark .sh-viewer { border-color:#334155; }
 </style>
 
 <script>
 (function(){
-var topics = [
-  {title:"Negative Numbers",icon:"\u2796",tagline:"Numbers below zero. Adding goes right, subtracting goes left.",src:"/understand/negative-numbers.html",links:[{label:"Algebra balance scale",url:"/resources/understand-algebra/"},{label:"Solving equations step by step",url:"/resources/worked-example-linear-equations/"}]},
-  {title:"Fractions",icon:"\u00bd",tagline:"Which is bigger, 2/3 or 3/5? See them side by side.",src:"/understand/fractions.html",links:[{label:"Percentage change step by step",url:"/resources/worked-example-percentage-change/"},{label:"The Fairness Problem",url:"/resources/the-fairness-problem-fractions-inquiry/"}]},
-  {title:"Algebra",icon:"\ud835\udc65",tagline:"An equation is a balance. Keep both sides equal.",src:"/understand/algebra.html",links:[{label:"Function Machine game",url:"/resources/function-machine-game/"},{label:"nth term step by step",url:"/resources/worked-example-nth-term/"}]},
-  {title:"Reading Graphs",icon:"\ud83d\udcc8",tagline:"Gradient means speed. Flat means stopped. Line going down means returning.",src:"/understand/graph-reading.html",links:[{label:"Line of best fit",url:"/resources/worked-example-line-of-best-fit/"},{label:"Does Height Predict Armspan?",url:"/resources/grade-8-scatter-graphs-investigation/"}]},
-  {title:"Probability",icon:"\ud83c\udfb2",tagline:"Flip a coin 100 times. Watch it get closer to 50/50.",src:"/understand/probability.html",links:[{label:"Probability Simulator game",url:"/resources/probability-simulator-game/"},{label:"Is This Die Cheating?",url:"/resources/is-this-die-cheating-probability-investigation/"}]},
-  {title:"Density",icon:"\u2696\ufe0f",tagline:"Drop objects in water. If density < 1.0, it floats.",src:"/understand/density.html",links:[{label:"Density calculation step by step",url:"/resources/worked-example-density/"},{label:"The Sinking Orange",url:"/resources/density-and-floating-investigation/"}]},
-  {title:"Forces",icon:"\ud83d\udcaa",tagline:"Push a box. Add friction. See Newton\u2019s laws happen.",src:"/understand/forces.html",links:[{label:"The Feather and the Hammer",url:"/resources/forces-and-falling-investigation/"},{label:"The Impossible Lift",url:"/resources/simple-machines-investigation/"}]},
-  {title:"Energy Transfer",icon:"\u26a1",tagline:"Drag the efficiency slider. Watch energy flow.",src:"/understand/energy.html",links:[{label:"Where Does the Energy Go?",url:"/resources/energy-transfer-investigation/"},{label:"Substituting into E = \u00bdmv\u00b2",url:"/resources/worked-example-substitution/"}]},
-  {title:"Particles",icon:"\u269b\ufe0f",tagline:"Solid, liquid, gas. Drag the temperature slider.",src:"/understand/particles.html",links:[{label:"Reaction Rate Lab game",url:"/resources/reaction-rate-lab-game/"},{label:"The Disappearing Candle",url:"/resources/the-disappearing-candle-chemistry-investigation/"}]},
-  {title:"Food Webs",icon:"\ud83c\udf3f",tagline:"Remove a species. Watch the chains break.",src:"/understand/food-webs.html",links:[{label:"Food Web Builder game",url:"/resources/food-web-builder-game/"},{label:"The Invisible Thread",url:"/resources/the-invisible-thread-ecology-investigation/"}]}
+var T = [
+  {t:"Negative Numbers",i:"\u2796",s:"/understand/negative-numbers.html",l:[{n:"Algebra balance scale",u:"/resources/understand-algebra/"},{n:"Equations step by step",u:"/resources/worked-example-linear-equations/"}]},
+  {t:"Fractions",i:"\u00bd",s:"/understand/fractions.html",l:[{n:"Percentage change",u:"/resources/worked-example-percentage-change/"},{n:"The Fairness Problem",u:"/resources/the-fairness-problem-fractions-inquiry/"}]},
+  {t:"Algebra",i:"\ud835\udc65",s:"/understand/algebra.html",l:[{n:"Function Machine game",u:"/resources/function-machine-game/"},{n:"nth term step by step",u:"/resources/worked-example-nth-term/"}]},
+  {t:"Graphs",i:"\ud83d\udcc8",s:"/understand/graph-reading.html",l:[{n:"Line of best fit",u:"/resources/worked-example-line-of-best-fit/"},{n:"Height vs Armspan",u:"/resources/grade-8-scatter-graphs-investigation/"}]},
+  {t:"Probability",i:"\ud83c\udfb2",s:"/understand/probability.html",l:[{n:"Probability Simulator",u:"/resources/probability-simulator-game/"},{n:"Is This Die Cheating?",u:"/resources/is-this-die-cheating-probability-investigation/"}]},
+  {t:"Density",i:"\u2696\ufe0f",s:"/understand/density.html",l:[{n:"Density step by step",u:"/resources/worked-example-density/"},{n:"The Sinking Orange",u:"/resources/density-and-floating-investigation/"}]},
+  {t:"Forces",i:"\ud83d\udcaa",s:"/understand/forces.html",l:[{n:"Feather and Hammer",u:"/resources/forces-and-falling-investigation/"},{n:"The Impossible Lift",u:"/resources/simple-machines-investigation/"}]},
+  {t:"Energy",i:"\u26a1",s:"/understand/energy.html",l:[{n:"Where Does Energy Go?",u:"/resources/energy-transfer-investigation/"},{n:"E = \u00bdmv\u00b2 worked",u:"/resources/worked-example-substitution/"}]},
+  {t:"Particles",i:"\u269b\ufe0f",s:"/understand/particles.html",l:[{n:"Reaction Rate Lab",u:"/resources/reaction-rate-lab-game/"},{n:"Disappearing Candle",u:"/resources/the-disappearing-candle-chemistry-investigation/"}]},
+  {t:"Food Webs",i:"\ud83c\udf3f",s:"/understand/food-webs.html",l:[{n:"Food Web Builder",u:"/resources/food-web-builder-game/"},{n:"The Invisible Thread",u:"/resources/the-invisible-thread-ecology-investigation/"}]}
 ];
 
-var cur = 0;
-var stage = document.getElementById('shelpStage');
+var cur=0, pills=document.getElementById('shPills'), viewer=document.getElementById('shViewer');
 
-function show(idx) {
-  cur = idx;
-  var t = topics[idx];
-  document.querySelectorAll('.shelp-pill').forEach(function(p,i){ p.classList.toggle('active', i===idx); });
+// Build pills once
+T.forEach(function(t,i){
+  var b=document.createElement('button');
+  b.className='sh-p'+(i===0?' on':'');
+  b.dataset.i=i;
+  b.innerHTML=t.i+' '+t.t;
+  b.onclick=function(){show(i)};
+  pills.appendChild(b);
+});
 
-  stage.innerHTML =
-    '<div class="shelp-card">' +
-      '<div class="shelp-card-header">' +
-        '<span class="shelp-card-icon">' + t.icon + '</span>' +
-        '<div><h2>' + t.title + '</h2><p>' + t.tagline + '</p></div>' +
-      '</div>' +
-      '<div class="shelp-frame-wrap">' +
-        '<div class="shelp-frame-actions">' +
-          '<button class="shelp-frame-btn" onclick="window.open(topics['+idx+'].src,\'_blank\')">Open full screen \u2197</button>' +
-        '</div>' +
-        '<iframe class="shelp-frame" src="' + t.src + '" loading="lazy" title="' + t.title + '"></iframe>' +
-      '</div>' +
-      '<div class="shelp-links-section">' +
-        '<div class="shelp-links-title">Try next</div>' +
-        '<div class="shelp-links-grid">' +
-          t.links.map(function(l){ return '<a href="'+l.url+'" class="shelp-link"><span>'+l.label+'</span><span class="shelp-link-arrow">\u2192</span></a>'; }).join('') +
-        '</div>' +
-      '</div>' +
+function show(i){
+  cur=i; var t=T[i];
+  pills.querySelectorAll('.sh-p').forEach(function(p,j){p.classList.toggle('on',j===i)});
+
+  // Calculate frame height: viewport minus hero, pills, bar, links, and some padding
+  var fh=Math.max(340, Math.min(560, window.innerHeight - 280));
+
+  viewer.innerHTML=
+    '<div class="sh-bar">'+
+      '<div class="sh-bar-left"><span class="sh-bar-icon">'+t.i+'</span><span class="sh-bar-title">'+t.t+'</span></div>'+
+      '<div class="sh-bar-right">'+
+        '<button class="sh-btn" onclick="nav(-1)">\u2190 Prev</button>'+
+        '<button class="sh-btn" onclick="nav(1)">Next \u2192</button>'+
+        '<button class="sh-btn" onclick="window.open(T['+i+'].s,\'_blank\')">\u2197 Fullscreen</button>'+
+      '</div>'+
+    '</div>'+
+    '<iframe class="sh-frame" style="height:'+fh+'px" src="'+t.s+'" loading="lazy" title="'+t.t+'"></iframe>'+
+    '<div class="sh-links">'+
+      '<span class="sh-links-label">Try next</span>'+
+      t.l.map(function(l){return '<a href="'+l.u+'" class="sh-link">'+l.n+' \u2192</a>'}).join('')+
     '</div>';
 }
 
-// expose topics for full-screen button
-window.topics = topics;
+window.T=T;
+window.nav=function(d){ show((cur+d+T.length)%T.length); };
 
-document.querySelectorAll('.shelp-pill').forEach(function(p){
-  p.addEventListener('click', function(){ show(parseInt(this.dataset.idx)); });
-});
-
-document.addEventListener('keydown', function(e){
-  if(document.activeElement && document.activeElement.tagName === 'IFRAME') return;
-  if(e.key === 'ArrowRight') { e.preventDefault(); show((cur+1) % topics.length); }
-  if(e.key === 'ArrowLeft') { e.preventDefault(); show((cur-1+topics.length) % topics.length); }
+document.addEventListener('keydown',function(e){
+  if(document.activeElement&&document.activeElement.tagName==='IFRAME') return;
+  if(e.key==='ArrowRight'){e.preventDefault();nav(1);}
+  if(e.key==='ArrowLeft'){e.preventDefault();nav(-1);}
 });
 
 show(0);
