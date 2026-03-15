@@ -25,3 +25,9 @@ https://www.learnlattice.org/* https://learnlattice.org/:splat 301
 /worked-examples/substitution /resources/worked-example-substitution/ 301
 /worked-examples/unit-conversion /resources/worked-example-unit-conversion/ 301
 /handouts/* /resources/ 301
+/pathways/ /subjects/mathematics/ 301
+/pathways/* /subjects/mathematics/ 301
+/free-exemplars/ /assessment/ 301
+/free-exemplars/* /assessment/ 301
+/portfolio/ /about/ 301
+/portfolio/* /about/ 301
