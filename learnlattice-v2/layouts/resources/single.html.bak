@@ -56,6 +56,31 @@
     </div>
   </div>
 
+  {{/* ── TEACHER NOTES — NRICH-style consolidated panel ── */}}
+  {{ partial "teacher-notes-auto.html" . }}
+
+  {{/* ── TEACHER TOOLKIT — compact tabbed bar ── */}}
+  {{ if or .Params.warmup .Params.timeline .Params.listen_for .Params.teacher_moves .Params.misconceptions }}
+  <div class="rs-toolkit">
+    <div class="rs-toolkit-inner">
+      <div class="rs-toolkit-tabs" id="toolkitTabs">
+        {{ with .Params.warmup }}<button class="rs-tk-tab active" data-tk="warmup">🔥 Warm-Up</button>{{ end }}
+        {{ with .Params.timeline }}<button class="rs-tk-tab" data-tk="timeline">⏱ Timeline</button>{{ end }}
+        {{ with .Params.listen_for }}<button class="rs-tk-tab" data-tk="listen">👂 Listen For</button>{{ end }}
+        {{ with .Params.teacher_moves }}<button class="rs-tk-tab" data-tk="moves">🧭 Moves</button>{{ end }}
+        {{ with .Params.misconceptions }}<button class="rs-tk-tab" data-tk="myths">⚠️ Myths</button>{{ end }}
+      </div>
+      <div class="rs-toolkit-panels" id="toolkitPanels">
+        {{ with .Params.warmup }}<div class="rs-tk-panel active" data-tk="warmup"><div class="rs-tk-label">Before This Lesson · 5 min</div><p>{{ . }}</p></div>{{ end }}
+        {{ with .Params.timeline }}<div class="rs-tk-panel" data-tk="timeline"><div class="rs-timeline-strip">{{ $phases := split . " | " }}{{ range $phases }}{{ $parts := split . ": " }}<div class="rs-timeline-phase"><span class="rs-timeline-time">{{ index $parts 0 }}</span><span class="rs-timeline-desc">{{ if gt (len $parts) 1 }}{{ index $parts 1 }}{{ else }}{{ index $parts 0 }}{{ end }}</span></div>{{ end }}</div></div>{{ end }}
+        {{ with .Params.listen_for }}<div class="rs-tk-panel" data-tk="listen">{{ range . }}<div class="rs-listen-phrase"><span class="rs-listen-level rs-listen--{{ .level | urlize }}">{{ .level }}</span><span>"{{ .phrase }}"</span></div>{{ end }}</div>{{ end }}
+        {{ with .Params.teacher_moves }}<div class="rs-tk-panel" data-tk="moves">{{ range . }}<div class="rs-tm-item"><h4>{{ .title }}</h4><p>{{ .description }}</p></div>{{ end }}</div>{{ end }}
+        {{ with .Params.misconceptions }}<div class="rs-tk-panel" data-tk="myths">{{ range . }}<div class="rs-misconception"><div class="rs-misconception-myth">"{{ .myth }}"</div><div class="rs-misconception-truth">→ {{ .truth }}</div></div>{{ end }}</div>{{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
   <div class="rs-layout">
     <div class="rs-main">
       <div class="resource-content">{{ .Content }}</div>
@@ -88,32 +113,6 @@
     </div>
 
     <aside class="rs-sidebar">
-      {{/* ── TEACHER NOTES (in sidebar) ── */}}
-      {{ partial "teacher-notes-auto.html" . }}
-
-      {{/* ── TEACHER TOOLKIT (in sidebar, tabbed) ── */}}
-      {{ if or .Params.warmup .Params.timeline .Params.listen_for .Params.teacher_moves .Params.misconceptions }}
-      <div class="rs-sidebar-card rs-sidebar-toolkit">
-        <h3>🧰 Teacher Toolkit</h3>
-        <div class="rs-toolkit-tabs rs-tk-tabs-sidebar" id="toolkitTabs">
-          {{ with .Params.warmup }}<button class="rs-tk-tab active" data-tk="warmup">🔥 Warm-Up</button>{{ end }}
-          {{ with .Params.timeline }}<button class="rs-tk-tab" data-tk="timeline">⏱ Timeline</button>{{ end }}
-          {{ with .Params.listen_for }}<button class="rs-tk-tab" data-tk="listen">👂 Listen</button>{{ end }}
-          {{ with .Params.teacher_moves }}<button class="rs-tk-tab" data-tk="moves">🧭 Moves</button>{{ end }}
-          {{ with .Params.misconceptions }}<button class="rs-tk-tab" data-tk="myths">⚠️ Myths</button>{{ end }}
-        </div>
-        <div class="rs-toolkit-panels" id="toolkitPanels">
-          {{ with .Params.warmup }}<div class="rs-tk-panel active" data-tk="warmup"><div class="rs-tk-label">Before This Lesson · 5 min</div><p>{{ . }}</p></div>{{ end }}
-          {{ with .Params.timeline }}<div class="rs-tk-panel" data-tk="timeline"><div class="rs-timeline-strip" style="flex-direction:column">{{ $phases := split . " | " }}{{ range $phases }}{{ $parts := split . ": " }}<div class="rs-timeline-phase"><span class="rs-timeline-time">{{ index $parts 0 }}</span><span class="rs-timeline-desc">{{ if gt (len $parts) 1 }}{{ index $parts 1 }}{{ else }}{{ index $parts 0 }}{{ end }}</span></div>{{ end }}</div></div>{{ end }}
-          {{ with .Params.listen_for }}<div class="rs-tk-panel" data-tk="listen">{{ range . }}<div class="rs-listen-phrase"><span class="rs-listen-level rs-listen--{{ .level | urlize }}">{{ .level }}</span><span>"{{ .phrase }}"</span></div>{{ end }}</div>{{ end }}
-          {{ with .Params.teacher_moves }}<div class="rs-tk-panel" data-tk="moves">{{ range . }}<div class="rs-tm-item"><h4>{{ .title }}</h4><p>{{ .description }}</p></div>{{ end }}</div>{{ end }}
-          {{ with .Params.misconceptions }}<div class="rs-tk-panel" data-tk="myths">{{ range . }}<div class="rs-misconception"><div class="rs-misconception-myth">"{{ .myth }}"</div><div class="rs-misconception-truth">→ {{ .truth }}</div></div>{{ end }}</div>{{ end }}
-        </div>
-      </div>
-      {{ end }}
-
-      {{/* ── AT A GLANCE ── */}}
-
       {{/* Auto-generated Table of Contents */}}
       <div class="rs-toc" id="rsToc">
         <div class="rs-toc-card">

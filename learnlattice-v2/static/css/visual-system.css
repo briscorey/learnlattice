@@ -183,3 +183,100 @@ html.dark .search-modal { background: rgba(16, 18, 26, 0.97) !important; border-
 
 /* ── PRINT ── */
 @media print { .stagger-grid > * { animation: none !important; opacity: 1 !important; transform: none !important; } }
+
+/* ═══ INVESTIGATION LAYOUT: wider sidebar, denser page ═══ */
+.rs-layout {
+  grid-template-columns: 1fr 360px !important;
+  gap: 32px !important;
+  max-width: 1280px !important;
+}
+
+/* Sidebar toolkit tabs: compact wrap for narrow column */
+.rs-tk-tabs-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.rs-tk-tabs-sidebar .rs-tk-tab {
+  padding: 4px 10px;
+  font-size: .72rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-warm);
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.rs-tk-tabs-sidebar .rs-tk-tab:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.rs-tk-tabs-sidebar .rs-tk-tab.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.rs-sidebar-toolkit .rs-tk-panel {
+  display: none;
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+.rs-sidebar-toolkit .rs-tk-panel.active {
+  display: block;
+}
+.rs-sidebar-toolkit .rs-tk-label {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #d97706;
+  margin-bottom: 6px;
+}
+.rs-sidebar-toolkit .rs-tm-item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rs-sidebar-toolkit .rs-tm-item:last-child {
+  border-bottom: none;
+}
+.rs-sidebar-toolkit .rs-tm-item h4 {
+  font-size: .82rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.rs-sidebar-toolkit .rs-tm-item p {
+  font-size: .78rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+.rs-sidebar-toolkit .rs-timeline-phase {
+  min-width: 0;
+  flex: none;
+  width: 100%;
+}
+.rs-sidebar-toolkit .rs-listen-phrase {
+  font-size: .78rem;
+  padding: 5px 0;
+}
+.rs-sidebar-toolkit .rs-misconception {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.rs-sidebar-toolkit .rs-misconception-myth {
+  font-size: .78rem;
+}
+.rs-sidebar-toolkit .rs-misconception-truth {
+  font-size: .75rem;
+}
+
+/* On mobile, sidebar stacks below — keep single column */
+@media (max-width: 900px) {
+  .rs-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
