@@ -273,7 +273,7 @@ summaryLength = 30
     url = "/eal/"
     weight = 4
   [[menu.main]]
-    name = "Craft"
+    name = "Blog"
     identifier = "blog"
     url = "/blog/"
     weight = 5
