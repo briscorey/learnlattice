@@ -1,4 +1,4 @@
-{{/* ── SEO: Open Graph, Twitter Cards, Schema.org JSON-LD with LRMI ── */}}
+{{/* ── SEO: Open Graph, Twitter Cards, Schema.org JSON-LD ── */}}
 
 {{- $title := .Title -}}
 {{- $desc := .Description | default .Site.Params.description -}}
@@ -39,7 +39,7 @@
 <meta name="twitter:description" content="{{ $desc | truncate 200 }}">
 <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}">
 
-{{/* ── Schema.org JSON-LD ── */}}
+{{/* Schema.org JSON-LD */}}
 {{- if .IsHome }}
 <script type="application/ld+json">
 {
@@ -55,61 +55,7 @@
   }
 }
 </script>
-
 {{- else if $isResource }}
-{{/* ── LRMI-enhanced LearningResource schema ── */}}
-
-{{/* Map year_levels to age range */}}
-{{- $minAge := 11 -}}
-{{- $maxAge := 16 -}}
-{{- range .Params.year_levels -}}
-  {{- $level := . | lower -}}
-  {{- if or (in $level "grade 6") (in $level "myp year 1") }}{{ $minAge = 11 }}{{ end -}}
-  {{- if or (in $level "grade 7") (in $level "myp year 2") }}{{ if lt 12 $minAge }}{{ $minAge = 12 }}{{ end }}{{ end -}}
-  {{- if or (in $level "grade 9") (in $level "myp year 4") }}{{ $maxAge = 15 }}{{ end -}}
-  {{- if or (in $level "grade 10") (in $level "myp year 5") }}{{ $maxAge = 16 }}{{ end -}}
-{{- end -}}
-
-{{/* Map resource_types to Schema.org learningResourceType */}}
-{{- $schemaResType := "LessonPlan" -}}
-{{- with index .Params.resource_types 0 -}}
-  {{- $rt := . | lower -}}
-  {{- if in $rt "investigation" }}{{ $schemaResType = "LessonPlan" }}
-  {{- else if in $rt "game" }}{{ $schemaResType = "LearningActivity" }}
-  {{- else if in $rt "worked example" }}{{ $schemaResType = "PresentationDigitalDocument" }}
-  {{- else if in $rt "visual explainer" }}{{ $schemaResType = "PresentationDigitalDocument" }}
-  {{- else if in $rt "lab" }}{{ $schemaResType = "LessonPlan" }}
-  {{- else if in $rt "simulation" }}{{ $schemaResType = "LearningActivity" }}
-  {{- else if in $rt "case study" }}{{ $schemaResType = "TextDigitalDocument" }}
-  {{- else if in $rt "data analysis" }}{{ $schemaResType = "LessonPlan" }}
-  {{- else }}{{ $schemaResType = "LessonPlan" }}
-  {{- end -}}
-{{- end -}}
-
-{{/* Map duration string to ISO 8601 duration */}}
-{{- $isoDuration := "" -}}
-{{- with .Params.duration -}}
-  {{- $d := . | lower -}}
-  {{- if in $d "1 lesson" }}{{ $isoDuration = "PT50M" }}
-  {{- else if in $d "1–2" }}{{ $isoDuration = "PT90M" }}
-  {{- else if in $d "2 lesson" }}{{ $isoDuration = "PT100M" }}
-  {{- else if in $d "2–3" }}{{ $isoDuration = "PT130M" }}
-  {{- else if in $d "3–4" }}{{ $isoDuration = "PT175M" }}
-  {{- else if in $d "4–5" }}{{ $isoDuration = "PT225M" }}
-  {{- else }}{{ $isoDuration = "PT50M" }}
-  {{- end -}}
-{{- end -}}
-
-{{/* Map difficulty to proficiencyLevel */}}
-{{- $proficiency := "Intermediate" -}}
-{{- with .Params.difficulty -}}
-  {{- $diff := . | lower -}}
-  {{- if in $diff "approaching" }}{{ $proficiency = "Beginner" }}
-  {{- else if in $diff "meeting" }}{{ $proficiency = "Intermediate" }}
-  {{- else if in $diff "exceeding" }}{{ $proficiency = "Advanced" }}
-  {{- end -}}
-{{- end -}}
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,72 +68,21 @@
     "name": "LearnLattice",
     "url": "{{ .Site.BaseURL }}"
   },
-  "author": {
-    "@type": "Person",
-    "name": "Corey Briscoe",
-    "url": "{{ .Site.BaseURL }}about/"
-  },
   "isAccessibleForFree": true,
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "inLanguage": "en",
-  "learningResourceType": "{{ $schemaResType }}",
-  "typicalAgeRange": "{{ $minAge }}-{{ $maxAge }}",
-  "proficiencyLevel": "{{ $proficiency }}",
-  {{- with $isoDuration }}
-  "timeRequired": "{{ . }}",
-  {{- end }}
+  "learningResourceType": "{{ (index .Params.resource_types 0) | default "Resource" }}",
   "educationalLevel": [{{ range $i, $l := (.Params.year_levels | default (slice)) }}{{ if $i }}, {{ end }}"{{ $l }}"{{ end }}],
   "teaches": [{{ range $i, $t := (.Params.tags | default (slice)) }}{{ if $i }}, {{ end }}"{{ $t }}"{{ end }}],
   "about": [{{ range $i, $s := (.Params.subjects | default (slice)) }}{{ if $i }}, {{ end }}"{{ $s }}"{{ end }}],
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "teacher",
-    "audienceType": "Educators"
-  },
-  "educationalAlignment": [
-    {
-      "@type": "AlignmentObject",
-      "alignmentType": "educationalFramework",
-      "educationalFramework": "IB Middle Years Programme",
-      "targetName": "MYP Mathematics and Sciences",
-      "targetUrl": "https://www.ibo.org/programmes/middle-years-programme/"
-    }
-    {{- with .Params.key_concept }},
-    {
-      "@type": "AlignmentObject",
-      "alignmentType": "educationalSubject",
-      "educationalFramework": "IB MYP Key Concepts",
-      "targetName": "{{ . }}"
-    }
-    {{- end }}
-    {{- with .Params.global_context }},
-    {
-      "@type": "AlignmentObject",
-      "alignmentType": "educationalSubject",
-      "educationalFramework": "IB MYP Global Contexts",
-      "targetName": "{{ . }}"
-    }
-    {{- end }}
-    {{- range .Params.tags }}{{ if in (. | lower) "criterion" }},
-    {
-      "@type": "AlignmentObject",
-      "alignmentType": "assesses",
-      "educationalFramework": "IB MYP Assessment Criteria",
-      "targetName": "{{ . }}"
-    }
-    {{- end }}{{ end }}
-  ],
-  {{- with .Params.statement_of_inquiry }}
-  "abstract": "{{ . | htmlEscape }}",
-  {{- end }}
-  {{- with .Params.key_concept }}
-  "keywords": "{{ . }}, IB MYP, Middle Years Programme",
-  {{- end }}
+  "educationalFramework": "IB Middle Years Programme",
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
+  {{- with .Params.key_concept }},
+  "keywords": "{{ . }}"
+  {{- end }}
 }
 </script>
-
 {{- else if $isBlog }}
 <script type="application/ld+json">
 {
@@ -213,7 +108,6 @@
   "isAccessibleForFree": true
 }
 </script>
-
 {{- else if $isAssessment }}
 <script type="application/ld+json">
 {
@@ -231,7 +125,6 @@
   ]
 }
 </script>
-
 {{- else }}
 <script type="application/ld+json">
 {
