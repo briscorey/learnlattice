@@ -755,23 +755,22 @@ html.dark .assess-strip-item { border-color:#334155; }
 @media print { .stuck-fab { display:none; } }
 
 /* ══ POINT 2: Homepage student teaser ══ */
-.home-stuck { padding:32px 24px; }
+.home-stuck { padding:28px 24px; }
 .home-stuck-inner {
-  max-width:740px; margin:0 auto;
-  display:flex; align-items:center; gap:24px;
-  padding:24px 32px; border-radius:16px;
+  max-width:660px; margin:0 auto; text-align:center;
+  padding:28px 32px; border-radius:16px;
   background:var(--surface-card); border:1px solid var(--border);
 }
 .home-stuck-text h2 {
-  font-family:'DM Serif Display',serif; font-size:1.3rem;
-  color:var(--ink); margin-bottom:4px;
+  font-family:'DM Serif Display',serif; font-size:1.4rem;
+  color:var(--ink); margin-bottom:6px;
 }
-.home-stuck-text p { font-size:.85rem; color:var(--ink-muted); }
-.home-stuck-pills { display:flex; flex-wrap:wrap; gap:6px; }
+.home-stuck-text p { font-size:.85rem; color:var(--ink-muted); margin-bottom:16px; }
+.home-stuck-pills { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
 .home-stuck-pill {
-  padding:7px 14px; border-radius:100px;
-  background:var(--teal-wash); border:1px solid rgba(13,148,136,.2);
-  color:var(--teal); font-size:.8rem; font-weight:600;
+  padding:8px 18px; border-radius:100px;
+  background:var(--teal-wash); border:1.5px solid rgba(13,148,136,.2);
+  color:var(--teal); font-size:.85rem; font-weight:600;
   text-decoration:none; transition:all .15s; white-space:nowrap;
 }
 .home-stuck-pill:hover { background:var(--teal); color:#fff; border-color:var(--teal); }
@@ -780,8 +779,8 @@ html.dark .assess-strip-item { border-color:#334155; }
 html.dark .home-stuck-inner { background:#1e293b; border-color:#334155; }
 html.dark .home-stuck-pill { background:rgba(13,148,136,.1); border-color:rgba(13,148,136,.2); }
 @media (max-width:640px) {
-  .home-stuck-inner { flex-direction:column; text-align:center; padding:20px; }
-  .home-stuck-pills { justify-content:center; }
+  .home-stuck-inner { padding:20px 16px; }
+  .home-stuck-pill { padding:6px 14px; font-size:.8rem; }
 }
 
 /* ══ POINT 3: Subject page interactive banner ══ */
