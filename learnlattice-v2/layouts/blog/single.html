@@ -1,6 +1,8 @@
 {{ define "main" }}
 
-<article class="blog-single">
+<article class="blog-single" data-pagefind-body>
+  <div data-pagefind-filter="type:Blog Post"></div>
+  <div data-pagefind-meta="title:{{ .Title }}, description:{{ .Description | default "" | truncate 150 }}"></div>
   {{ $slug := .File.ContentBaseName }}
   {{ $headerImg := printf "/img/blog/%s.svg" $slug }}
   <div class="blog-header-image">

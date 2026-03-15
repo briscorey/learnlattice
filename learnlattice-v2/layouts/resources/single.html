@@ -19,7 +19,13 @@
 {{ if eq ($subject | urlize) "ecology" }}{{ $svgFile = "ecology" }}{{ end }}
 {{ if eq ($subject | urlize) "science" }}{{ $svgFile = "physics" }}{{ end }}
 
-<article class="resource-single rc-{{ $subjectColor }}">
+<article class="resource-single rc-{{ $subjectColor }}" data-pagefind-body>
+  <div data-pagefind-filter="subject:{{ $subject }}"></div>
+  {{ with index .Params.resource_types 0 }}<div data-pagefind-filter="type:{{ . }}"></div>{{ end }}
+  {{ range .Params.year_levels }}<div data-pagefind-filter="grade:{{ . }}"></div>{{ end }}
+  {{ with .Params.key_concept }}<div data-pagefind-filter="concept:{{ . }}"></div>{{ end }}
+  {{ range .Params.tags }}{{ if hasPrefix . "Criterion" }}<div data-pagefind-filter="criterion:{{ . }}"></div>{{ end }}{{ end }}
+  <div data-pagefind-meta="title:{{ .Title }}, description:{{ .Description | default "" | truncate 150 }}, subject:{{ $subject }}, image:/img/subjects/{{ $svgFile }}.svg"></div>
   <div class="reading-progress"><div class="reading-progress-fill" id="readingProgress"></div></div>
   <div class="rs-header rc-{{ $subjectColor }}">
     <div class="rs-header-bg"><img src="/img/subjects/{{ $svgFile }}.svg" alt="" aria-hidden="true" loading="lazy"></div>
