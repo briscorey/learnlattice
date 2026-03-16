@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Equation Quest — LearnLattice</title>
+<!-- MYP Alignment
+  Criteria: A – Knowing & Understanding, B – Investigating Patterns
+  Key Concept: Relationships
+  Related Concepts: Equivalence, Representation
+  ATL: Critical thinking (analyse errors), Transfer (word problems)
+  Global Context: Scientific and Technical Innovation
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e17;color:#e2e8f0;font-family:'Space Grotesk',sans-serif;min-height:100vh;overflow-x:hidden}
+.hdr{padding:10px 20px;background:rgba(13,148,136,.08);border-bottom:1px solid rgba(13,148,136,.2);display:flex;justify-content:space-between;align-items:center}
+h1{font-size:1.1rem;color:#14b8a6;font-weight:700;letter-spacing:1px}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.hdr-score{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#14b8a6}
+.hdr-streak{font-size:.72rem;color:#fbbf24}
+.progress{display:flex;gap:6px;padding:12px 20px;background:rgba(255,255,255,.02)}
+.prog-stage{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:default}
+.prog-bar{height:4px;width:100%;border-radius:2px;background:rgba(255,255,255,.08)}
+.prog-bar.done{background:#14b8a6}
+.prog-bar.active{background:#fbbf24;animation:pulse 1.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.prog-label{font-size:.58rem;color:#64748b;text-transform:uppercase;letter-spacing:1px}
+.prog-stage.done .prog-label{color:#14b8a6}
+.prog-stage.active .prog-label{color:#fbbf24}
+.game{max-width:640px;margin:0 auto;padding:24px 20px}
+.stage-intro{text-align:center;padding:40px 20px;animation:fadeIn .5s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.stage-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#14b8a6;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+.stage-name{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:10px}
+.stage-desc{font-size:.88rem;color:#94a3b8;margin-bottom:6px}
+.stage-ican{font-size:.78rem;color:#14b8a6;font-style:italic;margin-bottom:24px}
+.btn{padding:12px 32px;border-radius:10px;border:1px solid rgba(20,184,166,.3);background:rgba(20,184,166,.1);color:#14b8a6;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn:hover{background:rgba(20,184,166,.2);border-color:#14b8a6;box-shadow:0 0 20px rgba(20,184,166,.15)}
+.btn-primary{background:#14b8a6;color:#0a0e17;border-color:#14b8a6}
+.btn-primary:hover{background:#0d9488}
+.question{animation:fadeIn .4s ease}
+.q-display{text-align:center;padding:24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;margin-bottom:20px}
+.q-equation{font-family:'JetBrains Mono',monospace;font-size:2rem;color:#fff;letter-spacing:2px;margin-bottom:8px}
+.q-equation .highlight{color:#14b8a6;text-decoration:underline;text-underline-offset:4px}
+.q-instruction{font-size:.82rem;color:#94a3b8}
+.q-context{font-size:.85rem;color:#cbd5e1;line-height:1.6;padding:14px 18px;background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:10px;margin-bottom:16px;font-style:italic}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:16px;border-radius:12px;border:1.5px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#e2e8f0;font-family:'JetBrains Mono',monospace;font-size:1rem;cursor:pointer;transition:all .2s;text-align:center}
+.opt:hover:not(.locked){border-color:rgba(20,184,166,.4);background:rgba(20,184,166,.06);transform:translateY(-2px)}
+.opt.correct{border-color:#22c55e;background:rgba(34,197,94,.12);color:#22c55e;animation:correctPop .4s ease}
+@keyframes correctPop{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+.opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.08);color:#ef4444}
+.opt.locked{cursor:default;opacity:.6}
+.opt.locked.correct{opacity:1}
+.feedback{margin-top:16px;padding:14px 18px;border-radius:10px;font-size:.85rem;line-height:1.6;animation:fadeIn .3s ease}
+.fb-correct{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#86efac}
+.fb-wrong{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);color:#fca5a5}
+.fb-wrong strong{color:#ef4444;display:block;margin-bottom:4px}
+.fb-correct strong{color:#22c55e;display:block;margin-bottom:4px}
+.next-area{text-align:center;margin-top:16px}
+/* Input mode for Stage 2+ */
+.input-row{display:flex;justify-content:center;gap:10px;align-items:center}
+.q-input{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:#14b8a6;background:rgba(20,184,166,.06);border:2px solid rgba(20,184,166,.2);border-radius:10px;padding:12px 20px;width:120px;text-align:center;outline:none;transition:border-color .2s}
+.q-input:focus{border-color:#14b8a6;box-shadow:0 0 16px rgba(20,184,166,.2)}
+.q-input::placeholder{color:rgba(20,184,166,.25)}
+.submit-btn{padding:12px 24px;border-radius:10px;border:none;background:#14b8a6;color:#0a0e17;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s}
+.submit-btn:hover{background:#0d9488;transform:translateY(-1px)}
+/* Results */
+.results{text-align:center;padding:40px 20px;animation:fadeIn .5s ease}
+.results-score{font-family:'JetBrains Mono',monospace;font-size:3.5rem;color:#14b8a6;font-weight:700}
+.results-label{font-size:1.2rem;color:#fff;font-weight:700;margin:8px 0}
+.results-detail{font-size:.88rem;color:#94a3b8;margin-bottom:24px;line-height:1.6}
+.results-transfer{padding:16px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.15);border-radius:10px;font-size:.88rem;color:#fde68a;margin-bottom:24px;line-height:1.6}
+.results-actions{display:flex;gap:10px;justify-content:center}
+.stage-complete{text-align:center;padding:32px 20px;animation:fadeIn .5s ease}
+.stage-stars{font-size:2rem;margin-bottom:8px}
+</style>
+<style id="embed-check">.embed-mode .hdr{display:none!important}.embed-mode{padding-top:0!important}</style>
+<script>if(location.search.indexOf('embed=1')>-1)document.documentElement.classList.add('embed-mode');</script>
+</head>
+<body>
+<div class="hdr">
+  <h1>⚡ Equation Quest</h1>
+  <div class="hdr-right">
+    <span class="hdr-streak" id="streak"></span>
+    <span class="hdr-score" id="score">0 pts</span>
+  </div>
+</div>
+<div class="progress" id="progBar"></div>
+<div class="game" id="game"></div>
+
+<script>
+// === GAME STATE ===
+let stage=0,qIdx=0,pts=0,streak=0,correct=0,total=0,stageCorrect=0;
+const STAGES=[
+  {name:'Identify',desc:'Name the parts of an equation',ican:'I can identify variables, coefficients, and constants.',qs:5},
+  {name:'One-Step',desc:'Solve equations with one operation',ican:'I can solve equations like 3x = 12 and x + 5 = 9.',qs:5},
+  {name:'Two-Step',desc:'Solve equations with two operations',ican:'I can solve equations like 2x + 3 = 11.',qs:5},
+  {name:'Brackets',desc:'Expand and solve',ican:'I can solve equations with brackets like 3(x + 2) = 15.',qs:5},
+  {name:'Real World',desc:'Turn words into equations',ican:'I can write and solve equations from word problems.',qs:5}
+];
+
+// === QUESTION GENERATORS ===
+function randInt(a,b){return a+Math.floor(Math.random()*(b-a+1))}
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+
+function genStage0(){
+  const types=[
+    {eq:'5x + 3 = 18',q:'What is the <em>variable</em> in this equation?',opts:['x','5','3','18'],correct:0,hint:'A variable is a letter that stands for an unknown number.',why:'x is the variable — it represents the number we\'re trying to find.'},
+    {eq:'7y − 2 = 19',q:'What is the <em>coefficient</em> of y?',opts:['7','y','2','19'],correct:0,hint:'The coefficient is the number in front of the variable (multiplying it).',why:'7 is the coefficient — it tells us y is multiplied by 7.'},
+    {eq:'4n + 9 = 25',q:'What is the <em>constant</em> on the left side?',opts:['9','4','n','25'],correct:0,hint:'A constant is a number on its own — not attached to a variable.',why:'9 is the constant on the left — it has no variable attached.'},
+    {eq:'3a = 21',q:'How many <em>terms</em> are on the left side?',opts:['1','2','3','21'],correct:0,hint:'A term is a number, a variable, or a number × variable. Count them.',why:'3a is one term. The left side has 1 term.'},
+    {eq:'2x + 5 = x + 12',q:'How many terms have a <em>variable</em>?',opts:['2','1','3','4'],correct:0,hint:'Look for terms with a letter (x) in them — on BOTH sides.',why:'2x and x both contain the variable x, so there are 2 variable terms.'},
+    {eq:'6m − 1 = 17',q:'What operation connects 6m and 1?',opts:['Subtraction','Addition','Multiplication','Division'],correct:0,hint:'Look at the sign between 6m and 1.',why:'The minus sign (−) means subtraction connects 6m and 1.'},
+    {eq:'8 + 3k = 29',q:'What is the coefficient of k?',opts:['3','8','29','k'],correct:0,hint:'The coefficient is the number directly multiplying the variable.',why:'3 is the coefficient — it\'s the number multiplied by k.'},
+  ];
+  return shuffle(types).slice(0,STAGES[0].qs);
+}
+
+function genStage1(){
+  const qs=[];
+  for(let i=0;i<STAGES[1].qs;i++){
+    const type=randInt(0,3);
+    let x,a,eq,ans,opts,hint,why;
+    if(type===0){// ax = b
+      x=randInt(2,12);a=randInt(2,9);const b=a*x;
+      eq=`${a}x = ${b}`;ans=x;
+      hint=`To find x, divide both sides by ${a}. What is ${b} ÷ ${a}?`;
+      why=`${a}x = ${b}, so x = ${b} ÷ ${a} = ${x}. We undo multiplication with division.`;
+    }else if(type===1){// x + a = b
+      x=randInt(1,15);a=randInt(2,12);const b=x+a;
+      eq=`x + ${a} = ${b}`;ans=x;
+      hint=`To find x, subtract ${a} from both sides. What is ${b} − ${a}?`;
+      why=`x + ${a} = ${b}, so x = ${b} − ${a} = ${x}. We undo addition with subtraction.`;
+    }else if(type===2){// x - a = b
+      x=randInt(5,20);a=randInt(1,x-1);const b=x-a;
+      eq=`x − ${a} = ${b}`;ans=x;
+      hint=`To find x, add ${a} to both sides. What is ${b} + ${a}?`;
+      why=`x − ${a} = ${b}, so x = ${b} + ${a} = ${x}. We undo subtraction with addition.`;
+    }else{// x/a = b
+      const b=randInt(2,8);a=randInt(2,6);x=a*b;
+      eq=`x ÷ ${a} = ${b}`;ans=x;
+      hint=`To find x, multiply both sides by ${a}. What is ${b} × ${a}?`;
+      why=`x ÷ ${a} = ${b}, so x = ${b} × ${a} = ${x}. We undo division with multiplication.`;
+    }
+    qs.push({eq,ans,hint,why,input:true});
+  }
+  return qs;
+}
+
+function genStage2(){
+  const qs=[];
+  for(let i=0;i<STAGES[2].qs;i++){
+    const x=randInt(2,10);
+    const a=randInt(2,7);
+    const b=randInt(1,9);
+    const c=a*x+b;
+    const eq=`${a}x + ${b} = ${c}`;
+    qs.push({
+      eq,ans:x,input:true,
+      hint:`Step 1: Subtract ${b} from both sides → ${a}x = ${c-b}. Step 2: Divide by ${a}.`,
+      why:`${a}x + ${b} = ${c}. Subtract ${b}: ${a}x = ${c-b}. Divide by ${a}: x = ${x}. Always undo addition/subtraction first, THEN multiplication/division.`
+    });
+  }
+  return qs;
+}
+
+function genStage3(){
+  const qs=[];
+  for(let i=0;i<STAGES[3].qs;i++){
+    const x=randInt(1,8);
+    const a=randInt(2,5);
+    const b=randInt(1,6);
+    const c=a*(x+b);
+    const eq=`${a}(x + ${b}) = ${c}`;
+    qs.push({
+      eq,ans:x,input:true,
+      hint:`First expand the bracket: ${a}×x + ${a}×${b} = ${a}x + ${a*b}. Then solve ${a}x + ${a*b} = ${c}.`,
+      why:`${a}(x + ${b}) = ${c}. Expand: ${a}x + ${a*b} = ${c}. Subtract ${a*b}: ${a}x = ${c-a*b}. Divide by ${a}: x = ${x}.`
+    });
+  }
+  return qs;
+}
+
+function genStage4(){
+  const templates=[
+    ()=>{const x=randInt(3,12);const rate=randInt(2,8);const extra=randInt(5,20);const total=rate*x+extra;
+      return{context:`A taxi charges ¥${extra} base fare plus ¥${rate} per kilometre. The total fare was ¥${total}. How many kilometres was the ride?`,
+        eq:`${rate}x + ${extra} = ${total}`,ans:x,input:true,
+        hint:`Let x = kilometres. The equation is ${rate}x + ${extra} = ${total}. Subtract ${extra} first.`,
+        why:`${rate}x + ${extra} = ${total}. Subtract ${extra}: ${rate}x = ${total-extra}. Divide by ${rate}: x = ${x} km.`}},
+    ()=>{const x=randInt(5,15);const each=randInt(3,8);const had=each*x+randInt(1,10);const left=had-each*x;
+      return{context:`You have ¥${had}. After buying ${x} identical items, you have ¥${left} remaining. What is the price of each item?`,
+        eq:`${had} − ${x}p = ${left}`,ans:each,input:true,
+        hint:`You spent ¥${had-left} total. If you bought ${x} items, divide the total spent by ${x}.`,
+        why:`Total spent = ${had} − ${left} = ${had-left}. Price per item = ${had-left} ÷ ${x} = ¥${each}.`}},
+    ()=>{const x=randInt(4,10);const a=randInt(2,5);const b=randInt(1,6);const perim=2*(a*x+b);
+      return{context:`A rectangle has length ${a}x and width ${b} cm. Its perimeter is ${perim} cm. Find x.`,
+        eq:`2(${a}x + ${b}) = ${perim}`,ans:x,input:true,
+        hint:`Perimeter = 2(length + width). So 2(${a}x + ${b}) = ${perim}. Divide by 2 first: ${a}x + ${b} = ${perim/2}.`,
+        why:`2(${a}x + ${b}) = ${perim}. Divide by 2: ${a}x + ${b} = ${perim/2}. Subtract ${b}: ${a}x = ${perim/2-b}. Divide by ${a}: x = ${x}.`}},
+    ()=>{const x=randInt(10,25);const n=randInt(3,6);const diff=randInt(2,5);const sum=n*x+diff*(n*(n-1)/2);
+      return{context:`${n} friends have consecutive amounts of money, each ¥${diff} more than the last. The person with the least has ¥x. Together they have ¥${sum}. Find x.`,
+        eq:`${n}x + ${diff*n*(n-1)/2} = ${sum}`,ans:x,input:true,
+        hint:`If the smallest amount is x, the amounts are x, x+${diff}, x+${2*diff}... Sum them and set equal to ${sum}.`,
+        why:`Sum = ${n}x + ${diff}(0+1+...+${n-1}) = ${n}x + ${diff*n*(n-1)/2} = ${sum}. So ${n}x = ${sum-diff*n*(n-1)/2}, x = ${x}.`}},
+    ()=>{const x=randInt(2,8);const mult=randInt(2,4);const add=randInt(3,10);const other=mult*x+add;
+      return{context:`One side of a triangle is x cm. The second side is ${mult} times longer plus ${add} cm (which is ${other} cm). Find x.`,
+        eq:`${mult}x + ${add} = ${other}`,ans:x,input:true,
+        hint:`The second side = ${mult}x + ${add}, and we know it's ${other} cm. Solve ${mult}x + ${add} = ${other}.`,
+        why:`${mult}x + ${add} = ${other}. Subtract ${add}: ${mult}x = ${other-add}. Divide by ${mult}: x = ${x} cm.`}}
+  ];
+  return shuffle(templates).slice(0,STAGES[4].qs).map(fn=>fn());
+}
+
+const generators=[genStage0,genStage1,genStage2,genStage3,genStage4];
+let questions=[];
+
+// === RENDERING ===
+function renderProgress(){
+  const el=document.getElementById('progBar');
+  el.innerHTML=STAGES.map((s,i)=>`<div class="prog-stage ${i<stage?'done':i===stage?'active':''}">
+    <div class="prog-bar ${i<stage?'done':i===stage?'active':''}"></div>
+    <span class="prog-label">${s.name}</span>
+  </div>`).join('');
+}
+
+function showStageIntro(){
+  const s=STAGES[stage];
+  stageCorrect=0;
+  questions=generators[stage]();
+  qIdx=0;
+  document.getElementById('game').innerHTML=`<div class="stage-intro">
+    <div class="stage-num">Stage ${stage+1} of ${STAGES.length}</div>
+    <div class="stage-name">${s.name}</div>
+    <div class="stage-desc">${s.desc}</div>
+    <div class="stage-ican">"${s.ican}"</div>
+    <button class="btn btn-primary" onclick="showQuestion()">Begin →</button>
+  </div>`;
+  renderProgress();
+}
+
+function showQuestion(){
+  if(qIdx>=questions.length){showStageComplete();return}
+  const q=questions[qIdx];
+  const el=document.getElementById('game');
+  
+  let html=`<div class="question">
+    <div class="q-display">
+      <div class="q-instruction">Question ${qIdx+1} of ${questions.length}</div>`;
+  
+  if(q.context) html+=`</div><div class="q-context">📖 ${q.context}</div><div class="q-display">`;
+  html+=`<div class="q-equation">${q.eq}</div>`;
+  if(q.q) html+=`<div class="q-instruction">${q.q}</div>`;
+  html+=`</div>`;
+
+  if(q.opts){
+    html+=`<div class="options">${q.opts.map((o,i)=>`<button class="opt" onclick="checkMC(${i})" id="opt${i}">${o}</button>`).join('')}</div>`;
+  } else if(q.input){
+    html+=`<div class="q-instruction" style="text-align:center;margin-bottom:12px">Find the value of x${q.context?' (the unknown)':''}:</div>
+    <div class="input-row">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:#94a3b8">x =</span>
+      <input class="q-input" type="number" id="qInput" placeholder="?" autofocus onkeydown="if(event.key==='Enter')checkInput()">
+      <button class="submit-btn" onclick="checkInput()">Check</button>
+    </div>`;
+  }
+  html+=`<div id="feedback"></div><div class="next-area" id="nextArea"></div></div>`;
+  el.innerHTML=html;
+  if(q.input)document.getElementById('qInput')?.focus();
+}
+
+function checkMC(i){
+  const q=questions[qIdx];
+  const opts=document.querySelectorAll('.opt');
+  opts.forEach(o=>o.classList.add('locked'));
+  total++;
+  
+  if(i===q.correct){
+    opts[i].classList.add('correct');
+    handleCorrect(q.why);
+  }else{
+    opts[i].classList.add('wrong');
+    opts[q.correct].classList.add('correct');
+    handleWrong(q.hint);
+  }
+}
+
+function checkInput(){
+  const q=questions[qIdx];
+  const input=document.getElementById('qInput');
+  if(!input)return;
+  const val=parseFloat(input.value);
+  if(isNaN(val))return;
+  input.disabled=true;
+  document.querySelector('.submit-btn').disabled=true;
+  total++;
+  
+  if(Math.abs(val-q.ans)<0.01){
+    input.style.borderColor='#22c55e';input.style.color='#22c55e';
+    handleCorrect(q.why);
+  }else{
+    input.style.borderColor='#ef4444';input.style.color='#ef4444';
+    handleWrong(q.hint);
+  }
+}
+
+function handleCorrect(why){
+  correct++;stageCorrect++;streak++;
+  const bonus=streak>=3?streak*2:0;
+  pts+=10+bonus;
+  document.getElementById('score').textContent=pts+' pts';
+  document.getElementById('streak').textContent=streak>=2?`🔥 ${streak} streak`:'';
+  
+  document.getElementById('feedback').innerHTML=`<div class="feedback fb-correct"><strong>✅ Correct!${streak>=3?' 🔥 Streak bonus!':''}</strong>${why}</div>`;
+  document.getElementById('nextArea').innerHTML=`<button class="btn" onclick="qIdx++;showQuestion()" style="margin-top:8px">Next →</button>`;
+}
+
+function handleWrong(hint){
+  streak=0;
+  document.getElementById('streak').textContent='';
+  document.getElementById('feedback').innerHTML=`<div class="feedback fb-wrong"><strong>💡 Not quite — here's a hint:</strong>${hint}</div>`;
+  document.getElementById('nextArea').innerHTML=`<button class="btn" onclick="qIdx++;showQuestion()" style="margin-top:8px">Next →</button>`;
+}
+
+function showStageComplete(){
+  const pct=Math.round((stageCorrect/questions.length)*100);
+  const stars=pct>=80?'⭐⭐⭐':pct>=60?'⭐⭐':'⭐';
+  
+  if(stage<STAGES.length-1){
+    document.getElementById('game').innerHTML=`<div class="stage-complete">
+      <div class="stage-stars">${stars}</div>
+      <div class="stage-name">${STAGES[stage].name} Complete!</div>
+      <p style="color:#94a3b8;margin:8px 0">${stageCorrect}/${questions.length} correct</p>
+      <button class="btn btn-primary" onclick="stage++;showStageIntro()" style="margin-top:16px">Next Stage →</button>
+    </div>`;
+  }else{
+    showFinalResults();
+  }
+}
+
+function showFinalResults(){
+  const pct=Math.round((correct/total)*100);
+  let label='🏆 Outstanding!',detail='You\'ve mastered equations from basics to real-world applications.';
+  if(pct<50){label='📚 Keep practising!';detail='Equations take time. Try again — focus on the hints when you get stuck.';}
+  else if(pct<75){label='💪 Good progress!';detail='You\'re getting there. The later stages need more practice.';}
+  
+  document.getElementById('game').innerHTML=`<div class="results">
+    <div class="results-score">${correct}/${total}</div>
+    <div class="results-label">${label}</div>
+    <div class="results-detail">${detail}<br>Final score: ${pts} points</div>
+    <div class="results-transfer">🌍 <strong>Transfer challenge:</strong> Next time you go shopping, try this: if 3 items cost ¥45 total and each costs the same, you just solved 3x = 45 in your head. Equations are everywhere.</div>
+    <div class="results-actions">
+      <button class="btn" onclick="location.reload()">🔄 Play again</button>
+      <a class="btn" href="/games/" target="_top" style="text-decoration:none">← All games</a>
+    </div>
+  </div>`;
+  renderProgress();
+}
+
+// === INIT ===
+showStageIntro();
+</script>
+</body>
+</html>
