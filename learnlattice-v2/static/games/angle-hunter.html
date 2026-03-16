@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Angle Hunter — LearnLattice</title>
+<!-- MYP: Key Concept: Form, Related: Space, Measurement, ATL: Critical thinking -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'DM Sans',sans-serif;min-height:100vh}
+.hdr{padding:10px 20px;background:rgba(245,158,11,.06);border-bottom:1px solid rgba(245,158,11,.15);display:flex;justify-content:space-between;align-items:center}h1{font-size:1.1rem;color:#fbbf24;font-weight:700}.pts{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#fbbf24}
+.progress{display:flex;gap:6px;padding:10px 20px;background:rgba(0,0,0,.2)}.pg{flex:1;text-align:center}.pg-bar{height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:4px}.pg-bar.done{background:#f59e0b}.pg-bar.active{background:#ec4899;animation:pulse 1.5s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}.pg-label{font-size:.55rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px}.pg.done .pg-label{color:#f59e0b}.pg.active .pg-label{color:#ec4899}
+.game{max-width:640px;margin:0 auto;padding:20px}.intro{text-align:center;padding:32px 16px;animation:fadeIn .5s}@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.s-num{font-size:.6rem;color:#f59e0b;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}.s-name{font-size:1.5rem;font-weight:700;margin-bottom:8px}.s-desc{font-size:.85rem;color:#94a3b8;margin-bottom:4px}.s-ican{font-size:.78rem;color:#fde68a;font-style:italic;margin-bottom:20px}
+.btn{padding:12px 28px;border-radius:10px;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.1);color:#fde68a;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s}.btn:hover{background:rgba(245,158,11,.2);border-color:#f59e0b;transform:translateY(-2px)}.btn-go{background:#f59e0b;color:#0f172a;border-color:#f59e0b}.btn-go:hover{background:#d97706}
+.q{animation:fadeIn .4s}.q-card{padding:24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;margin-bottom:16px}.q-num{font-size:.65rem;color:#f59e0b;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}.q-text{font-size:1rem;font-weight:600;color:#fff;margin-bottom:16px;line-height:1.5}
+.angle-box{padding:16px;background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.12);border-radius:12px;margin-bottom:16px;text-align:center}
+.angle-diagram{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#fde68a;line-height:1.6}
+.angle-val{font-family:'JetBrains Mono',monospace;font-size:1.6rem;color:#fbbf24;font-weight:700;margin-bottom:8px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.opts-1{grid-template-columns:1fr}.opt{padding:14px 16px;border-radius:10px;border:1.5px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#e2e8f0;font-size:.88rem;cursor:pointer;transition:all .2s;text-align:center;font-family:'DM Sans',sans-serif;font-weight:500}.opt:hover:not(.locked){border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.06);transform:translateY(-2px)}.opt.correct{border-color:#22c55e;background:rgba(34,197,94,.12)}.opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.08)}.opt.locked{cursor:default;opacity:.5}.opt.locked.correct{opacity:1}
+.fb{margin-top:14px;padding:12px 16px;border-radius:10px;font-size:.82rem;line-height:1.5;animation:fadeIn .3s}.fb-ok{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#86efac}.fb-no{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);color:#fca5a5}.fb strong{display:block;margin-bottom:2px}.next{text-align:center;margin-top:12px}
+.results{text-align:center;padding:36px 16px;animation:fadeIn .5s}.r-score{font-family:'JetBrains Mono',monospace;font-size:3rem;color:#f59e0b;font-weight:700}.r-label{font-size:1.1rem;font-weight:700;margin:6px 0}.r-detail{font-size:.85rem;color:#94a3b8;margin-bottom:20px;line-height:1.5}.r-transfer{padding:14px 18px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.15);border-radius:10px;font-size:.85rem;color:#fde68a;margin-bottom:20px;line-height:1.5}.r-actions{display:flex;gap:8px;justify-content:center}
+.sd{text-align:center;padding:28px;animation:fadeIn .5s}.sd-stars{font-size:2rem;margin-bottom:6px}
+</style>
+<style id="ec">.embed-mode .hdr{display:none!important}</style>
+<script>if(location.search.indexOf('embed=1')>-1)document.documentElement.classList.add('embed-mode');</script>
+</head><body>
+<div class="hdr"><h1>📐 Angle Hunter</h1><span class="pts" id="pts">0 pts</span></div>
+<div class="progress" id="prog"></div>
+<div class="game" id="game"></div>
+<script>
+let stage=0,qIdx=0,pts=0,correct=0,total=0,sc=0;
+const STG=[{name:'Types',desc:'Name the angle type',ican:'I can classify angles as acute, right, obtuse, straight, or reflex.',qs:6},{name:'Lines & Points',desc:'Find missing angles on lines and at points',ican:'I can use angle rules (on a line = 180°, at a point = 360°, vertically opposite).',qs:5},{name:'Shapes',desc:'Find angles in triangles and quadrilaterals',ican:'I can find missing angles using triangle (180°) and quadrilateral (360°) rules.',qs:5},{name:'Parallel Lines',desc:'Use parallel line angle rules',ican:'I can identify alternate, co-interior, and corresponding angles.',qs:5}];
+function ri(a,b){return a+Math.floor(Math.random()*(b-a+1))}
+function sh(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function gen0(){const qs=[];
+  const types=[
+    {a:ri(10,85),type:'Acute',hint:'Acute angles are less than 90°.',why:'This angle is less than 90°, so it\'s acute (think "a-cute little angle").'},
+    {a:90,type:'Right angle',hint:'Exactly 90° — look for the square symbol.',why:'Exactly 90° = a right angle. Marked with a small square.'},
+    {a:ri(95,170),type:'Obtuse',hint:'Obtuse angles are between 90° and 180°.',why:'Between 90° and 180° = obtuse (think "obese" — bigger than a right angle but less than straight).'},
+    {a:180,type:'Straight angle',hint:'A straight line = 180°.',why:'Exactly 180° = a straight angle. It\'s a straight line.'},
+    {a:ri(185,350),type:'Reflex',hint:'Reflex angles are greater than 180° (more than half a turn).',why:'Greater than 180° = reflex angle. It goes "past" the straight line.'},
+    {a:360,type:'Full turn',hint:'A complete rotation = 360°.',why:'360° = a full turn. You end up facing the same direction.'},
+    {a:ri(20,70),type:'Acute',hint:'Less than 90° = acute.',why:'This angle is less than 90°, making it acute.'},
+    {a:ri(100,160),type:'Obtuse',hint:'Between 90° and 180° = obtuse.',why:'Between 90° and 180° = obtuse.'},
+    {a:ri(200,340),type:'Reflex',hint:'More than 180° = reflex.',why:'Greater than 180° = reflex.'}
+  ];
+  return sh(types).slice(0,STG[0].qs).map(t=>{
+    const allTypes=['Acute','Right angle','Obtuse','Straight angle','Reflex','Full turn'];
+    const wrongs=sh(allTypes.filter(x=>x!==t.type)).slice(0,3);
+    const opts=sh([t.type,...wrongs]);
+    return{angle:t.a,q:`An angle of <strong>${t.a}°</strong> is called:`,opts,correct:opts.indexOf(t.type),hint:t.hint,why:t.why};
+  });
+}
+
+function gen1(){const qs=[];
+  for(let i=0;i<STG[1].qs;i++){
+    const type=ri(0,2);
+    if(type===0){// Angles on a straight line
+      const a=ri(30,140);const b=180-a;
+      const opts=sh([b+'°',(180+a)+'°',(360-a)+'°',(a)+'°']);
+      qs.push({diagram:`Straight line: ${a}° + x = 180°`,q:`Two angles on a straight line. One is ${a}°. Find the other.`,opts,correct:opts.indexOf(b+'°'),hint:`Angles on a straight line add to 180°. So x = 180 − ${a}.`,why:`180° − ${a}° = ${b}°. Angles on a straight line always sum to 180°.`});
+    }else if(type===1){// Angles at a point
+      const a=ri(40,120),b=ri(40,120);const c=360-a-b;
+      const opts=sh([c+'°',(180-a)+'°',(360-a)+'°',(a+b)+'°']);
+      qs.push({diagram:`Around a point: ${a}° + ${b}° + x = 360°`,q:`Three angles meet at a point: ${a}°, ${b}°, and x. Find x.`,opts,correct:opts.indexOf(c+'°'),hint:`Angles at a point add to 360°. x = 360 − ${a} − ${b}.`,why:`360° − ${a}° − ${b}° = ${c}°. Angles around a point always sum to 360°.`});
+    }else{// Vertically opposite
+      const a=ri(25,155);
+      const opts=sh([a+'°',(180-a)+'°',(360-a)+'°',(90-a>0?90-a:a+90)+'°']);
+      qs.push({diagram:`Two lines cross: one angle is ${a}°`,q:`Two straight lines cross. One angle is ${a}°. The vertically opposite angle is:`,opts,correct:opts.indexOf(a+'°'),hint:'Vertically opposite angles are always equal.',why:`Vertically opposite angles are equal: ${a}° = ${a}°. The adjacent angles would be ${180-a}°.`});
+    }
+  }
+  return qs;
+}
+
+function gen2(){const qs=[];
+  for(let i=0;i<STG[2].qs;i++){
+    const type=ri(0,2);
+    if(type===0){// Triangle
+      const a=ri(30,80),b=ri(30,80);const c=180-a-b;
+      const opts=sh([c+'°',(360-a-b)+'°',(a+b)+'°',(90-c>0?90:c+10)+'°']);
+      qs.push({diagram:`Triangle: ${a}° + ${b}° + x = 180°`,q:`A triangle has angles ${a}° and ${b}°. Find the third angle.`,opts,correct:opts.indexOf(c+'°'),hint:`Angles in a triangle add to 180°. x = 180 − ${a} − ${b}.`,why:`180° − ${a}° − ${b}° = ${c}°. Interior angles of any triangle sum to 180°.`});
+    }else if(type===1){// Isosceles
+      const base=ri(40,100);const equal=(180-base)/2;
+      const opts=sh([equal+'°',base+'°',(180-base)+'°',(base/2)+'°']);
+      qs.push({diagram:`Isosceles triangle: base angle = ${base}°, two equal sides`,q:`An isosceles triangle has a base angle of ${base}°. Find each of the two equal angles.`,opts,correct:opts.indexOf(equal+'°'),hint:`Isosceles = two equal angles. Base angles are ${base}° each... wait, or is ${base}° the top? Let me re-read. The two EQUAL angles: 180 − ${base} = ${180-base}, then ÷2.`,why:`The two equal angles = (180° − ${base}°) ÷ 2 = ${equal}° each. Isosceles triangles have two equal base angles.`});
+    }else{// Quadrilateral
+      const a=ri(60,120),b=ri(60,120),c=ri(60,120);const d=360-a-b-c;
+      const opts=sh([d+'°',(180-a)+'°',(a+b)+'°',(360-a)+'°']);
+      qs.push({diagram:`Quadrilateral: ${a}° + ${b}° + ${c}° + x = 360°`,q:`A quadrilateral has angles ${a}°, ${b}°, and ${c}°. Find the fourth angle.`,opts,correct:opts.indexOf(d+'°'),hint:`Angles in a quadrilateral add to 360°. x = 360 − ${a} − ${b} − ${c}.`,why:`360° − ${a}° − ${b}° − ${c}° = ${d}°. Interior angles of any quadrilateral sum to 360°.`});
+    }
+  }
+  return qs;
+}
+
+function gen3(){return sh([
+  {diagram:'Two parallel lines cut by a transversal. Angle a = 65° (top-left of upper intersection).',q:'The alternate angle to 65° is:',opts:['65°','115°','25°','180°'],correct:0,hint:'Alternate angles (Z-shape) are equal when lines are parallel.',why:'Alternate angles are equal: 65°. They form a Z-shape between the parallel lines.'},
+  {diagram:'Two parallel lines cut by a transversal. Angle = 110° (top-left).',q:'The corresponding angle is:',opts:['110°','70°','180°','90°'],correct:0,hint:'Corresponding angles (F-shape) are equal when lines are parallel.',why:'Corresponding angles are equal: 110°. They\'re in the same position at each intersection (F-shape).'},
+  {diagram:'Two parallel lines cut by a transversal. Angle a = 55° (above the line).',q:'The co-interior (same-side) angle is:',opts:['125°','55°','305°','180°'],correct:0,hint:'Co-interior angles (C-shape or U-shape) add to 180°.',why:'Co-interior angles sum to 180°: 180° − 55° = 125°. They\'re between the parallel lines on the same side.'},
+  {diagram:'Parallel lines. One angle is 72°.',q:'Its alternate angle is x and corresponding angle is y. What are x and y?',opts:['x = 72°, y = 72°','x = 108°, y = 72°','x = 72°, y = 108°','x = 108°, y = 108°'],correct:0,hint:'Both alternate AND corresponding angles equal the original when lines are parallel.',why:'Alternate angles are equal (72°). Corresponding angles are equal (72°). Both rules give the same answer here.'},
+  {diagram:'Parallel lines cut by transversal. Co-interior angle a = 130°.',q:'Find co-interior angle b:',opts:['50°','130°','230°','180°'],correct:0,hint:'Co-interior angles add to 180°. b = 180 − 130.',why:'Co-interior angles sum to 180°: b = 180° − 130° = 50°.'},
+  {diagram:'Two parallel lines. Angle between transversal and top line = x. Angle between transversal and bottom line = 3x.',q:'If these are co-interior angles, find x:',opts:['45°','60°','30°','90°'],correct:0,hint:'Co-interior: x + 3x = 180°. Solve for x.',why:'x + 3x = 180° → 4x = 180° → x = 45°. Then 3x = 135°. Check: 45 + 135 = 180° ✓'}
+]).slice(0,STG[3].qs)}
+
+const generators=[gen0,gen1,gen2,gen3];let questions=[];
+function renderProg(){document.getElementById('prog').innerHTML=STG.map((s,i)=>`<div class="pg ${i<stage?'done':i===stage?'active':''}"><div class="pg-bar ${i<stage?'done':i===stage?'active':''}"></div><span class="pg-label">${s.name}</span></div>`).join('')}
+function showIntro(){sc=0;questions=generators[stage]();qIdx=0;document.getElementById('game').innerHTML=`<div class="intro"><div class="s-num">Stage ${stage+1} of ${STG.length}</div><div class="s-name">${STG[stage].name}</div><div class="s-desc">${STG[stage].desc}</div><div class="s-ican">"${STG[stage].ican}"</div><button class="btn btn-go" onclick="showQ()">Begin →</button></div>`;renderProg()}
+function showQ(){if(qIdx>=questions.length){showSD();return}const q=questions[qIdx];let h=`<div class="q"><div class="q-card"><div class="q-num">Q${qIdx+1} of ${questions.length}</div>`;if(q.angle)h+=`<div class="angle-box"><div class="angle-val">${q.angle}°</div></div>`;if(q.diagram)h+=`<div class="angle-box"><div class="angle-diagram">${q.diagram}</div></div>`;h+=`<div class="q-text">${q.q}</div><div class="opts ${q.opts.some(o=>o.length>30)?'opts-1':''}">${q.opts.map((o,i)=>`<button class="opt" onclick="check(${i})" id="o${i}">${o}</button>`).join('')}</div></div><div id="fb"></div><div class="next" id="nx"></div></div>`;document.getElementById('game').innerHTML=h}
+function check(i){const q=questions[qIdx];total++;document.querySelectorAll('.opt').forEach(o=>o.classList.add('locked'));if(i===q.correct){document.getElementById('o'+i).classList.add('correct');correct++;sc++;pts+=10;document.getElementById('pts').textContent=pts+' pts';document.getElementById('fb').innerHTML=`<div class="fb fb-ok"><strong>✅ Correct!</strong>${q.why}</div>`}else{document.getElementById('o'+i).classList.add('wrong');document.getElementById('o'+q.correct).classList.add('correct');document.getElementById('fb').innerHTML=`<div class="fb fb-no"><strong>💡 Hint:</strong>${q.hint}</div>`}document.getElementById('nx').innerHTML=`<button class="btn" onclick="qIdx++;showQ()">Next →</button>`}
+function showSD(){const p=Math.round(sc/questions.length*100);const s=p>=80?'⭐⭐⭐':p>=60?'⭐⭐':'⭐';if(stage<STG.length-1){document.getElementById('game').innerHTML=`<div class="sd"><div class="sd-stars">${s}</div><div class="s-name">${STG[stage].name} Complete!</div><p style="color:#94a3b8;margin:8px 0">${sc}/${questions.length}</p><button class="btn btn-go" onclick="stage++;showIntro()">Next →</button></div>`}else showResults()}
+function showResults(){const p=Math.round(correct/total*100);let l='🏆 Angle Expert!',d='You can classify, calculate, and apply angle rules in shapes and parallel lines.';if(p<50){l='📐 Keep hunting!';d='Review the key rules: straight line = 180°, triangle = 180°, vertically opposite are equal.'}else if(p<75){l='📐 Sharp eye!';d='Good basics. Practice the parallel line rules (alternate, corresponding, co-interior).'}document.getElementById('game').innerHTML=`<div class="results"><div class="r-score">${correct}/${total}</div><div class="r-label">${l}</div><div class="r-detail">${d}<br>Score: ${pts} pts</div><div class="r-transfer">🌍 <strong>Angles in life:</strong> Architecture (roof angles for rain), snooker (angle of reflection), satellite dishes (precise angles), ramps for accessibility (slope angles), and navigation (bearings). Every building you see was designed using angle rules.</div><div class="r-actions"><button class="btn" onclick="location.reload()">🔄 Again</button><a class="btn" href="/games/" target="_top" style="text-decoration:none">← Games</a></div></div>`;renderProg()}
+showIntro();
+</script></body></html>

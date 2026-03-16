@@ -1,0 +1,21 @@
+---
+layout: "game"
+title: "Graph Detective"
+date: 2026-03-16
+description: "Read values, describe trends, interpret meaning, and spot misleading graphs. A 4-stage critical thinking game about data literacy."
+subjects:
+  - "Mathematics"
+Mathematics_topic: Statistics
+year_levels:
+  - "MYP Year 1"
+  - "MYP Year 2"
+  - "MYP Year 3"
+  - "Grade 6"
+  - "Grade 7"
+  - "Grade 8"
+resource_types:
+  - "Interactive Game"
+tags:
+  - Graphs\n  - Statistics\n  - Data\n  - Interpretation
+game_url: "/games/graph-detective.html?embed=1"
+---

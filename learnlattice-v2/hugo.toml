@@ -108,7 +108,7 @@ summaryLength = 30
     [[params.nav_dropdowns.items]]
       title = "All Games"
       url = "/games/"
-      description = "Browse all 11 interactive games."
+      description = "Browse all 16 interactive games."
     [[params.nav_dropdowns.items]]
       title = "Equation Quest"
       icon = "⚡"
