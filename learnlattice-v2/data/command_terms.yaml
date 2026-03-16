@@ -1,0 +1,276 @@
+# MYP Command Terms — used across Mathematics and Sciences assessments
+# Organised by cognitive level (1 = lower-order, 3 = higher-order)
+# Each term has: definition, math example, science example, difficulty tier
+
+- term: "State"
+  level: 1
+  tier: "Lower"
+  definition: "Give a specific name, value, or other brief answer without explanation."
+  math_example: "State the gradient of y = 3x + 5."
+  science_example: "State the name of the process by which plants make food."
+  
+- term: "Define"
+  level: 1
+  tier: "Lower"
+  definition: "Give the precise meaning of a word, phrase, or concept."
+  math_example: "Define the term 'prime number'."
+  science_example: "Define the term 'photosynthesis'."
+
+- term: "Identify"
+  level: 1
+  tier: "Lower"
+  definition: "Recognise and briefly state a relevant fact, feature, or pattern."
+  math_example: "Identify the type of correlation shown in the scatter graph."
+  science_example: "Identify the independent variable in this experiment."
+
+- term: "List"
+  level: 1
+  tier: "Lower"
+  definition: "Give a sequence of brief answers with no explanation."
+  math_example: "List the first five square numbers."
+  science_example: "List three adaptations of a polar bear."
+
+- term: "Label"
+  level: 1
+  tier: "Lower"
+  definition: "Add names or titles to a diagram, graph, or figure."
+  math_example: "Label the x-axis and y-axis on the coordinate grid."
+  science_example: "Label the parts of a plant cell on the diagram."
+
+- term: "Measure"
+  level: 1
+  tier: "Lower"
+  definition: "Find the value of a quantity using appropriate tools."
+  math_example: "Measure the angle at vertex B using a protractor."
+  science_example: "Measure the temperature of the water every 30 seconds."
+
+- term: "Outline"
+  level: 1
+  tier: "Lower"
+  definition: "Give a brief overview or summary of the main points."
+  math_example: "Outline the steps needed to solve a linear equation."
+  science_example: "Outline how energy is transferred in a food chain."
+
+- term: "Recall"
+  level: 1
+  tier: "Lower"
+  definition: "Remember and state a fact or piece of information from memory."
+  math_example: "Recall the formula for the area of a triangle."
+  science_example: "Recall the word equation for photosynthesis."
+
+- term: "Select"
+  level: 1
+  tier: "Lower"
+  definition: "Choose the correct or most appropriate option."
+  math_example: "Select the appropriate formula to find the volume of a cylinder."
+  science_example: "Select the correct unit for measuring force."
+
+- term: "Describe"
+  level: 2
+  tier: "Middle"
+  definition: "Give a detailed account of what something looks like, what happened, or how something works. Not why — just what."
+  math_example: "Describe the pattern in the sequence 2, 6, 18, 54."
+  science_example: "Describe what happens to the temperature as the ice melts."
+
+- term: "Distinguish"
+  level: 2
+  tier: "Middle"
+  definition: "Make clear the differences between two or more things."
+  math_example: "Distinguish between a linear and a quadratic sequence."
+  science_example: "Distinguish between a physical change and a chemical change."
+
+- term: "Estimate"
+  level: 2
+  tier: "Middle"
+  definition: "Find an approximate value using reasoning, not exact calculation."
+  math_example: "Estimate the mean height of students in your class using the grouped frequency table."
+  science_example: "Estimate the pH of lemon juice based on its taste and properties."
+
+- term: "Calculate"
+  level: 2
+  tier: "Middle"
+  definition: "Find the answer using mathematical methods. Show your working."
+  math_example: "Calculate the area of a circle with radius 7 cm."
+  science_example: "Calculate the speed of a car that travels 150 km in 2 hours."
+
+- term: "Apply"
+  level: 2
+  tier: "Middle"
+  definition: "Use knowledge or a method in a new or unfamiliar situation."
+  math_example: "Apply the formula for compound interest to find the value after 3 years."
+  science_example: "Apply your knowledge of density to explain why oil floats on water."
+
+- term: "Demonstrate"
+  level: 2
+  tier: "Middle"
+  definition: "Show clearly by giving evidence, examples, or practical proof."
+  math_example: "Demonstrate that the angles in a triangle add up to 180°."
+  science_example: "Demonstrate that light travels in straight lines using a simple experiment."
+
+- term: "Construct"
+  level: 2
+  tier: "Middle"
+  definition: "Build, draw, or create something following specific rules or methods."
+  math_example: "Construct an accurate pie chart for the given data."
+  science_example: "Construct a food web using the organisms listed."
+
+- term: "Solve"
+  level: 2
+  tier: "Middle"
+  definition: "Work out the answer to a mathematical problem."
+  math_example: "Solve the equation 3x + 7 = 22."
+  science_example: "Solve for the missing force in the balanced force diagram."
+
+- term: "Classify"
+  level: 2
+  tier: "Middle"
+  definition: "Arrange or sort into groups based on shared characteristics."
+  math_example: "Classify these shapes as regular or irregular polygons."
+  science_example: "Classify these substances as acids, bases, or neutral."
+
+- term: "Summarise"
+  level: 2
+  tier: "Middle"
+  definition: "Give a condensed version of the main points."
+  math_example: "Summarise the key findings from your statistical investigation."
+  science_example: "Summarise the results of your experiment in 2–3 sentences."
+
+- term: "Interpret"
+  level: 2
+  tier: "Middle"
+  definition: "Explain the meaning or significance of data, a graph, or a result."
+  math_example: "Interpret the correlation shown in the scatter graph."
+  science_example: "Interpret the results of the pH test to identify the unknown liquid."
+
+- term: "Explain"
+  level: 2
+  tier: "Middle"
+  definition: "Give a detailed account including reasons or causes — tell WHY something happens, not just what happens."
+  math_example: "Explain why the sum of two odd numbers is always even."
+  science_example: "Explain why the rate of photosynthesis increases as light intensity increases."
+
+- term: "Formulate"
+  level: 2
+  tier: "Middle"
+  definition: "Express an idea, rule, or hypothesis in a precise or systematic way."
+  math_example: "Formulate an algebraic expression for the nth term of the sequence."
+  science_example: "Formulate a hypothesis about how temperature affects enzyme activity."
+
+- term: "Verify"
+  level: 2
+  tier: "Middle"
+  definition: "Check that a result, pattern, or rule is correct by testing it."
+  math_example: "Verify your rule by substituting n = 10 and checking against the actual value."
+  science_example: "Verify your prediction by conducting the experiment a second time."
+
+- term: "Comment"
+  level: 2
+  tier: "Middle"
+  definition: "Give a brief opinion or observation based on evidence."
+  math_example: "Comment on the reliability of the mean as a measure of central tendency for this data."
+  science_example: "Comment on the accuracy of your results."
+
+- term: "Suggest"
+  level: 2
+  tier: "Middle"
+  definition: "Propose a possible answer, explanation, or improvement — there may be more than one correct response."
+  math_example: "Suggest a reason why the outlier might have occurred in the data set."
+  science_example: "Suggest two improvements to make this experiment more reliable."
+
+- term: "Compare"
+  level: 2
+  tier: "Middle"
+  definition: "Describe the similarities AND differences between two or more things."
+  math_example: "Compare the two methods of solving the simultaneous equations."
+  science_example: "Compare aerobic and anaerobic respiration."
+
+- term: "Compare and contrast"
+  level: 2
+  tier: "Middle"
+  definition: "Describe both the similarities and the differences in detail."
+  math_example: "Compare and contrast linear and exponential growth."
+  science_example: "Compare and contrast plant and animal cells."
+
+- term: "Analyse"
+  level: 3
+  tier: "Higher"
+  definition: "Break down information into parts, identify patterns or relationships, and explain how the parts connect."
+  math_example: "Analyse the data to determine whether there is a relationship between hours of study and test scores."
+  science_example: "Analyse the results to determine whether the hypothesis was supported."
+
+- term: "Discuss"
+  level: 3
+  tier: "Higher"
+  definition: "Consider different perspectives, arguments, or aspects of a topic, giving evidence for and against."
+  math_example: "Discuss whether the mean or median is a better average for this data set."
+  science_example: "Discuss the advantages and disadvantages of renewable energy sources."
+
+- term: "Evaluate"
+  level: 3
+  tier: "Higher"
+  definition: "Make a judgement about the value, quality, or effectiveness of something, using evidence to support your conclusion."
+  math_example: "Evaluate the effectiveness of your model for predicting future values."
+  science_example: "Evaluate the reliability and validity of the experimental method."
+
+- term: "Justify"
+  level: 3
+  tier: "Higher"
+  definition: "Give valid reasons or evidence to support an answer, decision, or conclusion."
+  math_example: "Justify why your general rule works for all cases, not just the ones you tested."
+  science_example: "Justify your choice of method for this investigation."
+
+- term: "Deduce"
+  level: 3
+  tier: "Higher"
+  definition: "Reach a conclusion by reasoning from given information — work out something that is not directly stated."
+  math_example: "Deduce the value of angle x using the properties of parallel lines."
+  science_example: "Deduce which gas was produced based on the test results."
+
+- term: "Derive"
+  level: 3
+  tier: "Higher"
+  definition: "Obtain a formula, rule, or result by logical steps from known information."
+  math_example: "Derive the formula for the sum of the first n terms of the arithmetic sequence."
+  science_example: "Derive the relationship between voltage, current, and resistance from the experimental data."
+
+- term: "Design"
+  level: 3
+  tier: "Higher"
+  definition: "Plan and create a method, investigation, or solution, making thoughtful choices about how it will work."
+  math_example: "Design a survey to test whether students prefer different types of music."
+  science_example: "Design an experiment to test how light intensity affects the rate of photosynthesis."
+
+- term: "Prove"
+  level: 3
+  tier: "Higher"
+  definition: "Show that something is true using a logical, step-by-step argument."
+  math_example: "Prove that the sum of three consecutive numbers is always divisible by 3."
+  science_example: "Prove that the gas collected is carbon dioxide using a chemical test."
+
+- term: "Predict"
+  level: 3
+  tier: "Higher"
+  definition: "Give an expected result based on evidence, patterns, or scientific knowledge."
+  math_example: "Predict the 20th term of the sequence using your general rule."
+  science_example: "Predict what will happen to the rate of reaction if the temperature is doubled."
+
+- term: "Synthesize"
+  level: 3
+  tier: "Higher"
+  definition: "Combine different ideas, evidence, or information to create a new understanding or conclusion."
+  math_example: "Synthesize your findings from both investigations to draw an overall conclusion about population growth."
+  science_example: "Synthesize evidence from multiple sources to evaluate the impact of deforestation."
+
+- term: "Create"
+  level: 3
+  tier: "Higher"
+  definition: "Produce something new — a model, solution, investigation, or presentation."
+  math_example: "Create a mathematical model to represent the relationship between time and distance."
+  science_example: "Create a poster explaining how vaccines protect against disease."
+
+- term: "Critique"
+  level: 3
+  tier: "Higher"
+  definition: "Examine and judge the strengths and weaknesses of something."
+  math_example: "Critique the graph produced by another group — is it accurate and clearly labelled?"
+  science_example: "Critique the experimental design and suggest improvements to reduce error."

@@ -111,3 +111,8 @@ html.dark .hp-stuck-pill{background:#1e293b;border-color:#334155}
   .hp-promise-inner{padding:0 16px}
   .hp-promise-grid{grid-template-columns:1fr}
 }
+
+/* ═══ FEATURED TOOL CARDS (student toolkit) ═══ */
+.sp-tool-card--featured{border-color:rgba(13,148,136,.3) !important;background:linear-gradient(135deg,rgba(13,148,136,.04),var(--surface-card)) !important;position:relative}
+.sp-tool-card--featured::before{content:'NEW';position:absolute;top:8px;right:10px;font-size:.55rem;font-weight:800;letter-spacing:1px;padding:2px 8px;border-radius:100px;background:var(--teal);color:#fff}
+html.dark .sp-tool-card--featured{background:linear-gradient(135deg,rgba(13,148,136,.08),#1e293b) !important;border-color:rgba(13,148,136,.2) !important}
