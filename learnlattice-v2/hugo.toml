@@ -158,10 +158,10 @@ summaryLength = 30
       url = "/vocabulary/"
       description = "102 key terms with pictures."
     [[params.nav_dropdowns.items]]
-      title = "Assessment Toolkit"
-      icon = "📋"
-      url = "/assessment/"
-      description = "Criteria, exemplars, rubrics."
+      title = "Quick Check Quizzes"
+      icon = "⚡"
+      url = "/students/quick-check/"
+      description = "5 questions, 2 minutes. Test yourself."
 
   [params.home]
     hero_eyebrow = "Free MYP Mathematics & Science Resources"
