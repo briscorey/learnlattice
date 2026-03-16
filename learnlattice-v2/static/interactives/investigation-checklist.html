@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investigation Checklist</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8faf9;color:#134E4A;line-height:1.5}
+.app{max-width:620px;margin:0 auto;padding:20px}
+h1{font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.sub{font-size:.82rem;color:#5f8a82;margin-bottom:20px}
+.selector{background:#fff;border:1.5px solid #d5e5e0;border-radius:16px;padding:24px;margin-bottom:20px}
+.sel-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#5f8a82;margin-bottom:10px}
+.sel-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.sel-row:last-child{margin-bottom:0}
+.sel-btn{padding:12px 18px;border-radius:10px;border:1.5px solid #d5e5e0;background:#fff;color:#134E4A;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;flex:1;min-width:100px;text-align:center}
+.sel-btn:hover{border-color:#0D9488}
+.sel-btn.active{color:#fff}
+.sel-btn.cr-a.active{background:#0D9488;border-color:#0D9488}
+.sel-btn.cr-b.active{background:#2563eb;border-color:#2563eb}
+.sel-btn.cr-c.active{background:#d97706;border-color:#d97706}
+.sel-btn.cr-d.active{background:#7c3aed;border-color:#7c3aed}
+.sel-btn.lv.active{background:#0D9488;border-color:#0D9488}
+.checklist{display:none;background:#fff;border:1.5px solid #d5e5e0;border-radius:16px;overflow:hidden}
+.checklist.active{display:block}
+.cl-header{padding:20px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #d5e5e0}
+.cl-badge{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.2rem;flex-shrink:0}
+.cl-header h2{font-size:1.05rem;color:#134E4A;margin-bottom:2px}
+.cl-header p{font-size:.75rem;color:#5f8a82}
+.cl-actions{margin-left:auto;display:flex;gap:6px}
+.cl-print{padding:7px 14px;border-radius:8px;border:1px solid #d5e5e0;background:#f8faf9;color:#5f8a82;font-size:.72rem;font-weight:600;cursor:pointer;font-family:inherit}
+.cl-print:hover{border-color:#0D9488;color:#0D9488}
+.cl-body{padding:20px 24px}
+.cl-section{margin-bottom:20px}
+.cl-section:last-child{margin-bottom:0}
+.cl-section-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#0D9488;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #e6faf6}
+.cl-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #f0f5f3}
+.cl-item:last-child{border:none}
+.cl-item input[type="checkbox"]{width:22px;height:22px;margin-top:1px;accent-color:#0D9488;flex-shrink:0;cursor:pointer}
+.cl-item label{font-size:.88rem;color:#134E4A;cursor:pointer;line-height:1.5;flex:1}
+.cl-item label strong{color:#0D9488}
+.cl-item.checked label{color:#5f8a82;text-decoration:line-through}
+.cl-progress{padding:16px 24px;background:#f0fdf4;border-top:1px solid #d5e5e0;display:flex;align-items:center;gap:12px}
+.cl-prog-bar{flex:1;height:8px;background:#d5e5e0;border-radius:4px;overflow:hidden}
+.cl-prog-fill{height:100%;background:#0D9488;border-radius:4px;transition:width .3s}
+.cl-prog-text{font-size:.82rem;font-weight:700;color:#0D9488;min-width:50px;text-align:right}
+.cl-done{display:none;text-align:center;padding:20px;background:#f0fdf4;border-top:1px solid #d5e5e0}
+.cl-done.show{display:block}
+.cl-done p{font-size:.95rem;color:#0D9488;font-weight:700}
+.cl-done small{font-size:.78rem;color:#5f8a82}
+@media print{
+  .selector,.sub,.cl-actions,.cl-print{display:none !important}
+  .checklist{display:block !important;border:1px solid #ccc}
+  .cl-item input{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}h1{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <h1>✅ Investigation Checklist</h1>
+  <p class="sub">Select your criterion and target level. Get a personalised "Am I done?" checklist.</p>
+
+  <div class="selector">
+    <div class="sel-label">Which criterion?</div>
+    <div class="sel-row" id="crRow">
+      <button class="sel-btn cr-a" onclick="setCr('a')">A — Knowing</button>
+      <button class="sel-btn cr-b" onclick="setCr('b')">B — Investigating</button>
+      <button class="sel-btn cr-c" onclick="setCr('c')">C — Communicating</button>
+      <button class="sel-btn cr-d" onclick="setCr('d')">D — Applying</button>
+    </div>
+    <div class="sel-label">What level are you aiming for?</div>
+    <div class="sel-row" id="lvRow">
+      <button class="sel-btn lv" onclick="setLv('34')">3–4</button>
+      <button class="sel-btn lv" onclick="setLv('56')">5–6</button>
+      <button class="sel-btn lv" onclick="setLv('78')">7–8</button>
+    </div>
+  </div>
+
+  <div class="checklist" id="checklist"></div>
+</div>
+
+<script>
+const DATA = {
+  a: {
+    name:"Knowing & Understanding",badge:"A",color:"#0D9488",
+    "34":{
+      basics:[
+        "I can <strong>state</strong> at least 2 key terms or facts about this topic",
+        "I wrote a <strong>definition</strong> for each term (in my own words, not copied)",
+        "I gave at least <strong>one example</strong> for each concept"
+      ],
+      quality:[
+        "My definitions are <strong>correct</strong> (checked against my notes or textbook)",
+        "I used the <strong>correct units</strong> where needed (cm, kg, etc.)"
+      ],
+      presentation:[
+        "My handwriting / typing is <strong>readable</strong>",
+        "I put my name and date on the page"
+      ]
+    },
+    "56":{
+      basics:[
+        "I can <strong>explain</strong> each concept in my own words (not just list it)",
+        "I gave <strong>multiple examples</strong> with real numbers or situations",
+        "I showed I can <strong>apply</strong> formulas or rules to familiar problems"
+      ],
+      quality:[
+        "My explanations show <strong>understanding</strong>, not just memorisation",
+        "I <strong>connected</strong> at least two ideas (e.g., 'This is similar to...')",
+        "I used <strong>correct mathematical / scientific vocabulary</strong> throughout"
+      ],
+      presentation:[
+        "My work is <strong>organised</strong> with clear sections",
+        "All calculations show <strong>working out</strong>, not just final answers"
+      ]
+    },
+    "78":{
+      basics:[
+        "I can explain concepts in <strong>unfamiliar contexts</strong> (not just textbook examples)",
+        "I made <strong>connections between different topics</strong> we have studied",
+        "I <strong>justified</strong> my reasoning — explained WHY, not just WHAT"
+      ],
+      quality:[
+        "I used examples that go <strong>beyond what we did in class</strong>",
+        "I identified <strong>limitations or exceptions</strong> to the rules",
+        "My vocabulary is <strong>precise and consistent</strong> throughout"
+      ],
+      presentation:[
+        "My response reads as a <strong>coherent explanation</strong>, not a list of facts",
+        "Someone who hasn't studied this topic could <strong>learn from my response</strong>"
+      ]
+    }
+  },
+  b: {
+    name:"Investigating Patterns",badge:"B",color:"#2563eb",
+    "34":{
+      basics:[
+        "I <strong>stated</strong> what I am investigating",
+        "I <strong>collected some data</strong> (at least 3 cases or examples)",
+        "I <strong>described</strong> what I see in the data"
+      ],
+      quality:[
+        "My data is <strong>recorded clearly</strong> (table or organised list)",
+        "I made a <strong>prediction</strong> about what would happen"
+      ],
+      presentation:[
+        "My table has <strong>column headings</strong>",
+        "I wrote at least one sentence describing the pattern"
+      ]
+    },
+    "56":{
+      basics:[
+        "I tested at least <strong>5 cases</strong> and recorded results systematically",
+        "I <strong>described the pattern</strong> using specific numbers (e.g., 'increases by 4 each time')",
+        "I wrote a <strong>general rule</strong> in words or as a formula",
+        "I <strong>verified</strong> my rule works by testing it on at least one case"
+      ],
+      quality:[
+        "My rule uses <strong>correct algebra</strong> (e.g., T(n) = 3n + 1)",
+        "I explained <strong>how I found</strong> the pattern (my process)",
+        "My prediction and verification <strong>match</strong>"
+      ],
+      presentation:[
+        "Data is in a <strong>neat, labelled table</strong>",
+        "I showed my <strong>working</strong> for finding the rule"
+      ]
+    },
+    "78":{
+      basics:[
+        "I tested <strong>enough cases</strong> to be confident in the pattern (5+)",
+        "I wrote a <strong>general rule</strong> and proved it works for multiple cases",
+        "I verified with a <strong>large or non-obvious case</strong> (not just the next one)",
+        "I <strong>justified WHY</strong> the pattern works, not just described it"
+      ],
+      quality:[
+        "I discussed whether my rule works for <strong>all cases or has limitations</strong>",
+        "I used <strong>correct mathematical notation</strong> consistently",
+        "I <strong>extended</strong> the investigation beyond what was asked (e.g., 'What if...')"
+      ],
+      presentation:[
+        "My response is <strong>logically structured</strong>: question → data → pattern → rule → proof",
+        "A reader could <strong>follow my reasoning</strong> step by step without confusion"
+      ]
+    }
+  },
+  c: {
+    name:"Communicating",badge:"C",color:"#d97706",
+    "34":{
+      basics:[
+        "I <strong>showed my working</strong> (not just the answer)",
+        "I included at least <strong>one diagram, table, or graph</strong>",
+        "I used some <strong>mathematical/scientific language</strong>"
+      ],
+      quality:[
+        "My diagram or graph is <strong>relevant</strong> to the problem",
+        "Someone could understand my answer <strong>without asking me questions</strong>"
+      ],
+      presentation:[
+        "My work is <strong>neat and readable</strong>",
+        "Diagrams are <strong>drawn with a ruler</strong> where appropriate"
+      ]
+    },
+    "56":{
+      basics:[
+        "My working is shown <strong>step by step</strong> with clear logic",
+        "My graph has a <strong>title, labelled axes, and units</strong>",
+        "I used <strong>correct notation</strong> and symbols throughout",
+        "I <strong>referred to</strong> my table/graph in my written explanation"
+      ],
+      quality:[
+        "I used <strong>consistent variables</strong> (same letter means same thing throughout)",
+        "My written explanation <strong>matches</strong> what my data/graph shows",
+        "I chose an <strong>appropriate type of graph</strong> for the data"
+      ],
+      presentation:[
+        "My response has a clear <strong>introduction → method → results → conclusion</strong> structure",
+        "Tables and graphs are <strong>numbered</strong> and referenced in text"
+      ]
+    },
+    "78":{
+      basics:[
+        "Every step of working is <strong>shown and explained</strong>",
+        "I used <strong>multiple representations</strong> (table + graph + algebra + words)",
+        "My notation is <strong>precise and consistent</strong> throughout",
+        "I <strong>interpreted</strong> my graph (not just described it)"
+      ],
+      quality:[
+        "I explained <strong>why I chose</strong> my graph type / method of presentation",
+        "I used <strong>appropriate levels of accuracy</strong> (decimal places, significant figures)",
+        "My communication could be understood by someone <strong>not in my class</strong>"
+      ],
+      presentation:[
+        "The overall response is <strong>polished and professional</strong>",
+        "Logical flow: each paragraph <strong>builds on</strong> the previous one"
+      ]
+    }
+  },
+  d: {
+    name:"Applying in Real-Life Contexts",badge:"D",color:"#7c3aed",
+    "34":{
+      basics:[
+        "I <strong>identified</strong> a real-world problem or context",
+        "I <strong>used some mathematics/science</strong> to work on the problem",
+        "I found <strong>an answer</strong> using calculation"
+      ],
+      quality:[
+        "My numbers come from <strong>real data</strong> (measured, researched, or given)",
+        "My calculation is <strong>correct</strong>"
+      ],
+      presentation:[
+        "I stated what the <strong>real-world problem</strong> is",
+        "I showed my <strong>working</strong>"
+      ]
+    },
+    "56":{
+      basics:[
+        "I clearly <strong>described the real-world problem</strong> and why it matters",
+        "I <strong>selected appropriate</strong> mathematics/science for the problem",
+        "I <strong>showed all working</strong> with real numbers from the context",
+        "I <strong>checked</strong> whether my answer is reasonable"
+      ],
+      quality:[
+        "I explained <strong>why I chose</strong> this method (not just used it)",
+        "My answer is <strong>interpreted in context</strong> (e.g., 'We need 3 litres', not just '2.4')",
+        "I used <strong>correct units</strong> throughout"
+      ],
+      presentation:[
+        "My response connects the <strong>maths/science back to the real situation</strong>",
+        "The solution is <strong>practical</strong> (someone could actually use it)"
+      ]
+    },
+    "78":{
+      basics:[
+        "I <strong>analysed the real-world problem</strong> in depth before calculating",
+        "I considered <strong>multiple approaches or options</strong>",
+        "I <strong>justified my choice</strong> of method with reasoning",
+        "I <strong>evaluated</strong> my answer — is it reasonable? What are the limitations?"
+      ],
+      quality:[
+        "I discussed <strong>assumptions</strong> I made and whether they're valid",
+        "I compared <strong>at least two options</strong> using calculations",
+        "I made a <strong>clear recommendation</strong> supported by evidence",
+        "I identified what would <strong>change if conditions were different</strong>"
+      ],
+      presentation:[
+        "My response tells a <strong>complete story</strong>: problem → method → solution → evaluation",
+        "A decision-maker could <strong>act on my recommendation</strong>"
+      ]
+    }
+  }
+};
+
+let selectedCr = null;
+let selectedLv = null;
+
+function setCr(cr) {
+  selectedCr = cr;
+  document.querySelectorAll('#crRow .sel-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  generate();
+}
+
+function setLv(lv) {
+  selectedLv = lv;
+  document.querySelectorAll('#lvRow .sel-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  generate();
+}
+
+function generate() {
+  if (!selectedCr || !selectedLv) return;
+  const cr = DATA[selectedCr];
+  const items = cr[selectedLv];
+  if (!items) return;
+
+  const lvLabel = selectedLv === '34' ? '3–4' : selectedLv === '56' ? '5–6' : '7–8';
+  const el = document.getElementById('checklist');
+  
+  let total = 0;
+  let html = `<div class="cl-header">
+    <div class="cl-badge" style="background:${cr.color}">${cr.badge}</div>
+    <div><h2>${cr.name}</h2><p>Target: Level ${lvLabel}</p></div>
+    <div class="cl-actions"><button class="cl-print" onclick="window.print()">🖨️ Print</button></div>
+  </div>
+  <div class="cl-body">`;
+
+  const sections = {basics:'Must-have items',quality:'Quality checks',presentation:'Presentation'};
+  for (const [key, label] of Object.entries(sections)) {
+    if (!items[key]) continue;
+    html += `<div class="cl-section"><div class="cl-section-title">${label}</div>`;
+    items[key].forEach((item, i) => {
+      const id = `${key}_${i}`;
+      html += `<div class="cl-item" id="item_${id}">
+        <input type="checkbox" id="cb_${id}" onchange="updateProgress()">
+        <label for="cb_${id}">${item}</label>
+      </div>`;
+      total++;
+    });
+    html += '</div>';
+  }
+
+  html += `</div>
+  <div class="cl-progress">
+    <div class="cl-prog-bar"><div class="cl-prog-fill" id="progFill" style="width:0%"></div></div>
+    <span class="cl-prog-text" id="progText">0/${total}</span>
+  </div>
+  <div class="cl-done" id="clDone"><p>🎉 All checks passed — ready to submit!</p><small>Print this checklist and attach it to your work.</small></div>`;
+
+  el.innerHTML = html;
+  el.classList.add('active');
+  el.dataset.total = total;
+}
+
+function updateProgress() {
+  const el = document.getElementById('checklist');
+  const total = parseInt(el.dataset.total);
+  const checked = el.querySelectorAll('input[type="checkbox"]:checked').length;
+  
+  el.querySelectorAll('.cl-item').forEach(item => {
+    const cb = item.querySelector('input');
+    item.classList.toggle('checked', cb.checked);
+  });
+
+  const pct = Math.round((checked / total) * 100);
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progText').textContent = checked + '/' + total;
+  document.getElementById('clDone').classList.toggle('show', checked === total);
+}
+</script>
+</body>
+</html>

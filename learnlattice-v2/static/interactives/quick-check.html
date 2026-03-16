@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quick Check Quizzes</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8faf9;color:#134E4A;line-height:1.5}
+.app{max-width:620px;margin:0 auto;padding:20px}
+h1{font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.sub{font-size:.82rem;color:#5f8a82;margin-bottom:20px}
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:20px}
+.topic-btn{padding:14px 12px;border-radius:12px;border:1.5px solid #d5e5e0;background:#fff;color:#134E4A;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;text-align:left;display:flex;align-items:center;gap:8px}
+.topic-btn:hover{border-color:#0D9488;background:#f0fdf4}
+.topic-btn .t-icon{font-size:1.2rem}
+.topic-btn .t-subject{font-size:.62rem;color:#5f8a82;display:block;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.quiz{display:none}
+.quiz.active{display:block}
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.quiz-topic{font-size:1.1rem;font-weight:700;color:#134E4A}
+.quiz-progress{font-size:.78rem;color:#5f8a82;font-weight:600}
+.progress-bar{height:6px;background:#d5e5e0;border-radius:3px;margin-bottom:20px;overflow:hidden}
+.progress-fill{height:100%;background:#0D9488;border-radius:3px;transition:width .3s}
+.question-card{background:#fff;border:1.5px solid #d5e5e0;border-radius:16px;padding:24px;margin-bottom:16px}
+.q-num{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0D9488;margin-bottom:8px}
+.q-text{font-size:1.05rem;font-weight:600;color:#134E4A;margin-bottom:16px;line-height:1.5}
+.options{display:flex;flex-direction:column;gap:8px}
+.option{padding:14px 18px;border-radius:10px;border:1.5px solid #d5e5e0;background:#fff;color:#134E4A;font-size:.88rem;cursor:pointer;font-family:inherit;transition:all .15s;text-align:left;line-height:1.4}
+.option:hover:not(.locked){border-color:#0D9488;background:#f0fdf4}
+.option.selected{border-color:#0D9488;background:rgba(13,148,136,.08)}
+.option.correct{border-color:#22c55e;background:rgba(34,197,94,.08);color:#15803d}
+.option.incorrect{border-color:#ef4444;background:rgba(239,68,68,.06);color:#dc2626}
+.option.locked{cursor:default}
+.feedback{margin-top:12px;padding:14px 18px;border-radius:10px;font-size:.85rem;line-height:1.5;display:none}
+.feedback.show{display:block}
+.feedback-correct{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#15803d}
+.feedback-incorrect{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);color:#991b1b}
+.feedback strong{display:block;margin-bottom:4px}
+.next-btn{display:none;margin-top:12px;padding:10px 24px;border-radius:10px;border:none;background:#0D9488;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s}
+.next-btn:hover{background:#0a7c72}
+.next-btn.show{display:inline-block}
+/* Results */
+.results{display:none;text-align:center;padding:32px 20px}
+.results.active{display:block}
+.results-score{font-size:3rem;font-weight:800;margin-bottom:4px}
+.results-score.great{color:#22c55e}
+.results-score.ok{color:#d97706}
+.results-score.needs{color:#ef4444}
+.results-label{font-size:1.1rem;font-weight:700;color:#134E4A;margin-bottom:8px}
+.results-msg{font-size:.88rem;color:#5f8a82;margin-bottom:20px;line-height:1.5}
+.results-breakdown{text-align:left;margin:0 auto 20px;max-width:400px}
+.rb-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #d5e5e0;font-size:.85rem}
+.rb-item:last-child{border:none}
+.rb-icon{font-size:1.1rem}
+.rb-text{flex:1;color:#134E4A}
+.rb-text.wrong{color:#dc2626}
+.results-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.res-btn{padding:10px 22px;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;border:1.5px solid}
+.res-btn-retry{background:#fff;border-color:#0D9488;color:#0D9488}
+.res-btn-retry:hover{background:#f0fdf4}
+.res-btn-new{background:#0D9488;border-color:#0D9488;color:#fff}
+.res-btn-new:hover{background:#0a7c72}
+.res-btn-help{background:#fff;border-color:#d97706;color:#d97706}
+.res-btn-help:hover{background:#fffbeb}
+.back-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;border:1px solid #d5e5e0;background:#fff;color:#5f8a82;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;margin-bottom:16px}
+.back-btn:hover{border-color:#0D9488;color:#0D9488}
+@media(max-width:480px){.topics{grid-template-columns:1fr 1fr}.q-text{font-size:.95rem}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div id="topicSelect">
+    <h1>⚡ Quick Check</h1>
+    <p class="sub">5 questions, 2 minutes. Pick a topic and see what you know.</p>
+    <div class="topics" id="topicGrid"></div>
+  </div>
+
+  <div class="quiz" id="quizArea">
+    <button class="back-btn" onclick="backToTopics()">← All topics</button>
+    <div class="quiz-header">
+      <span class="quiz-topic" id="quizTopic"></span>
+      <span class="quiz-progress" id="quizProg">1 / 5</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progBar" style="width:0%"></div></div>
+    <div id="questionArea"></div>
+    <div class="feedback" id="feedback"></div>
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next →</button>
+  </div>
+
+  <div class="results" id="results"></div>
+</div>
+
+<script>
+const QUIZZES = {
+  algebra: {
+    icon:"🔤",subject:"Mathematics",name:"Algebra",
+    questions:[
+      {q:"What is the value of x if 3x = 12?",opts:["x = 3","x = 4","x = 9","x = 36"],correct:1,explain:"Divide both sides by 3: x = 12 ÷ 3 = 4."},
+      {q:"Simplify: 5a + 3a",opts:["8a","15a","8a²","53a"],correct:0,explain:"5a and 3a are like terms. 5 + 3 = 8, so 5a + 3a = 8a."},
+      {q:"What is the coefficient in the term 7y?",opts:["y","7","7y","1"],correct:1,explain:"The coefficient is the number in front of the variable. In 7y, it's 7."},
+      {q:"If n = 5, what is 2n + 3?",opts:["10","13","25","8"],correct:1,explain:"Substitute n = 5: 2(5) + 3 = 10 + 3 = 13."},
+      {q:"Which is an expression (not an equation)?",opts:["4x + 2 = 10","y = 3x","4x + 2","x = 5"],correct:2,explain:"An expression has no equals sign. 4x + 2 is an expression; the others are equations."}
+    ]
+  },
+  fractions: {
+    icon:"🍕",subject:"Mathematics",name:"Fractions",
+    questions:[
+      {q:"What is ½ + ¼?",opts:["¾","²⁄₄","½","²⁄₆"],correct:0,explain:"Convert ½ to ²⁄₄, then ²⁄₄ + ¼ = ¾."},
+      {q:"Simplify ⁶⁄₈",opts:["¾","³⁄₆","½","⁶⁄₈"],correct:0,explain:"Divide numerator and denominator by 2: 6÷2 = 3, 8÷2 = 4. So ⁶⁄₈ = ¾."},
+      {q:"What is ²⁄₃ of 18?",opts:["6","9","12","15"],correct:2,explain:"²⁄₃ × 18 = (2 × 18) ÷ 3 = 36 ÷ 3 = 12."},
+      {q:"Which fraction is largest?",opts:["¼","³⁄₈","½","²⁄₅"],correct:2,explain:"Convert to decimals: ¼=0.25, ³⁄₈=0.375, ½=0.5, ²⁄₅=0.4. ½ is largest."},
+      {q:"What is ³⁄₅ as a percentage?",opts:["30%","50%","60%","65%"],correct:2,explain:"³⁄₅ = 3 ÷ 5 = 0.6 = 60%."}
+    ]
+  },
+  percentages: {
+    icon:"%",subject:"Mathematics",name:"Percentages",
+    questions:[
+      {q:"What is 25% of 80?",opts:["15","20","25","40"],correct:1,explain:"25% = ¼. So ¼ × 80 = 20."},
+      {q:"A shirt costs ¥200 with 15% off. What do you pay?",opts:["¥170","¥185","¥175","¥30"],correct:0,explain:"15% of 200 = 30. 200 − 30 = ¥170."},
+      {q:"Convert 0.35 to a percentage.",opts:["0.35%","3.5%","35%","350%"],correct:2,explain:"Multiply by 100: 0.35 × 100 = 35%."},
+      {q:"A class has 30 students. 40% are girls. How many girls?",opts:["10","12","15","18"],correct:1,explain:"40% of 30 = 0.4 × 30 = 12."},
+      {q:"A price goes from ¥50 to ¥60. What is the percentage increase?",opts:["10%","15%","20%","25%"],correct:2,explain:"Increase = 10. Percentage = (10 ÷ 50) × 100 = 20%."}
+    ]
+  },
+  forces: {
+    icon:"💪",subject:"Science",name:"Forces",
+    questions:[
+      {q:"What unit is force measured in?",opts:["Kilograms","Metres","Newtons","Joules"],correct:2,explain:"Force is measured in Newtons (N), named after Isaac Newton."},
+      {q:"What happens to an object when balanced forces act on it?",opts:["It speeds up","It stays the same","It stops","It changes direction"],correct:1,explain:"Balanced forces = no change in motion. The object stays still or keeps moving at the same speed."},
+      {q:"Which force slows a moving car down?",opts:["Gravity","Friction","Magnetism","Thrust"],correct:1,explain:"Friction between the tyres and road, and air resistance, slow the car down."},
+      {q:"Mass is measured in...",opts:["Newtons","Litres","Kilograms","Metres"],correct:2,explain:"Mass is the amount of matter in an object, measured in kilograms (kg)."},
+      {q:"On the Moon, your mass would be...",opts:["Less","More","The same","Zero"],correct:2,explain:"Mass doesn't change with location. Weight changes (less gravity on the Moon), but mass stays the same."}
+    ]
+  },
+  cells: {
+    icon:"🔬",subject:"Science",name:"Cells",
+    questions:[
+      {q:"Which part of the cell controls what it does?",opts:["Cell membrane","Cytoplasm","Nucleus","Mitochondria"],correct:2,explain:"The nucleus contains DNA and controls the cell's activities."},
+      {q:"Which structure is found in plant cells but NOT animal cells?",opts:["Nucleus","Cell wall","Mitochondria","Cell membrane"],correct:1,explain:"Plant cells have a rigid cell wall made of cellulose. Animal cells don't."},
+      {q:"What do mitochondria do?",opts:["Store water","Release energy from food","Make protein","Contain DNA"],correct:1,explain:"Mitochondria are the 'powerhouse' of the cell — they release energy through respiration."},
+      {q:"Chloroplasts are needed for...",opts:["Respiration","Photosynthesis","Movement","Digestion"],correct:1,explain:"Chloroplasts contain chlorophyll and are where photosynthesis happens in plant cells."},
+      {q:"The cell membrane's job is to...",opts:["Give the cell its shape","Control what enters and leaves","Store genetic information","Release energy"],correct:1,explain:"The cell membrane is selectively permeable — it controls what goes in and out of the cell."}
+    ]
+  },
+  ecology: {
+    icon:"🌿",subject:"Science",name:"Ecology",
+    questions:[
+      {q:"In a food chain, what does the arrow mean?",opts:["Is eaten by","Eats","Lives near","Competes with"],correct:0,explain:"The arrow shows the direction of energy flow: Grass → Rabbit means 'grass is eaten by rabbit.'"},
+      {q:"A producer is an organism that...",opts:["Eats other animals","Makes its own food","Breaks down dead matter","Lives underground"],correct:1,explain:"Producers (like plants) make their own food using sunlight through photosynthesis."},
+      {q:"What would happen if all the predators were removed from an ecosystem?",opts:["Nothing changes","Prey population increases then crashes","Plants grow faster","Temperature drops"],correct:1,explain:"Without predators, prey populations grow rapidly, overeat their food source, then crash."},
+      {q:"Decomposers are important because they...",opts:["Eat producers","Hunt prey","Recycle nutrients back into the soil","Produce oxygen"],correct:2,explain:"Decomposers (fungi, bacteria) break down dead organisms and return nutrients to the soil."},
+      {q:"Which is an abiotic (non-living) factor?",opts:["Trees","Temperature","Bacteria","Fish"],correct:1,explain:"Abiotic means non-living. Temperature, sunlight, water, and soil are abiotic factors."}
+    ]
+  },
+  density: {
+    icon:"⚖️",subject:"Science",name:"Density",
+    questions:[
+      {q:"The formula for density is...",opts:["Mass × Volume","Mass ÷ Volume","Volume ÷ Mass","Mass + Volume"],correct:1,explain:"Density = Mass ÷ Volume (D = M/V)."},
+      {q:"An object has mass 200g and volume 50cm³. What is its density?",opts:["2 g/cm³","4 g/cm³","150 g/cm³","10000 g/cm³"],correct:1,explain:"Density = 200 ÷ 50 = 4 g/cm³."},
+      {q:"If an object is less dense than water, it will...",opts:["Sink","Float","Dissolve","Stay in the middle"],correct:1,explain:"Objects less dense than water (< 1 g/cm³) float. More dense objects sink."},
+      {q:"Which has the highest density?",opts:["Air","Water","Steel","Oil"],correct:2,explain:"Steel (~7.8 g/cm³) is much denser than water (1 g/cm³), oil (~0.9), or air (~0.001)."},
+      {q:"If you squash a sponge, what happens to its density?",opts:["Increases","Decreases","Stays the same","Becomes zero"],correct:0,explain:"Same mass in a smaller volume = higher density. Density = M/V, so smaller V means bigger D."}
+    ]
+  },
+  probability: {
+    icon:"🎲",subject:"Mathematics",name:"Probability",
+    questions:[
+      {q:"A fair coin is flipped. What is P(heads)?",opts:["0","0.25","0.5","1"],correct:2,explain:"There are 2 equally likely outcomes. P(heads) = 1/2 = 0.5."},
+      {q:"Which probability means 'impossible'?",opts:["0","0.5","1","−1"],correct:0,explain:"Probability = 0 means the event cannot happen. P = 1 means it's certain."},
+      {q:"A bag has 3 red and 7 blue balls. What is P(red)?",opts:["3/7","3/10","7/10","1/3"],correct:1,explain:"Total balls = 10. P(red) = 3/10."},
+      {q:"You roll a die. What is P(even number)?",opts:["1/6","1/3","1/2","2/3"],correct:2,explain:"Even numbers: 2, 4, 6 — that's 3 out of 6 = 1/2."},
+      {q:"If P(rain) = 0.3, what is P(no rain)?",opts:["0.3","0.7","1.3","0"],correct:1,explain:"P(not happening) = 1 − P(happening) = 1 − 0.3 = 0.7."}
+    ]
+  },
+  energy: {
+    icon:"⚡",subject:"Science",name:"Energy",
+    questions:[
+      {q:"What type of energy does a moving car have?",opts:["Potential","Thermal","Kinetic","Chemical"],correct:2,explain:"A moving object has kinetic energy — energy of motion."},
+      {q:"A ball at the top of a hill has...",opts:["Kinetic energy","Gravitational potential energy","No energy","Sound energy"],correct:1,explain:"An object raised above the ground has gravitational potential energy (stored energy due to height)."},
+      {q:"Energy cannot be created or destroyed — this is called...",opts:["Energy efficiency","Energy transfer","Conservation of energy","Renewable energy"],correct:2,explain:"The law of conservation of energy: energy is only transferred or transformed, never created or destroyed."},
+      {q:"A battery stores what type of energy?",opts:["Kinetic","Thermal","Chemical","Light"],correct:2,explain:"Batteries store chemical energy, which is converted to electrical energy when used."},
+      {q:"What happens to 'wasted' energy?",opts:["It disappears","It becomes thermal energy","It goes back to the source","It turns into mass"],correct:1,explain:"Wasted energy usually spreads out as thermal energy (heat) to the surroundings."}
+    ]
+  },
+  coordinates: {
+    icon:"📍",subject:"Mathematics",name:"Coordinates",
+    questions:[
+      {q:"In the point (3, 5), which is the x-coordinate?",opts:["3","5","(3,5)","8"],correct:0,explain:"In (x, y), the first number is the x-coordinate. So x = 3."},
+      {q:"Which quadrant is the point (−2, 4) in?",opts:["Quadrant I","Quadrant II","Quadrant III","Quadrant IV"],correct:1,explain:"Negative x, positive y = Quadrant II (top-left)."},
+      {q:"What is the origin?",opts:["(1, 1)","(0, 0)","The x-axis","The first point"],correct:1,explain:"The origin is where the x-axis and y-axis cross: (0, 0)."},
+      {q:"The point (4, 0) lies on the...",opts:["y-axis","x-axis","Line y = x","Origin"],correct:1,explain:"If y = 0, the point is on the x-axis."},
+      {q:"What is the distance between (0, 0) and (3, 4)?",opts:["3","4","5","7"],correct:2,explain:"Use Pythagoras: √(3² + 4²) = √(9 + 16) = √25 = 5."}
+    ]
+  }
+};
+
+let currentQuiz = null;
+let currentQ = 0;
+let score = 0;
+let answers = [];
+
+function init() {
+  const grid = document.getElementById('topicGrid');
+  grid.innerHTML = '';
+  for (const [key, quiz] of Object.entries(QUIZZES)) {
+    grid.innerHTML += `<button class="topic-btn" onclick="startQuiz('${key}')">
+      <span class="t-icon">${quiz.icon}</span>
+      <span><span class="t-subject">${quiz.subject}</span>${quiz.name}</span>
+    </button>`;
+  }
+}
+
+function startQuiz(key) {
+  currentQuiz = QUIZZES[key];
+  currentQ = 0; score = 0; answers = [];
+  document.getElementById('topicSelect').style.display = 'none';
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('quizArea').classList.add('active');
+  document.getElementById('quizTopic').textContent = currentQuiz.icon + ' ' + currentQuiz.name;
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = currentQuiz.questions[currentQ];
+  document.getElementById('quizProg').textContent = (currentQ + 1) + ' / 5';
+  document.getElementById('progBar').style.width = ((currentQ) / 5 * 100) + '%';
+  document.getElementById('feedback').classList.remove('show');
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('nextBtn').classList.remove('show');
+
+  let html = `<div class="question-card">
+    <div class="q-num">Question ${currentQ + 1}</div>
+    <div class="q-text">${q.q}</div>
+    <div class="options">`;
+  q.opts.forEach((opt, i) => {
+    html += `<button class="option" onclick="selectAnswer(${i})" id="opt${i}">${opt}</button>`;
+  });
+  html += '</div></div>';
+  document.getElementById('questionArea').innerHTML = html;
+}
+
+function selectAnswer(i) {
+  const q = currentQuiz.questions[currentQ];
+  const opts = document.querySelectorAll('.option');
+  opts.forEach(o => o.classList.add('locked'));
+  
+  const isCorrect = i === q.correct;
+  answers.push({qIdx: currentQ, selected: i, correct: isCorrect});
+  
+  if (isCorrect) {
+    score++;
+    opts[i].classList.add('correct');
+    document.getElementById('feedback').className = 'feedback feedback-correct show';
+    document.getElementById('feedback').innerHTML = '<strong>✅ Correct!</strong>' + q.explain;
+  } else {
+    opts[i].classList.add('incorrect');
+    opts[q.correct].classList.add('correct');
+    document.getElementById('feedback').className = 'feedback feedback-incorrect show';
+    document.getElementById('feedback').innerHTML = '<strong>❌ Not quite.</strong>' + q.explain;
+  }
+  
+  document.getElementById('nextBtn').classList.add('show');
+  document.getElementById('nextBtn').textContent = currentQ < 4 ? 'Next →' : 'See results →';
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= 5) { showResults(); return; }
+  showQuestion();
+}
+
+function showResults() {
+  document.getElementById('quizArea').classList.remove('active');
+  const r = document.getElementById('results');
+  r.classList.add('active');
+  document.getElementById('progBar').style.width = '100%';
+
+  const pct = score * 20;
+  let cls = 'great', label = '🎉 Excellent!', msg = `You've nailed ${currentQuiz.name}. Try a harder topic or help a classmate!`;
+  if (score <= 2) { cls = 'needs'; label = '📚 Keep going!'; msg = `${currentQuiz.name} needs more practice. Try the visual explainer to build understanding, then come back.`; }
+  else if (score <= 3) { cls = 'ok'; label = '💪 Getting there!'; msg = `You've got the basics of ${currentQuiz.name}. Review the questions you missed and try again.`; }
+
+  let breakdown = '';
+  answers.forEach((a, i) => {
+    const q = currentQuiz.questions[a.qIdx];
+    breakdown += `<div class="rb-item">
+      <span class="rb-icon">${a.correct ? '✅' : '❌'}</span>
+      <span class="rb-text ${a.correct ? '' : 'wrong'}">${q.q.substring(0, 50)}${q.q.length > 50 ? '...' : ''}</span>
+    </div>`;
+  });
+
+  const topicSlug = Object.keys(QUIZZES).find(k => QUIZZES[k] === currentQuiz);
+  const helpMap = {algebra:'algebra',fractions:'fractions',percentages:'percentages',forces:'forces',cells:'cells',ecology:'food-webs',density:'density',probability:'probability',energy:'energy',coordinates:'coordinates'};
+
+  r.innerHTML = `
+    <div class="results-score ${cls}">${score}/5</div>
+    <div class="results-label">${label}</div>
+    <div class="results-msg">${msg}</div>
+    <div class="results-breakdown">${breakdown}</div>
+    <div class="results-actions">
+      <button class="res-btn res-btn-retry" onclick="startQuiz('${topicSlug}')">🔄 Try again</button>
+      <button class="res-btn res-btn-new" onclick="backToTopics()">📋 New topic</button>
+      ${score < 4 ? `<a class="res-btn res-btn-help" href="/students/help/#${helpMap[topicSlug] || topicSlug}" target="_top">🔍 Visual explainer</a>` : ''}
+    </div>`;
+}
+
+function backToTopics() {
+  document.getElementById('topicSelect').style.display = 'block';
+  document.getElementById('quizArea').classList.remove('active');
+  document.getElementById('results').classList.remove('active');
+}
+
+init();
+</script>
+</body>
+</html>
