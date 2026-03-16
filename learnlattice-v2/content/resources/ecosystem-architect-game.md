@@ -1,5 +1,6 @@
 ---
 title: "Ecosystem Architect"
+layout: "game"
 date: 2026-03-16
 description: "Build food chains, classify organisms, and predict what happens when species disappear. A 4-stage ecology game that makes systems thinking visible."
 subjects:
@@ -21,7 +22,7 @@ tags:
   - "Ecosystems"
   - "Producers"
   - "Consumers"
-game_src: "/games/ecosystem-architect.html?embed=1"
+game_url: "/games/ecosystem-architect.html?embed=1"
 ---
 A 4-stage ecology game building from classification to systems thinking:
 

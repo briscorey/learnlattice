@@ -1,5 +1,6 @@
 ---
 title: "Transform!"
+layout: "game"
 date: 2026-03-16
 description: "Identify, apply, and describe geometric transformations. Visual grid-based game covering translations, reflections, and rotations."
 subjects:
@@ -20,7 +21,7 @@ tags:
   - "Translations"
   - "Reflections"
   - "Rotations"
-game_src: "/games/transform.html?embed=1"
+game_url: "/games/transform.html?embed=1"
 ---
 A 4-stage geometry transformations game with interactive coordinate grids:
 

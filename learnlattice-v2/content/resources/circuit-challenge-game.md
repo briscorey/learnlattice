@@ -1,5 +1,6 @@
 ---
 title: "Circuit Challenge"
+layout: "game"
 date: 2026-03-16
 description: "From naming components to troubleshooting faults. Build your understanding of electrical circuits through 4 stages of increasing challenge."
 subjects:
@@ -20,7 +21,7 @@ tags:
   - "Physics"
   - "Current"
   - "Voltage"
-game_src: "/games/circuit-challenge.html?embed=1"
+game_url: "/games/circuit-challenge.html?embed=1"
 ---
 A 4-stage circuits game building from components to troubleshooting:
 

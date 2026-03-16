@@ -1,5 +1,6 @@
 ---
 title: "Probability Lab"
+layout: "game"
 date: 2026-03-16
 description: "From probability language to running experiments to critical reasoning about chance. Roll dice, flip coins, and discover why feelings don't change the maths."
 subjects:
@@ -19,7 +20,7 @@ tags:
   - "Statistics"
   - "Chance"
   - "Data"
-game_src: "/games/probability-lab.html?embed=1"
+game_url: "/games/probability-lab.html?embed=1"
 ---
 A 4-stage probability game from language to critical reasoning:
 

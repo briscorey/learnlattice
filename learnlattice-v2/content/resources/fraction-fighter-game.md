@@ -1,5 +1,6 @@
 ---
 title: "Fraction Fighter"
+layout: "game"
 date: 2026-03-16
 description: "See fractions, find equivalents, compare them, calculate with them, and use them in real life. A 5-stage visual journey through fractions."
 subjects:
@@ -16,7 +17,7 @@ tags:
   - "Fractions"
   - "Equivalent Fractions"
   - "Number"
-game_src: "/games/fraction-fighter.html?embed=1"
+game_url: "/games/fraction-fighter.html?embed=1"
 ---
 A 5-stage fraction mastery game with visual bar models:
 
