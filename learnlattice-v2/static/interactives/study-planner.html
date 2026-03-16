@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Study Planner — LearnLattice</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f1a;--card:#0f172a;--surface:#1e293b;--border:#334155;--ink:#e2e8f0;--muted:#94a3b8;--dim:#64748b;--teal:#0D9488;--green:#22c55e;--amber:#f59e0b;--red:#ef4444;--blue:#3b82f6;--violet:#8b5cf6}
+body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;padding:16px 16px 48px}
+
+.sp-header{max-width:800px;margin:0 auto 20px;text-align:center}
+.sp-header h1{font-size:1.4rem;background:linear-gradient(135deg,var(--teal),#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.sp-header p{font-size:.82rem;color:var(--muted);max-width:500px;margin:0 auto}
+
+#spEngBar{max-width:800px;margin:0 auto 16px}
+
+.sp-layout{max-width:800px;margin:0 auto;display:grid;gap:20px}
+
+/* Add assessment form */
+.sp-add{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:20px}
+.sp-add h2{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:14px}
+.sp-add-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sp-add-full{grid-column:1/-1}
+.sp-input-group{display:flex;flex-direction:column;gap:4px}
+.sp-input-group label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--dim)}
+.sp-input{padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--ink);font-size:.85rem;font-family:inherit;outline:none;transition:border-color .15s}
+.sp-input:focus{border-color:var(--teal)}
+.sp-input::placeholder{color:var(--dim)}
+select.sp-input{cursor:pointer}
+.sp-add-btn{grid-column:1/-1;padding:10px;border-radius:10px;background:var(--teal);border:none;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s}
+.sp-add-btn:hover{transform:translateY(-2px)}
+.sp-add-btn:disabled{opacity:.4;cursor:default;transform:none}
+
+/* Calendar view */
+.sp-cal{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:20px}
+.sp-cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sp-cal-title{font-size:.88rem;font-weight:700;color:var(--ink)}
+.sp-cal-nav{display:flex;gap:6px}
+.sp-cal-nav button{padding:5px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-size:.72rem;font-weight:600;font-family:inherit;transition:all .12s}
+.sp-cal-nav button:hover{border-color:var(--teal);color:var(--teal)}
+
+/* Calendar grid */
+.sp-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.sp-cal-day-name{text-align:center;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dim);padding:6px 0}
+.sp-cal-cell{min-height:56px;padding:4px 6px;border-radius:8px;background:var(--surface);border:1px solid transparent;font-size:.72rem;position:relative;cursor:default;transition:all .12s}
+.sp-cal-cell.today{border-color:var(--teal);background:rgba(13,148,136,.06)}
+.sp-cal-cell.other{opacity:.3}
+.sp-cal-date{font-weight:700;color:var(--muted);margin-bottom:2px}
+.sp-cal-events{display:flex;flex-direction:column;gap:1px}
+.sp-cal-event{padding:2px 5px;border-radius:4px;font-size:.58rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.sp-cal-event.assessment{background:rgba(239,68,68,.15);color:var(--red);border-left:2px solid var(--red)}
+.sp-cal-event.review{background:rgba(13,148,136,.1);color:var(--teal);border-left:2px solid var(--teal)}
+
+/* Today's tasks */
+.sp-today{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:20px}
+.sp-today-title{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sp-today-title::before{content:'📅';font-size:1.1rem}
+.sp-today-empty{font-size:.78rem;color:var(--dim);text-align:center;padding:16px}
+.sp-today-list{display:flex;flex-direction:column;gap:6px}
+.sp-today-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface);border-radius:10px;border-left:3px solid var(--teal)}
+.sp-today-item.urgent{border-left-color:var(--red)}
+.sp-today-item.done{opacity:.5;text-decoration:line-through}
+.sp-today-check{width:20px;height:20px;border-radius:6px;border:2px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:transparent;transition:all .15s;flex-shrink:0}
+.sp-today-check.checked{background:var(--teal);border-color:var(--teal);color:#fff}
+.sp-today-text{flex:1;min-width:0}
+.sp-today-text strong{display:block;font-size:.78rem;color:var(--ink)}
+.sp-today-text span{font-size:.65rem;color:var(--dim)}
+.sp-today-link{font-size:.65rem;color:var(--teal);text-decoration:none;font-weight:600;flex-shrink:0}
+
+/* Assessment list */
+.sp-assessments{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:20px}
+.sp-assessments h2{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:12px}
+.sp-assess-list{display:flex;flex-direction:column;gap:6px}
+.sp-assess-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface);border-radius:10px}
+.sp-assess-date{font-size:.72rem;font-weight:700;color:var(--amber);min-width:70px}
+.sp-assess-info{flex:1}
+.sp-assess-info strong{display:block;font-size:.78rem;color:var(--ink)}
+.sp-assess-info span{font-size:.65rem;color:var(--dim)}
+.sp-assess-days{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.sp-assess-days.soon{background:rgba(239,68,68,.12);color:var(--red)}
+.sp-assess-days.coming{background:rgba(245,158,11,.12);color:var(--amber)}
+.sp-assess-days.far{background:rgba(13,148,136,.12);color:var(--teal)}
+.sp-assess-del{padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:.65rem;font-family:inherit;transition:all .12s}
+.sp-assess-del:hover{border-color:var(--red);color:var(--red)}
+
+.sp-empty{text-align:center;padding:24px;color:var(--dim);font-size:.82rem}
+
+@media(max-width:480px){
+  .sp-add-form{grid-template-columns:1fr}
+  .sp-add-full{grid-column:1}
+  .sp-cal-cell{min-height:44px;padding:3px 4px}
+  .sp-cal-event{font-size:.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="sp-header">
+  <h1>Study Planner</h1>
+  <p>Add your upcoming assessments. The planner generates a spaced revision schedule — reviewing at 1, 3, 7, and 14 days before each assessment.</p>
+</div>
+<div id="spEngBar"></div>
+
+<div class="sp-layout">
+  <div class="sp-add" id="spAdd">
+    <h2>Add an assessment</h2>
+    <div class="sp-add-form">
+      <div class="sp-input-group">
+        <label>Subject</label>
+        <select class="sp-input" id="spSubject">
+          <option value="Mathematics">📐 Mathematics</option>
+          <option value="Biology">🧬 Biology</option>
+          <option value="Chemistry">⚗️ Chemistry</option>
+          <option value="Physics">⚡ Physics</option>
+          <option value="Ecology">🌿 Ecology</option>
+          <option value="Earth Science">🌍 Earth Science</option>
+        </select>
+      </div>
+      <div class="sp-input-group">
+        <label>Assessment date</label>
+        <input type="date" class="sp-input" id="spDate">
+      </div>
+      <div class="sp-input-group sp-add-full">
+        <label>Topic / Title</label>
+        <input type="text" class="sp-input" id="spTopic" placeholder="e.g. Algebra unit test, Criterion B investigation">
+      </div>
+      <div class="sp-input-group">
+        <label>Criterion focus</label>
+        <select class="sp-input" id="spCrit">
+          <option value="">Any / All</option>
+          <option value="A">Criterion A</option>
+          <option value="B">Criterion B</option>
+          <option value="C">Criterion C</option>
+          <option value="D">Criterion D</option>
+        </select>
+      </div>
+      <div class="sp-input-group">
+        <label>Priority</label>
+        <select class="sp-input" id="spPriority">
+          <option value="normal">Normal</option>
+          <option value="high">High — important assessment</option>
+        </select>
+      </div>
+      <button class="sp-add-btn" id="spAddBtn" onclick="addAssessment()">Add to Planner</button>
+    </div>
+  </div>
+
+  <div class="sp-today" id="spToday"></div>
+  <div class="sp-cal" id="spCal"></div>
+  <div class="sp-assessments" id="spAssessments"></div>
+</div>
+
+<script src="/js/student-engine.js"></script>
+<script>
+var SP_KEY = 'll_planner_';
+var assessments = [];
+var calMonth = new Date().getMonth();
+var calYear = new Date().getFullYear();
+var REVIEW_DAYS = [1, 3, 7, 14]; // days before assessment to review
+var SUBJECT_COLORS = {
+  Mathematics:'#0D9488', Biology:'#059669', Chemistry:'#E11D48',
+  Physics:'#2563EB', Ecology:'#16A34A', 'Earth Science':'#D97706'
+};
+
+function loadAssessments() {
+  try { assessments = JSON.parse(localStorage.getItem(SP_KEY + 'assessments')) || []; } catch(e) { assessments = []; }
+  // Remove past assessments older than 7 days
+  var cutoff = Date.now() - 7 * 86400000;
+  assessments = assessments.filter(function(a) { return new Date(a.date).getTime() > cutoff; });
+  saveAssessments();
+}
+function saveAssessments() {
+  try { localStorage.setItem(SP_KEY + 'assessments', JSON.stringify(assessments)); } catch(e) {}
+}
+
+window.addAssessment = function() {
+  var date = document.getElementById('spDate').value;
+  var topic = document.getElementById('spTopic').value.trim();
+  var subject = document.getElementById('spSubject').value;
+  var crit = document.getElementById('spCrit').value;
+  var priority = document.getElementById('spPriority').value;
+  if (!date || !topic) return;
+  
+  assessments.push({
+    id: Date.now().toString(36),
+    date: date,
+    topic: topic,
+    subject: subject,
+    criterion: crit,
+    priority: priority,
+    created: Date.now()
+  });
+  saveAssessments();
+  document.getElementById('spTopic').value = '';
+  document.getElementById('spDate').value = '';
+  
+  if (typeof LL !== 'undefined') {
+    LL.xp.add(10, 'planner');
+    var nb = LL.badges.check();
+    nb.forEach(function(b) { LL.render.toast(b); });
+  }
+  
+  renderAll();
+};
+
+window.deleteAssessment = function(id) {
+  assessments = assessments.filter(function(a) { return a.id !== id; });
+  saveAssessments();
+  renderAll();
+};
+
+// Get all events (assessments + review sessions) for a date range
+function getEvents(startDate, endDate) {
+  var events = [];
+  assessments.forEach(function(a) {
+    var aDate = new Date(a.date);
+    // Assessment day
+    if (aDate >= startDate && aDate <= endDate) {
+      events.push({ date: a.date, type: 'assessment', text: a.topic, subject: a.subject, id: a.id, priority: a.priority });
+    }
+    // Review sessions
+    REVIEW_DAYS.forEach(function(daysBefore) {
+      var reviewDate = new Date(aDate.getTime() - daysBefore * 86400000);
+      var reviewStr = reviewDate.toISOString().slice(0, 10);
+      if (reviewDate >= startDate && reviewDate <= endDate) {
+        events.push({
+          date: reviewStr,
+          type: 'review',
+          text: a.topic + ' (review ' + daysBefore + 'd)',
+          subject: a.subject,
+          daysBefore: daysBefore,
+          assessmentId: a.id
+        });
+      }
+    });
+  });
+  return events;
+}
+
+// ─── Today's tasks ───
+function renderToday() {
+  var today = new Date().toISOString().slice(0, 10);
+  var tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+  var todayEvents = getEvents(new Date(today), new Date(tomorrow)).filter(function(e) { return e.date === today; });
+  
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(SP_KEY + 'done_' + today)) || {}; } catch(e) {}
+  
+  var el = document.getElementById('spToday');
+  if (!todayEvents.length) {
+    el.innerHTML = '<div class="sp-today-title">Today\'s Study Plan</div><div class="sp-today-empty">No study sessions today. Add an assessment to get started!</div>';
+    return;
+  }
+  
+  var html = '<div class="sp-today-title">Today\'s Study Plan</div><div class="sp-today-list">';
+  todayEvents.forEach(function(ev, i) {
+    var isDone = done[i];
+    var urgent = ev.type === 'assessment' || (ev.daysBefore && ev.daysBefore <= 1);
+    var subjectUrl = '/subjects/' + ev.subject.toLowerCase().replace(/ /g, '-') + '/';
+    html += '<div class="sp-today-item' + (urgent ? ' urgent' : '') + (isDone ? ' done' : '') + '">' +
+      '<span class="sp-today-check' + (isDone ? ' checked' : '') + '" onclick="toggleDone(' + i + ')">' + (isDone ? '✓' : '') + '</span>' +
+      '<div class="sp-today-text"><strong>' + (ev.type === 'assessment' ? '🔴 ' : '📖 ') + ev.text + '</strong><span>' + ev.subject + '</span></div>' +
+      '<a href="' + subjectUrl + '" class="sp-today-link">Resources →</a>' +
+    '</div>';
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+window.toggleDone = function(i) {
+  var today = new Date().toISOString().slice(0, 10);
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(SP_KEY + 'done_' + today)) || {}; } catch(e) {}
+  done[i] = !done[i];
+  try { localStorage.setItem(SP_KEY + 'done_' + today, JSON.stringify(done)); } catch(e) {}
+  renderToday();
+};
+
+// ─── Calendar ───
+function renderCalendar() {
+  var el = document.getElementById('spCal');
+  var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  
+  var firstDay = new Date(calYear, calMonth, 1);
+  var lastDay = new Date(calYear, calMonth + 1, 0);
+  var startDow = (firstDay.getDay() + 6) % 7; // Monday = 0
+  var daysInMonth = lastDay.getDate();
+  var today = new Date().toISOString().slice(0, 10);
+  
+  // Get events for this month
+  var monthStart = new Date(calYear, calMonth, 1 - startDow);
+  var monthEnd = new Date(calYear, calMonth + 1, 7);
+  var events = getEvents(monthStart, monthEnd);
+  
+  var html = '<div class="sp-cal-header">' +
+    '<span class="sp-cal-title">' + monthNames[calMonth] + ' ' + calYear + '</span>' +
+    '<div class="sp-cal-nav">' +
+      '<button onclick="navMonth(-1)">← Prev</button>' +
+      '<button onclick="navMonth(0)">Today</button>' +
+      '<button onclick="navMonth(1)">Next →</button>' +
+    '</div></div>';
+  
+  html += '<div class="sp-cal-grid">';
+  dayNames.forEach(function(d) { html += '<div class="sp-cal-day-name">' + d + '</div>'; });
+  
+  // Fill calendar cells
+  var cellDate = new Date(calYear, calMonth, 1 - startDow);
+  for (var i = 0; i < 42; i++) {
+    var dateStr = cellDate.toISOString().slice(0, 10);
+    var isOther = cellDate.getMonth() !== calMonth;
+    var isToday = dateStr === today;
+    var dayEvents = events.filter(function(e) { return e.date === dateStr; });
+    
+    html += '<div class="sp-cal-cell' + (isToday ? ' today' : '') + (isOther ? ' other' : '') + '">' +
+      '<div class="sp-cal-date">' + cellDate.getDate() + '</div>' +
+      '<div class="sp-cal-events">';
+    dayEvents.slice(0, 3).forEach(function(ev) {
+      html += '<div class="sp-cal-event ' + ev.type + '" title="' + ev.text + '">' + ev.text + '</div>';
+    });
+    if (dayEvents.length > 3) html += '<div class="sp-cal-event review">+' + (dayEvents.length - 3) + ' more</div>';
+    html += '</div></div>';
+    
+    cellDate.setDate(cellDate.getDate() + 1);
+    if (i >= 34 && cellDate.getMonth() !== calMonth) break;
+  }
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+window.navMonth = function(delta) {
+  if (delta === 0) { calMonth = new Date().getMonth(); calYear = new Date().getFullYear(); }
+  else { calMonth += delta; if (calMonth > 11) { calMonth = 0; calYear++; } if (calMonth < 0) { calMonth = 11; calYear--; } }
+  renderCalendar();
+};
+
+// ─── Assessment list ───
+function renderAssessments() {
+  var el = document.getElementById('spAssessments');
+  if (!assessments.length) {
+    el.innerHTML = '<h2>Your assessments</h2><div class="sp-empty">No assessments added yet. Use the form above to add one.</div>';
+    return;
+  }
+  
+  var sorted = assessments.slice().sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
+  var today = Date.now();
+  
+  var html = '<h2>Your assessments</h2><div class="sp-assess-list">';
+  sorted.forEach(function(a) {
+    var daysUntil = Math.ceil((new Date(a.date).getTime() - today) / 86400000);
+    var daysClass = daysUntil <= 3 ? 'soon' : daysUntil <= 7 ? 'coming' : 'far';
+    var daysText = daysUntil <= 0 ? (daysUntil === 0 ? 'Today!' : Math.abs(daysUntil) + 'd ago') : daysUntil + ' days';
+    
+    html += '<div class="sp-assess-item">' +
+      '<span class="sp-assess-date">' + a.date.slice(5) + '</span>' +
+      '<div class="sp-assess-info"><strong>' + a.topic + '</strong><span>' + a.subject + (a.criterion ? ' · Crit ' + a.criterion : '') + '</span></div>' +
+      '<span class="sp-assess-days ' + daysClass + '">' + daysText + '</span>' +
+      '<button class="sp-assess-del" onclick="deleteAssessment(\'' + a.id + '\')">✕</button>' +
+    '</div>';
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function renderAll() {
+  renderToday();
+  renderCalendar();
+  renderAssessments();
+}
+
+// Set default date to 2 weeks from now
+document.getElementById('spDate').value = new Date(Date.now() + 14 * 86400000).toISOString().slice(0, 10);
+
+loadAssessments();
+renderAll();
+if (typeof LL !== 'undefined') {
+  LL.streak.update();
+  LL.render.bar('spEngBar');
+}
+</script>
+</body>
+</html>
