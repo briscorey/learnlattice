@@ -1,12 +1,28 @@
-<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#0f172a"/>
-  <rect x="0" y="0" width="1200" height="630" fill="url(#ogbg)" opacity="0.5"/>
-  <defs><linearGradient id="ogbg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#042f2e"/><stop offset="100%" stop-color="#0f172a"/></linearGradient></defs>
-  <circle cx="1050" cy="120" r="200" fill="#0D9488" opacity="0.04"/>
-  <circle cx="150" cy="500" r="150" fill="#14b8a6" opacity="0.03"/>
-  <text x="80" y="280" font-family="Georgia,serif" font-size="48" fill="#e2e8f0" font-weight="700">LearnLattice</text>
-  <text x="80" y="340" font-family="sans-serif" font-size="22" fill="#94a3b8">Free MYP Mathematics &amp; Science Investigations</text>
-  <line x1="80" y1="380" x2="400" y2="380" stroke="#0D9488" stroke-width="3" opacity="0.5"/>
-  <text x="80" y="430" font-family="sans-serif" font-size="18" fill="#64748b">170+ resources · 10 games · Assessment toolkit</text>
-  <text x="80" y="460" font-family="sans-serif" font-size="18" fill="#64748b">learnlattice.org</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#5eead4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity=".06">
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="#5eead4"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+  </g>
+  <rect x="0" y="0" width="6" height="630" fill="url(#accent)"/>
+  <text x="80" y="100" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#5eead4" letter-spacing="3">LEARNLATTICE.ORG</text>
+  <text x="80" y="200" font-family="Georgia,serif" font-size="58" font-weight="700" fill="#f1f5f9">Free MYP</text>
+  <text x="80" y="268" font-family="Georgia,serif" font-size="58" font-weight="700" fill="#5eead4">Investigations</text>
+  <text x="80" y="350" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8">Mathematics · Science · Grades 6–9</text>
+  <text x="80" y="410" font-family="system-ui,sans-serif" font-size="20" fill="#64748b">222 inquiry-based resources · 16 interactive games · Teacher moves · EAL scaffolds</text>
+  <rect x="0" y="580" width="1200" height="50" fill="#0a1628"/>
+  <text x="80" y="612" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Built by a teacher, for teachers and students · CC BY-SA 4.0</text>
+  <text x="1120" y="612" font-family="system-ui,sans-serif" font-size="14" fill="#0d9488" text-anchor="end">learnlattice.org</text>
 </svg>

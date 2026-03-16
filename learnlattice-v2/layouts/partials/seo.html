@@ -10,6 +10,15 @@
 {{- $ogImage := "/img/og/default.svg" -}}
 {{- if $isBlog -}}
   {{- $ogImage = printf "/img/blog/%s.svg" .File.ContentBaseName -}}
+{{- else if $isResource -}}
+  {{- with index (.Params.subjects | default slice) 0 -}}
+    {{- $subSlug := . | urlize -}}
+    {{- $ogImage = printf "/img/og/%s.svg" $subSlug -}}
+  {{- end -}}
+{{- else if and (eq .Section "subjects") .File -}}
+  {{- $ogImage = printf "/img/og/%s.svg" .File.ContentBaseName -}}
+{{- else if eq .Section "games" -}}
+  {{- $ogImage = "/img/og/games.svg" -}}
 {{- end -}}
 
 {{/* Canonical URL */}}

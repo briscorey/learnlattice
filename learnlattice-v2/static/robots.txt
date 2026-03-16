@@ -48,3 +48,6 @@ User-agent: ClaudeBot
 Disallow: /
 
 Sitemap: https://learnlattice.org/sitemap.xml
+
+# IndexNow key for instant Bing indexing
+# Key: learnlattice2026indexnow
