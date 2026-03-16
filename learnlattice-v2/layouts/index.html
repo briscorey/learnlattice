@@ -2,6 +2,8 @@
 {{ $home := .Site.Params.home }}
 {{ $resources := where .Site.RegularPages "Section" "resources" }}
 {{ $totalResources := len $resources }}
+{{ $games := where $resources "Params.resource_types" "intersect" (slice "Interactive Game") }}
+{{ $totalGames := len $games }}
 {{ $startLinks := slice
   (dict "title" "Mathematics" "url" "/subjects/mathematics/" "icon" "📐" "desc" "Algebra, geometry, statistics & more")
   (dict "title" "Science" "url" "/subjects/science/" "icon" "🔬" "desc" "Physics, chemistry, biology & ecology")
@@ -91,7 +93,7 @@
       <span class="hp-stat-label">Investigations & resources</span>
     </div>
     <div class="hp-stat">
-      <span class="hp-stat-num">16</span>
+      <span class="hp-stat-num">{{ $totalGames }}</span>
       <span class="hp-stat-label">Interactive games</span>
     </div>
     <div class="hp-stat">
