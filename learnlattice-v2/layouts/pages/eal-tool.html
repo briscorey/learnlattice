@@ -1,16 +1,21 @@
 {{ define "main" }}
 
+{{ $isStudent := hasPrefix .RelPermalink "/students/" }}
+{{ $backUrl := cond $isStudent "/students/" "/eal/" }}
+{{ $backLabel := cond $isStudent "← Back to Student Home" "← Back to EAL Hub" }}
+{{ $maxWidth := cond $isStudent "1000px" "700px" }}
+
 <section class="eal-hero" style="padding:24px 20px">
-  <div class="eal-hero-inner" style="max-width:700px">
-    <a href="/eal/" style="font-size:.78rem;color:var(--teal);text-decoration:none;font-weight:600">← Back to EAL Hub</a>
+  <div class="eal-hero-inner" style="max-width:{{ $maxWidth }}">
+    <a href="{{ $backUrl }}" style="font-size:.78rem;color:var(--teal);text-decoration:none;font-weight:600">{{ $backLabel }}</a>
     <h1 class="eal-hero-title" style="font-size:1.6rem;margin-top:8px">{{ .Title }}</h1>
     <p class="eal-hero-sub">{{ .Description }}</p>
   </div>
 </section>
 
-<section style="max-width:700px;margin:0 auto;padding:0 20px 40px">
+<section style="max-width:{{ $maxWidth }};margin:0 auto;padding:0 20px 40px">
   <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#0a0f1a">
-    <iframe src="{{ .Params.tool_src }}?v=20260316b" style="width:100%;height:{{ .Params.tool_height | default 700 }}px;border:none;display:block" loading="lazy" title="{{ .Title }}"></iframe>
+    <iframe src="{{ .Params.tool_src }}?v=20260316c" style="width:100%;height:{{ .Params.tool_height | default 700 }}px;border:none;display:block" loading="lazy" title="{{ .Title }}"></iframe>
   </div>
 </section>
 
