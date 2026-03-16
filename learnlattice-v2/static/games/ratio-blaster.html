@@ -41,7 +41,12 @@ function gen2(){return sh([
   {q:'A smoothie uses fruit:yogurt = 5:2. You have 400ml yogurt. How much fruit?',opts:['1000 ml','800 ml','500 ml','1200 ml'],correct:0,hint:'If 2 parts = 400ml, then 1 part = 200ml. Fruit = 5 parts.',why:'1 part = 400÷2 = 200ml. Fruit = 5 × 200 = 1000ml.'},
   {q:'Concrete mix is cement:sand:gravel = 1:2:3. For 180kg total, how much sand?',opts:['60 kg','90 kg','30 kg','45 kg'],correct:0,hint:'Total parts = 1+2+3 = 6. Sand = 2/6 of 180.',why:'6 parts total. Sand = 2/6 × 180 = 60kg.'},
   {q:'A recipe for 12 cookies uses 2 eggs. How many eggs for 30 cookies?',opts:['5','6','4','3'],correct:0,hint:'Scale factor = 30÷12 = 2.5. Multiply 2 by 2.5.',why:'30÷12 = 2.5. Eggs = 2 × 2.5 = 5 eggs.'},
-  {q:'Orange juice concentrate:water = 1:4. To make 2.5L of juice, how much concentrate?',opts:['500 ml','400 ml','625 ml','250 ml'],correct:0,hint:'Total parts = 1+4 = 5. Concentrate = 1/5 of 2500ml.',why:'5 parts. Concentrate = 2500÷5 = 500ml.'}
+  {q:'Orange juice concentrate:water = 1:4. To make 2.5L of juice, how much concentrate?',opts:['500 ml','400 ml','625 ml','250 ml'],correct:0,hint:'Total parts = 1+4 = 5. Concentrate = 1/5 of 2500ml.',why:'5 parts. Concentrate = 2500÷5 = 500ml.'},
+  {q:'A map scale is 1:25000. Two towns are 8cm apart on the map. Real distance?',opts:['2 km','2.5 km','0.8 km','4 km'],correct:0,hint:'8cm × 25000 = 200000cm. Convert to km.',why:'8 × 25000 = 200,000cm = 2,000m = 2km.'},
+  {q:'Mortar mix is cement:sand = 1:5. You need 24kg total. How much cement?',opts:['4 kg','5 kg','6 kg','3 kg'],correct:0,hint:'Total parts = 6. Cement = 1/6 of 24.',why:'1+5 = 6 parts. Cement = 24÷6 = 4kg.'},
+  {q:'A photo is 4:3 ratio. Width is 20cm. What is the height?',opts:['15 cm','16 cm','12 cm','18 cm'],correct:0,hint:'4 parts = 20cm, so 1 part = 5cm. Height = 3 parts.',why:'1 part = 20÷4 = 5cm. Height = 3×5 = 15cm.'},
+  {q:'Squash:water = 1:9. You pour 50ml squash. How much water?',opts:['450 ml','400 ml','500 ml','350 ml'],correct:0,hint:'1 part squash = 50ml. Water = 9 parts.',why:'9 × 50 = 450ml water.'},
+  {q:'Purple paint is red:blue = 3:2. How much blue for 750ml total?',opts:['300 ml','375 ml','250 ml','400 ml'],correct:0,hint:'Total parts = 5. Blue = 2/5 of 750.',why:'2/5 × 750 = 300ml blue.'}
 ]).slice(0,STG[2].qs)}
 
 function gen3(){return sh([
@@ -50,7 +55,12 @@ function gen3(){return sh([
   {context:'A car travels 240km on 20L of fuel.',q:'How far can it travel on 35L?',opts:['420 km','350 km','480 km','300 km'],correct:0,hint:'km per litre = 240÷20 = 12. Multiply by 35.',why:'12 km/L × 35L = 420km.'},
   {context:'3 workers paint a fence in 8 hours.',q:'How long for 6 workers (same rate)?',opts:['4 hours','6 hours','12 hours','3 hours'],correct:0,hint:'Double the workers = half the time. This is inverse proportion.',why:'More workers → less time. 3×8 = 6×t, so t = 24÷6 = 4 hours. Inverse proportion.'},
   {context:'A shop sells 250g of cheese for ¥18.75.',q:'What is the cost of 400g?',opts:['¥30','¥25','¥37.50','¥22.50'],correct:0,hint:'Price per gram = 18.75÷250 = ¥0.075. Multiply by 400.',why:'¥18.75÷250 = ¥0.075/g. 400 × 0.075 = ¥30.'},
-  {context:'In a class, the ratio of boys to girls is 3:5. There are 15 girls.',q:'How many students are in the class?',opts:['24','20','30','18'],correct:0,hint:'If 5 parts = 15, then 1 part = 3. Boys = 3×3 = 9. Total = 9+15.',why:'1 part = 15÷5 = 3. Boys = 3×3 = 9. Total = 9+15 = 24.'}
+  {context:'In a class, the ratio of boys to girls is 3:5. There are 15 girls.',q:'How many students are in the class?',opts:['24','20','30','18'],correct:0,hint:'If 5 parts = 15, then 1 part = 3. Boys = 3×3 = 9. Total = 9+15.',why:'1 part = 15÷5 = 3. Boys = 3×3 = 9. Total = 9+15 = 24.'},
+  {context:'A school trip costs ¥4800 for 16 students.',q:'How much for 22 students?',opts:['¥6600','¥7200','¥5400','¥5800'],correct:0,hint:'Cost per student = 4800÷16. Then multiply by 22.',why:'¥4800÷16 = ¥300/student. 22×300 = ¥6600.'},
+  {context:'Lemonade recipe: 2 lemons for every 500ml water. You have 7 lemons.',q:'How much water do you need?',opts:['1750 ml','1500 ml','2000 ml','1400 ml'],correct:0,hint:'2 lemons → 500ml. So 1 lemon → 250ml. 7 lemons → ?',why:'1 lemon = 250ml water. 7 × 250 = 1750ml.'},
+  {context:'A printer uses 8ml ink per 50 pages.',q:'How many pages from a 200ml cartridge?',opts:['1250','1000','1600','800'],correct:0,hint:'Pages per ml = 50÷8. Then multiply by 200.',why:'50÷8 = 6.25 pages/ml. 6.25 × 200 = 1250 pages.'},
+  {context:'Exchange rate: ¥100 = $12.50.',q:'How many yen for $75?',opts:['¥600','¥500','¥750','¥650'],correct:0,hint:'¥100 = $12.50, so ¥1 = $0.125. For $75: 75÷0.125.',why:'¥1 = $0.125. $75 ÷ $0.125 = ¥600.'},
+  {context:'Bronze is copper:tin = 9:1. You need 3kg of bronze.',q:'How much copper?',opts:['2.7 kg','2.5 kg','3 kg','2.4 kg'],correct:0,hint:'Total parts = 10. Copper = 9/10 of 3kg.',why:'9/10 × 3 = 2.7kg copper.'}
 ]).slice(0,STG[3].qs)}
 
 const generators=[gen0,gen1,gen2,gen3];let questions=[];

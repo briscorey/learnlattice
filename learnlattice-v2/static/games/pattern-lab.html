@@ -87,7 +87,12 @@ var levels=[
   {pairs:[[2,1],[4,2],[6,3],[10,5]],test:8,answer:4,rule:"n/2",hint:"Output is always exactly half the input."},
   {pairs:[[1,1],[2,3],[3,6],[4,10]],test:8,answer:36,rule:"n(n+1)/2",hint:"These are triangular numbers! Add 1+2+3+...+n."},
   {pairs:[[1,2],[2,5],[3,10],[4,17]],test:5,answer:26,rule:"n²+1",hint:"One more than perfect squares."},
-  {pairs:[[0,1],[1,3],[2,9],[3,27]],test:4,answer:81,rule:"3ⁿ",hint:"Each output is 3 times the previous one."}
+  {pairs:[[0,1],[1,3],[2,9],[3,27]],test:4,answer:81,rule:"3ⁿ",hint:"Each output is 3 times the previous one."},
+  {pairs:[[1,5],[2,8],[3,11],[4,14]],test:7,answer:23,rule:"3n+2",hint:"Each output increases by 3. What's the starting offset?"},
+  {pairs:[[1,0],[2,2],[3,6],[4,12]],test:5,answer:20,rule:"n²−n",hint:"Try n² minus something..."},
+  {pairs:[[1,10],[2,8],[3,6],[4,4]],test:6,answer:0,rule:"12−2n",hint:"Outputs are decreasing by 2 each time. Count down from 12."},
+  {pairs:[[1,1],[2,8],[3,27],[4,64]],test:5,answer:125,rule:"n³",hint:"These are cube numbers!"},
+  {pairs:[[1,3],[2,9],[3,19],[4,33]],test:5,answer:51,rule:"2n²+1",hint:"The differences between outputs increase: 6, 10, 14... (going up by 4)."}
 ];
 var current=0,score=0,answered=false;
 
