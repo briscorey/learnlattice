@@ -9,7 +9,7 @@ Geometry on LearnLattice is visual and hands-on. Students explore spatial relati
 
 ### Topics Covered
 
-Our geometry resources cover angle properties, coordinate geometry, transformations (reflection, rotation, translation), tessellations and symmetry, similarity and scale, circle geometry, and measurement (area, volume, surface area). The [Geometry Transformer game](/resources/geometry-transformer-game/) lets students explore transformations interactively, and [The Impossible Triangle](/resources/the-impossible-triangle/) introduces non-Euclidean thinking.
+Our geometry resources cover angle properties, coordinate geometry, transformations (reflection, rotation, translation), tessellations and symmetry, similarity and scale, circle geometry, and measurement (area, volume, surface area). The [Transform! game](/resources/transform-game/) lets students explore transformations interactively, and [The Impossible Triangle](/resources/the-impossible-triangle/) introduces non-Euclidean thinking.
 
 ### Geometry as Investigation
 

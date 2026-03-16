@@ -87,7 +87,7 @@ The difference in understanding is stark. Students who discovered the rule thems
 
 **What stuck in my practice:** Wherever possible, I let students build the concept before I name it. They discover the pattern, then I give it a label. They find the relationship, then I show the formula. The label and the formula become a shorthand for something they already understand — not a substitute for understanding.
 
-**Where you'll see this on LearnLattice:** The [16 interactive games](/games/) are all built on this principle. The [Circuit Builder](/resources/circuit-builder-game/) doesn't teach Ohm's law and then let you build circuits. You build circuits and discover Ohm's law. The [Food Web Builder](/resources/food-web-builder-game/) doesn't explain trophic cascades. You remove a species and watch everything collapse.
+**Where you'll see this on LearnLattice:** The [16 interactive games](/games/) are all built on this principle. The [Circuit Challenge](/resources/circuit-challenge-game/) doesn't teach Ohm's law and then let you build circuits. You build circuits and discover Ohm's law. The [Ecosystem Architect](/resources/ecosystem-architect-game/) doesn't explain trophic cascades. You remove a species and watch everything collapse.
 
 ## Jerome Bruner: "Concrete first. Always."
 
@@ -99,7 +99,7 @@ I learned this the hard way. I once taught algebraic expansion — the idea that
 
 **What stuck in my practice:** Before I teach any abstract concept, I ask: "What could students touch, move, or draw that would make this concrete?" If I can't answer that question, I don't teach the concept that day — I go and design the concrete first.
 
-**Where you'll see this on LearnLattice:** Every investigation is designed to move through Bruner's stages. The [Fraction Wall game](/resources/fraction-wall-game/) makes fraction equivalence visible as coloured bars before introducing notation. The [Geometry Transformer](/resources/geometry-transformer-game/) lets you drag shapes through reflections and rotations before learning the coordinate rules. The [visual vocabulary](/vocabulary/) gives every abstract term a concrete image.
+**Where you'll see this on LearnLattice:** Every investigation is designed to move through Bruner's stages. The [Fraction Fighter](/resources/fraction-fighter-game/) makes fraction equivalence visible as coloured bars before introducing notation. The [Transform!](/resources/transform-game/) lets you drag shapes through reflections and rotations before learning the coordinate rules. The [visual vocabulary](/vocabulary/) gives every abstract term a concrete image.
 
 ---
 

@@ -9,7 +9,7 @@ LearnLattice offers 25 free MYP physics resources built around the principle tha
 
 ### Topics Covered
 
-Our physics resources cover forces and motion (including friction, gravity, and air resistance), energy transfer and conservation, electricity and circuits (with an [interactive Circuit Builder game](/resources/circuit-builder-game/)), waves and sound, light and optics, simple machines, magnetism, and pressure. Grade 9 resources extend into momentum, Ohm's law, and electromagnetic spectrum.
+Our physics resources cover forces and motion (including friction, gravity, and air resistance), energy transfer and conservation, electricity and circuits (with an [interactive Circuit Challenge game](/resources/circuit-challenge-game/)), waves and sound, light and optics, simple machines, magnetism, and pressure. Grade 9 resources extend into momentum, Ohm's law, and electromagnetic spectrum.
 
 ### Bridging Mathematics and Science
 

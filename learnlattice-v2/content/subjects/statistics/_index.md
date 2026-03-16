@@ -9,7 +9,7 @@ Statistics on LearnLattice starts with real questions and real data. Students co
 
 ### Topics Covered
 
-Our statistics resources cover data collection and surveys, frequency tables and graphs, measures of central tendency (mean, median, mode), scatter plots and correlation, misleading data and statistical literacy, and probability (experimental, theoretical, conditional). The [Probability Simulator game](/resources/probability-simulator-game/) lets students run thousands of trials to compare experimental and theoretical probability.
+Our statistics resources cover data collection and surveys, frequency tables and graphs, measures of central tendency (mean, median, mode), scatter plots and correlation, misleading data and statistical literacy, and probability (experimental, theoretical, conditional). The [Probability Lab game](/resources/probability-lab-game/) lets students run thousands of trials to compare experimental and theoretical probability.
 
 ### Data Literacy as a Life Skill
 

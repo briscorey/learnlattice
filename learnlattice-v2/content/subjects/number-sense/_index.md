@@ -9,7 +9,7 @@ Number sense is the foundation of mathematical thinking. Our resources build dee
 
 ### Topics Covered
 
-Our number sense resources cover place value and estimation, operations with integers and decimals, exponents and powers, scientific notation ([The Million Dollar Question](/resources/the-million-dollar-question-number-sense/) and [How Many Grains of Rice](/resources/how-many-grains-of-rice/)), irrational numbers ([The Number That Broke Mathematics](/resources/the-number-that-broke-mathematics/)), prime numbers ([Prime Maze game](/resources/prime-maze-game/)), and number systems including binary.
+Our number sense resources cover place value and estimation, operations with integers and decimals, exponents and powers, scientific notation ([The Million Dollar Question](/resources/the-million-dollar-question-number-sense/) and [How Many Grains of Rice](/resources/how-many-grains-of-rice/)), irrational numbers ([The Number That Broke Mathematics](/resources/the-number-that-broke-mathematics/)), prime numbers ([Number Climber game](/resources/number-climber-game/)), and number systems including binary.
 
 ### Making Big Numbers Real
 

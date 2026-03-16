@@ -9,7 +9,7 @@ Fractions are where many students first decide whether they are "good at maths."
 
 ### Topics Covered
 
-Our resources cover fraction equivalence, operations with fractions, ratios and proportional reasoning, percentages and percentage change, and the connections between fractions, decimals, and ratios. The [Fraction Wall game](/resources/fraction-wall-game/) provides interactive practice, and [The Fairness Problem](/resources/the-fairness-problem-fractions-inquiry/) launches fraction thinking through a question every student has an opinion about: what does it mean to share fairly?
+Our resources cover fraction equivalence, operations with fractions, ratios and proportional reasoning, percentages and percentage change, and the connections between fractions, decimals, and ratios. The [Fraction Fighter game](/resources/fraction-fighter-game/) provides interactive practice, and [The Fairness Problem](/resources/the-fairness-problem-fractions-inquiry/) launches fraction thinking through a question every student has an opinion about: what does it mean to share fairly?
 
 ### Proportional Reasoning Across MYP
 
