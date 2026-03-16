@@ -23,7 +23,7 @@ h1{font-size:1.4rem;font-weight:700;margin-bottom:4px}
 .form-btn:hover{border-color:#0D9488;background:#f0fdf4}
 .form-btn.selected{background:#0D9488;border-color:#0D9488;color:#fff}
 .form-input,.form-textarea{width:100%;padding:12px 16px;border-radius:10px;border:1.5px solid #d5e5e0;font-size:.88rem;font-family:inherit;color:#134E4A;outline:none;transition:border-color .15s}
-.form-textarea{resize:vertical;min-height:80px}
+.form-textarea{resize:vertical;min-height:90px}
 .form-input:focus,.form-textarea:focus{border-color:#0D9488}
 .form-input::placeholder,.form-textarea::placeholder{color:#b0cec6}
 .actions{display:flex;gap:10px;margin-top:24px}
@@ -32,65 +32,57 @@ h1{font-size:1.4rem;font-weight:700;margin-bottom:4px}
 .btn-next{padding:10px 24px;border-radius:10px;border:none;background:#0D9488;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;margin-left:auto}
 .btn-next:hover{background:#0a7c72}
 .btn-next:disabled{background:#d5e5e0;color:#5f8a82;cursor:default}
-.loading{text-align:center;padding:48px 24px}
-.loading-spinner{width:40px;height:40px;border:3px solid #d5e5e0;border-top:3px solid #0D9488;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-text{font-size:.92rem;color:#134E4A;font-weight:600;margin-bottom:6px}
-.loading-sub{font-size:.78rem;color:#5f8a82}
-.loading-dots::after{content:'';animation:dots 1.5s infinite}
-@keyframes dots{0%{content:''}33%{content:'.'}66%{content:'..'}100%{content:'...'}}
-.output-section{margin-bottom:24px}
-.output-section h2{font-size:1.1rem;font-weight:700;color:#134E4A;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.output-section .out-desc{font-size:.78rem;color:#5f8a82;margin-bottom:14px}
-.output-box{background:#fff;border:1.5px solid #d5e5e0;border-radius:14px;padding:20px;position:relative}
-.output-box h3{font-size:.95rem;font-weight:700;color:#0D9488;margin-bottom:8px}
-.output-box h4{font-size:.82rem;font-weight:700;color:#134E4A;margin-top:14px;margin-bottom:6px}
-.output-box p{font-size:.88rem;color:#134E4A;line-height:1.65}
-.level-tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:.65rem;font-weight:700;margin-bottom:6px}
-.lt-34{background:rgba(34,197,94,.1);color:#16a34a}
-.lt-56{background:rgba(245,158,11,.1);color:#d97706}
-.lt-78{background:rgba(13,148,136,.1);color:#0D9488}
-.copy-btn{position:absolute;top:12px;right:12px;padding:5px 12px;border-radius:6px;border:1px solid #d5e5e0;background:#f8faf9;color:#5f8a82;font-size:.68rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+.out-section{margin-bottom:24px}
+.out-section h2{font-size:1.05rem;font-weight:700;color:#134E4A;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.out-box{background:#fff;border:1.5px solid #d5e5e0;border-radius:14px;padding:20px;position:relative;margin-bottom:16px}
+.out-box h3{font-size:.92rem;font-weight:700;color:#0D9488;margin-bottom:10px}
+.out-box h4{font-size:.82rem;font-weight:700;color:#134E4A;margin-top:14px;margin-bottom:6px}
+.out-box p{font-size:.88rem;color:#134E4A;line-height:1.65;margin-bottom:8px}
+.out-box p:last-child{margin-bottom:0}
+.copy-btn{position:absolute;top:12px;right:12px;padding:5px 12px;border-radius:6px;border:1px solid #d5e5e0;background:#f8faf9;color:#5f8a82;font-size:.68rem;font-weight:600;cursor:pointer;font-family:inherit}
 .copy-btn:hover{border-color:#0D9488;color:#0D9488}
-.copy-btn.copied{background:#0D9488;border-color:#0D9488;color:#fff}
+.hook{padding:14px 18px;background:linear-gradient(135deg,rgba(13,148,136,.06),rgba(13,148,136,.02));border-radius:10px;border-left:3px solid #0D9488;font-style:italic;font-size:.92rem;line-height:1.65;margin-bottom:14px}
+.q-card{padding:12px 16px;background:#f8faf9;border:1px solid #e6faf6;border-radius:8px;margin-bottom:8px}
+.lvl{display:inline-block;padding:2px 8px;border-radius:5px;font-size:.62rem;font-weight:700;margin-bottom:6px}
+.l34{background:rgba(34,197,94,.1);color:#16a34a}
+.l56{background:rgba(245,158,11,.1);color:#d97706}
+.l78{background:rgba(13,148,136,.1);color:#0D9488}
+.eal{margin-top:14px;padding:12px 16px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12);border-radius:8px;font-size:.82rem}
+.eal strong{color:#2563eb;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}
+.sf{padding:4px 10px;background:rgba(255,255,255,.6);border-radius:4px;border-left:2px solid #2563eb;margin-bottom:4px;font-style:italic;font-size:.82rem}
+.rtbl{width:100%;border-collapse:collapse;font-size:.82rem}
+.rtbl th{padding:8px 12px;background:#f0fdf4;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;color:#0D9488;border-bottom:2px solid #d5e5e0}
+.rtbl td{padding:8px 12px;border-bottom:1px solid #f0f5f3;vertical-align:top;line-height:1.5}
+.rtbl .lv{font-weight:700;white-space:nowrap;color:#0D9488}
+.sresp{padding:12px 16px;background:#f8faf9;border-radius:8px;border-left:3px solid #d5e5e0;font-style:italic;font-size:.85rem;margin-bottom:8px;line-height:1.6}
+.swhy{font-size:.78rem;color:#5f8a82;line-height:1.5;padding:8px 12px;background:rgba(124,58,237,.04);border-radius:6px;margin-bottom:14px}
+.swhy strong{color:#7c3aed;font-size:.68rem;text-transform:uppercase;display:block;margin-bottom:3px}
 .divider{height:1px;background:#d5e5e0;margin:16px 0}
-.eal-box{margin-top:14px;padding:12px 16px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12);border-radius:8px;font-size:.82rem}
-.eal-box strong{color:#2563eb;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}
-.rubric-tbl{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px}
-.rubric-tbl th{padding:8px 12px;background:#f0fdf4;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;color:#0D9488;border-bottom:2px solid #d5e5e0}
-.rubric-tbl td{padding:8px 12px;border-bottom:1px solid #f0f5f3;vertical-align:top;line-height:1.5}
-.rubric-tbl .lv{font-weight:700;white-space:nowrap;color:#0D9488}
-.sample-resp{padding:12px 16px;background:#f8faf9;border-radius:8px;border-left:3px solid #d5e5e0;font-style:italic;font-size:.85rem;margin-bottom:8px;line-height:1.6}
-.sample-why{font-size:.78rem;color:#5f8a82;line-height:1.5;padding:8px 12px;background:rgba(124,58,237,.04);border-radius:6px;margin-bottom:14px}
-.sample-why strong{color:#7c3aed;font-size:.68rem;text-transform:uppercase;display:block;margin-bottom:3px}
-.links-box{margin-top:16px;padding:12px 16px;background:rgba(13,148,136,.04);border:1px solid rgba(13,148,136,.12);border-radius:8px;font-size:.78rem}
-.links-box a{color:#0D9488;font-weight:600;text-decoration:none}
-.links-box a:hover{text-decoration:underline}
-.error-box{padding:20px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:12px;text-align:center;margin:20px 0}
-.error-box p{font-size:.88rem;color:#991b1b;margin-bottom:10px}
-.error-box button{padding:8px 20px;border-radius:8px;border:1px solid #ef4444;background:#fff;color:#ef4444;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit}
+.links{margin-top:16px;padding:12px 16px;background:rgba(13,148,136,.04);border:1px solid rgba(13,148,136,.12);border-radius:8px;font-size:.78rem}
+.links a{color:#0D9488;font-weight:600;text-decoration:none}
+.links a:hover{text-decoration:underline}
+.summ{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:#f0fdf4;border-radius:10px;font-size:.78rem;color:#134E4A;align-items:center}
+.summ span{font-weight:700;color:#0D9488}
 .print-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.print-btn{padding:8px 16px;border-radius:8px;border:1.5px solid #d5e5e0;background:#fff;color:#5f8a82;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
-.print-btn:hover{border-color:#0D9488;color:#0D9488}
-.summary-strip{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:#f0fdf4;border-radius:10px;font-size:.78rem;color:#134E4A;align-items:center}
-.summary-strip span{font-weight:700;color:#0D9488}
-.q-block{padding:12px 16px;background:#f8faf9;border:1px solid #e6faf6;border-radius:8px;margin-bottom:8px}
-.hook-block{padding:14px 18px;background:linear-gradient(135deg,rgba(13,148,136,.06),rgba(13,148,136,.02));border-radius:10px;border-left:3px solid #0D9488;margin-bottom:14px;font-style:italic;font-size:.92rem;line-height:1.6}
-.sf-line{padding:4px 10px;background:rgba(255,255,255,.6);border-radius:4px;border-left:2px solid #2563eb;margin-bottom:4px;font-style:italic;font-size:.82rem}
-.sheet-wrap{border:2px solid #d5e5e0;border-radius:12px;padding:24px}
-.sheet-hdr{text-align:center;margin-bottom:16px}
-.sheet-hdr .s1{font-size:.72rem;color:#5f8a82}.sheet-hdr .s2{font-size:1.15rem;font-weight:700;color:#134E4A;margin:4px 0}.sheet-hdr .s3{font-size:.75rem;color:#5f8a82}
-.sheet-sec{margin-bottom:16px}.sheet-sec h4{font-size:.82rem;color:#0D9488;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
-.sheet-lines{min-height:120px;border:1.5px dashed #d5e5e0;border-radius:8px;margin:14px 0;padding:10px}
-.sheet-frame{padding:6px 10px;background:#f8faf9;border-radius:6px;border-left:3px solid #0D9488;margin-bottom:6px;font-size:.82rem;font-style:italic}
-@media(max-width:640px){.form-row{flex-direction:column}.form-btn{min-width:auto}.rubric-tbl{display:block;overflow-x:auto}}
-@media print{.stepper,.actions,.copy-btn,.print-bar,.btn-back,.btn-next,.summary-strip .edit-link,.panel:not(.active),.form-group,.sub{display:none !important}.output-box{border:1px solid #ccc;break-inside:avoid}body{background:#fff}.panel.active{display:block !important}}
+.pbtn{padding:8px 16px;border-radius:8px;border:1.5px solid #d5e5e0;background:#fff;color:#5f8a82;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit}
+.pbtn:hover{border-color:#0D9488;color:#0D9488}
+.sheet{border:2px solid #d5e5e0;border-radius:12px;padding:24px}
+.sheet-c{text-align:center;margin-bottom:16px}
+.sheet-c .s1{font-size:.72rem;color:#5f8a82}
+.sheet-c .s2{font-size:1.15rem;font-weight:700;color:#134E4A;margin:4px 0}
+.sheet-c .s3{font-size:.75rem;color:#5f8a82}
+.sheet-s{margin-bottom:16px}
+.sheet-s h4{font-size:.82rem;color:#0D9488;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.sheet-w{min-height:120px;border:1.5px dashed #d5e5e0;border-radius:8px;margin:14px 0}
+.sheet-f{padding:6px 10px;background:#f8faf9;border-radius:6px;border-left:3px solid #0D9488;margin-bottom:6px;font-size:.82rem;font-style:italic}
+@media(max-width:640px){.form-row{flex-direction:column}.rtbl{display:block;overflow-x:auto}}
+@media print{.stepper,.actions,.copy-btn,.print-bar,.btn-back,.btn-next,.sub,.panel#p0{display:none !important}.out-box{border:1px solid #ccc;break-inside:avoid}body{background:#fff}.panel.active{display:block !important}}
 </style>
 </head>
 <body>
 <div class="app">
   <h1>🏗️ MYP Assessment Builder</h1>
-  <p class="sub">AI-powered. Describe what you're teaching — get a fully contextualised task, rubric, student sheet, and marking guide.</p>
+  <p class="sub">Describe what you're teaching and the real-world context. Get a contextualised task, rubric, student sheet, and marking guide.</p>
   <div class="stepper"><div class="step-dot active" id="sd0"></div><div class="step-dot" id="sd1"></div></div>
 
   <div class="panel active" id="p0">
@@ -98,158 +90,367 @@ h1{font-size:1.4rem;font-weight:700;margin-bottom:4px}
     <div class="form-group">
       <label class="form-label">Criterion</label>
       <div class="form-row">
-        <button class="form-btn" onclick="pick('criterion','A')">A — Knowing</button>
-        <button class="form-btn" onclick="pick('criterion','B')">B — Investigating</button>
+        <button class="form-btn" onclick="pk('cr','A')">A — Knowing</button>
+        <button class="form-btn" onclick="pk('cr','B')">B — Investigating</button>
       </div>
       <div class="form-row" style="margin-top:8px">
-        <button class="form-btn" onclick="pick('criterion','C')">C — Communicating</button>
-        <button class="form-btn" onclick="pick('criterion','D')">D — Applying</button>
+        <button class="form-btn" onclick="pk('cr','C')">C — Communicating</button>
+        <button class="form-btn" onclick="pk('cr','D')">D — Applying</button>
       </div>
     </div>
     <div class="form-group">
       <label class="form-label">Subject</label>
       <div class="form-row">
-        <button class="form-btn" onclick="pick('subject','Mathematics')">Mathematics</button>
-        <button class="form-btn" onclick="pick('subject','Science')">Science</button>
+        <button class="form-btn" onclick="pk('su','Mathematics')">Mathematics</button>
+        <button class="form-btn" onclick="pk('su','Science')">Science</button>
       </div>
     </div>
     <div class="form-group">
       <label class="form-label">Grade level</label>
       <div class="form-row">
-        <button class="form-btn" onclick="pick('grade','6')">Grade 6</button>
-        <button class="form-btn" onclick="pick('grade','7')">Grade 7</button>
-        <button class="form-btn" onclick="pick('grade','8')">Grade 8</button>
-        <button class="form-btn" onclick="pick('grade','9')">Grade 9</button>
-        <button class="form-btn" onclick="pick('grade','10')">Grade 10</button>
+        <button class="form-btn" onclick="pk('gr','6')">Grade 6</button>
+        <button class="form-btn" onclick="pk('gr','7')">Grade 7</button>
+        <button class="form-btn" onclick="pk('gr','8')">Grade 8</button>
+        <button class="form-btn" onclick="pk('gr','9')">Grade 9</button>
+        <button class="form-btn" onclick="pk('gr','10')">Grade 10</button>
       </div>
     </div>
     <div class="form-group">
       <label class="form-label">Topic</label>
-      <input class="form-input" id="topicInput" placeholder="e.g. Area & perimeter, Density, Food webs, Linear equations..." oninput="state.topic=this.value;checkReady()">
+      <input class="form-input" id="topicIn" placeholder="e.g. Area of composite shapes, Density, Ecosystems, Linear equations..." oninput="S.topic=this.value;ck()">
     </div>
     <div class="form-group">
-      <label class="form-label">Real-world context or scenario</label>
-      <textarea class="form-textarea" id="contextInput" placeholder="e.g. The school wants to repave the courtyard. Students measure the courtyard (irregular L-shape, roughly 15m x 20m with a 5m x 8m section removed), research paving costs (¥120-180/m² depending on material), and recommend the best option within a ¥50,000 budget." oninput="state.context=this.value;checkReady()"></textarea>
-      <div class="form-hint">Be specific: include real measurements, numbers, constraints, local details. The more you give, the better the output.</div>
+      <label class="form-label">Real-world context — be as specific as possible</label>
+      <textarea class="form-textarea" id="ctxIn" placeholder="Example: The school courtyard needs to be repaved. It's an L-shaped area — the main section is 15m × 20m with a 5m × 8m rectangular garden bed removed from one corner. The principal has a budget of ¥50,000. Three paving companies have quoted: Company A at ¥120/m², Company B at ¥155/m² (includes drainage), Company C at ¥180/m² (eco-permeable pavers). Students must recommend the best option." oninput="S.ctx=this.value;ck()"></textarea>
+      <div class="form-hint">Include: specific measurements, numbers, constraints, local details, names. The tool uses these directly in the task.</div>
     </div>
     <div class="form-group">
       <label class="form-label">Additional notes (optional)</label>
-      <input class="form-input" id="notesInput" placeholder="e.g. Many EAL students, 2-period task, focus on graphing, students have studied the topic for 3 weeks..." oninput="state.notes=this.value">
+      <input class="form-input" id="notesIn" placeholder="e.g. EAL heavy class, 2 periods, focus on graphing..." oninput="S.notes=this.value">
     </div>
-    <div class="actions"><button class="btn-next" id="genBtn" disabled onclick="generate()">✨ Generate assessment →</button></div>
+    <div class="actions"><button class="btn-next" id="genBtn" disabled onclick="gen()">✨ Generate assessment →</button></div>
   </div>
 
-  <div class="panel" id="p1"><div id="outputArea"></div></div>
+  <div class="panel" id="p1"><div id="out"></div></div>
 </div>
 <script>
-const state={criterion:'',subject:'',grade:'',topic:'',context:'',notes:''};
-const CRN={A:'Knowing & Understanding',B:'Investigating Patterns',C:'Communicating',D:'Applying in Real-Life Contexts'};
+const S={cr:'',su:'',gr:'',topic:'',ctx:'',notes:''};
+const CN={A:'Knowing & Understanding',B:'Investigating Patterns',C:'Communicating',D:'Applying in Real-Life Contexts'};
 
-function pick(field,val){
-  state[field]=val;
+function pk(f,v){
+  S[f]=v;
   document.querySelectorAll('.form-btn').forEach(b=>{
     const fn=b.getAttribute('onclick')||'';
-    if(fn.includes("'"+field+"'"))b.classList.toggle('selected',fn.includes("'"+val+"'"));
+    if(fn.includes("'"+f+"'"))b.classList.toggle('selected',fn.includes("'"+v+"'"));
   });
-  checkReady();
+  ck();
 }
-function checkReady(){document.getElementById('genBtn').disabled=!(state.criterion&&state.subject&&state.grade&&state.topic&&state.context)}
+function ck(){document.getElementById('genBtn').disabled=!(S.cr&&S.su&&S.gr&&S.topic&&S.ctx)}
+function e(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 
-async function generate(){
+function gen(){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.getElementById('p1').classList.add('active');
   document.querySelectorAll('.step-dot').forEach((d,i)=>d.className='step-dot'+(i===0?' done':' active'));
-  document.getElementById('outputArea').innerHTML=`<div class="loading"><div class="loading-spinner"></div><div class="loading-text">Building your assessment<span class="loading-dots"></span></div><div class="loading-sub">Generating a fully contextualised task for<br><strong>Criterion ${state.criterion}</strong> · ${state.subject} · Grade ${state.grade} · ${state.topic}<br><em style="color:#0D9488">"${state.context.substring(0,80)}${state.context.length>80?'...':''}"</em></div></div>`;
 
-  try{
-    const r=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:4000,
-        messages:[{role:"user",content:buildPrompt()}]})
-    });
-    if(!r.ok)throw new Error('API error: '+r.status);
-    const d=await r.json();
-    const txt=(d.content||[]).map(c=>c.text||'').join('');
-    let parsed;
-    try{const c=txt.replace(/```json\s*/g,'').replace(/```\s*/g,'').trim();parsed=JSON.parse(c)}
-    catch(e){const m=txt.match(/\{[\s\S]*\}/);if(m)parsed=JSON.parse(m[0]);else throw new Error('Parse error')}
-    renderOutput(parsed);
-  }catch(err){
-    document.getElementById('outputArea').innerHTML=`<div class="error-box"><p>Something went wrong generating the assessment.</p><p style="font-size:.75rem;color:#5f8a82">${err.message}</p><button onclick="goBack()">← Try again</button></div>`;
-  }
+  const ctx = S.ctx;
+  const topic = S.topic;
+  const cr = S.cr;
+  const su = S.su;
+  const gr = S.gr;
+
+  // Extract specific details from context
+  const numbers = ctx.match(/[\d,]+\.?\d*\s*(?:m²|m|cm|km|kg|g|L|ml|°C|%|¥|\$|€|£|yuan|RMB|hours?|minutes?|days?|weeks?|people|students?|items?)/gi) || [];
+  const amounts = ctx.match(/¥[\d,]+|[\d,]+\s*(?:yuan|RMB|\$|€|£)/gi) || [];
+  const measurements = ctx.match(/[\d.]+\s*(?:m²|m|cm|km|kg|g|L|ml|°C)/gi) || [];
+  const names = ctx.match(/(?:Company|Option|Brand|Type|Plan|Group|Team|Material|Method)\s+[A-Z]/gi) || [];
+
+  // Build the assessment
+  const task = buildTask(cr, su, gr, topic, ctx, numbers, amounts, measurements, names);
+  const rubric = buildRubric(cr, su, topic, ctx);
+  const marking = buildMarking(cr, su, gr, topic, ctx);
+  const sheet = buildSheet(cr, su, gr, topic, ctx, task);
+
+  let h = `<div class="summ"><span>Criterion ${cr}</span> ${CN[cr]} · <span>${su}</span> · <span>Grade ${gr}</span> · ${e(topic)} <a href="#" onclick="goBack();return false" style="margin-left:auto;color:#0D9488;font-weight:600;text-decoration:none">✏️ Edit</a></div>
+  <div class="print-bar"><button class="pbtn" onclick="window.print()">🖨️ Print all</button><button class="pbtn" onclick="navigator.clipboard.writeText(document.getElementById('out').innerText)">📋 Copy all</button></div>`;
+
+  h += `<div class="out-section"><h2>📝 Task Prompt</h2><div class="out-box" id="tb"><button class="copy-btn" onclick="cpb('tb')">Copy</button>${task}</div></div>`;
+  h += `<div class="out-section"><h2>📊 Task-Specific Rubric</h2><div class="out-box" id="rb"><button class="copy-btn" onclick="cpb('rb')">Copy</button>${rubric}</div></div>`;
+  h += `<div class="out-section"><h2>📄 Student Task Sheet</h2><div class="out-box" id="sb"><button class="copy-btn" onclick="cpb('sb')">Copy</button>${sheet}</div></div>`;
+  h += `<div class="out-section"><h2>✏️ Marking Guide</h2><div class="out-box" id="mb"><button class="copy-btn" onclick="cpb('mb')">Copy</button>${marking}
+    <div class="links"><strong style="color:#0D9488;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:6px">Related LearnLattice Tools</strong>
+    <a href="/assessment/comments/" target="_top">Comment Bank</a> · <a href="/eal/writing-guides/" target="_top">Writing Guides</a> · <a href="/eal/graphic-organizers/" target="_top">Graphic Organizers</a> · <a href="/students/checklist/" target="_top">Investigation Checklist</a></div>
+  </div></div>`;
+
+  h += `<div class="actions"><button class="btn-back" onclick="goBack()">← Build another</button><button class="btn-next" onclick="window.print()">🖨️ Print everything</button></div>`;
+  document.getElementById('out').innerHTML = h;
 }
 
-function buildPrompt(){
-  const crDesc={
-    A:"Criterion A — Knowing & Understanding: demonstrate knowledge, use correct terminology, apply understanding to familiar and unfamiliar situations.",
-    B:"Criterion B — Investigating Patterns: select problem-solving techniques, describe patterns as general rules, verify and justify conclusions.",
-    C:"Criterion C — Communicating: use appropriate language, notation, multiple representations (tables, graphs, diagrams) with clear logical structure.",
-    D:"Criterion D — Applying in Real-Life Contexts: identify real-world problems, select appropriate techniques, apply with real data, evaluate results, justify conclusions."
+function buildTask(cr, su, gr, topic, ctx, nums, amts, meas, names) {
+  const hooks = {
+    A: `Your ${su === 'Mathematics' ? 'maths' : 'science'} class has been asked to create an expert reference guide about ${e(topic)} based on the following real situation. Read the scenario carefully — every detail matters.`,
+    B: `Your team has been given real data from the following situation. Your job is to investigate the ${su === 'Mathematics' ? 'mathematical' : 'scientific'} patterns, write a general rule, and prove it works.`,
+    C: `You have completed your investigation on ${e(topic)}. Now communicate your findings so clearly that someone who wasn't in your class could understand every step.`,
+    D: `A real decision needs to be made. Use your knowledge of ${e(topic)} to analyse the situation, calculate the options, and make a justified recommendation.`
   };
-  return `You are an expert IB MYP ${state.subject} teacher and assessment designer. Create a HIGHLY SPECIFIC assessment task.
 
-INPUTS:
-- Criterion: ${crDesc[state.criterion]}
-- Subject: ${state.subject}
-- Grade: ${state.grade}
-- Topic: ${state.topic}
-- Real-world context: ${state.context}
-${state.notes?'- Teacher notes: '+state.notes:''}
+  // Criterion-specific questions that USE the context
+  const qs = {
+    A: [
+      {l:'3-4',c:'l34',t:`Based on the scenario below, identify and define the key ${su === 'Mathematics' ? 'mathematical' : 'scientific'} terms related to ${e(topic)} that are needed to understand this situation. Give a specific example from the scenario for each term.`},
+      {l:'5-6',c:'l56',t:`Explain how the concepts of ${e(topic)} apply to this specific scenario. Use actual numbers and details from the situation to demonstrate your understanding. Show how at least two concepts connect to each other.`},
+      {l:'7-8',c:'l78',t:`A student in a younger grade asks you: "Why does ${e(topic)} matter for this situation?" Write an explanation that shows deep understanding — go beyond what we covered in class. Discuss what would change if the conditions in the scenario were different.`}
+    ],
+    B: [
+      {l:'3-4',c:'l34',t:`Using the data from this scenario, set up a table with at least 5 entries. Describe what you notice about the numbers. What pattern can you see?`},
+      {l:'5-6',c:'l56',t:`Describe the pattern you found using specific numbers from the scenario. Write a general rule in words AND as a formula. Test your rule by predicting a value you haven't calculated yet, then verify it.`},
+      {l:'7-8',c:'l78',t:`Prove that your general rule works for all cases in this scenario. Use a case that is significantly different from your original data (e.g., an extreme or boundary case). Explain WHY the pattern exists — what causes it? Are there situations where it would break down?`}
+    ],
+    C: [
+      {l:'3-4',c:'l34',t:`Show your working for the calculations in this scenario step by step. Include at least one table or diagram with correct labels.`},
+      {l:'5-6',c:'l56',t:`Present your analysis of this scenario using: (a) a clearly labelled data table, (b) an appropriate graph with title, axis labels, and units, and (c) a written explanation that refers to both your table and graph. Explain what the data shows.`},
+      {l:'7-8',c:'l78',t:`Communicate your complete analysis in a structured report. Choose the most effective forms of representation and justify why you chose them. Interpret your results — don't just describe them. Could someone who has never seen this scenario follow your reasoning from start to finish?`}
+    ],
+    D: [
+      {l:'3-4',c:'l34',t:`Using the real numbers from this scenario, perform the key calculations needed to understand the situation. Show your working and state your answer with correct units.`},
+      {l:'5-6',c:'l56',t:`Analyse the situation using the specific data provided. Show all working with the real numbers. Compare at least two options. Check whether your answers are reasonable — does the result make sense in this context?`},
+      {l:'7-8',c:'l78',t:`Evaluate all the options in this scenario using detailed calculations with the real data provided. Make a clear recommendation supported by your mathematics${su==='Science'?'/science':''}. Discuss the assumptions you made, any limitations of your analysis, and what would change if the constraints were different (e.g., different budget, different requirements).`}
+    ]
+  };
 
-CRITICAL: Every single output field must be DEEPLY SPECIFIC to the context "${state.context}". Use the EXACT measurements, numbers, names, and constraints from the context. Do NOT write generic questions that could apply to any topic. The questions should be IMPOSSIBLE to answer without engaging with this specific context.
-
-Return ONLY a JSON object (no markdown, no backticks, no explanation) with this exact structure:
-
-{"task":{"title":"Specific title referencing the exact context","hook":"2-3 sentence scenario using EXACT details from the context. Include specific numbers, measurements, names, constraints. Make it feel real and urgent.","questions":[{"level":"3-4","text":"Specific question using real numbers from this context. Tests basic recall and application."},{"level":"5-6","text":"Deeper question requiring analysis within this specific context. Must reference specific data."},{"level":"7-8","text":"Complex question requiring evaluation, comparison, or justification within this context. Must require critical thinking."}],"eal_support":{"key_vocabulary":["5 terms specific to this topic and context"],"sentence_frames":["3 sentence frames with blanks, each one specific to this task, not generic"]}},"rubric":[{"level":"1-2","generic":"Generic MYP descriptor","task_specific":"What 1-2 looks like for THIS exact task"},{"level":"3-4","generic":"Generic MYP descriptor","task_specific":"What 3-4 looks like with specific reference to this context"},{"level":"5-6","generic":"Generic MYP descriptor","task_specific":"What 5-6 looks like - reference specific calculations or analysis from this context"},{"level":"7-8","generic":"Generic MYP descriptor","task_specific":"What 7-8 looks like - reference the specific evaluation or justification needed"}],"marking_guide":[{"level":"3-4","sample_response":"A realistic, imperfect Grade ${state.grade} student response at 3-4. Use specific numbers from the context but show incomplete reasoning.","why_this_level":"2-3 sentences explaining what makes this 3-4 and what's missing."},{"level":"5-6","sample_response":"A solid Grade ${state.grade} response at 5-6. Correct work with the specific context data but limited evaluation.","why_this_level":"What makes this 5-6 and what would push it higher."},{"level":"7-8","sample_response":"An excellent Grade ${state.grade} response. Thorough analysis of this specific context with justified conclusions.","why_this_level":"What makes this excellent."}],"teacher_notes":"3-4 sentences: timing, common misconceptions for this specific topic, differentiation tips, how to set up the context."}`;
-}
-
-function renderOutput(d){
-  let h=`<div class="summary-strip"><span>Criterion ${state.criterion}</span> ${CRN[state.criterion]} · <span>${state.subject}</span> · <span>Grade ${state.grade}</span> · ${state.topic} <a href="#" onclick="goBack();return false" style="margin-left:auto;color:#0D9488;font-weight:600;text-decoration:none" class="edit-link">✏️ Edit</a></div>
-  <div class="print-bar"><button class="print-btn" onclick="window.print()">🖨️ Print all</button><button class="print-btn" onclick="copyAll()">📋 Copy all text</button></div>`;
-
-  // TASK
-  h+=`<div class="output-section"><h2>📝 Task Prompt</h2><p class="out-desc">Student-facing task. Project or print.</p><div class="output-box" id="taskBox"><button class="copy-btn" onclick="copyBox('taskBox')">Copy</button><h3>${esc(d.task?.title||'Assessment Task')}</h3><div class="hook-block">${esc(d.task?.hook||'')}</div>`;
-  (d.task?.questions||[]).forEach(q=>{
-    const c=q.level==='3-4'?'lt-34':q.level==='5-6'?'lt-56':'lt-78';
-    h+=`<div class="q-block"><span class="level-tag ${c}">Level ${q.level}</span><p>${esc(q.text)}</p></div>`;
-  });
-  if(d.task?.eal_support){
-    h+=`<div class="eal-box"><strong>🌏 EAL Support</strong><p><strong style="font-size:.78rem;color:#134E4A;text-transform:none;letter-spacing:0">Key vocabulary:</strong> ${(d.task.eal_support.key_vocabulary||[]).map(esc).join(', ')}</p><p style="margin-top:6px"><strong style="font-size:.78rem;color:#134E4A;text-transform:none;letter-spacing:0">Sentence frames:</strong></p>${(d.task.eal_support.sentence_frames||[]).map(f=>'<div class="sf-line">'+esc(f)+'</div>').join('')}</div>`;
+  // Build EAL vocabulary from topic + context keywords
+  const vocabMap = {
+    'area':['area','perimeter','composite shape','square metres (m²)','dimensions'],
+    'density':['density','mass','volume','float','sink'],
+    'forces':['force','Newton (N)','friction','gravity','balanced'],
+    'equation':['variable','coefficient','expression','equation','substitute'],
+    'linear':['gradient','y-intercept','linear','slope','coordinate'],
+    'percent':['percentage','increase','decrease','discount','proportion'],
+    'ecosystem':['ecosystem','producer','consumer','decomposer','food chain'],
+    'cell':['cell','nucleus','membrane','mitochondria','organelle'],
+    'energy':['kinetic energy','potential energy','thermal energy','transfer','conservation'],
+    'wave':['frequency','wavelength','amplitude','transverse','longitudinal'],
+    'reaction':['reactant','product','exothermic','endothermic','conservation of mass'],
+    'probability':['probability','outcome','event','sample space','theoretical'],
+    'statistic':['mean','median','mode','range','outlier'],
+    'genetic':['gene','allele','dominant','recessive','phenotype'],
+    'circuit':['current','voltage','resistance','series','parallel'],
+  };
+  let vocab = ['investigate','analyse','calculate','justify','evaluate'];
+  for (const [key, terms] of Object.entries(vocabMap)) {
+    if (topic.toLowerCase().includes(key) || ctx.toLowerCase().includes(key)) {
+      vocab = terms; break;
+    }
   }
-  h+=`</div></div>`;
 
-  // RUBRIC
-  h+=`<div class="output-section"><h2>📊 Task-Specific Rubric</h2><p class="out-desc">Generic IB descriptors translated into task-specific language.</p><div class="output-box" id="rubricBox"><button class="copy-btn" onclick="copyBox('rubricBox')">Copy</button><table class="rubric-tbl"><thead><tr><th>Level</th><th>Generic MYP Descriptor</th><th>What This Looks Like in This Task</th></tr></thead><tbody>`;
-  (d.rubric||[]).forEach(r=>{h+=`<tr><td class="lv">${r.level}</td><td style="color:#5f8a82;font-style:italic">${esc(r.generic)}</td><td style="font-weight:500">${esc(r.task_specific)}</td></tr>`});
-  h+=`</tbody></table></div></div>`;
+  // Criterion-specific sentence frames that reference the context
+  const frames = {
+    A: [
+      `The term <em>___</em> means <em>___</em>. In this scenario, this is important because <em>___</em>.`,
+      `The relationship between <em>___</em> and <em>___</em> in this situation is <em>___</em>.`,
+      `If the conditions changed (e.g., <em>___</em>), then <em>___</em> would happen because <em>___</em>.`
+    ],
+    B: [
+      `I notice that as <em>___</em> increases by <em>___</em>, the <em>___</em> changes by <em>___</em>.`,
+      `My general rule is: <em>___</em>. In symbols: <em>___</em>. I verified this by <em>___</em>.`,
+      `The pattern works because <em>___</em>. It would not work if <em>___</em>.`
+    ],
+    C: [
+      `Table/Figure <em>___</em> shows that <em>___</em>. This is significant because <em>___</em>.`,
+      `I chose to present this as a <em>___</em> because <em>___</em>.`,
+      `The data indicates that <em>___</em>, which means <em>___</em> in the context of this scenario.`
+    ],
+    D: [
+      `Based on my calculations, Option <em>___</em> costs <em>___</em> and Option <em>___</em> costs <em>___</em>.`,
+      `I recommend <em>___</em> because <em>___</em>. This assumes that <em>___</em>.`,
+      `If the budget/constraint changed to <em>___</em>, my recommendation would change because <em>___</em>.`
+    ]
+  };
 
-  // STUDENT SHEET
-  h+=`<div class="output-section"><h2>📄 Student Task Sheet</h2><p class="out-desc">Printable handout with task, sentence frames, and self-check.</p><div class="output-box" id="sheetBox"><button class="copy-btn" onclick="copyBox('sheetBox')">Copy</button><div class="sheet-wrap"><div class="sheet-hdr"><div class="s1">MYP ${state.subject} — Criterion ${state.criterion}: ${CRN[state.criterion]}</div><div class="s2">${esc(d.task?.title||'Assessment Task')}</div><div class="s3">Grade ${state.grade} · Name: _________________ · Date: _________________</div></div>`;
-  h+=`<div class="sheet-sec"><h4>The Scenario</h4><p style="font-style:italic;line-height:1.6">${esc(d.task?.hook||'')}</p></div>`;
-  h+=`<div class="sheet-sec"><h4>Your Tasks</h4>`;
-  (d.task?.questions||[]).forEach((q,i)=>{h+=`<p style="margin-bottom:8px"><strong>${i+1}.</strong> ${esc(q.text)}</p>`});
-  h+=`</div><div class="sheet-lines"></div>`;
-  h+=`<div class="sheet-sec"><h4>Sentence Frames</h4>${(d.task?.eal_support?.sentence_frames||[]).map(f=>'<div class="sheet-frame">'+esc(f)+'</div>').join('')}</div>`;
-  const checks=state.criterion==='A'?['I defined key terms in my own words','I gave examples with real numbers from the scenario','I explained connections between ideas','I used correct '+(state.subject==='Mathematics'?'mathematical':'scientific')+' vocabulary']:state.criterion==='B'?['I tested multiple cases','I recorded data in a clear table','I wrote a general rule','I verified my rule works','I explained WHY the pattern works']:state.criterion==='C'?['I showed all working step by step','My graph/table has title, labels, and units','I used correct notation consistently','I interpreted my results (not just described them)']:['I identified the real-world problem clearly','I used real numbers from the scenario','I showed all my working','I checked my answer is reasonable','I discussed limitations or assumptions'];
-  h+=`<div class="sheet-sec"><h4>Before You Submit — Check</h4><div style="font-size:.82rem;line-height:2">${checks.map(c=>'☐ '+c).join('<br>')}</div></div></div></div></div>`;
-
-  // MARKING GUIDE
-  h+=`<div class="output-section"><h2>✏️ Marking Guide</h2><p class="out-desc">Sample responses at each level. Use for standardisation.</p><div class="output-box" id="markingBox"><button class="copy-btn" onclick="copyBox('markingBox')">Copy</button>`;
-  (d.marking_guide||[]).forEach(m=>{
-    const c=m.level==='3-4'?'lt-34':m.level==='5-6'?'lt-56':'lt-78';
-    h+=`<span class="level-tag ${c}">Level ${m.level} response</span><div class="sample-resp">"${esc(m.sample_response)}"</div><div class="sample-why"><strong>Why this level?</strong>${esc(m.why_this_level)}</div>`;
+  let html = `<h3>${e(topic)}: Assessment Task</h3>`;
+  html += `<div class="hook">${hooks[cr]}</div>`;
+  html += `<h4>📋 The Scenario</h4><p style="margin-bottom:14px">${e(ctx)}</p>`;
+  html += `<h4>📝 Your Tasks</h4>`;
+  qs[cr].forEach((q,i) => {
+    html += `<div class="q-card"><span class="lvl ${q.c}">Level ${q.l}</span><p><strong>Question ${i+1}:</strong> ${q.t}</p></div>`;
   });
-  if(d.teacher_notes)h+=`<div class="divider"></div><h4 style="font-size:.82rem;color:#d97706;margin-bottom:6px">💡 Teacher Notes</h4><p style="font-size:.85rem;line-height:1.6">${esc(d.teacher_notes)}</p>`;
-  h+=`<div class="links-box"><strong style="color:#0D9488;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:6px">Related LearnLattice Tools</strong><a href="/assessment/comments/" target="_top">Comment Bank</a> · <a href="/eal/writing-guides/" target="_top">Writing Guides</a> · <a href="/eal/graphic-organizers/" target="_top">Graphic Organizers</a> · <a href="/students/checklist/" target="_top">Investigation Checklist</a> · <a href="/eal/sentence-frames/" target="_top">Sentence Frames</a></div></div></div>`;
-
-  h+=`<div class="actions"><button class="btn-back" onclick="goBack()">← Build another</button><button class="btn-next" onclick="window.print()">🖨️ Print everything</button></div>`;
-  document.getElementById('outputArea').innerHTML=h;
+  html += `<div class="eal"><strong>🌏 EAL Support</strong>
+    <p style="margin-bottom:6px"><strong style="font-size:.78rem;color:#134E4A;text-transform:none;letter-spacing:0">Key vocabulary:</strong> ${vocab.join(', ')}</p>
+    <p style="margin-bottom:6px"><strong style="font-size:.78rem;color:#134E4A;text-transform:none;letter-spacing:0">Sentence frames:</strong></p>
+    ${frames[cr].map(f => `<div class="sf">${f}</div>`).join('')}
+    <p style="margin-top:8px;font-size:.75rem;color:#5f8a82">→ See also: <a href="/eal/word-wall/" target="_top" style="color:#2563eb">Word Walls</a> · <a href="/eal/sentence-frames/" target="_top" style="color:#2563eb">Full Sentence Frame Bank</a> · <a href="/students/help/" target="_top" style="color:#2563eb">Visual Explainers</a></p>
+  </div>`;
+  return html;
 }
 
-function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function buildRubric(cr, su, topic, ctx) {
+  const subj = su === 'Mathematics' ? 'mathematical' : 'scientific';
+  const gen = {
+    A: {
+      '1-2': `The student attempts to recall ${subj} knowledge but with significant errors or gaps.`,
+      '3-4': `The student recalls some ${subj} knowledge and demonstrates limited understanding of concepts.`,
+      '5-6': `The student describes ${subj} concepts and applies knowledge to familiar situations with some success.`,
+      '7-8': `The student applies ${subj} knowledge to unfamiliar situations, makes connections, and demonstrates thorough understanding.`
+    },
+    B: {
+      '1-2': `The student attempts to apply some problem-solving techniques.`,
+      '3-4': `The student applies some problem-solving techniques and begins to describe patterns.`,
+      '5-6': `The student selects and applies techniques, describes patterns as general rules, and verifies with specific examples.`,
+      '7-8': `The student selects and applies techniques, describes and proves general rules, and justifies conclusions.`
+    },
+    C: {
+      '1-2': `The student attempts to use some ${subj} language and forms of representation.`,
+      '3-4': `The student uses some ${subj} language and attempts to use different forms of representation.`,
+      '5-6': `The student uses appropriate ${subj} language and notation, and presents information using multiple representations.`,
+      '7-8': `The student uses precise ${subj} language, notation, and conventions consistently, with clear logical structure.`
+    },
+    D: {
+      '1-2': `The student identifies some of the elements of the real-life situation.`,
+      '3-4': `The student identifies the real-life problem and attempts to apply ${subj} strategies.`,
+      '5-6': `The student selects adequate ${subj} strategies, reaches a valid solution, and attempts to interpret it in context.`,
+      '7-8': `The student selects sophisticated strategies, reaches a correct solution, evaluates reasonableness, and justifies conclusions.`
+    }
+  };
+
+  // Task-specific rubric — reference the actual context
+  const spec = {
+    A: {
+      '1-2': `Lists 1-2 terms related to ${e(topic)} but definitions are copied or incorrect. No reference to the scenario.`,
+      '3-4': `Defines some terms related to ${e(topic)} in own words. Gives basic examples but doesn't connect them to the specific scenario. May have errors in terminology.`,
+      '5-6': `Explains ${e(topic)} concepts using specific details from the scenario (actual numbers, measurements). Shows how two or more concepts connect. Uses correct vocabulary throughout.`,
+      '7-8': `Applies ${e(topic)} understanding to explain the scenario in depth, including what would happen under different conditions. Makes connections to concepts beyond what was taught. Reasoning is thorough and insightful.`
+    },
+    B: {
+      '1-2': `Collects some data from the scenario but organisation is unclear. No pattern identified.`,
+      '3-4': `Records data in a table using numbers from the scenario. Describes the pattern in general terms (e.g., "it goes up") but without specific values.`,
+      '5-6': `Uses specific data from the scenario in a clear table. Describes the pattern with exact numbers (e.g., "increases by [specific amount]"). Writes a general rule and verifies it with at least one test case.`,
+      '7-8': `Systematic data collection from the scenario. General rule expressed algebraically. Verified with an extreme or non-obvious case. Explains why the pattern exists and discusses when it might not hold.`
+    },
+    C: {
+      '1-2': `Shows some working but steps are missing or unclear. Diagrams lack labels.`,
+      '3-4': `Shows step-by-step working with some correct calculations using scenario data. Includes a diagram or table but with incomplete labels or missing units.`,
+      '5-6': `Clear step-by-step working with all scenario data. Table AND graph both included with correct titles, labels, and units. Written explanation references both visuals. Consistent notation.`,
+      '7-8': `Professional-quality presentation. Multiple representations chosen strategically and justified. Results interpreted (not just described). Logical flow allows a reader unfamiliar with the scenario to follow completely.`
+    },
+    D: {
+      '1-2': `Identifies the real-world problem. Attempts some calculation but with significant errors or missing steps.`,
+      '3-4': `Uses some numbers from the scenario to perform basic calculations. Arrives at an answer but doesn't check if it's reasonable. Limited connection back to the real situation.`,
+      '5-6': `Uses all relevant data from the scenario. Calculations are correct and shown step-by-step. Compares at least two options. Checks reasonableness. Answer is interpreted in context.`,
+      '7-8': `Thorough analysis using all scenario data. All options compared with detailed calculations. Clear recommendation justified with evidence. Assumptions stated. Limitations discussed. Considers what would change under different constraints.`
+    }
+  };
+
+  let html = `<table class="rtbl"><thead><tr><th>Level</th><th>Generic MYP Descriptor</th><th>What This Looks Like in This Task</th></tr></thead><tbody>`;
+  for (const lv of ['1-2','3-4','5-6','7-8']) {
+    html += `<tr><td class="lv">${lv}</td><td style="color:#5f8a82;font-style:italic">${gen[cr][lv]}</td><td style="font-weight:500">${spec[cr][lv]}</td></tr>`;
+  }
+  html += `</tbody></table>`;
+  html += `<p style="margin-top:12px;font-size:.78rem;color:#5f8a82"><strong>💡 Tip:</strong> Use the right column (not the generic descriptors) when marking and in standardisation discussions with colleagues.</p>`;
+  return html;
+}
+
+function buildMarking(cr, su, gr, topic, ctx) {
+  const subj = su === 'Mathematics' ? 'maths' : 'science';
+  
+  // Extract numbers from context for sample responses
+  const contextShort = ctx.length > 60 ? ctx.substring(0, 60) + '...' : ctx;
+
+  const samples = {
+    A: [
+      {l:'3-4',c:'l34',
+        r:`${e(topic)} is about ${subj}. It is used in this situation. Some important words are [lists 1-2 terms without clear definitions]. An example is the numbers in the problem.`,
+        w:`The student shows awareness of the topic but definitions are vague or circular. Only 1-2 terms addressed. The example doesn't use specific data from the scenario. No connections between concepts. To move to 5-6: define terms precisely, use actual numbers from the scenario as examples, and explain how concepts relate.`},
+      {l:'5-6',c:'l56',
+        r:`In this scenario about ${e(ctx.substring(0,50))}..., the key concept of ${e(topic)} is important because [explains relevance with specific numbers from the scenario]. The term [key term] means [accurate definition]. For example, in this situation [uses a specific number/measurement from the scenario] shows this because [explains reasoning]. This connects to [second concept] because [valid connection].`,
+        w:`Correct definitions in own words. Uses actual data from the scenario as evidence. Makes at least one valid connection between concepts. Vocabulary is accurate. To move to 7-8: apply understanding to a different or changed scenario, explain what would happen if conditions changed, show deeper insight beyond what was taught.`},
+      {l:'7-8',c:'l78',
+        r:`The concept of ${e(topic)} in this scenario reveals [nuanced understanding]. Using the specific data [references exact numbers from the scenario], we can see that [detailed analysis]. What makes this interesting is that if [condition changed], then [explains consequence with reasoning]. This connects to [concept beyond the immediate topic] because [insightful link]. A common misconception is [identifies one], but actually [corrects it with evidence].`,
+        w:`Goes well beyond surface-level understanding. Uses scenario data precisely. Makes connections to concepts not explicitly taught. Identifies what would change under different conditions. Shows genuine insight. Distinguishes from 5-6 through depth of reasoning, not just length.`}
+    ],
+    B: [
+      {l:'3-4',c:'l34',
+        r:`I put the numbers in a table. The pattern goes up. I think the next number is [makes a prediction]. [Table has some data from scenario but is incomplete or disorganised].`,
+        w:`Data collection attempted but incomplete. Pattern described only as "goes up/down" — no specific values. Prediction may be correct but no reasoning shown. Table exists but has formatting issues. To move to 5-6: state the exact amount of increase/decrease, write the rule as a formula, test the prediction.`},
+      {l:'5-6',c:'l56',
+        r:`From the scenario data, I recorded results in a table [organised with scenario-specific column headings]. The pattern I found is: each time [variable from scenario] increases by [specific amount], the [output] increases by [specific amount]. My general rule is: [writes formula]. I tested this with [specific case from scenario]: [formula] = [result]. This matches my table. ✓`,
+        w:`Systematic data in a clear table. Pattern described with specific numbers. General rule written as formula. Verified with test case. To move to 7-8: explain why the pattern exists, test with an extreme case, discuss limitations.`},
+      {l:'7-8',c:'l78',
+        r:`[Systematic table with all scenario data]. The data shows a clear pattern: as [variable] increases by [specific increment], [output] changes by [specific amount]. This gives the rule: [algebraic formula]. Proof: for [extreme/unusual case from scenario], my rule predicts [calculated value]. Checking against actual data: [verification]. The pattern exists because [mathematical/scientific explanation of why]. This rule holds for all positive values of [variable], but would break down if [identifies limitation relevant to the scenario].`,
+        w:`Complete and systematic. Rule proven with non-trivial case. Explains the underlying reason for the pattern. Discusses scope and limitations. Distinguished from 5-6 by the "why" explanation and critical evaluation.`}
+    ],
+    C: [
+      {l:'3-4',c:'l34',
+        r:`I calculated [one result]. [Shows partial working, some steps missing]. Here is my graph [graph exists but missing title or axis labels or units]. The answer is [value].`,
+        w:`Some working shown but incomplete. One form of representation attempted. Labels missing. No written interpretation of results. To move to 5-6: show every step, add title/labels/units to all visuals, write about what the data shows.`},
+      {l:'5-6',c:'l56',
+        r:`Step 1: [shows calculation with scenario data]. Step 2: [continues clearly]. My results are shown in Table 1 [properly labelled with units] and Figure 1 [graph with title, labelled axes, correct units]. As shown in Figure 1, [describes what the graph shows using specific data points]. The data shows that [interpretation].`,
+        w:`Complete step-by-step working. Both table and graph included with proper labelling. Written explanation refers to visuals. Notation is consistent. To move to 7-8: justify the choice of graph type, interpret rather than describe, ensure logical flow throughout.`},
+      {l:'7-8',c:'l78',
+        r:`[Complete structured report with introduction, method, results, conclusion]. Working: [every step shown with clear logic]. I chose a [specific graph type] rather than a [alternative] because [justified reason]. Table 1 shows [interpretation, not just description]. Figure 1 reveals that [insight from data]. The key finding is [conclusion], which means [implication for the scenario]. Rounding to [appropriate precision] is suitable because [justification].`,
+        w:`Professional quality. Choice of representation justified. Results interpreted with insight. Logical flow throughout. A reader unfamiliar with the task could follow completely. Distinguished from 5-6 by the depth of interpretation and meta-awareness of communication choices.`}
+    ],
+    D: [
+      {l:'3-4',c:'l34',
+        r:`The problem is about [restates scenario briefly]. I calculated [one basic calculation with scenario numbers] = [answer]. [May have unit errors or missing steps].`,
+        w:`Identifies the problem and attempts calculation. Uses some real data. But only one calculation, limited checking, and doesn't connect back to the real decision. To move to 5-6: compare options, show all working, check reasonableness.`},
+      {l:'5-6',c:'l56',
+        r:`The scenario requires us to [identifies the decision]. Using the data: [Option A calculation with real numbers] = [result]. [Option B calculation with real numbers] = [result]. Option [X] is cheaper/better because [basic comparison]. My answer of [value + unit] seems reasonable because [basic check].`,
+        w:`Correct calculations with real data. Multiple options compared. Basic reasonableness check. Answer in context. To move to 7-8: analyse more deeply, discuss assumptions, evaluate limitations, make a fully justified recommendation.`},
+      {l:'7-8',c:'l78',
+        r:`Analysis of the scenario: [detailed breakdown]. [All options calculated with full working using scenario data]. Comparison: [structured comparison table or paragraph]. I recommend [specific option] because [detailed justification citing calculations]. This assumes [states 2+ assumptions]. Limitations: [identifies real constraint]. If [condition changed], my recommendation would change because [explains impact]. Additional consideration: [identifies something beyond the obvious].`,
+        w:`Thorough, multi-option analysis. All calculations correct with real data. Justified recommendation with evidence. Assumptions identified. Limitations discussed. Shows what would change under different conditions. Distinguished from 5-6 by critical evaluation and depth of justification.`}
+    ]
+  };
+
+  let html = `<p style="font-size:.85rem;color:#134E4A;margin-bottom:16px"><strong>Use these sample responses to calibrate marking.</strong> They show what each level looks like for this specific task.</p>`;
+  samples[cr].forEach(s => {
+    html += `<span class="lvl ${s.c}">Level ${s.l} sample response</span>
+      <div class="sresp">"${s.r}"</div>
+      <div class="swhy"><strong>Why this level?</strong>${s.w}</div>`;
+  });
+
+  html += `<div class="divider"></div>
+    <h4 style="font-size:.82rem;color:#d97706;margin-bottom:6px">💡 Teacher Notes</h4>
+    <p style="font-size:.85rem;line-height:1.6;margin-bottom:8px"><strong>Timing:</strong> This task works well as a ${cr==='B'||cr==='C'?'2':'1-2'}-period assessment. Give students 5 minutes to read the scenario before they start writing.</p>
+    <p style="font-size:.85rem;line-height:1.6;margin-bottom:8px"><strong>Common pitfall:</strong> Students at the 3-4 level often restate the scenario instead of analysing it. Prompt them: "What ${su==='Mathematics'?'calculation':'science'} can you use to solve this?"</p>
+    <p style="font-size:.85rem;line-height:1.6"><strong>Differentiation:</strong> For EAL students, provide the <a href="/eal/graphic-organizers/" target="_top" style="color:#0D9488">Graphic Organizer</a> for Criterion ${cr} as a scaffold. For advanced students, add: "What additional information would you need to make an even better recommendation?"</p>`;
+  return html;
+}
+
+function buildSheet(cr, su, gr, topic, ctx, taskHtml) {
+  const frames = {
+    A:[`The term <em>___</em> means <em>___</em>. In this scenario, this matters because <em>___</em>.`,`The connection between <em>___</em> and <em>___</em> is <em>___</em>.`,`If conditions changed, <em>___</em> would happen because <em>___</em>.`],
+    B:[`As <em>___</em> increases by <em>___</em>, the <em>___</em> changes by <em>___</em>.`,`My rule is: <em>___</em>. I verified this by testing <em>___</em>.`,`The pattern works because <em>___</em>.`],
+    C:[`Table/Figure <em>___</em> shows that <em>___</em>.`,`I chose a <em>___</em> because <em>___</em>.`,`The data indicates <em>___</em>, meaning <em>___</em>.`],
+    D:[`I recommend <em>___</em> because <em>___</em>.`,`This assumes <em>___</em>. If that changed, <em>___</em>.`,`A limitation is <em>___</em>. To improve, I would need <em>___</em>.`]
+  };
+  const checks = {
+    A:['I defined key terms in my own words','I used specific numbers from the scenario','I explained connections between concepts','I used correct vocabulary throughout'],
+    B:['I tested at least 5 cases','My data table is clear and labelled','I wrote a general rule','I verified my rule','I explained WHY the pattern works'],
+    C:['I showed all working step by step','My graph/table has title, labels, and units','I used correct notation consistently','I interpreted my results'],
+    D:['I used the real numbers from the scenario','I compared options with calculations','I made a clear recommendation','I checked my answer is reasonable','I discussed limitations']
+  };
+
+  return `<div class="sheet"><div class="sheet-c">
+    <div class="s1">MYP ${su} — Criterion ${cr}: ${CN[cr]}</div>
+    <div class="s2">${e(topic)}</div>
+    <div class="s3">Grade ${gr} · Name: _________________ · Date: _________________</div>
+  </div>
+  <div class="sheet-s"><h4>The Scenario</h4><p style="font-style:italic;line-height:1.6">${e(ctx)}</p></div>
+  <div class="sheet-s"><h4>Your Tasks</h4>
+    <p style="margin-bottom:6px"><strong>1.</strong> [Level 3-4 question from the task above]</p>
+    <p style="margin-bottom:6px"><strong>2.</strong> [Level 5-6 question]</p>
+    <p><strong>3.</strong> [Level 7-8 question]</p>
+  </div>
+  <div class="sheet-w"></div>
+  <div class="sheet-s"><h4>Sentence Frames</h4>${frames[cr].map(f=>'<div class="sheet-f">'+f+'</div>').join('')}</div>
+  <div class="sheet-s"><h4>Before You Submit — Check</h4>
+    <div style="font-size:.82rem;line-height:2">${checks[cr].map(c=>'☐ '+c).join('<br>')}</div>
+  </div></div>`;
+}
+
 function goBack(){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById('p0').classList.add('active');document.querySelectorAll('.step-dot').forEach((d,i)=>d.className='step-dot'+(i===0?' active':''))}
-function copyBox(id){const t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(()=>{const b=document.querySelector('#'+id+' .copy-btn');b.textContent='✓ Copied!';b.classList.add('copied');setTimeout(()=>{b.textContent='Copy';b.classList.remove('copied')},1500)})}
-function copyAll(){navigator.clipboard.writeText(document.getElementById('outputArea').innerText)}
+function cpb(id){const t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(()=>{const b=document.querySelector('#'+id+' .copy-btn');b.textContent='✓ Copied!';setTimeout(()=>b.textContent='Copy',1500)})}
 </script>
 </body>
 </html>
