@@ -1,36 +1,7 @@
 {{ define "main" }}
 {{ $home := .Site.Params.home }}
 {{ $resources := where .Site.RegularPages "Section" "resources" }}
-{{ $mathLinks := slice
-  (dict "title" "Middle School Topic Map" "url" "/subjects/mathematics/" "copy" "Grade 6-8 topic guide.")
-  (dict "title" "Grade 6 topics" "url" "/subjects/mathematics/#grade-6" "copy" "Ratios, arithmetic, variables, geometry, and data.")
-  (dict "title" "Grade 7 topics" "url" "/subjects/mathematics/#grade-7" "copy" "Proportional reasoning, equations, geometry, and probability.")
-  (dict "title" "Grade 8 topics" "url" "/subjects/mathematics/#grade-8" "copy" "Equations, functions, transformations, and data.")
-  (dict "title" "Pre-algebra bridge" "url" "/subjects/mathematics/#pre-algebra" "copy" "A transition into formal algebra.")
-  (dict "title" "Algebra basics" "url" "/subjects/mathematics/#algebra-basics" "copy" "Early symbolic reasoning and generalisation.")
-}}
-{{ $scienceLinks := slice
-  (dict "title" "Middle School Topic Map" "url" "/subjects/science/" "copy" "Middle school science topic guide.")
-  (dict "title" "Biology" "url" "/subjects/science/#biology" "copy" "Cells, life processes, and continuity of life.")
-  (dict "title" "Earth and space science" "url" "/subjects/science/#earth-space" "copy" "Tectonics, Earth systems, and astronomy.")
-  (dict "title" "Physics" "url" "/subjects/science/#physics" "copy" "Forces, motion, circuits, and energy.")
-  (dict "title" "Chemistry" "url" "/subjects/science/#chemistry" "copy" "Matter, particles, mixtures, and reactions.")
-  (dict "title" "Inquiry routes" "url" "/subjects/science/#inquiry-routes" "copy" "Cross-course investigation and criteria links.")
-}}
-{{ $gradeLinks := slice
-  (dict "title" "Grade 6" "url" "/year-levels/grade-6/")
-  (dict "title" "Grade 7" "url" "/year-levels/grade-7/")
-  (dict "title" "Grade 8" "url" "/year-levels/grade-8/")
-  (dict "title" "Grade 9" "url" "/year-levels/grade-9/")
-}}
-{{ $browseLinks := slice
-  (dict "title" "All Resources" "url" "/resources/" "copy" "Open the full resource library.")
-  (dict "title" "Interactive Games" "url" "/games/" "copy" "Interactive simulations and quizzes.")
-  (dict "title" "Investigation Packs" "url" "/resources/" "copy" "Guided inquiry packs and evidence tasks.")
-  (dict "title" "Lab Activities" "url" "/resources/" "copy" "Practical investigations and experiments.")
-  (dict "title" "Assessment Toolkit" "url" "/assessment/" "copy" "Rubrics, exemplars, and moderation guides.")
-  (dict "title" "Topic Pathways" "url" "/#topic-pathways" "copy" "Browse by concept instead of by subject.")
-}}
+{{ $totalResources := len $resources }}
 {{ $startLinks := slice
   (dict "title" "Mathematics" "url" "/subjects/mathematics/" "icon" "📐" "desc" "Algebra, geometry, statistics & more")
   (dict "title" "Science" "url" "/subjects/science/" "icon" "🔬" "desc" "Physics, chemistry, biology & ecology")
@@ -40,63 +11,68 @@
   (dict "title" "Students" "url" "/students/" "icon" "🎒" "desc" "Quizzes, checklists & explainers")
 }}
 
-<section class="ka-home-hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <svg class="hero-lattice" aria-hidden="true" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="latticeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#0D9488" stop-opacity="0.06"/>
-        <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.02"/>
-      </linearGradient>
-    </defs>
-    <!-- Lattice network -->
-    <line x1="100" y1="60" x2="200" y2="120" stroke="#0D9488" stroke-width="0.8" opacity="0.12"/>
-    <line x1="200" y1="120" x2="300" y2="80" stroke="#0D9488" stroke-width="0.8" opacity="0.1"/>
-    <line x1="300" y1="80" x2="400" y2="140" stroke="#0D9488" stroke-width="0.8" opacity="0.08"/>
-    <line x1="400" y1="140" x2="500" y2="100" stroke="#0D9488" stroke-width="0.8" opacity="0.06"/>
-    <line x1="200" y1="120" x2="250" y2="220" stroke="#0D9488" stroke-width="0.8" opacity="0.1"/>
-    <line x1="300" y1="80" x2="350" y2="200" stroke="#0D9488" stroke-width="0.8" opacity="0.08"/>
-    <line x1="100" y1="60" x2="150" y2="180" stroke="#0D9488" stroke-width="0.8" opacity="0.08"/>
-    <line x1="400" y1="140" x2="380" y2="260" stroke="#0D9488" stroke-width="0.8" opacity="0.06"/>
-    <line x1="150" y1="180" x2="250" y2="220" stroke="#0D9488" stroke-width="0.8" opacity="0.07"/>
-    <line x1="250" y1="220" x2="350" y2="200" stroke="#0D9488" stroke-width="0.8" opacity="0.07"/>
-    <line x1="350" y1="200" x2="380" y2="260" stroke="#0D9488" stroke-width="0.8" opacity="0.06"/>
-    <line x1="150" y1="180" x2="200" y2="300" stroke="#0D9488" stroke-width="0.8" opacity="0.05"/>
-    <line x1="250" y1="220" x2="300" y2="320" stroke="#0D9488" stroke-width="0.8" opacity="0.05"/>
-    <line x1="380" y1="260" x2="450" y2="340" stroke="#0D9488" stroke-width="0.8" opacity="0.04"/>
-    <!-- Nodes -->
-    <circle cx="100" cy="60" r="4" fill="#0D9488" opacity="0.15"/>
-    <circle cx="200" cy="120" r="5" fill="#0D9488" opacity="0.12"/>
-    <circle cx="300" cy="80" r="4.5" fill="#0D9488" opacity="0.1"/>
-    <circle cx="400" cy="140" r="4" fill="#0D9488" opacity="0.08"/>
-    <circle cx="500" cy="100" r="3.5" fill="#0D9488" opacity="0.06"/>
-    <circle cx="150" cy="180" r="3.5" fill="#0D9488" opacity="0.1"/>
-    <circle cx="250" cy="220" r="4" fill="#0D9488" opacity="0.08"/>
-    <circle cx="350" cy="200" r="3.5" fill="#0D9488" opacity="0.07"/>
-    <circle cx="380" cy="260" r="3" fill="#0D9488" opacity="0.06"/>
-    <circle cx="200" cy="300" r="3" fill="#0D9488" opacity="0.05"/>
-    <circle cx="300" cy="320" r="3" fill="#0D9488" opacity="0.04"/>
-    <circle cx="450" cy="340" r="2.5" fill="#0D9488" opacity="0.04"/>
-  </svg>
-  <div class="ka-home-shell">
-    <div class="ka-home-copy">
+<!-- ── HERO — full-bleed, wider ── -->
+<section class="hp-hero">
+  <div class="hp-hero-bg" aria-hidden="true">
+    <svg class="hp-hero-lattice" viewBox="0 0 1400 500" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="heroGlow" cx="25%" cy="35%" r="55%">
+          <stop offset="0%" stop-color="#0D9488" stop-opacity="0.14"/>
+          <stop offset="100%" stop-color="#0D9488" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect fill="url(#heroGlow)" width="1400" height="500"/>
+      <g stroke="#0D9488" stroke-width="0.8" fill="none">
+        <line x1="120" y1="80" x2="280" y2="160" opacity="0.12"/>
+        <line x1="280" y1="160" x2="440" y2="100" opacity="0.1"/>
+        <line x1="440" y1="100" x2="600" y2="180" opacity="0.08"/>
+        <line x1="600" y1="180" x2="760" y2="120" opacity="0.06"/>
+        <line x1="760" y1="120" x2="920" y2="190" opacity="0.05"/>
+        <line x1="920" y1="190" x2="1080" y2="140" opacity="0.04"/>
+        <line x1="1080" y1="140" x2="1240" y2="200" opacity="0.03"/>
+        <line x1="280" y1="160" x2="350" y2="300" opacity="0.1"/>
+        <line x1="440" y1="100" x2="500" y2="270" opacity="0.08"/>
+        <line x1="600" y1="180" x2="550" y2="340" opacity="0.06"/>
+        <line x1="760" y1="120" x2="820" y2="310" opacity="0.05"/>
+        <line x1="350" y1="300" x2="500" y2="270" opacity="0.07"/>
+        <line x1="500" y1="270" x2="550" y2="340" opacity="0.06"/>
+        <line x1="550" y1="340" x2="820" y2="310" opacity="0.04"/>
+      </g>
+      <g fill="#0D9488">
+        <circle cx="120" cy="80" r="4" opacity="0.14"/>
+        <circle cx="280" cy="160" r="5" opacity="0.12"/>
+        <circle cx="440" cy="100" r="4.5" opacity="0.1"/>
+        <circle cx="600" cy="180" r="4" opacity="0.08"/>
+        <circle cx="760" cy="120" r="3.5" opacity="0.06"/>
+        <circle cx="920" cy="190" r="3.5" opacity="0.05"/>
+        <circle cx="1080" cy="140" r="3" opacity="0.04"/>
+        <circle cx="1240" cy="200" r="2.5" opacity="0.03"/>
+        <circle cx="350" cy="300" r="3.5" opacity="0.08"/>
+        <circle cx="500" cy="270" r="4" opacity="0.07"/>
+        <circle cx="550" cy="340" r="3.5" opacity="0.05"/>
+        <circle cx="820" cy="310" r="3" opacity="0.04"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hp-hero-inner">
+    <div class="hp-hero-copy">
       <div class="hero-eyebrow">{{ $home.hero_eyebrow }}</div>
       <h1>{{ $home.hero_title | safeHTML }}</h1>
-      <p>{{ .Site.Params.description }}</p>
+      <p class="hp-hero-sub">{{ .Site.Params.description }}</p>
       <div class="hero-actions">
         <a href="{{ $home.hero_primary_url }}" class="btn-primary">{{ $home.hero_primary_label }}</a>
         <a href="{{ $home.hero_secondary_url }}" class="btn-secondary">{{ $home.hero_secondary_label }}</a>
       </div>
     </div>
 
-    <aside class="ka-start-panel">
-      <h2>{{ $home.hero_panel_title }}</h2>
-      <p>{{ $home.hero_panel_copy }}</p>
-      <div class="ka-start-grid">
+    <aside class="hp-start-panel">
+      <h2>Find what you need</h2>
+      <div class="hp-start-grid">
         {{ range $startLinks }}
-        <a class="ka-start-card" href="{{ .url }}">
-          <span class="ka-start-icon">{{ .icon }}</span>
-          <span class="ka-start-info">
+        <a class="hp-start-card" href="{{ .url }}">
+          <span class="hp-start-icon">{{ .icon }}</span>
+          <span class="hp-start-info">
             <strong>{{ .title }}</strong>
             <small>{{ .desc }}</small>
           </span>
@@ -106,6 +82,105 @@
     </aside>
   </div>
 </section>
+
+<!-- ── STATS BAR — dark, full-bleed, confident ── -->
+<section class="hp-stats" aria-label="Site statistics">
+  <div class="hp-stats-inner">
+    <div class="hp-stat">
+      <span class="hp-stat-num stat-num" data-count="{{ $totalResources }}">0</span>
+      <span class="hp-stat-label">Investigations & resources</span>
+    </div>
+    <div class="hp-stat">
+      <span class="hp-stat-num">16</span>
+      <span class="hp-stat-label">Interactive games</span>
+    </div>
+    <div class="hp-stat">
+      <span class="hp-stat-num">6</span>
+      <span class="hp-stat-label">MYP subjects</span>
+    </div>
+    <div class="hp-stat">
+      <span class="hp-stat-num">Free</span>
+      <span class="hp-stat-label">Forever · CC BY-SA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED FLAGSHIPS ── -->
+{{ partial "featured-investigations.html" . }}
+
+<!-- ── STUDENT QUICK-FIND ── -->
+<section class="hp-grades reveal" aria-labelledby="hp-grades-heading">
+  <div class="hp-grades-inner">
+    <div class="hp-grades-header">
+      <span class="hp-grades-eyebrow">For students</span>
+      <h2 id="hp-grades-heading">Your grade. Your topic. Two taps.</h2>
+    </div>
+
+    <div class="hp-grades-grid">
+      <a href="/year-levels/grade-6/" class="hp-grade-tile" data-grade="6">
+        <span class="hp-grade-num">6</span>
+        <div><strong>Grade 6</strong><small>Numbers · Body Systems · Solar System · Force &amp; Motion</small></div>
+      </a>
+      <a href="/year-levels/grade-7/" class="hp-grade-tile" data-grade="7">
+        <span class="hp-grade-num">7</span>
+        <div><strong>Grade 7</strong><small>Proportional Reasoning · Ecosystems · Circuits · Geometry</small></div>
+      </a>
+      <a href="/year-levels/grade-8/" class="hp-grade-tile" data-grade="8">
+        <span class="hp-grade-num">8</span>
+        <div><strong>Grade 8</strong><small>Linear Graphs · Cells · Plate Tectonics · Exponents</small></div>
+      </a>
+      <a href="/year-levels/grade-9/" class="hp-grade-tile" data-grade="9">
+        <span class="hp-grade-num">9</span>
+        <div><strong>Grade 9</strong><small>Algebra · Atomic Theory · Cell Division · Statistics</small></div>
+      </a>
+    </div>
+
+    <div class="hp-stuck-row">
+      <div class="hp-stuck-text"><strong>Stuck?</strong> 24 visual explainers with practice questions.</div>
+      <div class="hp-stuck-pills">
+        <a href="/students/help/#algebra" class="hp-stuck-pill">𝑥 Algebra</a>
+        <a href="/students/help/#fractions" class="hp-stuck-pill">½ Fractions</a>
+        <a href="/students/help/#forces" class="hp-stuck-pill">💪 Forces</a>
+        <a href="/students/help/#cells" class="hp-stuck-pill">🔬 Cells</a>
+        <a href="/students/help/" class="hp-stuck-pill hp-stuck-more">All 24 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROMISE — what makes these different ── -->
+{{ if $resources }}
+<section class="hp-promise reveal">
+  <div class="hp-promise-inner">
+    <div class="hp-promise-header">
+      <div class="hp-promise-kicker">What makes these different</div>
+      <h2>Every resource here has been taught. None survived their first lesson unchanged.</h2>
+    </div>
+    <div class="hp-promise-grid">
+      <div class="hp-promise-card">
+        <div class="hp-promise-icon">🎯</div>
+        <h3>Starts with essential questions</h3>
+        <p>Every unit begins with a question worth arguing about — not a topic heading.</p>
+      </div>
+      <div class="hp-promise-card">
+        <div class="hp-promise-icon">🔍</div>
+        <h3>Built for genuine inquiry</h3>
+        <p>Low-floor, high-ceiling tasks that let every student enter and no student coast.</p>
+      </div>
+      <div class="hp-promise-card">
+        <div class="hp-promise-icon">📋</div>
+        <h3>MYP criteria made explicit</h3>
+        <p>Assessment connections are built in, not bolted on. Every resource shows which criteria it targets.</p>
+      </div>
+      <div class="hp-promise-card">
+        <div class="hp-promise-icon">🌍</div>
+        <h3>Written for international classrooms</h3>
+        <p>Task language is chosen carefully for students whose first language isn't English.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
 
 <!-- ── PHILOSOPHY STRIP ── -->
 <section class="philosophy-strip reveal">
@@ -125,269 +200,7 @@
   </div>
 </section>
 
-<!-- ── SEASONAL BANNER ── -->
-{{ $month := now.Month }}
-<section class="seasonal-banner">
-  <div class="seasonal-inner">
-    {{ if or (eq $month 3) (eq $month 4) }}
-    <span class="seasonal-icon">🥧</span>
-    <div><strong>March: Pi Day & Probability Month</strong>
-    <span class="seasonal-links"><a href="/resources/is-this-die-cheating-probability-investigation/">Is This Die Cheating?</a> · <a href="/resources/zero-point-nine-repeating-decimals-investigation/">Does 0.999... = 1?</a> · <a href="/resources/pattern-lab-game/">Pattern Lab</a></span></div>
-    {{ else if or (eq $month 5) (eq $month 6) }}
-    <span class="seasonal-icon">🌍</span>
-    <div><strong>June: World Environment Day</strong>
-    <span class="seasonal-links"><a href="/resources/the-invisible-thread-ecology-investigation/">The Invisible Thread</a> · <a href="/resources/cell-explorer-game/">Cell Explorer</a> · <a href="/resources/grade-9-climate-data-investigation/">Is Our City Getting Warmer?</a></span></div>
-    {{ else if or (eq $month 8) (eq $month 9) }}
-    <span class="seasonal-icon">📚</span>
-    <div><strong>Back to School: Starter Investigations</strong>
-    <span class="seasonal-links"><a href="/resources/the-million-dollar-question-number-sense/">Million Dollar Question</a> · <a href="/resources/dead-or-alive-biology-investigation/">Dead or Alive?</a> · <a href="/resources/">Browse all resources</a></span></div>
-    {{ else if or (eq $month 11) (eq $month 12) }}
-    <span class="seasonal-icon">❄️</span>
-    <div><strong>Winter: Data & Statistics Season</strong>
-    <span class="seasonal-links"><a href="/resources/the-misleading-graph-statistics-investigation/">Misleading Graphs</a> · <a href="/resources/grade-7-statistics-survey-investigation/">Survey Design</a> · <a href="/resources/grade-8-scatter-graphs-investigation/">Height vs Armspan</a></span></div>
-    {{ else }}
-    <span class="seasonal-icon">✨</span>
-    <div><strong>New this month: 5 visual explainers</strong>
-    <span class="seasonal-links"><a href="/students/help/">I don't understand...</a> · <a href="/vocabulary/">Visual Vocabulary (102 terms)</a> · <a href="/students/">Student Section</a></span></div>
-    {{ end }}
-  </div>
-</section>
-
-<!-- ── POINT 2: STUDENT "I DON'T UNDERSTAND" TEASER ── -->
-<section class="home-stuck reveal">
-  <div class="home-stuck-inner">
-    <div class="home-stuck-text">
-      <h2>I don't understand...</h2>
-      <p>24 visual explainers with practice questions. Click what's confusing you.</p>
-    </div>
-    <div class="home-stuck-pills">
-      <a href="/students/help/#algebra" class="home-stuck-pill">𝑥 Algebra</a>
-      <a href="/students/help/#fractions" class="home-stuck-pill">½ Fractions</a>
-      <a href="/students/help/#forces" class="home-stuck-pill">💪 Forces</a>
-      <a href="/students/help/#cells" class="home-stuck-pill">🔬 Cells</a>
-      <a href="/students/help/" class="home-stuck-pill home-stuck-more">All 24 topics →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── STATS BAR ── -->
-<section class="home-stats reveal">
-  <div class="home-stats-inner">
-    {{ $totalResources := len $resources }}
-    <div class="home-stat-item">
-      <span class="home-stat-num stat-num" data-count="{{ $totalResources }}">0</span>
-      <span class="home-stat-label">Resources</span>
-    </div>
-    <div class="home-stat-item">
-      <span class="home-stat-num">16</span>
-      <span class="home-stat-label">Interactive Games</span>
-    </div>
-    <div class="home-stat-item">
-      <span class="home-stat-num">6</span>
-      <span class="home-stat-label">MYP Subjects</span>
-    </div>
-    <div class="home-stat-item">
-      <span class="home-stat-num">Free</span>
-      <span class="home-stat-label">Forever · CC BY-SA</span>
-    </div>
-  </div>
-</section>
-
-<!-- ── FEATURED FLAGSHIP INVESTIGATIONS ── -->
-{{ partial "featured-investigations.html" . }}
-
-<!-- ── INVESTIGATION OF THE WEEK ── -->
-{{ $flagships := where $resources "Params.teacher_moves" "ne" nil }}
-{{ $featured := index $flagships 0 }}
-{{ with $featured }}
-{{ $fSubject := "" }}
-{{ with .Params.subjects }}{{ $fSubject = index . 0 }}{{ end }}
-{{ $fColor := "teal" }}
-{{ if eq ($fSubject | urlize) "biology" }}{{ $fColor = "green" }}{{ end }}
-{{ if eq ($fSubject | urlize) "chemistry" }}{{ $fColor = "rose" }}{{ end }}
-{{ if eq ($fSubject | urlize) "physics" }}{{ $fColor = "blue" }}{{ end }}
-{{ $fSvg := "mathematics" }}
-{{ if eq ($fSubject | urlize) "biology" }}{{ $fSvg = "biology" }}{{ end }}
-{{ if eq ($fSubject | urlize) "chemistry" }}{{ $fSvg = "chemistry" }}{{ end }}
-{{ if eq ($fSubject | urlize) "physics" }}{{ $fSvg = "physics" }}{{ end }}
-{{ if eq ($fSubject | urlize) "ecology" }}{{ $fSvg = "ecology" }}{{ end }}
-<section class="home-featured reveal">
-  <div class="home-featured-inner">
-    <div class="home-featured-kicker">Featured Investigation</div>
-    <a href="{{ .RelPermalink }}" class="home-featured-card rc-{{ $fColor }}">
-      <div class="home-featured-illustration">
-        <img src="/img/subjects/{{ $fSvg }}.svg" alt="" aria-hidden="true" loading="lazy">
-      </div>
-      <div class="home-featured-content">
-        <span class="home-featured-subject rc-text-{{ $fColor }}">{{ $fSubject }}</span>
-        <h2>{{ .Title }}</h2>
-        <p>{{ .Description | truncate 180 }}</p>
-        <span class="home-featured-cta">Start this investigation →</span>
-      </div>
-    </a>
-  </div>
-</section>
-{{ end }}
-
-<!-- ── STUDENT ENTRY ── -->
-<section class="student-entry reveal" aria-labelledby="student-entry-heading">
-  <div class="student-entry-inner">
-    <div class="student-entry-header">
-      <span class="student-entry-eyebrow">For students</span>
-      <h2 id="student-entry-heading">Your grade. Your topic. Two taps.</h2>
-      <p>Pick where you are and jump straight to what you need — no searching required.</p>
-    </div>
-
-    <div class="student-grade-grid">
-      <a href="/year-levels/grade-6/" class="student-grade-tile" data-grade="6">
-        <span class="student-grade-num">6</span>
-        <span class="student-grade-label">Grade 6</span>
-        <span class="student-grade-topics">Numbers · Body Systems · Solar System · Force &amp; Motion</span>
-      </a>
-      <a href="/year-levels/grade-7/" class="student-grade-tile" data-grade="7">
-        <span class="student-grade-num">7</span>
-        <span class="student-grade-label">Grade 7</span>
-        <span class="student-grade-topics">Proportional Reasoning · Ecosystems · Circuits · Geometry</span>
-      </a>
-      <a href="/year-levels/grade-8/" class="student-grade-tile" data-grade="8">
-        <span class="student-grade-num">8</span>
-        <span class="student-grade-label">Grade 8</span>
-        <span class="student-grade-topics">Linear Graphs · Cells · Plate Tectonics · Exponents</span>
-      </a>
-      <a href="/year-levels/grade-9/" class="student-grade-tile" data-grade="9">
-        <span class="student-grade-num">9</span>
-        <span class="student-grade-label">Grade 9</span>
-        <span class="student-grade-topics">Algebra · Atomic Theory · Cell Division · Statistics</span>
-      </a>
-    </div>
-
-    <div class="student-subject-row">
-      <a href="/subjects/mathematics/" class="student-subject-tile">
-        <span class="student-subject-icon" aria-hidden="true">📐</span>
-        <span class="student-subject-text">
-          <span class="student-subject-name">Mathematics</span>
-          <span class="student-subject-blurb">Algebra, geometry, data &amp; more</span>
-        </span>
-      </a>
-      <a href="/subjects/science/" class="student-subject-tile">
-        <span class="student-subject-icon" aria-hidden="true">🔬</span>
-        <span class="student-subject-text">
-          <span class="student-subject-name">Science</span>
-          <span class="student-subject-blurb">Biology, chemistry, physics &amp; earth</span>
-        </span>
-      </a>
-      <a href="/games/" class="student-subject-tile student-subject-tile--games">
-        <span class="student-subject-icon" aria-hidden="true">🎮</span>
-        <span class="student-subject-text">
-          <span class="student-subject-name">Games</span>
-          <span class="student-subject-blurb">Interactive simulations &amp; quizzes</span>
-        </span>
-      </a>
-      <a href="/resources/" class="student-subject-tile">
-        <span class="student-subject-icon" aria-hidden="true">📚</span>
-        <span class="student-subject-text">
-          <span class="student-subject-name">All Resources</span>
-          <span class="student-subject-blurb">Browse the full library</span>
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<section class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">{{ $home.programs_title }}</h2>
-      <p class="section-subtitle">{{ $home.programs_subtitle }}</p>
-    </div>
-  </div>
-
-  <div class="ka-program-grid">
-    <article class="ka-program-card">
-      <div class="ka-program-top">
-        <span class="ka-program-kicker">MYP</span>
-        <h3>{{ $home.myp_math_title }}</h3>
-        <p>{{ $home.myp_math_subtitle }}</p>
-      </div>
-      <div class="ka-link-list">
-        {{ range $mathLinks }}
-        <a class="ka-list-link" href="{{ .url }}">
-          <span>{{ .title }}</span>
-          <small>{{ .copy }}</small>
-        </a>
-        {{ end }}
-      </div>
-    </article>
-
-    <article class="ka-program-card">
-      <div class="ka-program-top">
-        <span class="ka-program-kicker">MYP</span>
-        <h3>{{ $home.myp_science_title }}</h3>
-        <p>{{ $home.myp_science_subtitle }}</p>
-      </div>
-      <div class="ka-link-list">
-        {{ range $scienceLinks }}
-        <a class="ka-list-link" href="{{ .url }}">
-          <span>{{ .title }}</span>
-          <small>{{ .copy }}</small>
-        </a>
-        {{ end }}
-      </div>
-    </article>
-
-    <article class="ka-program-card">
-      <div class="ka-program-top">
-        <span class="ka-program-kicker">MYP</span>
-        <h3>{{ $home.grades_title }}</h3>
-        <p>{{ $home.grades_subtitle }}</p>
-      </div>
-      <div class="ka-link-list">
-        {{ range $gradeLinks }}
-        {{ $count := len (where $resources "Params.year_levels" "intersect" (slice .title)) }}
-        <a class="ka-list-link" href="{{ .url }}">
-          <span>{{ .title }}</span>
-          <small>{{ $count }} resources</small>
-        </a>
-        {{ end }}
-      </div>
-    </article>
-  </div>
-</section>
-
-{{ if $resources }}
-<section class="home-promise reveal">
-  <div class="home-promise-inner">
-    <div class="home-promise-header">
-      <div class="home-promise-kicker">What makes these different</div>
-      <h2>Every resource here has been taught. None survived their first lesson unchanged.</h2>
-    </div>
-    <div class="home-promise-grid">
-      <div class="home-promise-card">
-        <div class="home-promise-icon">🎯</div>
-        <h3>Starts with essential questions</h3>
-        <p>Every unit begins with a question worth arguing about — not a topic heading. The content exists to answer it, not the other way around.</p>
-      </div>
-      <div class="home-promise-card">
-        <div class="home-promise-icon">🔍</div>
-        <h3>Built for genuine inquiry</h3>
-        <p>Low-floor, high-ceiling tasks that let every student enter and no student coast. The investigation always comes before the explanation.</p>
-      </div>
-      <div class="home-promise-card">
-        <div class="home-promise-icon">📋</div>
-        <h3>MYP criteria made explicit</h3>
-        <p>Assessment connections are built in, not bolted on. Every resource shows exactly which criteria it targets and what the evidence of understanding looks like.</p>
-      </div>
-      <div class="home-promise-card">
-        <div class="home-promise-icon">🌍</div>
-        <h3>Written for international classrooms</h3>
-        <p>Task language is chosen carefully for students whose first language isn't English. Context is never assumed — it's built into the resource.</p>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-
+<!-- ── TOPICS CLOUD ── -->
 {{ if .Site.Taxonomies.tags }}
 <section class="section reveal" id="popular-topics">
   <div class="section-header">
@@ -409,10 +222,7 @@
 <section class="section reveal">
   <div class="section-header">
     <h2 class="section-title">From the Blog</h2>
-    <a href="/blog/" class="section-link">
-      All posts
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
+    <a href="/blog/" class="section-link">All posts <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
   <div class="home-blog-grid">
     {{ range first 3 $blogPosts }}
