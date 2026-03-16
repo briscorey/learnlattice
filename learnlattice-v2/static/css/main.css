@@ -1317,3 +1317,17 @@ html.dark .about-writing-card{background:#1e293b;border-color:#334155}
 @media(max-width:480px){
   .home-promise-grid{grid-template-columns:1fr !important}
 }
+
+/* ── Homepage "Find what you need" panel redesign ── */
+.ka-start-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ka-start-card{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid var(--border);border-radius:12px;background:var(--surface);text-decoration:none;color:inherit;transition:all .2s cubic-bezier(.22,1,.36,1)}
+.ka-start-card:hover{border-color:var(--teal);background:var(--teal-wash);transform:translateY(-2px);box-shadow:0 4px 12px rgba(13,78,74,.08)}
+.ka-start-icon{font-size:1.4rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--surface-warm);border-radius:10px;flex-shrink:0}
+.ka-start-card:hover .ka-start-icon{background:var(--teal-wash)}
+.ka-start-info{display:flex;flex-direction:column;gap:1px;min-width:0}
+.ka-start-info strong{font-size:.82rem;color:var(--ink);line-height:1.2}
+.ka-start-info small{font-size:.68rem;color:var(--ink-muted);line-height:1.3}
+html.dark .ka-start-card{background:#0f172a;border-color:#334155}
+html.dark .ka-start-card:hover{border-color:var(--teal);background:rgba(13,148,136,.08)}
+html.dark .ka-start-icon{background:#1e293b}
+@media(max-width:480px){.ka-start-grid{grid-template-columns:1fr}}

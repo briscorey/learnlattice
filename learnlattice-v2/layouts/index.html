@@ -32,11 +32,12 @@
   (dict "title" "Topic Pathways" "url" "/#topic-pathways" "copy" "Browse by concept instead of by subject.")
 }}
 {{ $startLinks := slice
-  (dict "title" "MYP Mathematics" "url" "/subjects/mathematics/")
-  (dict "title" "MYP Science" "url" "/subjects/science/")
-  (dict "title" "🎮 Games" "url" "/games/")
-  (dict "title" "Grade Collections" "url" "/year-levels/")
-  (dict "title" "All Resources" "url" "/resources/")
+  (dict "title" "Mathematics" "url" "/subjects/mathematics/" "icon" "📐" "desc" "Algebra, geometry, statistics & more")
+  (dict "title" "Science" "url" "/subjects/science/" "icon" "🔬" "desc" "Physics, chemistry, biology & ecology")
+  (dict "title" "Games" "url" "/games/" "icon" "🎮" "desc" "Learn through interactive play")
+  (dict "title" "Assessment" "url" "/assessment/" "icon" "📊" "desc" "Rubrics, builder & comment bank")
+  (dict "title" "EAL Support" "url" "/eal/" "icon" "🌏" "desc" "Word walls, sentence frames & guides")
+  (dict "title" "Students" "url" "/students/" "icon" "🎒" "desc" "Quizzes, checklists & explainers")
 }}
 
 <section class="ka-home-hero">
@@ -91,11 +92,14 @@
     <aside class="ka-start-panel">
       <h2>{{ $home.hero_panel_title }}</h2>
       <p>{{ $home.hero_panel_copy }}</p>
-      <div class="ka-start-links">
+      <div class="ka-start-grid">
         {{ range $startLinks }}
-        <a class="ka-start-link" href="{{ .url }}">
-          <span>{{ .title }}</span>
-          <span>→</span>
+        <a class="ka-start-card" href="{{ .url }}">
+          <span class="ka-start-icon">{{ .icon }}</span>
+          <span class="ka-start-info">
+            <strong>{{ .title }}</strong>
+            <small>{{ .desc }}</small>
+          </span>
         </a>
         {{ end }}
       </div>
