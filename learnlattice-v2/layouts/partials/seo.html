@@ -64,6 +64,23 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "LearnLattice — MYP Mathematics & Science",
+  "description": "Free inquiry-based resources for IB Middle Years Programme",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Mathematics Resources", "url": "{{ .Site.BaseURL }}subjects/mathematics/"},
+    {"@type": "ListItem", "position": 2, "name": "Science Resources", "url": "{{ .Site.BaseURL }}subjects/science/"},
+    {"@type": "ListItem", "position": 3, "name": "Interactive Games", "url": "{{ .Site.BaseURL }}games/"},
+    {"@type": "ListItem", "position": 4, "name": "Student Portal", "url": "{{ .Site.BaseURL }}students/"},
+    {"@type": "ListItem", "position": 5, "name": "Assessment Toolkit", "url": "{{ .Site.BaseURL }}assessment/"},
+    {"@type": "ListItem", "position": 6, "name": "EAL Resources", "url": "{{ .Site.BaseURL }}eal/"},
+    {"@type": "ListItem", "position": 7, "name": "Teaching Blog", "url": "{{ .Site.BaseURL }}blog/"}
+  ]
+}
+</script>
 
 {{- else if $isResource }}
 {{/* ── LRMI-enhanced LearningResource schema ── */}}
@@ -242,6 +259,51 @@
 </script>
 
 {{- else }}
+{{/* Check for conference page */}}
+{{- $isConference := in .RelPermalink "beijing-2026" -}}
+{{- if $isConference }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationEvent",
+  "name": "AI in Action 2026 — How One Teacher Built 222 MYP Investigations",
+  "description": "{{ $desc | truncate 300 }}",
+  "url": "{{ $url }}",
+  "startDate": "2026-05-09T09:00:00+08:00",
+  "endDate": "2026-05-09T17:00:00+08:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "International School of Beijing",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Beijing",
+      "addressCountry": "CN"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "EARCOS",
+    "url": "https://www.earcos.org/"
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Corey Zocchi",
+    "jobTitle": "MYP Mathematics & Science Teacher",
+    "worksFor": {
+      "@type": "EducationalOrganization",
+      "name": "Nanjing International School"
+    }
+  },
+  "about": {
+    "@type": "WebSite",
+    "name": "LearnLattice",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{- else }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -256,6 +318,7 @@
   }
 }
 </script>
+{{- end }}
 {{- end }}
 
 {{/* ── BreadcrumbList structured data (all non-home pages) ── */}}
