@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Join Dots — LearnLattice</title>
+<!-- MYP Alignment
+   Criteria: A – Knowing & Understanding (all topics)
+   Key Concept: Logic, Relationships
+   Related Concepts: Equivalence, Representation, Patterns
+   ATL: Critical thinking (strategy), Transfer (apply knowledge under pressure)
+   Global Context: Scientific and Technical Innovation
+-->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f172a;--surface:#1e293b;--card:rgba(30,41,59,.8);--border:rgba(71,85,105,.4);--ink:#e2e8f0;--muted:#94a3b8;--dim:#64748b;--red:#ef4444;--red-g:linear-gradient(135deg,#ef4444,#f97316);--yel:#eab308;--yel-g:linear-gradient(135deg,#eab308,#f59e0b);--teal:#0D9488;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899}
+body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* Animated background */
+.jd-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.jd-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;animation:orbFloat 20s ease-in-out infinite}
+.jd-orb:nth-child(1){width:400px;height:400px;background:var(--violet);top:-100px;left:-100px;animation-delay:0s}
+.jd-orb:nth-child(2){width:350px;height:350px;background:var(--blue);bottom:-80px;right:-80px;animation-delay:-7s}
+.jd-orb:nth-child(3){width:300px;height:300px;background:var(--pink);top:50%;left:50%;animation-delay:-14s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0)}25%{transform:translate(40px,-30px)}50%{transform:translate(-20px,40px)}75%{transform:translate(30px,20px)}}
+
+.jd-app{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:16px}
+
+/* Header */
+.jd-header{text-align:center;margin-bottom:16px}
+.jd-header h1{font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,var(--red),var(--yel));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.jd-header p{font-size:.78rem;color:var(--muted)}
+
+/* Layout: board left, panel right */
+.jd-layout{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start}
+
+/* Status bar */
+.jd-status{text-align:center;margin-bottom:12px;padding:10px 16px;background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:600}
+.jd-status .turn-red{color:var(--red)}
+.jd-status .turn-yel{color:var(--yel)}
+
+/* Board */
+.jd-board-wrap{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:20px;padding:16px;display:inline-block}
+.jd-board{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.jd-cell{width:60px;height:60px;border-radius:50%;background:#0f172a;border:2px solid var(--border);cursor:pointer;transition:all .15s;position:relative;display:flex;align-items:center;justify-content:center}
+.jd-cell:hover{border-color:var(--teal);background:rgba(13,148,136,.08)}
+.jd-cell.red{background:var(--red-g);border-color:var(--red);box-shadow:0 0 16px rgba(239,68,68,.3)}
+.jd-cell.yel{background:var(--yel-g);border-color:var(--yel);box-shadow:0 0 16px rgba(234,179,8,.3)}
+.jd-cell.last::after{content:'';position:absolute;inset:3px;border-radius:50%;border:2px solid rgba(255,255,255,.5)}
+.jd-cell.win{animation:winPulse 1s ease-in-out infinite}
+@keyframes winPulse{0%,100%{box-shadow:0 0 16px rgba(255,255,255,.2)}50%{box-shadow:0 0 32px rgba(255,255,255,.6)}}
+.jd-cell.dropping{animation:dropIn .4s cubic-bezier(.22,1,.36,1)}
+@keyframes dropIn{from{transform:translateY(-300px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* Column hover indicator */
+.jd-col-labels{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:6px}
+.jd-col-label{height:16px;display:flex;align-items:center;justify-content:center}
+.jd-col-arrow{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid var(--red);opacity:0;transition:opacity .15s}
+.jd-board-wrap:hover .jd-col-arrow{opacity:.3}
+
+/* Right panel */
+.jd-panel{display:flex;flex-direction:column;gap:12px}
+
+/* Topic selector */
+.jd-topics{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:14px}
+.jd-topics h3{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-bottom:8px}
+.jd-topic-tabs{display:flex;flex-wrap:wrap;gap:4px}
+.jd-topic-tab{padding:5px 12px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.68rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .12s}
+.jd-topic-tab:hover{border-color:var(--teal);color:var(--ink)}
+.jd-topic-tab.on{background:var(--teal);border-color:var(--teal);color:#fff}
+
+/* Question card */
+.jd-question{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:16px;display:none}
+.jd-question.show{display:block;animation:fadeUp .3s ease}
+.jd-q-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);margin-bottom:8px}
+.jd-q-text{font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.5}
+.jd-q-opts{display:flex;flex-direction:column;gap:6px}
+.jd-q-opt{padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .15s;text-align:left;line-height:1.4}
+.jd-q-opt:hover:not(.locked){border-color:var(--teal);color:var(--ink)}
+.jd-q-opt.correct{border-color:#22c55e;background:rgba(34,197,94,.1);color:#22c55e}
+.jd-q-opt.wrong{border-color:var(--red);background:rgba(239,68,68,.06);color:var(--red)}
+.jd-q-opt.locked{cursor:default}
+.jd-q-feedback{margin-top:10px;padding:10px 14px;border-radius:8px;font-size:.78rem;line-height:1.5;display:none}
+.jd-q-feedback.show{display:block}
+.jd-q-feedback.correct{background:rgba(34,197,94,.08);color:#22c55e}
+.jd-q-feedback.wrong{background:rgba(239,68,68,.06);color:var(--red)}
+
+/* Score */
+.jd-score{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;gap:16px;justify-content:center}
+.jd-score-item{text-align:center}
+.jd-score-item strong{display:block;font-size:1.3rem}
+.jd-score-item.red strong{color:var(--red)}
+.jd-score-item.yel strong{color:var(--yel)}
+.jd-score-item small{font-size:.65rem;color:var(--dim)}
+
+/* Difficulty select */
+.jd-diff-screen{text-align:center;padding:40px 20px}
+.jd-diff-screen h2{font-size:1.3rem;margin-bottom:8px;background:linear-gradient(135deg,var(--red),var(--yel));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.jd-diff-screen p{font-size:.82rem;color:var(--muted);margin-bottom:24px}
+.jd-diff-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.jd-diff-btn{padding:16px 28px;border-radius:14px;border:1.5px solid var(--border);background:var(--card);backdrop-filter:blur(12px);color:var(--ink);cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;min-width:140px}
+.jd-diff-btn:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.jd-diff-btn strong{display:block;font-size:.95rem;margin-bottom:4px}
+.jd-diff-btn small{font-size:.7rem;color:var(--dim)}
+
+/* Win overlay */
+.jd-win{display:none;text-align:center;padding:20px 16px;background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px}
+.jd-win.show{display:block;animation:fadeUp .4s ease}
+.jd-win h2{font-size:1.2rem;margin-bottom:8px}
+.jd-win p{font-size:.82rem;color:var(--muted);margin-bottom:14px}
+.jd-win button{padding:10px 24px;border-radius:10px;background:var(--teal);border:none;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:800px){
+  .jd-layout{grid-template-columns:1fr}
+  .jd-cell{width:44px;height:44px}
+  .jd-board-wrap{padding:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="jd-bg"><div class="jd-orb"></div><div class="jd-orb"></div><div class="jd-orb"></div></div>
+
+<div class="jd-app">
+  <div class="jd-header">
+    <h1>🔴🟡 Join Dots</h1>
+    <p>Answer a question to earn your move. Connect 4 to win!</p>
+  </div>
+
+  <div id="jdDiffScreen" class="jd-diff-screen">
+    <h2>Choose Difficulty</h2>
+    <p>How smart should your opponent be?</p>
+    <div class="jd-diff-btns">
+      <button class="jd-diff-btn" onclick="startGame(1)"><strong>🟢 Easy</strong><small>Sometimes makes mistakes</small></button>
+      <button class="jd-diff-btn" onclick="startGame(3)"><strong>🟡 Medium</strong><small>Plays well, misses some</small></button>
+      <button class="jd-diff-btn" onclick="startGame(5)"><strong>🔴 Hard</strong><small>Strategic and ruthless</small></button>
+    </div>
+  </div>
+
+  <div id="jdGame" style="display:none">
+    <div class="jd-layout">
+      <div>
+        <div class="jd-status" id="jdStatus">Your turn — answer a question to play!</div>
+        <div class="jd-board-wrap">
+          <div class="jd-col-labels" id="jdColLabels"></div>
+          <div class="jd-board" id="jdBoard"></div>
+        </div>
+      </div>
+      <div class="jd-panel">
+        <div class="jd-score">
+          <div class="jd-score-item red"><strong id="jdRedScore">0</strong><small>You (🔴)</small></div>
+          <div class="jd-score-item"><strong id="jdDraws">0</strong><small>Draws</small></div>
+          <div class="jd-score-item yel"><strong id="jdYelScore">0</strong><small>AI (🟡)</small></div>
+        </div>
+        <div class="jd-topics">
+          <h3>Pick your topic</h3>
+          <div class="jd-topic-tabs" id="jdTopics"></div>
+        </div>
+        <div class="jd-question" id="jdQuestion"></div>
+        <div class="jd-win" id="jdWin"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// JOIN DOTS — Connect 4 with MYP Questions
+// ═══════════════════════════════════════════
+
+var ROWS = 6, COLS = 7;
+var board, currentPlayer, gameOver, aiDepth, pendingCol, animating;
+var scores = {red:0, yel:0, draws:0};
+var activeTopic = 'all';
+
+// ─── Question Bank ───
+var QUESTIONS = {
+  algebra: [
+    {q:"Solve: 3x + 7 = 22",opts:["x = 5","x = 7","x = 3","x = 15"],a:0,why:"Subtract 7 from both sides: 3x = 15. Divide by 3: x = 5."},
+    {q:"What is the gradient of y = 4x − 3?",opts:["4","−3","3","−4"],a:0,why:"In y = mx + c, the gradient m is the coefficient of x."},
+    {q:"Simplify: 5a + 3b − 2a + b",opts:["3a + 4b","7a + 4b","3a + 2b","7a + 2b"],a:0,why:"Combine like terms: 5a − 2a = 3a, 3b + b = 4b."},
+    {q:"What is the y-intercept of y = 2x + 5?",opts:["5","2","−5","7"],a:0,why:"The y-intercept is the constant c in y = mx + c."},
+    {q:"Expand: 3(2x − 4)",opts:["6x − 12","6x − 4","5x − 12","6x + 12"],a:0,why:"Multiply each term: 3 × 2x = 6x, 3 × (−4) = −12."},
+    {q:"If n = 5, what is 2n² + 1?",opts:["51","26","11","101"],a:0,why:"2 × 5² + 1 = 2 × 25 + 1 = 51."},
+    {q:"What is the common difference in: 3, 7, 11, 15...?",opts:["4","3","7","5"],a:0,why:"Each term increases by 4: 7−3=4, 11−7=4."},
+    {q:"Solve: x/4 = 6",opts:["x = 24","x = 2","x = 10","x = 1.5"],a:0,why:"Multiply both sides by 4: x = 24."},
+  ],
+  fractions: [
+    {q:"What is ½ + ⅓?",opts:["⅚","⅔","1","⅖"],a:0,why:"Common denominator: 3/6 + 2/6 = 5/6."},
+    {q:"Convert 0.75 to a fraction",opts:["¾","⅗","⅞","⅔"],a:0,why:"0.75 = 75/100 = ¾ (divide both by 25)."},
+    {q:"What is ⅔ of 18?",opts:["12","9","6","15"],a:0,why:"18 ÷ 3 = 6, then 6 × 2 = 12."},
+    {q:"Simplify 12/16",opts:["¾","⅔","⅝","⅘"],a:0,why:"Divide both by 4: 12÷4=3, 16÷4=4."},
+    {q:"What is 30% as a fraction?",opts:["3/10","1/3","3/100","30/10"],a:0,why:"30% = 30/100 = 3/10."},
+  ],
+  probability: [
+    {q:"A fair die is rolled. P(even)?",opts:["1/2","1/3","1/6","2/3"],a:0,why:"Even numbers: 2, 4, 6 = 3 outcomes out of 6."},
+    {q:"A bag has 3 red, 2 blue balls. P(red)?",opts:["3/5","2/5","3/2","1/3"],a:0,why:"3 red out of 5 total = 3/5."},
+    {q:"Two coins are flipped. P(both heads)?",opts:["1/4","1/2","1/3","3/4"],a:0,why:"4 outcomes: HH, HT, TH, TT. Only 1 is both heads."},
+    {q:"A spinner has 8 equal sections. P(landing on 5)?",opts:["1/8","5/8","1/5","1/4"],a:0,why:"Each section is equally likely: 1 out of 8."},
+  ],
+  forces: [
+    {q:"What unit is force measured in?",opts:["Newtons (N)","Joules (J)","Watts (W)","Pascals (Pa)"],a:0,why:"Force is measured in Newtons, named after Isaac Newton."},
+    {q:"If forces are balanced, the object...",opts:["Stays the same","Speeds up","Slows down","Falls"],a:0,why:"Balanced forces = no change in motion (Newton's 1st law)."},
+    {q:"What is mass × acceleration?",opts:["Force","Energy","Power","Speed"],a:0,why:"F = ma (Newton's second law)."},
+    {q:"Friction always acts...",opts:["Against motion","With motion","Upward","Randomly"],a:0,why:"Friction opposes the direction of movement."},
+  ],
+  cells: [
+    {q:"Which organelle is the 'powerhouse'?",opts:["Mitochondria","Nucleus","Ribosome","Cell membrane"],a:0,why:"Mitochondria produce energy (ATP) through respiration."},
+    {q:"What controls what enters/leaves a cell?",opts:["Cell membrane","Nucleus","Cytoplasm","Cell wall"],a:0,why:"The cell membrane is selectively permeable."},
+    {q:"Which is found in plant cells but NOT animal cells?",opts:["Cell wall","Nucleus","Mitochondria","Cytoplasm"],a:0,why:"Plant cells have a rigid cell wall; animal cells don't."},
+    {q:"Where is DNA found?",opts:["Nucleus","Cytoplasm","Membrane","Ribosome"],a:0,why:"DNA is stored in the nucleus of the cell."},
+  ],
+  density: [
+    {q:"Density = mass ÷ ...",opts:["Volume","Weight","Speed","Area"],a:0,why:"Density = mass/volume (ρ = m/V)."},
+    {q:"A block: mass 200g, volume 50cm³. Density?",opts:["4 g/cm³","250 g/cm³","150 g/cm³","0.25 g/cm³"],a:0,why:"200 ÷ 50 = 4 g/cm³."},
+    {q:"Object sinks when its density is...",opts:["Greater than the liquid","Less than the liquid","Equal to the liquid","Zero"],a:0,why:"Objects denser than the surrounding liquid sink."},
+    {q:"Water has a density of...",opts:["1 g/cm³","10 g/cm³","0.1 g/cm³","100 g/cm³"],a:0,why:"Pure water at 4°C has a density of exactly 1 g/cm³."},
+  ],
+  energy: [
+    {q:"What type of energy does a moving car have?",opts:["Kinetic","Potential","Thermal","Chemical"],a:0,why:"Kinetic energy is the energy of motion."},
+    {q:"Energy cannot be created or...",opts:["Destroyed","Transferred","Stored","Changed"],a:0,why:"Law of conservation of energy: energy is only transferred."},
+    {q:"Gravitational PE depends on mass, g, and...",opts:["Height","Speed","Time","Temperature"],a:0,why:"GPE = mass × g × height."},
+    {q:"A kettle converts electrical energy to...",opts:["Thermal energy","Kinetic energy","Sound energy","Nuclear energy"],a:0,why:"A kettle heats water — electrical → thermal."},
+  ],
+  ecology: [
+    {q:"A producer makes its own food using...",opts:["Photosynthesis","Respiration","Digestion","Excretion"],a:0,why:"Plants use sunlight, CO₂ and water to make glucose."},
+    {q:"What eats producers?",opts:["Primary consumers","Secondary consumers","Decomposers","Producers"],a:0,why:"Primary consumers (herbivores) eat producers (plants)."},
+    {q:"What happens to energy along a food chain?",opts:["It decreases","It increases","It stays the same","It doubles"],a:0,why:"Energy is lost as heat at each trophic level (~90%)."},
+    {q:"Decomposers break down...",opts:["Dead organisms","Living organisms","Rocks","Water"],a:0,why:"Decomposers recycle nutrients from dead matter."},
+  ],
+};
+
+var TOPIC_LABELS = {
+  all:"All Topics",algebra:"Algebra",fractions:"Fractions",probability:"Probability",
+  forces:"Forces",cells:"Cells",density:"Density",energy:"Energy",ecology:"Ecology"
+};
+
+// ─── Init ───
+function startGame(depth) {
+  aiDepth = depth;
+  document.getElementById('jdDiffScreen').style.display = 'none';
+  document.getElementById('jdGame').style.display = '';
+  resetBoard();
+  renderTopics();
+}
+
+function resetBoard() {
+  board = [];
+  for (var r = 0; r < ROWS; r++) {
+    board[r] = [];
+    for (var c = 0; c < COLS; c++) board[r][c] = 0;
+  }
+  currentPlayer = 1; // 1 = red (human), 2 = yellow (AI)
+  gameOver = false;
+  pendingCol = -1;
+  animating = false;
+  renderBoard();
+  updateStatus();
+  document.getElementById('jdWin').classList.remove('show');
+  document.getElementById('jdQuestion').classList.remove('show');
+  showQuestion();
+}
+
+// ─── Board rendering ───
+function renderBoard() {
+  var html = '';
+  for (var r = 0; r < ROWS; r++) {
+    for (var c = 0; c < COLS; c++) {
+      var cls = 'jd-cell';
+      if (board[r][c] === 1) cls += ' red';
+      else if (board[r][c] === 2) cls += ' yel';
+      html += '<div class="' + cls + '" data-col="' + c + '" data-row="' + r + '" onclick="clickCol(' + c + ')"></div>';
+    }
+  }
+  document.getElementById('jdBoard').innerHTML = html;
+  
+  // Column arrows
+  var arrows = '';
+  for (var c = 0; c < COLS; c++) {
+    arrows += '<div class="jd-col-label"><div class="jd-col-arrow"></div></div>';
+  }
+  document.getElementById('jdColLabels').innerHTML = arrows;
+}
+
+function updateStatus() {
+  var s = document.getElementById('jdStatus');
+  if (gameOver) return;
+  if (currentPlayer === 1) {
+    s.innerHTML = '<span class="turn-red">🔴 Your turn</span> — answer the question to play!';
+  } else {
+    s.innerHTML = '<span class="turn-yel">🟡 AI is thinking...</span>';
+  }
+}
+
+// ─── Topic tabs ───
+function renderTopics() {
+  var html = '';
+  for (var key in TOPIC_LABELS) {
+    html += '<button class="jd-topic-tab' + (key === activeTopic ? ' on' : '') + '" onclick="setTopic(\'' + key + '\')">' + TOPIC_LABELS[key] + '</button>';
+  }
+  document.getElementById('jdTopics').innerHTML = html;
+}
+
+window.setTopic = function(t) {
+  activeTopic = t;
+  renderTopics();
+  if (currentPlayer === 1 && !gameOver) showQuestion();
+};
+
+// ─── Question system ───
+function getRandomQuestion() {
+  var pool = [];
+  if (activeTopic === 'all') {
+    for (var t in QUESTIONS) pool = pool.concat(QUESTIONS[t].map(function(q) { return Object.assign({topic:t}, q); }));
+  } else {
+    pool = (QUESTIONS[activeTopic] || []).map(function(q) { return Object.assign({topic:activeTopic}, q); });
+  }
+  if (!pool.length) {
+    // Fallback to all
+    for (var t in QUESTIONS) pool = pool.concat(QUESTIONS[t]);
+  }
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function showQuestion() {
+  if (gameOver || currentPlayer !== 1) return;
+  var q = getRandomQuestion();
+  var el = document.getElementById('jdQuestion');
+  
+  // Shuffle options
+  var opts = q.opts.map(function(o, i) { return {text:o, idx:i}; });
+  for (var i = opts.length-1; i > 0; i--) {
+    var j = Math.floor(Math.random()*(i+1));
+    var tmp = opts[i]; opts[i] = opts[j]; opts[j] = tmp;
+  }
+  
+  var html = '<div class="jd-q-label">' + (q.topic ? TOPIC_LABELS[q.topic] || q.topic : 'Question') + '</div>';
+  html += '<div class="jd-q-text">' + q.q + '</div>';
+  html += '<div class="jd-q-opts">';
+  opts.forEach(function(opt, i) {
+    html += '<button class="jd-q-opt" data-correct="' + (opt.idx === q.a) + '" onclick="answerQuestion(this,' + (opt.idx === q.a) + ')">' + opt.text + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="jd-q-feedback" id="jdFeedback"></div>';
+  
+  el.innerHTML = html;
+  el.classList.add('show');
+  el._correctWhy = q.why;
+}
+
+window.answerQuestion = function(btn, correct) {
+  if (btn.classList.contains('locked')) return;
+  
+  // Lock all options
+  document.querySelectorAll('.jd-q-opt').forEach(function(o) {
+    o.classList.add('locked');
+    if (o.dataset.correct === 'true') o.classList.add('correct');
+  });
+  if (!correct) btn.classList.add('wrong');
+  
+  var fb = document.getElementById('jdFeedback');
+  var el = document.getElementById('jdQuestion');
+  if (correct) {
+    fb.className = 'jd-q-feedback show correct';
+    fb.textContent = '✓ Correct! Click any column to place your piece.';
+    pendingCol = -1; // waiting for column click
+    // Enable board clicks
+    document.querySelectorAll('.jd-cell').forEach(function(c) { c.style.pointerEvents = ''; });
+  } else {
+    fb.className = 'jd-q-feedback show wrong';
+    fb.textContent = '✗ ' + (el._correctWhy || 'Wrong answer.') + ' AI gets a free move!';
+    // AI gets to play
+    setTimeout(function() {
+      document.getElementById('jdQuestion').classList.remove('show');
+      aiMove();
+    }, 1800);
+  }
+};
+
+// ─── Click column to place piece ───
+window.clickCol = function(col) {
+  if (gameOver || animating || currentPlayer !== 1) return;
+  // Check if question was answered correctly
+  var fb = document.getElementById('jdFeedback');
+  if (!fb || !fb.classList.contains('correct')) return;
+  
+  var row = getDropRow(col);
+  if (row === -1) return; // column full
+  
+  animating = true;
+  board[row][col] = 1;
+  renderBoard();
+  
+  // Add animation class
+  var cell = document.querySelector('[data-row="'+row+'"][data-col="'+col+'"]');
+  if (cell) { cell.classList.add('dropping'); cell.classList.add('last'); }
+  
+  // Remove last marker from other cells
+  document.querySelectorAll('.jd-cell.last').forEach(function(c) {
+    if (c !== cell) c.classList.remove('last');
+  });
+  
+  setTimeout(function() {
+    animating = false;
+    if (checkWin(1)) { endGame(1); return; }
+    if (isBoardFull()) { endGame(0); return; }
+    currentPlayer = 2;
+    updateStatus();
+    document.getElementById('jdQuestion').classList.remove('show');
+    setTimeout(aiMove, 600);
+  }, 400);
+};
+
+// ─── AI ───
+function aiMove() {
+  if (gameOver) return;
+  animating = true;
+  var col = getBestMove(2, aiDepth);
+  var row = getDropRow(col);
+  if (row === -1) { animating = false; return; } // shouldn't happen
+  
+  board[row][col] = 2;
+  renderBoard();
+  
+  var cell = document.querySelector('[data-row="'+row+'"][data-col="'+col+'"]');
+  if (cell) { cell.classList.add('dropping'); cell.classList.add('last'); }
+  document.querySelectorAll('.jd-cell.last').forEach(function(c) {
+    if (c !== cell) c.classList.remove('last');
+  });
+  
+  setTimeout(function() {
+    animating = false;
+    if (checkWin(2)) { endGame(2); return; }
+    if (isBoardFull()) { endGame(0); return; }
+    currentPlayer = 1;
+    updateStatus();
+    showQuestion();
+  }, 500);
+}
+
+// ─── Minimax AI ───
+function getBestMove(player, depth) {
+  // Check for immediate win
+  for (var c = 0; c < COLS; c++) {
+    var r = getDropRow(c);
+    if (r === -1) continue;
+    board[r][c] = player;
+    if (checkWin(player)) { board[r][c] = 0; return c; }
+    board[r][c] = 0;
+  }
+  // Check for block
+  var opp = player === 1 ? 2 : 1;
+  for (var c = 0; c < COLS; c++) {
+    var r = getDropRow(c);
+    if (r === -1) continue;
+    board[r][c] = opp;
+    if (checkWin(opp)) { board[r][c] = 0; return c; }
+    board[r][c] = 0;
+  }
+  
+  if (depth <= 1) {
+    // Easy: random with slight center preference
+    var valid = [];
+    for (var c = 0; c < COLS; c++) if (getDropRow(c) !== -1) valid.push(c);
+    // Prefer center columns
+    var weighted = valid.map(function(c) { return {c:c, w: 4 - Math.abs(c - 3)}; });
+    weighted.sort(function(a,b) { return b.w - a.w; });
+    // Easy: sometimes random
+    if (Math.random() < 0.3) return valid[Math.floor(Math.random() * valid.length)];
+    return weighted[0].c;
+  }
+  
+  // Minimax with alpha-beta
+  var bestScore = -Infinity;
+  var bestCol = 3; // default center
+  for (var c = 0; c < COLS; c++) {
+    var r = getDropRow(c);
+    if (r === -1) continue;
+    board[r][c] = player;
+    var score = minimax(depth - 1, false, player, -Infinity, Infinity);
+    board[r][c] = 0;
+    if (score > bestScore) { bestScore = score; bestCol = c; }
+  }
+  return bestCol;
+}
+
+function minimax(depth, isMaximizing, aiPlayer, alpha, beta) {
+  var opp = aiPlayer === 1 ? 2 : 1;
+  if (checkWin(aiPlayer)) return 100 + depth;
+  if (checkWin(opp)) return -100 - depth;
+  if (isBoardFull() || depth === 0) return scoreBoard(aiPlayer);
+  
+  if (isMaximizing) {
+    var maxEval = -Infinity;
+    for (var c = 0; c < COLS; c++) {
+      var r = getDropRow(c);
+      if (r === -1) continue;
+      board[r][c] = aiPlayer;
+      var ev = minimax(depth-1, false, aiPlayer, alpha, beta);
+      board[r][c] = 0;
+      maxEval = Math.max(maxEval, ev);
+      alpha = Math.max(alpha, ev);
+      if (beta <= alpha) break;
+    }
+    return maxEval;
+  } else {
+    var minEval = Infinity;
+    for (var c = 0; c < COLS; c++) {
+      var r = getDropRow(c);
+      if (r === -1) continue;
+      board[r][c] = opp;
+      var ev = minimax(depth-1, true, aiPlayer, alpha, beta);
+      board[r][c] = 0;
+      minEval = Math.min(minEval, ev);
+      beta = Math.min(beta, ev);
+      if (beta <= alpha) break;
+    }
+    return minEval;
+  }
+}
+
+function scoreBoard(player) {
+  var score = 0;
+  // Center column preference
+  for (var r = 0; r < ROWS; r++) {
+    if (board[r][3] === player) score += 3;
+  }
+  return score;
+}
+
+// ─── Game logic ───
+function getDropRow(col) {
+  for (var r = ROWS - 1; r >= 0; r--) {
+    if (board[r][col] === 0) return r;
+  }
+  return -1;
+}
+
+function checkWin(player) {
+  // Horizontal
+  for (var r = 0; r < ROWS; r++) for (var c = 0; c <= COLS-4; c++) {
+    if (board[r][c]===player&&board[r][c+1]===player&&board[r][c+2]===player&&board[r][c+3]===player) return [[r,c],[r,c+1],[r,c+2],[r,c+3]];
+  }
+  // Vertical
+  for (var r = 0; r <= ROWS-4; r++) for (var c = 0; c < COLS; c++) {
+    if (board[r][c]===player&&board[r+1][c]===player&&board[r+2][c]===player&&board[r+3][c]===player) return [[r,c],[r+1,c],[r+2,c],[r+3,c]];
+  }
+  // Diagonal ↘
+  for (var r = 0; r <= ROWS-4; r++) for (var c = 0; c <= COLS-4; c++) {
+    if (board[r][c]===player&&board[r+1][c+1]===player&&board[r+2][c+2]===player&&board[r+3][c+3]===player) return [[r,c],[r+1,c+1],[r+2,c+2],[r+3,c+3]];
+  }
+  // Diagonal ↗
+  for (var r = 3; r < ROWS; r++) for (var c = 0; c <= COLS-4; c++) {
+    if (board[r][c]===player&&board[r-1][c+1]===player&&board[r-2][c+2]===player&&board[r-3][c+3]===player) return [[r,c],[r-1,c+1],[r-2,c+2],[r-3,c+3]];
+  }
+  return false;
+}
+
+function isBoardFull() {
+  for (var c = 0; c < COLS; c++) if (board[0][c] === 0) return false;
+  return true;
+}
+
+function endGame(winner) {
+  gameOver = true;
+  var winCells = winner ? checkWin(winner) : null;
+  
+  if (winCells) {
+    winCells.forEach(function(pos) {
+      var cell = document.querySelector('[data-row="'+pos[0]+'"][data-col="'+pos[1]+'"]');
+      if (cell) cell.classList.add('win');
+    });
+  }
+  
+  if (winner === 1) { scores.red++; }
+  else if (winner === 2) { scores.yel++; }
+  else { scores.draws++; }
+  
+  document.getElementById('jdRedScore').textContent = scores.red;
+  document.getElementById('jdYelScore').textContent = scores.yel;
+  document.getElementById('jdDraws').textContent = scores.draws;
+  
+  var win = document.getElementById('jdWin');
+  var msg = winner === 1 ? '🎉 You win!' : winner === 2 ? '🟡 AI wins!' : '🤝 It\'s a draw!';
+  var sub = winner === 1 ? 'Great strategy AND great knowledge!' : winner === 2 ? 'The AI was too strong this time. Try again!' : 'Nobody connected four. Well played!';
+  win.innerHTML = '<h2>' + msg + '</h2><p>' + sub + '</p><button onclick="resetBoard()">Play Again</button>';
+  win.classList.add('show');
+  
+  document.getElementById('jdQuestion').classList.remove('show');
+  document.getElementById('jdStatus').innerHTML = msg;
+}
+</script>
+</body>
+</html>
