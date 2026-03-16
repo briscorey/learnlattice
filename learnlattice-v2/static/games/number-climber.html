@@ -2,707 +2,430 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Number Climber — LearnLattice</title>
+<!-- MYP Alignment: Key Concept: Logic, ATL: Critical thinking -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: #0f0a1e;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Fredoka', sans-serif;
-  overflow: hidden;
-}
-#game-container {
-  min-height: 600px;
-  width: 100%;
-  max-width: 800px;
-  position: relative;
-  background: #0f0a1e;
-}
-#game-container canvas { display: block; width: 100% !important; height: auto !important; }
-.ui-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 10;
-}
-.ui-score {
-  background: rgba(15, 10, 30, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  border-radius: 12px;
-  padding: 8px 16px;
-  color: #e9d5ff;
-  font-size: 14px;
-  font-weight: 600;
-}
-.ui-score span { color: #c084fc; font-size: 18px; font-weight: 700; }
-.ui-height {
-  background: rgba(15, 10, 30, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 12px;
-  padding: 8px 16px;
-  color: #bbf7d0;
-  font-size: 14px;
-  font-weight: 600;
-}
-.ui-height span { color: #4ade80; font-size: 18px; font-weight: 700; }
-#question-panel {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15, 10, 30, 0.92);
-  backdrop-filter: blur(12px);
-  border: 2px solid rgba(139, 92, 246, 0.4);
-  border-radius: 16px;
-  padding: 14px 20px;
-  text-align: center;
-  z-index: 20;
-  display: none;
-  min-width: 280px;
-  max-width: 85%;
-  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
-  animation: panelIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  pointer-events: auto;
-}
-@keyframes panelIn {
-  from { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.9); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-}
-#question-panel .q-text {
-  font-size: 16px;
-  font-weight: 700;
-  color: #e9d5ff;
-  margin-bottom: 10px;
-  line-height: 1.3;
-  white-space: pre-line;
-}
-#question-panel .q-answers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-#question-panel .q-btn {
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 2px solid rgba(139, 92, 246, 0.3);
-  background: rgba(139, 92, 246, 0.1);
-  color: #e9d5ff;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-  pointer-events: auto;
-}
-#question-panel .q-btn:hover {
-  background: rgba(139, 92, 246, 0.25);
-  border-color: #a78bfa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
-}
-#question-panel .q-btn:active { transform: scale(0.96); }
-#question-panel .q-btn.correct {
-  background: rgba(34, 197, 94, 0.3);
-  border-color: #22c55e;
-  color: #bbf7d0;
-}
-#question-panel .q-btn.wrong {
-  background: rgba(239, 68, 68, 0.3);
-  border-color: #ef4444;
-  color: #fca5a5;
-}
-#start-screen, #gameover-screen {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-  background: rgba(15, 10, 30, 0.95);
-  backdrop-filter: blur(8px);
-}
-#start-screen h1 {
-  font-size: 42px;
-  color: #c084fc;
-  margin-bottom: 8px;
-  text-shadow: 0 0 30px rgba(192, 132, 252, 0.3);
-}
-#start-screen .subtitle {
-  font-size: 16px;
-  color: #a78bfa;
-  margin-bottom: 32px;
-  opacity: 0.8;
-}
-.big-btn {
-  padding: 16px 48px;
-  border-radius: 16px;
-  border: 2px solid #a78bfa;
-  background: linear-gradient(135deg, #7c3aed, #a78bfa);
-  color: #fff;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 1px;
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
-}
-.big-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5);
-}
-.big-btn:active { transform: scale(0.97); }
-#gameover-screen h2 {
-  font-size: 32px;
-  color: #fca5a5;
-  margin-bottom: 8px;
-}
-#gameover-screen .final-score {
-  font-size: 48px;
-  color: #c084fc;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-#gameover-screen .final-height {
-  font-size: 18px;
-  color: #4ade80;
-  margin-bottom: 24px;
-}
-.controls-hint {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 11px;
-  color: rgba(167, 139, 250, 0.4);
-  z-index: 5;
-  pointer-events: none;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f0a1e;display:flex;flex-direction:column;align-items:center;min-height:100vh;font-family:'Fredoka',sans-serif;overflow:hidden}
+#gc{min-height:600px;width:100%;max-width:800px;position:relative;background:#0f0a1e}
+#gc canvas{display:block;width:100%!important;height:auto!important}
+.hud{position:absolute;top:0;left:0;right:0;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;pointer-events:none;z-index:10}
+.hud-box{background:rgba(15,10,30,.88);backdrop-filter:blur(8px);border-radius:10px;padding:6px 14px;font-size:13px;font-weight:600}
+.hud-score{color:#e9d5ff;border:1px solid rgba(139,92,246,.3)}.hud-score span{color:#c084fc;font-size:16px;font-weight:700}
+.hud-lives{color:#fca5a5;border:1px solid rgba(239,68,68,.3);font-size:15px;letter-spacing:2px}
+.hud-height{color:#bbf7d0;border:1px solid rgba(34,197,94,.3)}.hud-height span{color:#4ade80;font-size:16px;font-weight:700}
+.hud-streak{color:#fde68a;border:1px solid rgba(251,191,36,.3);font-size:12px}
+#qp{position:absolute;top:50px;left:50%;transform:translateX(-50%);background:rgba(15,10,30,.94);backdrop-filter:blur(12px);border:2px solid rgba(139,92,246,.4);border-radius:14px;padding:14px 18px;text-align:center;z-index:20;display:none;min-width:280px;max-width:85%;box-shadow:0 12px 40px rgba(139,92,246,.2);animation:popIn .25s cubic-bezier(.34,1.56,.64,1);pointer-events:auto}
+@keyframes popIn{from{opacity:0;transform:translateX(-50%) translateY(16px) scale(.92)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+#qp .qt{font-size:15px;font-weight:700;color:#e9d5ff;margin-bottom:10px;line-height:1.3;white-space:pre-line}
+#qp .qa{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+#qp .qb{padding:11px 14px;border-radius:10px;border:2px solid rgba(139,92,246,.3);background:rgba(139,92,246,.1);color:#e9d5ff;font-family:'Fredoka',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;pointer-events:auto}
+#qp .qb:hover{background:rgba(139,92,246,.25);border-color:#a78bfa;transform:translateY(-2px)}
+#qp .qb.ok{background:rgba(34,197,94,.3);border-color:#22c55e;color:#bbf7d0}
+#qp .qb.no{background:rgba(239,68,68,.3);border-color:#ef4444;color:#fca5a5}
+#qp .timer-bar{height:3px;background:rgba(139,92,246,.2);border-radius:2px;margin-top:10px;overflow:hidden}
+#qp .timer-fill{height:100%;background:#a78bfa;border-radius:2px;transition:width .1s linear}
+.overlay{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:30;background:rgba(15,10,30,.95);backdrop-filter:blur(8px)}
+.overlay h1{font-size:38px;color:#c084fc;margin-bottom:8px;text-shadow:0 0 30px rgba(192,132,252,.3)}
+.overlay h2{font-size:28px;color:#fca5a5;margin-bottom:8px}
+.overlay .sub{font-size:14px;color:#a78bfa;margin-bottom:28px;opacity:.8;max-width:320px;text-align:center;line-height:1.5}
+.overlay .fs{font-size:42px;color:#c084fc;font-weight:700;margin-bottom:4px}
+.overlay .fh{font-size:16px;color:#4ade80;margin-bottom:20px}
+.bbtn{padding:14px 44px;border-radius:14px;border:2px solid #a78bfa;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;font-family:'Fredoka',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 8px 32px rgba(124,58,237,.4)}
+.bbtn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(124,58,237,.5)}
+.hint{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:10px;color:rgba(167,139,250,.3);z-index:5;pointer-events:none}
 </style>
-<style id="embed-check">.embed-mode .hdr,.embed-mode .header,.embed-mode>div:first-child:not(.wrap):not(.main):not(.game):not(.lab):not(.arena){display:none!important}.embed-mode{padding-top:0!important}</style>
+<style id="ec">.embed-mode .hdr,.embed-mode .header{display:none!important}.embed-mode{padding-top:0!important}</style>
 <script>if(location.search.indexOf('embed=1')>-1)document.documentElement.classList.add('embed-mode');</script>
 </head>
 <body>
-
-<div id="game-container">
-  <div class="ui-overlay">
-    <div class="ui-score">Score: <span id="scoreDisplay">0</span></div>
-    <div class="ui-height">Height: <span id="heightDisplay">0</span>m</div>
+<div id="gc">
+  <div class="hud">
+    <div class="hud-box hud-score">Score <span id="dScore">0</span></div>
+    <div class="hud-box hud-streak" id="dStreak"></div>
+    <div class="hud-box hud-lives" id="dLives">❤️❤️❤️</div>
+    <div class="hud-box hud-height">Height <span id="dHeight">0</span>m</div>
   </div>
-
-  <div id="question-panel">
-    <div class="q-text" id="qText"></div>
-    <div class="q-answers" id="qAnswers"></div>
-  </div>
-
-  <div id="start-screen">
+  <div id="qp"><div class="qt" id="qText"></div><div class="qa" id="qAns"></div><div class="timer-bar"><div class="timer-fill" id="qTimer" style="width:100%"></div></div></div>
+  <div class="overlay" id="startScr">
     <h1>🧗 Number Climber</h1>
-    <div class="subtitle">Jump between platforms · Solve to climb higher</div>
-    <button class="big-btn" onclick="startGame()">Start Climbing</button>
-    <div style="margin-top:20px;font-size:13px;color:#64748b;max-width:300px;text-align:center;line-height:1.5">
-      Arrow keys or A/D to move · Space or Up to jump<br>
-      Land on glowing orbs to answer questions for points<br>
-      Keep climbing — you never stop moving!
-    </div>
+    <div class="sub">Jump between platforms. Answer questions to earn points. Avoid enemies. You have 3 lives — wrong answers and falling cost a life!</div>
+    <button class="bbtn" onclick="startGame()">Start Climbing</button>
+    <div style="margin-top:16px;font-size:12px;color:#64748b;text-align:center;line-height:1.6">← → or A/D to move · Space/Up to jump<br>Land on ⭐ orbs for questions · Avoid 👾 enemies</div>
   </div>
-
-  <div id="gameover-screen" style="display:none">
-    <h2>Game Over</h2>
-    <div class="final-score" id="finalScore">0</div>
-    <div class="final-height" id="finalHeight">Reached 0m</div>
-    <button class="big-btn" onclick="restartGame()">Try Again</button>
+  <div class="overlay" id="overScr" style="display:none">
+    <h2>💀 Game Over</h2>
+    <div class="fs" id="fScore">0</div>
+    <div class="fh" id="fHeight">Reached 0m</div>
+    <button class="bbtn" onclick="restartGame()">Try Again</button>
   </div>
-
-  <div class="controls-hint">← → to move · Space to jump</div>
+  <div class="hint">← → move · Space jump · Land on ⭐ for questions</div>
 </div>
 
 <script src="/js/phaser.min.js"></script>
 <script>
-(function() {
+(function(){
 'use strict';
 
-// ══════════════════════════════════════
-// QUESTION GENERATOR
-// ══════════════════════════════════════
-var questionPool = {
-  easy: [
-    {q:'3 + 7 = ?', correct:10, wrong:[8,12,9]},
-    {q:'15 - 6 = ?', correct:9, wrong:[8,7,11]},
-    {q:'4 × 3 = ?', correct:12, wrong:[7,15,10]},
-    {q:'20 ÷ 5 = ?', correct:4, wrong:[3,5,6]},
-    {q:'8 + 5 = ?', correct:13, wrong:[12,14,11]},
-    {q:'6 × 2 = ?', correct:12, wrong:[8,10,14]},
-    {q:'18 - 9 = ?', correct:9, wrong:[8,10,7]},
-    {q:'3 × 5 = ?', correct:15, wrong:[12,18,10]},
-    {q:'24 ÷ 6 = ?', correct:4, wrong:[3,5,6]},
-    {q:'7 + 8 = ?', correct:15, wrong:[14,16,13]},
+// ═══ QUESTIONS — MYP LEVEL ═══
+const QS={
+  easy:[
+    {q:'(−3) × 4 = ?',c:-12,w:[-8,12,7]},
+    {q:'What is 25% of 80?',c:20,w:[16,25,40]},
+    {q:'Simplify: 12/18',c:'2/3',w:['3/4','4/6','6/9']},
+    {q:'2³ = ?',c:8,w:[6,16,9]},
+    {q:'√64 = ?',c:8,w:[6,7,9]},
+    {q:'(−5) + (−3) = ?',c:-8,w:[-2,8,2]},
+    {q:'0.75 as a fraction = ?',c:'3/4',w:['7/5','3/5','7/4']},
+    {q:'What is 3/5 of 40?',c:24,w:[20,15,30]},
+    {q:'Round 3.456 to 1 d.p.',c:3.5,w:[3.4,3.46,4]},
+    {q:'−7 − (−3) = ?',c:-4,w:[-10,4,10]},
+    {q:'What is 15% of 200?',c:30,w:[25,35,15]},
+    {q:'Express 0.4 as a %',c:'40%',w:['4%','0.4%','400%']},
   ],
-  medium: [
-    {q:'12 × 7 = ?', correct:84, wrong:[72,91,78]},
-    {q:'(-3) + 8 = ?', correct:5, wrong:[-5,11,3]},
-    {q:'2³ = ?', correct:8, wrong:[6,9,16]},
-    {q:'√49 = ?', correct:7, wrong:[6,8,9]},
-    {q:'15% of 60 = ?', correct:9, wrong:[6,12,15]},
-    {q:'-4 × (-3) = ?', correct:12, wrong:[-12,-7,7]},
-    {q:'¾ of 24 = ?', correct:18, wrong:[16,20,12]},
-    {q:'5² - 10 = ?', correct:15, wrong:[20,10,35]},
-    {q:'0.5 × 14 = ?', correct:7, wrong:[3.5,28,10]},
-    {q:'100 ÷ 8 = ?', correct:12.5, wrong:[12,13,11.5]},
+  medium:[
+    {q:'If 3x + 5 = 20,\nx = ?',c:5,w:[4,6,3]},
+    {q:'(−2)⁴ = ?',c:16,w:[-16,8,-8]},
+    {q:'√121 = ?',c:11,w:[10,12,13]},
+    {q:'T(n) = 4n − 1\nT(8) = ?',c:31,w:[32,33,28]},
+    {q:'Increase 60 by 30%',c:78,w:[72,80,90]},
+    {q:'Decrease 80 by 15%',c:68,w:[65,72,75]},
+    {q:'2/3 + 1/4 = ?',c:'11/12',w:['3/7','5/12','7/12']},
+    {q:'5² − 3² = ?',c:16,w:[4,8,22]},
+    {q:'If y = 2x − 3,\nwhen x = 4, y = ?',c:5,w:[3,8,11]},
+    {q:'GCD(24, 36) = ?',c:12,w:[6,8,4]},
+    {q:'LCM(6, 8) = ?',c:24,w:[12,48,16]},
+    {q:'3⁻² = ?',c:'1/9',w:['1/6','-9','−6']},
   ],
-  hard: [
-    {q:'If n² = 144,\nn = ?', correct:12, wrong:[11,13,14]},
-    {q:'3x + 7 = 22,\nx = ?', correct:5, wrong:[4,6,3]},
-    {q:'2⁵ = ?', correct:32, wrong:[16,64,25]},
-    {q:'T(6) if T(n) = n(n+1)/2', correct:21, wrong:[15,28,18]},
-    {q:'(-2)³ = ?', correct:-8, wrong:[8,-6,6]},
-    {q:'20% of 85 = ?', correct:17, wrong:[15,19,21]},
-    {q:'√(81) + √(16) = ?', correct:13, wrong:[11,15,97]},
-    {q:'If 4x - 3 = 21,\nx = ?', correct:6, wrong:[5,7,4]},
-    {q:'Next: 2, 6, 12, 20, ?', correct:30, wrong:[28,24,32]},
-    {q:'GCD(24, 36) = ?', correct:12, wrong:[6,8,4]},
+  hard:[
+    {q:'If n² = 196,\nn = ?',c:14,w:[12,13,16]},
+    {q:'Solve: 5(x−2) = 15\nx = ?',c:5,w:[3,7,1]},
+    {q:'2⁸ = ?',c:256,w:[128,512,64]},
+    {q:'Gradient of line\nthrough (1,3) and (3,7)?',c:2,w:[4,1,3]},
+    {q:'P(even) on a die = ?',c:'1/2',w:['1/3','1/6','2/3']},
+    {q:'Interior angles of\na hexagon = ?',c:720,w:[540,900,360]},
+    {q:'Volume of cube\nwith side 5cm = ?',c:'125 cm³',w:['25 cm³','75 cm³','150 cm³']},
+    {q:'Compound interest:\n¥1000 at 10% for 2 years',c:'¥1210',w:['¥1200','¥1100','¥1220']},
+    {q:'If 2ˣ = 64,\nx = ?',c:6,w:[5,7,8]},
+    {q:'Standard form:\n0.00045 = ?',c:'4.5×10⁻⁴',w:['45×10⁻⁵','4.5×10⁻³','0.45×10⁻³']},
   ]
 };
 
-function getQuestion(height) {
-  var pool;
-  if (height < 400) pool = questionPool.easy;
-  else if (height < 900) pool = questionPool.medium;
-  else pool = questionPool.hard;
-  var q = pool[Math.floor(Math.random() * pool.length)];
-  // Shuffle answers
-  var answers = [q.correct].concat(q.wrong.slice(0,3));
-  for (var i = answers.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var tmp = answers[i]; answers[i] = answers[j]; answers[j] = tmp;
-  }
-  return { text: q.q, answers: answers, correct: q.correct };
+function getQ(h){
+  const pool=h<300?QS.easy:h<700?QS.medium:QS.hard;
+  const q=pool[Math.floor(Math.random()*pool.length)];
+  let ans=[q.c,...q.w.slice(0,3)];
+  for(let i=ans.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ans[i],ans[j]]=[ans[j],ans[i]]}
+  return{text:q.q,answers:ans,correct:q.c};
 }
 
-// ══════════════════════════════════════
-// GAME STATE
-// ══════════════════════════════════════
-var score = 0;
-var maxHeight = 0;
-var gameActive = false;
-var currentQuestion = null;
-var questionShowing = false;
-var lastPlatformY = 0;
-var platforms, player, cursors, stars;
-var platformList = [];
-var gameScene;
-var GAME_W = 800, GAME_H = 600;
+// ═══ STATE ═══
+let score=0,maxH=0,lives=3,streak=0,active=false,qShowing=false,curQ=null;
+let lastPY=0,plats,player,cursors,platList=[],enemies=[];
+let scene,GW=800,GH=600;
+let qTimeout=null,timerInterval=null;
 
-// ══════════════════════════════════════
-// PHASER SCENE
-// ══════════════════════════════════════
-var GameScene = new Phaser.Class({
-  Extends: Phaser.Scene,
-  initialize: function() { Phaser.Scene.call(this, {key: 'GameScene'}); },
+// ═══ PHASER SCENE ═══
+const GameScene=new Phaser.Class({
+  Extends:Phaser.Scene,
+  initialize:function(){Phaser.Scene.call(this,{key:'GS'})},
 
-  create: function() {
-    gameScene = this;
-    var self = this;
-
-    // Background gradient
-    var bg = this.add.graphics();
-    bg.fillGradientStyle(0x0f0a1e, 0x0f0a1e, 0x1a0a3e, 0x1a0a3e);
-    bg.fillRect(0, -5000, GAME_W, 6000);
-    bg.setScrollFactor(0.1);
-
-    // Starfield background
-    for (var i = 0; i < 80; i++) {
-      var sx = Math.random() * GAME_W;
-      var sy = Math.random() * 5000 - 4000;
-      var size = Math.random() * 2 + 0.5;
-      var alpha = Math.random() * 0.5 + 0.2;
-      var star = this.add.circle(sx, sy, size, 0xc084fc, alpha);
-      star.setScrollFactor(0.15 + Math.random() * 0.1);
+  create:function(){
+    scene=this;
+    // BG
+    const bg=this.add.graphics();
+    bg.fillGradientStyle(0x0f0a1e,0x0f0a1e,0x1a0a3e,0x1a0a3e);
+    bg.fillRect(0,-8000,GW,9000);bg.setScrollFactor(0.1);
+    for(let i=0;i<60;i++){
+      const s=this.add.circle(Math.random()*GW,Math.random()*6000-5000,Math.random()*1.5+.5,0xc084fc,Math.random()*.4+.2);
+      s.setScrollFactor(.15+Math.random()*.1);
     }
 
-    // Depth parallax crystals
-    for (var i = 0; i < 20; i++) {
-      var cx = Math.random() * GAME_W;
-      var cy = Math.random() * 4000 - 3000;
-      var crystal = this.add.polygon(cx, cy, [0,-12, 8,0, 0,12, -8,0], 0x7c3aed, 0.06);
-      crystal.setScrollFactor(0.3);
-    }
+    plats=this.physics.add.staticGroup();
 
-    // Physics group for platforms
-    platforms = this.physics.add.staticGroup();
+    // Ground
+    const ground=this.add.rectangle(GW/2,GH-20,GW,40,0x334155);
+    this.physics.add.existing(ground,true);plats.add(ground);
 
-    // Create ground platform
-    var ground = this.add.rectangle(GAME_W/2, GAME_H - 20, GAME_W, 40, 0x334155);
-    this.physics.add.existing(ground, true);
-    platforms.add(ground);
-
-    // Initial platforms — close together for easy start
-    lastPlatformY = GAME_H - 20;
-    platformList = [];
-    for (var i = 0; i < 10; i++) {
-      createPlatform(self);
-    }
+    lastPY=GH-20;platList=[];enemies=[];
+    for(let i=0;i<12;i++)mkPlat(this);
 
     // Player
-    var playerGfx = this.add.graphics();
-    // Body
-    playerGfx.fillStyle(0xa78bfa, 1);
-    playerGfx.fillRoundedRect(-12, -20, 24, 32, 6);
-    // Eyes
-    playerGfx.fillStyle(0xffffff, 1);
-    playerGfx.fillCircle(-4, -10, 4);
-    playerGfx.fillCircle(6, -10, 4);
-    playerGfx.fillStyle(0x1e1b4b, 1);
-    playerGfx.fillCircle(-3, -10, 2);
-    playerGfx.fillCircle(7, -10, 2);
-    // Smile
-    playerGfx.lineStyle(2, 0xffffff, 0.8);
-    playerGfx.beginPath();
-    playerGfx.arc(2, -2, 5, 0.2, Math.PI - 0.2);
-    playerGfx.strokePath();
+    const pg=this.add.graphics();
+    pg.fillStyle(0xa78bfa,1);pg.fillRoundedRect(-12,-20,24,32,6);
+    pg.fillStyle(0xffffff,1);pg.fillCircle(-4,-10,4);pg.fillCircle(6,-10,4);
+    pg.fillStyle(0x1e1b4b,1);pg.fillCircle(-3,-10,2);pg.fillCircle(7,-10,2);
+    pg.lineStyle(2,0xffffff,.8);pg.beginPath();pg.arc(2,-2,5,.2,Math.PI-.2);pg.strokePath();
+    pg.generateTexture('pl',28,36);pg.destroy();
 
-    playerGfx.generateTexture('player', 28, 36);
-    playerGfx.destroy();
+    player=this.physics.add.sprite(GW/2,GH-60,'pl');
+    player.setBounce(0);player.setCollideWorldBounds(false);
+    player.body.setSize(24,32);player.setDepth(10);
+    this.coyT=0;this.jmpB=0;
 
-    player = this.physics.add.sprite(GAME_W/2, GAME_H - 60, 'player');
-    player.setBounce(0);
-    player.setCollideWorldBounds(false);
-    player.body.setSize(24, 32);
-    player.setDepth(10);
-    this.coyoteTimer = 0;
-    this.jumpBuffer = 0;
+    this.physics.add.collider(player,plats,onLand,null,this);
 
-    // Collision
-    this.physics.add.collider(player, platforms, onLandPlatform, null, this);
+    // Enemy collision
+    this.physics.add.overlap(player,this.physics.add.group()/*placeholder*/,null,null,this);
 
-    // Camera — tighter vertical follow so player stays centered
-    this.cameras.main.startFollow(player, true, 0.1, 0.15);
-    this.cameras.main.setDeadzone(GAME_W, 60);
-    this.cameras.main.setBounds(0, -10000, GAME_W, 10600);
+    this.cameras.main.startFollow(player,true,.1,.15);
+    this.cameras.main.setDeadzone(GW,50);
+    this.cameras.main.setBounds(0,-15000,GW,15600);
+    this.physics.world.setBounds(0,-15000,GW,15600);
 
-    // World bounds (only left/right, not top/bottom)
-    this.physics.world.setBounds(0, -10000, GAME_W, 10600);
-    player.setCollideWorldBounds(false);
+    cursors=this.input.keyboard.createCursorKeys();
+    this.kA=this.input.keyboard.addKey('A');
+    this.kD=this.input.keyboard.addKey('D');
+    this.kW=this.input.keyboard.addKey('W');
 
-    // Controls
-    cursors = this.input.keyboard.createCursorKeys();
-    this.keyA = this.input.keyboard.addKey('A');
-    this.keyD = this.input.keyboard.addKey('D');
-    this.keyW = this.input.keyboard.addKey('W');
+    // Star texture for particles
+    const sg=this.add.graphics();sg.fillStyle(0xfbbf24,1);
+    const sp=[];for(let i=0;i<10;i++){const r=i%2===0?7:3;const a=(i*Math.PI/5)-Math.PI/2;sp.push(Math.cos(a)*r,Math.sin(a)*r)}
+    sg.beginPath();sg.moveTo(sp[0],sp[1]);for(let i=2;i<sp.length;i+=2)sg.lineTo(sp[i],sp[i+1]);sg.closePath();sg.fillPath();
+    sg.generateTexture('star',16,16);sg.destroy();
 
-    // Particle emitter for correct answers
-    var particleGfx = this.add.graphics();
-    particleGfx.fillStyle(0xfbbf24, 1);
-    // Draw star manually
-    var pts = [];
-    for (var si = 0; si < 10; si++) {
-      var r = si % 2 === 0 ? 7 : 3;
-      var angle = (si * Math.PI / 5) - Math.PI / 2;
-      pts.push(Math.cos(angle) * r);
-      pts.push(Math.sin(angle) * r);
-    }
-    particleGfx.fillStyle(0xfbbf24, 1);
-    particleGfx.beginPath();
-    particleGfx.moveTo(pts[0], pts[1]);
-    for (var si = 2; si < pts.length; si += 2) particleGfx.lineTo(pts[si], pts[si+1]);
-    particleGfx.closePath();
-    particleGfx.fillPath();
-    particleGfx.generateTexture('star', 16, 16);
-    particleGfx.destroy();
-
-    // Score text (in world, follows camera via overlay)
-    score = 0;
-    maxHeight = 0;
-    updateUI();
+    score=0;maxH=0;lives=3;streak=0;updHUD();
   },
 
-  update: function() {
-    if (!gameActive) return;
+  update:function(){
+    if(!active)return;
+    const spd=280;
+    if(cursors.left.isDown||this.kA.isDown){player.setVelocityX(-spd);player.setFlipX(true)}
+    else if(cursors.right.isDown||this.kD.isDown){player.setVelocityX(spd);player.setFlipX(false)}
+    else{player.setVelocityX(player.body.velocity.x*.82)}
 
-    // Left / Right movement — always active, even during questions
-    var speed = 300;
-    if (cursors.left.isDown || this.keyA.isDown) {
-      player.setVelocityX(-speed);
-      player.setFlipX(true);
-    } else if (cursors.right.isDown || this.keyD.isDown) {
-      player.setVelocityX(speed);
-      player.setFlipX(false);
-    } else {
-      player.setVelocityX(player.body.velocity.x * 0.82);
+    const grounded=player.body.touching.down||player.body.blocked.down;
+    if(grounded)this.coyT=8;else if(this.coyT>0)this.coyT--;
+
+    const jp=Phaser.Input.Keyboard.JustDown(cursors.up)||Phaser.Input.Keyboard.JustDown(cursors.space)||Phaser.Input.Keyboard.JustDown(this.kW);
+    if(jp)this.jmpB=8;else if(this.jmpB>0)this.jmpB--;
+
+    if(this.jmpB>0&&this.coyT>0){
+      player.setVelocityY(-380);// tighter jump
+      this.jmpB=0;this.coyT=0;
     }
 
-    var grounded = player.body.touching.down || player.body.blocked.down;
+    // Height
+    const h=Math.max(0,Math.floor((GH-60-player.y)/10));
+    if(h>maxH)maxH=h;
+    updHUD();
 
-    // Coyote time — 10 frames after leaving a ledge
-    if (grounded) {
-      this.coyoteTimer = 10;
-    } else if (this.coyoteTimer > 0) {
-      this.coyoteTimer--;
+    // Wrap
+    if(player.x<-20)player.x=GW+20;
+    if(player.x>GW+20)player.x=-20;
+
+    // Fall death
+    if(player.y>this.cameras.main.scrollY+GH+80){
+      loseLife('fell');
     }
 
-    // Jump buffer — remember Space presses for 10 frames
-    var jumpPressed = Phaser.Input.Keyboard.JustDown(cursors.up) || 
-                      Phaser.Input.Keyboard.JustDown(cursors.space) || 
-                      Phaser.Input.Keyboard.JustDown(this.keyW);
-    if (jumpPressed) {
-      this.jumpBuffer = 10;
-    } else if (this.jumpBuffer > 0) {
-      this.jumpBuffer--;
-    }
+    // Generate more platforms
+    while(lastPY>player.y-600)mkPlat(this);
 
-    // Execute jump when buffer AND coyote both valid
-    if (this.jumpBuffer > 0 && this.coyoteTimer > 0) {
-      player.setVelocityY(-500);
-      this.jumpBuffer = 0;
-      this.coyoteTimer = 0;
-    }
-
-    // Track height
-    var height = Math.max(0, Math.floor((GAME_H - 60 - player.y) / 8));
-    if (height > maxHeight) {
-      maxHeight = height;
-    }
-    updateUI();
-
-    // Wrap horizontally
-    if (player.x < -20) player.x = GAME_W + 20;
-    if (player.x > GAME_W + 20) player.x = -20;
-
-    // Fall death — die when falling below visible screen
-    var camBottom = this.cameras.main.scrollY + GAME_H + 100;
-    if (player.y > camBottom) {
-      gameOver();
-    }
-
-    // Generate more platforms above
-    while (lastPlatformY > player.y - 600) {
-      createPlatform(this);
-    }
+    // Enemy AI
+    enemies.forEach(e=>{
+      if(!e.sprite||!e.sprite.active)return;
+      e.sprite.x+=e.dir*e.speed;
+      if(e.sprite.x<e.minX||e.sprite.x>e.maxX)e.dir*=-1;
+      // Check player collision
+      if(active&&Math.abs(e.sprite.x-player.x)<18&&Math.abs(e.sprite.y-player.y)<28){
+        loseLife('enemy');
+      }
+    });
   }
 });
 
-function createPlatform(scene) {
-  var gap = 55 + Math.random() * 25;
-  var y = lastPlatformY - gap;
-  var prevX = platformList.length > 0 ? platformList[platformList.length - 1].x : GAME_W / 2;
-  var maxDrift = 250;
-  var minX = Math.max(80, prevX - maxDrift);
-  var maxX = Math.min(GAME_W - 80, prevX + maxDrift);
-  var x = minX + Math.random() * (maxX - minX);
-  var width = 120 + Math.random() * 80;
+function mkPlat(sc){
+  const gap=48+Math.random()*22;// tighter gaps
+  const y=lastPY-gap;
+  const prevX=platList.length>0?platList[platList.length-1].x:GW/2;
+  const drift=200;
+  const minX=Math.max(70,prevX-drift),maxX=Math.min(GW-70,prevX+drift);
+  const x=minX+Math.random()*(maxX-minX);
+  const w=100+Math.random()*70;
+  const cols=[0x7c3aed,0x6366f1,0x8b5cf6,0xa78bfa,0x6d28d9];
+  const col=cols[Math.floor(Math.random()*5)];
+  const pv=sc.add.rectangle(x,y,w,16,col);
+  pv.setStrokeStyle(1,0xc084fc,.3);
+  sc.physics.add.existing(pv,true);
+  pv.body.checkCollision.down=false;pv.body.checkCollision.left=false;pv.body.checkCollision.right=false;
+  plats.add(pv);
 
-  var color = [0x7c3aed, 0x6366f1, 0x8b5cf6, 0xa78bfa, 0x6d28d9][Math.floor(Math.random()*5)];
-  var platVisual = scene.add.rectangle(x, y, width, 20, color);
-  platVisual.setStrokeStyle(1, 0xc084fc, 0.3);
+  const hasQ=platList.length%3===1;
+  const pd={visual:pv,x,y,answered:false,hasQ};
+  platList.push(pd);lastPY=y;
 
-  var glow = scene.add.rectangle(x, y, width + 8, 24, color, 0.08);
-  glow.setDepth(-1);
-
-  scene.physics.add.existing(platVisual, true);
-  platVisual.body.checkCollision.down = false;
-  platVisual.body.checkCollision.left = false;
-  platVisual.body.checkCollision.right = false;
-  platforms.add(platVisual);
-
-  // Only every 3rd platform has a question (the rest are free to use)
-  var hasQuestion = (platformList.length % 3 === 1);
-  var platData = { visual: platVisual, glow: glow, x: x, y: y, answered: false, hasQuestion: hasQuestion };
-  platformList.push(platData);
-  lastPlatformY = y;
-
-  // Question orb indicator on platforms with questions
-  if (hasQuestion) {
-    var orb = scene.add.circle(x, y - 22, 8, 0xfbbf24, 0.8);
-    scene.tweens.add({ targets: orb, y: y - 28, duration: 800, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
-    platData.orb = orb;
+  // Question orb
+  if(hasQ){
+    const orb=sc.add.circle(x,y-18,7,0xfbbf24,.8);
+    sc.tweens.add({targets:orb,y:y-24,duration:700,yoyo:true,repeat:-1,ease:'Sine.easeInOut'});
+    pd.orb=orb;
   }
 
-  return platData;
-}
-
-function onLandPlatform(playerSprite, platform) {
-  if (!gameActive) return;
-  if (!playerSprite.body.touching.down) return;
-
-  var platData = null;
-  for (var i = 0; i < platformList.length; i++) {
-    if (platformList[i].visual === platform) {
-      platData = platformList[i];
-      break;
-    }
+  // Enemy — every 5th platform (starting from 6th)
+  if(platList.length>5&&platList.length%5===0){
+    const eSz=12;
+    const eg=sc.add.graphics();
+    eg.fillStyle(0xef4444,1);eg.fillRoundedRect(-eSz,-eSz,eSz*2,eSz*2,4);
+    eg.fillStyle(0xffffff,1);eg.fillCircle(-4,-2,3);eg.fillCircle(4,-2,3);
+    eg.fillStyle(0x0f0a1e,1);eg.fillCircle(-3,-2,1.5);eg.fillCircle(5,-2,1.5);
+    // Angry eyebrows
+    eg.lineStyle(2,0xffffff,.9);
+    eg.beginPath();eg.moveTo(-7,-6);eg.lineTo(-2,-4);eg.strokePath();
+    eg.beginPath();eg.moveTo(7,-6);eg.lineTo(2,-4);eg.strokePath();
+    // Teeth
+    eg.fillStyle(0xffffff,.7);
+    eg.fillTriangle(-4,5,0,5,-2,8);eg.fillTriangle(0,5,4,5,2,8);
+    eg.generateTexture('en'+platList.length,eSz*2+2,eSz*2+4);
+    eg.destroy();
+    const es=sc.add.sprite(x,y-22,'en'+platList.length);
+    es.setDepth(9);
+    const halfW=w/2-15;
+    enemies.push({sprite:es,dir:Math.random()>.5?1:-1,speed:.6+Math.random()*.6,minX:x-halfW,maxX:x+halfW});
   }
-  if (!platData || platData.answered || !platData.hasQuestion) return;
 
-  // Show question NON-BLOCKING — player keeps moving
-  showQuestion(platData);
+  return pd;
 }
 
-var questionTimer = null;
+function onLand(pl,plat){
+  if(!active||!pl.body.touching.down)return;
+  let pd=null;
+  for(let i=0;i<platList.length;i++){if(platList[i].visual===plat){pd=platList[i];break}}
+  if(!pd||pd.answered||!pd.hasQ)return;
+  showQ(pd);
+}
 
-function showQuestion(platData) {
-  if (questionShowing) return;
-  questionShowing = true;
-  
-  var height = Math.max(0, Math.floor((GAME_H - 60 - platData.y) / 8));
-  currentQuestion = getQuestion(height);
-  currentQuestion.platData = platData;
+let qTimeLeft=0;
+function showQ(pd){
+  if(qShowing)return;
+  qShowing=true;
+  const h=Math.max(0,Math.floor((GH-60-pd.y)/10));
+  curQ=getQ(h);curQ.pd=pd;
 
-  var panel = document.getElementById('question-panel');
-  document.getElementById('qText').textContent = currentQuestion.text;
-
-  var answersDiv = document.getElementById('qAnswers');
-  answersDiv.innerHTML = '';
-
-  currentQuestion.answers.forEach(function(ans) {
-    var btn = document.createElement('button');
-    btn.className = 'q-btn';
-    btn.textContent = ans;
-    btn.onclick = function() { checkAnswer(ans, btn); };
-    answersDiv.appendChild(btn);
+  document.getElementById('qText').textContent=curQ.text;
+  const ad=document.getElementById('qAns');ad.innerHTML='';
+  curQ.answers.forEach(a=>{
+    const b=document.createElement('button');b.className='qb';b.textContent=a;
+    b.onclick=()=>checkA(a,b);ad.appendChild(b);
   });
+  document.getElementById('qp').style.display='block';
 
-  panel.style.display = 'block';
-  // NO FREEZE — player keeps full control
-
-  // Auto-dismiss after 5 seconds if not answered
-  if (questionTimer) clearTimeout(questionTimer);
-  questionTimer = setTimeout(function() {
-    dismissQuestion();
-  }, 5000);
+  // 6 second timer
+  qTimeLeft=60;
+  document.getElementById('qTimer').style.width='100%';
+  if(timerInterval)clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    qTimeLeft--;
+    document.getElementById('qTimer').style.width=(qTimeLeft/60*100)+'%';
+    if(qTimeLeft<=0){clearInterval(timerInterval);dismissQ();loseLife('timeout')}
+  },100);
 }
 
-function dismissQuestion() {
-  if (questionTimer) { clearTimeout(questionTimer); questionTimer = null; }
-  document.getElementById('question-panel').style.display = 'none';
-  questionShowing = false;
-  currentQuestion = null;
+function dismissQ(){
+  if(timerInterval){clearInterval(timerInterval);timerInterval=null}
+  document.getElementById('qp').style.display='none';
+  qShowing=false;curQ=null;
 }
 
-function checkAnswer(answer, btn) {
-  if (!currentQuestion) return;
-  var buttons = document.querySelectorAll('.q-btn');
-  buttons.forEach(function(b) { b.onclick = null; }); // disable all
+function checkA(a,btn){
+  if(!curQ)return;
+  document.querySelectorAll('.qb').forEach(b=>b.onclick=null);
+  if(timerInterval){clearInterval(timerInterval);timerInterval=null}
 
-  if (answer === currentQuestion.correct) {
-    btn.classList.add('correct');
-    score += 10;
-    currentQuestion.platData.answered = true;
-
-    // Remove orb
-    if (currentQuestion.platData.orb) {
-      currentQuestion.platData.orb.destroy();
-    }
-
-    // Visual feedback — platform turns green
-    currentQuestion.platData.visual.setFillStyle(0x22c55e);
-    currentQuestion.platData.glow.setFillStyle(0x22c55e, 0.12);
+  if(String(a)===String(curQ.correct)){
+    btn.classList.add('ok');
+    streak++;
+    const mult=streak>=5?3:streak>=3?2:1;
+    score+=10*mult;
+    curQ.pd.answered=true;
+    if(curQ.pd.orb)curQ.pd.orb.destroy();
+    curQ.pd.visual.setFillStyle(0x22c55e);
 
     // Star burst
-    if (gameScene) {
-      for (var i = 0; i < 8; i++) {
-        var s = gameScene.add.image(player.x, player.y, 'star');
-        s.setScale(0.3 + Math.random() * 0.5);
-        s.setTint(0xfbbf24);
-        gameScene.tweens.add({
-          targets: s,
-          x: s.x + (Math.random() - 0.5) * 160,
-          y: s.y - 40 - Math.random() * 80,
-          alpha: 0, scale: 0,
-          duration: 600 + Math.random() * 300,
-          ease: 'Cubic.easeOut',
-          onComplete: function() { s.destroy(); }
-        });
+    if(scene){
+      for(let i=0;i<6;i++){
+        const s=scene.add.image(player.x,player.y,'star');
+        s.setScale(.3+Math.random()*.4);s.setTint(0xfbbf24);
+        scene.tweens.add({targets:s,x:s.x+(Math.random()-.5)*120,y:s.y-30-Math.random()*60,alpha:0,scale:0,duration:500+Math.random()*200,ease:'Cubic.easeOut',onComplete:()=>s.destroy()});
       }
     }
-
-    setTimeout(function() { dismissQuestion(); updateUI(); }, 400);
-
-  } else {
-    btn.classList.add('wrong');
-    // Show correct answer
-    buttons.forEach(function(b) {
-      if (parseFloat(b.textContent) === currentQuestion.correct) b.classList.add('correct');
-    });
-    // Dismiss after 800ms — NO PENALTY, just move on
-    setTimeout(function() { dismissQuestion(); }, 800);
+    setTimeout(()=>{dismissQ();updHUD()},350);
+  }else{
+    btn.classList.add('no');
+    document.querySelectorAll('.qb').forEach(b=>{if(String(b.textContent)===String(curQ.correct))b.classList.add('ok')});
+    streak=0;
+    setTimeout(()=>{dismissQ();loseLife('wrong')},600);
   }
 }
 
-function updateUI() {
-  document.getElementById('scoreDisplay').textContent = score;
-  document.getElementById('heightDisplay').textContent = maxHeight;
-}
+function loseLife(reason){
+  if(!active)return;
+  lives--;
+  updHUD();
 
-function gameOver() {
-  gameActive = false;
-  dismissQuestion();
-  document.getElementById('finalScore').textContent = score;
-  document.getElementById('finalHeight').textContent = 'Reached ' + maxHeight + 'm';
-  document.getElementById('gameover-screen').style.display = 'flex';
-}
-
-// ══════════════════════════════════════
-// GAME LIFECYCLE
-// ══════════════════════════════════════
-var game;
-
-window.startGame = function() {
-  document.getElementById('start-screen').style.display = 'none';
-
-  if (!game) {
-    game = new Phaser.Game({
-      type: Phaser.AUTO,
-      width: GAME_W,
-      height: GAME_H,
-      parent: 'game-container',
-      backgroundColor: '#0f0a1e',
-      physics: {
-        default: 'arcade',
-        arcade: {
-          gravity: { y: 400 },
-          debug: false
-        }
-      },
-      scene: [GameScene],
-      scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
-      }
-    });
+  if(lives<=0){
+    gameOver();return;
   }
 
-  setTimeout(function() { gameActive = true; }, 500);
+  // Flash player red
+  if(scene&&player){
+    player.setTint(0xef4444);
+    scene.time.delayedCall(400,()=>{if(player)player.clearTint()});
+  }
+
+  // If fell, respawn on nearest platform above camera
+  if(reason==='fell'){
+    const camY=scene.cameras.main.scrollY;
+    let best=null;
+    platList.forEach(p=>{if(p.y>camY&&p.y<camY+GH&&(!best||p.y<best.y))best=p});
+    if(best){
+      player.setPosition(best.x,best.y-30);
+      player.setVelocity(0,0);
+    }
+  }
+
+  // If enemy, knock back
+  if(reason==='enemy'){
+    player.setVelocityY(-250);
+    player.setVelocityX(player.body.velocity.x>0?-200:200);
+  }
+}
+
+function updHUD(){
+  document.getElementById('dScore').textContent=score;
+  document.getElementById('dHeight').textContent=maxH;
+  document.getElementById('dLives').textContent='❤️'.repeat(Math.max(0,lives))+'🖤'.repeat(Math.max(0,3-lives));
+  document.getElementById('dStreak').textContent=streak>=2?'🔥×'+streak:'';
+}
+
+function gameOver(){
+  active=false;dismissQ();
+  document.getElementById('fScore').textContent=score;
+  document.getElementById('fHeight').textContent='Reached '+maxH+'m';
+  document.getElementById('overScr').style.display='flex';
+}
+
+let game;
+window.startGame=function(){
+  document.getElementById('startScr').style.display='none';
+  if(!game){
+    game=new Phaser.Game({
+      type:Phaser.AUTO,width:GW,height:GH,parent:'gc',backgroundColor:'#0f0a1e',
+      physics:{default:'arcade',arcade:{gravity:{y:520},debug:false}},
+      scene:[GameScene],
+      scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_HORIZONTALLY}
+    });
+  }
+  setTimeout(()=>{active=true},500);
 };
 
-window.restartGame = function() {
-  document.getElementById('gameover-screen').style.display = 'none';
-  score = 0;
-  maxHeight = 0;
-  questionShowing = false;
-  currentQuestion = null;
-  platformList = [];
-  updateUI();
-
-  if (game) {
-    game.scene.getScene('GameScene').scene.restart();
-    setTimeout(function() { gameActive = true; }, 300);
-  }
+window.restartGame=function(){
+  document.getElementById('overScr').style.display='none';
+  score=0;maxH=0;lives=3;streak=0;qShowing=false;curQ=null;platList=[];enemies=[];updHUD();
+  if(game){game.scene.getScene('GS').scene.restart();setTimeout(()=>{active=true},300)}
 };
-
-// Expose for debugging
-window._g = function() { return { game:game, player:player, platformList:platformList, score:score, maxHeight:maxHeight, gameActive:gameActive, questionShowing:questionShowing }; };
-
 })();
 </script>
 </body>
