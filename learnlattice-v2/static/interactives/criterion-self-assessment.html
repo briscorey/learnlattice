@@ -325,6 +325,12 @@ window.saveSelection = function() {
   var band = c.bands[selectedBand];
   saveRating(subject, c.c, band.lv, band.label);
   document.getElementById('csSavedMsg').textContent = '✓ Saved! ' + band.lv + ' (' + band.label + ') recorded for Criterion ' + c.c;
+  // Award XP
+  if (typeof LL !== 'undefined') {
+    LL.xp.add(LL.xp.CRITERION_SELF_ASSESS, 'criteria');
+    var newBadges = LL.badges.check();
+    newBadges.forEach(function(b) { LL.render.toast(b); });
+  }
   renderHistory();
 };
 
@@ -415,6 +421,16 @@ function renderHistory() {
 // Init
 renderCriteriaPills();
 render();
+
+// Engagement engine
+(function(){
+  var script = document.createElement('script');
+  script.src = '/js/student-engine.js';
+  script.onload = function() {
+    if (typeof LL !== 'undefined') { LL.streak.update(); }
+  };
+  document.head.appendChild(script);
+})();
 </script>
 </body>
 </html>

@@ -95,6 +95,14 @@
     </div>
   </section>
 
+  {{/* ── ENGAGEMENT BAR ── */}}
+  <section class="sp-engage">
+    <div class="sp-engage-inner">
+      <div id="spEngBar"></div>
+      <div id="spWeekMap"></div>
+    </div>
+  </section>
+
   {{/* ── STUDENT TOOLKIT — core tools ── */}}
   <section class="sp-toolkit">
     <div class="sp-toolkit-inner">
@@ -112,6 +120,13 @@
           <div>
             <strong>Criterion Self-Assessment</strong>
             <span>What does a 6 actually look like? Read, compare, and rate your own work honestly.</span>
+          </div>
+        </a>
+        <a href="/students/vocabulary/" class="sp-tool-card sp-tool-card--featured">
+          <span class="sp-tool-icon">📖</span>
+          <div>
+            <strong>Vocabulary Practice</strong>
+            <span>102 terms with spaced repetition. Terms you get wrong come back sooner.</span>
           </div>
         </a>
         <a href="/students/quick-check/" class="sp-tool-card">
@@ -183,5 +198,20 @@
   </section>
 
 </div>
+
+<script src="/js/student-engine.js"></script>
+<script>
+if (typeof LL !== 'undefined') {
+  LL.streak.update();
+  LL.render.bar('spEngBar');
+  LL.render.weekHeatmap('spWeekMap');
+}
+</script>
+
+<style>
+.sp-engage{max-width:900px;margin:0 auto;padding:0 24px}
+.sp-engage-inner{padding:12px 20px;background:var(--surface-card);border:1px solid var(--border);border-radius:16px;margin-bottom:8px}
+html.dark .sp-engage-inner{background:#1e293b;border-color:#334155}
+</style>
 
 {{ end }}

@@ -409,6 +409,12 @@ window.rateAndNext = function(quality) {
   state = sm2(state, quality);
   setTermState(t.t, state);
   testIdx++;
+  // Award XP via engagement engine
+  if (typeof LL !== 'undefined') {
+    LL.xp.add(LL.xp.COMMAND_TERM_TEST, 'command-terms');
+    var newBadges = LL.badges.check();
+    newBadges.forEach(function(b) { LL.render.toast(b); });
+  }
   renderStats();
   renderTest();
 };
@@ -570,6 +576,18 @@ document.addEventListener('keydown', function(e) {
 // ─── Init ───
 getStreak(); // triggers streak update
 render();
+
+// ─── Engagement Engine Integration ───
+(function(){
+  var script = document.createElement('script');
+  script.src = '/js/student-engine.js';
+  script.onload = function() {
+    if (typeof LL !== 'undefined') {
+      LL.streak.update();
+    }
+  };
+  document.head.appendChild(script);
+})();
 </script>
 </body>
 </html>
