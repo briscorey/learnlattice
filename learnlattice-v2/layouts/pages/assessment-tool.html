@@ -1,18 +1,128 @@
 {{ define "main" }}
 
-<section class="eal-hero" style="padding:24px 20px">
-  <div class="eal-hero-inner" style="max-width:700px">
-    <a href="/assessment/" style="font-size:.78rem;color:var(--teal);text-decoration:none;font-weight:600">← Back to Assessment Toolkit</a>
-    <h1 class="eal-hero-title" style="font-size:1.6rem;margin-top:8px">{{ .Title }}</h1>
-    <p class="eal-hero-sub">{{ .Description }}</p>
+<section class="ab-hero">
+  <div class="ab-hero-inner">
+    <a href="/assessment/" class="ab-back">← Assessment Toolkit</a>
+    <h1>🏗️ MYP Assessment Builder</h1>
+    <p>Describe your real-world context in detail. The more specific you are, the more useful the output.</p>
   </div>
 </section>
 
-<section style="max-width:700px;margin:0 auto;padding:0 20px 40px">
-  <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#f8faf9">
-    <iframe src="{{ .Params.tool_src }}?v=20260316b" style="width:100%;height:{{ .Params.tool_height | default 700 }}px;border:none;display:block" loading="lazy" title="{{ .Title }}"></iframe>
+<section class="ab-app" id="abApp">
+  <div class="ab-form" id="abForm">
+    <div class="ab-form-grid">
+      <div class="ab-form-col">
+        <div class="ab-fg">
+          <label class="ab-label">Criterion</label>
+          <div class="ab-btns">
+            <button class="ab-btn" onclick="abPick('cr','A')">A — Knowing</button>
+            <button class="ab-btn" onclick="abPick('cr','B')">B — Investigating</button>
+            <button class="ab-btn" onclick="abPick('cr','C')">C — Communicating</button>
+            <button class="ab-btn" onclick="abPick('cr','D')">D — Applying</button>
+          </div>
+        </div>
+        <div class="ab-fg">
+          <label class="ab-label">Subject</label>
+          <div class="ab-btns ab-btns-2">
+            <button class="ab-btn" onclick="abPick('su','Mathematics')">Mathematics</button>
+            <button class="ab-btn" onclick="abPick('su','Science')">Science</button>
+          </div>
+        </div>
+        <div class="ab-fg">
+          <label class="ab-label">Grade</label>
+          <div class="ab-btns ab-btns-5">
+            <button class="ab-btn" onclick="abPick('gr','6')">6</button>
+            <button class="ab-btn" onclick="abPick('gr','7')">7</button>
+            <button class="ab-btn" onclick="abPick('gr','8')">8</button>
+            <button class="ab-btn" onclick="abPick('gr','9')">9</button>
+            <button class="ab-btn" onclick="abPick('gr','10')">10</button>
+          </div>
+        </div>
+        <div class="ab-fg">
+          <label class="ab-label">Topic</label>
+          <input class="ab-input" id="abTopic" placeholder="e.g. Area of composite shapes" oninput="abS.topic=this.value;abCk()">
+        </div>
+      </div>
+      <div class="ab-form-col ab-form-col-wide">
+        <div class="ab-fg" style="flex:1;display:flex;flex-direction:column">
+          <label class="ab-label">Real-world context <span style="color:var(--teal);font-weight:400">(this is the key input)</span></label>
+          <textarea class="ab-textarea" id="abCtx" oninput="abS.ctx=this.value;abCk()" placeholder="Example: The school courtyard needs repaving. It is L-shaped: main section 15m × 20m, with a 5m × 8m garden bed cut from the NE corner. Three quotes received:
+• Company A: ¥120/m² (standard concrete pavers)
+• Company B: ¥155/m² (includes drainage system)  
+• Company C: ¥180/m² (eco-permeable pavers, 20% gov rebate)
+Budget: ¥50,000. Principal wants recommendation by Friday.
+
+The more detail you provide, the more specific every output becomes."></textarea>
+        </div>
+        <div class="ab-fg">
+          <label class="ab-label">Notes (optional)</label>
+          <input class="ab-input" id="abNotes" placeholder="e.g. EAL-heavy class, 2 periods, focus on graphing..." oninput="abS.notes=this.value">
+        </div>
+        <button class="ab-gen" id="abGen" disabled onclick="abGenerate()">✨ Generate Assessment</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ab-output" id="abOutput" style="display:none">
+    <div class="ab-output-header">
+      <div class="ab-output-meta" id="abMeta"></div>
+      <div class="ab-output-actions">
+        <button class="ab-act-btn" onclick="window.print()">🖨️ Print</button>
+        <button class="ab-act-btn" onclick="navigator.clipboard.writeText(document.getElementById('abOutput').innerText)">📋 Copy all</button>
+        <button class="ab-act-btn" onclick="document.getElementById('abOutput').style.display='none';document.getElementById('abForm').style.display='block'">✏️ Edit</button>
+      </div>
+    </div>
+    <div class="ab-tabs">
+      <button class="ab-tab active" onclick="abTab(0)">📝 Task</button>
+      <button class="ab-tab" onclick="abTab(1)">📊 Rubric</button>
+      <button class="ab-tab" onclick="abTab(2)">📄 Student Sheet</button>
+      <button class="ab-tab" onclick="abTab(3)">✏️ Marking Guide</button>
+    </div>
+    <div class="ab-panels">
+      <div class="ab-panel active" id="abP0"></div>
+      <div class="ab-panel" id="abP1"></div>
+      <div class="ab-panel" id="abP2"></div>
+      <div class="ab-panel" id="abP3"></div>
+    </div>
   </div>
 </section>
 
-{{ partial "newsletter.html" . }}
+<style>
+.ab-hero{padding:32px 48px 24px;background:var(--surface-warm);border-bottom:1px solid var(--border)}.ab-hero-inner{max-width:1200px;margin:0 auto}.ab-back{font-size:.78rem;color:var(--teal);text-decoration:none;font-weight:600;display:inline-block;margin-bottom:8px}.ab-hero h1{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--ink);margin-bottom:6px}.ab-hero p{font-size:.88rem;color:var(--ink-muted);max-width:600px}.ab-app{max-width:1200px;margin:0 auto;padding:24px 48px 60px}.ab-form-grid{display:grid;grid-template-columns:300px 1fr;gap:24px}.ab-form-col{display:flex;flex-direction:column;gap:14px}.ab-form-col-wide{display:flex;flex-direction:column;gap:14px}.ab-fg{}.ab-label{display:block;font-size:.75rem;font-weight:700;color:var(--ink);margin-bottom:6px}.ab-btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ab-btns-2{grid-template-columns:1fr 1fr}.ab-btns-5{grid-template-columns:repeat(5,1fr)}.ab-btn{padding:10px 8px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface-card);color:var(--ink);font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;text-align:center}.ab-btn:hover{border-color:var(--teal);background:var(--teal-wash)}.ab-btn.sel{background:var(--teal);border-color:var(--teal);color:#fff}.ab-input{width:100%;padding:10px 14px;border-radius:8px;border:1.5px solid var(--border);font-size:.85rem;font-family:inherit;color:var(--ink);background:var(--surface-card);outline:none}.ab-input:focus{border-color:var(--teal)}.ab-textarea{width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid var(--border);font-size:.85rem;font-family:inherit;color:var(--ink);background:var(--surface-card);outline:none;resize:vertical;min-height:220px;flex:1}.ab-textarea:focus{border-color:var(--teal)}.ab-textarea::placeholder{color:var(--ink-muted);opacity:.55;font-size:.8rem}.ab-gen{padding:14px 28px;border-radius:10px;border:none;background:var(--teal);color:#fff;font-size:.92rem;font-weight:700;cursor:pointer;font-family:inherit;width:100%}.ab-gen:hover{background:var(--teal-deep)}.ab-gen:disabled{background:var(--border);color:var(--ink-muted);cursor:default}.ab-output-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap}.ab-output-meta{font-size:.82rem;color:var(--ink);display:flex;gap:6px;flex-wrap:wrap;align-items:center}.ab-output-meta span{font-weight:700;color:var(--teal);padding:3px 10px;background:var(--teal-wash);border-radius:6px;font-size:.75rem}.ab-output-actions{display:flex;gap:6px}.ab-act-btn{padding:7px 14px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface-card);color:var(--ink-muted);font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit}.ab-act-btn:hover{border-color:var(--teal);color:var(--teal)}.ab-tabs{display:flex;gap:4px;border-bottom:2px solid var(--border)}.ab-tab{padding:12px 20px;border:none;background:none;color:var(--ink-muted);font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;position:relative}.ab-tab:hover{color:var(--ink)}.ab-tab.active{color:var(--teal)}.ab-tab.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--teal)}.ab-panel{display:none;padding:24px 0}.ab-panel.active{display:block}.ab-card{background:var(--surface-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:16px}.ab-card h3{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--ink);margin-bottom:10px}.ab-scenario{padding:16px 20px;background:linear-gradient(135deg,rgba(13,148,136,.05),rgba(13,148,136,.02));border-radius:10px;border-left:3px solid var(--teal);font-size:.88rem;line-height:1.65;color:var(--ink);white-space:pre-line}.ab-q{padding:14px 16px;background:var(--surface-warm);border:1px solid var(--border);border-radius:8px;margin-bottom:8px}.ab-q p{font-size:.88rem;color:var(--ink);line-height:1.55}.ab-lvl{display:inline-block;padding:2px 8px;border-radius:5px;font-size:.62rem;font-weight:700;margin-bottom:6px}.ab-l34{background:rgba(34,197,94,.1);color:#16a34a}.ab-l56{background:rgba(245,158,11,.1);color:#d97706}.ab-l78{background:rgba(13,148,136,.1);color:#0D9488}.ab-eal{padding:14px 16px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.1);border-radius:8px;font-size:.82rem;margin-top:16px}.ab-eal strong{color:#2563eb;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}.ab-sf{padding:4px 10px;background:rgba(255,255,255,.5);border-radius:4px;border-left:2px solid #2563eb;margin-bottom:4px;font-style:italic;font-size:.8rem}.ab-rtbl{width:100%;border-collapse:collapse;font-size:.82rem}.ab-rtbl th{padding:10px 14px;background:var(--teal-wash);text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;color:var(--teal);border-bottom:2px solid var(--border)}.ab-rtbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55}.ab-rtbl tr:last-child td{border-bottom:none}.ab-rtbl .rlv{font-weight:700;color:var(--teal);white-space:nowrap}.ab-sheet{border:2px solid var(--border);border-radius:12px;padding:28px}.ab-sheet-hdr{text-align:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}.ab-sheet-hdr .s1{font-size:.72rem;color:var(--ink-muted)}.ab-sheet-hdr .s2{font-size:1.15rem;font-weight:700;color:var(--ink);margin:4px 0}.ab-sheet-hdr .s3{font-size:.75rem;color:var(--ink-muted)}.ab-sheet-sec{margin-bottom:18px}.ab-sheet-sec h4{font-size:.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}.ab-sheet-write{min-height:100px;border:1.5px dashed var(--border);border-radius:8px;margin:10px 0}.ab-sheet-frame{padding:6px 10px;background:var(--surface-warm);border-radius:6px;border-left:3px solid var(--teal);margin-bottom:6px;font-size:.82rem;font-style:italic}.ab-sample{margin-bottom:18px}.ab-sample-resp{padding:14px 16px;background:var(--surface-warm);border-radius:8px;border-left:3px solid var(--border);font-style:italic;font-size:.85rem;line-height:1.6;margin-bottom:8px}.ab-sample-why{font-size:.78rem;color:var(--ink-muted);line-height:1.5;padding:10px 14px;background:rgba(124,58,237,.04);border-radius:6px}.ab-sample-why em{color:#7c3aed;font-style:normal;font-weight:600}.ab-tip{padding:14px 16px;background:rgba(217,119,6,.04);border:1px solid rgba(217,119,6,.12);border-radius:8px;font-size:.82rem;margin-top:16px}.ab-tip strong{color:#d97706}.ab-links{padding:14px 16px;background:var(--teal-wash);border-radius:8px;font-size:.78rem;margin-top:16px}.ab-links a{color:var(--teal);font-weight:600;text-decoration:none;margin-right:12px}html.dark .ab-hero{background:#1e293b}html.dark .ab-btn{background:#1e293b;border-color:#334155}html.dark .ab-btn.sel{background:var(--teal);border-color:var(--teal)}html.dark .ab-input,html.dark .ab-textarea{background:#1e293b;border-color:#334155;color:#e2e8f0}html.dark .ab-card{background:#1e293b;border-color:#334155}html.dark .ab-sheet{border-color:#334155}@media(max-width:768px){.ab-form-grid{grid-template-columns:1fr}.ab-app{padding:16px}.ab-hero{padding:24px 16px}.ab-tabs{overflow-x:auto}.ab-tab{white-space:nowrap;font-size:.78rem;padding:10px 14px}}@media print{.ab-form,.ab-hero,.ab-tabs,.ab-output-actions,.ab-back,nav,footer,.lattice-bg{display:none !important}.ab-panel{display:block !important;break-inside:avoid;margin-bottom:24px}body{background:#fff}}
+</style>
+
+<script>
+const abS={cr:'',su:'',gr:'',topic:'',ctx:'',notes:''};
+const CN={A:'Knowing & Understanding',B:'Investigating Patterns',C:'Communicating',D:'Applying in Real-Life Contexts'};
+function abPick(f,v){abS[f]=v;document.querySelectorAll('.ab-btn').forEach(b=>{const fn=b.getAttribute('onclick')||'';if(fn.includes("'"+f+"'"))b.classList.toggle('sel',fn.includes("'"+v+"'"))});abCk()}
+function abCk(){document.getElementById('abGen').disabled=!(abS.cr&&abS.su&&abS.gr&&abS.topic&&abS.ctx)}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function abTab(n){document.querySelectorAll('.ab-tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.ab-panel').forEach((p,i)=>p.classList.toggle('active',i===n))}
+function abGenerate(){
+  const{cr,su,gr,topic,ctx}=abS;const topicE=esc(topic),scenario=esc(ctx),subj=su==='Mathematics'?'mathematical':'scientific';
+  document.getElementById('abForm').style.display='none';document.getElementById('abOutput').style.display='block';
+  document.getElementById('abMeta').innerHTML=`<span>Criterion ${cr}</span>${CN[cr]} · <span>${su}</span> · <span>Grade ${gr}</span> · ${topicE}`;
+  const vocabDB={area:['area','perimeter','composite shape','dimensions','m²'],volume:['volume','capacity','cross-section','cubic units','prism'],density:['density','mass','volume','g/cm³','displacement'],percent:['percentage','increase','decrease','multiplier','proportion'],fraction:['numerator','denominator','equivalent','simplify','mixed number'],algebra:['variable','coefficient','expression','equation','substitute'],linear:['gradient','y-intercept','linear','slope','rate of change'],equation:['solve','inverse operation','balance','isolate','unknown'],ratio:['ratio','proportion','scale factor','equivalent','unit rate'],sequence:['term','common difference','general rule','nth term','arithmetic'],probab:['probability','outcome','event','sample space','theoretical'],statist:['mean','median','mode','range','outlier'],force:['force','Newton (N)','friction','gravity','balanced/unbalanced'],energy:['kinetic','potential','thermal','transfer','conservation'],cell:['cell','nucleus','membrane','mitochondria','organelle'],ecosys:['ecosystem','producer','consumer','decomposer','trophic level'],food:['food chain','food web','energy transfer','biomass','predator-prey'],wave:['frequency','wavelength','amplitude','transverse','longitudinal'],react:['reactant','product','exothermic','endothermic','conservation of mass'],genet:['gene','allele','dominant','recessive','Punnett square'],circuit:['current (A)','voltage (V)','resistance (Ω)','series','parallel'],photo:['photosynthesis','chlorophyll','glucose','CO₂','light energy']};
+  let vocab=['calculate','analyse','justify','evaluate','represent'];const tl=topic.toLowerCase();for(const[k,v]of Object.entries(vocabDB)){if(tl.includes(k)||ctx.toLowerCase().includes(k)){vocab=v;break}}
+  const Q={A:[{l:'3-4',c:'ab-l34',t:`Read the scenario above. Identify and define <strong>at least 4 key ${subj} terms</strong> needed for this problem. For each, explain how it specifically relates to this scenario — use actual numbers or details from the text above.`},{l:'5-6',c:'ab-l56',t:`Using the specific data in the scenario, explain <strong>how ${topicE} concepts work in this situation</strong>. Reference at least 3 specific numbers from the scenario. Show how two or more concepts connect. Explain why each matters for this problem.`},{l:'7-8',c:'ab-l78',t:`If the conditions in this scenario changed significantly, explain <strong>how your understanding of ${topicE} would adapt</strong>. Discuss a limitation, exception, or common misconception. Show understanding beyond what was taught in class.`}],B:[{l:'3-4',c:'ab-l34',t:`Using data from the scenario, <strong>create a table with at least 5 entries</strong>. Describe what you notice about the numbers — what pattern do you see? Be specific.`},{l:'5-6',c:'ab-l56',t:`Describe the pattern using <strong>exact numbers</strong> from your data. Write it as a <strong>general rule in words AND as a formula</strong>. Then <strong>test your rule</strong> by predicting a value you haven't calculated. Show prediction, check, and result.`},{l:'7-8',c:'ab-l78',t:`<strong>Prove your rule</strong> with a very different test case (extreme or boundary value). Explain <strong>WHY the pattern exists</strong>. Are there conditions where your rule breaks down? What assumptions does it depend on?`}],C:[{l:'3-4',c:'ab-l34',t:`Show your working for the key calculations, <strong>step by step</strong>. Include at least one clearly labelled table or diagram.`},{l:'5-6',c:'ab-l56',t:`Present your analysis using <strong>three representations</strong>: (a) a labelled data table, (b) a graph with title, axes, and units, (c) a written explanation that <strong>refers to both by name</strong>. Explain what the data shows.`},{l:'7-8',c:'ab-l78',t:`Present a <strong>structured analysis</strong> someone outside your class could follow. Justify your choice of representation. <strong>Interpret</strong> your results — what do they mean for the real situation? Use precise, consistent notation.`}],D:[{l:'3-4',c:'ab-l34',t:`Using the numbers from the scenario, <strong>perform the key calculations</strong>. Show working and state answers with correct units.`},{l:'5-6',c:'ab-l56',t:`<strong>Compare at least two options</strong> using the scenario's real numbers. Show all working. Check: does the result make sense in this situation?`},{l:'7-8',c:'ab-l78',t:`<strong>Evaluate all options</strong> with detailed calculations. Make a <strong>justified recommendation</strong>: (a) which option is best and why, (b) at least 2 assumptions you made, (c) what would change with different constraints, (d) limitations of your analysis.`}]};
+  const F={A:[`The term ___ means ___. In this scenario, this matters because ___.`,`The relationship between ___ and ___ is shown by ___.`,`If conditions changed to ___, then ___ because ___.`],B:[`As ___ increases by ___, the ___ changes by ___.`,`My rule is: ___. As a formula: ___. I tested with ___.`,`This pattern exists because ___. It would break if ___.`],C:[`Table/Figure ___ shows that ___. This means ___.`,`I chose a ___ because ___.`,`The key finding is ___, which tells us ___.`],D:[`Option ___ costs/gives ___ while Option ___ costs/gives ___.`,`I recommend ___ because ___. This assumes ___.`,`If constraints changed to ___, my recommendation changes because ___.`]};
+  const R=[{lv:'1-2',gen:`Attempts to recall some ${subj} knowledge with significant gaps.`,spec:cr==='A'?`Lists 1-2 terms but cannot define accurately. No scenario data used.`:cr==='B'?`Minimal data collected. No pattern identified.`:cr==='C'?`Partial working. Diagrams missing or unlabelled.`:`Identifies problem. Attempts calculation with major errors.`},{lv:'3-4',gen:`Recalls some ${subj} knowledge with limited understanding.`,spec:cr==='A'?`Defines some ${topicE} terms in own words. Basic examples but no specific scenario numbers used.`:cr==='B'?`Some data in a table. Pattern described vaguely without specific values.`:cr==='C'?`Step-by-step working with some calculations. One visual but labels incomplete.`:`Some scenario numbers used. Arrives at answer but doesn't check reasonableness.`},{lv:'5-6',gen:`Describes ${subj} concepts and applies to familiar situations.`,spec:cr==='A'?`Explains ${topicE} using specific scenario data. Shows concept connections. Correct vocabulary throughout.`:cr==='B'?`Systematic table with scenario numbers. Pattern with exact values. Rule written and verified.`:cr==='C'?`Clear working. Table AND graph with titles, labels, units. Written explanation references both.`:`Correct calculations with all scenario data. Options compared. Reasonableness checked.`},{lv:'7-8',gen:`Applies to unfamiliar situations. Makes connections. Thorough understanding.`,spec:cr==='A'?`Deep analysis using scenario data. Explores changed conditions. Connections beyond what was taught. Genuine insight.`:cr==='B'?`Rule proven with extreme case. Explains WHY pattern exists. Discusses limitations.`:cr==='C'?`Professional structured report. Representations justified. Results interpreted. Clear logical flow.`:`All options analysed. Justified recommendation. Assumptions stated. Limitations discussed. Considers changed constraints.`}];
+  const M=[{lv:'3-4',c:'ab-l34',resp:`[Student names the topic and lists 1-2 terms. Attempts a basic calculation but misses steps or uses wrong values. Does not reference specific numbers from the scenario. Brief and unstructured.]`,why:`<em>At 3-4 because:</em> Shows awareness but response is vague. Terms listed without proper definitions. Scenario data not used. <em>To reach 5-6:</em> Define terms precisely. Use actual scenario numbers as evidence. Show how concepts connect.`},{lv:'5-6',c:'ab-l56',resp:`[Student accurately defines terms in own words. Uses specific data from the scenario (actual measurements, costs, values). Shows step-by-step working. Makes connections between concepts. Correct vocabulary. Some interpretation but limited evaluation.]`,why:`<em>At 5-6 because:</em> Accurate definitions using real data. Clear connections. Good vocabulary. <em>To reach 7-8:</em> Explore changed conditions. Identify assumptions or limitations. Show deeper reasoning beyond what was taught.`},{lv:'7-8',c:'ab-l78',resp:`[Thorough, structured response. All concepts explained precisely AND applied to the scenario using exact data. Explores changed conditions, identifies assumptions, connects beyond the topic. Genuine understanding evident.]`,why:`<em>At 7-8 because:</em> Uses scenario data precisely. Makes unexpected connections. Discusses limitations. Shows thinking that couldn't come from memorising notes. <em>Distinguished from 5-6</em> by depth of reasoning, not length.`}];
+  const chks=cr==='A'?['Defined key terms in own words','Used specific numbers from the scenario','Explained connections between concepts','Used correct vocabulary']:cr==='B'?['Data in a clear, labelled table','Pattern described with specific numbers','General rule (words + formula)','Rule verified with test case','Explained WHY the pattern exists']:cr==='C'?['All working shown step by step','Table/graph has title, labels, units','Referred to visuals in written explanation','Interpreted results (not just described)']:['Used real numbers from scenario','Compared at least two options','Made clear recommendation with evidence','Checked answer is reasonable','Discussed assumptions/limitations'];
+  // TASK TAB
+  let p0=`<div class="ab-card"><h3>📋 The Scenario</h3><div class="ab-scenario">${scenario}</div></div><div class="ab-card"><h3>📝 Assessment Questions</h3>`;Q[cr].forEach((q,i)=>{p0+=`<div class="ab-q"><span class="ab-lvl ${q.c}">Level ${q.l}</span><p><strong>Q${i+1}.</strong> ${q.t}</p></div>`});p0+=`</div><div class="ab-eal"><strong>🌏 EAL Support</strong><p><b style="font-size:.78rem;color:var(--ink);text-transform:none;letter-spacing:0">Key vocabulary:</b> ${vocab.join(', ')}</p><p style="margin-top:6px"><b style="font-size:.78rem;color:var(--ink);text-transform:none;letter-spacing:0">Sentence frames:</b></p>${F[cr].map(f=>'<div class="ab-sf">'+f+'</div>').join('')}<p style="margin-top:8px;font-size:.72rem;color:var(--ink-muted)">→ <a href="/eal/word-wall/" target="_top" style="color:var(--teal)">Word Walls</a> · <a href="/eal/sentence-frames/" target="_top" style="color:var(--teal)">Sentence Frames</a></p></div>`;
+  document.getElementById('abP0').innerHTML=p0;
+  // RUBRIC TAB
+  let p1=`<div class="ab-card"><h3>Generic vs Task-Specific Rubric</h3><p style="font-size:.82rem;color:var(--ink-muted);margin-bottom:12px">Use the <strong>right column</strong> for marking and standardisation — it translates IB descriptors into concrete expectations for this task.</p><table class="ab-rtbl"><thead><tr><th style="width:55px">Level</th><th>Generic MYP</th><th>This Task</th></tr></thead><tbody>`;R.forEach(r=>{p1+=`<tr><td class="rlv">${r.lv}</td><td style="color:var(--ink-muted);font-style:italic">${r.gen}</td><td style="font-weight:500">${r.spec}</td></tr>`});p1+=`</tbody></table></div>`;
+  document.getElementById('abP1').innerHTML=p1;
+  // STUDENT SHEET TAB
+  let p2=`<div class="ab-sheet"><div class="ab-sheet-hdr"><div class="s1">MYP ${su} — Criterion ${cr}: ${CN[cr]}</div><div class="s2">${topicE}</div><div class="s3">Grade ${gr} · Name: _________________ · Date: _________________</div></div><div class="ab-sheet-sec"><h4>The Scenario</h4><p style="font-size:.88rem;line-height:1.6;white-space:pre-line">${scenario}</p></div><div class="ab-sheet-sec"><h4>Your Tasks</h4>`;Q[cr].forEach((q,i)=>{p2+=`<p style="font-size:.88rem;margin-bottom:8px"><strong>${i+1}.</strong> ${q.t.replace(/<\/?strong>/g,'')}</p>`});p2+=`</div><div class="ab-sheet-write"></div><div class="ab-sheet-sec"><h4>Sentence Frames</h4>${F[cr].map(f=>'<div class="ab-sheet-frame">'+f+'</div>').join('')}</div><div class="ab-sheet-sec"><h4>Self-Check</h4><div style="font-size:.82rem;line-height:2.2">${chks.map(c=>'☐ '+c).join('<br>')}</div></div></div>`;
+  document.getElementById('abP2').innerHTML=p2;
+  // MARKING GUIDE TAB
+  let p3=`<div class="ab-card"><h3>Sample Responses for Calibration</h3><p style="font-size:.82rem;color:var(--ink-muted);margin-bottom:14px">Use these in standardisation meetings. Have teachers mark independently, then compare using the task-specific rubric.</p>`;M.forEach(m=>{p3+=`<div class="ab-sample"><span class="ab-lvl ${m.c}">Level ${m.lv}</span><div class="ab-sample-resp">${m.resp}</div><div class="ab-sample-why">${m.why}</div></div>`});p3+=`</div><div class="ab-tip"><strong>💡 Delivery Tips:</strong> Allow 5 min to read the scenario before writing. ${cr==='B'||cr==='C'?'2':'1-2'} period task. Provide <a href="/eal/graphic-organizers/" target="_top" style="color:var(--teal)">Graphic Organizer for Criterion ${cr}</a> for EAL students.</div><div class="ab-links"><strong style="display:block;margin-bottom:4px;font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:.5px">Related Tools</strong><a href="/assessment/comments/" target="_top">Comment Bank</a><a href="/eal/writing-guides/" target="_top">Writing Guides</a><a href="/students/checklist/" target="_top">Checklist</a><a href="/eal/graphic-organizers/" target="_top">Organizers</a></div>`;
+  document.getElementById('abP3').innerHTML=p3;
+  abTab(0);
+}
+</script>
+
 {{ end }}
