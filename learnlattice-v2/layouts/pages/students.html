@@ -4,214 +4,287 @@
 {{ $explainers := where $allResources "Params.resource_types" "intersect" (slice "Visual Explainer") }}
 {{ $workedExamples := where $allResources "Params.resource_types" "intersect" (slice "Worked Example") }}
 {{ $games := where $allResources "Params.resource_types" "intersect" (slice "Interactive Game") }}
-{{ $investigations := where $allResources "Params.resource_types" "intersect" (slice "Investigation Pack") }}
 
-<div class="sp-page">
+<div class="sd">
 
-  {{/* ── HERO — big, warm, inviting ── */}}
-  <section class="sp-hero">
-    <div class="sp-hero-inner">
-      <div class="sp-hero-glow"></div>
-      <h1 class="sp-hero-title">What are you<br>working on?</h1>
-      <p class="sp-hero-sub">No login. No tracking. Just pick where you want to start.</p>
-    </div>
-  </section>
-
-  {{/* ── MAIN GRID — the 4 pathways ── */}}
-  <section class="sp-paths">
-    <div class="sp-paths-grid">
-
-      <a href="/students/help/" class="sp-path sp-path--learn">
-        <div class="sp-path-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="sp-path-content">
-          <h2>Learn</h2>
-          <p>Visual explanations that make concepts click. Start here if something doesn't make sense yet.</p>
-        </div>
-        <span class="sp-path-meta">{{ len $explainers }} explainers →</span>
-      </a>
-
-      <a href="/students/practise/" class="sp-path sp-path--practise">
-        <div class="sp-path-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
-        </div>
-        <div class="sp-path-content">
-          <h2>Practise</h2>
-          <p>Step-by-step worked examples. Reveal each step when you're ready. Go at your own pace.</p>
-        </div>
-        <span class="sp-path-meta">{{ len $workedExamples }} examples →</span>
-      </a>
-
-      <a href="/games/" class="sp-path sp-path--play">
-        <div class="sp-path-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m-2-2v4"/><circle cx="17" cy="10" r="1"/><circle cx="15" cy="14" r="1"/></svg>
-        </div>
-        <div class="sp-path-content">
-          <h2>Play</h2>
-          <p>Interactive games where the maths and science IS the game. No grades. No pressure.</p>
-        </div>
-        <span class="sp-path-meta">{{ len $games }} games →</span>
-      </a>
-
-      <a href="/revision/" class="sp-path sp-path--revise">
-        <div class="sp-path-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="sp-path-content">
-          <h2>Revise</h2>
-          <p>Timed study sessions. Flashcards, quizzes, and formula practice pulled from real investigations.</p>
-        </div>
-        <span class="sp-path-meta">102 vocab · 41 questions →</span>
-      </a>
-
-    </div>
-  </section>
-
-  {{/* ── QUICK HELP — "I don't understand..." ── */}}
-  <section class="sp-help">
-    <div class="sp-help-inner">
-      <h2 class="sp-help-title">I don't understand...</h2>
-      <div class="sp-help-topics">
-        {{ $topics := slice
-          (dict "label" "Negative numbers" "url" "/resources/understand-negative-numbers/" "icon" "➖")
-          (dict "label" "Fractions" "url" "/resources/understand-fractions/" "icon" "½")
-          (dict "label" "Algebra" "url" "/resources/understand-algebra/" "icon" "𝑥")
-          (dict "label" "Graphs" "url" "/resources/understand-graph-reading/" "icon" "📈")
-          (dict "label" "Probability" "url" "/resources/understand-probability/" "icon" "🎲")
-          (dict "label" "Density" "url" "/resources/understand-density/" "icon" "⚖️")
-          (dict "label" "Forces" "url" "/resources/understand-forces/" "icon" "💪")
-          (dict "label" "Energy" "url" "/resources/understand-energy/" "icon" "⚡")
-          (dict "label" "Particles" "url" "/resources/understand-particles/" "icon" "⚛️")
-          (dict "label" "Food webs" "url" "/resources/understand-food-webs/" "icon" "🌿")
-        }}
-        {{ range $topics }}
-        <a href="{{ .url }}" class="sp-topic">
-          <span class="sp-topic-icon">{{ .icon }}</span>
-          <span class="sp-topic-label">{{ .label }}</span>
-        </a>
-        {{ end }}
+  <!-- ── TOP BAR: streak + XP + title ── -->
+  <header class="sd-top">
+    <div class="sd-top-inner">
+      <div class="sd-top-left">
+        <h1 class="sd-title">What are you working on?</h1>
+        <p class="sd-subtitle">No login. No tracking. Just pick where you want to start.</p>
       </div>
+      <div class="sd-top-right" id="sdEngBar"></div>
     </div>
-  </section>
+    <div class="sd-week" id="sdWeekMap"></div>
+  </header>
 
-  {{/* ── ENGAGEMENT BAR ── */}}
-  <section class="sp-engage">
-    <div class="sp-engage-inner">
-      <div id="spEngBar"></div>
-      <div id="spWeekMap"></div>
+  <!-- ── MAIN DASHBOARD GRID ── -->
+  <main class="sd-main">
+
+    <!-- LEFT: Tools + Help topics -->
+    <div class="sd-col-left">
+
+      <!-- Tools grid: 3 featured + 4 standard -->
+      <section class="sd-section">
+        <h2 class="sd-section-title">Your tools</h2>
+        <div class="sd-tools">
+          <a href="/students/command-terms/" class="sd-tool sd-tool--lg sd-tool--teal">
+            <span class="sd-tool-badge">NEW</span>
+            <span class="sd-tool-icon">🎯</span>
+            <div class="sd-tool-body">
+              <strong>Command Term Trainer</strong>
+              <span>Master the 40 words in every MYP assessment. Browse, test, match.</span>
+            </div>
+          </a>
+          <a href="/students/criteria/" class="sd-tool sd-tool--lg sd-tool--blue">
+            <span class="sd-tool-badge">NEW</span>
+            <span class="sd-tool-icon">📋</span>
+            <div class="sd-tool-body">
+              <strong>Criterion Self-Assessment</strong>
+              <span>What does a 6 actually look like? Read, compare, rate your work.</span>
+            </div>
+          </a>
+          <a href="/students/vocabulary/" class="sd-tool sd-tool--lg sd-tool--violet">
+            <span class="sd-tool-badge">NEW</span>
+            <span class="sd-tool-icon">📖</span>
+            <div class="sd-tool-body">
+              <strong>Vocabulary Practice</strong>
+              <span>102 terms with spaced repetition. Wrong answers come back sooner.</span>
+            </div>
+          </a>
+          <a href="/students/quick-check/" class="sd-tool">
+            <span class="sd-tool-icon">⚡</span>
+            <div class="sd-tool-body">
+              <strong>Quick Check</strong>
+              <span>5 questions, 2 minutes.</span>
+            </div>
+          </a>
+          <a href="/students/checklist/" class="sd-tool">
+            <span class="sd-tool-icon">✅</span>
+            <div class="sd-tool-body">
+              <strong>Investigation Checklist</strong>
+              <span>Am I done? Check before you submit.</span>
+            </div>
+          </a>
+          <a href="/students/formulas/" class="sd-tool">
+            <span class="sd-tool-icon">📐</span>
+            <div class="sd-tool-body">
+              <strong>Formula Sheets</strong>
+              <span>Every formula. Print or bookmark.</span>
+            </div>
+          </a>
+          <a href="/students/simple-explainers/" class="sd-tool">
+            <span class="sd-tool-icon">💡</span>
+            <div class="sd-tool-body">
+              <strong>Simple Explainers</strong>
+              <span>Every topic in plain language.</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- I don't understand... — compact topic pills -->
+      <section class="sd-section">
+        <h2 class="sd-section-title">I don't understand...</h2>
+        <div class="sd-help-pills">
+          {{ $topics := slice
+            (dict "label" "Negative numbers" "url" "/students/help/#negative-numbers" "icon" "➖")
+            (dict "label" "Fractions" "url" "/students/help/#fractions" "icon" "½")
+            (dict "label" "Algebra" "url" "/students/help/#algebra" "icon" "𝑥")
+            (dict "label" "Graphs" "url" "/students/help/#graph-reading" "icon" "📈")
+            (dict "label" "Probability" "url" "/students/help/#probability" "icon" "🎲")
+            (dict "label" "Density" "url" "/students/help/#density" "icon" "⚖️")
+            (dict "label" "Forces" "url" "/students/help/#forces" "icon" "💪")
+            (dict "label" "Energy" "url" "/students/help/#energy" "icon" "⚡")
+            (dict "label" "Particles" "url" "/students/help/#particles" "icon" "⚛️")
+            (dict "label" "Food webs" "url" "/students/help/#food-webs" "icon" "🌿")
+            (dict "label" "Circuits" "url" "/students/help/#circuits" "icon" "🔌")
+            (dict "label" "Cells" "url" "/students/help/#cells" "icon" "🔬")
+          }}
+          {{ range $topics }}
+          <a href="{{ .url }}" class="sd-help-pill">
+            <span>{{ .icon }}</span> {{ .label }}
+          </a>
+          {{ end }}
+          <a href="/students/help/" class="sd-help-pill sd-help-pill--all">All 24 topics →</a>
+        </div>
+      </section>
     </div>
-  </section>
 
-  {{/* ── STUDENT TOOLKIT — core tools ── */}}
-  <section class="sp-toolkit">
-    <div class="sp-toolkit-inner">
-      <h2>Your toolkit</h2>
-      <div class="sp-toolkit-grid">
-        <a href="/students/command-terms/" class="sp-tool-card sp-tool-card--featured">
-          <span class="sp-tool-icon">🎯</span>
-          <div>
-            <strong>Command Term Trainer</strong>
-            <span>Master the 40 words that appear in every MYP assessment. Browse, test, and track your progress.</span>
-          </div>
-        </a>
-        <a href="/students/criteria/" class="sp-tool-card sp-tool-card--featured">
-          <span class="sp-tool-icon">📋</span>
-          <div>
-            <strong>Criterion Self-Assessment</strong>
-            <span>What does a 6 actually look like? Read, compare, and rate your own work honestly.</span>
-          </div>
-        </a>
-        <a href="/students/vocabulary/" class="sp-tool-card sp-tool-card--featured">
-          <span class="sp-tool-icon">📖</span>
-          <div>
-            <strong>Vocabulary Practice</strong>
-            <span>102 terms with spaced repetition. Terms you get wrong come back sooner.</span>
-          </div>
-        </a>
-        <a href="/students/quick-check/" class="sp-tool-card">
-          <span class="sp-tool-icon">⚡</span>
-          <div>
-            <strong>Quick Check</strong>
-            <span>5 questions, 2 minutes. Test yourself on any topic.</span>
-          </div>
-        </a>
-        <a href="/students/checklist/" class="sp-tool-card">
-          <span class="sp-tool-icon">✅</span>
-          <div>
-            <strong>Investigation Checklist</strong>
-            <span>Am I done? Personalised checklist for your criterion and level.</span>
-          </div>
-        </a>
-        <a href="/students/formulas/" class="sp-tool-card">
-          <span class="sp-tool-icon">📐</span>
-          <div>
-            <strong>Formula Sheets</strong>
-            <span>Every formula for Maths & Science. Print or bookmark.</span>
-          </div>
-        </a>
-        <a href="/students/simple-explainers/" class="sp-tool-card">
-          <span class="sp-tool-icon">💡</span>
-          <div>
-            <strong>Simple Explainers</strong>
-            <span>Every topic in plain language. Start here if you're stuck.</span>
-          </div>
-        </a>
-      </div>
+    <!-- RIGHT: Pathways + Featured -->
+    <div class="sd-col-right">
+
+      <!-- 4 pathway cards — compact -->
+      <section class="sd-section">
+        <h2 class="sd-section-title">Start here</h2>
+        <div class="sd-paths">
+          <a href="/students/help/" class="sd-path" style="--path-color:#0D9488">
+            <div class="sd-path-head">
+              <span class="sd-path-emoji">📚</span>
+              <strong>Learn</strong>
+            </div>
+            <span class="sd-path-desc">Visual explainers for when concepts don't click yet.</span>
+            <span class="sd-path-count">{{ len $explainers }} explainers</span>
+          </a>
+          <a href="/students/practise/" class="sd-path" style="--path-color:#2563EB">
+            <div class="sd-path-head">
+              <span class="sd-path-emoji">✏️</span>
+              <strong>Practise</strong>
+            </div>
+            <span class="sd-path-desc">Step-by-step worked examples at your own pace.</span>
+            <span class="sd-path-count">{{ len $workedExamples }} examples</span>
+          </a>
+          <a href="/games/" class="sd-path" style="--path-color:#7C3AED">
+            <div class="sd-path-head">
+              <span class="sd-path-emoji">🎮</span>
+              <strong>Play</strong>
+            </div>
+            <span class="sd-path-desc">The maths and science IS the game. No pressure.</span>
+            <span class="sd-path-count">{{ len $games }} games</span>
+          </a>
+          <a href="/vocabulary/" class="sd-path" style="--path-color:#D97706">
+            <div class="sd-path-head">
+              <span class="sd-path-emoji">🔤</span>
+              <strong>Vocabulary</strong>
+            </div>
+            <span class="sd-path-desc">102 key terms with visual definitions and examples.</span>
+            <span class="sd-path-count">Browse all →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Try something fascinating — compact -->
+      <section class="sd-section">
+        <h2 class="sd-section-title">Try something fascinating</h2>
+        <div class="sd-featured">
+          {{ $featured := slice
+            (dict "title" "The Monty Hall Problem" "desc" "Three doors. One prize. Should you switch?" "url" "/resources/the-monty-hall-problem/" "color" "#7c3aed")
+            (dict "title" "The Egg Drop Challenge" "desc" "Protect a raw egg from 3 metres. Paper and tape only." "url" "/resources/the-egg-drop-challenge/" "color" "#2563eb")
+            (dict "title" "The Colour-Changing Cabbage" "desc" "One vegetable. Six liquids. A rainbow." "url" "/resources/the-colour-changing-cabbage/" "color" "#e11d48")
+            (dict "title" "The Power of Doubling" "desc" "$1 million or a penny doubled for 30 days?" "url" "/resources/the-power-of-doubling/" "color" "#d97706")
+            (dict "title" "The Pizza Problem" "desc" "A 16-inch pizza ≈ TWO 12-inch pizzas." "url" "/resources/the-pizza-problem/" "color" "#0d9488")
+            (dict "title" "Can You Find a Planet?" "desc" "7 planets. 40 light-years away. Never seen." "url" "/resources/can-you-find-a-planet/" "color" "#059669")
+          }}
+          {{ range $featured }}
+          <a href="{{ .url }}" class="sd-feat" style="--feat-color:{{ .color }}">
+            <strong>{{ .title }}</strong>
+            <span>{{ .desc }}</span>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+
     </div>
-  </section>
-
-  {{/* ── FEATURED INVESTIGATIONS ── */}}
-  <section class="sp-featured">
-    <div class="sp-featured-inner">
-      <h2>Try something fascinating</h2>
-      <div class="sp-featured-grid">
-        {{ $featured := slice
-          (dict "title" "The Monty Hall Problem" "desc" "A game show. Three doors. One prize. Should you switch?" "url" "/resources/the-monty-hall-problem/" "accent" "#7c3aed")
-          (dict "title" "The Egg Drop Challenge" "desc" "Protect a raw egg from a 3-metre drop. Paper and tape only." "url" "/resources/the-egg-drop-challenge/" "accent" "#2563eb")
-          (dict "title" "The Colour-Changing Cabbage" "desc" "One vegetable. Six liquids. A rainbow of chemistry." "url" "/resources/the-colour-changing-cabbage/" "accent" "#e11d48")
-          (dict "title" "The Power of Doubling" "desc" "Would you take $1 million or a penny that doubles for 30 days?" "url" "/resources/the-power-of-doubling/" "accent" "#d97706")
-          (dict "title" "The Pizza Problem" "desc" "A 16-inch pizza is not just bigger — it is almost TWO 12-inch pizzas." "url" "/resources/the-pizza-problem/" "accent" "#0d9488")
-          (dict "title" "Can You Find a Planet?" "desc" "7 planets discovered 40 light-years away. Nobody has ever seen them." "url" "/resources/can-you-find-a-planet/" "accent" "#059669")
-        }}
-        {{ range $featured }}
-        <a href="{{ .url }}" class="sp-pick">
-          <div class="sp-pick-accent" style="background:{{ .accent }}"></div>
-          <h3>{{ .title }}</h3>
-          <p>{{ .desc }}</p>
-        </a>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-
-  {{/* ── VOCABULARY LINK ── */}}
-  <section class="sp-vocab">
-    <a href="/vocabulary/" class="sp-vocab-card">
-      <span class="sp-vocab-icon">📖</span>
-      <div>
-        <strong>Visual Vocabulary</strong>
-        <span>102 key terms with pictures and simple definitions</span>
-      </div>
-      <span class="sp-vocab-arrow">→</span>
-    </a>
-  </section>
-
+  </main>
 </div>
 
 <script src="/js/student-engine.js"></script>
 <script>
 if (typeof LL !== 'undefined') {
   LL.streak.update();
-  LL.render.bar('spEngBar');
-  LL.render.weekHeatmap('spWeekMap');
+  LL.render.bar('sdEngBar');
+  LL.render.weekHeatmap('sdWeekMap');
 }
 </script>
 
 <style>
-.sp-engage{max-width:900px;margin:0 auto;padding:0 24px}
-.sp-engage-inner{padding:12px 20px;background:var(--surface-card);border:1px solid var(--border);border-radius:16px;margin-bottom:8px}
-html.dark .sp-engage-inner{background:#1e293b;border-color:#334155}
+/* ═══════════════════════════════════════════
+   STUDENT DASHBOARD — v2 full rewrite
+   Wide, seamless, app-like layout
+   ═══════════════════════════════════════════ */
+
+.sd{min-height:calc(100vh - 64px)}
+
+/* ── Top bar ── */
+.sd-top{max-width:1400px;margin:0 auto;padding:32px 40px 16px}
+.sd-top-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:12px}
+.sd-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-0.03em;color:var(--ink)}
+.sd-subtitle{font-size:14px;color:var(--ink-muted);margin-top:6px}
+.sd-top-right{flex-shrink:0}
+.sd-week{max-width:340px}
+
+/* ── Main grid: left (tools) + right (paths + featured) ── */
+.sd-main{max-width:1400px;margin:0 auto;padding:0 40px 48px;display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+
+.sd-col-left{position:sticky;top:80px}
+
+.sd-section{margin-bottom:24px}
+.sd-section-title{font-family:'DM Serif Display',serif;font-size:18px;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sd-section-title::before{content:'';width:3px;height:18px;background:var(--teal);border-radius:2px}
+
+/* ── Tools grid ── */
+.sd-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sd-tool{position:relative;display:flex;align-items:flex-start;gap:12px;padding:16px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface-card);text-decoration:none;color:inherit;transition:all .2s cubic-bezier(.22,1,.36,1)}
+.sd-tool:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.sd-tool--lg{grid-column:span 1;border-left:3px solid var(--teal);padding-left:14px}
+.sd-tool--teal{border-left-color:#0D9488}
+.sd-tool--blue{border-left-color:#2563EB}
+.sd-tool--violet{border-left-color:#7C3AED}
+.sd-tool-badge{position:absolute;top:8px;right:8px;font-size:.5rem;font-weight:800;letter-spacing:.8px;padding:2px 7px;border-radius:100px;background:var(--teal);color:#fff}
+.sd-tool-icon{font-size:1.4rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--surface-warm);border-radius:10px;flex-shrink:0}
+.sd-tool-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sd-tool-body strong{font-size:13px;color:var(--ink);line-height:1.3}
+.sd-tool-body span{font-size:11px;color:var(--ink-muted);line-height:1.4}
+
+/* ── Help pills ── */
+.sd-help-pills{display:flex;flex-wrap:wrap;gap:6px}
+.sd-help-pill{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;border:1.5px solid var(--border);background:var(--surface-card);color:var(--ink-muted);font-size:13px;font-weight:500;text-decoration:none;transition:all .15s;white-space:nowrap}
+.sd-help-pill:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-wash)}
+.sd-help-pill span{font-size:15px}
+.sd-help-pill--all{background:var(--teal-wash);color:var(--teal);border-color:rgba(13,148,136,.2);font-weight:600}
+
+/* ── Pathway cards (right column) ── */
+.sd-paths{display:flex;flex-direction:column;gap:8px}
+.sd-path{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface-card);text-decoration:none;color:inherit;transition:all .15s;border-left:3px solid var(--path-color,var(--teal))}
+.sd-path:hover{border-color:var(--path-color);box-shadow:0 4px 12px rgba(0,0,0,.05);transform:translateX(3px)}
+.sd-path-head{display:flex;align-items:center;gap:8px}
+.sd-path-emoji{font-size:1.1rem}
+.sd-path-head strong{font-size:14px;color:var(--ink)}
+.sd-path-desc{font-size:12px;color:var(--ink-muted);line-height:1.45}
+.sd-path-count{font-size:11px;font-weight:600;color:var(--path-color,var(--teal));margin-top:2px}
+
+/* ── Featured investigations ── */
+.sd-featured{display:flex;flex-direction:column;gap:6px}
+.sd-feat{display:block;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface-card);text-decoration:none;color:inherit;transition:all .15s;border-left:3px solid var(--feat-color)}
+.sd-feat:hover{border-color:var(--feat-color);transform:translateX(3px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.sd-feat strong{display:block;font-size:13px;color:var(--ink);margin-bottom:2px}
+.sd-feat span{font-size:11px;color:var(--ink-muted);line-height:1.4}
+
+/* ── Dark mode ── */
+html.dark .sd-tool{background:#1e293b;border-color:#334155}
+html.dark .sd-tool:hover{border-color:var(--teal)}
+html.dark .sd-tool--lg{background:linear-gradient(135deg,rgba(13,148,136,.04),#1e293b)}
+html.dark .sd-tool--blue{background:linear-gradient(135deg,rgba(37,99,235,.04),#1e293b)}
+html.dark .sd-tool--violet{background:linear-gradient(135deg,rgba(124,58,237,.04),#1e293b)}
+html.dark .sd-tool-icon{background:#0f172a}
+html.dark .sd-help-pill{background:#1e293b;border-color:#334155}
+html.dark .sd-path{background:#1e293b;border-color:#334155}
+html.dark .sd-path:hover{border-color:var(--path-color)}
+html.dark .sd-feat{background:#1e293b;border-color:#334155}
+html.dark .sd-feat:hover{border-color:var(--feat-color)}
+html.dark .sd-top{border-bottom-color:#334155}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .sd-main{grid-template-columns:1fr;padding:0 24px 40px}
+  .sd-top{padding:24px 24px 12px}
+  .sd-top-inner{flex-direction:column;gap:12px}
+  .sd-col-right{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+}
+@media(max-width:768px){
+  .sd-tools{grid-template-columns:1fr 1fr}
+  .sd-col-right{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .sd-tools{grid-template-columns:1fr}
+  .sd-main{padding:0 12px 32px}
+  .sd-top{padding:16px 12px 8px}
+  .sd-title{font-size:1.6rem !important}
+  .sd-tool{padding:12px}
+  .sd-tool-icon{width:32px;height:32px;font-size:1.1rem}
+  .sd-help-pill{font-size:12px;padding:5px 10px}
+}
 </style>
 
 {{ end }}
