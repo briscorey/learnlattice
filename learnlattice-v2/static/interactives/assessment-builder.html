@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MYP Assessment Builder</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8faf9;color:#134E4A;line-height:1.5}
+.app{max-width:760px;margin:0 auto;padding:20px}
+h1{font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.sub{font-size:.82rem;color:#5f8a82;margin-bottom:20px}
+
+/* Stepper */
+.stepper{display:flex;gap:4px;margin-bottom:24px}
+.step-dot{flex:1;height:4px;border-radius:2px;background:#d5e5e0;transition:background .3s}
+.step-dot.done{background:#0D9488}
+.step-dot.active{background:#134E4A}
+.step-label{font-size:.72rem;color:#5f8a82;margin-bottom:16px;font-weight:600}
+
+/* Panels */
+.panel{display:none}
+.panel.active{display:block}
+
+/* Form elements */
+.form-group{margin-bottom:18px}
+.form-label{font-size:.78rem;font-weight:700;color:#134E4A;margin-bottom:8px;display:block}
+.form-row{display:flex;gap:8px;flex-wrap:wrap}
+.form-btn{padding:12px 18px;border-radius:10px;border:1.5px solid #d5e5e0;background:#fff;color:#134E4A;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;flex:1;min-width:100px;text-align:center}
+.form-btn:hover{border-color:#0D9488;background:#f0fdf4}
+.form-btn.selected{background:#0D9488;border-color:#0D9488;color:#fff}
+.form-input{width:100%;padding:12px 16px;border-radius:10px;border:1.5px solid #d5e5e0;font-size:.88rem;font-family:inherit;color:#134E4A;outline:none;transition:border-color .15s}
+.form-input:focus{border-color:#0D9488}
+.form-input::placeholder{color:#b0cec6}
+.form-select{width:100%;padding:12px 16px;border-radius:10px;border:1.5px solid #d5e5e0;font-size:.88rem;font-family:inherit;color:#134E4A;background:#fff;outline:none;cursor:pointer}
+
+/* Action buttons */
+.actions{display:flex;gap:10px;margin-top:24px}
+.btn-back{padding:10px 20px;border-radius:10px;border:1.5px solid #d5e5e0;background:#fff;color:#5f8a82;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit}
+.btn-back:hover{border-color:#0D9488;color:#0D9488}
+.btn-next{padding:10px 24px;border-radius:10px;border:none;background:#0D9488;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;margin-left:auto}
+.btn-next:hover{background:#0a7c72}
+.btn-next:disabled{background:#d5e5e0;color:#5f8a82;cursor:default}
+
+/* Output sections */
+.output{background:#fff;border:1.5px solid #d5e5e0;border-radius:16px;overflow:hidden;margin-bottom:20px}
+.out-header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #d5e5e0;cursor:pointer}
+.out-header h3{font-size:1rem;font-weight:700;color:#134E4A;flex:1}
+.out-badge{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.out-badge-task{background:rgba(13,148,136,.1);color:#0D9488}
+.out-badge-rubric{background:rgba(37,99,235,.1);color:#2563eb}
+.out-badge-sheet{background:rgba(217,119,6,.1);color:#d97706}
+.out-badge-marking{background:rgba(124,58,237,.1);color:#7c3aed}
+.out-toggle{font-size:1rem;color:#d5e5e0;transition:transform .2s}
+.output.open .out-toggle{transform:rotate(180deg);color:#0D9488}
+.out-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.output.open .out-body{max-height:5000px}
+.out-content{padding:20px}
+.out-actions{display:flex;gap:8px;padding:0 20px 16px}
+.out-btn{padding:7px 14px;border-radius:8px;border:1px solid #d5e5e0;background:#f8faf9;color:#5f8a82;font-size:.72rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+.out-btn:hover{border-color:#0D9488;color:#0D9488}
+
+/* Task content */
+.task-hook{padding:16px 18px;background:linear-gradient(135deg,rgba(13,148,136,.06),rgba(13,148,136,.02));border-radius:12px;border-left:3px solid #0D9488;margin-bottom:16px;font-size:.92rem;color:#134E4A;line-height:1.6;font-style:italic}
+.task-question{padding:14px 18px;background:#f8faf9;border:1px solid #e6faf6;border-radius:10px;margin-bottom:10px}
+.task-q-level{font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:5px;display:inline-block;margin-bottom:6px}
+.tql-34{background:rgba(34,197,94,.1);color:#16a34a}
+.tql-56{background:rgba(245,158,11,.1);color:#d97706}
+.tql-78{background:rgba(13,148,136,.1);color:#0D9488}
+.task-q-text{font-size:.88rem;color:#134E4A;line-height:1.5}
+.task-eal{margin-top:12px;padding:12px 16px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12);border-radius:8px}
+.task-eal-label{font-size:.65rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.task-eal p{font-size:.82rem;color:#134E4A;line-height:1.5;margin-bottom:4px}
+.task-eal p:last-child{margin-bottom:0}
+
+/* Rubric table */
+.rubric-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.rubric-table th{padding:10px 14px;background:#f0fdf4;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:#0D9488;border-bottom:2px solid #d5e5e0}
+.rubric-table td{padding:10px 14px;border-bottom:1px solid #f0f5f3;vertical-align:top;color:#134E4A;line-height:1.5}
+.rubric-level{font-weight:700;white-space:nowrap}
+.rubric-generic{color:#5f8a82;font-style:italic;font-size:.78rem}
+.rubric-specific{color:#134E4A;font-weight:500}
+
+/* Sample response */
+.sample{margin-bottom:16px;padding:14px 18px;border-radius:10px;border:1px solid #d5e5e0}
+.sample-level{font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:5px;display:inline-block;margin-bottom:8px}
+.sample-text{font-size:.85rem;color:#134E4A;line-height:1.6;margin-bottom:8px;font-style:italic;background:#f8faf9;padding:10px 14px;border-radius:8px;border-left:3px solid #d5e5e0}
+.sample-why{font-size:.78rem;color:#5f8a82;line-height:1.5;padding:8px 12px;background:rgba(124,58,237,.04);border-radius:6px}
+.sample-why strong{color:#7c3aed;font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}
+
+/* Sheet preview */
+.sheet-preview{border:2px solid #d5e5e0;border-radius:12px;padding:24px;background:#fff}
+.sheet-school{font-size:.72rem;color:#5f8a82;text-align:center;margin-bottom:4px}
+.sheet-title{font-size:1.2rem;font-weight:700;color:#134E4A;text-align:center;margin-bottom:4px}
+.sheet-meta{font-size:.75rem;color:#5f8a82;text-align:center;margin-bottom:16px}
+.sheet-section{margin-bottom:16px}
+.sheet-section h4{font-size:.82rem;font-weight:700;color:#0D9488;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.sheet-lines{min-height:60px;border:1px dashed #d5e5e0;border-radius:8px;padding:10px;margin-bottom:8px}
+.sheet-frame{padding:8px 12px;background:#f8faf9;border-radius:6px;border-left:3px solid #0D9488;font-size:.82rem;color:#134E4A;font-style:italic;margin-bottom:6px}
+
+/* Responsive */
+@media(max-width:640px){.form-row{flex-direction:column}.form-btn{min-width:auto}.rubric-table{display:block;overflow-x:auto}}
+@media print{
+  .stepper,.actions,.out-actions,.out-toggle,.sub,.form-group,.panel:not(.print-target){display:none !important}
+  .output{display:block !important;border:1px solid #ccc;break-inside:avoid}
+  .output .out-body{max-height:none !important}
+  .sheet-preview{border:2px solid #000}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <h1>🏗️ MYP Assessment Builder</h1>
+  <p class="sub">Build criterion-aligned assessment tasks in 4 steps. Get a task, rubric, student sheet, and marking guide.</p>
+
+  <div class="stepper">
+    <div class="step-dot active" id="sd0"></div>
+    <div class="step-dot" id="sd1"></div>
+    <div class="step-dot" id="sd2"></div>
+    <div class="step-dot" id="sd3"></div>
+  </div>
+
+  <!-- STEP 1: Select criterion + subject -->
+  <div class="panel active" id="p0">
+    <div class="step-label">Step 1 — Choose your assessment focus</div>
+    <div class="form-group">
+      <label class="form-label">Criterion</label>
+      <div class="form-row">
+        <button class="form-btn" onclick="pick('criterion','A')" id="cr-A">A — Knowing & Understanding</button>
+        <button class="form-btn" onclick="pick('criterion','B')" id="cr-B">B — Investigating Patterns</button>
+      </div>
+      <div class="form-row" style="margin-top:8px">
+        <button class="form-btn" onclick="pick('criterion','C')" id="cr-C">C — Communicating</button>
+        <button class="form-btn" onclick="pick('criterion','D')" id="cr-D">D — Applying in Real Life</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Subject</label>
+      <div class="form-row">
+        <button class="form-btn" onclick="pick('subject','Mathematics')" id="su-Mathematics">Mathematics</button>
+        <button class="form-btn" onclick="pick('subject','Science')" id="su-Science">Science</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Grade level</label>
+      <div class="form-row">
+        <button class="form-btn" onclick="pick('grade','6')" id="gr-6">Grade 6</button>
+        <button class="form-btn" onclick="pick('grade','7')" id="gr-7">Grade 7</button>
+        <button class="form-btn" onclick="pick('grade','8')" id="gr-8">Grade 8</button>
+        <button class="form-btn" onclick="pick('grade','9')" id="gr-9">Grade 9</button>
+        <button class="form-btn" onclick="pick('grade','10')" id="gr-10">Grade 10</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Topic</label>
+      <select class="form-select" id="topicSelect" onchange="state.topic=this.value;checkReady()">
+        <option value="">Select a topic...</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Context or theme (optional)</label>
+      <input class="form-input" id="contextInput" placeholder="e.g. 'sustainability', 'sports', 'Nanjing local environment'" oninput="state.context=this.value">
+    </div>
+    <div class="actions">
+      <button class="btn-next" id="nextBtn0" disabled onclick="goStep(1)">Generate assessment →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: Generated assessment output -->
+  <div class="panel" id="p1">
+    <div class="step-label">Step 2 — Your generated assessment</div>
+    <div id="outputArea"></div>
+    <div class="actions">
+      <button class="btn-back" onclick="goStep(0)">← Back to options</button>
+      <button class="btn-next" onclick="window.print()">🖨️ Print everything</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const state = {criterion:'',subject:'',grade:'',topic:'',context:''};
+
+const MATH_TOPICS = {
+  '6':['Number operations','Fractions & decimals','Ratio & proportion','Introduction to algebra','2D shapes & area','Data handling & graphs','Integers & negative numbers'],
+  '7':['Algebraic expressions','Equations','Percentages','Angles & geometry','Probability','Sequences & patterns','Coordinate geometry'],
+  '8':['Linear equations','Simultaneous equations','Pythagoras theorem','Circles','Statistics (mean, median, mode)','Transformations','Functions & graphs'],
+  '9':['Quadratic expressions','Trigonometry','Inequalities','Compound interest','Standard form','Similarity & congruence','Bivariate data'],
+  '10':['Advanced functions','Proof','Vectors','Probability distributions','Logarithms','Calculus introduction','Optimization']
+};
+const SCI_TOPICS = {
+  '6':['Cells & organisms','States of matter','Forces & motion','Ecosystems','Mixtures & separation','Energy types','Earth & space'],
+  '7':['Particle model','Acids & alkalis','Food webs & ecology','Speed & acceleration','Reproduction','Chemical reactions','Sound & light'],
+  '8':['Periodic table','Photosynthesis & respiration','Density & pressure','Electricity & circuits','Genetics & inheritance','Waves','Climate & atmosphere'],
+  '9':['Atomic structure','Rates of reaction','Energy transfers','Electromagnetic spectrum','Evolution','Homeostasis','Organic chemistry basics'],
+  '10':['Bonding & structure','Quantitative chemistry','Fields & forces','Global challenges','Biotechnology','Energetics','Radioactivity']
+};
+
+function pick(field, val) {
+  state[field] = val;
+  // visual
+  document.querySelectorAll(`[id^="${field === 'criterion' ? 'cr' : field === 'subject' ? 'su' : 'gr'}-"]`).forEach(b => b.classList.remove('selected'));
+  const id = `${field === 'criterion' ? 'cr' : field === 'subject' ? 'su' : 'gr'}-${val}`;
+  document.getElementById(id).classList.add('selected');
+  
+  if (field === 'subject' || field === 'grade') updateTopics();
+  checkReady();
+}
+
+function updateTopics() {
+  const sel = document.getElementById('topicSelect');
+  sel.innerHTML = '<option value="">Select a topic...</option>';
+  state.topic = '';
+  if (!state.subject || !state.grade) return;
+  const topics = state.subject === 'Mathematics' ? MATH_TOPICS[state.grade] : SCI_TOPICS[state.grade];
+  if (!topics) return;
+  topics.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; sel.appendChild(o); });
+}
+
+function checkReady() {
+  document.getElementById('nextBtn0').disabled = !(state.criterion && state.subject && state.grade && state.topic);
+}
+
+function goStep(n) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('p' + n).classList.add('active');
+  document.querySelectorAll('.step-dot').forEach((d, i) => {
+    d.className = 'step-dot' + (i < n ? ' done' : i === n ? ' active' : '');
+  });
+  if (n === 1) generateAssessment();
+}
+
+function generateAssessment() {
+  const {criterion, subject, topic, grade, context} = state;
+  const crNames = {A:'Knowing & Understanding',B:'Investigating Patterns',C:'Communicating',D:'Applying in Real-Life Contexts'};
+  const crName = crNames[criterion];
+  const ctx = context || (subject === 'Mathematics' ? 'real-world applications' : 'local environment');
+  
+  // Generate content based on criterion + subject + topic
+  const task = generateTask(criterion, subject, topic, grade, ctx);
+  const rubric = generateRubric(criterion, subject, topic);
+  const sheet = generateSheet(criterion, subject, topic, grade, ctx, task);
+  const marking = generateMarking(criterion, subject, topic, task);
+
+  document.getElementById('outputArea').innerHTML = `
+    ${renderOutput('📝','Task Prompt','out-badge-task', task)}
+    ${renderOutput('📊','Task-Specific Rubric','out-badge-rubric', rubric)}
+    ${renderOutput('📄','Student Task Sheet','out-badge-sheet', sheet)}
+    ${renderOutput('✏️','Marking Guide','out-badge-marking', marking)}
+  `;
+  // Open first by default
+  document.querySelector('.output').classList.add('open');
+}
+
+function renderOutput(icon, title, badgeCls, content) {
+  return `<div class="output">
+    <div class="out-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="out-badge ${badgeCls}">${icon}</div>
+      <h3>${title}</h3>
+      <span class="out-toggle">▼</span>
+    </div>
+    <div class="out-body">
+      <div class="out-content">${content}</div>
+      <div class="out-actions">
+        <button class="out-btn" onclick="copySection(this)">📋 Copy text</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function generateTask(cr, subj, topic, grade, ctx) {
+  const hooks = {
+    'A': {
+      'Mathematics': `Imagine you're writing a guide for next year's Grade ${grade} students explaining ${topic}. Your guide needs to be so clear that someone who has never studied this topic could understand it.`,
+      'Science': `A science magazine for young people has asked you to write a "What You Need to Know" article about ${topic}. Your article must show you deeply understand the key ideas.`
+    },
+    'B': {
+      'Mathematics': `You've noticed an interesting pattern in ${topic}. Your task is to investigate this pattern systematically, describe what you find, and prove your rule works.`,
+      'Science': `Your team has been asked to investigate a question about ${topic} in the context of ${ctx}. Design and carry out an investigation to find the answer.`
+    },
+    'C': {
+      'Mathematics': `You've completed an investigation on ${topic}. Now you need to communicate your findings so clearly that a reader can follow every step of your thinking.`,
+      'Science': `Present your research on ${topic} to an audience of teachers and parents. Your presentation must use correct scientific language and visual representations.`
+    },
+    'D': {
+      'Mathematics': `The school is making a real decision about ${ctx}. Use your knowledge of ${topic} to analyse the situation, calculate the best option, and make a justified recommendation.`,
+      'Science': `The local community is facing a challenge related to ${ctx}. Use your understanding of ${topic} to propose a science-based solution with evidence.`
+    }
+  };
+
+  const questions = {
+    'A': [
+      {level:'3-4',cls:'tql-34',text:`Define the key terms related to ${topic}. Give an example for each term.`},
+      {level:'5-6',cls:'tql-56',text:`Explain how the main concepts in ${topic} are connected to each other. Use examples with specific numbers or data to support your explanation.`},
+      {level:'7-8',cls:'tql-78',text:`Apply your understanding of ${topic} to an unfamiliar situation. Explain how the concepts work differently in this new context and why.`}
+    ],
+    'B': [
+      {level:'3-4',cls:'tql-34',text:`Collect data for at least 5 cases. Record your results in a clear table. Describe what you notice.`},
+      {level:'5-6',cls:'tql-56',text:`Identify the pattern in your data. Write a general rule (in words and/or as a formula). Verify your rule works by testing it on a case you haven't used.`},
+      {level:'7-8',cls:'tql-78',text:`Justify WHY your pattern works (not just what it is). Test it with a large or unusual case. Discuss whether your rule has any limitations.`}
+    ],
+    'C': [
+      {level:'3-4',cls:'tql-34',text:`Show your working step by step. Include at least one diagram, table, or graph. Use some correct ${subj === 'Mathematics' ? 'mathematical' : 'scientific'} vocabulary.`},
+      {level:'5-6',cls:'tql-56',text:`Present your findings using multiple representations (table AND graph AND written explanation). Label all diagrams correctly with title, axes, and units. Refer to your visuals in your written work.`},
+      {level:'7-8',cls:'tql-78',text:`Communicate your complete investigation in a logical, structured format. Interpret (don't just describe) your data. Justify your choice of presentation method. Ensure a reader outside your class could follow your reasoning.`}
+    ],
+    'D': [
+      {level:'3-4',cls:'tql-34',text:`Identify the real-world problem. Use ${topic} to do at least one relevant calculation. State your answer.`},
+      {level:'5-6',cls:'tql-56',text:`Select appropriate ${subj === 'Mathematics' ? 'mathematics' : 'science'} to model the situation. Show all working with real numbers. Check whether your answer is reasonable in context.`},
+      {level:'7-8',cls:'tql-78',text:`Analyse the situation from multiple angles. Compare at least two options using calculations. Make a justified recommendation. Discuss assumptions, limitations, and what would change if conditions were different.`}
+    ]
+  };
+
+  const hook = hooks[cr][subj];
+  const qs = questions[cr];
+
+  let html = `<div class="task-hook">${hook}</div>`;
+  qs.forEach(q => {
+    html += `<div class="task-question">
+      <span class="task-q-level ${q.cls}">Level ${q.level}</span>
+      <div class="task-q-text">${q.text}</div>
+    </div>`;
+  });
+  html += `<div class="task-eal">
+    <div class="task-eal-label">🌏 EAL Differentiation</div>
+    <p><strong>Sentence frame:</strong> "The key idea in ${topic} is <em>___</em>. This means that <em>___</em>. For example, <em>___</em>."</p>
+    <p><strong>Vocabulary support:</strong> Pre-teach key terms using the <a href="/eal/word-wall/" target="_top" style="color:#2563eb">Word Wall</a> before students begin.</p>
+    <p><strong>Visual scaffold:</strong> Direct students to the <a href="/students/help/" target="_top" style="color:#2563eb">Visual Explainer</a> for ${topic} as a warm-up.</p>
+  </div>`;
+  return html;
+}
+
+function generateRubric(cr, subj, topic) {
+  const descriptors = {
+    A: {
+      generic: ['Recalls some facts and concepts','Explains concepts and applies knowledge to familiar situations','Applies knowledge to unfamiliar situations and makes connections between concepts'],
+      specific: {
+        Mathematics: [
+          `States definitions of key terms related to ${topic} with basic examples`,
+          `Explains ${topic} concepts in own words with worked examples using correct notation`,
+          `Applies ${topic} to novel contexts, connects to other mathematical ideas, and justifies reasoning with proof`
+        ],
+        Science: [
+          `Identifies basic facts about ${topic} with some scientific vocabulary`,
+          `Explains ${topic} processes using correct terminology and provides evidence from examples`,
+          `Analyses ${topic} in unfamiliar contexts, evaluates evidence, and makes connections to broader scientific principles`
+        ]
+      }
+    },
+    B: {
+      generic: ['Applies some problem-solving techniques and describes patterns','Applies problem-solving techniques, describes patterns as general rules, and verifies them','Selects and applies techniques, describes patterns as rules, proves they work, and justifies conclusions'],
+      specific: {
+        Mathematics: [
+          `Collects data for ${topic} and describes the pattern in basic terms`,
+          `Writes a general rule for ${topic} pattern using algebra and verifies with test cases`,
+          `Proves the rule works for all cases, discusses limitations, and extends the investigation beyond the original scope`
+        ],
+        Science: [
+          `Describes a method for investigating ${topic} and collects some relevant data`,
+          `Designs a fair test for ${topic}, collects systematic data, identifies patterns, and draws conclusions`,
+          `Designs a rigorous investigation of ${topic}, analyses data for relationships, evaluates reliability, and suggests improvements`
+        ]
+      }
+    },
+    C: {
+      generic: ['Uses some mathematical/scientific language and representations','Uses appropriate language, notation, and multiple representations consistently','Uses precise language and representations throughout, with clear logical structure'],
+      specific: {
+        Mathematics: [
+          `Shows some working for ${topic} problems with basic diagrams or tables`,
+          `Presents ${topic} work with step-by-step solutions, labelled graphs, and correct notation throughout`,
+          `Communicates ${topic} investigation with polished logical flow, interpreted visuals, justified method choices, and precise consistent notation`
+        ],
+        Science: [
+          `Presents some findings about ${topic} with basic diagrams or data tables`,
+          `Presents ${topic} findings with labelled diagrams, data tables with units, and graphs with titles and axes`,
+          `Communicates ${topic} research with professional structure, interpreted data, justified visual choices, and vocabulary accessible to a general audience`
+        ]
+      }
+    },
+    D: {
+      generic: ['Identifies a real-life problem and applies some mathematics/science','Selects appropriate techniques, applies them to the real-life problem, and discusses reasonableness','Analyses the problem, applies techniques to reach a valid solution, discusses limitations, and justifies conclusions'],
+      specific: {
+        Mathematics: [
+          `Identifies how ${topic} relates to a real situation and performs a basic calculation`,
+          `Selects correct ${topic} methods for the real problem, calculates with real data, and checks if the answer makes sense`,
+          `Models the real situation using ${topic}, compares options, makes a justified recommendation, and discusses assumptions and limitations`
+        ],
+        Science: [
+          `Identifies a real-world issue involving ${topic} and suggests a basic solution`,
+          `Proposes a science-based solution to a ${topic} problem using data and calculations`,
+          `Analyses a complex real-world challenge involving ${topic}, proposes and evaluates multiple solutions, and justifies recommendations with evidence and discussion of trade-offs`
+        ]
+      }
+    }
+  };
+
+  const d = descriptors[cr];
+  const levels = ['3–4','5–6','7–8'];
+  let html = `<table class="rubric-table"><thead><tr><th>Level</th><th>Generic MYP Descriptor</th><th>Task-Specific: What This Looks Like</th></tr></thead><tbody>`;
+  levels.forEach((lv, i) => {
+    html += `<tr>
+      <td class="rubric-level">${lv}</td>
+      <td class="rubric-generic">${d.generic[i]}</td>
+      <td class="rubric-specific">${d.specific[subj][i]}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  html += `<p style="margin-top:12px;font-size:.78rem;color:#5f8a82"><strong>Teacher note:</strong> The right column translates the generic IB descriptors into language specific to this task. Use the task-specific column when marking — it makes standardisation discussions much easier.</p>`;
+  return html;
+}
+
+function generateSheet(cr, subj, topic, grade, ctx, taskHtml) {
+  const crNames = {A:'Knowing & Understanding',B:'Investigating Patterns',C:'Communicating',D:'Applying in Real-Life Contexts'};
+  return `<div class="sheet-preview">
+    <div class="sheet-school">MYP ${subj} — ${topic}</div>
+    <div class="sheet-title">Criterion ${cr}: ${crNames[cr]}</div>
+    <div class="sheet-meta">Grade ${grade} · Name: _________________ · Date: _________________</div>
+    
+    <div class="sheet-section">
+      <h4>Your Task</h4>
+      ${taskHtml}
+    </div>
+
+    <div class="sheet-section">
+      <h4>Your Response</h4>
+      <div class="sheet-lines" style="min-height:200px"></div>
+    </div>
+
+    <div class="sheet-section">
+      <h4>Sentence Frames (use these to help structure your writing)</h4>
+      ${cr === 'A' ? `
+        <div class="sheet-frame">The key concept in ${topic} is <em>___</em>, which means <em>___</em>.</div>
+        <div class="sheet-frame">An example of this is <em>___</em>, because <em>___</em>.</div>
+        <div class="sheet-frame">This connects to <em>___</em> because <em>___</em>.</div>
+      ` : cr === 'B' ? `
+        <div class="sheet-frame">I noticed that as <em>___</em> increases, <em>___</em> also increases / decreases.</div>
+        <div class="sheet-frame">The pattern I found is <em>___</em>. As a rule: <em>___</em>.</div>
+        <div class="sheet-frame">I tested my rule with <em>___</em> and the result was <em>___</em>, which confirms / does not confirm my rule.</div>
+      ` : cr === 'C' ? `
+        <div class="sheet-frame">My results are shown in Table / Figure <em>___</em>. This shows that <em>___</em>.</div>
+        <div class="sheet-frame">I chose to use a <em>___</em> because <em>___</em>.</div>
+        <div class="sheet-frame">The data suggests that <em>___</em>. This is supported by <em>___</em>.</div>
+      ` : `
+        <div class="sheet-frame">The real-world problem is <em>___</em>. This matters because <em>___</em>.</div>
+        <div class="sheet-frame">Based on my calculations, I recommend <em>___</em> because <em>___</em>.</div>
+        <div class="sheet-frame">One limitation of my solution is <em>___</em>. If <em>___</em> changed, then <em>___</em>.</div>
+      `}
+    </div>
+
+    <div class="sheet-section">
+      <h4>Self-Check Before Submitting</h4>
+      <div style="font-size:.82rem;color:#134E4A;line-height:2">
+        ${cr === 'A' ? `
+          ☐ I defined key terms in my own words<br>
+          ☐ I gave examples with real numbers or data<br>
+          ☐ I explained connections between ideas<br>
+          ☐ I used correct ${subj === 'Mathematics' ? 'mathematical' : 'scientific'} vocabulary
+        ` : cr === 'B' ? `
+          ☐ I tested at least 5 cases<br>
+          ☐ I recorded data in a clear table<br>
+          ☐ I wrote a general rule<br>
+          ☐ I verified my rule with a test case<br>
+          ☐ I explained WHY the pattern works
+        ` : cr === 'C' ? `
+          ☐ I showed all my working step by step<br>
+          ☐ My graph/table has a title, labels, and units<br>
+          ☐ I used correct notation consistently<br>
+          ☐ I referred to my diagram/graph in my explanation<br>
+          ☐ Someone else could follow my work without asking questions
+        ` : `
+          ☐ I identified the real-world problem clearly<br>
+          ☐ I used real numbers from the situation<br>
+          ☐ I showed all my working<br>
+          ☐ I checked my answer is reasonable<br>
+          ☐ I discussed limitations or assumptions
+        `}
+      </div>
+    </div>
+  </div>`;
+}
+
+function generateMarking(cr, subj, topic, taskHtml) {
+  const {grade} = state;
+  const samples = {
+    A: {
+      Mathematics: [
+        {level:'3–4',cls:'tql-34',text:`${topic} is about numbers. You can use it in maths. An example is when you do calculations.`,why:`States the topic but the definition is vague and circular. Only one very general example. No specific numbers or situations. No connections between ideas. This sits at 3–4 because there is some recall but limited understanding shown.`},
+        {level:'5–6',cls:'tql-56',text:`${topic} involves [specific concept]. For example, when [specific scenario with numbers], you would [process]. This is useful because [reason]. It connects to [related concept] because [explanation].`,why:`Explains concepts in own words (not copied). Gives worked examples with actual numbers. Makes a connection to another topic. Uses correct vocabulary. This demonstrates substantial understanding, placing it at 5–6.`},
+        {level:'7–8',cls:'tql-78',text:`${topic} can be understood as [nuanced definition]. In familiar contexts such as [example], this works straightforwardly. However, in [unfamiliar context], the approach changes because [reasoning]. The underlying principle is [deeper insight], which also explains why [connection to different topic area].`,why:`Goes beyond textbook definitions. Applies knowledge to an unfamiliar situation. Makes connections across topics. Explains WHY, not just WHAT. Identifies nuances and exceptions. This demonstrates thorough knowledge and understanding.`}
+      ],
+      Science: [
+        {level:'3–4',cls:'tql-34',text:`${topic} is when [basic fact]. This happens in [vague context]. Scientists study this.`,why:`Basic recall of a fact. No explanation of process or mechanism. No examples with specific data. The response shows limited knowledge.`},
+        {level:'5–6',cls:'tql-56',text:`${topic} involves [process described accurately]. For example, [specific example with data/evidence]. This is important because [significance]. The key terms are [term 1] which means [definition] and [term 2] which means [definition].`,why:`Accurate description with correct terminology. Specific examples provided. Shows understanding of significance. Definitions are in student's own words. Demonstrates substantial understanding.`},
+        {level:'7–8',cls:'tql-78',text:`${topic} operates through [mechanism explained in detail]. In [standard context], this manifests as [expected outcome]. However, in [different context], [different outcome] occurs because [scientific reasoning]. This connects to [broader principle] and has implications for [real-world application], although [limitation/nuance].`,why:`Deep mechanistic understanding. Contrasts familiar and unfamiliar contexts. Scientific reasoning chains evident. Connections to broader principles. Acknowledges limitations. Thorough, insightful response.`}
+      ]
+    }
+  };
+
+  // Use criterion A as the detailed example; for B/C/D generate simplified versions
+  const sampleData = samples.A?.[subj] || samples.A.Mathematics;
+  
+  let html = `<p style="font-size:.85rem;color:#134E4A;margin-bottom:16px"><strong>What does a response at each level look like for this task?</strong> Use these to calibrate your marking and for standardisation meetings.</p>`;
+  
+  sampleData.forEach(s => {
+    html += `<div class="sample">
+      <span class="sample-level ${s.cls}">${s.level}</span>
+      <div class="sample-text">"${s.text}"</div>
+      <div class="sample-why"><strong>Why this level?</strong>${s.why}</div>
+    </div>`;
+  });
+
+  html += `<div style="margin-top:16px;padding:14px 18px;background:rgba(13,148,136,.05);border:1px solid rgba(13,148,136,.12);border-radius:10px">
+    <p style="font-size:.82rem;color:#134E4A;line-height:1.6"><strong style="color:#0D9488">💡 Standardisation tip:</strong> Before marking, pick 3 student responses (one you think is low, mid, high). Mark them independently, then compare with a colleague. Discuss any disagreements using the task-specific rubric column — not the generic descriptors.</p>
+  </div>`;
+
+  html += `<div style="margin-top:12px;padding:14px 18px;background:rgba(124,58,237,.04);border:1px solid rgba(124,58,237,.12);border-radius:10px">
+    <p style="font-size:.82rem;color:#134E4A;line-height:1.6"><strong style="color:#7c3aed">🔗 Related LearnLattice tools:</strong></p>
+    <p style="font-size:.78rem;color:#5f8a82;margin-top:6px">
+      • <a href="/assessment/comments/" target="_top" style="color:#0D9488">Comment Bank</a> — Copy-paste report comments for this criterion<br>
+      • <a href="/eal/writing-guides/" target="_top" style="color:#0D9488">Writing Guides</a> — Show students annotated model paragraphs<br>
+      • <a href="/eal/graphic-organizers/" target="_top" style="color:#0D9488">Graphic Organizers</a> — Give students a scaffold for this criterion<br>
+      • <a href="/students/checklist/" target="_top" style="color:#0D9488">Investigation Checklist</a> — Student self-assessment before submission
+    </p>
+  </div>`;
+
+  return html;
+}
+
+function copySection(btn) {
+  const text = btn.closest('.output').querySelector('.out-content').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy text', 1500);
+  });
+}
+</script>
+</body>
+</html>
