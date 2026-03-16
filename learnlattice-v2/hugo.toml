@@ -7,7 +7,7 @@ summaryLength = 30
 
 [params]
   author = "Corey Zocchi"
-  description = "Free, inquiry-driven resources for MYP mathematics and science. Built by a teacher, for teachers and students."
+  description = "Free MYP Mathematics & Science investigations, games, and assessments for Grades 6–9. 222 inquiry-based resources with teacher moves, EAL scaffolds, and MYP criteria alignment. Built by a teacher."
 
   [[params.nav_dropdowns]]
     key = "mathematics"
@@ -330,8 +330,8 @@ summaryLength = 30
   filename = "sitemap.xml"
 
 [outputs]
-  home = ["HTML", "JSON"]
-  section = ["HTML"]
+  home = ["HTML", "JSON", "RSS"]
+  section = ["HTML", "RSS"]
   taxonomy = ["HTML"]
   term = ["HTML"]
 

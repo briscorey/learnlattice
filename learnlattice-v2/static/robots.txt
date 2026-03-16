@@ -1,17 +1,29 @@
 # LearnLattice — robots.txt
 # Free MYP Mathematics & Science Investigations
+# https://learnlattice.org
 
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /pagefind/
+Disallow: /search/
 
-# Explicitly allow search engines to index everything else
+# Explicitly allow important sections
 User-agent: Googlebot
-Allow: /
+Allow: /resources/
+Allow: /subjects/
+Allow: /games/
+Allow: /blog/
+Allow: /assessment/
+Allow: /year-levels/
+Allow: /eal/
 
 User-agent: Bingbot
-Allow: /
+Allow: /resources/
+Allow: /subjects/
+Allow: /games/
+Allow: /blog/
+Allow: /assessment/
 
 # Block AI training crawlers (protect educational content)
 User-agent: GPTBot
@@ -24,6 +36,15 @@ User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Google-Extended
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: ClaudeBot
 Disallow: /
 
 Sitemap: https://learnlattice.org/sitemap.xml

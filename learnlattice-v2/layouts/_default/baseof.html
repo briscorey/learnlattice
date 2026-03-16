@@ -10,7 +10,11 @@
   {{/* ── noindex tag/taxonomy list pages to focus crawl budget ── */}}
   {{ if and .IsNode (in (slice "tag" "resource_type") .Data.Singular) }}<meta name="robots" content="noindex, follow">{{ end }}
   <meta name="theme-color" content="#0D9488">
+  <!-- Search Console verification — replace XXXX with your codes -->
+  <!-- <meta name="google-site-verification" content="XXXX"> -->
+  <!-- <meta name="msvalidate.01" content="XXXX"> -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="LearnLattice — MYP Investigations" href="/index.xml">
   {{ partial "seo.html" . }}
   {{/* Preconnect to external origins */}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
