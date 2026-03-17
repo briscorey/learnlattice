@@ -7,7 +7,7 @@ summaryLength = 30
 
 [params]
   author = "Corey Zocchi"
-  description = "Free MYP Mathematics & Science investigations, games, and assessments for Grades 6–9. 222 inquiry-based resources with teacher moves, EAL scaffolds, and MYP criteria alignment. Built by a teacher."
+  description = "Free inquiry-based MYP Mathematics & Science investigations for Grades 6–9. Criterion-mapped, EAL-scaffolded, and classroom-tested by a working teacher."
 
   [[params.nav_dropdowns]]
     key = "mathematics"
@@ -15,7 +15,7 @@ summaryLength = 30
       title = "All Mathematics"
       icon = "📚"
       url = "/subjects/mathematics/"
-      description = "Browse all 70+ MYP mathematics resources."
+      description = "Browse all MYP mathematics investigations by topic."
     [[params.nav_dropdowns.items]]
       title = "Number Sense"
       icon = "🔢"

@@ -1,7 +1,6 @@
 {{ define "main" }}
 {{ $home := .Site.Params.home }}
 {{ $resources := where .Site.RegularPages "Section" "resources" }}
-{{ $totalResources := len $resources }}
 {{ $games := where $resources "Params.resource_types" "intersect" (slice "Interactive Game") }}
 {{ $totalGames := len $games }}
 {{ $startLinks := slice
@@ -85,20 +84,49 @@
   </div>
 </section>
 
+<!-- ── CREDIBILITY STRIP — what makes this trustworthy ── -->
+<section class="hp-cred" aria-label="Credentials">
+  <div class="hp-cred-inner">
+    <div class="hp-cred-item">
+      <span class="hp-cred-icon">🏫</span>
+      <div>
+        <strong>Built by a Working Teacher</strong>
+        <span>13 years across Australian public and international schools</span>
+      </div>
+    </div>
+    <div class="hp-cred-divider"></div>
+    <div class="hp-cred-item">
+      <span class="hp-cred-icon">🧪</span>
+      <div>
+        <strong>Classroom-Tested, Then Revised</strong>
+        <span>Every resource has been taught, broken, fixed, and taught again</span>
+      </div>
+    </div>
+    <div class="hp-cred-divider"></div>
+    <div class="hp-cred-item">
+      <span class="hp-cred-icon">🌏</span>
+      <div>
+        <strong>Designed for International Classrooms</strong>
+        <span>EAL scaffolding and diverse contexts are built in, not bolted on</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── STATS BAR — dark, full-bleed, confident ── -->
 <section class="hp-stats" aria-label="Site statistics">
   <div class="hp-stats-inner">
-    <div class="hp-stat">
-      <span class="hp-stat-num stat-num" data-count="{{ $totalResources }}">0</span>
-      <span class="hp-stat-label">Investigations & resources</span>
-    </div>
     <div class="hp-stat">
       <span class="hp-stat-num">{{ $totalGames }}</span>
       <span class="hp-stat-label">Interactive games</span>
     </div>
     <div class="hp-stat">
+      <span class="hp-stat-num">4</span>
+      <span class="hp-stat-label">MYP criteria mapped</span>
+    </div>
+    <div class="hp-stat">
       <span class="hp-stat-num">6</span>
-      <span class="hp-stat-label">MYP subjects</span>
+      <span class="hp-stat-label">Science disciplines</span>
     </div>
     <div class="hp-stat">
       <span class="hp-stat-num">Free</span>
@@ -183,6 +211,17 @@
   </div>
 </section>
 {{ end }}
+
+<!-- ── FOR LEADERS — subtle, one callout ── -->
+<section class="hp-leaders reveal">
+  <div class="hp-leaders-inner">
+    <div class="hp-leaders-icon">📋</div>
+    <div class="hp-leaders-text">
+      <h3>Sharing with your department?</h3>
+      <p>Every resource on LearnLattice is free, requires no login, and is licensed CC BY-SA 4.0. Teachers can use, adapt, and print anything here — today. Browse by <a href="/assessment/">MYP criterion</a> to support moderation conversations, or explore the <a href="/blog/">blog</a> for professional reading on inquiry-based practice.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ── PHILOSOPHY STRIP ── -->
 <section class="philosophy-strip reveal">
