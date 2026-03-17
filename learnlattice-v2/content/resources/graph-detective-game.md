@@ -16,7 +16,10 @@ year_levels:
 resource_types:
   - "Interactive Game"
 tags:
-  - Graphs\n  - Statistics\n  - Data\n  - Interpretation
+  - "Graphs"
+  - "Statistics"
+  - "Data"
+  - "Interpretation"
 game_url: "/games/graph-detective.html?embed=1"
 seo_title: "Graph Detective — Free MYP Maths Game | Grade 6-8"
 seo_description: "Read values, describe trends, interpret meaning, and spot misleading graphs. A 4-stage critical thinking game about data literacy."

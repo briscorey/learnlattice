@@ -16,7 +16,10 @@ year_levels:
 resource_types:
   - "Interactive Game"
 tags:
-  - Angles\n  - Geometry\n  - Parallel Lines\n  - Triangles
+  - "Angles"
+  - "Geometry"
+  - "Parallel Lines"
+  - "Triangles"
 game_url: "/games/angle-hunter.html?embed=1"
 seo_title: "Angle Hunter — Free MYP Maths Game | Grade 6-8"
 seo_description: "Classify angles, find missing angles on lines and at points, use triangle and quadrilateral rules, and apply parallel line angle theorems."

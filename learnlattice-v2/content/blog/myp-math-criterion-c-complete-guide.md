@@ -44,7 +44,7 @@ This is where Criterion C intersects powerfully with English language developmen
 
 **Dual-language glossaries** are permitted by the IB and should be encouraged. A student who can explain a concept perfectly in Mandarin but lacks the English vocabulary has a language gap, not a mathematical one.
 
-Our [EAL Resource Hub](/eal/) and [Sentence Frames collection](/sentence-frames/) provide ready-to-use scaffolds for mathematical communication.
+Our [EAL Resource Hub](/eal/) and [Sentence Frames collection](/eal/sentence-frames/) provide ready-to-use scaffolds for mathematical communication.
 
 ## Free Criterion C Resources on LearnLattice
 

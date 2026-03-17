@@ -26,4 +26,4 @@ The best Criterion D tasks use genuinely messy real-world data — not textbook 
 
 ## Criterion D Resources on LearnLattice
 
-Our [Criterion D exemplars](/resources/?tag=Criterion+D) show annotated student work applying mathematics to real problems. Many of our [investigation packs](/resources/) include a Criterion D extension where students take their mathematical findings and apply them to a practical question.
+Our [Criterion D exemplars](/tags/criterion-d/) show annotated student work applying mathematics to real problems. Many of our [investigation packs](/resources/) include a Criterion D extension where students take their mathematical findings and apply them to a practical question.

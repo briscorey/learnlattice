@@ -28,6 +28,6 @@ Another common mistake is assessing Criterion A only through written tests. The 
 
 ## Resources for Teaching Criterion A
 
-Browse our [Criterion A exemplars](/resources/?tag=Criterion+A) to see annotated student work at different achievement levels. Each exemplar includes commentary explaining what the student demonstrated and how the work was assessed.
+Browse our [Criterion A exemplars](/tags/criterion-a/) to see annotated student work at different achievement levels. Each exemplar includes commentary explaining what the student demonstrated and how the work was assessed.
 
 For a complete overview of all four MYP assessment criteria, visit the [Assessment Toolkit](/assessment/).

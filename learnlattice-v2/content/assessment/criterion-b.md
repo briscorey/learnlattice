@@ -30,4 +30,4 @@ Another frequent error is scaffolding too heavily. If the task tells students ex
 
 ## Criterion B Resources on LearnLattice
 
-We have [7 complete Criterion B assessment packs](/resources/?tag=Criterion+B) with tasks, mark schemes, and annotated student responses at levels 3-4, 5-6, and 7-8. Each includes commentary explaining exactly what the student demonstrated and where they could improve. Browse our [annotated exemplars](/resources/?tag=Annotated+Student+Work) to see what each level looks like in practice.
+We have [7 complete Criterion B assessment packs](/tags/criterion-b/) with tasks, mark schemes, and annotated student responses at levels 3-4, 5-6, and 7-8. Each includes commentary explaining exactly what the student demonstrated and where they could improve. Browse our [annotated exemplars](/tags/annotated-student-work/) to see what each level looks like in practice.

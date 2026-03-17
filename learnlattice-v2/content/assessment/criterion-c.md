@@ -28,4 +28,4 @@ At levels 7-8, students move fluently between representations. They might descri
 
 ## Criterion C Resources on LearnLattice
 
-Browse our [Criterion C exemplars](/resources/?tag=Criterion+C) to see annotated student communication at different levels. Every investigation on LearnLattice includes [sentence starters](/resources/) at three tiers (describing, explaining, justifying) to scaffold Criterion C development.
+Browse our [Criterion C exemplars](/tags/criterion-c/) to see annotated student communication at different levels. Every investigation on LearnLattice includes [sentence starters](/resources/) at three tiers (describing, explaining, justifying) to scaffold Criterion C development.

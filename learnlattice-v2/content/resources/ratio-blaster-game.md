@@ -16,7 +16,9 @@ year_levels:
 resource_types:
   - "Interactive Game"
 tags:
-  - Ratio\n  - Proportion\n  - Scaling
+  - "Ratio"
+  - "Proportion"
+  - "Scaling"
 game_url: "/games/ratio-blaster.html?embed=1"
 seo_title: "Ratio Blaster — Free MYP Maths Game | Grade 6-8"
 seo_description: "Simplify ratios, find missing values, scale recipes, and solve real-world proportion problems across 4 stages. Free MYP Mathematics resource."
