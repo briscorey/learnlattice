@@ -7,18 +7,32 @@
 {{- $isResource := eq .Section "resources" -}}
 {{- $isBlog := eq .Section "blog" -}}
 {{- $isAssessment := eq .Section "assessment" -}}
+{{/* ── OG Image selection with IDU and fallback support ── */}}
 {{- $ogImage := "/img/og/default.svg" -}}
+{{- $ogImageAlt := printf "%s — LearnLattice" $title -}}
+{{- $ogHeight := "630" -}}
 {{- if $isBlog -}}
   {{- $ogImage = printf "/img/blog/%s.svg" .File.ContentBaseName -}}
+  {{- $ogHeight = "400" -}}
 {{- else if $isResource -}}
-  {{- with index (.Params.subjects | default slice) 0 -}}
-    {{- $subSlug := . | urlize -}}
-    {{- $ogImage = printf "/img/og/%s.svg" $subSlug -}}
+  {{- $isIDU := false -}}
+  {{- range .Params.tags | default slice -}}
+    {{- if eq . "Interdisciplinary" }}{{ $isIDU = true }}{{ end -}}
+  {{- end -}}
+  {{- if $isIDU -}}
+    {{- $ogImage = "/img/og/interdisciplinary.svg" -}}
+  {{- else -}}
+    {{- with index (.Params.subjects | default slice) 0 -}}
+      {{- $subSlug := . | urlize -}}
+      {{- $ogImage = printf "/img/og/%s.svg" $subSlug -}}
+    {{- end -}}
   {{- end -}}
 {{- else if and (eq .Section "subjects") .File -}}
   {{- $ogImage = printf "/img/og/%s.svg" .File.ContentBaseName -}}
 {{- else if eq .Section "games" -}}
   {{- $ogImage = "/img/og/games.svg" -}}
+{{- else if $isAssessment -}}
+  {{- $ogImage = "/img/og/default.svg" -}}
 {{- end -}}
 
 {{/* Canonical URL */}}
@@ -28,7 +42,7 @@
 {{ end }}{{ end }}
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
 
-{{/* Open Graph */}}
+{{/* Open Graph — enhanced for social sharing */}}
 <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $desc | truncate 200 }}">
@@ -37,9 +51,17 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="{{ $ogHeight }}">
+<meta property="og:image:alt" content="{{ $ogImageAlt }}">
 {{- with .Date }}
 <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- with .Lastmod }}
+<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+<meta property="article:author" content="Corey Zocchi">
+{{- range .Params.tags | default slice }}
+<meta property="article:tag" content="{{ . }}">
 {{- end }}
 
 {{/* Twitter Card */}}
@@ -47,6 +69,7 @@
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:description" content="{{ $desc | truncate 200 }}">
 <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}">
+<meta name="twitter:image:alt" content="{{ $ogImageAlt }}">
 
 {{/* ── Schema.org JSON-LD ── */}}
 {{- if .IsHome }}

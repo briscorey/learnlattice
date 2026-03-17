@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="400" fill="#0f172a"/>
+  <rect x="0" y="0" width="6" height="400" fill="#f59e0b"/>
+  <!-- Transformation arrows -->
+  <g opacity="0.08" fill="none" stroke="#f59e0b" stroke-width="2">
+    <path d="M200 200 L400 200" stroke-dasharray="8 4"/>
+    <polygon points="400,190 420,200 400,210" fill="#f59e0b"/>
+    <path d="M500 200 L700 200" stroke-dasharray="8 4"/>
+    <polygon points="700,190 720,200 700,210" fill="#f59e0b"/>
+    <path d="M800 200 L1000 200" stroke-dasharray="8 4"/>
+    <polygon points="1000,190 1020,200 1000,210" fill="#f59e0b"/>
+  </g>
+  <!-- Year markers -->
+  <g font-family="system-ui,sans-serif" fill="#f59e0b" opacity="0.1" font-size="48" font-weight="700">
+    <text x="140" y="220">2024</text>
+    <text x="440" y="220">2025</text>
+    <text x="740" y="220">2027</text>
+    <text x="980" y="220">2030</text>
+  </g>
+  <text x="80" y="60" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fbbf24" letter-spacing="3" opacity="0.6">ENHANCING THE MYP · SEPTEMBER 2027</text>
+</svg>
