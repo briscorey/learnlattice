@@ -4,7 +4,6 @@
   Call: {{ partial "homepage-hero.html" . }}
 */}}
 
-{{ $resourceCount := len (where .Site.RegularPages "Section" "resources") }}
 {{ $gameCount := len (where .Site.RegularPages.ByTitle "Params.resource_types" "intersect" (slice "Interactive Game")) }}
 {{ $subjectCount := len .Site.Taxonomies.subjects }}
 
@@ -21,7 +20,7 @@
       </h1>
       
       <p class="hero-refined-subtitle">
-        {{ $resourceCount }}+ classroom-ready investigations, tagged by criteria, scaffolded for every learner, and designed by a teacher who uses them. No login. No paywall.
+        Classroom-ready investigations, tagged by criteria, scaffolded for every learner, and designed by a teacher who uses them. No login. No paywall.
       </p>
 
       <div class="hero-refined-actions">
@@ -32,11 +31,6 @@
 
     {{/* Stats bar */}}
     <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-number">{{ $resourceCount }}+</span>
-        <span class="hero-stat-label">Investigations</span>
-      </div>
-      <div class="hero-stat-divider"></div>
       <div class="hero-stat">
         <span class="hero-stat-number">10</span>
         <span class="hero-stat-label">Interactive Games</span>
