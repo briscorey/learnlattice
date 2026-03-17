@@ -3,7 +3,7 @@
 {{ $isStudent := hasPrefix .RelPermalink "/students/" }}
 {{ $backUrl := cond $isStudent "/students/" "/eal/" }}
 {{ $backLabel := cond $isStudent "← Back to Student Home" "← Back to EAL Hub" }}
-{{ $maxWidth := cond $isStudent "1000px" "700px" }}
+{{ $maxWidth := cond $isStudent "1100px" "1000px" }}
 
 <section class="eal-hero" style="padding:24px 20px">
   <div class="eal-hero-inner" style="max-width:{{ $maxWidth }}">
