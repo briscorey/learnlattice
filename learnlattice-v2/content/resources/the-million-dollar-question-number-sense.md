@@ -142,6 +142,8 @@ journal_prompts:
 - Where in your calculation did you feel most uncertain?
 - What real-world comparison helped you check your answer?
 - What new question does this investigation make you want to ask?
+seo_title: "The Million Dollar Question | MYP Criterion B Maths | Grade 6-7"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion D for Grade 6-7. If you spent one million dollars at one dollar per second, h"
 ---
 
 ## The Hook

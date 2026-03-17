@@ -20,6 +20,8 @@ statement_of_inquiry: "Similar triangles connect the geometry of shadows to the 
 difficulty: "meeting"
 hook: "2,200 years ago, a Greek librarian measured the circumference of the Earth using a stick and its shadow. His answer was within 2% of the modern value. You can repeat his experiment today."
 warmup: "Go outside. Measure your height and the length of your shadow. Measure a flagpole's shadow. Can you calculate the flagpole's height?"
+seo_title: "The Shadow Stick | Free MYP Maths Investigation | Grade 8-9"
+seo_description: "Free MYP mathematics investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. 2,200 years ago, a Greek librarian measu"
 ---
 ## The Hook
 

@@ -107,6 +107,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Criterion B Assessment: Experimental Investigation | MYP Criterion B Chemistry | Grade 7-8"
+seo_description: "Free MYP Chemistry investigation pack targeting Criterion B for Grade 7-8. A ready-to-use MYP Criterion B science assessment task on in"
 ---
 
 

@@ -19,6 +19,8 @@ statement_of_inquiry: "Rocks record the processes that formed them — and readi
 difficulty: "approaching"
 hook: "Every rock is a time capsule. A pebble on the beach might contain minerals that formed in a volcano, were compressed for millions of years, then eroded by a river. Can you read its story?"
 warmup: "Hold a rock. How old do you think it is? Is it older than your school? Your city? The dinosaurs? How could you tell?"
+seo_title: "The Rock Story | Free MYP Earth Science Investigation | Grade 6-7"
+seo_description: "Free MYP earth science investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. Every rock is a time capsule. A pebble o"
 ---
 ## The Hook
 

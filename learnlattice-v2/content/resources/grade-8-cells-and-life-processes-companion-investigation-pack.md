@@ -26,6 +26,8 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
+seo_title: "Grade 8 Cells and Life Processes Companion Investigation Pack | MYP Criterion B Biology | Grade 8"
+seo_description: "Companion investigation pack for grade 8 cells and life processes unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

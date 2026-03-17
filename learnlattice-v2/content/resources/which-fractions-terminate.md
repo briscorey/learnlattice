@@ -96,6 +96,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Which Fractions Terminate? | MYP Criterion A Maths | Grade 6-7"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion B for Grade 6-7. 1/2 = 0.5. 1/3 = 0.333... 1/4 = 0.25. 1/6 = 0.1666... Why do"
 ---
 
 

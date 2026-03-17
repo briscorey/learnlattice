@@ -20,6 +20,8 @@ statement_of_inquiry: "Fractions represent the relationship between parts and wh
 difficulty: "approaching"
 hook: "Three friends share 2 chocolate bars equally. Each person gets 2/3 of a bar. But HOW do you cut 2 bars into 3 equal pieces? There are at least 4 different ways — and they all give the same answer."
 warmup: "Draw a rectangle. Divide it in half. Now divide it in half again. What fraction is each piece? Now try dividing into thirds — it is harder. Why?"
+seo_title: "The Chocolate Bar Problem | MYP Maths | Grade 6-7"
+seo_description: "Free MYP mathematics investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. Three friends share 2 chocolate bars equ"
 ---
 ## The Hook
 

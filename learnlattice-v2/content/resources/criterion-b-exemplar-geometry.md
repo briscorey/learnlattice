@@ -95,6 +95,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "What Does Level 7 Look Like? Geometric Properties | MYP Criterion B Maths | Grade 8-9"
+seo_description: "Three student responses investigating the angle sum of polygons. From counting to algebraic proof through triangle decomposition. Free MYP Geometry resource."
 ---
 
 

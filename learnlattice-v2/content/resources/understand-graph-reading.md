@@ -19,6 +19,8 @@ tags:
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Understand Graph Reading — MYP Maths Visual Guide | Grade 6-8"
+seo_description: "An interactive graph where you drag points and read values. What does the slope mean? What do flat sections mean? Free MYP Mathematics resource."
 ---
 
 <iframe src="/resources/understand-graph-reading/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Graph Reading"></iframe>

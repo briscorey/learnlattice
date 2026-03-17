@@ -120,6 +120,8 @@ btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
+seo_title: "The Mathematics of Gerrymandering | MYP Criterion C Maths | Grade 9-10"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 9-10. Students use geometry — area, perimeter, compactness ratios "
 ---
 
 ## The Hook

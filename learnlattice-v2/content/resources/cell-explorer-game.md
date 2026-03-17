@@ -25,6 +25,8 @@ global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 game_url: "/games/cell-explorer.html?embed=1"
+seo_title: "Cell Explorer — Interactive Cell Game | MYP Criterion A Biology | Grade 8"
+seo_description: "Free interactive MYP biology game for Grade 8. An interactive 2D game for exploring animal cell organelles. Click to learn, tak"
 ---
 
 ## How to Use This Game

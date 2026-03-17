@@ -34,6 +34,8 @@ teacher_moves:
     description: "The comparison between micro-habitats is where the science happens. Different areas give comparison. Same areas give replication. Both are valuable."
 difficulty: "approaching"
 duration: "2–3 lessons"
+seo_title: "What Lives in Our Schoolyard? | MYP Criterion B Ecology | Grade 6"
+seo_description: "Free MYP Ecology investigation pack targeting Criterion B, Criterion C for Grade 6. Every schoolyard is an ecosystem. This investigation sends s"
 ---
 
 ## The Hook

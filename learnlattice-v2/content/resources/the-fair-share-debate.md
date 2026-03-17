@@ -20,6 +20,8 @@ statement_of_inquiry: "Equivalent fractions represent the same quantity — and 
 difficulty: "approaching"
 hook: "Two students split a pizza. One cuts it into 6 pieces and takes 3. The other cuts it into 8 pieces and takes 4. They both say they took half. Who is right?"
 warmup: "Fold a sheet of paper in half. Unfold and colour one half. Now fold a new sheet into quarters. Colour two quarters. Hold them up. Are the coloured areas the same?"
+seo_title: "The Fair Share Debate | Free MYP Maths Investigation | Grade 6-7"
+seo_description: "Two students split a pizza. One cuts it into 6 pieces and takes 3. The other cuts it into 8 pieces and takes 4. They both say they took half. Who is right?"
 ---
 ## The Hook
 

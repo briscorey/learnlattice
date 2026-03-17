@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Where Does the Rain Come From? | MYP Earth Science | Grade 6"
+seo_description: "Students build a mini water cycle in a sealed container and observe evaporation, condensation, and precipitation over 3 days. Free MYP Earth Science resource."
 ---
 
 ## Overview

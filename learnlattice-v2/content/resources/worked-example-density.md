@@ -22,6 +22,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Calculating Density | MYP Physics | Grade 7-8"
+seo_description: "Mass, volume, divide, interpret. Step-by-step density calculations with water displacement and rectangular blocks. Predicts floating or sinking."
 ---
 
 ## The Worked Example

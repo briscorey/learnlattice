@@ -26,6 +26,8 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
+seo_title: "Grade 9 Cell Division and Reproduction Companion Investigation Pack | MYP Criterion B Biology | Grade 9"
+seo_description: "Companion investigation pack for grade 9 cell division and reproduction unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

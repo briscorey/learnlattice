@@ -116,6 +116,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "The Disappearing Candle | MYP Criterion B Chemistry | Grade 7-9"
+seo_description: "Free MYP Chemistry investigation pack targeting Criterion B, Criterion C for Grade 7-9. A burning candle slowly disappears — where does it go? This "
 ---
 
 

@@ -21,6 +21,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Scale Drawing Challenge | Free MYP Maths Investigation | Grade 7"
+seo_description: "Free MYP mathematics investigation for Grade 7. Inquiry-based, classroom-ready with EAL scaffolds. Students create a scale drawing of their"
 ---
 
 ## Overview

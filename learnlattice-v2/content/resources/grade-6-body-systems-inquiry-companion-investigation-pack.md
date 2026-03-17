@@ -27,6 +27,8 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
+seo_title: "Grade 6 Body Systems Inquiry Companion Investigation Pack | MYP Criterion B Biology | Grade 6"
+seo_description: "Companion investigation pack for grade 6 body systems inquiry unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

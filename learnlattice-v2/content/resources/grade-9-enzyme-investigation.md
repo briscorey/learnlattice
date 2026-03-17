@@ -19,6 +19,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Temperature Tipping Point | MYP Biology | Grade 9"
+seo_description: "At what temperature do enzymes stop working? Students test amylase activity on starch at temperatures from 20 to 80 degrees and discover denaturation."
 ---
 
 ## Overview

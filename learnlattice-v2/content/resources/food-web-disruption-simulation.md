@@ -23,6 +23,8 @@ key-concepts:
 global-contexts:
   - "Globalization and Sustainability"
 statement_of_inquiry: "Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance."
+seo_title: "Food Web Disruption Simulation | MYP Ecology Crit B | Grade 8-9"
+seo_description: "An ecology simulation exploring trophic interactions, keystone species, and the ripple effects of disturbance across a food web. Free MYP Ecology resource."
 ---
 
 ## Overview

@@ -23,6 +23,8 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."
+seo_title: "Phases, Eclipses, and Observation Log | MYP Criterion C Space Science | Grade 7-8"
+seo_description: "A space science observation sequence helping students explain lunar phases, eclipses, and repeating sky patterns using models and recorded evidence."
 ---
 
 ## Overview

@@ -16,6 +16,8 @@ tags:
   - "Understanding"
   - "Interactive"
 difficulty: "approaching"
+seo_title: "Understand Ratio — MYP Maths Visual Guide | Grade 6-8"
+seo_description: "Adjust two parts. Change the total. Watch how the ratio divides everything up with a visual bar model showing fractions and percentages."
 ---
 
 <iframe src="/interactives/ratio.html" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Ratio"></iframe>

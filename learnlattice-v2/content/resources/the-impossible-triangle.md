@@ -20,6 +20,8 @@ statement_of_inquiry: "Not all measurements can form a triangle — and the cons
 difficulty: "meeting"
 hook: "Can you build a triangle with sides 3cm, 4cm, and 10cm? Try it. You cannot. Why not? And can you find the rule that tells you which triangles are possible?"
 warmup: "Cut three strips of paper: 5cm, 5cm, and 5cm. Can you make a triangle? Now try 5cm, 5cm, and 1cm. Now try 5cm, 5cm, and 11cm. What happened?"
+seo_title: "The Impossible Triangle | MYP Maths | Grade 7-8"
+seo_description: "Can you build a triangle with sides 3cm, 4cm, and 10cm? Try it. You cannot. Why not? And can you find the rule that tells you which triangles are possible?"
 ---
 ## The Hook
 

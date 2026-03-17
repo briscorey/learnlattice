@@ -23,6 +23,8 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
+seo_title: "Photosynthesis and Cellular Respiration Comparison | MYP Criterion C Biology | Grade 8-9"
+seo_description: "A biology comparison task that helps students connect energy transfer, matter cycling, and cell function through diagramming and evidence-based explanation"
 ---
 
 ## Overview

@@ -15,6 +15,8 @@ tags:
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "How Many Fish in the Lake? | MYP Maths | Grade 9"
+seo_description: "Students use the capture-recapture method with beads in a bag to estimate population size. Connects probability to ecology. Free MYP Mathematics resource."
 ---
 
 ## Overview

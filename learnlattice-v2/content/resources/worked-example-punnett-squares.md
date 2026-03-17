@@ -23,6 +23,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Punnett Squares | MYP Biology | Grade 8-9"
+seo_description: "Cross alleles, count outcomes, calculate probability. Step-by-step genetic crosses including heterozygous and homozygous parents. Free MYP Biology resource."
 ---
 
 ## The Worked Example

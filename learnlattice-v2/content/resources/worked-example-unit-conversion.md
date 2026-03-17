@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Unit Conversion | MYP Maths | Grade 7-9"
+seo_description: "Step-by-step MYP mathematics worked example for Grade 7-9. Converting between mm, cm, m, and km using the chain method with powers of 10"
 ---
 
 ## The Worked Example

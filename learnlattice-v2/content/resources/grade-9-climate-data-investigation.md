@@ -19,6 +19,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Is Our City Getting Warmer? | MYP Earth Science | Grade 9"
+seo_description: "Students analyse 30 years of real temperature data for their city using statistics and graph interpretation. Free MYP Earth Science resource."
 ---
 
 ## Overview

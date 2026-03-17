@@ -19,6 +19,8 @@ statement_of_inquiry: "The period of a pendulum depends on a single variable —
 difficulty: "meeting"
 hook: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings — the weight, the angle, or the length? Only one of these matters. Which one?"
 warmup: "Swing your arm like a pendulum. Now swing it faster. What did you change — the weight, the push, or the length? Can you swing it faster without changing anything?"
+seo_title: "The Pendulum Question | MYP Physics | Grade 7-8"
+seo_description: "Free MYP physics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. A grandfather clock keeps perfect time w"
 ---
 ## The Hook
 

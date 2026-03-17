@@ -13,6 +13,8 @@ tags:
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Acid Meets Alkali | Free MYP Chemistry Investigation | Grade 7"
+seo_description: "Students add alkali to acid drop by drop, testing pH after each addition. They discover neutralisation produces a pH of 7. Free MYP Chemistry resource."
 ---
 
 ## Overview

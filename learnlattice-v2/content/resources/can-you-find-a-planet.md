@@ -19,6 +19,8 @@ statement_of_inquiry: "When direct observation is impossible, scientists use ind
 difficulty: "exceeding"
 hook: "In 2017, NASA discovered 7 Earth-sized planets orbiting a star 40 light-years away. Nobody has ever seen them. How do you discover a planet you cannot see?"
 warmup: "You cannot see inside a wrapped present. How many different ways can you figure out what is inside WITHOUT opening it? List as many methods as you can in 2 minutes."
+seo_title: "Can You Find a Planet You Cannot See? | MYP Space Science | Grade 8-9"
+seo_description: "In 2017, NASA discovered 7 Earth-sized planets orbiting a star 40 light-years away. Nobody has ever seen them. How do you discover a planet you cannot see?"
 ---
 ## The Hook
 

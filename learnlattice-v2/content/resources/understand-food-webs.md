@@ -17,6 +17,8 @@ tags:
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Understand Food Webs — MYP Ecology Visual Guide | Grade 6-8"
+seo_description: "Click a species to remove it. Watch the chains break. Which organism causes the most damage when removed? Free MYP Ecology resource."
 ---
 
 <iframe src="/resources/understand-food-webs/" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Food Webs"></iframe>

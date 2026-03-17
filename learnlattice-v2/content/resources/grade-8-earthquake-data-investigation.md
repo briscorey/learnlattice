@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Mapping Earthquakes | MYP Earth Science | Grade 8"
+seo_description: "Students plot earthquake locations on a world map and discover that they cluster along plate boundaries. Free MYP Earth Science resource."
 ---
 
 ## Overview

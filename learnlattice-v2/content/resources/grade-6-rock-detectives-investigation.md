@@ -96,6 +96,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Rock Detectives | MYP Earth Science Crit A & Crit B | Grade 6"
+seo_description: "Free MYP Earth Science investigation pack targeting Criterion A, Criterion B for Grade 6. Every rock tells a story. This investigation gives students "
 ---
 
 

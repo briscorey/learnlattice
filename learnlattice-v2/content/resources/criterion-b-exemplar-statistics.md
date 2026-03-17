@@ -28,6 +28,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
+seo_title: "What Does Level 7 Look Like? Statistical Claims | MYP Criterion B Maths | Grade 8-9"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion B for Grade 8-9. Three student responses to a statistics investigation asking"
 ---
 
 ## The Task

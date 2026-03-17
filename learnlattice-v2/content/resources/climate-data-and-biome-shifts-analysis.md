@@ -22,6 +22,8 @@ key-concepts:
 global-contexts:
   - "Globalization and Sustainability"
 statement_of_inquiry: "Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance."
+seo_title: "Climate Data and Biome Shifts Analysis | MYP Criterion C Ecology | Grade 9"
+seo_description: "An ecology data analysis task examining climate trends, biome boundaries, and the effects of changing temperature and rainfall patterns."
 ---
 
 ## Overview

@@ -27,6 +27,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
+seo_title: "Grade 6 Mixtures and Separation Companion Lab Activity | MYP Criterion B Chemistry | Grade 6"
+seo_description: "Companion lab activity for grade 6 mixtures and separation unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

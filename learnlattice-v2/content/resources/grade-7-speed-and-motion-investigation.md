@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Paper Airplane Lab | Free MYP Physics Investigation | Grade 7"
+seo_description: "Students design paper airplanes, measure distance and hang time, then calculate speed and investigate what design features matter. Free MYP Physics resource."
 ---
 
 ## Overview

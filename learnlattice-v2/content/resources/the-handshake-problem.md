@@ -20,6 +20,8 @@ statement_of_inquiry: "Generalisation is the heart of algebra — finding a rule
 difficulty: "meeting"
 hook: "If 30 people are in a room and everyone shakes hands with everyone else, how many handshakes happen? Can you find the answer WITHOUT counting every single one?"
 warmup: "Stand up. Shake hands with every person in your group. How many handshakes for 3 people? 4 people? 5 people?"
+seo_title: "The Handshake Problem | Free MYP Maths Investigation | Grade 7-8"
+seo_description: "If 30 people are in a room and everyone shakes hands with everyone else, how many handshakes happen? Can you find the answer WITHOUT counting every single "
 ---
 ## The Hook
 

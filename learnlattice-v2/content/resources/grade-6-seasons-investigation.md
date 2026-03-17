@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Why Is Summer Hot? | MYP Space Science | Grade 6"
+seo_description: "Students use a torch and globe to model why seasons happen — discovering that it is about tilt, not distance from the sun. Free MYP Space Science resource."
 ---
 
 ## Overview

@@ -19,6 +19,8 @@ statement_of_inquiry: "Impulse — the product of force and time — determines 
 difficulty: "exceeding"
 hook: "A raw egg dropped from 3 metres will smash. But astronauts survive re-entry at 28,000 km/h. The physics is the same. Design a container that protects an egg from a 3-metre drop using only paper and tape."
 warmup: "Drop a raw egg from 30cm onto a hard surface. Now drop one onto a pillow. Same egg, same height. Why does one survive? What did the pillow do?"
+seo_title: "The Egg Drop Challenge | MYP Physics | Grade 8-9"
+seo_description: "Free MYP physics investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. A raw egg dropped from 3 metres will sma"
 ---
 ## The Hook
 

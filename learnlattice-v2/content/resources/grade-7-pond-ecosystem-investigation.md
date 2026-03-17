@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Pond Dip | Free MYP Ecology Investigation | Grade 7"
+seo_description: "Students sample organisms from a school pond, identify them, and construct a food web from their findings. Free MYP Ecology resource."
 ---
 
 ## Overview

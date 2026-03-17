@@ -21,6 +21,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Angle at the Centre | Free MYP Maths Investigation | Grade 9"
+seo_description: "Students draw circles, measure angles, and discover that the angle at the centre is twice the angle at the circumference. Free MYP Mathematics resource."
 ---
 
 ## Overview

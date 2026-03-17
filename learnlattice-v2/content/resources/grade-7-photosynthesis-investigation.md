@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Underwater Plant Experiment | MYP Biology | Grade 7"
+seo_description: "Students place pondweed in water, vary light distance, and count oxygen bubbles per minute to discover the relationship between light and photosynthesis ra"
 ---
 
 ## Overview

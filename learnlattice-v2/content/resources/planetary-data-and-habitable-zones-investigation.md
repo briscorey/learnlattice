@@ -22,6 +22,8 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."
+seo_title: "Planetary Data and Habitable Zones Investigation | MYP Criterion D Space Science | Grade 9"
+seo_description: "A space science investigation using planetary data tables to compare worlds, evaluate habitability, and reason about limits of indirect evidence."
 ---
 
 ## Overview

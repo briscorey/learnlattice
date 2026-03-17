@@ -121,6 +121,8 @@ btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
+seo_title: "Is Your Streaming Habit Sustainable? | MYP Criterion C Mathematics | Grade 7-8"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 7-8. Students research the hidden energy cost of streaming video,"
 ---
 
 ## The Hook

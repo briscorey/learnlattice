@@ -13,6 +13,8 @@ tags:
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Shadow Clocks | Free MYP Space Science Investigation | Grade 6"
+seo_description: "Students measure shadow length at different times of day, plot the data, and discover the relationship between sun angle and shadow length."
 ---
 
 ## Overview

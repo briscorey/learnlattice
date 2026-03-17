@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Micro-Habitats Under a Log | MYP Biology | Grade 6"
+seo_description: "Students investigate the organisms found under logs versus on open ground, comparing moisture, light, and species diversity. Free MYP Biology resource."
 ---
 
 ## Overview

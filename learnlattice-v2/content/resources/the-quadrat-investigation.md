@@ -19,6 +19,8 @@ statement_of_inquiry: "Even the smallest patch of ground is an ecosystem with pr
 difficulty: "approaching"
 hook: "One square metre of your school grounds contains an entire ecosystem — plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"
 warmup: "Go outside. Stand in one spot. Without moving your feet, list every living thing you can see within arm's reach. How many did you find?"
+seo_title: "What Lives in One Square Metre? | MYP Ecology | Grade 6-7"
+seo_description: "Free MYP ecology investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. One square metre of your school grounds "
 ---
 ## The Hook
 

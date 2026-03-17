@@ -144,6 +144,8 @@ journal_prompts:
 - Which MRS GREN criterion was the hardest to decide? Why?
 - Should the definition of 'alive' be changed? What would you change?
 - What other edge cases can you think of besides fire and viruses?
+seo_title: "Dead or Alive? The Criteria Problem | MYP Criterion A Biology | Grade 6-8"
+seo_description: "Free MYP Biology investigation pack targeting Criterion A, Criterion D for Grade 6-8. Is a virus alive? Is fire? Is a seed? Is a stopped heart? Th"
 ---
 
 ## The Hook

@@ -20,6 +20,8 @@ statement_of_inquiry: "Comparing two data sets requires more than looking at ave
 difficulty: "meeting"
 hook: "Your partner drops a ruler. You catch it. The distance it falls tells you your reaction time — in milliseconds. But is your dominant hand actually faster? Only data can answer that."
 warmup: "Clap your hands. How fast was that? Now clap the instant your partner says 'go.' Is there a delay? Why?"
+seo_title: "How Fast Are You, Really? | MYP Maths | Grade 7-8"
+seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. Your partner drops a ruler. You catch it"
 ---
 ## The Hook
 

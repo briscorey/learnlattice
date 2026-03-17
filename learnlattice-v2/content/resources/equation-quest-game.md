@@ -21,6 +21,8 @@ tags:
   - "Solving"
   - "Variables"
 game_url: "/games/equation-quest.html?embed=1"
+seo_title: "Equation Quest — Free MYP Maths Game | Grade 6-8"
+seo_description: "Free interactive MYP mathematics game for Grade 6-8. A 5-stage journey from naming parts of an equation to solving real-world word pr"
 ---
 A scaffolded equation-solving game with 5 stages of increasing cognitive demand:
 

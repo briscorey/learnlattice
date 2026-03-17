@@ -19,6 +19,8 @@ statement_of_inquiry: "Earthquake waves travel at predictable speeds — and the
 difficulty: "meeting"
 hook: "Three seismograph stations detect the same earthquake at different times. Using only the time differences and a compass, can you locate exactly where it happened?"
 warmup: "You hear thunder 3 seconds after you see lightning. Sound travels at 340 m/s. How far away was the lightning strike?"
+seo_title: "The Earthquake Detective | MYP Earth Science | Grade 7-8"
+seo_description: "Free MYP earth science investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. Three seismograph stations detect the sa"
 ---
 ## The Hook
 

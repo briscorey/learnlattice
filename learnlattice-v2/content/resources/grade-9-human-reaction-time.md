@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "How Fast Are You? | Free MYP Biology Investigation | Grade 9"
+seo_description: "Students measure their own reaction times using a ruler drop test, then analyse class data for patterns by age, hand dominance, and practice."
 ---
 
 ## Overview

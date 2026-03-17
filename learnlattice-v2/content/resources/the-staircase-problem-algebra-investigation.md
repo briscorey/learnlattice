@@ -143,6 +143,8 @@ journal_prompts:
 - Was writing the formula or proving it harder? Why?
 - Did working with a partner change how you approached this?
 - If you had to teach someone this formula, how would you explain it?
+seo_title: "The Staircase Problem | MYP Maths Crit B & Crit C | Grade 7-9"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion C for Grade 7-9. How many blocks does it take to build a staircase 100 steps "
 ---
 
 ## The Hook

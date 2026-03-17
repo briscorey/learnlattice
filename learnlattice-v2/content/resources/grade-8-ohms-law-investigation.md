@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Voltage, Current, and the Straight Line | MYP Physics | Grade 8"
+seo_description: "Students build circuits with variable resistors, plot V against I, and discover Ohm's Law from their own data. Free MYP Physics resource."
 ---
 
 ## Overview

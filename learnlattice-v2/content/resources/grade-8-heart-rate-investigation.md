@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "What Makes Your Heart Race? | MYP Biology | Grade 8"
+seo_description: "Students measure resting heart rate, then after walking, jumping, and cold water on wrists. Data analysis reveals how the body regulates circulation."
 ---
 
 ## Overview

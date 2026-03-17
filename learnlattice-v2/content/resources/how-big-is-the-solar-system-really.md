@@ -19,6 +19,8 @@ statement_of_inquiry: "The solar system is far larger and emptier than any diagr
 difficulty: "approaching"
 hook: "If Earth were the size of a marble, Jupiter would be a basketball. And the Sun would be over a kilometre away. Can you build a scale model that fits in your school?"
 warmup: "Draw the solar system from memory. Now compare with your neighbour. What did you get wrong?"
+seo_title: "How Big Is the Solar System, Really? | MYP Space Science | Grade 6-7"
+seo_description: "Free MYP space science investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. If Earth were the size of a marble, Jupi"
 ---
 ## The Hook
 

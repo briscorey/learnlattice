@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "What Makes Good Soil? | MYP Earth Science | Grade 6"
+seo_description: "Students test soil samples for water retention, particle size, and organic content, then connect soil quality to plant growth. Free MYP Earth Science resource."
 ---
 
 ## Overview

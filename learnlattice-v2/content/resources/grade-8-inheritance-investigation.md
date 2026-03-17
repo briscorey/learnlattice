@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Why Do Siblings Look Different? | MYP Biology | Grade 8"
+seo_description: "Using coin flips to model genetic inheritance. Students simulate multiple generations and discover probability in genetics. Free MYP Biology resource."
 ---
 
 ## Overview

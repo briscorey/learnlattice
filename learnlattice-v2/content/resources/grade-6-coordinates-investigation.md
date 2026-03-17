@@ -21,6 +21,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Treasure Hunt Coordinates | MYP Maths | Grade 6"
+seo_description: "Students plot coordinates to find hidden treasure on a grid, then create their own treasure maps for classmates to solve. Free MYP Mathematics resource."
 ---
 
 ## Overview

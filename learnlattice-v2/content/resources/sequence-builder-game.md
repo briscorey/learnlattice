@@ -28,4 +28,6 @@ difficulty: "meeting"
 download_url: ""
 download_label: ""
 game_url: "/games/sequence-builder.html?embed=1"
+seo_title: "Sequence Builder — Free MYP Maths Game | Grade 6-9"
+seo_description: "Free interactive MYP mathematics game for Grade 6-9. Visual growing patterns you can see. Dots, L-shapes, squares, triangles, cubes —"
 ---

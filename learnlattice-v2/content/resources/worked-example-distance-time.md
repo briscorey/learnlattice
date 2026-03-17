@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Distance-Time Graphs | MYP Maths | Grade 7-9"
+seo_description: "Step-by-step MYP mathematics worked example for Grade 7-9. Speed equals gradient. Flat means stationary. Reading and interpreting real grap"
 ---
 
 ## The Worked Example

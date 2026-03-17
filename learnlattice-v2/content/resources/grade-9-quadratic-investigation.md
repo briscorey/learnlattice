@@ -21,6 +21,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Bridge Parabola | Free MYP Maths Investigation | Grade 9"
+seo_description: "Modelling the shape of a bridge arch using quadratic functions. Students collect measurements and fit a curve. Free MYP Mathematics resource."
 ---
 
 ## Overview

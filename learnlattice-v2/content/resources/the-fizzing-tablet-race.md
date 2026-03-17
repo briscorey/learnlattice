@@ -19,6 +19,8 @@ statement_of_inquiry: "The rate of a chemical reaction depends on the energy and
 difficulty: "meeting"
 hook: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot one finishes in half the time. Why does temperature make reactions faster?"
 warmup: "Drop an antacid tablet in water. Time how long the fizzing lasts. Now predict: will a crushed tablet fizz faster or slower? Test it."
+seo_title: "The Fizzing Tablet Race | MYP Chemistry | Grade 8-9"
+seo_description: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot one finishes in half the time. Why does temperature make reactions faster?"
 ---
 ## The Hook
 

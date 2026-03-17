@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Crayon Rock Cycle | MYP Earth Science | Grade 7"
+seo_description: "Students use crayon shavings to model sedimentary, metamorphic, and igneous rock formation through pressure and heat. Free MYP Earth Science resource."
 ---
 
 ## Overview

@@ -21,6 +21,8 @@ tags:
   - "Chance"
   - "Data"
 game_url: "/games/probability-lab.html?embed=1"
+seo_title: "Probability Lab — Free MYP Maths Game | Grade 6-8"
+seo_description: "From probability language to running experiments to critical reasoning about chance. Roll dice, flip coins, and discover why feelings don't change the math"
 ---
 A 4-stage probability game from language to critical reasoning:
 

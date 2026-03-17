@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Substituting into a Formula | MYP Maths | Grade 7-9"
+seo_description: "Step-by-step MYP mathematics worked example for Grade 7-9. Replace letters with numbers and evaluate. Three formulas from v=u+at to E=half "
 ---
 
 ## The Worked Example

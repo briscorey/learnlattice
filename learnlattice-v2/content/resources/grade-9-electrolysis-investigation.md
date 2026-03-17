@@ -19,6 +19,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Splitting Water with Electricity | MYP Chemistry | Grade 9"
+seo_description: "Students electrolyse water, collect hydrogen and oxygen, and calculate the volume ratio to verify the formula H2O. Free MYP Chemistry resource."
 ---
 
 ## Overview

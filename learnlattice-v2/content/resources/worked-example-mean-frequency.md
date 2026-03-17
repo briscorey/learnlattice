@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Mean from a Frequency Table | MYP Maths | Grade 7-9"
+seo_description: "Step-by-step MYP mathematics worked example for Grade 7-9. Multiply, add products, divide by total. The most common statistics calculation "
 ---
 
 ## The Worked Example

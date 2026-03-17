@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Line of Best Fit | MYP Maths | Grade 7-9"
+seo_description: "Step-by-step MYP mathematics worked example for Grade 7-9. How to draw a line of best fit through scattered data — through the middle, not "
 ---
 
 ## The Worked Example

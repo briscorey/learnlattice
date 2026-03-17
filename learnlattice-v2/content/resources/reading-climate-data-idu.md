@@ -102,6 +102,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Reading Climate Data | MYP Criterion B Earth Science | Grade 8-9"
+seo_description: "Free MYP Earth Science investigation pack targeting Criterion B, Criterion C for Grade 8-9. Temperature records show the planet has warmed by about 1.1°"
 ---
 
 

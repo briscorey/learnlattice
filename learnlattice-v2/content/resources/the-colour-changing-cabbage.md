@@ -19,6 +19,8 @@ statement_of_inquiry: "Indicators reveal invisible properties of substances — 
 difficulty: "approaching"
 hook: "Red cabbage juice turns pink in lemon juice and green in baking soda. But it is the same liquid. What is it detecting?"
 warmup: "Sort these into two groups: lemon juice, vinegar, baking soda, soap, orange juice, milk. What rule did you use?"
+seo_title: "The Colour-Changing Cabbage | MYP Chemistry | Grade 6-7"
+seo_description: "Red cabbage juice turns pink in lemon juice and green in baking soda. But it is the same liquid. What is it detecting? Free MYP Chemistry resource."
 ---
 ## The Hook
 

@@ -30,6 +30,8 @@ difficulty: "meeting"
 download_url: ""
 download_label: ""
 game_url: "/games/number-climber.html?embed=1"
+seo_title: "Number Climber — Free MYP Maths Game | Grade 6-9"
+seo_description: "Free interactive MYP mathematics game for Grade 6-9. A Phaser 3 physics platformer where you jump between platforms and solve math pr"
 ---
 
 ## How to Play

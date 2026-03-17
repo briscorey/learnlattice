@@ -20,6 +20,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
+seo_title: "Separation Techniques — Practical Lab Series | MYP Criterion C Chemistry | Grade 7"
+seo_description: "Three scaffolded lab activities covering filtration, distillation, and chromatography with embedded assessment opportunities. Free MYP Chemistry resource."
 ---
 
 ## Overview

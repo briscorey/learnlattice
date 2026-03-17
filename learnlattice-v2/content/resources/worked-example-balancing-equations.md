@@ -23,6 +23,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Balancing Chemical Equations | MYP Chemistry | Grade 8-9"
+seo_description: "Count atoms on each side. Only change coefficients, never subscripts. Step-by-step balancing of real reactions including combustion and rusting."
 ---
 
 ## The Worked Example

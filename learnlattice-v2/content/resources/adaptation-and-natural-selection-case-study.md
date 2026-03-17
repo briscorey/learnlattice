@@ -22,6 +22,8 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
+seo_title: "Adaptation and Natural Selection Case Study | MYP Criterion D Biology | Grade 9"
+seo_description: "A biology case study using population variation and environmental pressure to explore adaptation, inheritance, and natural selection. Free MYP Biology resource."
 ---
 
 ## Overview

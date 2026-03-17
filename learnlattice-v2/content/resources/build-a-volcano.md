@@ -19,6 +19,8 @@ statement_of_inquiry: "Models help us visualise processes we cannot directly obs
 difficulty: "approaching"
 hook: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"
 warmup: "Name everything you think you know about volcanoes. Now sort your list into 'things I am sure about' and 'things I am guessing.' Be honest."
+seo_title: "Build a Volcano — Then Explain It | MYP Earth Science | Grade 6-7"
+seo_description: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"
 ---
 ## The Hook
 

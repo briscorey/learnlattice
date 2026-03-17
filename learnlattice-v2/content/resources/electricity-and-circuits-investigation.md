@@ -105,6 +105,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "The Circuit Detective | MYP Physics Crit A & Crit B | Grade 8-9"
+seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 8-9. A string of holiday lights goes out. One bulb is broken. How"
 ---
 
 

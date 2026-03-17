@@ -21,6 +21,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Phone Plan Problem | Free MYP Maths Investigation | Grade 8"
+seo_description: "Two mobile phone plans cost different amounts. When is each plan cheaper? Students find the intersection algebraically and graphically."
 ---
 
 ## Overview

@@ -100,6 +100,8 @@ misconceptions:
   why: Weight and falling seem directly connected
   truth: Objects fall because gravity pulls them. Weight is the FORCE of gravity on
     the object, but the acceleration is the same regardless of mass.
+seo_title: "The Feather and the Hammer | MYP Criterion B Physics | Grade 7-8"
+seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion D for Grade 7-8. An astronaut drops a feather and a hammer on the Moon. They "
 ---
 
 ## The Hook

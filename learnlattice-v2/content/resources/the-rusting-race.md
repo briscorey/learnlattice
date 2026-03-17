@@ -91,6 +91,8 @@ journal_prompts:
   - "If rusting adds mass, why does a rusting car eventually fall apart?"
   - "Design a packaging that would keep an iron tool rust-free for 100 years."
 parent_summary: "Your child is investigating rusting — why iron corrodes and what conditions speed it up. They set up nails in different environments and observed changes over a week. Ask them: why is a rusty nail heavier than a new one?"
+seo_title: "The Rusting Race | MYP Chemistry Crit B & Crit C | Grade 7-8"
+seo_description: "Free MYP Chemistry investigation pack targeting Criterion B, Criterion C for Grade 7-8. Iron nails in water, oil, vinegar, and salt water — which ru"
 ---
 
 ## The Hook

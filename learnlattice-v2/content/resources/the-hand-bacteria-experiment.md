@@ -90,6 +90,8 @@ journal_prompts:
   - "What was the most surprising thing you saw on the agar plates?"
   - "If bacteria are everywhere, why are we not sick all the time?"
 parent_summary: "Your child grew bacteria from their own hands to test whether hand washing actually works. They compared unwashed and washed samples on agar plates. Ask them: does soap kill bacteria, or does it do something else?"
+seo_title: "The Hand Bacteria Experiment | MYP Biology Crit C | Grade 6-7"
+seo_description: "Free MYP Biology investigation pack targeting Criterion C for Grade 6-7. You wash your hands every day. But does it actually work? St"
 ---
 
 ## The Hook

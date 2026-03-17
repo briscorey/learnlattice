@@ -96,6 +96,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Place Value Detectives | MYP Maths Crit A & Crit B | Grade 6"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion B for Grade 6. The number 111 means something completely different in base "
 ---
 
 

@@ -23,6 +23,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Finding the nth Term | MYP Maths | Grade 7-8"
+seo_description: "How to go from a number pattern to an algebraic formula. Step-by-step reveal with 3 sequences — increasing, large difference, and decreasing."
 ---
 
 ## The Worked Example

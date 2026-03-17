@@ -27,6 +27,8 @@ formula: ""
 download_url: ""
 download_label: ""
 game_url: "/games/tectonic-puzzle.html?embed=1"
+seo_title: "Tectonic Puzzle — Free MYP Earth Science Game | Grade 7-9"
+seo_description: "Free interactive MYP earth science game for Grade 7-9. The continents were once joined as Pangaea. Can you put them back together? Drag"
 ---
 
 ## How to Play

@@ -122,6 +122,8 @@ btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
+seo_title: "Pandemic Math: Modeling Disease Transmission | MYP Criterion B Mathematics | Grade 8-9"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion D for Grade 8-9. Students use real WHO epidemiological data to explore how di"
 ---
 
 ## The Hook

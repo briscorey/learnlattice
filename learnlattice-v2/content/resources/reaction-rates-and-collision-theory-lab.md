@@ -22,6 +22,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
+seo_title: "Reaction Rates and Collision Theory Lab | MYP Criterion B Chemistry | Grade 8-9"
+seo_description: "A chemistry lab series that explores temperature, concentration, surface area, and catalysts through collision theory and measured reaction rates."
 ---
 
 ## Overview

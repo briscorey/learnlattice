@@ -97,6 +97,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "The Recipe Problem | MYP Maths Crit B & Crit D | Grade 6-7"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion D for Grade 6-7. A recipe for 4 people uses 300g of flour. You need to feed 7"
 ---
 
 

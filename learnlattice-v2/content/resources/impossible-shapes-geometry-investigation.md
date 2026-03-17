@@ -132,6 +132,8 @@ journal_prompts:
 - What is the difference between checking cases and proving a rule?
 - Could this pattern ever break? What would that mean?
 hook: "Can you predict a polygon's angle sum without measuring a single angle?"
+seo_title: "Impossible Shapes | MYP Maths Crit A & Crit B | Grade 7-8"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion B for Grade 7-8. Can you draw a triangle where all three angles are 90°? On a"
 ---
 
 ## The Hook

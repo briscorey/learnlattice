@@ -116,6 +116,8 @@ journal_prompts:
 - Why is the keystone species often not the biggest or strongest?
 - How does this change how you think about conservation?
 - What would happen if you added a new species to the web?
+seo_title: "The Invisible Thread | MYP Ecology Crit B & Crit D | Grade 7-9"
+seo_description: "Free MYP Ecology investigation pack targeting Criterion B, Criterion D for Grade 7-9. A fishing boat thousands of kilometres away can collapse a f"
 ---
 
 ## The Hook

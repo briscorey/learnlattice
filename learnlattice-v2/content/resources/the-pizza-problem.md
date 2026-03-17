@@ -20,6 +20,8 @@ statement_of_inquiry: "When dimensions scale linearly, area scales quadratically
 difficulty: "meeting"
 hook: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close — and the answer reveals why area grows faster than you think."
 warmup: "Double the length of a square's sides. Does the area double? Draw it and count the squares."
+seo_title: "The Pizza Problem | Free MYP Maths Investigation | Grade 8-9"
+seo_description: "Free MYP mathematics investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. A 12-inch pizza costs $12. A 16-inch piz"
 ---
 ## The Hook
 

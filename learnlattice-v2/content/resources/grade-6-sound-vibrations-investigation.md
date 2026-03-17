@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Can You See a Sound Wave? | MYP Physics | Grade 6"
+seo_description: "Free MYP physics investigation for Grade 6. Inquiry-based, classroom-ready with EAL scaffolds. Students use tuning forks, water, and ri"
 ---
 
 ## Overview

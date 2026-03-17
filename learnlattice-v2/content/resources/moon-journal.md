@@ -19,6 +19,8 @@ statement_of_inquiry: "Patterns in the sky are predictable because they result f
 difficulty: "approaching"
 hook: "The Moon changes shape every night — but it is always a sphere. Draw what you see for 28 nights, and discover the pattern that ancient civilisations used to build their calendars."
 warmup: "Draw the Moon as you saw it last night. If you did not look, draw what you think it looked like. What phase is it in right now?"
+seo_title: "The 28-Night Moon Journal | MYP Space Science | Grade 6-7"
+seo_description: "Free MYP space science investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. The Moon changes shape every night — but"
 ---
 ## The Hook
 

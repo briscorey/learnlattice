@@ -21,6 +21,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "How Tall Is That Tree? | Free MYP Maths Investigation | Grade 9"
+seo_description: "Free MYP mathematics investigation for Grade 9. Inquiry-based, classroom-ready with EAL scaffolds. Using clinometers and trigonometry to me"
 ---
 
 ## Overview

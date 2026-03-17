@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Percentage Change | MYP Maths | Grade 7-9"
+seo_description: "Step-by-step MYP mathematics worked example for Grade 7-9. Step-by-step percentage increase, decrease, and reverse percentage calculations "
 ---
 
 ## The Worked Example

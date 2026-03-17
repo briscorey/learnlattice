@@ -23,6 +23,8 @@ tags:
   - "Producers"
   - "Consumers"
 game_url: "/games/ecosystem-architect.html?embed=1"
+seo_title: "Ecosystem Architect — Free MYP Science Game | Grade 6-8"
+seo_description: "Build food chains, classify organisms, and predict what happens when species disappear. A 4-stage ecology game that makes systems thinking visible."
 ---
 A 4-stage ecology game building from classification to systems thinking:
 

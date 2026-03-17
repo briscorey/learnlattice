@@ -20,6 +20,8 @@ statement_of_inquiry: "Data does not lie — but the way it is collected, presen
 difficulty: "meeting"
 hook: "90% of students prefer our school lunches! (Survey of 10 students. All were on the school council. The question was: 'Don't you love the new menu?') Can you spot every trick?"
 warmup: "Which question is better? A) 'Do you agree our school is the best?' B) 'How would you rate your school on a scale of 1-10?' Why?"
+seo_title: "The Survey That Lies | Free MYP Maths Investigation | Grade 7-8"
+seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. 90% of students prefer our school lunche"
 ---
 ## The Hook
 

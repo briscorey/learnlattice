@@ -21,6 +21,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Does Height Predict Armspan? | MYP Maths | Grade 8"
+seo_description: "Students collect height and armspan data for the class, plot a scatter graph, draw a line of best fit, and test the claim that armspan equals height."
 ---
 
 ## Overview

@@ -113,6 +113,8 @@ journal_prompts:
 - Will you look at graphs differently after this lesson?
 - Where do you see misleading graphs in your daily life?
 hook: "Same data, opposite conclusions. How?"
+seo_title: "The Misleading Graph | MYP Maths Crit C & Crit D | Grade 8-9"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 8-9. Two graphs show exactly the same data — one looks like a cri"
 ---
 
 ## The Hook

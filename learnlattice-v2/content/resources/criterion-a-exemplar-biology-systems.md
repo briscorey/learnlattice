@@ -18,6 +18,8 @@ tags:
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
+seo_title: "What Does Level 7 Look Like? Explaining Body Systems | MYP Criterion A Biology | Grade 8-9"
+seo_description: "Three student explanations of the digestive system. From listing organs to explaining how systems interact to maintain homeostasis. Free MYP Biology resource."
 ---
 
 ## The Task

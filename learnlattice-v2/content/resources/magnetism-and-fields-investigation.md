@@ -42,6 +42,8 @@ teacher_moves:
     description: "After filings reveal the shape, a compass reveals the direction. Walk a compass around the magnet slowly. The needle always follows the field lines."
 difficulty: "Approaching"
 duration: "2 lessons"
+seo_title: "The Invisible Force Field | MYP Criterion A Physics | Grade 7-8"
+seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 7-8. You can't see a magnetic field. But scatter iron filings on "
 ---
 
 ## The Hook

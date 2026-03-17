@@ -23,6 +23,8 @@ key-concepts:
 global-contexts:
   - "Globalization and Sustainability"
 statement_of_inquiry: "Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance."
+seo_title: "Ecosystem Energy and Biodiversity Study | MYP Criterion D Ecology | Grade 8-9"
+seo_description: "An ecology fieldwork resource focused on food webs, biodiversity sampling, and evaluating human impact using real habitat data. Free MYP Ecology resource."
 ---
 
 ## Overview

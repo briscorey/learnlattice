@@ -28,6 +28,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
+seo_title: "What Does Level 7 Look Like? Lab Report Communication | MYP Criterion C Chemistry | Grade 8-9"
+seo_description: "Free MYP Chemistry investigation pack targeting Criterion C for Grade 8-9. Three student lab reports on the same experiment — annotated"
 ---
 
 ## The Task

@@ -26,6 +26,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
+seo_title: "Grade 8 Matter Cycle and Kinetic Theory Companion Investigation Pack | MYP Criterion B Chemistry | Grade 8"
+seo_description: "Companion investigation pack for grade 8 matter cycle and kinetic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

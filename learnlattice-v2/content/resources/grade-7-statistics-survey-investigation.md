@@ -21,6 +21,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Survey Design Investigation | MYP Maths | Grade 7"
+seo_description: "Students design, conduct, and analyse a real survey. From writing unbiased questions to presenting findings with appropriate graphs."
 ---
 
 ## Overview

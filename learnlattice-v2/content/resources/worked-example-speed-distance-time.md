@@ -23,6 +23,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Speed, Distance, Time | MYP Physics | Grade 7-8"
+seo_description: "Speed = distance ÷ time. Rearrange the formula triangle, substitute values, and calculate — with real-world problems from thunder to running."
 ---
 
 ## The Worked Example

@@ -20,6 +20,8 @@ statement_of_inquiry: "Exponential growth starts slowly but eventually overwhelm
 difficulty: "meeting"
 hook: "Choose: $1 million today, or one penny that doubles every day for 30 days? The penny option is worth over $5 million by day 30. But on day 20, it was only worth $5,000. Exponential growth is invisible until it is not."
 warmup: "Fold a piece of paper in half. Fold again. And again. How many layers after 10 folds? Can you fold it 10 times? (You probably cannot fold it more than 7.)"
+seo_title: "The Power of Doubling | Free MYP Maths Investigation | Grade 7-8"
+seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. Choose: $1 million today, or one penny t"
 ---
 ## The Hook
 

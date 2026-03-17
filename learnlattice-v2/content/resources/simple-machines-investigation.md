@@ -42,6 +42,8 @@ teacher_moves:
     description: "After the demo, ask students to find levers in the classroom. Scissors, hole punches, door handles. The concept transfers immediately."
 difficulty: "Approaching"
 duration: "2 lessons"
+seo_title: "The Impossible Lift | MYP Physics Crit A & Crit D | Grade 7-8"
+seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion D for Grade 7-8. Can one student lift a teacher off the ground using only a p"
 ---
 
 ## The Hook

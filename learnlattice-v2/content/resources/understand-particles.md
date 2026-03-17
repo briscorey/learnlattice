@@ -24,6 +24,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "How Do Particles Behave? — MYP Chemistry Visual Guide | Grade 6-8"
+seo_description: "Drag the temperature slider. Watch particles change from solid to liquid to gas. See why matter behaves the way it does. Free MYP Chemistry resource."
 ---
 
 ## The Explainer

@@ -19,6 +19,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Could We Live There? | MYP Space Science | Grade 9"
+seo_description: "Students analyse real exoplanet data from NASA to evaluate habitability. Distance from star, atmosphere, size — what makes a planet liveable?"
 ---
 
 ## Overview

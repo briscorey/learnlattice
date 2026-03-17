@@ -103,6 +103,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "The Seed Race | MYP Biology Crit B & Crit C | Grade 6"
+seo_description: "Free MYP Biology investigation pack targeting Criterion B, Criterion C for Grade 6. Which conditions make seeds grow fastest? This investigation"
 ---
 
 

@@ -21,6 +21,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Savings Race | Free MYP Maths Investigation | Grade 8"
+seo_description: "Compare simple and compound interest over 5, 10, and 30 years. Students discover why exponential growth matters for their future. Free MYP Mathematics resource."
 ---
 
 ## Overview

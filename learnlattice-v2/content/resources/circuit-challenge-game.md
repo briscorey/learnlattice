@@ -22,6 +22,8 @@ tags:
   - "Current"
   - "Voltage"
 game_url: "/games/circuit-challenge.html?embed=1"
+seo_title: "Circuit Challenge — Free MYP Science Game | Grade 6-8"
+seo_description: "From naming components to troubleshooting faults. Build your understanding of electrical circuits through 4 stages of increasing challenge."
 ---
 A 4-stage circuits game building from components to troubleshooting:
 

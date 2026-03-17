@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Where Did the Mass Go? | MYP Chemistry | Grade 8"
+seo_description: "Students weigh reactants and products in open and closed systems to discover conservation of mass — and why it seems to fail in burning."
 ---
 
 ## Overview

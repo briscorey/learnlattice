@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Making Moon Craters | MYP Space Science | Grade 7"
+seo_description: "Students drop marbles into flour from different heights to model impact craters and discover the relationship between drop height and crater size."
 ---
 
 ## Overview

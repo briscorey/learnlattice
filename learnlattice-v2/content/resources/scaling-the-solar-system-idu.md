@@ -112,6 +112,8 @@ journal_prompts:
 - Why is it important to use a consistent scale?
 - Which planet's distance was most shocking?
 - How does understanding scale change how you think about space travel?
+seo_title: "Scaling the Solar System | MYP Criterion B Space Science | Grade 6-7"
+seo_description: "Free MYP Space Science investigation pack targeting Criterion B, Criterion C for Grade 6-7. If Earth were a peppercorn, how far away would Neptune be? T"
 ---
 
 ## The Hook

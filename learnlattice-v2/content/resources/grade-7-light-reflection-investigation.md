@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Angle of Mirrors | Free MYP Physics Investigation | Grade 7"
+seo_description: "Students measure angles of incidence and reflection with ray boxes and mirrors, discovering the law of reflection experimentally. Free MYP Physics resource."
 ---
 
 ## Overview

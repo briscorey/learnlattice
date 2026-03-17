@@ -13,6 +13,8 @@ tags:
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Growing Conditions | Free MYP Biology Investigation | Grade 6"
+seo_description: "Students grow cress seeds under different light and water conditions, measuring growth daily for two weeks. Free MYP Biology resource."
 ---
 
 ## Overview

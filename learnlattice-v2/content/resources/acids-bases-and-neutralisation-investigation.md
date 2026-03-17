@@ -22,6 +22,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
+seo_title: "Acids, Bases, and Neutralisation Investigation | MYP Criterion C Chemistry | Grade 7-8"
+seo_description: "A chemistry investigation into pH, indicators, neutralisation, and real-world applications of acid-base reactions. Free MYP Chemistry resource."
 ---
 
 ## Overview

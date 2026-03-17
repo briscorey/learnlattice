@@ -19,6 +19,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The pH Rainbow | Free MYP Chemistry Investigation | Grade 7"
+seo_description: "Students test household substances with universal indicator, arrange them by pH, and discover the acid-alkali spectrum. Free MYP Chemistry resource."
 ---
 
 ## Overview

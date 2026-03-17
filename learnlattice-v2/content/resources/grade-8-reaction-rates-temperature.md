@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Temperature and Reaction Rate | MYP Chemistry | Grade 8"
+seo_description: "Dissolving sugar at five different temperatures. Students discover the relationship between temperature and dissolving time. Free MYP Chemistry resource."
 ---
 
 ## Overview

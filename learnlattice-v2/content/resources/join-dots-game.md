@@ -32,6 +32,8 @@ global-contexts:
 layout: "game"
 game_url: "/interactives/join-dots.html"
 difficulty: "Meeting"
+seo_title: "Join Dots — Free MYP Mathematics Game | Grade 6-9"
+seo_description: "Free interactive MYP mathematics game for Grade 6-9. Connect 4 meets MYP revision. Answer questions from algebra, science, probabilit"
 ---
 
 ## How to Play

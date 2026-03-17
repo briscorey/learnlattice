@@ -1,7 +1,7 @@
 {{/* ── SEO: Open Graph, Twitter Cards, Schema.org JSON-LD with LRMI ── */}}
 
-{{- $title := .Title -}}
-{{- $desc := .Description | default .Site.Params.description -}}
+{{- $title := .Params.seo_title | default .Title -}}
+{{- $desc := .Params.seo_description | default (.Description | default .Site.Params.description) -}}
 {{- $url := .Permalink -}}
 {{- $siteName := .Site.Title -}}
 {{- $isResource := eq .Section "resources" -}}

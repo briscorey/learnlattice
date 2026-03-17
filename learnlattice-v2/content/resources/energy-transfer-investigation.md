@@ -42,6 +42,8 @@ teacher_moves:
     description: "Have students draw a Sankey diagram BEFORE they collect data. The diagram makes them think about energy flow, which improves their experimental design."
 difficulty: "Approaching"
 duration: "2 lessons"
+seo_title: "Where Does the Energy Go? | MYP Criterion B Physics | Grade 7-8"
+seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion C for Grade 7-8. A ball bounces lower each time. A car brakes and the tyres g"
 ---
 
 ## The Hook

@@ -19,6 +19,8 @@ formula: ""
 difficulty: "exceeding"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Trolley Crash Lab | Free MYP Physics Investigation | Grade 9"
+seo_description: "Two trolleys collide on a track. Students measure mass and velocity before and after to test conservation of momentum. Free MYP Physics resource."
 ---
 
 ## Overview

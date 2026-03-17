@@ -15,6 +15,8 @@ tags:
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Two Dice, One Question | Free MYP Maths Investigation | Grade 8"
+seo_description: "Students roll two dice 100 times and record the sum. The distribution is not uniform. Why? Leads to sample space diagrams. Free MYP Mathematics resource."
 ---
 
 ## Overview

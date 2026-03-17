@@ -26,6 +26,8 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."
+seo_title: "Grade 9 Stars and Space Exploration Companion Investigation Pack | MYP Criterion B Space Science | Grade 9"
+seo_description: "Companion investigation pack for grade 9 stars and space exploration unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

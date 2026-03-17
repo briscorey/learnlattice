@@ -20,6 +20,8 @@ statement_of_inquiry: "Proportional reasoning allows us to scale quantities whil
 difficulty: "meeting"
 hook: "A recipe serves 4 people. You need to serve 10. Every measurement changes. But 3/4 cup of flour scaled up to serve 10 is not a nice number. Welcome to fraction arithmetic in the real world."
 warmup: "A recipe uses 2 cups of flour for 4 cookies. How much flour for 8 cookies? What about 6? What about 10?"
+seo_title: "The Recipe Disaster | Free MYP Maths Investigation | Grade 7-8"
+seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. A recipe serves 4 people. You need to se"
 ---
 ## The Hook
 

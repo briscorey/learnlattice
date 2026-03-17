@@ -138,6 +138,8 @@ journal_prompts:
 - How does knowing about density change how you see everyday objects?
 - What would you test next if you had more time?
 hook: "An orange floats. Peel it, and it sinks. Same orange. Why?"
+seo_title: "The Sinking Orange | MYP Physics Crit B & Crit C | Grade 6-7"
+seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion C for Grade 6-7. An orange floats in water. Peel it and it sinks. Why would r"
 ---
 
 ## The Hook

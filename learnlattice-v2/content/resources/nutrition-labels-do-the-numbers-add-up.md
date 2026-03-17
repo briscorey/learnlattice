@@ -123,6 +123,8 @@ btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
+seo_title: "Nutrition Labels: Do the Numbers Add Up? | MYP Criterion C Mathematics | Grade 6-7"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 6-7. Students analyse real nutrition labels from foods across dif"
 ---
 
 ## The Hook

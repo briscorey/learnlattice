@@ -26,6 +26,8 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Evidence of change in Earth systems reveals processes that operate across vast timescales."
+seo_title: "Grade 8 Plate Tectonic Theory Companion Investigation Pack | MYP Criterion B Earth Science | Grade 8"
+seo_description: "Companion investigation pack for grade 8 plate tectonic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

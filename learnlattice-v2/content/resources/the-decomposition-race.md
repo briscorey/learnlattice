@@ -19,6 +19,8 @@ statement_of_inquiry: "Decomposition is a biological process driven by living or
 difficulty: "meeting"
 hook: "Bury a banana peel and a plastic bag side by side. Check back in two weeks. One has vanished. The other looks exactly the same. Why?"
 warmup: "Sort these items by how long you think they take to decompose: banana peel, newspaper, plastic bottle, aluminium can, glass bottle, apple core, cotton t-shirt."
+seo_title: "The Decomposition Race | MYP Ecology | Grade 7-8"
+seo_description: "Bury a banana peel and a plastic bag side by side. Check back in two weeks. One has vanished. The other looks exactly the same. Why? Free MYP Ecology resource."
 ---
 ## The Hook
 

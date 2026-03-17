@@ -32,6 +32,8 @@ download_url: ""
 download_label: "Investigation Pack PDF"
 difficulty: "approaching"
 duration: "1–2 lessons"
+seo_title: "Shadow Detectives | MYP Physics Crit B & Crit C | Grade 6-7"
+seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion C for Grade 6-7. Your shadow is longer in the morning and shorter at noon. Wh"
 ---
 
 ## The Hook

@@ -16,6 +16,8 @@ tags:
   - "Understanding"
   - "Interactive"
 difficulty: "approaching"
+seo_title: "Understand Chemical Reactions | MYP Chemistry | Grade 8-9"
+seo_description: "Balance chemical equations by adjusting coefficients. See atom counts for both sides update live. Five equations from simple to complex."
 ---
 
 <iframe src="/interactives/chemical-reactions.html" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Chemical Reactions"></iframe>

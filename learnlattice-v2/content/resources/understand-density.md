@@ -24,6 +24,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "What Makes Things Float or Sink? | MYP Physics | Grade 6-8"
+seo_description: "Drag objects into virtual water. If density is less than 1.0 they float. If more they sink. See it happen. Free MYP Physics resource."
 ---
 
 ## The Explainer

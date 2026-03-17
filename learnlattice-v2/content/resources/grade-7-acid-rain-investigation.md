@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Acid Rain and Plant Growth | MYP Biology | Grade 7"
+seo_description: "Students grow seedlings watered with solutions of different pH and measure the effect on growth over two weeks. Free MYP Biology resource."
 ---
 
 ## Overview

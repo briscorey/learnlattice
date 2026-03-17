@@ -25,6 +25,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help us understand the natural world."
+seo_title: "Grade 7 Electromagnetism and Circuits Companion Lab Activity | MYP Criterion B Science | Grade 7"
+seo_description: "Companion lab activity for grade 7 electromagnetism and circuits unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

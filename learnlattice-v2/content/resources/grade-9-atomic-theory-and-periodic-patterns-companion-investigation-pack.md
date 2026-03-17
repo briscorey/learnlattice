@@ -26,6 +26,8 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
+seo_title: "Grade 9 Atomic Theory and Periodic Patterns Companion Investigation Pack | MYP Criterion B Chemistry | Grade 9"
+seo_description: "Companion investigation pack for grade 9 atomic theory and periodic patterns unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 ## Overview

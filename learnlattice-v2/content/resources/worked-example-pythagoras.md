@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Worked Example: Pythagoras' Theorem | MYP Maths | Grade 7-9"
+seo_description: "Finding missing sides of right triangles step by step. Three problems including a real-world ladder scenario. Free MYP Mathematics resource."
 ---
 
 ## The Worked Example

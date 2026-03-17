@@ -125,6 +125,8 @@ journal_prompts:
 - What method did you find most reliable for comparing?
 - When in real life do you need to compare fractions?
 - What would you tell someone who thinks 1/3 is less than 1/4?
+seo_title: "The Fairness Problem | MYP Maths Crit A & Crit D | Grade 6-7"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion D for Grade 6-7. Three people share 2 pizzas. Two people share 1 pizza. Who g"
 ---
 
 ## The Hook

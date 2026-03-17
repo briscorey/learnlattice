@@ -21,6 +21,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Does the Order Matter? | Free MYP Maths Investigation | Grade 6"
+seo_description: "Students discover that 2 + 3 × 4 gives different answers depending on the order. BIDMAS emerges from the confusion. Free MYP Mathematics resource."
 ---
 
 ## Overview

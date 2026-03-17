@@ -19,6 +19,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "Before and After | Free MYP Ecology Investigation | Grade 8"
+seo_description: "Students compare aerial photographs of a location over 20 years to quantify habitat loss and discuss the ecological consequences. Free MYP Ecology resource."
 ---
 
 ## Overview

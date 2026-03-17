@@ -95,6 +95,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Grade 7 Ecosystems and Evolution Companion Investigation Pack | MYP Criterion B Ecology | Grade 7"
+seo_description: "Companion investigation pack for grade 7 ecosystems and evolution unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 
 

@@ -108,6 +108,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "Population Prediction | MYP Ecology Crit B & Crit D | Grade 8-9"
+seo_description: "Free MYP Ecology investigation pack targeting Criterion B, Criterion D for Grade 8-9. A single bacterium divides every 20 minutes. After 24 hours,"
 ---
 
 

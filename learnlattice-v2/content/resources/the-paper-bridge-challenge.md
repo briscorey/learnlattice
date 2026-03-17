@@ -19,6 +19,8 @@ statement_of_inquiry: "The strength of a structure depends not just on the mater
 difficulty: "approaching"
 hook: "A flat sheet of paper cannot support a pencil. But fold it the right way and it holds a textbook. The material did not change. The shape did. How much weight can your paper bridge hold?"
 warmup: "Hold a sheet of paper flat between two books (30cm gap). Place a pencil on it. It collapses. Now fold the paper. Can you make it support the pencil? What about 10 pencils?"
+seo_title: "The Paper Bridge Challenge | MYP Physics | Grade 6-7"
+seo_description: "Free MYP physics investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. A flat sheet of paper cannot support a p"
 ---
 ## The Hook
 

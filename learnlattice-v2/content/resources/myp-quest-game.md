@@ -32,6 +32,8 @@ global-contexts:
 layout: "game"
 game_url: "/interactives/myp-quest.html"
 difficulty: "Meeting"
+seo_title: "MYP Quest — Free MYP Mathematics Game | Grade 6-9"
+seo_description: "Free interactive MYP mathematics game for Grade 6-9. An AI-generated platformer where each level is designed around MYP topics. Choos"
 ---
 
 ## How to Play

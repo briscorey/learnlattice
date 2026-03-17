@@ -15,6 +15,8 @@ tags:
   - "Understanding"
   - "Interactive"
 difficulty: "approaching"
+seo_title: "Understand Genetics and Punnett Squares | MYP Science | Grade 8-9"
+seo_description: "Set parent genotypes. Build Punnett squares. Predict offspring probabilities for eye colour, pea shape, and tongue rolling traits. Free MYP Science resource."
 ---
 
 <iframe src="/interactives/genetics.html" style="width:100%;height:700px;border:none;border-radius:12px;background:#0a0f1a;" loading="lazy" title="Understand Genetics"></iframe>

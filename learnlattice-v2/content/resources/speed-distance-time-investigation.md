@@ -32,6 +32,8 @@ download_url: ""
 download_label: "Investigation Pack PDF"
 difficulty: "approaching"
 duration: "2 lessons"
+seo_title: "The Slow Race | MYP Physics Crit B & Crit C | Grade 6-7"
+seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion C for Grade 6-7. What if the goal wasn't to go fast — but to go as slowly as "
 ---
 
 ## The Hook

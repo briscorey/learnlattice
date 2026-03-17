@@ -26,6 +26,8 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
+seo_title: "What Does Level 7 Look Like? Particle Theory | MYP Criterion A Chemistry | Grade 8-9"
+seo_description: "Three student explanations of why ice floats on water using particle theory. From vague answers to precise scientific reasoning with correct terminology."
 ---
 
 ## The Task

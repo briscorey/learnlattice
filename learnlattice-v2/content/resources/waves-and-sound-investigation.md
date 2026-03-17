@@ -100,6 +100,8 @@ misconceptions:
   why: We associate 'more' sound with 'higher' sound
   truth: Loudness is amplitude (height of the wave). Pitch is frequency (speed of
     vibration). They are independent.
+seo_title: "Can You See Sound? | MYP Physics Crit A & Crit B | Grade 8-9"
+seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 8-9. Sound is invisible — but its effects are not. This investiga"
 ---
 
 ## The Hook

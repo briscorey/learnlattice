@@ -15,6 +15,8 @@ tags:
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Discount Detective | Free MYP Maths Investigation | Grade 7"
+seo_description: "Students compare percentage discounts across shops. Which deal is really the best? A practical percentages investigation. Free MYP Mathematics resource."
 ---
 
 ## Overview

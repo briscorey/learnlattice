@@ -21,6 +21,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: "Investigation Pack PDF"
+seo_title: "The Temperature Problem | Free MYP Maths Investigation | Grade 7"
+seo_description: "Using real weather data from cities around the world to explore negative number operations in context. Free MYP Mathematics resource."
 ---
 
 ## Overview

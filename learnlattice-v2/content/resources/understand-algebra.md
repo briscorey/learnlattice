@@ -25,6 +25,8 @@ formula: ""
 difficulty: "approaching"
 download_url: ""
 download_label: ""
+seo_title: "Algebra: The Balance Scale — MYP Maths Visual Guide | Grade 6-8"
+seo_description: "An equation is a balance. Whatever you do to one side you must do to the other. Solve by keeping the scale level. Free MYP Mathematics resource."
 ---
 
 ## The Explainer

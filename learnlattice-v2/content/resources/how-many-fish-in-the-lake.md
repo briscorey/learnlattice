@@ -96,6 +96,8 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
+seo_title: "How Many Fish in the Lake? | MYP Criterion B Maths | Grade 7-8"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion D for Grade 7-8. You cannot count every fish in a lake. But you can estimate "
 ---
 
 
