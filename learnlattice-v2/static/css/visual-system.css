@@ -183,6 +183,169 @@ html.dark .ka-start-link { background: #10121A !important; border-color: rgba(25
 html.dark .stats::before { background: linear-gradient(135deg, #0A1A18 0%, #0D2420 40%, #0A2A25 100%) !important; }
 html.dark .search-modal { background: rgba(16, 18, 26, 0.97) !important; border-color: rgba(255,255,255,0.08) !important; }
 
+/* ══════════════════════════════════════════════════════════
+   COMPREHENSIVE DARK MODE FIXES — March 2026 audit
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 1. Homepage featured investigation cards (white bg fix) ── */
+/* The partial uses [data-theme="dark"] but site uses html.dark */
+html.dark .spotlight-card {
+  background: #1A1D26 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #e2e8f0 !important;
+}
+html.dark .spotlight-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.35) !important;
+  border-color: rgba(20,184,166,0.25) !important;
+}
+html.dark .featured-card {
+  background: #1A1D26 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #e2e8f0 !important;
+}
+html.dark .featured-card:hover {
+  border-color: rgba(20,184,166,0.25) !important;
+}
+html.dark .featured-card-title,
+html.dark .spotlight-card h3 {
+  color: #f1f5f9 !important;
+}
+html.dark .featured-card-hook,
+html.dark .spotlight-card p,
+html.dark .spotlight-card .featured-desc {
+  color: #94a3b8 !important;
+}
+html.dark .featured-kicker,
+html.dark .featured-kicker-dot {
+  color: #2dd4bf !important;
+}
+html.dark .featured-badge--mathematics { background: rgba(59,109,240,0.2) !important; color: #6B93F5 !important; }
+html.dark .featured-badge--science { background: rgba(14,165,115,0.2) !important; color: #34D399 !important; }
+html.dark .featured-badge--cross-disciplinary { background: rgba(245,158,11,0.15) !important; color: #fbbf24 !important; }
+html.dark .featured-badge { color: #cbd5e1 !important; }
+
+/* ── 2. Difficulty badges — boost contrast in dark ── */
+html.dark .resource-difficulty--approaching { background: rgba(34,197,94,0.18) !important; color: #4ade80 !important; border-color: rgba(34,197,94,0.3) !important; }
+html.dark .resource-difficulty--meeting { background: rgba(245,158,11,0.18) !important; color: #fbbf24 !important; border-color: rgba(245,158,11,0.3) !important; }
+html.dark .resource-difficulty--exceeding { background: rgba(239,68,68,0.18) !important; color: #fca5a5 !important; border-color: rgba(239,68,68,0.3) !important; }
+
+/* ── 3. EAL terms on resource pages ── */
+html.dark .rs-eal-term {
+  color: #5eead4 !important;
+  background: rgba(20,184,166,0.12) !important;
+  border-color: rgba(20,184,166,0.25) !important;
+}
+
+/* ── 4. Blog list — pillar & kicker labels ── */
+html.dark .bl-kicker-label {
+  color: #94a3b8 !important;
+  background: rgba(148,163,184,0.12) !important;
+}
+html.dark .bl-pillar {
+  color: #cbd5e1 !important;
+}
+html.dark .bl-pillar--ib-practice,
+html.dark .bl-pillar.bl-pillar--ib-p {
+  background: rgba(245,158,11,0.15) !important;
+  color: #fbbf24 !important;
+}
+html.dark .bl-pillar--craft {
+  background: rgba(20,184,166,0.15) !important;
+  color: #2dd4bf !important;
+}
+html.dark .bl-pillar--thinking {
+  background: rgba(56,189,248,0.15) !important;
+  color: #38bdf8 !important;
+}
+
+/* ── 5. Browse page — criterion dots ── */
+html.dark .browse-crit-dot {
+  opacity: 1 !important;
+}
+html.dark .browse-crit-dot.browse-crit-dot--a { background: #f59e0b !important; }
+html.dark .browse-crit-dot.browse-crit-dot--b { background: #3b82f6 !important; }
+html.dark .browse-crit-dot.browse-crit-dot--c { background: #22c55e !important; }
+html.dark .browse-crit-dot.browse-crit-dot--d { background: #a855f7 !important; }
+
+/* ── 6. Resource list labels ── */
+html.dark .resource-list-label {
+  background: rgba(20,184,166,0.15) !important;
+  color: #2dd4bf !important;
+}
+html.dark .resource-list-type {
+  background: rgba(148,163,184,0.12) !important;
+  color: #94a3b8 !important;
+}
+
+/* ── 7. Games page — grade spans (were black on dark) ── */
+html.dark .gcard-grades span {
+  background: rgba(20,184,166,0.18) !important;
+  color: #2dd4bf !important;
+}
+html.dark .gcard-tags span {
+  background: rgba(148,163,184,0.12) !important;
+  color: #94a3b8 !important;
+}
+html.dark .gcard-subject {
+  background: rgba(10,15,26,0.85) !important;
+  color: #2dd4bf !important;
+}
+
+/* ── 8. About page — tech stack tags ── */
+html.dark .about-built-tag {
+  background: rgba(20,184,166,0.12) !important;
+  color: #2dd4bf !important;
+  border-color: rgba(20,184,166,0.25) !important;
+}
+html.dark .about-tag {
+  background: #1A1D26 !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  color: #cbd5e1 !important;
+}
+
+/* ── 9. Assessment page — difficulty badges (same as #2, covered) ── */
+
+/* ── 10. Students page — NEW badges ── */
+html.dark .sd-tool-badge {
+  background: rgba(20,184,166,0.18) !important;
+  color: #2dd4bf !important;
+  border-color: rgba(20,184,166,0.3) !important;
+}
+
+/* ── 11. Vocabulary page — dim letters ── */
+html.dark .vaz-letter.vaz-dim {
+  color: #475569 !important;
+}
+
+/* ── 12. Concept map — legend dots (need brighter contrast) ── */
+html.dark .cmap-dot--math { background: #14b8a6 !important; }
+html.dark .cmap-dot--science { background: #38bdf8 !important; }
+html.dark .cmap-dot--investigation { background: #fbbf24 !important; }
+html.dark .cmap-dot--concept { background: #fb7185 !important; }
+html.dark .cmap-legend-item { color: #94a3b8 !important; }
+
+/* ── 13. Skip link — minimal, only visible on focus ── */
+html.dark .skip-link { background: #14b8a6 !important; color: #fff !important; }
+
+/* ── 14. Blog card pillars in dark ── */
+html.dark .blog-card-pillar--craft { background: rgba(20,184,166,0.15) !important; color: #2dd4bf !important; }
+html.dark .blog-card-pillar--thinking { background: rgba(56,189,248,0.15) !important; color: #38bdf8 !important; }
+html.dark .blog-card-pillar--ib-practice { background: rgba(245,158,11,0.15) !important; color: #fbbf24 !important; }
+html.dark .blog-pillar--craft { background: rgba(20,184,166,0.15) !important; color: #2dd4bf !important; }
+html.dark .blog-pillar--thinking { background: rgba(56,189,248,0.15) !important; color: #38bdf8 !important; }
+html.dark .blog-pillar--ib { background: rgba(245,158,11,0.15) !important; color: #fbbf24 !important; }
+
+/* ── 15. Filter pills and chips ── */
+html.dark .blog-card-tag { background: rgba(148,163,184,0.1) !important; color: #94a3b8 !important; border-color: rgba(255,255,255,0.08) !important; }
+html.dark .vocab-filter { background: #1A1D26 !important; border-color: rgba(255,255,255,0.08) !important; color: #94a3b8 !important; }
+html.dark .vocab-filter.active { background: #14b8a6 !important; border-color: #14b8a6 !important; color: #fff !important; }
+
+/* ── 16. Assessment card badge colors (criterion-specific) ── */
+html.dark .assess-card { background: #1A1D26 !important; border-color: rgba(255,255,255,0.06) !important; }
+
+/* ── 17. Vocabulary card ── */
+html.dark .vocab-card { background: #1A1D26 !important; border-color: rgba(255,255,255,0.06) !important; }
+
 /* ── PRINT ── */
 @media print { .stagger-grid > * { animation: none !important; opacity: 1 !important; transform: none !important; } }
 
