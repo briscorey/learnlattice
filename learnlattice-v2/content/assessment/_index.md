@@ -11,7 +11,7 @@ Assessment in the IB Middle Years Programme can feel overwhelming — four crite
 
 ### What You Will Find Here
 
-This toolkit includes rubric reference cards for all four MYP criteria ([A](/assessment/criterion-a/), [B](/assessment/criterion-b/), [C](/assessment/criterion-c/), [D](/assessment/criterion-d/)), each with plain-language descriptors and example student phrases at every level. We also provide annotated student exemplars showing real work at levels 3-4, 5-6, and 7-8, a comment bank for writing criterion-referenced feedback, and a [complete guide to MYP moderation](/blog/complete-guide-myp-moderation/).
+This toolkit includes rubric reference cards for all four MYP criteria ([A](/assessment/criterion-a/), [B](/assessment/criterion-b/), [C](/assessment/criterion-c/), [D](/assessment/criterion-d/)), each with plain-language descriptors and example student phrases at every level. We also provide annotated student exemplars showing real work at levels 3-4, 5-6, and 7-8, a comment bank for writing criterion-referenced feedback.
 
 ### Why This Matters
 

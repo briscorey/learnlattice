@@ -24,4 +24,4 @@ Our science resources are organised by discipline: [Biology](/subjects/biology/)
 
 ## For Teachers New to MYP Science
 
-If you are new to teaching MYP science or transitioning from a national curriculum, our blog has practical guides: [Five MYP Science Investigations You Can Run This Week](/blog/five-myp-science-investigations/) and [Teaching Science to EAL Students](/blog/teaching-science-eal-students/). Our [Assessment Toolkit](/assessment/) includes rubric cards and annotated exemplars for every criterion.
+If you are new to teaching MYP science or transitioning from a national curriculum, our blog has practical guides: [Five MYP Science Investigations You Can Run This Week](/blog/five-myp-science-investigations/). Our [Assessment Toolkit](/assessment/) includes rubric cards and annotated exemplars for every criterion.

@@ -24,4 +24,4 @@ Every resource on this page is tagged with the MYP criteria it targets. Use this
 
 ## For IB Coordinators
 
-If you are evaluating free MYP mathematics resources for your school, LearnLattice provides complete [assessment packs](/assessment/) with rubric-aligned tasks, annotated student exemplars at three achievement levels, and a [moderation guide](/blog/complete-guide-myp-moderation/). All resources are released under a Creative Commons licence and are free to use, adapt, and share.
+If you are evaluating free MYP mathematics resources for your school, LearnLattice provides complete [assessment packs](/assessment/) with rubric-aligned tasks, annotated student exemplars at three achievement levels,. All resources are released under a Creative Commons licence and are free to use, adapt, and share.
