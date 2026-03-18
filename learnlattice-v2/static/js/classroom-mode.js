@@ -1,199 +1,560 @@
 // ═══════════════════════════════════════════
-// CLASSROOM MODE — Presentation View
+// CLASSROOM MODE v2 — Structured Lesson Flow
 // ═══════════════════════════════════════════
 (function() {
-  var btn     = document.getElementById('classroomModeBtn');
+  var btn = document.getElementById('classroomModeBtn');
   var overlay = document.getElementById('classroomOverlay');
   if (!btn || !overlay) return;
 
-  var stage    = document.getElementById('cmStage');
-  var counter  = document.getElementById('cmCounter');
+  var stage = document.getElementById('cmStage');
+  var counter = document.getElementById('cmCounter');
   var progress = document.getElementById('cmProgress');
-  var prevBtn  = document.getElementById('cmPrev');
-  var nextBtn  = document.getElementById('cmNext');
+  var prevBtn = document.getElementById('cmPrev');
+  var nextBtn = document.getElementById('cmNext');
   var closeBtn = document.getElementById('cmClose');
+  var viewToggle = document.getElementById('cmViewToggle');
+  var timerDisplay = document.getElementById('cmTimerDisplay');
+  var timerValue = document.getElementById('cmTimerValue');
+  var timerToggleBtn = document.getElementById('cmTimerToggle');
+  var timerResetBtn = document.getElementById('cmTimerReset');
 
-  var slides = [];
+  var allSlides = [];
   var current = 0;
+  var currentView = 'teacher';
+  var timerInterval = null;
+  var timerSeconds = 0;
+  var timerRunning = false;
+  var timerTarget = 0;
 
-  // Parse the resource content into slides
-  function buildSlides() {
-    slides = [];
-    var content = document.querySelector('.resource-content');
-    if (!content) return;
+  function esc(s) {
+    if (!s) return '';
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
 
-    // First slide: title
-    var titleEl = document.querySelector('.resource-single-header h1');
-    var descEl  = document.querySelector('.resource-single-desc');
-    slides.push({
-      html: '<div class="cm-slide">' +
-        '<div class="cm-slide-title">' + (titleEl ? titleEl.textContent : '') + '</div>' +
-        (descEl ? '<div class="cm-slide-subtitle">' + descEl.textContent + '</div>' : '') +
-        '</div>'
+  function getLessonData() {
+    return window.__lessonData || null;
+  }
+
+  // ════════════════════════════════════
+  //  SLIDE BUILDERS
+  // ════════════════════════════════════
+
+  function mkTitleSlide(d) {
+    var meta = [];
+    if (d.subject) meta.push(d.subject);
+    if (d.yearLevels && d.yearLevels.length) meta.push(d.yearLevels.join(' & '));
+    if (d.duration) meta.push(d.duration);
+    return {
+      html: '<div class="cms cms-title">' +
+        (meta.length ? '<div class="cms-meta">' + meta.map(esc).join(' · ') + '</div>' : '') +
+        '<h1>' + esc(d.title) + '</h1>' +
+        (d.description ? '<p class="cms-subtitle">' + esc(d.description) + '</p>' : '') +
+        '</div>',
+      type: 'title', view: 'both'
+    };
+  }
+
+  function mkSOISlide(d) {
+    if (!d.soi) return null;
+    var pills = '';
+    if (d.keyConcepts && d.keyConcepts.length) {
+      pills = '<div class="cms-pills">' + d.keyConcepts.map(function(c) {
+        return '<span class="cms-pill cms-pill-concept">' + esc(c) + '</span>';
+      }).join('') + '</div>';
+    }
+    var gc = d.globalContexts && d.globalContexts.length ? '<div class="cms-gc">' + esc(d.globalContexts[0]) + '</div>' : '';
+    return {
+      html: '<div class="cms cms-soi">' +
+        '<div class="cms-badge">💡 Statement of Inquiry</div>' +
+        '<blockquote>' + esc(d.soi) + '</blockquote>' +
+        pills + gc + '</div>',
+      type: 'soi', view: 'both'
+    };
+  }
+
+  function mkHookSlide(d) {
+    if (!d.hook) return null;
+    return {
+      html: '<div class="cms cms-hook">' +
+        '<div class="cms-badge">🎯 Hook</div>' +
+        '<blockquote>' + esc(d.hook) + '</blockquote>' +
+        '<p class="cms-note">Read aloud. Let it land. Don\'t explain yet.</p>' +
+        '</div>',
+      type: 'hook', view: 'both'
+    };
+  }
+
+  function mkWarmupSlide(d) {
+    if (!d.warmup) return null;
+    return {
+      html: '<div class="cms cms-warmup">' +
+        '<div class="cms-badge">🔥 Warm-Up</div>' +
+        '<p>' + esc(d.warmup) + '</p>' +
+        '<div class="cms-timer-cta" data-timer="300">⏱ Start 5 min timer</div>' +
+        '</div>',
+      type: 'warmup', view: 'both', timer: 300
+    };
+  }
+
+  function mkTimelineSlide(d) {
+    if (!d.timeline) return null;
+    var phases = d.timeline.split(' | ');
+    var html = '<div class="cms cms-timeline">' +
+      '<div class="cms-badge">⏱ Lesson Timeline</div>' +
+      '<div class="cms-timeline-track">';
+    phases.forEach(function(p, i) {
+      var parts = p.split(': ');
+      var time = parts[0] || '';
+      var desc = parts.length > 1 ? parts.slice(1).join(': ') : parts[0];
+      html += '<div class="cms-tl-node">' +
+        '<div class="cms-tl-dot">' + (i + 1) + '</div>' +
+        '<div class="cms-tl-body">' +
+        '<div class="cms-tl-time">' + esc(time) + '</div>' +
+        '<div class="cms-tl-desc">' + esc(desc) + '</div>' +
+        '</div></div>';
     });
+    html += '</div></div>';
+    return { html: html, type: 'timeline', view: 'both' };
+  }
 
-    // Walk through content children
+  function mkPhaseSlides(d) {
+    if (!d.timeline) return [];
+    var phases = d.timeline.split(' | ');
+    return phases.map(function(p, i) {
+      var parts = p.split(': ');
+      var time = parts[0] || '';
+      var desc = parts.length > 1 ? parts.slice(1).join(': ') : parts[0];
+      var secs = 0;
+      var m = time.match(/(\d+)\s*-\s*(\d+)/);
+      if (m) secs = (parseInt(m[2]) - parseInt(m[1])) * 60;
+      return {
+        html: '<div class="cms cms-phase">' +
+          '<div class="cms-badge">Phase ' + (i + 1) + ' of ' + phases.length + '</div>' +
+          '<div class="cms-phase-time">' + esc(time) + '</div>' +
+          '<p>' + esc(desc) + '</p>' +
+          (secs > 0 ? '<div class="cms-timer-cta" data-timer="' + secs + '">⏱ Start ' + Math.round(secs / 60) + ' min timer</div>' : '') +
+          '</div>',
+        type: 'phase', view: 'teacher', timer: secs > 0 ? secs : 0
+      };
+    });
+  }
+
+  function mkTeacherMoveSlides(d) {
+    if (!d.teacherMoves || !d.teacherMoves.length) return [];
+    return d.teacherMoves.map(function(m, i) {
+      return {
+        html: '<div class="cms cms-move">' +
+          '<div class="cms-badge">🧭 Teacher Move ' + (i + 1) + '/' + d.teacherMoves.length + '</div>' +
+          '<h2>' + esc(m.title) + '</h2>' +
+          '<p>' + esc(m.description) + '</p>' +
+          '</div>',
+        type: 'move', view: 'teacher'
+      };
+    });
+  }
+
+  function mkListenSlide(d) {
+    if (!d.listenFor || !d.listenFor.length) return null;
+    var html = '<div class="cms cms-listen">' +
+      '<div class="cms-badge">👂 What to Listen For</div>' +
+      '<div class="cms-listen-grid">';
+    d.listenFor.forEach(function(l) {
+      var cls = (l.level || '').toLowerCase().replace(/[^a-z]/g, '');
+      html += '<div class="cms-listen-row cms-ll-' + cls + '">' +
+        '<span class="cms-ll-badge">' + esc(l.level) + '</span>' +
+        '<span class="cms-ll-text">"' + esc(l.phrase) + '"</span>' +
+        '</div>';
+    });
+    html += '</div></div>';
+    return { html: html, type: 'listen', view: 'teacher' };
+  }
+
+  function mkMisconceptionSlides(d) {
+    if (!d.misconceptions || !d.misconceptions.length) return [];
+    return d.misconceptions.map(function(m, i) {
+      return {
+        html: '<div class="cms cms-myth">' +
+          '<div class="cms-badge">⚠️ Misconception ' + (i + 1) + '/' + d.misconceptions.length + '</div>' +
+          '<div class="cms-myth-box">' +
+          '<div class="cms-myth-label">Students may say:</div>' +
+          '<p class="cms-myth-quote">"' + esc(m.myth) + '"</p>' +
+          '</div>' +
+          (m.why ? '<div class="cms-myth-why">' + esc(m.why) + '</div>' : '') +
+          '<div class="cms-myth-truth">' +
+          '<div class="cms-myth-label cms-myth-label-truth">The reality:</div>' +
+          '<p>' + esc(m.truth) + '</p>' +
+          '</div></div>',
+        type: 'misconception', view: 'teacher'
+      };
+    });
+  }
+
+  function mkStartersSlide(d) {
+    if (!d.sentenceStarters) return null;
+    var ss = d.sentenceStarters;
+    var cats = [
+      { key: 'describing', label: 'Describing', icon: '📝' },
+      { key: 'explaining', label: 'Explaining', icon: '💭' },
+      { key: 'justifying', label: 'Justifying', icon: '⚖️' },
+      { key: 'approaching', label: 'Approaching', icon: '🟢' },
+      { key: 'meeting', label: 'Meeting', icon: '🟡' },
+      { key: 'exceeding', label: 'Exceeding', icon: '🔴' }
+    ];
+    var hasContent = false;
+    var html = '<div class="cms cms-starters">' +
+      '<div class="cms-badge">✏️ Sentence Starters</div>' +
+      '<div class="cms-starters-columns">';
+    cats.forEach(function(c) {
+      if (ss[c.key] && ss[c.key].length) {
+        hasContent = true;
+        html += '<div class="cms-starter-col"><div class="cms-starter-heading">' + c.icon + ' ' + c.label + '</div>';
+        ss[c.key].forEach(function(s) {
+          html += '<div class="cms-starter-item">"' + esc(s) + '"</div>';
+        });
+        html += '</div>';
+      }
+    });
+    html += '</div></div>';
+    return hasContent ? { html: html, type: 'starters', view: 'student' } : null;
+  }
+
+  function mkDiffSlide(d) {
+    if (!d.differentiated || (!d.differentiated.approaching && !d.differentiated.meeting && !d.differentiated.exceeding)) return null;
+    var df = d.differentiated;
+    var html = '<div class="cms cms-diff">' +
+      '<div class="cms-badge">🎯 Differentiated Tasks</div>' +
+      '<div class="cms-diff-cols">';
+    if (df.approaching) html += '<div class="cms-diff-card cms-dc-green"><div class="cms-dc-label">🟢 Approaching</div><p>' + esc(df.approaching) + '</p></div>';
+    if (df.meeting) html += '<div class="cms-diff-card cms-dc-amber"><div class="cms-dc-label">🟡 Meeting</div><p>' + esc(df.meeting) + '</p></div>';
+    if (df.exceeding) html += '<div class="cms-diff-card cms-dc-red"><div class="cms-dc-label">🔴 Exceeding</div><p>' + esc(df.exceeding) + '</p></div>';
+    html += '</div></div>';
+    return { html: html, type: 'diff', view: 'student' };
+  }
+
+  function mkSelfCheckSlide(d) {
+    if (!d.selfCheck || !d.selfCheck.length) return null;
+    var html = '<div class="cms cms-check">' +
+      '<div class="cms-badge">✅ Self-Check</div>' +
+      '<div class="cms-check-levels">';
+    d.selfCheck.forEach(function(lv) {
+      html += '<div class="cms-check-level"><div class="cms-check-label">' + esc(lv.level) + '</div>';
+      if (lv.items) lv.items.forEach(function(it) {
+        html += '<div class="cms-check-item">☐ ' + esc(it) + '</div>';
+      });
+      html += '</div>';
+    });
+    html += '</div></div>';
+    return { html: html, type: 'selfcheck', view: 'student' };
+  }
+
+  function mkExitSlide(d) {
+    if (!d.exitTicket || !d.exitTicket.length) return null;
+    var html = '<div class="cms cms-exit">' +
+      '<div class="cms-badge">🎫 Exit Ticket</div>' +
+      '<p class="cms-exit-sub">Last 3 minutes — sticky note or whiteboard</p>' +
+      '<div class="cms-exit-qs">';
+    d.exitTicket.forEach(function(q, i) {
+      html += '<div class="cms-exit-q"><span class="cms-exit-num">' + (i + 1) + '</span><span>' + esc(q) + '</span></div>';
+    });
+    html += '</div><div class="cms-timer-cta" data-timer="180">⏱ Start 3 min timer</div></div>';
+    return { html: html, type: 'exit', view: 'both', timer: 180 };
+  }
+
+  function mkEndSlide(d) {
+    return {
+      html: '<div class="cms cms-end">' +
+        '<div class="cms-end-icon">✨</div>' +
+        '<h2>' + esc(d.title || 'End') + '</h2>' +
+        '<p class="cms-end-sub">End of lesson flow</p>' +
+        '</div>',
+      type: 'end', view: 'both'
+    };
+  }
+
+  // Content slides — parsed from .resource-content DOM
+  function mkContentSlides() {
+    var out = [];
+    var content = document.querySelector('.resource-content');
+    if (!content) return out;
     var children = content.children;
-    var currentSection = '';
-    var buffer = [];
+    var buf = [];
 
-    function flushBuffer() {
-      if (buffer.length === 0) return;
-      // Split large buffers into multiple slides (max 2 elements per slide)
-      var maxPerSlide = 2;
-      for (var b = 0; b < buffer.length; b += maxPerSlide) {
-        var chunk = buffer.slice(b, b + maxPerSlide);
-        slides.push({
-          html: '<div class="cm-slide">' +
-            
-            chunk.join('') +
-            '</div>'
+    function flush() {
+      if (!buf.length) return;
+      for (var b = 0; b < buf.length; b += 2) {
+        out.push({
+          html: '<div class="cms cms-content">' + buf.slice(b, b + 2).join('') + '</div>',
+          type: 'content', view: 'both'
         });
       }
-      buffer = [];
+      buf = [];
     }
 
     for (var i = 0; i < children.length; i++) {
-      var el = children[i];
-      var tag = el.tagName;
-
+      var el = children[i], tag = el.tagName;
       if (tag === 'H2') {
-        flushBuffer();
-        currentSection = el.textContent;
-        // Create a section title slide
-        slides.push({
-          html: '<div class="cm-slide"><h2>' + el.innerHTML + '</h2></div>'
-        });
+        flush();
+        out.push({ html: '<div class="cms cms-section"><h2>' + el.innerHTML + '</h2></div>', type: 'section', view: 'both' });
       } else if (tag === 'H3') {
-        flushBuffer();
-        // H3 becomes its own slide with section context
-        slides.push({
-          html: '<div class="cm-slide">' +
-            
-            '<p><strong>' + el.innerHTML + '</strong></p></div>'
-        });
-      } else if (tag === 'P') {
-        var text = el.textContent.trim();
-        // Bold paragraphs (like "Fact 1:", "Ask:") get their own slide
-        var firstChild = el.firstElementChild;
-        var isBold = firstChild && (firstChild.tagName === 'STRONG' || firstChild.tagName === 'B');
-        var startsWithBold = isBold && firstChild.textContent.length > text.length * 0.4;
-
-        if (startsWithBold || text.length > 150) {
-          flushBuffer();
-          slides.push({
-            html: '<div class="cm-slide">' +
-              
-              '<p>' + el.innerHTML + '</p></div>'
-          });
-        } else if (text.length > 0) {
-          buffer.push('<p>' + el.innerHTML + '</p>');
-          // Flush if buffer is getting big
-          if (buffer.length >= 2) flushBuffer();
-        }
+        flush();
+        out.push({ html: '<div class="cms cms-section"><h3>' + el.innerHTML + '</h3></div>', type: 'subsection', view: 'both' });
       } else if (tag === 'BLOCKQUOTE') {
-        flushBuffer();
-        slides.push({
-          html: '<div class="cm-slide">' +
-            
-            '<blockquote>' + el.innerHTML + '</blockquote></div>'
-        });
+        flush();
+        out.push({ html: '<div class="cms cms-content"><blockquote>' + el.innerHTML + '</blockquote></div>', type: 'content', view: 'both' });
+      } else if (tag === 'TABLE') {
+        flush();
+        out.push({ html: '<div class="cms cms-content" style="overflow-x:auto">' + el.outerHTML + '</div>', type: 'content', view: 'both' });
       } else if (tag === 'UL' || tag === 'OL') {
-        flushBuffer();
-        // Split long lists - if more than 5 items, break into separate slides
+        flush();
         var items = el.querySelectorAll('li');
         if (items.length > 5) {
-          var half = Math.ceil(items.length / 2);
-          var list1 = '<' + tag.toLowerCase() + '>';
-          var list2 = '<' + tag.toLowerCase() + '>';
+          var h = Math.ceil(items.length / 2);
+          var l1 = '<' + tag + '>', l2 = '<' + tag + '>';
           for (var li = 0; li < items.length; li++) {
-            if (li < half) list1 += '<li>' + items[li].innerHTML + '</li>';
-            else list2 += '<li>' + items[li].innerHTML + '</li>';
+            if (li < h) l1 += '<li>' + items[li].innerHTML + '</li>';
+            else l2 += '<li>' + items[li].innerHTML + '</li>';
           }
-          list1 += '</' + tag.toLowerCase() + '>';
-          list2 += '</' + tag.toLowerCase() + '>';
-          slides.push({
-            html: '<div class="cm-slide">' +
-              
-              list1 + '</div>'
-          });
-          slides.push({
-            html: '<div class="cm-slide">' +
-              
-              list2 + '</div>'
-          });
+          l1 += '</' + tag + '>'; l2 += '</' + tag + '>';
+          out.push({ html: '<div class="cms cms-content">' + l1 + '</div>', type: 'content', view: 'both' });
+          out.push({ html: '<div class="cms cms-content">' + l2 + '</div>', type: 'content', view: 'both' });
         } else {
-          slides.push({
-            html: '<div class="cm-slide">' +
-              
-              '<' + tag.toLowerCase() + '>' + el.innerHTML + '</' + tag.toLowerCase() + '></div>'
-          });
+          out.push({ html: '<div class="cms cms-content"><' + tag + '>' + el.innerHTML + '</' + tag + '></div>', type: 'content', view: 'both' });
         }
-      } else if (tag === 'TABLE') {
-        flushBuffer();
-        slides.push({
-          html: '<div class="cm-slide" style="overflow-x:auto">' +
-            
-            '<div style="font-size:1.1rem">' + el.outerHTML + '</div></div>'
-        });
+      } else if (tag === 'P') {
+        var txt = el.textContent.trim();
+        if (!txt) continue;
+        var fc = el.firstElementChild;
+        var bold = fc && (fc.tagName === 'STRONG' || fc.tagName === 'B') && fc.textContent.length > txt.length * 0.4;
+        if (bold || txt.length > 150) { flush(); out.push({ html: '<div class="cms cms-content"><p>' + el.innerHTML + '</p></div>', type: 'content', view: 'both' }); }
+        else { buf.push('<p>' + el.innerHTML + '</p>'); if (buf.length >= 2) flush(); }
       } else {
-        // Other elements get buffered
-        buffer.push(el.outerHTML);
-        if (buffer.length >= 3) flushBuffer();
+        buf.push(el.outerHTML);
+        if (buf.length >= 3) flush();
       }
     }
-    flushBuffer();
-
-    // If we somehow have no slides, add a fallback
-    if (slides.length === 0) {
-      slides.push({ html: '<div class="cm-slide"><p>No content to present.</p></div>' });
-    }
+    flush();
+    return out;
   }
 
+  // ════════════════════════════════════
+  //  BUILD SLIDE DECK
+  // ════════════════════════════════════
+
+  function buildSlides() {
+    allSlides = [];
+    var d = getLessonData();
+    var rich = d && (d.hook || d.warmup || d.timeline || (d.teacherMoves && d.teacherMoves.length));
+
+    if (!d || !rich) {
+      // Fallback: content-only mode
+      var titleEl = document.querySelector('.rs-header h1');
+      var descEl = document.querySelector('.rs-hook, .rs-desc');
+      allSlides.push({
+        html: '<div class="cms cms-title"><h1>' + (titleEl ? titleEl.textContent : 'Untitled') + '</h1>' +
+          (descEl ? '<p class="cms-subtitle">' + descEl.textContent + '</p>' : '') + '</div>',
+        type: 'title', view: 'both'
+      });
+      allSlides = allSlides.concat(mkContentSlides());
+      allSlides.push(mkEndSlide(d || { title: '' }));
+      return;
+    }
+
+    // Structured lesson flow
+    allSlides.push(mkTitleSlide(d));
+    var s;
+    s = mkSOISlide(d); if (s) allSlides.push(s);
+    s = mkHookSlide(d); if (s) allSlides.push(s);
+    s = mkWarmupSlide(d); if (s) allSlides.push(s);
+    s = mkTimelineSlide(d); if (s) allSlides.push(s);
+    allSlides = allSlides.concat(mkPhaseSlides(d));
+    allSlides = allSlides.concat(mkContentSlides());
+    allSlides = allSlides.concat(mkTeacherMoveSlides(d));
+    s = mkListenSlide(d); if (s) allSlides.push(s);
+    allSlides = allSlides.concat(mkMisconceptionSlides(d));
+    s = mkStartersSlide(d); if (s) allSlides.push(s);
+    s = mkDiffSlide(d); if (s) allSlides.push(s);
+    s = mkSelfCheckSlide(d); if (s) allSlides.push(s);
+    s = mkExitSlide(d); if (s) allSlides.push(s);
+    allSlides.push(mkEndSlide(d));
+  }
+
+  function visibleSlides() {
+    return allSlides.filter(function(s) { return s.view === 'both' || s.view === currentView; });
+  }
+
+  // ════════════════════════════════════
+  //  RENDER
+  // ════════════════════════════════════
+
   function render() {
-    if (!slides[current]) return;
-    stage.innerHTML = slides[current].html;
-    counter.textContent = (current + 1) + ' / ' + slides.length;
+    var vis = visibleSlides();
+    if (current >= vis.length) current = vis.length - 1;
+    if (current < 0) current = 0;
+    if (!vis[current]) return;
+
+    stage.innerHTML = vis[current].html;
+    counter.textContent = (current + 1) + ' / ' + vis.length;
     prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === slides.length - 1;
+    nextBtn.disabled = current === vis.length - 1;
+    buildProgressDots();
 
-    // Update progress dots
-    var dots = progress.querySelectorAll('.cm-dot');
-    dots.forEach(function(dot, i) {
-      dot.classList.toggle('active', i === current);
-      dot.classList.toggle('visited', i < current);
-    });
+    // Attach timer CTA
+    var cta = stage.querySelector('.cms-timer-cta');
+    if (cta) {
+      cta.addEventListener('click', function() {
+        var s = parseInt(this.dataset.timer) || 0;
+        if (s > 0) startCountdown(s);
+      });
+    }
 
-    // Re-render KaTeX if available
+    // KaTeX
     if (window.renderMathInElement) {
       renderMathInElement(stage, {
-        delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
-        ],
+        delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
         throwOnError: false
       });
     }
   }
 
-  function buildProgress() {
+  function buildProgressDots() {
+    var vis = visibleSlides();
     progress.innerHTML = '';
-    for (var i = 0; i < slides.length; i++) {
+    vis.forEach(function(s, i) {
       var dot = document.createElement('span');
       dot.className = 'cm-dot';
+      if (i === current) dot.classList.add('active');
+      else if (i < current) dot.classList.add('visited');
+      // Type-based color coding
+      var t = s.type;
+      if (t === 'hook' || t === 'warmup') dot.classList.add('cm-dot-warm');
+      else if (t === 'move' || t === 'listen' || t === 'misconception' || t === 'phase') dot.classList.add('cm-dot-teacher');
+      else if (t === 'starters' || t === 'selfcheck' || t === 'diff') dot.classList.add('cm-dot-student');
+      else if (t === 'exit') dot.classList.add('cm-dot-exit');
       dot.dataset.index = i;
-      dot.addEventListener('click', function() {
-        current = parseInt(this.dataset.index);
-        render();
-      });
+      dot.addEventListener('click', function() { current = parseInt(this.dataset.index); render(); });
       progress.appendChild(dot);
+    });
+  }
+
+  // ════════════════════════════════════
+  //  TIMER
+  // ════════════════════════════════════
+
+  function startCountdown(secs) {
+    stopTimer();
+    timerTarget = secs;
+    timerSeconds = secs;
+    timerRunning = true;
+    timerDisplay.style.display = 'flex';
+    timerToggleBtn.textContent = '⏸';
+    updateTimerUI();
+    timerInterval = setInterval(function() {
+      if (!timerRunning) return;
+      timerSeconds--;
+      updateTimerUI();
+      if (timerSeconds <= 0) {
+        stopTimer();
+        timerValue.textContent = "TIME'S UP";
+        timerValue.classList.add('cm-timer-done');
+        setTimeout(function() { timerValue.classList.remove('cm-timer-done'); }, 5000);
+      }
+    }, 1000);
+  }
+
+  function startCountUp() {
+    stopTimer();
+    timerTarget = 0; timerSeconds = 0; timerRunning = true;
+    timerDisplay.style.display = 'flex';
+    timerToggleBtn.textContent = '⏸';
+    updateTimerUI();
+    timerInterval = setInterval(function() {
+      if (!timerRunning) return;
+      timerSeconds++;
+      updateTimerUI();
+    }, 1000);
+  }
+
+  function stopTimer() {
+    timerRunning = false;
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+    if (timerToggleBtn) timerToggleBtn.textContent = '▶';
+  }
+
+  function toggleTimerFn() {
+    if (timerDisplay.style.display === 'none' || !timerDisplay.style.display) { startCountUp(); return; }
+    if (timerRunning) { timerRunning = false; timerToggleBtn.textContent = '▶'; }
+    else {
+      timerRunning = true; timerToggleBtn.textContent = '⏸';
+      if (!timerInterval) {
+        var dir = timerTarget > 0 ? -1 : 1;
+        timerInterval = setInterval(function() {
+          if (!timerRunning) return;
+          timerSeconds += dir;
+          updateTimerUI();
+          if (timerTarget > 0 && timerSeconds <= 0) { stopTimer(); timerValue.textContent = "TIME'S UP"; timerValue.classList.add('cm-timer-done'); }
+        }, 1000);
+      }
     }
   }
+
+  function resetTimerFn() {
+    stopTimer();
+    timerSeconds = timerTarget;
+    if (timerTarget === 0) timerDisplay.style.display = 'none';
+    else updateTimerUI();
+  }
+
+  function updateTimerUI() {
+    var s = Math.abs(timerSeconds);
+    var m = Math.floor(s / 60), sec = s % 60;
+    timerValue.textContent = (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+    // Color warning when < 60s
+    if (timerTarget > 0 && timerSeconds <= 60 && timerSeconds > 0) timerValue.classList.add('cm-timer-warn');
+    else timerValue.classList.remove('cm-timer-warn');
+  }
+
+  if (timerToggleBtn) timerToggleBtn.addEventListener('click', toggleTimerFn);
+  if (timerResetBtn) timerResetBtn.addEventListener('click', resetTimerFn);
+
+  // ════════════════════════════════════
+  //  VIEW TOGGLE
+  // ════════════════════════════════════
+
+  function setView(view) {
+    if (view === currentView) return;
+    currentView = view;
+    if (viewToggle) {
+      viewToggle.querySelectorAll('.cm-view-btn').forEach(function(b) { b.classList.remove('active'); });
+      var ab = viewToggle.querySelector('[data-view="' + view + '"]');
+      if (ab) ab.classList.add('active');
+    }
+    var vis = visibleSlides();
+    if (current >= vis.length) current = vis.length - 1;
+    render();
+  }
+
+  if (viewToggle) {
+    viewToggle.addEventListener('click', function(e) {
+      var b = e.target.closest('.cm-view-btn');
+      if (b && b.dataset.view) setView(b.dataset.view);
+    });
+  }
+
+  // ════════════════════════════════════
+  //  NAVIGATION
+  // ════════════════════════════════════
 
   function open() {
     buildSlides();
     current = 0;
-    buildProgress();
+    currentView = 'teacher';
+    if (viewToggle) {
+      viewToggle.querySelectorAll('.cm-view-btn').forEach(function(b) { b.classList.remove('active'); });
+      var tb = viewToggle.querySelector('[data-view="teacher"]');
+      if (tb) tb.classList.add('active');
+    }
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -204,17 +565,13 @@
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    stopTimer();
+    if (timerDisplay) timerDisplay.style.display = 'none';
   }
 
-  function next() {
-    if (current < slides.length - 1) { current++; render(); }
-  }
+  function next() { var vis = visibleSlides(); if (current < vis.length - 1) { current++; render(); } }
+  function prev() { if (current > 0) { current--; render(); } }
 
-  function prev() {
-    if (current > 0) { current--; render(); }
-  }
-
-  // Event listeners
   btn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
   nextBtn.addEventListener('click', next);
@@ -225,11 +582,12 @@
     if (e.key === 'Escape') close();
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTimerFn(); }
+    if (e.key === 'v' || e.key === 'V') { e.preventDefault(); setView(currentView === 'teacher' ? 'student' : 'teacher'); }
   });
 
-  // Click on stage to advance (like a slideshow)
   stage.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A') return; // don't intercept links
+    if (e.target.tagName === 'A' || e.target.closest('.cms-timer-cta') || e.target.closest('button') || e.target.closest('details')) return;
     next();
   });
 })();
