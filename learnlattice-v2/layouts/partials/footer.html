@@ -39,7 +39,7 @@
     <div class="footer-links">
       <div class="footer-col">
         <h4>Subjects</h4>
-        {{ range $featuredSubjects }}
+        {{ range first 8 $featuredSubjects }}
         <a href="{{ .url }}">{{ .title }}</a>
         {{ end }}
       </div>

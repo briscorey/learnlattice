@@ -187,62 +187,6 @@ summaryLength = 30
     latest_link_url = "/resources/"
     topics_title = "Browse by Topic"
 
-  [[params.featured_subjects]]
-    title = "Science"
-    key = "science"
-    color = "sky"
-    icon = "🔬"
-    url = "/subjects/science/"
-    audience = "MYP Science Grades 6-9"
-  [[params.featured_subjects]]
-    title = "Physics"
-    key = "physics"
-    color = "blue"
-    icon = "⚡"
-    url = "/subjects/physics/"
-    audience = "Investigations for MYP Grades 6–9"
-
-
-  [[params.featured_subjects]]
-    title = "Number Sense"
-    key = "number-sense"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/number-sense/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Fractions & Ratios"
-    key = "fractions"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/fractions/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Algebra"
-    key = "algebra"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/algebra/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Geometry"
-    key = "geometry"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/geometry/"
-    audience = "MYP Mathematics Grades 6-9"
-
-  [[params.featured_subjects]]
-    title = "Statistics & Probability"
-    key = "statistics"
-    color = "teal"
-    icon = "📐"
-    url = "/subjects/statistics/"
-    audience = "MYP Mathematics Grades 6-9"
-
 [taxonomies]
   tag = "tags"
   subject = "subjects"
