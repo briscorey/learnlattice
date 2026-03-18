@@ -389,6 +389,38 @@ const STAGES = [
         bank: ["oceanic", "continental", "dense", "light", "volcanoes", "trenches"],
         hint: "Which type of crust is heavier? What happens when rock melts underground and rises to the surface?",
         why: "The <strong>oceanic</strong> plate subducts because it is more <strong>dense</strong>. As it sinks deeper, increasing temperature melts the rock, and the resulting magma rises through the continental plate to form <strong>volcanoes</strong>."
+      },
+      {
+        type: "matching",
+        text: "Match each <strong>tectonic plate</strong> to the continent or ocean it is mostly under.",
+        left: ["Pacific Plate", "African Plate", "Eurasian Plate", "North American Plate"],
+        right: ["Under North America and western Atlantic", "Under Europe and most of Asia", "Under Africa and surrounding ocean floor", "Under the Pacific Ocean (largest plate)"],
+        pairs: [[0,3],[1,2],[2,1],[3,0]],
+        hint: "The Pacific Plate is the largest on Earth and is almost entirely oceanic. The other three are named after the continents they carry.",
+        why: "The <strong>Pacific Plate</strong> is the largest and is mostly oceanic crust. The <strong>African</strong>, <strong>Eurasian</strong>, and <strong>North American</strong> plates are named after the continents they carry, but they also include large areas of ocean floor around those continents."
+      },
+      {
+        type: "multi",
+        text: "Select ALL of the following that are major tectonic plates.",
+        options: [
+          "Pacific Plate",
+          "Atlantic Plate",
+          "South American Plate",
+          "Antarctic Plate",
+          "Saharan Plate",
+          "Indo-Australian Plate"
+        ],
+        correct: [0, 2, 3, 5],
+        hint: "There is no plate named after the Atlantic Ocean or the Sahara Desert. Four of these are real major plates.",
+        why: "The major tectonic plates include: <strong>Pacific, North American, South American, African, Eurasian, Antarctic, and Indo-Australian</strong>. There is no \"Atlantic Plate\" \u2014 the Atlantic Ocean floor is split between the plates on either side. There is also no \"Saharan Plate\" \u2014 the Sahara sits on the African Plate."
+      },
+      {
+        type: "mcq",
+        text: "The Nazca Plate is a smaller oceanic plate in the eastern Pacific. It is subducting under the South American Plate. What does this convergent boundary produce?",
+        options: ["A mid-ocean ridge", "The Andes Mountains and volcanoes along South America\u2019s west coast", "The Amazon Rainforest", "The Atlantic Ocean"],
+        correct: 1,
+        hint: "When an oceanic plate subducts under a continental plate, the melting rock rises as magma and forms a chain of mountains and volcanoes on the continent.",
+        why: "The <strong>Nazca Plate</strong> subducts under the <strong>South American Plate</strong>, creating the <strong>Andes Mountains</strong> \u2014 the longest continental mountain range \u2014 and a chain of active volcanoes along South America\u2019s western coast. This is a classic example of ocean-continent convergence."
       }
     ]
   },
@@ -1043,7 +1075,7 @@ render();
   ATL: Critical thinking (cause-effect chains, evaluating evidence)
   Global Context: Orientation in space and time
 
-  Question Types Used: MCQ, True/False, Ordering, Matching, Fill-the-Blank, Multi-Select (37 questions total)
+  Question Types Used: MCQ, True/False, Ordering, Matching, Fill-the-Blank, Multi-Select (40 questions total)
 
   Suggested Debrief Questions:
   1. How does the concept of "change" connect what happens inside Earth to what we see on the surface?

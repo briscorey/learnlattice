@@ -2,7 +2,7 @@
 layout: "game"
 title: "Earth Science Review — Grade 6"
 date: 2026-03-18
-description: "Interactive 37-question review covering Earth's layers, convection currents, plate tectonics, plate boundaries, continental drift, earthquakes, and volcanoes. 5 scaffolded stages with 6 question types."
+description: "Interactive 40-question review covering Earth's layers, convection currents, plate tectonics, tectonic plate names, plate boundaries, continental drift, earthquakes, and volcanoes. 5 scaffolded stages with 6 question types."
 hook: "Review everything from Earth's core to the surface in 5 interactive stages"
 subjects:
   - "Earth Science"
@@ -26,7 +26,7 @@ global-contexts:
 statement_of_inquiry: "Change in Earth's environment can be understood through models of its internal structure and processes."
 game_url: "/games/revision/earth-science-g6.html?embed=1"
 seo_title: "Earth Science Review Game — Grade 6 | MYP Plate Tectonics Revision"
-seo_description: "Free interactive Grade 6 Earth Science revision game. 37 questions across 5 stages: layers of the Earth, convection currents, plate boundaries, continental drift, volcanoes and earthquakes."
+seo_description: "Free interactive Grade 6 Earth Science revision game. 40 questions across 5 stages: layers of the Earth, convection currents, tectonic plates, plate boundaries, continental drift, volcanoes and earthquakes."
 revision: true
 ---
 
