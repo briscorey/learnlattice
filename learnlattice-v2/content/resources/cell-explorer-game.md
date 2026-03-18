@@ -59,4 +59,4 @@ This game supports **Criterion A (Knowing and Understanding)** by developing fac
 - Explain how organelles work together as a system
 - Use real-world analogies to explain cell structure to others
 ## What to Do Next
-After mastering the game, check out the **[Photosynthesis and Cellular Respiration Worksheet](/resources/photosynthesis-cellular-respiration-worksheet/)** to connect organelle function to energy systems, or the **[Biodiversity and Classification Worksheet](/resources/biodiversity-and-classification-worksheet/)** for broader biology contexts.
+After mastering the game, check out the **[Photosynthesis and Cellular Respiration Comparison](/resources/photosynthesis-and-cellular-respiration-comparison/)** to connect organelle function to energy systems, or the **[Investigating Biodiversity in Two Habitats](/resources/investigating-biodiversity-in-two-habitats/)** for broader biology contexts.
