@@ -228,4 +228,16 @@
 })();
 </script>
 
+<script>
+// Fix: HTML5 parser sometimes nests rs-sidebar inside rs-main
+// when .Content has raw HTML blocks. Move sidebar to correct parent.
+(function(){
+  var layout = document.querySelector('.rs-layout');
+  var sidebar = document.querySelector('.rs-sidebar');
+  if (layout && sidebar && sidebar.parentElement !== layout) {
+    layout.appendChild(sidebar);
+  }
+})();
+</script>
+
 {{ end }}
