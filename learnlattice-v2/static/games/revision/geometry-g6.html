@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geometry Review — Grade 6</title>
+<!-- MYP Alignment
+   Criteria: A – Knowing & Understanding
+   Key Concept: Form
+   Related Concepts: Measurement, Representation
+   ATL: Critical thinking — select and apply correct formula
+   Global Context: Scientific and Technical Innovation
+-->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+
+/* === LAYOUT === */
+.app{display:flex;flex-direction:column;min-height:100vh;max-width:900px;margin:0 auto;padding:16px}
+.header{text-align:center;padding:16px 0 8px}
+.header h1{font-size:1.5rem;font-weight:700;color:#f8fafc}
+.header .sub{font-size:.82rem;color:#94a3b8;margin-top:2px}
+.myp-badge{display:inline-block;background:rgba(13,148,136,.15);color:#2dd4bf;font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:6px}
+
+/* === TABS === */
+.tabs{display:flex;gap:4px;margin:14px 0 16px;background:#1e293b;border-radius:12px;padding:4px}
+.tab{flex:1;padding:10px;text-align:center;border-radius:10px;font-size:.82rem;font-weight:600;cursor:pointer;color:#94a3b8;transition:all .2s;border:none;background:none;font-family:inherit}
+.tab.active{background:#0f172a;color:#f8fafc;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.tab:hover:not(.active){color:#e2e8f0}
+.tab-panel{display:none}.tab-panel.active{display:flex;flex-direction:column;flex:1}
+
+/* === PROGRESS === */
+.progress-bar{display:flex;gap:5px;margin-bottom:6px}
+.prog-step{flex:1;height:5px;border-radius:3px;background:#1e293b;transition:background .4s}
+.prog-step.done{background:#22c55e}.prog-step.now{background:#3b82f6;animation:pulse .5s infinite alternate}
+@keyframes pulse{from{opacity:.6}to{opacity:1}}
+.prog-labels{display:flex;gap:5px;margin-bottom:14px}
+.prog-labels span{flex:1;text-align:center;font-size:.58rem;color:#475569;font-weight:500}
+.prog-labels span.now{color:#93c5fd}.prog-labels span.done{color:#86efac}
+
+/* === STAGE CARD === */
+.stage{background:#1e293b;border-radius:14px;padding:24px;flex:1;display:flex;flex-direction:column;border:1px solid #334155}
+.stg-num{font-size:.68rem;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:.07em}
+.stg-title{font-size:1.2rem;font-weight:700;margin:3px 0;color:#f1f5f9}
+.stg-int{font-size:.8rem;color:#94a3b8;font-style:italic;margin-bottom:16px}
+.q-count{font-size:.72rem;color:#64748b;margin-bottom:8px}
+
+/* === QUESTION === */
+.q-text{font-size:.95rem;color:#e2e8f0;margin-bottom:14px;line-height:1.55}
+.q-text strong{color:#2dd4bf}
+.q-visual{text-align:center;margin:12px 0 16px}
+.q-visual svg{max-width:280px}
+.q-input-row{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.q-input{background:#0f172a;border:2px solid #334155;border-radius:10px;padding:12px 16px;font-size:1rem;color:#e2e8f0;font-family:inherit;width:180px;text-align:center;transition:border-color .2s}
+.q-input:focus{outline:none;border-color:#3b82f6}
+.q-input.correct{border-color:#22c55e;background:rgba(34,197,94,.08)}
+.q-input.wrong{border-color:#ef4444;background:rgba(239,68,68,.06)}
+.q-unit{font-size:.88rem;color:#94a3b8;font-weight:500}
+.q-submit{padding:10px 24px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;background:#3b82f6;color:#fff;transition:all .15s}
+.q-submit:hover{background:#2563eb}
+
+/* === FEEDBACK === */
+.fb{padding:12px 16px;border-radius:10px;margin:10px 0;font-size:.85rem;line-height:1.5;display:none}
+.fb.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86efac;display:block}
+.fb.no{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#fca5a5;display:block}
+.fb .why{margin-top:6px;font-size:.8rem;color:#94a3b8}
+.fb .why strong{color:#cbd5e1}
+
+/* === MCQ OPTIONS === */
+.opts{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.opt{background:#0f172a;border:2px solid #334155;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#e2e8f0;cursor:pointer;text-align:left;transition:all .15s;font-family:inherit}
+.opt:hover:not(.dis){border-color:#3b82f6;background:rgba(59,130,246,.06)}
+.opt.cor{border-color:#22c55e;background:rgba(34,197,94,.1);color:#86efac}
+.opt.inc{border-color:#ef4444;background:rgba(239,68,68,.06);color:#fca5a5}
+.opt.dis{cursor:default;opacity:.55}
+
+/* === BUTTONS === */
+.btn-row{display:flex;gap:10px;margin-top:auto;padding-top:14px;justify-content:flex-end}
+.btn{padding:10px 24px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
+.btn-p{background:#3b82f6;color:#fff}.btn-p:hover{background:#2563eb}
+.btn-g{background:#22c55e;color:#fff}.btn-g:hover{background:#16a34a}
+.btn-s{background:#334155;color:#e2e8f0}.btn-s:hover{background:#475569}
+
+/* === SCORE CHIP === */
+.score-chip{position:fixed;top:14px;right:14px;background:#1e293b;border:1px solid #334155;border-radius:10px;padding:8px 14px;font-size:.78rem;color:#94a3b8;z-index:20}
+.score-chip b{font-size:1rem;color:#f8fafc}
+
+/* === TRANSITION === */
+.trans{text-align:center;padding:36px 20px}
+.trans .em{font-size:2.8rem;margin-bottom:14px}
+.trans h2{font-size:1.2rem;color:#f1f5f9;margin-bottom:6px}
+.trans .sc{font-size:1rem;color:#22c55e;font-weight:600;margin:10px 0}
+.trans p{color:#94a3b8;font-size:.88rem}
+
+/* === FINAL === */
+.final{text-align:center;padding:36px 20px}
+.final h2{font-size:1.4rem;color:#f8fafc;margin-bottom:6px}
+.final .big{font-size:2.6rem;font-weight:800;color:#22c55e;margin:12px 0}
+.final .grd{font-size:.95rem;color:#94a3b8;margin-bottom:20px}
+.stg-bd{display:flex;flex-direction:column;gap:6px;margin:16px auto;max-width:360px;text-align:left}
+.stg-r{display:flex;justify-content:space-between;padding:7px 12px;background:#0f172a;border-radius:7px;font-size:.82rem}
+.stg-r .n{color:#94a3b8}.stg-r .s{color:#22c55e;font-weight:600}
+.transfer{background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.3);border-radius:10px;padding:16px;margin-top:20px;text-align:left}
+.transfer h3{color:#2dd4bf;font-size:.82rem;margin-bottom:6px}
+.transfer p{color:#e2e8f0;font-size:.85rem;line-height:1.5}
+
+/* === INTRO === */
+.intro{text-align:center;padding:24px 16px}
+.intro h2{font-size:1.4rem;margin-bottom:10px;color:#f8fafc}
+.intro p{color:#94a3b8;font-size:.9rem;margin-bottom:6px;line-height:1.5}
+.intro-topics{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0}
+.intro-topic{background:rgba(13,148,136,.12);color:#2dd4bf;padding:5px 12px;border-radius:18px;font-size:.78rem;font-weight:500}
+.soi{background:rgba(13,148,136,.08);border-left:3px solid #0d9488;padding:10px 14px;margin:14px 0;text-align:left;font-size:.82rem;color:#2dd4bf;font-style:italic;line-height:1.5;border-radius:0 8px 8px 0}
+
+/* === FORMULA SHEET === */
+.fs-search{width:100%;padding:12px 16px;border-radius:10px;border:2px solid #334155;background:#0f172a;color:#e2e8f0;font-size:.92rem;font-family:inherit;margin-bottom:14px;transition:border-color .2s}
+.fs-search:focus{outline:none;border-color:#0d9488}
+.fs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;overflow-y:auto;flex:1;padding-bottom:16px}
+.fs-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:14px;transition:all .2s}
+.fs-card.hide{display:none}
+.fs-card:hover{border-color:#0d9488}
+.fs-name{font-size:.82rem;font-weight:700;color:#2dd4bf;margin-bottom:4px}
+.fs-cat{font-size:.62rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.fs-formula{font-size:.95rem;font-weight:600;color:#f8fafc;background:#0f172a;padding:8px 10px;border-radius:8px;text-align:center;margin-bottom:6px;font-family:'Courier New',monospace}
+.fs-note{font-size:.72rem;color:#94a3b8;line-height:1.4}
+.fs-visual{text-align:center;margin:6px 0}
+.fs-visual svg{max-width:100px;height:auto}
+
+/* === CALCULATOR === */
+.calc-toggle{position:fixed;bottom:16px;right:16px;width:48px;height:48px;border-radius:50%;background:#0d9488;color:#fff;border:none;font-size:1.4rem;cursor:pointer;z-index:30;box-shadow:0 4px 16px rgba(0,0,0,.4);transition:transform .15s;display:flex;align-items:center;justify-content:center}
+.calc-toggle:hover{transform:scale(1.1)}
+.calc-overlay{display:none;position:fixed;bottom:76px;right:16px;width:260px;background:#1e293b;border:1px solid #334155;border-radius:14px;padding:14px;z-index:30;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.calc-overlay.open{display:block}
+.calc-display{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px 12px;font-size:1.3rem;font-family:'Courier New',monospace;color:#f8fafc;text-align:right;margin-bottom:10px;min-height:44px;word-break:break-all;overflow:hidden}
+.calc-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.calc-btn{padding:12px 0;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:1rem;font-family:inherit;cursor:pointer;transition:all .1s;text-align:center}
+.calc-btn:hover{background:#334155}
+.calc-btn.op{background:#334155;color:#2dd4bf}
+.calc-btn.eq{background:#0d9488;color:#fff;font-weight:700}
+.calc-btn.cl{background:#ef4444;color:#fff;font-size:.85rem}
+.calc-btn.wide{grid-column:span 2}
+
+@media(max-width:600px){
+  .app{padding:10px}
+  .stage{padding:16px}
+  .fs-grid{grid-template-columns:1fr}
+  .score-chip{top:auto;bottom:70px;right:10px}
+  .calc-overlay{width:calc(100vw - 32px);right:16px;left:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+  <!-- TABS -->
+  <div class="header">
+    <h1>Geometry Review</h1>
+    <div class="sub">Grade 6 — Perimeter, Area, Volume & Capacity</div>
+    <div class="myp-badge">Key Concept: Form</div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('review')">📝 Review</button>
+    <button class="tab" onclick="switchTab('formulas')">📐 Formula Sheet</button>
+  </div>
+  <div id="reviewPanel" class="tab-panel active"></div>
+  <div id="formulaPanel" class="tab-panel"></div>
+</div>
+
+<!-- CALCULATOR BUTTON + PANEL -->
+<button class="calc-toggle" onclick="toggleCalc()" title="Calculator">🧮</button>
+<div class="calc-overlay" id="calcPanel">
+  <div class="calc-display" id="calcDisp">0</div>
+  <div class="calc-btns">
+    <button class="calc-btn cl" onclick="calcClear()">C</button>
+    <button class="calc-btn op" onclick="calcInput('(')">(</button>
+    <button class="calc-btn op" onclick="calcInput(')')">)</button>
+    <button class="calc-btn op" onclick="calcInput('÷')">÷</button>
+    <button class="calc-btn" onclick="calcInput('7')">7</button>
+    <button class="calc-btn" onclick="calcInput('8')">8</button>
+    <button class="calc-btn" onclick="calcInput('9')">9</button>
+    <button class="calc-btn op" onclick="calcInput('×')">×</button>
+    <button class="calc-btn" onclick="calcInput('4')">4</button>
+    <button class="calc-btn" onclick="calcInput('5')">5</button>
+    <button class="calc-btn" onclick="calcInput('6')">6</button>
+    <button class="calc-btn op" onclick="calcInput('-')">-</button>
+    <button class="calc-btn" onclick="calcInput('1')">1</button>
+    <button class="calc-btn" onclick="calcInput('2')">2</button>
+    <button class="calc-btn" onclick="calcInput('3')">3</button>
+    <button class="calc-btn op" onclick="calcInput('+')">+</button>
+    <button class="calc-btn wide" onclick="calcInput('0')">0</button>
+    <button class="calc-btn" onclick="calcInput('.')">.</button>
+    <button class="calc-btn eq" onclick="calcEval()">=</button>
+    <button class="calc-btn" onclick="calcInput('π')">π</button>
+    <button class="calc-btn" onclick="calcInput('²')">x²</button>
+    <button class="calc-btn" onclick="calcInput('√')">√</button>
+    <button class="calc-btn op" onclick="calcBackspace()">⌫</button>
+  </div>
+</div>
+
+<script>
+// =====================================================================
+//  FORMULA DATA
+// =====================================================================
+const FORMULAS = [
+  {name:"Rectangle — Perimeter",cat:"Perimeter",formula:"P = 2(l + w)",note:"l = length, w = width. Add all four sides.",tags:"rectangle perimeter"},
+  {name:"Square — Perimeter",cat:"Perimeter",formula:"P = 4s",note:"s = side length. All four sides are equal.",tags:"square perimeter"},
+  {name:"Triangle — Perimeter",cat:"Perimeter",formula:"P = a + b + c",note:"Add all three side lengths together.",tags:"triangle perimeter"},
+  {name:"Circle — Circumference",cat:"Perimeter",formula:"C = 2πr  or  C = πd",note:"r = radius, d = diameter. π ≈ 3.14",tags:"circle circumference perimeter"},
+  {name:"Rectangle — Area",cat:"Area",formula:"A = l × w",note:"l = length, w = width.",tags:"rectangle area"},
+  {name:"Square — Area",cat:"Area",formula:"A = s²",note:"s = side length. Multiply the side by itself.",tags:"square area"},
+  {name:"Triangle — Area",cat:"Area",formula:"A = ½ × b × h",note:"b = base, h = perpendicular height (not the slant).",tags:"triangle area"},
+  {name:"Parallelogram — Area",cat:"Area",formula:"A = b × h",note:"b = base, h = perpendicular height.",tags:"parallelogram area"},
+  {name:"Trapezium — Area",cat:"Area",formula:"A = ½(a + b) × h",note:"a and b = parallel sides, h = height.",tags:"trapezium trapezoid area"},
+  {name:"Circle — Area",cat:"Area",formula:"A = πr²",note:"r = radius. Square the radius first, then multiply by π.",tags:"circle area"},
+  {name:"Rectangular Prism — Volume",cat:"Volume",formula:"V = l × w × h",note:"l = length, w = width, h = height. Also called a cuboid.",tags:"rectangular prism cuboid volume box"},
+  {name:"Cube — Volume",cat:"Volume",formula:"V = s³",note:"s = side length. All edges are equal.",tags:"cube volume"},
+  {name:"Triangular Prism — Volume",cat:"Volume",formula:"V = ½ × b × h × l",note:"b = base of triangle, h = height of triangle, l = length/depth of prism.",tags:"triangular prism volume"},
+  {name:"Cylinder — Volume",cat:"Volume",formula:"V = πr²h",note:"r = radius of circular base, h = height.",tags:"cylinder volume"},
+  {name:"Cone — Volume",cat:"Volume",formula:"V = ⅓πr²h",note:"r = radius of base, h = height. It's ⅓ of a cylinder.",tags:"cone volume"},
+  {name:"Sphere — Volume",cat:"Volume",formula:"V = ⁴⁄₃πr³",note:"r = radius. Cube the radius, multiply by π, then by 4/3.",tags:"sphere volume ball"},
+  {name:"Capacity Conversion",cat:"Capacity",formula:"1 cm³ = 1 mL\n1000 cm³ = 1 L",note:"Volume in cm³ converts directly to mL. Divide by 1000 for litres.",tags:"capacity litres millilitres conversion"},
+];
+
+// =====================================================================
+//  QUESTION BANK — procedurally varied per stage
+// =====================================================================
+function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function rnd1(a,b){return Math.round((Math.random()*(b-a)+a)*10)/10;}
+const PI=Math.PI;
+
+function genQ(stage){
+  let qs=[];
+  if(stage===0){ // Perimeter
+    qs.push({text:"Find the <strong>perimeter</strong> of a rectangle with length "+rnd(5,15)+" cm and width "+rnd(3,9)+" cm.",get ans(){let l=parseInt(this.text.match(/length (\d+)/)[1]),w=parseInt(this.text.match(/width (\d+)/)[1]);return 2*(l+w);},unit:"cm",hint:"P = 2(l + w). Add length and width, then multiply by 2.",shape:"rect"});
+    qs.push({text:"A square has a side length of "+rnd(4,12)+" cm. What is its <strong>perimeter</strong>?",get ans(){return parseInt(this.text.match(/of (\d+)/)[1])*4;},unit:"cm",hint:"P = 4 × side. All four sides are equal.",shape:"square"});
+    qs.push({text:"A triangle has sides of "+rnd(5,10)+" cm, "+rnd(6,12)+" cm, and "+rnd(4,9)+" cm. Find the <strong>perimeter</strong>.",get ans(){let m=this.text.match(/of (\d+) cm, (\d+) cm, and (\d+)/);return +m[1]+ +m[2]+ +m[3];},unit:"cm",hint:"P = a + b + c. Just add all three sides.",shape:"tri"});
+    let d=rnd(4,14);qs.push({text:"A circle has a diameter of "+d+" cm. Calculate the <strong>circumference</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round(PI*d*10)/10;},unit:"cm",hint:"C = πd. Multiply π by the diameter.",shape:"circle",dp:1});
+    let r=rnd(3,10);qs.push({text:"A circle has a radius of "+r+" cm. Calculate the <strong>circumference</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round(2*PI*r*10)/10;},unit:"cm",hint:"C = 2πr. Multiply 2 × π × radius.",shape:"circle",dp:1});
+    qs.push({type:"mcq",text:"Which formula gives the <strong>circumference</strong> of a circle?",options:["C = πr²","C = 2πr","C = 2(l + w)","C = 4s"],correct:1,hint:"Circumference is the distance around the outside of a circle.",why:"<strong>C = 2πr</strong> (or C = πd) gives the circumference. πr² is the area, not the perimeter."});
+  }
+  else if(stage===1){ // Area
+    qs.push({text:"Find the <strong>area</strong> of a rectangle with length "+rnd(6,18)+" cm and width "+rnd(3,10)+" cm.",get ans(){let l=parseInt(this.text.match(/length (\d+)/)[1]),w=parseInt(this.text.match(/width (\d+)/)[1]);return l*w;},unit:"cm²",hint:"A = l × w.",shape:"rect"});
+    qs.push({text:"A square has sides of "+rnd(5,12)+" cm. What is its <strong>area</strong>?",get ans(){let s=parseInt(this.text.match(/of (\d+)/)[1]);return s*s;},unit:"cm²",hint:"A = s². Multiply the side by itself.",shape:"square"});
+    let b1=rnd(6,14),h1=rnd(4,10);qs.push({text:"Find the <strong>area</strong> of a triangle with base "+b1+" cm and height "+h1+" cm.",get ans(){return b1*h1/2;},unit:"cm²",hint:"A = ½ × b × h. Multiply base by height, then halve it.",shape:"tri"});
+    let b2=rnd(5,12),h2=rnd(4,9);qs.push({text:"A parallelogram has a base of "+b2+" cm and a perpendicular height of "+h2+" cm. Find its <strong>area</strong>.",get ans(){return b2*h2;},unit:"cm²",hint:"A = b × h. Same as a rectangle — base times perpendicular height.",shape:"para"});
+    let r2=rnd(3,8);qs.push({text:"A circle has a radius of "+r2+" cm. Calculate the <strong>area</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round(PI*r2*r2*10)/10;},unit:"cm²",hint:"A = πr². Square the radius first, then multiply by π.",shape:"circle",dp:1});
+    qs.push({type:"mcq",text:"A triangle has a base of 10 cm and a slant height of 8 cm. The perpendicular height is 6 cm. Which measurements do you use for the area?",options:["Base and slant height","Base and perpendicular height","Slant height and perpendicular height","All three measurements"],correct:1,hint:"Area always uses the PERPENDICULAR height — the one at a right angle to the base.",why:"<strong>A = ½ × base × perpendicular height.</strong> The slant height is never used for area. A common mistake!"});
+  }
+  else if(stage===2){ // Surface Area
+    let l3=rnd(4,10),w3=rnd(3,8),h3=rnd(2,6);qs.push({text:"Find the <strong>surface area</strong> of a rectangular prism with length "+l3+" cm, width "+w3+" cm, and height "+h3+" cm.",get ans(){return 2*(l3*w3+l3*h3+w3*h3);},unit:"cm²",hint:"SA = 2(lw + lh + wh). Find the area of each pair of faces.",shape:"box"});
+    let s3=rnd(3,9);qs.push({text:"A cube has sides of "+s3+" cm. What is its <strong>surface area</strong>?",get ans(){return 6*s3*s3;},unit:"cm²",hint:"SA = 6s². A cube has 6 identical square faces.",shape:"cube"});
+    let r3=rnd(3,7),h3b=rnd(5,12);qs.push({text:"A cylinder has a radius of "+r3+" cm and a height of "+h3b+" cm. Calculate its <strong>surface area</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round((2*PI*r3*r3+2*PI*r3*h3b)*10)/10;},unit:"cm²",hint:"SA = 2πr² + 2πrh. Two circles (top and bottom) plus the curved surface.",shape:"cyl",dp:1});
+    qs.push({type:"mcq",text:"A rectangular prism has 6 faces. How many <strong>pairs</strong> of identical faces does it have?",options:["2","3","4","6"],correct:1,hint:"Think about top/bottom, front/back, left/right.",why:"A rectangular prism has <strong>3 pairs</strong> of identical faces: top & bottom, front & back, left & right. That's why the formula uses 2(lw + lh + wh)."});
+    let b3=rnd(4,8),h3c=rnd(3,6),l3b=rnd(6,12);qs.push({text:"A triangular prism has a triangle base of "+b3+" cm, triangle height of "+h3c+" cm, and prism length of "+l3b+" cm. The slant sides of the triangle are each "+rnd(5,9)+" cm. Find the <strong>area of the two triangular faces only</strong>.",get ans(){return b3*h3c;},unit:"cm²",hint:"Each triangle = ½ × b × h. There are two of them, so total = b × h.",shape:"triprism"});
+  }
+  else if(stage===3){ // Volume
+    let l4=rnd(4,12),w4=rnd(3,8),h4=rnd(2,7);qs.push({text:"Find the <strong>volume</strong> of a rectangular prism with length "+l4+" cm, width "+w4+" cm, and height "+h4+" cm.",get ans(){return l4*w4*h4;},unit:"cm³",hint:"V = l × w × h.",shape:"box"});
+    let r4=rnd(3,7),h4b=rnd(5,12);qs.push({text:"A cylinder has a radius of "+r4+" cm and a height of "+h4b+" cm. Calculate its <strong>volume</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round(PI*r4*r4*h4b*10)/10;},unit:"cm³",hint:"V = πr²h. Find the area of the circle base, then multiply by height.",shape:"cyl",dp:1});
+    let r5=rnd(3,6),h5=rnd(6,12);qs.push({text:"A cone has a radius of "+r5+" cm and a height of "+h5+" cm. Calculate its <strong>volume</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round(PI*r5*r5*h5/3*10)/10;},unit:"cm³",hint:"V = ⅓πr²h. It's one-third of a cylinder with the same base and height.",shape:"cone",dp:1});
+    let r6=rnd(3,8);qs.push({text:"A sphere has a radius of "+r6+" cm. Calculate its <strong>volume</strong>. Give your answer to 1 decimal place.",get ans(){return Math.round(4/3*PI*r6*r6*r6*10)/10;},unit:"cm³",hint:"V = ⁴⁄₃πr³. Cube the radius, multiply by π, then multiply by 4/3.",shape:"sphere",dp:1});
+    qs.push({type:"mcq",text:"A cone and a cylinder have the same base radius and the same height. How does the volume of the cone compare to the cylinder?",options:["The cone is half the cylinder","The cone is one-third the cylinder","They have the same volume","The cone is twice the cylinder"],correct:1,hint:"Look at the cone formula — V = ⅓πr²h. The ⅓ is the key.",why:"A cone is exactly <strong>one-third</strong> the volume of a cylinder with the same base and height. That's why the formula has ⅓ in front."});
+    let v6=rnd(200,800);qs.push({text:"A container has a volume of "+v6+" cm³. What is its <strong>capacity in millilitres (mL)</strong>?",get ans(){return v6;},unit:"mL",hint:"1 cm³ = 1 mL. The numbers are the same!",shape:"none"});
+  }
+  else{ // Mixed
+    let l7=rnd(5,12),w7=rnd(3,8);qs.push({type:"mcq",text:"A room is "+l7+" m long and "+w7+" m wide. You want to put skirting board around the edge. Which calculation do you need?",options:["Area: "+l7+" × "+w7,"Perimeter: 2("+l7+" + "+w7+")","Volume: "+l7+" × "+w7+" × height","Circumference: 2π × "+l7],correct:1,hint:"Skirting board goes around the outside edge — that's the perimeter.",why:"Skirting board runs along the <strong>perimeter</strong> (the distance around the outside). P = 2(l + w) = 2("+l7+" + "+w7+") = "+(2*(l7+w7))+" m."});
+    let r7=rnd(4,10);qs.push({text:"A circular garden has a radius of "+r7+" m. Calculate the <strong>area</strong> of grass needed to cover it. Give your answer to 1 decimal place.",get ans(){return Math.round(PI*r7*r7*10)/10;},unit:"m²",hint:"A = πr². Square the radius, then multiply by π.",shape:"circle",dp:1});
+    let l8=rnd(20,40),w8=rnd(15,30),h8=rnd(10,25);qs.push({text:"A fish tank is "+l8+" cm long, "+w8+" cm wide, and "+h8+" cm tall. What is its <strong>capacity in litres</strong>? Give your answer to 1 decimal place.",get ans(){return Math.round(l8*w8*h8/1000*10)/10;},unit:"L",hint:"V = l × w × h gives cm³. Then divide by 1000 to convert to litres (1000 cm³ = 1 L).",shape:"box",dp:1});
+    let r8=rnd(3,6),h8b=rnd(8,15);qs.push({text:"A cylindrical water bottle has a radius of "+r8+" cm and a height of "+h8b+" cm. How many <strong>millilitres</strong> does it hold? Give your answer to the nearest whole number.",get ans(){return Math.round(PI*r8*r8*h8b);},unit:"mL",hint:"V = πr²h gives cm³. Since 1 cm³ = 1 mL, the answer in cm³ IS the answer in mL.",shape:"cyl",dp:0});
+    qs.push({type:"mcq",text:"Which of these units measures <strong>volume</strong>?",options:["cm","cm²","cm³","mL/s"],correct:2,hint:"Volume is 3D — it has three dimensions (length × width × height).",why:"<strong>cm³</strong> (cubic centimetres) measures volume. cm is length (1D), cm² is area (2D), and mL/s is a rate."});
+    let s7=rnd(4,9);qs.push({text:"A cube-shaped box has sides of "+s7+" cm. What is its <strong>volume</strong>?",get ans(){return s7*s7*s7;},unit:"cm³",hint:"V = s³. Multiply the side length by itself three times.",shape:"cube"});
+  }
+  return qs;
+}
+
+const STAGE_NAMES=["Perimeter","Area of 2D Shapes","Surface Area","Volume & Capacity","Mixed Problems"];
+const STAGE_INT=["I can calculate the perimeter of rectangles, triangles, and circles.","I can calculate the area of rectangles, triangles, parallelograms, and circles.","I can find the surface area of prisms and cylinders.","I can calculate the volume of prisms, cylinders, cones, and spheres.","I can choose the correct formula and apply it in real-world contexts."];
+
+// =====================================================================
+//  GAME STATE
+// =====================================================================
+let S={stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[]};
+
+function render(){
+  const p=document.getElementById('reviewPanel');
+  if(S.phase==='intro')renderIntro(p);
+  else if(S.phase==='final')renderFinal(p);
+  else if(S.phase==='trans')renderTrans(p);
+  else renderStage(p);
+}
+
+function renderIntro(p){
+  const tq=STAGE_NAMES.length*6;
+  p.innerHTML=`<div class="stage intro"><h2>Welcome, Mathematician</h2><p>Review perimeter, area, volume, and capacity across 5 stages.</p>
+  <div class="soi">"Understanding the form of shapes allows us to measure, compare, and design the world around us."</div>
+  <div class="intro-topics">${['Perimeter','Circumference','Area','Surface Area','Volume','Capacity','Rectangles','Triangles','Circles','Cylinders','Cones','Spheres'].map(t=>'<span class="intro-topic">'+t+'</span>').join('')}</div>
+  <p>5 stages · ~30 questions · Use the 📐 Formula Sheet tab and 🧮 Calculator any time</p>
+  <div class="btn-row" style="justify-content:center;margin-top:16px"><button class="btn btn-p" onclick="startGame()">Start Review</button></div></div>`;
+}
+
+function startGame(){S.stage=0;S.qi=0;S.phase='play';S.ans=false;S.qs=genQ(0);S.sm=S.qs.map(()=>1);render();}
+
+function renderStage(p){
+  const q=S.qs[S.qi];
+  let qHTML='';
+  if(q.type==='mcq') qHTML=renderMCQ(q);
+  else qHTML=renderCalcQ(q);
+  p.innerHTML=`
+    <div class="progress-bar">${STAGE_NAMES.map((_,i)=>'<div class="prog-step '+(i<S.stage?'done':i===S.stage?'now':'')+'"></div>').join('')}</div>
+    <div class="prog-labels">${STAGE_NAMES.map((n,i)=>'<span class="'+(i<S.stage?'done':i===S.stage?'now':'')+'">'+n+'</span>').join('')}</div>
+    <div class="score-chip">Score <b>${S.score}</b></div>
+    <div class="stage">
+      <div class="stg-num">Stage ${S.stage+1} of 5</div>
+      <div class="stg-title">${STAGE_NAMES[S.stage]}</div>
+      <div class="stg-int">${STAGE_INT[S.stage]}</div>
+      <div class="q-count">Question ${S.qi+1} of ${S.qs.length}</div>
+      <div class="q-text">${q.text}</div>
+      ${qHTML}
+      <div id="fb" class="fb"></div>
+      <div class="btn-row" id="btnRow"></div>
+    </div>`;
+}
+
+function renderCalcQ(q){
+  return `<div class="q-input-row">
+    <input class="q-input" id="qInp" type="number" step="any" placeholder="Your answer" autocomplete="off">
+    <span class="q-unit">${q.unit}</span>
+    <button class="q-submit" onclick="checkCalcQ()">Check</button>
+  </div>`;
+}
+
+function checkCalcQ(){
+  if(S.ans)return;
+  const q=S.qs[S.qi];
+  const inp=document.getElementById('qInp');
+  const val=parseFloat(inp.value);
+  if(isNaN(val)){inp.classList.add('wrong');return;}
+  S.ans=true;
+  const correct=q.ans;
+  const tolerance=q.dp!==undefined?Math.pow(10,-(q.dp+1))*5:0.01;
+  const ok=Math.abs(val-correct)<=Math.max(tolerance,correct*0.005);
+  inp.classList.add(ok?'correct':'wrong');
+  inp.disabled=true;
+  document.querySelector('.q-submit').disabled=true;
+  if(ok){S.score++;S.ss[S.stage]++;}
+  showFB(ok,q.hint,"The answer is <strong>"+correct+" "+q.unit+"</strong>. "+q.hint);
+  showNext();
+}
+
+function renderMCQ(q){
+  return `<div class="opts">${q.options.map((o,i)=>'<button class="opt" onclick="checkMCQ('+i+')" id="o'+i+'">'+o+'</button>').join('')}</div>`;
+}
+
+function checkMCQ(i){
+  if(S.ans)return;S.ans=true;
+  const q=S.qs[S.qi];const ok=i===q.correct;
+  document.querySelectorAll('.opt').forEach((b,j)=>{b.classList.add('dis');if(j===q.correct)b.classList.add('cor');if(j===i&&!ok)b.classList.add('inc');});
+  if(ok){S.score++;S.ss[S.stage]++;}
+  showFB(ok,q.hint,q.why);showNext();
+}
+
+function showFB(ok,hint,why){
+  const fb=document.getElementById('fb');
+  fb.className=ok?'fb ok':'fb no';
+  fb.innerHTML=ok?'✓ Correct!<div class="why">'+why+'</div>':'✗ Not quite. '+hint+'<div class="why"><strong>Explanation:</strong> '+why+'</div>';
+}
+
+function showNext(){
+  const r=document.getElementById('btnRow');
+  const lastQ=S.qi>=S.qs.length-1;
+  const lastS=S.stage>=4;
+  if(lastQ&&lastS)r.innerHTML='<button class="btn btn-g" onclick="showFinal()">See Results</button>';
+  else if(lastQ)r.innerHTML='<button class="btn btn-g" onclick="nextStage()">Complete Stage →</button>';
+  else r.innerHTML='<button class="btn btn-p" onclick="nextQ()">Next Question →</button>';
+}
+
+function nextQ(){S.qi++;S.ans=false;render();}
+function nextStage(){S.phase='trans';render();}
+
+function renderTrans(p){
+  const sc=S.ss[S.stage],mx=S.qs.length;const pct=Math.round(sc/mx*100);
+  const em=pct>=70?'🌟':pct>=50?'👍':'💪';
+  const nxt=STAGE_NAMES[S.stage+1];
+  p.innerHTML=`<div class="score-chip">Score <b>${S.score}</b></div><div class="stage trans"><div class="em">${em}</div><h2>Stage ${S.stage+1} Complete: ${STAGE_NAMES[S.stage]}</h2><div class="sc">${sc}/${mx} (${pct}%)</div><p>${pct>=70?'Great work!':pct>=50?'Good effort!':'Keep going — revision builds mastery!'}</p><p style="margin-top:16px;color:#64748b">Next: <strong style="color:#93c5fd">${nxt}</strong></p><div class="btn-row" style="justify-content:center;margin-top:20px"><button class="btn btn-p" onclick="proceedNext()">Continue →</button></div></div>`;
+}
+
+function proceedNext(){S.stage++;S.qi=0;S.ans=false;S.qs=genQ(S.stage);S.sm=S.qs.map(()=>1);S.phase='play';render();}
+
+function showFinal(){S.phase='final';render();}
+function renderFinal(p){
+  const tot=S.ss.reduce((a,b)=>a+b,0);const mx=S.ss.length*6;// approx
+  // Count actual total from stage question lengths
+  const pct=Math.round(tot/getTotalQ()*100);
+  const grd=pct>=90?'Outstanding':pct>=70?'Proficient':pct>=50?'Developing':'Emerging';
+  const em=pct>=90?'🏆':pct>=70?'🌟':pct>=50?'📈':'🌱';
+  p.innerHTML=`<div class="stage final"><div style="font-size:2.8rem">${em}</div><h2>Review Complete!</h2><div class="big">${tot}/${getTotalQ()} (${pct}%)</div><div class="grd">${grd}</div>
+  <div class="stg-bd">${STAGE_NAMES.map((n,i)=>'<div class="stg-r"><span class="n">'+n+'</span><span class="s">'+S.ss[i]+'/'+getStageLen(i)+'</span></div>').join('')}</div>
+  <div class="transfer"><h3>Now think about this...</h3><p>Every object around you has measurable properties — perimeter, area, volume. The phone in your pocket, the room you're in, the water bottle on your desk. Geometry isn't abstract — it's how we measure and build the real world. Which formula would you use to figure out how much paint you need for a wall? How much water fits in a swimming pool?</p></div>
+  <div class="btn-row" style="justify-content:center;margin-top:16px"><button class="btn btn-s" onclick="resetGame()">Try Again</button></div></div>`;
+}
+
+// Track total questions across stages
+let stageLens=[0,0,0,0,0];
+function getStageLen(i){return stageLens[i]||6;}
+function getTotalQ(){return stageLens.reduce((a,b)=>a+b,0)||30;}
+
+function resetGame(){S={stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[]};render();}
+
+// Override startGame and proceedNext to track lengths
+const _startGame=startGame;
+startGame=function(){_startGame();stageLens[0]=S.qs.length;};
+const _proceedNext=proceedNext;
+proceedNext=function(){_proceedNext();stageLens[S.stage]=S.qs.length;};
+
+// =====================================================================
+//  FORMULA SHEET
+// =====================================================================
+function renderFormulas(){
+  const fp=document.getElementById('formulaPanel');
+  fp.innerHTML=`<div class="fs-search-wrap"><input class="fs-search" id="fsSearch" placeholder="Type a shape or topic... (e.g. circle, volume, cone)" oninput="filterFormulas()"></div>
+  <div class="fs-grid" id="fsGrid">${FORMULAS.map((f,i)=>`<div class="fs-card" data-tags="${f.tags} ${f.name.toLowerCase()} ${f.cat.toLowerCase()}" id="fc${i}">
+    <div class="fs-cat">${f.cat}</div>
+    <div class="fs-name">${f.name}</div>
+    <div class="fs-formula">${f.formula.replace(/\n/g,'<br>')}</div>
+    <div class="fs-note">${f.note}</div>
+  </div>`).join('')}</div>`;
+}
+function filterFormulas(){
+  const q=document.getElementById('fsSearch').value.toLowerCase().trim();
+  document.querySelectorAll('.fs-card').forEach(c=>{
+    if(!q)c.classList.remove('hide');
+    else c.classList.toggle('hide',!c.dataset.tags.includes(q));
+  });
+}
+
+// =====================================================================
+//  TAB SWITCHING
+// =====================================================================
+function switchTab(t){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  if(t==='review'){
+    document.querySelectorAll('.tab')[0].classList.add('active');
+    document.getElementById('reviewPanel').classList.add('active');
+  } else {
+    document.querySelectorAll('.tab')[1].classList.add('active');
+    document.getElementById('formulaPanel').classList.add('active');
+  }
+}
+
+// =====================================================================
+//  CALCULATOR
+// =====================================================================
+let calcStr='';
+function toggleCalc(){document.getElementById('calcPanel').classList.toggle('open');}
+function calcInput(c){
+  if(c==='π')calcStr+='3.14159265';
+  else if(c==='²'){calcStr+='**2';}
+  else if(c==='√'){calcStr+='Math.sqrt(';}
+  else calcStr+=c;
+  updateCalcDisp();
+}
+function calcClear(){calcStr='';updateCalcDisp();}
+function calcBackspace(){calcStr=calcStr.slice(0,-1);updateCalcDisp();}
+function calcEval(){
+  try{
+    let expr=calcStr.replace(/×/g,'*').replace(/÷/g,'/');
+    // Close unclosed parens
+    let open=(expr.match(/\(/g)||[]).length;
+    let close=(expr.match(/\)/g)||[]).length;
+    for(let i=0;i<open-close;i++)expr+=')';
+    let result=Function('"use strict";return ('+expr+')')();
+    if(typeof result==='number'){
+      result=Math.round(result*10000)/10000;
+      calcStr=String(result);
+    }
+  }catch(e){calcStr='Error';}
+  updateCalcDisp();
+  if(calcStr==='Error')setTimeout(()=>{calcStr='';updateCalcDisp();},1000);
+}
+function updateCalcDisp(){
+  const d=document.getElementById('calcDisp');
+  let display=calcStr||'0';
+  display=display.replace(/\*\*2/g,'²').replace(/Math\.sqrt\(/g,'√(').replace(/\*/g,'×').replace(/\//g,'÷');
+  d.textContent=display;
+}
+
+// =====================================================================
+//  INIT
+// =====================================================================
+render();
+renderFormulas();
+</script>
+
+<!-- Teacher Notes:
+  MYP Alignment: Criterion A (Knowing & Understanding)
+  Key Concept: Form | Related Concepts: Measurement, Representation
+  ATL: Critical thinking — select correct formula and apply to context
+  Global Context: Scientific and Technical Innovation
+
+  Stages: Perimeter (6Q), Area (6Q), Surface Area (5Q), Volume & Capacity (6Q), Mixed (6Q) ≈ 29 questions
+  Questions are procedurally generated with random values — each playthrough is different.
+
+  Features:
+  - Formula Sheet tab with live search (type shape name to filter)
+  - Built-in calculator with π, x², √ buttons
+  - Students can switch between review and formula sheet at any time
+
+  Suggested Debrief Questions:
+  1. What is the difference between perimeter and area? When would you use each in real life?
+  2. Why is the volume of a cone exactly one-third of a cylinder with the same base and height?
+  3. How do you convert between cm³ and litres? Why is this useful?
+  4. When a question asks for "capacity", what is it really asking you to find?
+
+  Differentiation:
+  - Support: Students can use the formula sheet tab at any time. Calculator is always available.
+  - Extension: After completing, challenge students to calculate the volume and surface area of a composite shape (e.g. a cylinder with a hemisphere on top).
+
+  Estimated Play Time: 20-25 minutes
+-->
+</body>
+</html>
