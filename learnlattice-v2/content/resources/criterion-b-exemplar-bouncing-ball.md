@@ -96,7 +96,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "What Does Level 7 Look Like? Bouncing Ball | MYP Criterion B Physics | Grade 7-8"
+seo_title: "What Does Level 7 Look Like? Bouncing Ball | MYP Criterio..."
 seo_description: "Free MYP Physics investigation pack targeting Criterion B for Grade 7-8. Three student responses to a Criterion B science investigati"
 ---
 

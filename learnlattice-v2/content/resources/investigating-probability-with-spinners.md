@@ -24,7 +24,7 @@ statement_of_inquiry: "The proportion of space allocated to an outcome determine
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Can you design a spinner where red comes up exactly twice as often as blue?"
-seo_title: "Investigating Probability with Spinners | MYP Resource | LearnLattice"
+seo_title: "Investigating Probability with Spinners | MYP Resource | ..."
 seo_description: "Students design, test, and modify spinners to investigate the relationship between sector size and experimental probability, building understanding of theo"
 ---
 

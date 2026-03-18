@@ -3,6 +3,7 @@ title: "Equation Quest"
 layout: "game"
 date: 2025-09-04
 description: "A 5-stage journey from naming parts of an equation to solving real-world word problems. Scaffolded hints on every wrong answer. Streak bonuses reward consistent accuracy."
+hook: "A 5-stage journey from naming parts of an equation to solving real-world word problems"
 subjects:
   - "Mathematics"
 math_topic: Algebra
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

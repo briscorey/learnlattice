@@ -20,7 +20,7 @@ statement_of_inquiry: "Equations are statements about balance — and the physic
 difficulty: "meeting"
 hook: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation — without writing one."
 warmup: "A bag of marbles weighs the same as 5 erasers. Another bag weighs the same as 3 erasers. If I put both bags on one side, how many erasers balance them?"
-seo_title: "The Weighing Puzzle | Free MYP Maths Investigation | Grade 7-8"
+seo_title: "The Weighing Puzzle | Free MYP Maths Investigation"
 seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. Two bags of marbles balance three pencil"
 ---
 ## The Hook

@@ -24,7 +24,7 @@ statement_of_inquiry: "Understanding factorising expressions provides tools for 
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "A visual step-by-step explainer for factorising expressions, designed for MYP students including EAL learners. Builds un"
-seo_title: "Understand Factorising Expressions | MYP Resource | LearnLattice"
+seo_title: "Understand Factorising Expressions | MYP Resource | Learn..."
 seo_description: "A visual step-by-step explainer for factorising expressions, designed for MYP students including EAL learners. Builds understanding through worked examples"
 ---
 

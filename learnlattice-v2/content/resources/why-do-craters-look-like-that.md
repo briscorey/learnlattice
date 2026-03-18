@@ -100,7 +100,7 @@ journal_prompts:
 - "What surprised you most about how craters form?"
 - "How is dropping a marble into flour like a real meteorite impact? How is it different?"
 - "If you found a crater on Mars that was oval-shaped, what could you infer about the impact?"
-seo_title: "Crater Investigation — Drop Marbles into Flour | MYP Space Science Grade 6-7"
+seo_title: "Crater Investigation — Drop Marbles into Flour | MYP Spac..."
 seo_description: "Free MYP Space Science investigation: students drop objects into flour to model lunar crater formation, measure relationships between energy and crater size, and compare to real Moon craters."
 ---
 

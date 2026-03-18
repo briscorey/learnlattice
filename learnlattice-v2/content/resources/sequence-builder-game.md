@@ -3,6 +3,7 @@ layout: "game"
 title: "Sequence Builder"
 date: 2025-12-08
 description: "Visual growing patterns you can see. Dots, L-shapes, squares, triangles, cubes — watch them grow, spot the pattern, predict the next term, and write the formula. 8 levels."
+hook: "Visual growing patterns you can see"
 subjects:
   - "Mathematics"
 math_topic: Algebra

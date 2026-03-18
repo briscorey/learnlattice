@@ -2,12 +2,14 @@
 title: "Grade 9 Atomic Theory and Periodic Patterns Companion Investigation Pack"
 date: 2025-12-02
 description: "Companion investigation pack for grade 9 atomic theory and periodic patterns unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 9 atomic theory and periodic patterns unit"
 subjects:
   - "Chemistry"
   - "Science"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"
+difficulty: "exceeding"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -26,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
-seo_title: "Grade 9 Atomic Theory and Periodic Patterns Companion Investigation Pack | MYP Criterion B Chemistry | Grade 9"
+seo_title: "Grade 9 Atomic Theory and Periodic Patterns Companion Inv..."
 seo_description: "Companion investigation pack for grade 9 atomic theory and periodic patterns unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

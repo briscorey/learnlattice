@@ -19,7 +19,7 @@ statement_of_inquiry: "Populations grow exponentially when resources are abundan
 difficulty: "exceeding"
 hook: "A population of deer doubles every year on an island with no predators. Year 1: 10. Year 2: 20. Year 3: 40. Year 10: 10,240. By year 15, they are all dead. What happened?"
 warmup: "Fold a piece of paper in half. Now fold it again. And again. How many times can you fold it? If you could fold it 50 times, how thick would it be? (Hint: it is further than the distance to the Sun.)"
-seo_title: "The Population Crash | Free MYP Ecology Investigation | Grade 8-9"
+seo_title: "The Population Crash | Free MYP Ecology Investigation"
 seo_description: "Free MYP ecology investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. A population of deer doubles every year "
 ---
 ## The Hook

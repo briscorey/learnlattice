@@ -35,7 +35,7 @@ difficulty: "exceeding"
 duration: "4–5 lessons"
 hook: "23 students in our school reported feeling ill this week. Is this an outbreak — or just normal? And if it is an outbreak, can you find patient zero?"
 warmup: "If one person in this room had a cold and shook hands with 3 people, and each of those people shook hands with 3 more, how many people would be 'infected' after 5 rounds?"
-seo_title: "IDU Disease Detectives | MYP Math-Science Epidemiology | Grade 8-9"
+seo_title: "IDU Disease Detectives | MYP Math-Science Epidemiology"
 seo_description: "Free MYP interdisciplinary unit: students investigate a simulated disease outbreak using statistics and biology. Contact tracing, modelling, and data analysis."
 teacher_moves:
   - title: "The simulation makes it real"

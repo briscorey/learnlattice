@@ -2,6 +2,7 @@
 title: "Reading Rocks: How We Know What We Cannot See"
 date: 2025-09-17
 description: "Nobody has ever seen a tectonic plate move. Nobody has seen the inside of the Earth. Yet we know the plates are moving, the mantle is convecting, and the core is solid iron. This investigation builds the complete evidence case for plate tectonics — from scratch, the way geologists built it."
+hook: "Nobody has ever seen a tectonic plate move"
 subjects:
   - "Earth Science"
   - "Science"
@@ -111,7 +112,7 @@ journal_prompts:
 - What clue in a rock's texture tells you the most about its history?
 - How is reading a rock like reading a story?
 - If you found an unknown rock, what would you check first?
-seo_title: "Reading Rocks: How We Know What We Cannot See | MYP Criterion B Earth Science | Grade 7-9"
+seo_title: "Reading Rocks: How We Know What We Cannot See | MYP Crite..."
 seo_description: "Free MYP Earth Science investigation pack targeting Criterion B, Criterion D for Grade 7-9. Nobody has ever seen a tectonic plate move. Nobody has seen "
 ---
 

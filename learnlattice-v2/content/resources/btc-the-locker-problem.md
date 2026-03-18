@@ -26,7 +26,7 @@ difficulty: "exceeding"
 duration: "1 lesson"
 hook: "1000 students walk past 1000 lockers. Student 1 opens them all. Student 2 closes every second one. Student 3 changes every third. Which lockers end up open?"
 warmup: "Start with 10 lockers and 10 students. Use O and C on your whiteboard to track the state of each locker."
-seo_title: "The Locker Problem — BTC Thinking Task | MYP Maths | Grade 7-9"
+seo_title: "The Locker Problem — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. 1000 students walk past 1000 lockers. Student 1 opens every locker. Student 2 cl"
 ---
 ## The Hook

@@ -121,7 +121,7 @@ btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
-seo_title: "The Heat Island Effect: Mapping Temperature in Our Community | MYP Criterion B Science | Grade 7-8"
+seo_title: "The Heat Island Effect: Mapping Temperature in Our Commun..."
 seo_description: "Free MYP Science investigation pack targeting Criterion B, Criterion C for Grade 7-8. Students measure temperatures across their school and local "
 ---
 

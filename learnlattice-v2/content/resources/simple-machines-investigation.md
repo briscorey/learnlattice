@@ -2,6 +2,7 @@
 title: "The Impossible Lift"
 date: 2025-12-22
 description: "Can one student lift a teacher off the ground using only a piece of rope and a stick? This investigation builds the concept of mechanical advantage through a challenge that seems impossible — until the physics makes it easy."
+hook: "Can one student lift a teacher off the ground using only a piece of rope and a stick? This investigation builds the c..."
 subjects:
   - "Physics"
   - "Science"
@@ -42,7 +43,7 @@ teacher_moves:
     description: "After the demo, ask students to find levers in the classroom. Scissors, hole punches, door handles. The concept transfers immediately."
 difficulty: "Approaching"
 duration: "2 lessons"
-seo_title: "The Impossible Lift | MYP Physics Crit A & Crit D | Grade 7-8"
+seo_title: "The Impossible Lift | MYP Physics Crit A & Crit D"
 seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion D for Grade 7-8. Can one student lift a teacher off the ground using only a p"
 ---
 

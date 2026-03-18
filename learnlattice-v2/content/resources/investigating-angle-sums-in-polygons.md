@@ -25,7 +25,7 @@ statement_of_inquiry: "Systematic investigation of geometric properties reveals 
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "A triangle has 180°. A quadrilateral has 360°. A pentagon? A hexagon? A 100-gon? Can you find the pattern WITHOUT measuring?"
-seo_title: "Investigating Angle Sums in Polygons | MYP Resource | LearnLattice"
+seo_title: "Investigating Angle Sums in Polygons | MYP Resource | Lea..."
 seo_description: "Students measure and calculate angle sums for polygons with 3, 4, 5, 6... sides, discover the pattern, and develop a general formula using triangulation."
 ---
 

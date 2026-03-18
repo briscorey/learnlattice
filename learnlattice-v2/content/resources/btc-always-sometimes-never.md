@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "Is this ALWAYS true, SOMETIMES true, or NEVER true: 'The sum of two odd numbers is even'? Can you PROVE it?"
 warmup: "The sum of two even numbers is ___? Test with 5 examples. Is that enough to be sure?"
-seo_title: "Always, Sometimes, Never: Number Properties — BTC Thinking Task | MYP Maths | Grade 6-8"
+seo_title: "Always, Sometimes, Never: Number Properties — BTC Thinkin..."
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Sort 12 mathematical statements into Always True, Sometimes True, or Never True "
 ---
 ## The Hook

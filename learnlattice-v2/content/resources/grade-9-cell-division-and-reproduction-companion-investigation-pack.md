@@ -2,12 +2,14 @@
 title: "Grade 9 Cell Division and Reproduction Companion Investigation Pack"
 date: 2026-03-09
 description: "Companion investigation pack for grade 9 cell division and reproduction unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 9 cell division and reproduction unit"
 subjects:
   - "Biology"
   - "Science"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"
+difficulty: "exceeding"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -26,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
-seo_title: "Grade 9 Cell Division and Reproduction Companion Investigation Pack | MYP Criterion B Biology | Grade 9"
+seo_title: "Grade 9 Cell Division and Reproduction Companion Investig..."
 seo_description: "Companion investigation pack for grade 9 cell division and reproduction unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

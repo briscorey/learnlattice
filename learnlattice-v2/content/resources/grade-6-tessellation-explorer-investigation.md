@@ -98,7 +98,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "Why Do Bees Build Hexagons? | MYP Criterion B Maths | Grade 6-7"
+seo_title: "Why Do Bees Build Hexagons? | MYP Criterion B Maths"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion C for Grade 6-7. Bees build hexagonal honeycombs. Islamic artists tile entire"
 ---
 

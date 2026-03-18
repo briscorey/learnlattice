@@ -3,6 +3,7 @@ title: "Transform!"
 layout: "game"
 date: 2025-10-06
 description: "Identify, apply, and describe geometric transformations. Visual grid-based game covering translations, reflections, and rotations."
+hook: "Identify, apply, and describe geometric transformations"
 subjects:
   - "Mathematics"
 math_topic: Geometry
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

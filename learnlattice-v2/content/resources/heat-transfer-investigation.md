@@ -2,6 +2,7 @@
 title: "Why Is the Metal Seat Colder?"
 date: 2025-12-05
 description: "A metal bench and a wooden bench sit in the same park at the same temperature. The metal one feels freezing. The wooden one feels fine. They are the same temperature. Why does one feel colder? This investigation challenges the intuition that touch tells us temperature."
+hook: "A metal bench and a wooden bench sit in the same park at the same temperature"
 subjects:
   - "Physics"
   - "Science"
@@ -42,7 +43,7 @@ teacher_moves:
     description: "After students understand all three transfer types, the thermos flask question asks them to apply all three. Can they identify which design feature blocks which type?"
 difficulty: "Approaching"
 duration: "2 lessons"
-seo_title: "Why Is the Metal Seat Colder? | MYP Criterion B Physics | Grade 7-8"
+seo_title: "Why Is the Metal Seat Colder? | MYP Criterion B Physics"
 seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion D for Grade 7-8. A metal bench and a wooden bench sit in the same park at the"
 ---
 

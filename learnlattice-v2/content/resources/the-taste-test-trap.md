@@ -20,7 +20,7 @@ statement_of_inquiry: "Statistical significance means distinguishing a real effe
 difficulty: "exceeding"
 hook: "A student claims they can tell the difference between two brands of cola. You test them — they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"
 warmup: "Flip a coin 10 times. Did you get exactly 5 heads? Probably not. How many heads would convince you the coin was unfair?"
-seo_title: "The Taste Test Trap | Free MYP Maths Investigation | Grade 8-9"
+seo_title: "The Taste Test Trap | Free MYP Maths Investigation"
 seo_description: "Free MYP mathematics investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. A student claims they can tell the diffe"
 ---
 ## The Hook

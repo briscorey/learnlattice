@@ -2,12 +2,14 @@
 title: "Grade 8 Matter Cycle and Kinetic Theory Companion Investigation Pack"
 date: 2026-01-09
 description: "Companion investigation pack for grade 8 matter cycle and kinetic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 8 matter cycle and kinetic theory unit"
 subjects:
   - "Chemistry"
   - "Science"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"
+difficulty: "meeting"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -26,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
-seo_title: "Grade 8 Matter Cycle and Kinetic Theory Companion Investigation Pack | MYP Criterion B Chemistry | Grade 8"
+seo_title: "Grade 8 Matter Cycle and Kinetic Theory Companion Investi..."
 seo_description: "Companion investigation pack for grade 8 matter cycle and kinetic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

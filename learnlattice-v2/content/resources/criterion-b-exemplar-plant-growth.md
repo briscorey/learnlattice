@@ -97,7 +97,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "What Does Level 7 Look Like? Plant Growth | MYP Criterion B Biology | Grade 6-7"
+seo_title: "What Does Level 7 Look Like? Plant Growth | MYP Criterion..."
 seo_description: "Free MYP Biology investigation pack targeting Criterion B for Grade 6-7. Students grow bean plants under different light conditions a"
 ---
 

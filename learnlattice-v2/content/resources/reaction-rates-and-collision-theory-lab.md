@@ -2,11 +2,13 @@
 title: "Reaction Rates and Collision Theory Lab"
 date: 2026-02-02
 description: "A chemistry lab series that explores temperature, concentration, surface area, and catalysts through collision theory and measured reaction rates."
+hook: "A chemistry lab series that explores temperature, concentration, surface area, and catalysts through collision theory..."
 subjects:
   - "Chemistry"
 year_levels:
   - "MYP Year 3"
   - "MYP Year 4"
+difficulty: "meeting"
 resource_types:
   - "Lab Activity"
 tags:
@@ -22,7 +24,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
-seo_title: "Reaction Rates and Collision Theory Lab | MYP Criterion B Chemistry | Grade 8-9"
+seo_title: "Reaction Rates and Collision Theory Lab | MYP Criterion B..."
 seo_description: "A chemistry lab series that explores temperature, concentration, surface area, and catalysts through collision theory and measured reaction rates."
 ---
 

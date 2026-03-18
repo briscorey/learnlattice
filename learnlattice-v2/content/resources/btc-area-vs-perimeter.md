@@ -27,7 +27,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "Using exactly 12 square tiles, what is the LARGEST perimeter you can make? What about the SMALLEST?"
 warmup: "Build a shape with 6 square tiles. Find its perimeter. Now rearrange the same 6 tiles into a different shape. Did the perimeter change?"
-seo_title: "Same Area, Different Perimeter — BTC Thinking Task | MYP Maths | Grade 6-7"
+seo_title: "Same Area, Different Perimeter — BTC Thinking Task | MYP ..."
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Can two shapes have the same area but different perimeters? What is the largest "
 ---
 ## The Hook

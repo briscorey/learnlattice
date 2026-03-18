@@ -2,7 +2,7 @@
 title: "MYP Sciences Criterion A: The Complete Teacher's Guide to Knowing and Understanding"
 date: 2026-02-17
 description: "Everything MYP science teachers need to know about Criterion A — assessing genuine scientific understanding, not just recall. Includes level descriptors in plain language, task design principles, EAL strategies, and free resources."
-seo_title: "MYP Science Criterion A Guide — Knowing & Understanding | LearnLattice"
+seo_title: "MYP Science Criterion A Guide — Knowing & Understanding |..."
 seo_description: "Complete free guide to MYP Sciences Criterion A. Plain-language rubric, task design tips for genuine understanding, annotated exemplars, and free science resources."
 pillar: "Craft"
 reading_time: 11

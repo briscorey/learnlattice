@@ -25,7 +25,7 @@ statement_of_inquiry: "Consistent mathematical relationships emerge when we syst
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Wrap string around 10 different circles. Measure the circumference and diameter of each. What do you notice when you divide?"
-seo_title: "Investigating Circle Measurements | MYP Resource | LearnLattice"
+seo_title: "Investigating Circle Measurements | MYP Resource | LearnL..."
 seo_description: "Students measure the circumference and diameter of circular objects, calculate ratios, and discover pi through experimental data collection and analysis."
 ---
 

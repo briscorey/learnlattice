@@ -20,7 +20,7 @@ statement_of_inquiry: "Patterns in how shapes grow reveal algebraic relationship
 difficulty: "approaching"
 hook: "Build a square from tiles. Now build a bigger square around it. How many tiles did you add? Build another layer. See the pattern? You just discovered something mathematicians call the difference of squares."
 warmup: "Using square tiles or grid paper, build squares with side lengths 1, 2, 3, 4. Count the tiles in each. What pattern do you see in the totals? What about in the DIFFERENCES?"
-seo_title: "The Growing Squares | Free MYP Maths Investigation | Grade 6-7"
+seo_title: "The Growing Squares | Free MYP Maths Investigation"
 seo_description: "Free MYP mathematics investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. Build a square from tiles. Now build a b"
 ---
 ## The Hook

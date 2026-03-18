@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "A basketball player runs a full-court fast break. How far did she actually run?"
 warmup: "A basketball court is 28m long. If you run from one end to the other and back, how far is that? But what if you do not run in a straight line?"
-seo_title: "3-Act Task: Basketball Distance | MYP Maths Pythagoras | Grade 8-9"
+seo_title: "3-Act Task: Basketball Distance | MYP Maths Pythagoras"
 seo_description: "Free 3-Act maths task for MYP. Students calculate real running distance on a basketball court using Pythagoras' theorem. Criterion D application."
 ---
 ## Act 1: The Hook

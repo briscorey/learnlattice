@@ -23,7 +23,7 @@ statement_of_inquiry: "Mathematics becomes powerful when applied to real situati
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Students measure existing product packaging, calculate material waste, and redesign the package to minimise surface area"
-seo_title: "The Packaging Redesign Challenge | MYP Resource | LearnLattice"
+seo_title: "The Packaging Redesign Challenge | MYP Resource | LearnLa..."
 seo_description: "Students measure existing product packaging, calculate material waste, and redesign the package to minimise surface area while maintaining volume."
 ---
 

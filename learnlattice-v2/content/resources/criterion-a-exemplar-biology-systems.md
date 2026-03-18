@@ -2,6 +2,7 @@
 title: "What Does Level 7 Look Like? Explaining Body Systems"
 date: 2025-12-19
 description: "Three student explanations of the digestive system. From listing organs to explaining how systems interact to maintain homeostasis."
+hook: "Three student explanations of the digestive system"
 subjects:
   - "Biology"
   - "Science"
@@ -18,7 +19,7 @@ tags:
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
-seo_title: "What Does Level 7 Look Like? Explaining Body Systems | MYP Criterion A Biology | Grade 8-9"
+seo_title: "What Does Level 7 Look Like? Explaining Body Systems | MY..."
 seo_description: "Three student explanations of the digestive system. From listing organs to explaining how systems interact to maintain homeostasis. Free MYP Biology resource."
 ---
 

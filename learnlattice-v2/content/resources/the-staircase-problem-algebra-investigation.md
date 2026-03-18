@@ -2,6 +2,7 @@
 title: "The Staircase Problem"
 date: 2025-12-29
 description: "How many blocks does it take to build a staircase 100 steps high? This investigation moves students from counting to pattern to formula to argument — the complete arc of algebraic thinking — using nothing but a question a six-year-old could understand."
+hook: "How many blocks does it take to build a staircase 100 steps high? This investigation moves students from counting to ..."
 subjects:
   - "Mathematics"
 math_topic: Algebra
@@ -143,7 +144,7 @@ journal_prompts:
 - Was writing the formula or proving it harder? Why?
 - Did working with a partner change how you approached this?
 - If you had to teach someone this formula, how would you explain it?
-seo_title: "The Staircase Problem | MYP Maths Crit B & Crit C | Grade 7-9"
+seo_title: "The Staircase Problem | MYP Maths Crit B & Crit C"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion C for Grade 7-9. How many blocks does it take to build a staircase 100 steps "
 ---
 

@@ -26,7 +26,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "A tap fills a tank. You watch 10 seconds. How long for the whole thing?"
 warmup: "How long does it take to fill a glass of water? Now estimate: how long for a bathtub? What information do you need?"
-seo_title: "3-Act Task: Fill the Tank | MYP Maths Rates & Proportion | Grade 6-7"
+seo_title: "3-Act Task: Fill the Tank | MYP Maths Rates & Proportion"
 seo_description: "Free 3-Act maths task for MYP. Students estimate tank fill time using proportional reasoning and rate calculations. Criterion D real-world application."
 ---
 ## Act 1: The Hook

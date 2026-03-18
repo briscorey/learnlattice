@@ -2,11 +2,13 @@
 title: "Adaptation and Natural Selection Case Study"
 date: 2025-12-26
 description: "A biology case study using population variation and environmental pressure to explore adaptation, inheritance, and natural selection."
+hook: "A biology case study using population variation and environmental pressure to explore adaptation, inheritance, and na..."
 subjects:
   - "Biology"
   - "Science"
 year_levels:
   - "MYP Year 4"
+difficulty: "exceeding"
 resource_types:
   - "Case Study"
 tags:
@@ -22,7 +24,7 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
-seo_title: "Adaptation and Natural Selection Case Study | MYP Criterion D Biology | Grade 9"
+seo_title: "Adaptation and Natural Selection Case Study | MYP Criteri..."
 seo_description: "A biology case study using population variation and environmental pressure to explore adaptation, inheritance, and natural selection. Free MYP Biology resource."
 ---
 

@@ -28,7 +28,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "Stack cups into a pyramid. How many layers can you build before it collapses?"
 warmup: "Stack 3 cups. Measure the height. Now stack 6 cups the same way. Is the height exactly doubled?"
-seo_title: "3-Act Task: Cup Tower | MYP Maths Linear Relationships | Grade 6-8"
+seo_title: "3-Act Task: Cup Tower | MYP Maths Linear Relationships"
 seo_description: "Free 3-Act maths task for MYP. Students build a cup pyramid, model height with a linear equation, and predict when it collapses. Criterion B & D."
 ---
 ## Act 1: The Hook

@@ -98,7 +98,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "Criterion B Assessment: The Bouncing Ball | MYP Criterion B Physics | Grade 7-8"
+seo_title: "Criterion B Assessment: The Bouncing Ball | MYP Criterion..."
 seo_description: "Free MYP Physics investigation pack targeting Criterion B for Grade 7-8. A complete MYP Science Criterion B assessment task with thre"
 ---
 

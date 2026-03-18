@@ -12,6 +12,7 @@ year_levels:
 - Grade 9
 - MYP Year 2
 - MYP Year 3
+difficulty: "exceeding"
 resource_types:
 - Investigation Pack
 tags:
@@ -98,7 +99,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "The Bridges of Königsberg | MYP Maths Crit A & Crit B | Grade 7-9"
+seo_title: "The Bridges of Königsberg | MYP Maths Crit A & Crit B"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion B for Grade 7-9. In 1736, Leonhard Euler was asked whether it was possible to"
 ---
 

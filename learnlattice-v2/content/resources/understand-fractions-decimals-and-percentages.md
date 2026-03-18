@@ -24,7 +24,7 @@ statement_of_inquiry: "Understanding fractions, decimals, and percentages provid
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "A visual step-by-step explainer for fractions, decimals, and percentages, designed for MYP students including EAL learne"
-seo_title: "Understand Fractions, Decimals, and Percentages | MYP Resource | LearnLattice"
+seo_title: "Understand Fractions, Decimals, and Percentages | MYP Res..."
 seo_description: "A visual step-by-step explainer for fractions, decimals, and percentages, designed for MYP students including EAL learners. Builds understanding through wo"
 ---
 

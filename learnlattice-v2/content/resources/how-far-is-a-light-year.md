@@ -99,7 +99,7 @@ journal_prompts:
 - "What number in today's lesson surprised you the most?"
 - "If you could see Earth from a star 65 million light-years away, what would you see?"
 - "Why do you think humans struggle to understand very large numbers?"
-seo_title: "How Far Is a Light-Year? | MYP Space Science Investigation | Grade 7-8"
+seo_title: "How Far Is a Light-Year? | MYP Space Science Investigation"
 seo_description: "Free MYP Space Science investigation where students calculate light-years from first principles, build scale models of interstellar distances, and discover why telescopes are time machines."
 ---
 

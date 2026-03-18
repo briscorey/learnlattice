@@ -2,6 +2,7 @@
 title: "What Does Level 7 Look Like? Statistical Claims"
 date: 2025-09-22
 description: "Three student responses to a statistics investigation asking whether a newspaper headline is supported by the data. From accepting the claim at face value to critically evaluating sample size and methodology."
+hook: "Three student responses to a statistics investigation asking whether a newspaper headline is supported by the data"
 subjects:
   - "Mathematics"
 math_topic: Statistics
@@ -28,7 +29,7 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
-seo_title: "What Does Level 7 Look Like? Statistical Claims | MYP Criterion B Maths | Grade 8-9"
+seo_title: "What Does Level 7 Look Like? Statistical Claims | MYP Cri..."
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion B for Grade 8-9. Three student responses to a statistics investigation asking"
 ---
 

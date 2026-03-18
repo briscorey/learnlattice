@@ -25,7 +25,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "You have a 5-litre jug and a 3-litre jug. No markings. How can you measure EXACTLY 4 litres?"
 warmup: "Can you measure exactly 2 litres using a 5-litre jug and a 3-litre jug? How many steps?"
-seo_title: "The Water Jug Problem — BTC Thinking Task | MYP Maths | Grade 6-7"
+seo_title: "The Water Jug Problem — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. You have a 5-litre jug and a 3-litre jug. How can you measure exactly 4 litres? "
 ---
 ## The Hook

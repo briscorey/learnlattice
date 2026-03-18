@@ -98,7 +98,7 @@ journal_prompts:
 - "Why do you think the distance misconception is so common, even among adults?"
 - "What would Earth be like if its tilt were 0 degrees? What about 90 degrees?"
 - "How does understanding seasons change how you think about climate in different countries?"
-seo_title: "Why Does Earth Have Seasons? | MYP Space Science Investigation | Grade 7-8"
+seo_title: "Why Does Earth Have Seasons? | MYP Space Science Investig..."
 seo_description: "Free MYP Space Science investigation that demolishes the most common misconception about seasons. Students use a torch and globe to prove axial tilt drives seasons."
 ---
 

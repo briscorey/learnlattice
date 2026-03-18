@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "Would you rather have $1,000,000 or a penny that doubles every day for 30 days?"
 warmup: "If you fold a piece of paper in half, and in half again, and again — how many times can you fold it? How thick would it be after 10 folds?"
-seo_title: "3-Act Task: Doubling Penny | MYP Maths Exponential Growth | Grade 7-9"
+seo_title: "3-Act Task: Doubling Penny | MYP Maths Exponential Growth"
 seo_description: "Free 3-Act maths task for MYP. Students discover exponential growth through the doubling penny problem. Connects to compound interest and population growth."
 ---
 ## Act 1: The Hook

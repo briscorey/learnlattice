@@ -35,7 +35,7 @@ difficulty: "meeting"
 duration: "4–5 lessons"
 hook: "A Pringles tube uses 40% less material per chip than a standard rectangular crisp packet. But why are most products still sold in boxes? Is the most mathematically efficient shape always the best design?"
 warmup: "You have exactly 600 cm² of cardboard. What is the biggest box you can make? What about the biggest cylinder? Which holds more?"
-seo_title: "IDU Packaging Design | MYP Math-Science Geometry & Sustainability | Grade 7-8"
+seo_title: "IDU Packaging Design | MYP Math-Science Geometry & Sustai..."
 seo_description: "Free MYP interdisciplinary unit: students design sustainable packaging using geometry and materials science. Surface area, volume, environmental impact."
 teacher_moves:
   - title: "Start with real packaging"

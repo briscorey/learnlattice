@@ -2,12 +2,14 @@
 title: "Grade 9 Stars and Space Exploration Companion Investigation Pack"
 date: 2025-10-27
 description: "Companion investigation pack for grade 9 stars and space exploration unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 9 stars and space exploration unit"
 subjects:
   - "Space Science"
   - "Science"
 year_levels:
   - "Grade 9"
   - "MYP Year 4"
+difficulty: "exceeding"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -26,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."
-seo_title: "Grade 9 Stars and Space Exploration Companion Investigation Pack | MYP Criterion B Space Science | Grade 9"
+seo_title: "Grade 9 Stars and Space Exploration Companion Investigati..."
 seo_description: "Companion investigation pack for grade 9 stars and space exploration unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

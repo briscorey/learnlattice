@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "Pick any four consecutive numbers. Add them. Try again. And again. What do you notice?"
 warmup: "Add 1 + 2 + 3 + 4. Now add 5 + 6 + 7 + 8. What is special about each answer?"
-seo_title: "Four Consecutive Numbers — BTC Thinking Task | MYP Maths | Grade 7-8"
+seo_title: "Four Consecutive Numbers — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Pick any four consecutive numbers and add them. Try again. What do you notice? C"
 ---
 ## The Hook

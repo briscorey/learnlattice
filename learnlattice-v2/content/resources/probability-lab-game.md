@@ -3,6 +3,7 @@ title: "Probability Lab"
 layout: "game"
 date: 2026-01-22
 description: "From probability language to running experiments to critical reasoning about chance. Roll dice, flip coins, and discover why feelings don't change the maths."
+hook: "From probability language to running experiments to critical reasoning about chance"
 subjects:
   - "Mathematics"
 math_topic: Statistics & Probability
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

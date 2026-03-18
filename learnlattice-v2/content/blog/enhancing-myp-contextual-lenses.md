@@ -2,7 +2,7 @@
 title: "Contextual Lenses in Practice: Individual, Local, and Global"
 date: 2026-03-17
 description: "The Enhanced MYP adds three contextual lenses — individual, local, and global — to the existing global contexts framework. This guide shows how to use them with worked examples for MYP mathematics and sciences, including how the same content changes dramatically at each lens."
-seo_title: "MYP Contextual Lenses Guide — Individual, Local, Global | LearnLattice"
+seo_title: "MYP Contextual Lenses Guide — Individual, Local, Global |..."
 seo_description: "Practical guide to the new MYP contextual lenses. Worked examples showing how individual, local, and global framing transforms math and science units."
 pillar: "IB Practice"
 reading_time: 10

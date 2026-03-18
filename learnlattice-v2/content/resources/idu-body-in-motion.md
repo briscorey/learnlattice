@@ -36,7 +36,7 @@ difficulty: "meeting"
 duration: "4–5 lessons"
 hook: "Usain Bolt ran 100m in 9.58 seconds. His top speed was 44.72 km/h. But his average speed was only 37.6 km/h. Why the difference — and what does your own speed-time graph look like?"
 warmup: "Sprint 20 metres as fast as you can. Time it. Now calculate your average speed. Is that your top speed? Why not?"
-seo_title: "IDU Body in Motion | MYP Math-Science Biomechanics | Grade 8-9"
+seo_title: "IDU Body in Motion | MYP Math-Science Biomechanics"
 seo_description: "Free MYP interdisciplinary unit: students investigate human performance using kinematics and statistics. 5-lesson investigation with criterion mapping."
 teacher_moves:
   - title: "Use their own data"

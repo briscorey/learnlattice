@@ -22,7 +22,7 @@
     </div>
     {{ $slug := $latest.File.ContentBaseName }}
     <a href="{{ $latest.RelPermalink }}" class="bl-hero-img">
-      <img src="/img/blog/{{ $slug }}.svg" alt="" loading="eager">
+      <img src="/img/blog/{{ $slug }}.svg" alt="{{ .Title }}" loading="eager">
     </a>
   </div>
 </section>
@@ -50,7 +50,7 @@
     {{ $pillar := .Params.pillar | default "Craft" | urlize }}
     <article class="bl-card" data-pillar="{{ $pillar }}">
       <a href="{{ .RelPermalink }}" class="bl-card-img">
-        <img src="/img/blog/{{ $slug }}.svg" alt="" loading="lazy">
+        <img src="/img/blog/{{ $slug }}.svg" alt="{{ .Title }}" loading="lazy">
       </a>
       <div class="bl-card-body">
         <div class="bl-card-meta">

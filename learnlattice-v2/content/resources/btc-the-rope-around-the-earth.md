@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "A rope fits perfectly around the Earth's equator (~40,000 km). You add just 1 metre of extra rope and lift it evenly all around. How high off the ground is the rope?"
 warmup: "A rope fits around a basketball. Add 1 metre. How high does the rope now float above the basketball?"
-seo_title: "The Rope Around the Earth — BTC Thinking Task | MYP Maths | Grade 8-9"
+seo_title: "The Rope Around the Earth — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. A rope fits snugly around the Earth's equator. You add just 1 metre of extra rop"
 ---
 ## The Hook

@@ -8,6 +8,7 @@ subjects:
 year_levels:
 - Grade 7
 - MYP Year 2
+difficulty: "exceeding"
 resource_types:
 - Investigation Pack
 tags:
@@ -94,7 +95,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "Grade 7 Earth's Dynamic Crust Companion Investigation Pack | MYP Criterion B Earth Science | Grade 7"
+seo_title: "Grade 7 Earth's Dynamic Crust Companion Investigation Pac..."
 seo_description: "Companion investigation pack for grade 7 earth's dynamic crust unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

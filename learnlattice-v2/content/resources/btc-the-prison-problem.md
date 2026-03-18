@@ -26,7 +26,7 @@ difficulty: "exceeding"
 duration: "1 lesson"
 hook: "41 prisoners stand in a circle. Starting from prisoner 1, every second prisoner is eliminated. Where would you stand to be the last one remaining?"
 warmup: "Try with 5 prisoners. Number them 1-5 in a circle. Eliminate every second one. Who survives?"
-seo_title: "The Circular Prison Problem — BTC Thinking Task | MYP Maths | Grade 8-9"
+seo_title: "The Circular Prison Problem — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Prisoners standing in a circle eliminate every second person. Where should you s"
 ---
 ## The Hook

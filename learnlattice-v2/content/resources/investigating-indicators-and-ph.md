@@ -23,7 +23,7 @@ statement_of_inquiry: "Scientific investigation requires controlling variables, 
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Students test natural indicators (red cabbage, turmeric, beetroot) against known acids and bases to create their own pH "
-seo_title: "Investigating Indicators and pH | MYP Resource | LearnLattice"
+seo_title: "Investigating Indicators and pH | MYP Resource | LearnLat..."
 seo_description: "Students test natural indicators (red cabbage, turmeric, beetroot) against known acids and bases to create their own pH scale."
 ---
 

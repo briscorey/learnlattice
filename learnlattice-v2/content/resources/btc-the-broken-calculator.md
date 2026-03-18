@@ -26,7 +26,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "Your calculator is broken. Only the 1, 5, +, and × keys work. Can you make every number from 1 to 30?"
 warmup: "Using only 1, 5, +, and ×, how would you make 7? How about 12? Which uses fewer key presses?"
-seo_title: "The Broken Calculator — BTC Thinking Task | MYP Maths | Grade 6-7"
+seo_title: "The Broken Calculator — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Your calculator only has the 1, 5, +, and × keys working. Can you make every num"
 ---
 ## The Hook

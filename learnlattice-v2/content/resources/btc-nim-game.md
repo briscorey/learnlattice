@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "21 counters. Two players. Take 1, 2, or 3. Take the last one and you win. Is there a strategy that ALWAYS wins?"
 warmup: "Play with 5 counters first. Can the first player always win? What about 4 counters?"
-seo_title: "The Nim Game: Who Wins? — BTC Thinking Task | MYP Maths | Grade 6-8"
+seo_title: "The Nim Game: Who Wins? — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Place 21 counters on the table. Two players take turns removing 1, 2, or 3 count"
 ---
 ## The Hook

@@ -3,6 +3,7 @@ layout: "game"
 title: "Angle Hunter"
 date: 2025-10-27
 description: "Classify angles, find missing angles on lines and at points, use triangle and quadrilateral rules, and apply parallel line angle theorems."
+hook: "Classify angles, find missing angles on lines and at points, use triangle and quadrilateral rules, and apply parallel..."
 subjects:
   - "Mathematics"
 Mathematics_topic: Geometry
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

@@ -89,7 +89,7 @@ journal_prompts:
   - "If you could explain inheritance to a younger student using only coins, what would you say?"
   - "Why is it important that inheritance involves chance?"
 parent_summary: "Your child modelled genetic inheritance using coin flips. They discovered the 3:1 ratio of dominant to recessive traits, learned why siblings look different, and connected coins to Punnett squares. Ask them: why are you not a perfect 50/50 mix of your parents?"
-seo_title: "Why Do We Look Like Our Parents? | MYP Biology Crit B | Grade 8-9"
+seo_title: "Why Do We Look Like Our Parents? | MYP Biology Crit B"
 seo_description: "Free MYP Biology investigation pack targeting Criterion B for Grade 8-9. You have your mother's eyes and your father's nose — or so p"
 ---
 

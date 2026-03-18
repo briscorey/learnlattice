@@ -110,7 +110,7 @@ journal_prompts:
 - How did other people's arguments change your thinking?
 - What does this teach you about infinity?
 hook: "0.999... = 1. Not approximately. Exactly. Can you break the proof?"
-seo_title: "0.999... = 1? Prove It. | MYP Maths Crit A & Crit C | Grade 7-8"
+seo_title: "0.999... = 1? Prove It. | MYP Maths Crit A & Crit C"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion C for Grade 7-8. Is 0.999... (zero point nine repeating forever) equal to 1, "
 ---
 

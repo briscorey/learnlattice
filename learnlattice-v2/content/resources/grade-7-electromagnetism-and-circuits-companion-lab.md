@@ -2,11 +2,13 @@
 title: "Grade 7 Electromagnetism and Circuits Companion Lab Activity"
 date: 2025-12-30
 description: "Companion lab activity for grade 7 electromagnetism and circuits unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion lab activity for grade 7 electromagnetism and circuits unit"
 subjects:
   - "Science"
 year_levels:
   - "Grade 7"
   - "MYP Year 2"
+difficulty: "meeting"
 resource_types:
   - "Lab Activity"
 tags:
@@ -25,7 +27,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help us understand the natural world."
-seo_title: "Grade 7 Electromagnetism and Circuits Companion Lab Activity | MYP Criterion B Science | Grade 7"
+seo_title: "Grade 7 Electromagnetism and Circuits Companion Lab Activ..."
 seo_description: "Companion lab activity for grade 7 electromagnetism and circuits unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

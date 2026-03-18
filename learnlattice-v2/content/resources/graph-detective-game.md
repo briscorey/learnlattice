@@ -3,6 +3,7 @@ layout: "game"
 title: "Graph Detective"
 date: 2025-09-29
 description: "Read values, describe trends, interpret meaning, and spot misleading graphs. A 4-stage critical thinking game about data literacy."
+hook: "Read values, describe trends, interpret meaning, and spot misleading graphs"
 subjects:
   - "Mathematics"
 Mathematics_topic: Statistics
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

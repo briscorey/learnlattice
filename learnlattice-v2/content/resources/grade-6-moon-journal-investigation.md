@@ -2,6 +2,7 @@
 title: "The Moon Journal"
 date: 2025-09-29
 description: "Look at the Moon every night for a month. Draw what you see. The pattern that emerges explains why the Moon changes shape — and it's a pattern you discovered yourself, not one you were told about."
+hook: "Look at the Moon every night for a month"
 subjects:
   - "Space Science"
   - "Science"
@@ -27,7 +28,7 @@ download_url: ""
 download_label: "Investigation Pack PDF"
 difficulty: "approaching"
 duration: "2–3 lessons"
-seo_title: "The Moon Journal | MYP Space Science Crit B & Crit C | Grade 6"
+seo_title: "The Moon Journal | MYP Space Science Crit B & Crit C | Gr..."
 seo_description: "Free MYP Space Science investigation pack targeting Criterion B, Criterion C for Grade 6. Look at the Moon every night for a month. Draw what you see"
 ---
 

@@ -27,7 +27,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "How many times can you fold a piece of paper in half? What if you COULD fold it 42 times?"
 warmup: "Fold a piece of paper in half. How many layers? Fold again. How many layers now? What is the pattern?"
-seo_title: "3-Act Task: Paper Folding | MYP Maths Powers & Exponential | Grade 6-8"
+seo_title: "3-Act Task: Paper Folding | MYP Maths Powers & Exponential"
 seo_description: "Free 3-Act maths task for MYP. Students investigate exponential growth through paper folding — how thick after 42 folds? Surprising real-world connections."
 ---
 ## Act 1: The Hook

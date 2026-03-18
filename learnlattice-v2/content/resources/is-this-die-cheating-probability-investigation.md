@@ -147,7 +147,7 @@ journal_prompts:
 - What does this investigation teach you about trusting small samples?
 - Where in real life do people draw conclusions from too little data?
 hook: "You rolled a 6 five times in a row. Is the die fair? How would you know?"
-seo_title: "Is This Die Cheating? | MYP Maths Crit B & Crit C | Grade 7-8"
+seo_title: "Is This Die Cheating? | MYP Maths Crit B & Crit C"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion B, Criterion C for Grade 7-8. You suspect a die is unfair. How would you find out? This in"
 ---
 

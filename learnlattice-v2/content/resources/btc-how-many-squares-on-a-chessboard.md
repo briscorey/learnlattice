@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "A chessboard has 64 small squares. But how many squares of ALL sizes can you find?"
 warmup: "How many squares on a 2×2 grid? Draw it. Count carefully — there are more than you think."
-seo_title: "How Many Squares on a Chessboard? — BTC Thinking Task | MYP Maths | Grade 6-8"
+seo_title: "How Many Squares on a Chessboard? — BTC Thinking Task | M..."
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. A chessboard has 64 small squares. But how many squares of ALL sizes? This visua"
 ---
 ## The Hook

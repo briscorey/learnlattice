@@ -24,7 +24,7 @@ statement_of_inquiry: "Mathematical relationships in nature can be investigated 
 difficulty: "exceeding"
 duration: "1–2 lessons"
 hook: "People say the golden ratio appears everywhere in nature. Is that actually true, or are we seeing what we want to see?"
-seo_title: "Investigating Golden Ratio in Nature | MYP Resource | LearnLattice"
+seo_title: "Investigating Golden Ratio in Nature | MYP Resource | Lea..."
 seo_description: "Students measure real objects — flowers, shells, body proportions — to investigate whether the golden ratio (≈ 1.618) genuinely appears in nature or whethe"
 ---
 

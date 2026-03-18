@@ -2,6 +2,7 @@
 title: "What Does Level 7 Look Like? Lab Report Communication"
 date: 2025-10-01
 description: "Three student lab reports on the same experiment — annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a disorganised report from clear, precise scientific communication."
+hook: "Three student lab reports on the same experiment — annotated at levels 3-4, 5-6, and 7-8"
 subjects:
   - "Science"
   - "Chemistry"
@@ -28,7 +29,7 @@ formula: ""
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
-seo_title: "What Does Level 7 Look Like? Lab Report Communication | MYP Criterion C Chemistry | Grade 8-9"
+seo_title: "What Does Level 7 Look Like? Lab Report Communication | M..."
 seo_description: "Free MYP Chemistry investigation pack targeting Criterion C for Grade 8-9. Three student lab reports on the same experiment — annotated"
 ---
 

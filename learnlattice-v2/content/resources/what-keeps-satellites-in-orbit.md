@@ -100,7 +100,7 @@ journal_prompts:
 - "What is the most counterintuitive thing you learned today?"
 - "If the ISS suddenly stopped moving forward, what would happen?"
 - "Why do you think we say astronauts experience 'weightlessness' when gravity is almost as strong as on the ground?"
-seo_title: "What Keeps Satellites in Orbit? | MYP Space Science Investigation | Grade 8-9"
+seo_title: "What Keeps Satellites in Orbit? | MYP Space Science Inves..."
 seo_description: "Free MYP Space Science investigation exploring orbital mechanics through Newton's cannonball, ISS tracking data, and the counterintuitive insight that orbiting means perpetually falling."
 ---
 

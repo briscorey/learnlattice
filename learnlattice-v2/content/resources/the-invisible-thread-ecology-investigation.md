@@ -2,6 +2,7 @@
 title: "The Invisible Thread"
 date: 2026-03-02
 description: "A fishing boat thousands of kilometres away can collapse a forest. A single missing nutrient can shut down an entire ocean. This investigation builds systems thinking in ecology by tracing indirect effects — the invisible threads that connect organisms across an ecosystem."
+hook: "A fishing boat thousands of kilometres away can collapse a forest"
 subjects:
   - "Ecology"
   - "Science"
@@ -116,7 +117,7 @@ journal_prompts:
 - Why is the keystone species often not the biggest or strongest?
 - How does this change how you think about conservation?
 - What would happen if you added a new species to the web?
-seo_title: "The Invisible Thread | MYP Ecology Crit B & Crit D | Grade 7-9"
+seo_title: "The Invisible Thread | MYP Ecology Crit B & Crit D"
 seo_description: "Free MYP Ecology investigation pack targeting Criterion B, Criterion D for Grade 7-9. A fishing boat thousands of kilometres away can collapse a f"
 ---
 

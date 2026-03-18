@@ -2,6 +2,7 @@
 title: "Dead or Alive? The Criteria Problem"
 date: 2025-10-27
 description: "Is a virus alive? Is fire? Is a seed? Is a stopped heart? This investigation uses genuinely hard edge cases to build rigorous criteria for life — and in doing so, reveals why the boundary between living and non-living is one of biology's deepest unsolved questions."
+hook: "Is a virus alive? Is fire? Is a seed? Is a stopped heart? This investigation uses genuinely hard edge cases to build ..."
 subjects:
   - "Biology"
   - "Science"
@@ -144,7 +145,7 @@ journal_prompts:
 - Which MRS GREN criterion was the hardest to decide? Why?
 - Should the definition of 'alive' be changed? What would you change?
 - What other edge cases can you think of besides fire and viruses?
-seo_title: "Dead or Alive? The Criteria Problem | MYP Criterion A Biology | Grade 6-8"
+seo_title: "Dead or Alive? The Criteria Problem | MYP Criterion A Bio..."
 seo_description: "Free MYP Biology investigation pack targeting Criterion A, Criterion D for Grade 6-8. Is a virus alive? Is fire? Is a seed? Is a stopped heart? Th"
 ---
 

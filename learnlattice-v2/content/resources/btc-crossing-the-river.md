@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "Three adults and three children need to cross a river. The boat holds one adult OR two children. What is the fewest number of crossings?"
 warmup: "If there is 1 adult and 2 children, how many crossings? Act it out with your group."
-seo_title: "Crossing the River — BTC Thinking Task | MYP Maths | Grade 6-7"
+seo_title: "Crossing the River — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Students find the minimum river crossings using logic and pattern recognition. Grade 6-7."
 ---
 ## The Hook

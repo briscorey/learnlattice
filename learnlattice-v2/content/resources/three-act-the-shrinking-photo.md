@@ -26,7 +26,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "A student resizes a 4:3 photo to fit a 16:9 screen. It looks stretched. What went wrong — and how do you fix it?"
 warmup: "Draw a rectangle that is 4 cm × 3 cm. Now draw one that is 8 cm × 6 cm. Do they look the same shape? What if you drew 8 cm × 3 cm?"
-seo_title: "3-Act Task: Photo Ratios | MYP Maths Proportion & Ratio | Grade 6-7"
+seo_title: "3-Act Task: Photo Ratios | MYP Maths Proportion & Ratio"
 seo_description: "Free 3-Act maths task for MYP. Students investigate why resized photos look distorted using ratio, proportion, and scale factors. Criterion D."
 ---
 ## Act 1: The Hook

@@ -2,12 +2,14 @@
 title: "Grade 8 Plate Tectonic Theory Companion Investigation Pack"
 date: 2025-11-10
 description: "Companion investigation pack for grade 8 plate tectonic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 8 plate tectonic theory unit"
 subjects:
   - "Earth Science"
   - "Science"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"
+difficulty: "meeting"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -26,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Evidence of change in Earth systems reveals processes that operate across vast timescales."
-seo_title: "Grade 8 Plate Tectonic Theory Companion Investigation Pack | MYP Criterion B Earth Science | Grade 8"
+seo_title: "Grade 8 Plate Tectonic Theory Companion Investigation Pac..."
 seo_description: "Companion investigation pack for grade 8 plate tectonic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

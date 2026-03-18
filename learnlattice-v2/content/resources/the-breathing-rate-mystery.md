@@ -91,7 +91,7 @@ journal_prompts:
   - "If your body is a machine, what job does breathing do?"
   - "How would you explain respiration to a 10-year-old?"
 parent_summary: "Your child investigated why we breathe faster during exercise. They measured their own breathing rate, graphed the recovery pattern, and connected it to cellular respiration. Ask them: why does breathing stay fast even after you stop running?"
-seo_title: "The Breathing Rate Mystery | MYP Criterion B Biology | Grade 7-8"
+seo_title: "The Breathing Rate Mystery | MYP Criterion B Biology"
 seo_description: "Free MYP Biology investigation pack targeting Criterion B, Criterion C for Grade 7-8. You breathe 12 times a minute sitting still. After 30 star j"
 ---
 

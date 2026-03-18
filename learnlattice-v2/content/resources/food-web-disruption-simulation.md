@@ -2,12 +2,14 @@
 title: "Food Web Disruption Simulation"
 date: 2026-02-23
 description: "An ecology simulation exploring trophic interactions, keystone species, and the ripple effects of disturbance across a food web."
+hook: "An ecology simulation exploring trophic interactions, keystone species, and the ripple effects of disturbance across ..."
 subjects:
   - "Ecology"
   - "Science"
 year_levels:
   - "MYP Year 3"
   - "MYP Year 4"
+difficulty: "meeting"
 resource_types:
   - "Simulation Activity"
 tags:
@@ -23,7 +25,7 @@ key-concepts:
 global-contexts:
   - "Globalization and Sustainability"
 statement_of_inquiry: "Ecosystems demonstrate how interconnected relationships sustain or disrupt environmental balance."
-seo_title: "Food Web Disruption Simulation | MYP Ecology Crit B | Grade 8-9"
+seo_title: "Food Web Disruption Simulation | MYP Ecology Crit B"
 seo_description: "An ecology simulation exploring trophic interactions, keystone species, and the ripple effects of disturbance across a food web. Free MYP Ecology resource."
 ---
 

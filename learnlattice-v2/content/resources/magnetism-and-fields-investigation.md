@@ -2,6 +2,7 @@
 title: "The Invisible Force Field"
 date: 2026-03-17
 description: "You can't see a magnetic field. But scatter iron filings on a sheet of paper above a magnet and suddenly the invisible becomes visible. This investigation maps magnetic fields to build the concept of fields as a way of describing action at a distance."
+hook: "You can"
 subjects:
   - "Physics"
   - "Science"
@@ -42,7 +43,7 @@ teacher_moves:
     description: "After filings reveal the shape, a compass reveals the direction. Walk a compass around the magnet slowly. The needle always follows the field lines."
 difficulty: "Approaching"
 duration: "2 lessons"
-seo_title: "The Invisible Force Field | MYP Criterion A Physics | Grade 7-8"
+seo_title: "The Invisible Force Field | MYP Criterion A Physics"
 seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 7-8. You can't see a magnetic field. But scatter iron filings on "
 ---
 

@@ -35,7 +35,7 @@ difficulty: "meeting"
 duration: "4–5 lessons"
 hook: "In 2011, a magnitude 9.0 earthquake struck Japan — the fourth most powerful ever recorded. Scientists had predicted a major earthquake in the region, but not this big. Could mathematics have predicted it better?"
 warmup: "Here are earthquake magnitudes for a region over the past 100 years. Plot them on a timeline. Do you see a pattern — or is it random?"
-seo_title: "IDU Earthquake Risk Mapping | MYP Math-Science Statistics | Grade 7-8"
+seo_title: "IDU Earthquake Risk Mapping | MYP Math-Science Statistics"
 seo_description: "Free MYP interdisciplinary unit: students analyse real seismic data to map earthquake risk using statistics and earth science. 5-lesson investigation pack."
 teacher_moves:
   - title: "Use real USGS data"

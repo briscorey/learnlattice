@@ -20,7 +20,7 @@ statement_of_inquiry: "Numbers are not just symbols — they are positions and m
 difficulty: "approaching"
 hook: "Stand in the middle of the room. That is zero. Walk 3 steps right — you are at +3. Walk 5 steps left — you are at -2. You just did subtraction with your feet. Now: what is -3 + 5?"
 warmup: "I am thinking of a number. If I add 3 to it, I get 1. What is my number? Stand up and walk it."
-seo_title: "The Number Line Walk | Free MYP Maths Investigation | Grade 6-7"
+seo_title: "The Number Line Walk | Free MYP Maths Investigation"
 seo_description: "Free MYP mathematics investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. Stand in the middle of the room. That is"
 ---
 ## The Hook

@@ -8,6 +8,7 @@ subjects:
 year_levels:
 - MYP Year 2
 - MYP Year 3
+difficulty: "exceeding"
 resource_types:
 - Investigation Pack
 tags:
@@ -91,7 +92,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "Cell Systems and Microscopy Inquiry | MYP Criterion B Biology | Grade 7-8"
+seo_title: "Cell Systems and Microscopy Inquiry | MYP Criterion B Bio..."
 seo_description: "A guided biology investigation that links organelles, specialised cells, transport, and homeostasis through microscope work and modelling tasks."
 ---
 

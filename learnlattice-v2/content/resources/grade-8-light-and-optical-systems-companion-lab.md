@@ -2,11 +2,13 @@
 title: "Grade 8 Light and Optical Systems Companion Lab Activity"
 date: 2026-02-02
 description: "Companion lab activity for grade 8 light and optical systems unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion lab activity for grade 8 light and optical systems unit"
 subjects:
   - "Science"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"
+difficulty: "meeting"
 resource_types:
   - "Lab Activity"
 tags:
@@ -25,7 +27,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help us understand the natural world."
-seo_title: "Grade 8 Light and Optical Systems Companion Lab Activity | MYP Criterion B Science | Grade 8"
+seo_title: "Grade 8 Light and Optical Systems Companion Lab Activity ..."
 seo_description: "Companion lab activity for grade 8 light and optical systems unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

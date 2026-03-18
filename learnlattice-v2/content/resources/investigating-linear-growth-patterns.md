@@ -24,7 +24,7 @@ statement_of_inquiry: "Identifying patterns in numerical relationships enables u
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "How many matchsticks would you need for the 100th shape? Can you find a shortcut without drawing them all?"
-seo_title: "Investigating Linear Growth Patterns | MYP Resource | LearnLattice"
+seo_title: "Investigating Linear Growth Patterns | MYP Resource | Lea..."
 seo_description: "Students investigate matchstick and tile patterns, organise results in tables, identify linear relationships, and write general rules using algebraic notat"
 ---
 

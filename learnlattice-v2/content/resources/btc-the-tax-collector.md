@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "You play against the Tax Collector. Claim any number 1-20, but the tax collector gets ALL its remaining factors. Can you keep more than the tax collector?"
 warmup: "List all factors of 12. Now list all factors of 13. Which number is 'cheaper' to claim?"
-seo_title: "The Tax Collector — BTC Thinking Task | MYP Maths | Grade 6-7"
+seo_title: "The Tax Collector — BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. A strategy game where you claim numbers 1-20, but the 'tax collector' takes all "
 ---
 ## The Hook

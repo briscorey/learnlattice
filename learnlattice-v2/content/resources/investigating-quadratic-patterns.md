@@ -24,7 +24,7 @@ statement_of_inquiry: "Non-linear patterns reveal more complex relationships tha
 difficulty: "exceeding"
 duration: "1–2 lessons"
 hook: "The first differences keep changing. But what about the differences OF the differences?"
-seo_title: "Investigating Quadratic Patterns | MYP Resource | LearnLattice"
+seo_title: "Investigating Quadratic Patterns | MYP Resource | LearnLa..."
 seo_description: "Students explore growth patterns where the second differences are constant, discovering quadratic relationships through hands-on pattern building and syste"
 ---
 

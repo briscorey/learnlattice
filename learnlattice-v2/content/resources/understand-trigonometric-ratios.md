@@ -23,7 +23,7 @@ statement_of_inquiry: "Understanding trigonometric ratios provides tools for sol
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "A visual step-by-step explainer for trigonometric ratios, designed for MYP students including EAL learners. Builds under"
-seo_title: "Understand Trigonometric Ratios | MYP Resource | LearnLattice"
+seo_title: "Understand Trigonometric Ratios | MYP Resource | LearnLat..."
 seo_description: "A visual step-by-step explainer for trigonometric ratios, designed for MYP students including EAL learners. Builds understanding through worked examples wi"
 ---
 

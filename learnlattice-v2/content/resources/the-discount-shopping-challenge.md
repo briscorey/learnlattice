@@ -23,7 +23,7 @@ statement_of_inquiry: "Mathematics becomes powerful when applied to real situati
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Students compare percentage discounts, buy-one-get-one deals, and bulk pricing to determine which offers genuinely save "
-seo_title: "The Discount Shopping Challenge | MYP Resource | LearnLattice"
+seo_title: "The Discount Shopping Challenge | MYP Resource | LearnLat..."
 seo_description: "Students compare percentage discounts, buy-one-get-one deals, and bulk pricing to determine which offers genuinely save the most money."
 ---
 

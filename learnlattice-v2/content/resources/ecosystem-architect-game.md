@@ -3,6 +3,7 @@ title: "Ecosystem Architect"
 layout: "game"
 date: 2025-12-18
 description: "Build food chains, classify organisms, and predict what happens when species disappear. A 4-stage ecology game that makes systems thinking visible."
+hook: "Build food chains, classify organisms, and predict what happens when species disappear"
 subjects:
   - "Science"
 science_topic: Ecology
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

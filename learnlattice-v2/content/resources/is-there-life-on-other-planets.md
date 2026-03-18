@@ -100,7 +100,7 @@ journal_prompts:
 - "If we discovered microbial life on Mars tomorrow, how would that change your view of the universe?"
 - "Should we be trying to contact extraterrestrial civilisations? What are the risks?"
 - "What is the most convincing argument that life exists elsewhere in the universe?"
-seo_title: "Is There Life on Other Planets? | MYP Space Science Investigation | Grade 8-9"
+seo_title: "Is There Life on Other Planets? | MYP Space Science Inves..."
 seo_description: "Free MYP Space Science investigation using real NASA exoplanet data. Students evaluate habitable zone candidates, define conditions for life, and learn how scientists search for biosignatures."
 ---
 

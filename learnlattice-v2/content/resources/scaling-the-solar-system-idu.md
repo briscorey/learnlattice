@@ -2,6 +2,7 @@
 title: "Scaling the Solar System"
 date: 2026-01-05
 description: "If Earth were a peppercorn, how far away would Neptune be? This interdisciplinary investigation uses proportional reasoning to build a scale model of the solar system — and reveals why our intuitions about space are always wrong."
+hook: "If Earth were a peppercorn, how far away would Neptune be? This interdisciplinary investigation uses proportional rea..."
 subjects:
   - "Mathematics"
   - "Science"
@@ -112,7 +113,7 @@ journal_prompts:
 - Why is it important to use a consistent scale?
 - Which planet's distance was most shocking?
 - How does understanding scale change how you think about space travel?
-seo_title: "Scaling the Solar System | MYP Criterion B Space Science | Grade 6-7"
+seo_title: "Scaling the Solar System | MYP Criterion B Space Science"
 seo_description: "Free MYP Space Science investigation pack targeting Criterion B, Criterion C for Grade 6-7. If Earth were a peppercorn, how far away would Neptune be? T"
 ---
 

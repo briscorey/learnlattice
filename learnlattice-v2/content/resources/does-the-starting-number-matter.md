@@ -24,7 +24,7 @@ statement_of_inquiry: "Changing one part of a relationship reveals the role that
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Three sequences all grow by 2 each time, but they start at different places. What effect does that have?"
-seo_title: "Does the Starting Number Matter? | MYP Resource | LearnLattice"
+seo_title: "Does the Starting Number Matter? | MYP Resource | LearnLa..."
 seo_description: "Students investigate how changing the constant in a linear expression affects the sequence. They compare y = 2x + 1, y = 2x + 5, and y = 2x − 3 to discover"
 ---
 

@@ -23,7 +23,7 @@ statement_of_inquiry: "When multiple constraints operate together, the solution 
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "A burger and two drinks cost $11. Two burgers and a drink cost $13. What does each item cost?"
-seo_title: "Investigating Simultaneous Equations Through Balances | MYP Resource | LearnLattice"
+seo_title: "Investigating Simultaneous Equations Through Balances | M..."
 seo_description: "Students use balance puzzles and systematic trial to investigate when two linear relationships are simultaneously true, building intuition for solving simu"
 ---
 

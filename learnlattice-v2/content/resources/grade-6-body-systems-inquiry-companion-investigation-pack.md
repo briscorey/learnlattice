@@ -2,6 +2,7 @@
 title: "Grade 6 Body Systems Inquiry Companion Investigation Pack"
 date: 2025-12-16
 description: "Companion investigation pack for grade 6 body systems inquiry unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 6 body systems inquiry unit"
 subjects:
   - "Biology"
   - "Science"
@@ -27,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
-seo_title: "Grade 6 Body Systems Inquiry Companion Investigation Pack | MYP Criterion B Biology | Grade 6"
+seo_title: "Grade 6 Body Systems Inquiry Companion Investigation Pack..."
 seo_description: "Companion investigation pack for grade 6 body systems inquiry unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

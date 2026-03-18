@@ -23,7 +23,7 @@ statement_of_inquiry: "Scientific investigation requires controlling variables, 
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Students use quadrats and transects to compare species richness and abundance between two habitats, calculating Simpson'"
-seo_title: "Investigating Biodiversity in Two Habitats | MYP Resource | LearnLattice"
+seo_title: "Investigating Biodiversity in Two Habitats | MYP Resource..."
 seo_description: "Students use quadrats and transects to compare species richness and abundance between two habitats, calculating Simpson's diversity index."
 ---
 

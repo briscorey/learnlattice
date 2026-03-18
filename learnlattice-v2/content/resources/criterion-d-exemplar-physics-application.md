@@ -2,6 +2,7 @@
 title: "What Does Level 7 Look Like? Physics in Engineering"
 date: 2025-12-12
 description: "Three student responses applying force and motion concepts to bridge design. From naming forces to evaluating structural trade-offs."
+hook: "Three student responses applying force and motion concepts to bridge design"
 subjects:
   - "Physics"
   - "Science"
@@ -18,7 +19,7 @@ tags:
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
-seo_title: "What Does Level 7 Look Like? Physics in Engineering | MYP Criterion D Physics | Grade 8-9"
+seo_title: "What Does Level 7 Look Like? Physics in Engineering | MYP..."
 seo_description: "Three student responses applying force and motion concepts to bridge design. From naming forces to evaluating structural trade-offs. Free MYP Physics resource."
 ---
 

@@ -3,6 +3,7 @@ layout: "game"
 title: "Ratio Blaster"
 date: 2026-02-18
 description: "Simplify ratios, find missing values, scale recipes, and solve real-world proportion problems across 4 stages."
+hook: "Simplify ratios, find missing values, scale recipes, and solve real-world proportion problems across 4 stages"
 subjects:
   - "Mathematics"
 Mathematics_topic: Number
@@ -13,6 +14,7 @@ year_levels:
   - "Grade 6"
   - "Grade 7"
   - "Grade 8"
+difficulty: "approaching"
 resource_types:
   - "Interactive Game"
 tags:

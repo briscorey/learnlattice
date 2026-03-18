@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1-2 lessons"
 hook: "The school dance committee must set ticket prices. Higher prices = more money per ticket but fewer people come. What price makes the most money?"
 warmup: "If tickets are free, how many people come? If tickets cost $100, how many come? What happens in between?"
-seo_title: "3-Act Task: Ticket Pricing | MYP Maths Quadratics | Grade 8-9"
+seo_title: "3-Act Task: Ticket Pricing | MYP Maths Quadratics"
 seo_description: "Free 3-Act maths task for MYP. Students optimise ticket prices using quadratic relationships and real-world decision making. Criterion D & B."
 ---
 ## Act 1: The Hook

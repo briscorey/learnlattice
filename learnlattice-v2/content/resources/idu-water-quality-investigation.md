@@ -37,7 +37,7 @@ difficulty: "meeting"
 duration: "4–5 lessons"
 hook: "Is the water from your school tap the same quality as bottled water? What about the water from the nearest river? How would you know?"
 warmup: "Without testing anything — rank these water sources from safest to least safe: school tap, bottled water, river water, rainwater, swimming pool water. What assumptions are you making?"
-seo_title: "IDU Water Quality Investigation | MYP Math-Science Interdisciplinary | Grade 7-8"
+seo_title: "IDU Water Quality Investigation | MYP Math-Science Interd..."
 seo_description: "Free MYP interdisciplinary unit: students test water quality using chemistry and statistics. Criterion B, C, D mapped. Complete 5-lesson investigation pack."
 teacher_moves:
   - title: "Start with the ranking activity"

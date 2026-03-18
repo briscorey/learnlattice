@@ -35,7 +35,7 @@ difficulty: "meeting"
 duration: "3–4 lessons"
 hook: "Pythagoras discovered that when you cut a string exactly in half, the note goes up by one octave. When you cut it to two-thirds, you get a perfect fifth. Music is built on fractions."
 warmup: "Stretch a rubber band between two fingers. Pluck it. Now press the middle and pluck one half. What happened to the pitch? Why?"
-seo_title: "IDU Sound & Music | MYP Math-Science Waves & Ratios | Grade 6-7"
+seo_title: "IDU Sound & Music | MYP Math-Science Waves & Ratios"
 seo_description: "Free MYP interdisciplinary unit: students discover that musical harmony is built on mathematical ratios. Connects wave physics with fractions and patterns."
 teacher_moves:
   - title: "Start with sound, not theory"

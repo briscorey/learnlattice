@@ -2,6 +2,7 @@
 title: "How Do We Know What Stars Are Made Of?"
 date: 2026-03-04
 description: "The nearest star beyond our Sun is 40 trillion kilometres away. We will never visit it. Yet we know its temperature, its age, its chemical composition, and whether it has planets. This investigation explores how — and in doing so, builds the deepest ideas in space science: light as information."
+hook: "The nearest star beyond our Sun is 40 trillion kilometres away"
 subjects:
   - "Space Science"
   - "Science"
@@ -108,7 +109,7 @@ journal_prompts:
 - Why is it remarkable that we know what stars are made of?
 - What assumptions do astronomers have to make?
 - What question about space do you most want answered?
-seo_title: "How Do We Know What Stars Are Made Of? | MYP Criterion B Space Science | Grade 8-9"
+seo_title: "How Do We Know What Stars Are Made Of? | MYP Criterion B ..."
 seo_description: "Free MYP Space Science investigation pack targeting Criterion B, Criterion D for Grade 8-9. The nearest star beyond our Sun is 40 trillion kilometres aw"
 ---
 

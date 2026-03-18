@@ -2,12 +2,14 @@
 title: "Grade 8 Cells and Life Processes Companion Investigation Pack"
 date: 2026-03-09
 description: "Companion investigation pack for grade 8 cells and life processes unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 8 cells and life processes unit"
 subjects:
   - "Biology"
   - "Science"
 year_levels:
   - "Grade 8"
   - "MYP Year 3"
+difficulty: "meeting"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -26,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
-seo_title: "Grade 8 Cells and Life Processes Companion Investigation Pack | MYP Criterion B Biology | Grade 8"
+seo_title: "Grade 8 Cells and Life Processes Companion Investigation ..."
 seo_description: "Companion investigation pack for grade 8 cells and life processes unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

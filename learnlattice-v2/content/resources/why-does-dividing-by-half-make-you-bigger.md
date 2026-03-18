@@ -11,6 +11,7 @@ year_levels:
 - Grade 7
 - MYP Year 1
 - MYP Year 2
+difficulty: "approaching"
 resource_types:
 - Investigation Pack
 tags:
@@ -96,7 +97,7 @@ differentiated:
   approaching: Complete the guided investigation with scaffolded questions. Focus on describing what you observe.
   meeting: Complete the investigation independently. Explain the patterns you find using evidence.
   exceeding: Extend the investigation with your own question. Evaluate your method and suggest improvements.
-seo_title: "Why Does Dividing by a Half Make You Bigger? | MYP Criterion A Maths | Grade 6-7"
+seo_title: "Why Does Dividing by a Half Make You Bigger? | MYP Criter..."
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion C for Grade 6-7. Most students can execute fraction division. Almost none can"
 ---
 

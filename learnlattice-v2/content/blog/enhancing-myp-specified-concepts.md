@@ -2,7 +2,7 @@
 title: "Specified Concepts for MYP Maths and Sciences: A Practical Guide"
 date: 2026-03-12
 description: "The Enhanced MYP replaces key and related concepts with a single list of specified concepts for each subject. This guide explains what the new lists look like for mathematics and sciences, how to choose concepts for your units, and what to do with your existing unit planners."
-seo_title: "MYP Specified Concepts Guide — Maths & Sciences 2027 | LearnLattice"
+seo_title: "MYP Specified Concepts Guide — Maths & Sciences 2027 | Le..."
 seo_description: "Practical guide to MYP specified concepts for mathematics and sciences. What changes from key/related concepts, how to choose, and transition your unit planners."
 pillar: "IB Practice"
 reading_time: 10

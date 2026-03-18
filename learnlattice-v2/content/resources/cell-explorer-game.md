@@ -3,11 +3,13 @@ layout: "game"
 title: "Cell Explorer — Interactive Cell Game"
 date: 2026-01-05
 description: "An interactive 2D game for exploring animal cell organelles. Click to learn, take the quiz, or build a cell from scratch. Built for MYP Biology and Grade 8 science."
+hook: "An interactive 2D game for exploring animal cell organelles"
 subjects:
   - "Biology"
 year_levels:
   - "MYP Year 3"
   - "Grade 8"
+difficulty: "meeting"
 resource_types:
   - "Interactive Game"
 tags:
@@ -25,7 +27,7 @@ global-contexts:
   - "Identities and Relationships"
 statement_of_inquiry: "Living systems maintain balance through interconnected processes that sustain life."
 game_url: "/games/cell-explorer.html?embed=1"
-seo_title: "Cell Explorer — Interactive Cell Game | MYP Criterion A Biology | Grade 8"
+seo_title: "Cell Explorer — Interactive Cell Game | MYP Criterion A B..."
 seo_description: "Free interactive MYP biology game for Grade 8. An interactive 2D game for exploring animal cell organelles. Click to learn, tak"
 ---
 

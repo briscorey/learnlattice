@@ -2,6 +2,7 @@
 title: "Grade 6 Force and Motion Companion Lab Activity"
 date: 2026-01-30
 description: "Companion lab activity for grade 6 force and motion unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion lab activity for grade 6 force and motion unit"
 subjects:
   - "Science"
 year_levels:
@@ -26,7 +27,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Scientific inquiry reveals patterns and systems that help us understand the natural world."
-seo_title: "Grade 6 Force and Motion Companion Lab Activity | MYP Criterion B Science | Grade 6"
+seo_title: "Grade 6 Force and Motion Companion Lab Activity | MYP Cri..."
 seo_description: "Companion lab activity for grade 6 force and motion unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

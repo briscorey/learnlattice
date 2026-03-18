@@ -2,6 +2,7 @@
 title: "What Lives in Our Schoolyard?"
 date: 2025-09-05
 description: "Every schoolyard is an ecosystem. This investigation sends students outside with quadrats and observation logs to discover biodiversity they walk past every day without noticing."
+hook: "Every schoolyard is an ecosystem"
 subjects:
   - "Ecology"
   - "Science"
@@ -34,7 +35,7 @@ teacher_moves:
     description: "The comparison between micro-habitats is where the science happens. Different areas give comparison. Same areas give replication. Both are valuable."
 difficulty: "approaching"
 duration: "2–3 lessons"
-seo_title: "What Lives in Our Schoolyard? | MYP Criterion B Ecology | Grade 6"
+seo_title: "What Lives in Our Schoolyard? | MYP Criterion B Ecology |..."
 seo_description: "Free MYP Ecology investigation pack targeting Criterion B, Criterion C for Grade 6. Every schoolyard is an ecosystem. This investigation sends s"
 ---
 

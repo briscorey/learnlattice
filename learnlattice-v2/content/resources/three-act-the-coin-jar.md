@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1-2 lessons"
 hook: "A jar is full of coins. How much money is in it?"
 warmup: "Without counting — how many coins are in your hand right now? Now count. How close were you?"
-seo_title: "3-Act Task: Coin Jar Estimation | MYP Maths Statistics | Grade 6-7"
+seo_title: "3-Act Task: Coin Jar Estimation | MYP Maths Statistics"
 seo_description: "Free 3-Act maths task for MYP. Students estimate the value of coins in a jar using sampling, volume, and proportional reasoning. Criterion D & B."
 ---
 ## Act 1: The Hook

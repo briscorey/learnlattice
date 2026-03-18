@@ -20,7 +20,7 @@ statement_of_inquiry: "Large numbers only make sense when connected to physical 
 difficulty: "approaching"
 hook: "How many grains of rice would it take to fill your classroom from floor to ceiling? Most people guess a few million. The real answer is in the billions. How far off is your intuition?"
 warmup: "Guess: how many grains of rice are in a teaspoon? Now count them. How close were you?"
-seo_title: "How Many Grains of Rice Fill a Classroom? | MYP Maths | Grade 6-7"
+seo_title: "How Many Grains of Rice Fill a Classroom? | MYP Maths"
 seo_description: "Free MYP mathematics investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. How many grains of rice would it take to"
 ---
 ## The Hook

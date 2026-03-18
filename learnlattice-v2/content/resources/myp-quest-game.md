@@ -2,6 +2,7 @@
 title: "MYP Quest"
 date: 2025-12-15
 description: "An AI-generated platformer where each level is designed around MYP topics. Choose your theme — algebra, cells, forces, ecology — and the game creates unique levels. Collect stars, avoid hazards, reach the exit."
+hook: "An AI-generated platformer where each level is designed around MYP topics"
 subjects:
   - "Mathematics"
   - "Science"

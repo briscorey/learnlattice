@@ -2,6 +2,7 @@
 title: "Grade 6 Solar System and Scale Companion Investigation Pack"
 date: 2026-01-27
 description: "Companion investigation pack for grade 6 solar system and scale unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
+hook: "Companion investigation pack for grade 6 solar system and scale unit"
 subjects:
   - "Space Science"
   - "Science"
@@ -27,7 +28,7 @@ key-concepts:
 global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Observing patterns in the cosmos reveals relationships that connect local and universal phenomena."
-seo_title: "Grade 6 Solar System and Scale Companion Investigation Pack | MYP Criterion B Space Science | Grade 6"
+seo_title: "Grade 6 Solar System and Scale Companion Investigation Pa..."
 seo_description: "Companion investigation pack for grade 6 solar system and scale unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 ---
 

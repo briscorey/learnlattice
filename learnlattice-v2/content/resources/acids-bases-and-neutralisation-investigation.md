@@ -2,11 +2,13 @@
 title: "Acids, Bases, and Neutralisation Investigation"
 date: 2026-02-11
 description: "A chemistry investigation into pH, indicators, neutralisation, and real-world applications of acid-base reactions."
+hook: "A chemistry investigation into pH, indicators, neutralisation, and real-world applications of acid-base reactions"
 subjects:
   - "Chemistry"
 year_levels:
   - "MYP Year 2"
   - "MYP Year 3"
+difficulty: "approaching"
 resource_types:
   - "Investigation Pack"
 tags:
@@ -22,7 +24,7 @@ key-concepts:
 global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding how matter changes at the particle level explains the transformations we observe."
-seo_title: "Acids, Bases, and Neutralisation Investigation | MYP Criterion C Chemistry | Grade 7-8"
+seo_title: "Acids, Bases, and Neutralisation Investigation | MYP Crit..."
 seo_description: "A chemistry investigation into pH, indicators, neutralisation, and real-world applications of acid-base reactions. Free MYP Chemistry resource."
 ---
 

@@ -23,7 +23,7 @@ statement_of_inquiry: "Mathematics becomes powerful when applied to real situati
 difficulty: "meeting"
 duration: "1–2 lessons"
 hook: "Students build a simple algebraic model to estimate their household carbon footprint, identifying which changes would ha"
-seo_title: "The Carbon Footprint Calculator | MYP Resource | LearnLattice"
+seo_title: "The Carbon Footprint Calculator | MYP Resource | LearnLat..."
 seo_description: "Students build a simple algebraic model to estimate their household carbon footprint, identifying which changes would have the biggest impact."
 ---
 

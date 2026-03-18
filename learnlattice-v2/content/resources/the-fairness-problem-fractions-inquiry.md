@@ -2,6 +2,7 @@
 title: "The Fairness Problem"
 date: 2025-12-11
 description: "Three people share 2 pizzas. Two people share 1 pizza. Who gets more? This single question opens an investigation into fractions as division, fair sharing, and the multiple representations that make fractions so powerful — and so confusing."
+hook: "Three people share 2 pizzas"
 subjects:
   - "Mathematics"
 math_topic: Fractions

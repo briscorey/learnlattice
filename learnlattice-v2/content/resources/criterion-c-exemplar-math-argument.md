@@ -2,6 +2,7 @@
 title: "What Does Level 7 Look Like? Mathematical Argument"
 date: 2025-12-23
 description: "Three student presentations of a geometric proof. From informal description to structured logical argument with diagrams."
+hook: "Three student presentations of a geometric proof"
 subjects:
   - "Mathematics"
 math_topic: Algebra
@@ -20,7 +21,7 @@ tags:
 difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
-seo_title: "What Does Level 7 Look Like? Mathematical Argument | MYP Criterion C Maths | Grade 8-9"
+seo_title: "What Does Level 7 Look Like? Mathematical Argument | MYP ..."
 seo_description: "Three student presentations of a geometric proof. From informal description to structured logical argument with diagrams. Free MYP Mathematics resource."
 ---
 
