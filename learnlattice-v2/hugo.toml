@@ -7,6 +7,7 @@ summaryLength = 30
 
 [params]
   author = "Corey Zocchi"
+  author_email = "corey@learnlattice.org"
   description = "Free inquiry-based MYP Mathematics & Science investigations for Grades 6–9. Criterion-mapped, EAL-scaffolded, and classroom-tested by a working teacher."
 
   [[params.nav_dropdowns]]
