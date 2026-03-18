@@ -4,6 +4,7 @@
 {{ $explainers := where $allResources "Params.resource_types" "intersect" (slice "Visual Explainer") }}
 {{ $workedExamples := where $allResources "Params.resource_types" "intersect" (slice "Worked Example") }}
 {{ $games := where $allResources "Params.resource_types" "intersect" (slice "Interactive Game") }}
+{{ $examRevisions := where $allResources "Params.resource_types" "intersect" (slice "Exam Revision") }}
 
 <div class="sd">
 
@@ -182,6 +183,14 @@
             </div>
             <span class="sd-path-desc">Timed flashcards, quizzes, and formula practice.</span>
             <span class="sd-path-count">Start a session →</span>
+          </a>
+          <a href="/students/exam-revision/" class="sd-path" style="--path-color:#9333EA">
+            <div class="sd-path-head">
+              <span class="sd-path-emoji">📝</span>
+              <strong>Exam Revision</strong>
+            </div>
+            <span class="sd-path-desc">Full unit reviews with scaffolded stages before your assessment.</span>
+            <span class="sd-path-count">{{ len $examRevisions }} review{{ if gt (len $examRevisions) 1 }}s{{ end }} →</span>
           </a>
         </div>
       </section>

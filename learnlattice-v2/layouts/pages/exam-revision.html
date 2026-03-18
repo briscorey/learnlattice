@@ -1,0 +1,230 @@
+{{ define "main" }}
+
+{{ $revisions := where .Site.RegularPages "Params.resource_types" "intersect" (slice "Exam Revision") }}
+
+{{ $subjectColors := dict
+  "Mathematics" "#0D9488"
+  "Biology" "#16a34a"
+  "Chemistry" "#e11d48"
+  "Physics" "#2563eb"
+  "Earth Science" "#d97706"
+  "Space Science" "#7c3aed"
+  "Ecology" "#059669"
+  "Algebra" "#0D9488"
+  "Geometry" "#0D9488"
+  "Statistics" "#0D9488"
+  "Number Sense" "#0D9488"
+  "Fractions" "#0D9488"
+}}
+
+{{ $subjectIcons := dict
+  "Mathematics" "📐"
+  "Biology" "🧬"
+  "Chemistry" "⚗️"
+  "Physics" "⚡"
+  "Earth Science" "🌍"
+  "Space Science" "🔭"
+  "Ecology" "🌿"
+  "Algebra" "𝑥"
+  "Geometry" "📐"
+  "Statistics" "📊"
+  "Number Sense" "🔢"
+  "Fractions" "½"
+}}
+
+<div class="er">
+
+  <header class="er-hero">
+    <div class="er-hero-inner">
+      <a href="/students/" class="er-back">← Student Dashboard</a>
+      <h1 class="er-title">Exam Revision</h1>
+      <p class="er-sub">Interactive unit reviews with scaffolded questions, instant feedback, and full explanations. Pick a topic you need to revise.</p>
+      <div class="er-stats">
+        <span class="er-stat">{{ len $revisions }} review{{ if gt (len $revisions) 1 }}s{{ end }} available</span>
+        <span class="er-stat-sep">·</span>
+        <span class="er-stat">25–30 min each</span>
+        <span class="er-stat-sep">·</span>
+        <span class="er-stat">No login required</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="er-main">
+
+    {{ if eq (len $revisions) 0 }}
+    <div class="er-empty">
+      <span class="er-empty-icon">📝</span>
+      <h2>Reviews coming soon</h2>
+      <p>Unit review activities are being added. Check back before your next assessment.</p>
+    </div>
+    {{ else }}
+
+    {{/* Group by subject */}}
+    {{ $grouped := dict }}
+    {{ range $revisions }}
+      {{ $subject := "Other" }}
+      {{ with .Params.subjects }}{{ $subject = index . 0 }}{{ end }}
+      {{ $existing := index $grouped $subject | default (slice) }}
+      {{ $grouped = merge $grouped (dict $subject ($existing | append .)) }}
+    {{ end }}
+
+    {{ range $subject, $items := $grouped }}
+    {{ $color := index $subjectColors $subject | default "#64748b" }}
+    {{ $icon := index $subjectIcons $subject | default "📖" }}
+
+    <section class="er-group">
+      <h2 class="er-group-title" style="--gc: {{ $color }}">
+        <span class="er-group-icon">{{ $icon }}</span>
+        {{ $subject }}
+        <span class="er-group-count">{{ len $items }}</span>
+      </h2>
+
+      <div class="er-grid">
+        {{ range $items }}
+        {{ $sub := "" }}
+        {{ with .Params.subjects }}{{ $sub = index . 0 }}{{ end }}
+        {{ $c := index $subjectColors $sub | default "#64748b" }}
+
+        <a href="{{ .RelPermalink }}" class="er-card" style="--ec: {{ $c }}">
+          <div class="er-card-top">
+            <span class="er-card-type">Unit Review</span>
+            {{ range .Params.year_levels }}
+            <span class="er-card-grade">{{ . }}</span>
+            {{ end }}
+          </div>
+          <h3 class="er-card-title">{{ .Title }}</h3>
+          <p class="er-card-desc">{{ .Params.hook | default (.Description | truncate 120) }}</p>
+          <div class="er-card-meta">
+            {{ with .Params.key_concepts }}
+            {{ range . }}
+            <span class="er-card-concept">{{ . }}</span>
+            {{ end }}
+            {{ end }}
+            {{ range first 3 .Params.tags }}
+            <span class="er-card-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          <div class="er-card-cta">
+            <span>Start Review →</span>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{ end }}
+
+  </main>
+
+  <section class="er-info">
+    <div class="er-info-inner">
+      <div class="er-info-card">
+        <span class="er-info-icon">🎯</span>
+        <div>
+          <h3>Scaffolded stages</h3>
+          <p>Each review builds from recall through application to synthesis. You cannot skip ahead — master each stage to unlock the next.</p>
+        </div>
+      </div>
+      <div class="er-info-card">
+        <span class="er-info-icon">💡</span>
+        <div>
+          <h3>Learn from mistakes</h3>
+          <p>Every wrong answer gives a targeted hint addressing the common misconception, then a full explanation. Revision is about learning, not just testing.</p>
+        </div>
+      </div>
+      <div class="er-info-card">
+        <span class="er-info-icon">📊</span>
+        <div>
+          <h3>Track your progress</h3>
+          <p>See your score per stage and overall. Identify which areas need more study before your assessment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+/* ═══════════════════════════════════════════
+   EXAM REVISION HUB
+   ═══════════════════════════════════════════ */
+
+.er { min-height: calc(100vh - 64px); }
+
+/* ── Hero ── */
+.er-hero { max-width: 900px; margin: 0 auto; padding: 32px 24px 20px; }
+.er-hero-inner { text-align: center; }
+.er-back { display: inline-block; font-size: .78rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 12px; transition: color .15s; }
+.er-back:hover { color: var(--teal); }
+.er-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 8px; }
+.er-sub { font-size: .92rem; color: var(--ink-muted); max-width: 600px; margin: 0 auto 16px; line-height: 1.5; }
+.er-stats { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.er-stat { font-size: .75rem; color: var(--ink-muted); font-weight: 500; }
+.er-stat-sep { color: var(--border); font-size: .6rem; }
+
+/* ── Main ── */
+.er-main { max-width: 900px; margin: 0 auto; padding: 0 24px 32px; }
+
+/* ── Empty state ── */
+.er-empty { text-align: center; padding: 60px 20px; }
+.er-empty-icon { font-size: 3rem; display: block; margin-bottom: 12px; }
+.er-empty h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 6px; }
+.er-empty p { font-size: .88rem; color: var(--ink-muted); }
+
+/* ── Subject groups ── */
+.er-group { margin-bottom: 28px; }
+.er-group-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--ink); display: flex; align-items: center; gap: 8px; margin-bottom: 14px; padding-left: 2px; }
+.er-group-title::before { content: ''; width: 3px; height: 20px; background: var(--gc); border-radius: 2px; }
+.er-group-icon { font-size: 1.1rem; }
+.er-group-count { font-size: .65rem; font-weight: 700; color: var(--ink-muted); background: var(--surface-warm); padding: 2px 8px; border-radius: 20px; font-family: system-ui, sans-serif; }
+
+/* ── Card grid ── */
+.er-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+
+.er-card { display: flex; flex-direction: column; padding: 20px; border-radius: 14px; border: 1.5px solid var(--border); background: var(--surface-card); text-decoration: none; color: inherit; transition: all .2s cubic-bezier(.22,1,.36,1); border-left: 3px solid var(--ec, var(--teal)); }
+.er-card:hover { border-color: var(--ec); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+
+.er-card-top { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.er-card-type { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 2px 8px; border-radius: 20px; background: rgba(225,29,72,.1); color: #e11d48; }
+.er-card-grade { font-size: .6rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; background: var(--surface-warm); color: var(--ink-muted); }
+
+.er-card-title { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 6px; line-height: 1.3; }
+.er-card-desc { font-size: .82rem; color: var(--ink-muted); line-height: 1.45; flex: 1; margin-bottom: 10px; }
+
+.er-card-meta { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+.er-card-concept { font-size: .65rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; background: rgba(245,158,11,.1); color: #d97706; }
+.er-card-tag { font-size: .65rem; padding: 2px 8px; border-radius: 20px; background: var(--surface-warm); color: var(--ink-muted); }
+
+.er-card-cta { font-size: .82rem; font-weight: 600; color: var(--ec, var(--teal)); }
+.er-card:hover .er-card-cta { text-decoration: underline; }
+
+/* ── Info section ── */
+.er-info { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; }
+.er-info-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.er-info-card { display: flex; align-items: flex-start; gap: 12px; padding: 18px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface-card); }
+.er-info-icon { font-size: 1.4rem; flex-shrink: 0; }
+.er-info-card h3 { font-size: .85rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.er-info-card p { font-size: .78rem; color: var(--ink-muted); line-height: 1.45; }
+
+/* ── Dark mode ── */
+html.dark .er-card { background: #1e293b; border-color: #334155; }
+html.dark .er-card:hover { border-color: var(--ec); }
+html.dark .er-info-card { background: #1e293b; border-color: #334155; }
+html.dark .er-card-type { background: rgba(225,29,72,.15); }
+html.dark .er-card-grade { background: #0f172a; }
+html.dark .er-card-concept { background: rgba(245,158,11,.12); }
+html.dark .er-card-tag { background: #0f172a; }
+html.dark .er-group-count { background: #0f172a; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .er-hero { padding: 20px 16px 12px; }
+  .er-main { padding: 0 16px 24px; }
+  .er-info { padding: 0 16px 32px; }
+  .er-info-inner { grid-template-columns: 1fr; }
+  .er-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+{{ end }}
