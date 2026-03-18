@@ -1,6 +1,6 @@
 ---
 title: "IDU: The Mathematics of Music — Sound Waves Meet Number Patterns"
-date: 2026-03-17
+date: 2025-09-22
 description: "Why do some musical notes sound good together and others clash? Students investigate the physics of sound waves and discover that musical harmony is built on simple mathematical ratios — connecting wave physics with fractions, ratios, and number patterns."
 subjects:
   - "Mathematics"

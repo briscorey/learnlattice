@@ -1,6 +1,6 @@
 ---
 title: "Grade 9 Electric Principles and Energy Companion Lab Activity"
-date: 2026-02-28
+date: 2026-01-21
 description: "Companion lab activity for grade 9 electric principles and energy unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Science"

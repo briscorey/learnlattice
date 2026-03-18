@@ -1,6 +1,6 @@
 ---
 title: The Disappearing Candle
-date: 2026-03-03
+date: 2025-10-17
 description: 'A burning candle slowly disappears — where does it go? This investigation uses the mass conservation paradox of combustion to build particle model thinking from scratch: the idea that matter
   never vanishes, it changes form.'
 subjects:

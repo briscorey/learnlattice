@@ -1,6 +1,6 @@
 ---
 title: "The Recipe Scaling Problem"
-date: 2026-03-17
+date: 2026-01-29
 description: "Students scale recipes up and down for different numbers of servings, applying fraction operations to real cooking contexts."
 subjects:
   - "Mathematics"

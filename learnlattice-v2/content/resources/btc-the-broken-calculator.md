@@ -1,6 +1,6 @@
 ---
 title: "The Broken Calculator"
-date: 2026-03-17
+date: 2025-12-01
 description: "Your calculator only has the 1, 5, +, and × keys working. Can you make every number from 1 to 30? What is the fewest key presses for each? A thinking task that develops number sense and systematic reasoning."
 subjects:
   - "Mathematics"

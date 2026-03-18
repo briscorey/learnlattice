@@ -1,6 +1,6 @@
 ---
 title: "Grade 8 Plate Tectonic Theory Companion Investigation Pack"
-date: 2026-02-28
+date: 2025-11-10
 description: "Companion investigation pack for grade 8 plate tectonic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Earth Science"

@@ -1,6 +1,6 @@
 ---
 title: "How to Differentiate MYP Mathematics Investigations — Without Creating Three Separate Tasks"
-date: 2026-03-08
+date: 2025-12-15
 description: "You don't need three versions of every task. You need one task with three entry points. Here's how to build investigations that stretch from Level 3 to Level 8 using the same prompt."
 pillar: "IB Practice"
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Does the Starting Number Matter?"
-date: 2026-03-17
+date: 2025-11-17
 description: "Students investigate how changing the constant in a linear expression affects the sequence. They compare y = 2x + 1, y = 2x + 5, and y = 2x − 3 to discover the role of the y-intercept."
 subjects:
   - "Mathematics"

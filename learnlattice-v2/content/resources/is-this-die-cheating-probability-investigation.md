@@ -1,6 +1,6 @@
 ---
 title: "Is This Die Cheating?"
-date: 2026-03-03
+date: 2025-11-25
 description: "You suspect a die is unfair. How would you find out? This investigation uses a genuinely uncertain question to build experimental probability, sample size reasoning, and the logic of statistical argument — without a single formula until the reasoning demands one."
 subjects:
   - "Mathematics"

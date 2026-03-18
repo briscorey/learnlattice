@@ -1,6 +1,6 @@
 ---
 title: "The Pizza Problem"
-date: 2026-03-10
+date: 2025-12-05
 description: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close — and the answer reveals why area grows faster than you think."
 subjects:
   - "Mathematics"

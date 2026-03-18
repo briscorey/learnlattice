@@ -1,6 +1,6 @@
 ---
 title: "The Packaging Redesign Challenge"
-date: 2026-03-17
+date: 2025-10-27
 description: "Students measure existing product packaging, calculate material waste, and redesign the package to minimise surface area while maintaining volume."
 subjects:
   - "Mathematics"

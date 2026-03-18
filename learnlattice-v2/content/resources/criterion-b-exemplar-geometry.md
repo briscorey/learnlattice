@@ -1,6 +1,6 @@
 ---
 title: What Does Level 7 Look Like? Geometric Properties
-date: 2026-03-08
+date: 2025-10-07
 description: Three student responses investigating the angle sum of polygons. From counting to algebraic proof through triangle decomposition.
 subjects:
 - Mathematics

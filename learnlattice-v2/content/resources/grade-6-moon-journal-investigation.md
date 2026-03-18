@@ -1,6 +1,6 @@
 ---
 title: "The Moon Journal"
-date: 2026-03-08
+date: 2025-09-29
 description: "Look at the Moon every night for a month. Draw what you see. The pattern that emerges explains why the Moon changes shape — and it's a pattern you discovered yourself, not one you were told about."
 subjects:
   - "Space Science"

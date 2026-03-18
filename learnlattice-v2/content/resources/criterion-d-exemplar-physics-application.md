@@ -1,6 +1,6 @@
 ---
 title: "What Does Level 7 Look Like? Physics in Engineering"
-date: 2026-03-08
+date: 2025-12-12
 description: "Three student responses applying force and motion concepts to bridge design. From naming forces to evaluating structural trade-offs."
 subjects:
   - "Physics"

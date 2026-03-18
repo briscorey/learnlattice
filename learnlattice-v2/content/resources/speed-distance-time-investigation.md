@@ -1,6 +1,6 @@
 ---
 title: "The Slow Race"
-date: 2026-03-08
+date: 2026-01-14
 description: "What if the goal wasn't to go fast — but to go as slowly as possible in a straight line without stopping? This investigation builds speed-distance-time relationships from a competition that inverts the usual expectation."
 subjects:
   - "Physics"

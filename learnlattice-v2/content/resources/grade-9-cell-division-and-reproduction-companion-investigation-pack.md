@@ -1,6 +1,6 @@
 ---
 title: "Grade 9 Cell Division and Reproduction Companion Investigation Pack"
-date: 2026-02-28
+date: 2026-03-09
 description: "Companion investigation pack for grade 9 cell division and reproduction unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Biology"

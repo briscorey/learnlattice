@@ -1,6 +1,6 @@
 ---
 title: The Number That Broke Mathematics
-date: 2026-03-03
+date: 2025-09-23
 description: The Pythagoreans believed all numbers were ratios of whole numbers. Then someone calculated the diagonal of a unit square and found a number that isn't. This investigation uses that 2500-year-old
   crisis to build genuine understanding of irrational numbers — and what it means for a number to be 'real'.
 subjects:

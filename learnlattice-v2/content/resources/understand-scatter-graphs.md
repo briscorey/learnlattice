@@ -1,6 +1,6 @@
 ---
 title: "Understand Scatter Graphs"
-date: 2026-03-17
+date: 2025-11-03
 description: "A visual step-by-step explainer for scatter graphs, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

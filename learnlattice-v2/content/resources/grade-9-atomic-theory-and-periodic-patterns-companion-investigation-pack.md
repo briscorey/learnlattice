@@ -1,6 +1,6 @@
 ---
 title: "Grade 9 Atomic Theory and Periodic Patterns Companion Investigation Pack"
-date: 2026-02-28
+date: 2025-12-02
 description: "Companion investigation pack for grade 9 atomic theory and periodic patterns unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Chemistry"

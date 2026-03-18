@@ -1,6 +1,6 @@
 ---
 title: "3-Act: How Many Times Can You Fold Paper?"
-date: 2026-03-17
+date: 2026-02-25
 description: "Can you fold a piece of paper in half more than 7 times? What if you could fold it 42 times — how thick would it be? A 3-Act Task connecting powers of 2, exponential growth, and the difference between mathematical models and physical constraints."
 subjects:
   - "Mathematics"

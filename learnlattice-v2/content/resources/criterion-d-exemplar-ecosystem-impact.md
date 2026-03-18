@@ -1,6 +1,6 @@
 ---
 title: What Does Level 7 Look Like? Ecosystem Impact
-date: 2026-03-08
+date: 2025-10-14
 description: Three student responses applying ecology to a real-world environmental decision — annotated at levels 3-4, 5-6, and 7-8. From 'pollution is bad' to genuine evidence-based argumentation.
 subjects:
 - Ecology

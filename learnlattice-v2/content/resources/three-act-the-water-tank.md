@@ -1,6 +1,6 @@
 ---
 title: "3-Act: How Long to Fill the Tank?"
-date: 2026-03-17
+date: 2025-12-16
 description: "A tap runs into a large tank. Students watch it fill for 10 seconds, then estimate how long it will take to fill completely. A Dan Meyer-style 3-Act Task connecting rates, proportional reasoning, and real-world estimation."
 subjects:
   - "Mathematics"

@@ -1,7 +1,7 @@
 ---
 title: "Ecosystem Architect"
 layout: "game"
-date: 2026-03-16
+date: 2025-12-18
 description: "Build food chains, classify organisms, and predict what happens when species disappear. A 4-stage ecology game that makes systems thinking visible."
 subjects:
   - "Science"

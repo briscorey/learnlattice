@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: Experimental Investigation'
-date: 2026-03-08
+date: 2026-02-23
 description: A ready-to-use MYP Criterion B science assessment task on investigating the effect of surface area on dissolving rate, with annotated student responses at levels 3-4, 5-6, and 7-8.
 subjects:
 - Chemistry

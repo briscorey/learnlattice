@@ -1,6 +1,6 @@
 ---
 title: The Bridges of Königsberg
-date: 2026-03-03
+date: 2025-09-22
 description: In 1736, Leonhard Euler was asked whether it was possible to walk through the city of Königsberg crossing each of its seven bridges exactly once. His answer — and the way he reached it — invented
   an entire branch of mathematics. This investigation recreates that discovery from scratch.
 subjects:

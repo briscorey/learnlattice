@@ -1,6 +1,6 @@
 ---
 title: "The Paper Bridge Challenge"
-date: 2026-03-10
+date: 2026-02-17
 description: "A flat sheet of paper cannot support a pencil. But fold it the right way and it holds a textbook. The material did not change. The shape did. How much weight can your paper bridge hold?"
 subjects:
   - "Physics"

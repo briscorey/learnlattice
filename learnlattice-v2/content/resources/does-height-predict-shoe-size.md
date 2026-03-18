@@ -1,6 +1,6 @@
 ---
 title: Does Height Predict Shoe Size?
-date: 2026-03-03
+date: 2025-09-29
 description: The class becomes the data set. Students measure, plot, and argue about whether a relationship exists — and if it does, how strong it is, what direction it goes, and whether it could be used
   to predict. A statistics investigation using real data from real people in the room.
 subjects:

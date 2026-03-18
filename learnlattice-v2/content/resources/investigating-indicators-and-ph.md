@@ -1,6 +1,6 @@
 ---
 title: "Investigating Indicators and pH"
-date: 2026-03-17
+date: 2025-12-29
 description: "Students test natural indicators (red cabbage, turmeric, beetroot) against known acids and bases to create their own pH scale."
 subjects:
   - "Chemistry"

@@ -1,6 +1,6 @@
 ---
 title: "MYP Sciences Criterion D: The Complete Teacher's Guide to Reflecting on the Impacts of Science"
-date: 2026-03-17
+date: 2026-03-10
 description: "The definitive guide to MYP Science Criterion D — teaching students to evaluate the real-world implications of scientific knowledge, consider ethical dimensions, and propose evidence-based courses of action. The most interdisciplinary of all MYP criteria."
 seo_title: "MYP Science Criterion D Guide — Reflecting on Impacts | LearnLattice"
 seo_description: "Complete free guide to MYP Sciences Criterion D. Teach students to evaluate science in society, discuss ethics, and propose solutions. Free resources and exemplars."

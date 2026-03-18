@@ -1,6 +1,6 @@
 ---
 title: Why Do Bees Build Hexagons?
-date: 2026-03-08
+date: 2025-11-03
 description: 'Bees build hexagonal honeycombs. Islamic artists tile entire walls. M.C. Escher filled canvases. All of them discovered the same mathematical secret: only certain shapes tessellate. This investigation
   explores why — and challenges students to create their own.'
 subjects:

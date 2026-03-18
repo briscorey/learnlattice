@@ -1,6 +1,6 @@
 ---
 title: Cell Systems and Microscopy Inquiry
-date: 2026-02-28
+date: 2025-10-17
 description: A guided biology investigation that links organelles, specialised cells, transport, and homeostasis through microscope work and modelling tasks.
 subjects:
 - Biology

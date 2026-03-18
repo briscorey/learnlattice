@@ -1,6 +1,6 @@
 ---
 title: "How Do We Know What Stars Are Made Of?"
-date: 2026-03-03
+date: 2026-03-04
 description: "The nearest star beyond our Sun is 40 trillion kilometres away. We will never visit it. Yet we know its temperature, its age, its chemical composition, and whether it has planets. This investigation explores how — and in doing so, builds the deepest ideas in space science: light as information."
 subjects:
   - "Space Science"

@@ -1,6 +1,6 @@
 ---
 title: "The Shadow Length Problem"
-date: 2026-03-17
+date: 2026-02-04
 description: "Students use similar triangles and shadow measurements to calculate the height of buildings and trees that cannot be measured directly."
 subjects:
   - "Mathematics"

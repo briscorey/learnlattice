@@ -1,6 +1,6 @@
 ---
 title: What Does Level 7 Look Like? Plant Growth
-date: 2026-03-08
+date: 2025-11-17
 description: Students grow bean plants under different light conditions and analyse the data. Three annotated responses show how the same experiment produces Level 3, Level 5, and Level 7 work depending
   on how the student handles variables, data, and conclusions.
 subjects:

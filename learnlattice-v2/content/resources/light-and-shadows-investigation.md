@@ -1,6 +1,6 @@
 ---
 title: "Shadow Detectives"
-date: 2026-03-08
+date: 2026-01-19
 description: "Your shadow is longer in the morning and shorter at noon. Why? This investigation uses shadow measurements to discover the relationship between the angle of a light source and the length of a shadow — connecting geometry to the motion of the Earth."
 subjects:
   - "Physics"

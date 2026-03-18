@@ -1,6 +1,6 @@
 ---
 title: "Investigating Circle Measurements"
-date: 2026-03-17
+date: 2026-03-04
 description: "Students measure the circumference and diameter of circular objects, calculate ratios, and discover pi through experimental data collection and analysis."
 subjects:
   - "Mathematics"

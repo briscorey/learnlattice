@@ -1,6 +1,6 @@
 ---
 title: "The Rusting Race"
-date: 2026-03-10
+date: 2026-02-16
 description: "Iron nails in water, oil, vinegar, and salt water — which rusts first? Students set up a controlled experiment, observe daily for a week, and discover that rusting needs both oxygen and water."
 subjects:
   - "Chemistry"

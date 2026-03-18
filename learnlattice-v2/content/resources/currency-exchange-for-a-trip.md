@@ -1,6 +1,6 @@
 ---
 title: "Currency Exchange for a Trip"
-date: 2026-03-17
+date: 2026-02-18
 description: "Students plan a travel budget using real exchange rates, commission fees, and proportional reasoning to maximise spending power."
 subjects:
   - "Mathematics"

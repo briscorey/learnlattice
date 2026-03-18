@@ -1,6 +1,6 @@
 ---
 title: "3-Act: Why Does My Photo Look Stretched?"
-date: 2026-03-17
+date: 2025-11-24
 description: "A student resizes a photo for a poster but it looks distorted. What went wrong? A 3-Act Task connecting ratio, proportion, scale factor, and the mathematics of digital images."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: How Many Fish in the Lake?
-date: 2026-03-03
+date: 2025-09-15
 description: 'You cannot count every fish in a lake. But you can estimate the total population using nothing but a bucket, some paint, and proportional reasoning. This investigation builds the capture-recapture
   method from scratch and connects it to one of the most powerful ideas in applied mathematics: sampling.'
 subjects:

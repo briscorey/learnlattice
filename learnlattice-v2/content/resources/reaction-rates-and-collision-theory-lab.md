@@ -1,6 +1,6 @@
 ---
 title: "Reaction Rates and Collision Theory Lab"
-date: 2026-02-16
+date: 2026-02-02
 description: "A chemistry lab series that explores temperature, concentration, surface area, and catalysts through collision theory and measured reaction rates."
 subjects:
   - "Chemistry"

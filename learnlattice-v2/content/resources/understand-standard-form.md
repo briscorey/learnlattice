@@ -1,6 +1,6 @@
 ---
 title: "Understand Standard Form"
-date: 2026-03-17
+date: 2025-09-15
 description: "A visual step-by-step explainer for standard form, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

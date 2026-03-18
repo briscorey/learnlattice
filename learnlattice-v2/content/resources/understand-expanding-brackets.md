@@ -1,6 +1,6 @@
 ---
 title: "Understand Expanding Brackets"
-date: 2026-03-17
+date: 2026-03-10
 description: "A visual step-by-step explainer for expanding brackets, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "The Pendulum Question"
-date: 2026-03-10
+date: 2026-01-26
 description: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings — the weight, the angle, or the length? Only one of these matters. Which one?"
 subjects:
   - "Physics"

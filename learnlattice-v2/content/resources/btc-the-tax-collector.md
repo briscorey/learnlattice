@@ -1,6 +1,6 @@
 ---
 title: "The Tax Collector"
-date: 2026-03-17
+date: 2025-10-20
 description: "A strategy game where you claim numbers 1-20, but the 'tax collector' takes all factors of your number. Can you beat the tax collector? A thinking task connecting factors, strategy, and optimisation."
 subjects:
   - "Mathematics"

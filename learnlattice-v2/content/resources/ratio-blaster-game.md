@@ -1,7 +1,7 @@
 ---
 layout: "game"
 title: "Ratio Blaster"
-date: 2026-03-16
+date: 2026-02-18
 description: "Simplify ratios, find missing values, scale recipes, and solve real-world proportion problems across 4 stages."
 subjects:
   - "Mathematics"

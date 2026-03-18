@@ -1,6 +1,6 @@
 ---
 title: "The Carbon Footprint Calculator"
-date: 2026-03-17
+date: 2026-01-19
 description: "Students build a simple algebraic model to estimate their household carbon footprint, identifying which changes would have the biggest impact."
 subjects:
   - "Mathematics"

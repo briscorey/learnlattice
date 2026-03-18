@@ -1,6 +1,6 @@
 ---
 title: "Reading Rocks: How We Know What We Cannot See"
-date: 2026-03-03
+date: 2025-09-17
 description: "Nobody has ever seen a tectonic plate move. Nobody has seen the inside of the Earth. Yet we know the plates are moving, the mantle is convecting, and the core is solid iron. This investigation builds the complete evidence case for plate tectonics — from scratch, the way geologists built it."
 subjects:
   - "Earth Science"

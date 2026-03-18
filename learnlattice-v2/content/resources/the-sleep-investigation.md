@@ -1,6 +1,6 @@
 ---
 title: "The Sleep Investigation"
-date: 2026-03-17
+date: 2025-10-13
 description: "Students survey classmates about sleep habits, analyse the data, compare to health guidelines, and make evidence-based recommendations."
 subjects:
   - "Mathematics"

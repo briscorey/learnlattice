@@ -1,6 +1,6 @@
 ---
 title: "The Breathing Rate Mystery"
-date: 2026-03-10
+date: 2025-11-10
 description: "You breathe 12 times a minute sitting still. After 30 star jumps, it doubles. But why? Students measure, graph, and explain the link between exercise and respiration."
 subjects:
   - "Biology"

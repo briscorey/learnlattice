@@ -1,6 +1,6 @@
 ---
 title: "The Impossible Lift"
-date: 2026-03-08
+date: 2025-12-22
 description: "Can one student lift a teacher off the ground using only a piece of rope and a stick? This investigation builds the concept of mechanical advantage through a challenge that seems impossible — until the physics makes it easy."
 subjects:
   - "Physics"

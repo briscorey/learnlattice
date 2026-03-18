@@ -1,6 +1,6 @@
 ---
 title: "3-Act: Will the Tower of Cups Fall?"
-date: 2026-03-17
+date: 2025-11-17
 description: "Students stack cups into a pyramid and predict the maximum height before collapse. A 3-Act Task connecting linear relationships, measurement, and structural reasoning — with a live classroom build."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "The Fizzing Tablet Race"
-date: 2026-03-10
+date: 2026-02-06
 description: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot one finishes in half the time. Why does temperature make reactions faster?"
 subjects:
   - "Chemistry"

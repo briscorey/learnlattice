@@ -1,6 +1,6 @@
 ---
 title: Grade 7 Earth's Dynamic Crust Companion Investigation Pack
-date: 2026-02-28
+date: 2025-09-04
 description: Companion investigation pack for grade 7 earth's dynamic crust unit. Built for MYP curriculum alignment and MYP inquiry-based teaching.
 subjects:
 - Earth Science

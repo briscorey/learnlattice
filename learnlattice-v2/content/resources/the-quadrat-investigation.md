@@ -1,6 +1,6 @@
 ---
 title: "What Lives in One Square Metre?"
-date: 2026-03-10
+date: 2026-01-13
 description: "One square metre of your school grounds contains an entire ecosystem — plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"
 subjects:
   - "Ecology"

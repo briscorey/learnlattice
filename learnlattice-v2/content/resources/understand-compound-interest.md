@@ -1,6 +1,6 @@
 ---
 title: "Understand Compound Interest"
-date: 2026-03-17
+date: 2026-02-02
 description: "A visual step-by-step explainer for compound interest, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

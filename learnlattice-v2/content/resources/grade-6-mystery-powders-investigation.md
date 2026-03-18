@@ -1,6 +1,6 @@
 ---
 title: Mystery Powders
-date: 2026-03-08
+date: 2025-09-19
 description: Five white powders. They all look the same. How do you tell them apart without tasting them? This investigation builds systematic testing skills through a forensic challenge that makes the
   scientific method feel like detective work.
 subjects:

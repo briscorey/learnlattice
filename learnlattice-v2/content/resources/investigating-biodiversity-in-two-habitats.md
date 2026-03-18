@@ -1,6 +1,6 @@
 ---
 title: "Investigating Biodiversity in Two Habitats"
-date: 2026-03-17
+date: 2025-12-30
 description: "Students use quadrats and transects to compare species richness and abundance between two habitats, calculating Simpson's diversity index."
 subjects:
   - "Ecology"

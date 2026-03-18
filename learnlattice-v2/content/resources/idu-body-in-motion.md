@@ -1,6 +1,6 @@
 ---
 title: "IDU: The Body in Motion — Biomechanics Meets Kinematics"
-date: 2026-03-17
+date: 2026-03-13
 description: "Students measure their own sprinting speed, reaction time, and jump height, then use physics equations and statistical analysis to investigate human performance limits. A math-science IDU connecting kinematics, biology, and data analysis through personal measurement."
 subjects:
   - "Mathematics"

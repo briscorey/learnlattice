@@ -1,6 +1,6 @@
 ---
 title: "The Invisible Thread"
-date: 2026-03-03
+date: 2026-03-02
 description: "A fishing boat thousands of kilometres away can collapse a forest. A single missing nutrient can shut down an entire ocean. This investigation builds systems thinking in ecology by tracing indirect effects — the invisible threads that connect organisms across an ecosystem."
 subjects:
   - "Ecology"

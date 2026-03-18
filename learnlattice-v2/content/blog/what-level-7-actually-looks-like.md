@@ -1,6 +1,6 @@
 ---
 title: "What Level 7 Actually Looks Like in Criterion B"
-date: 2026-03-08
+date: 2025-12-01
 description: "Every MYP teacher knows the difference between a level 3 and a level 7 in theory. But can you see it in student work? This post walks through real annotated responses showing exactly what separates describing from generalising from justifying."
 author: "Corey Zocchi"
 pillar: "MYP Assessment"

@@ -1,6 +1,6 @@
 ---
 title: The Recipe Problem
-date: 2026-03-08
+date: 2025-10-08
 description: A recipe for 4 people uses 300g of flour. You need to feed 7. How much flour? This investigation builds proportional reasoning through cooking — the most natural context for ratios that exists.
 subjects:
 - Mathematics

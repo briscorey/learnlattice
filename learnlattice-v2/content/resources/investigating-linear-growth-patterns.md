@@ -1,6 +1,6 @@
 ---
 title: "Investigating Linear Growth Patterns"
-date: 2026-03-17
+date: 2025-12-15
 description: "Students investigate matchstick and tile patterns, organise results in tables, identify linear relationships, and write general rules using algebraic notation."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "The Mathematics of Gerrymandering"
-date: 2026-03-15
+date: 2025-11-24
 description: "Students use geometry — area, perimeter, compactness ratios — to investigate how drawing district boundaries can manipulate election outcomes. They calculate efficiency gaps, analyse real district maps, and evaluate whether mathematics can define political fairness."
 subjects:
   - "Mathematics"

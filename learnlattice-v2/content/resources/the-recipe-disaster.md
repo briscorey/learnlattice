@@ -1,6 +1,6 @@
 ---
 title: "The Recipe Disaster"
-date: 2026-03-10
+date: 2026-01-30
 description: "A recipe serves 4 people. You need to serve 10. Every measurement changes. But 3/4 cup of flour scaled up to serve 10 is not a nice number. Welcome to fraction arithmetic in the real world."
 subjects:
   - "Mathematics"

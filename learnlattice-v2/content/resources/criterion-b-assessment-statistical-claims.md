@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: Questioning Statistical Claims'
-date: 2026-03-08
+date: 2025-09-08
 description: A Criterion B assessment where students investigate whether a newspaper's claim about screen time is supported by data they collect themselves. Includes three annotated student responses showing
   what 'investigating patterns' looks like at levels 3-4, 5-6, and 7-8 in a real-world statistics context.
 subjects:

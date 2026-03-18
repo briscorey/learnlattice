@@ -1,6 +1,6 @@
 ---
 title: "Understand Factorising Expressions"
-date: 2026-03-17
+date: 2026-02-02
 description: "A visual step-by-step explainer for factorising expressions, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

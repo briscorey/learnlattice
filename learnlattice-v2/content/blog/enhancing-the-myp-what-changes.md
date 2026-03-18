@@ -1,6 +1,6 @@
 ---
 title: "Enhancing the MYP: What Actually Changes in September 2027 (And What Doesn't)"
-date: 2026-03-17
+date: 2026-03-05
 description: "A plain-language guide to the four major changes coming to the IB Middle Years Programme in September 2027 — specified concepts, inquiry questions, contextual lenses, and community engagement. What you need to do, what you can ignore, and how to prepare without panic."
 seo_title: "Enhancing the MYP 2027 — What Changes & How to Prepare | LearnLattice"
 seo_description: "Plain-language guide to the September 2027 MYP changes. Specified concepts, inquiry questions, contextual lenses, and community engagement explained for teachers."

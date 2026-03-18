@@ -1,6 +1,6 @@
 ---
 title: "MYP Mathematics Criterion D: The Complete Teacher's Guide to Applying Mathematics in Real-Life Contexts"
-date: 2026-03-17
+date: 2026-02-10
 description: "The definitive guide to MYP Criterion D — how to design tasks where students genuinely apply mathematics to real-world problems, evaluate the reasonableness of their solutions, and discuss the limitations of mathematical models."
 seo_title: "MYP Maths Criterion D Guide — Real-Life Contexts | LearnLattice"
 seo_description: "Complete free guide to MYP Mathematics Criterion D. Design authentic real-world maths tasks, teach model evaluation, and download free Criterion D investigations."

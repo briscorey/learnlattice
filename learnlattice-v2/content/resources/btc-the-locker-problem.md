@@ -1,6 +1,6 @@
 ---
 title: "The Locker Problem"
-date: 2026-03-17
+date: 2026-03-09
 description: "1000 students walk past 1000 lockers. Student 1 opens every locker. Student 2 closes every 2nd locker. Student 3 changes every 3rd. Which lockers are open at the end? A legendary thinking task connecting factors, multiples, and perfect squares."
 subjects:
   - "Mathematics"

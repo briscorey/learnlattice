@@ -1,6 +1,6 @@
 ---
 title: Population Prediction
-date: 2026-03-08
+date: 2025-09-09
 description: A single bacterium divides every 20 minutes. After 24 hours, the colony would weigh more than the Earth. But it doesn't. Why not? This investigation connects exponential growth to ecological
   limits — and asks whether human population growth faces the same constraints.
 subjects:

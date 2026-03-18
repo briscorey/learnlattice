@@ -1,6 +1,6 @@
 ---
 title: "Ecosystem Energy and Biodiversity Study"
-date: 2026-02-27
+date: 2026-02-23
 description: "An ecology fieldwork resource focused on food webs, biodiversity sampling, and evaluating human impact using real habitat data."
 subjects:
   - "Ecology"

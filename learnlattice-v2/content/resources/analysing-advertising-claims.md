@@ -1,6 +1,6 @@
 ---
 title: "Analysing Advertising Claims"
-date: 2026-03-17
+date: 2025-10-13
 description: "Students collect examples of statistical claims in advertisements, evaluate the methodology, identify misleading graphs, and write a consumer guide."
 subjects:
   - "Mathematics"

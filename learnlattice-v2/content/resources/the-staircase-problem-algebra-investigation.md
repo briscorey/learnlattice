@@ -1,6 +1,6 @@
 ---
 title: "The Staircase Problem"
-date: 2026-03-03
+date: 2025-12-29
 description: "How many blocks does it take to build a staircase 100 steps high? This investigation moves students from counting to pattern to formula to argument — the complete arc of algebraic thinking — using nothing but a question a six-year-old could understand."
 subjects:
   - "Mathematics"

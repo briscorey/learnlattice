@@ -1,6 +1,6 @@
 ---
 title: "0.999... = 1? Prove It."
-date: 2026-03-03
+date: 2025-10-21
 description: "Is 0.999... (zero point nine repeating forever) equal to 1, or just very close? This deceptively simple question opens into the deepest ideas in decimal representation — and four completely different proofs that all arrive at the same answer."
 subjects:
   - "Mathematics"

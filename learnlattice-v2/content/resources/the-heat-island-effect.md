@@ -1,6 +1,6 @@
 ---
 title: "The Heat Island Effect: Mapping Temperature in Our Community"
-date: 2026-03-15
+date: 2025-11-17
 description: "Students measure temperatures across their school and local community — asphalt, grass, shade, buildings — to map urban heat islands, analyse patterns with statistics, and evaluate how urban planning decisions impact local climate and equity."
 subjects:
   - "Science"

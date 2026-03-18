@@ -1,6 +1,6 @@
 ---
 title: "The Sinking Orange"
-date: 2026-03-08
+date: 2026-02-11
 description: "An orange floats in water. Peel it and it sinks. Why would removing material make something heavier? This investigation uses a single counterintuitive observation to build the concept of density from direct experience."
 subjects:
   - "Physics"

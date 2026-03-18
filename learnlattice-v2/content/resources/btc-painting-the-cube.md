@@ -1,6 +1,6 @@
 ---
 title: "Painting the Cube"
-date: 2026-03-17
+date: 2026-01-12
 description: "A 3×3×3 cube is painted red on all faces then cut into 27 small cubes. How many small cubes have 3 red faces? 2? 1? 0? What about a 10×10×10 cube? A spatial thinking task connecting geometry, patterns, and algebraic generalisation."
 subjects:
   - "Mathematics"

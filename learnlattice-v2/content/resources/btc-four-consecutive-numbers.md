@@ -1,6 +1,6 @@
 ---
 title: "Four Consecutive Numbers"
-date: 2026-03-17
+date: 2025-11-13
 description: "Pick any four consecutive numbers and add them. Try again. What do you notice? Can you prove it always works? A low-floor, high-ceiling thinking task that leads to algebraic proof."
 subjects:
   - "Mathematics"

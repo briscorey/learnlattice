@@ -1,6 +1,6 @@
 ---
 title: "Crossing the River"
-date: 2026-03-17
+date: 2025-12-26
 description: "Three adults and three children need to cross a river in a boat that holds one adult OR two children. Can your group find the minimum number of crossings? A classic BTC thinking task that builds logical reasoning."
 subjects:
   - "Mathematics"

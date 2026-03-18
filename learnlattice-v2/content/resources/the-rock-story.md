@@ -1,6 +1,6 @@
 ---
 title: "The Rock Story"
-date: 2026-03-10
+date: 2025-12-22
 description: "Every rock is a time capsule. A pebble on the beach might contain minerals that formed in a volcano, were compressed for millions of years, then eroded by a river. Can you read its story?"
 subjects:
   - "Earth Science"

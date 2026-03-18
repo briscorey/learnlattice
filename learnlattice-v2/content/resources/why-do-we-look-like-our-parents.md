@@ -1,6 +1,6 @@
 ---
 title: "Why Do We Look Like Our Parents?"
-date: 2026-03-10
+date: 2025-11-26
 description: "You have your mother's eyes and your father's nose — or so people say. But how does information travel from parent to child? Students model inheritance using coin flips and discover why siblings look different."
 subjects:
   - "Biology"

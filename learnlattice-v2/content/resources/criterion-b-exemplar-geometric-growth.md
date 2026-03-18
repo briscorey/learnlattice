@@ -1,6 +1,6 @@
 ---
 title: What Does Level 7 Look Like? Geometric Growth
-date: 2026-03-08
+date: 2025-10-09
 description: Fold a piece of paper in half. How many times can you fold it? Three student responses — annotated at levels 3-4, 5-6, and 7-8 — explore the power of exponential growth through this deceptively
   simple question.
 subjects:

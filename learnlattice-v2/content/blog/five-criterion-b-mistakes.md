@@ -1,6 +1,6 @@
 ---
 title: "The 5 Most Common Criterion B Mistakes (And How to Fix Them)"
-date: 2026-03-08
+date: 2025-11-18
 description: "After marking hundreds of Criterion B investigations, these are the five errors that keep students stuck at Level 3-4 — and the specific teaching moves that push them to 5-6 and beyond."
 pillar: "MYP Assessment"
 tags:

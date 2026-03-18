@@ -1,6 +1,6 @@
 ---
 title: "The Rope Around the Earth"
-date: 2026-03-17
+date: 2026-03-02
 description: "A rope fits snugly around the Earth's equator. You add just 1 metre of extra rope and redistribute it evenly. How high does the rope now float? The answer will shock your students — and teach them about the power of algebra over intuition."
 subjects:
   - "Mathematics"

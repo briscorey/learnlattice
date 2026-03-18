@@ -1,7 +1,7 @@
 ---
 layout: "game"
 title: "Density Dash"
-date: 2026-03-16
+date: 2025-10-06
 description: "Predict float or sink, calculate density, rearrange D=M/V, and apply density to real-world scenarios like submarines and hot air balloons."
 subjects:
   - "Science"

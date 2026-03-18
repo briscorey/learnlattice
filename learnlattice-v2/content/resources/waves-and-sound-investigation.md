@@ -1,6 +1,6 @@
 ---
 title: "Can You See Sound?"
-date: 2026-03-08
+date: 2026-01-15
 description: "Sound is invisible — but its effects are not. This investigation uses vibrating speakers, water, salt, and flame to make sound waves visible, building the wave model from direct observation."
 subjects:
   - "Physics"

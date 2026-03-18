@@ -1,6 +1,6 @@
 ---
 title: Reading Climate Data
-date: 2026-03-08
+date: 2025-09-18
 description: Temperature records show the planet has warmed by about 1.1°C since pre-industrial times. That sounds small. This investigation teaches students to read, analyse, and interpret real climate
   datasets — and to understand why 1.1°C is not a small number.
 subjects:

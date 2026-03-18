@@ -1,6 +1,6 @@
 ---
 title: "Adaptation and Natural Selection Case Study"
-date: 2026-02-22
+date: 2025-12-26
 description: "A biology case study using population variation and environmental pressure to explore adaptation, inheritance, and natural selection."
 subjects:
   - "Biology"

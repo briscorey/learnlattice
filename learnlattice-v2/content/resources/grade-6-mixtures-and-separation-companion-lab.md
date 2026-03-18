@@ -1,6 +1,6 @@
 ---
 title: "Grade 6 Mixtures and Separation Companion Lab Activity"
-date: 2026-02-28
+date: 2025-12-09
 description: "Companion lab activity for grade 6 mixtures and separation unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Chemistry"

@@ -1,6 +1,6 @@
 ---
 title: The Seed Race
-date: 2026-03-08
+date: 2025-10-13
 description: Which conditions make seeds grow fastest? This investigation turns germination into a competition — every group controls a different variable, and the class discovers experimental design by
   actually doing it.
 subjects:

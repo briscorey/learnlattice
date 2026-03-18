@@ -1,6 +1,6 @@
 ---
 title: "Grade 6 Solar System and Scale Companion Investigation Pack"
-date: 2026-02-28
+date: 2026-01-27
 description: "Companion investigation pack for grade 6 solar system and scale unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Space Science"

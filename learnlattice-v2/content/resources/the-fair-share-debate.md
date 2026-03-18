@@ -1,6 +1,6 @@
 ---
 title: "The Fair Share Debate"
-date: 2026-03-10
+date: 2025-11-11
 description: "Two students split a pizza. One cuts it into 6 pieces and takes 3. The other cuts it into 8 pieces and takes 4. They both say they took half. Who is right?"
 subjects:
   - "Mathematics"

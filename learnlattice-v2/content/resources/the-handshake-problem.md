@@ -1,6 +1,6 @@
 ---
 title: "The Handshake Problem"
-date: 2026-03-10
+date: 2025-12-08
 description: "If 30 people are in a room and everyone shakes hands with everyone else, how many handshakes happen? Can you find the answer WITHOUT counting every single one?"
 subjects:
   - "Mathematics"

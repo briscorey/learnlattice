@@ -1,6 +1,6 @@
 ---
 title: "What Does Level 7 Look Like? Lab Report Communication"
-date: 2026-03-08
+date: 2025-10-01
 description: "Three student lab reports on the same experiment — annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a disorganised report from clear, precise scientific communication."
 subjects:
   - "Science"

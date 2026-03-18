@@ -1,6 +1,6 @@
 ---
 title: "Investigating Golden Ratio in Nature"
-date: 2026-03-17
+date: 2026-03-04
 description: "Students measure real objects — flowers, shells, body proportions — to investigate whether the golden ratio (≈ 1.618) genuinely appears in nature or whether the claim is overstated."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "3-Act: How Far Did She Run?"
-date: 2026-03-17
+date: 2025-12-26
 description: "A basketball player runs a fast break from one baseline to the other and back. But how far did she actually run, including the curved path around defenders? A 3-Act Task connecting Pythagoras, distance, and real-world estimation."
 subjects:
   - "Mathematics"

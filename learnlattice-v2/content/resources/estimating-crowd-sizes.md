@@ -1,6 +1,6 @@
 ---
 title: "Estimating Crowd Sizes"
-date: 2026-03-17
+date: 2025-12-10
 description: "Students investigate methods for estimating large quantities (crowd sizes at events), applying sampling and proportional reasoning to aerial photos."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "What Does Level 7 Look Like? Statistical Claims"
-date: 2026-03-08
+date: 2025-09-22
 description: "Three student responses to a statistics investigation asking whether a newspaper headline is supported by the data. From accepting the claim at face value to critically evaluating sample size and methodology."
 subjects:
   - "Mathematics"

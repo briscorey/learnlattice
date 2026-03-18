@@ -1,6 +1,6 @@
 ---
 title: "What Does Level 7 Look Like? Explaining Body Systems"
-date: 2026-03-08
+date: 2025-12-19
 description: "Three student explanations of the digestive system. From listing organs to explaining how systems interact to maintain homeostasis."
 subjects:
   - "Biology"

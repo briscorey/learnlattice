@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: Data Investigation'
-date: 2026-03-08
+date: 2025-10-15
 description: A ready-to-use MYP Criterion B assessment task on statistical investigation with annotated student responses at levels 3-4, 5-6, and 7-8. Students design and carry out their own data investigation
   from a provided dataset.
 subjects:

@@ -1,6 +1,6 @@
 ---
 title: "The Mobile Phone Plan Problem"
-date: 2026-03-17
+date: 2026-03-13
 description: "Students compare different phone plans with monthly fees and per-minute charges, setting up linear equations to determine which plan is cheapest."
 subjects:
   - "Mathematics"

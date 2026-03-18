@@ -1,6 +1,6 @@
 ---
 title: "MYP Mathematics Criterion B: The Complete Teacher's Guide to Investigating Patterns"
-date: 2026-03-17
+date: 2026-01-27
 description: "The definitive guide to MYP Criterion B in mathematics — from designing investigations that students actually want to do, to understanding the critical difference between verification and proof, with annotated exemplars and free investigation packs."
 seo_title: "MYP Maths Criterion B Guide — Investigating Patterns | LearnLattice"
 seo_description: "Complete free guide to MYP Mathematics Criterion B. Learn to design pattern investigations, distinguish verification from proof, and download free investigation packs."

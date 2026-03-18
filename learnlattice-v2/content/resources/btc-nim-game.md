@@ -1,6 +1,6 @@
 ---
 title: "The Nim Game: Who Wins?"
-date: 2026-03-17
+date: 2025-11-10
 description: "Place 21 counters on the table. Two players take turns removing 1, 2, or 3 counters. The player who takes the last counter wins. Is there a winning strategy? A classic thinking task connecting backward reasoning to modular arithmetic."
 subjects:
   - "Mathematics"

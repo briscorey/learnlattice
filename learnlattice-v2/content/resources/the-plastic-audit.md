@@ -1,6 +1,6 @@
 ---
 title: "The Plastic Audit"
-date: 2026-03-17
+date: 2026-02-24
 description: "Students collect data on single-use plastic in their school, analyse patterns, compare to community data, and propose reduction targets."
 subjects:
   - "Mathematics"

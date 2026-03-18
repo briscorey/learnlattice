@@ -1,6 +1,6 @@
 ---
 title: The Circuit Detective
-date: 2026-03-08
+date: 2025-10-22
 description: A string of holiday lights goes out. One bulb is broken. How do you find it without testing every single bulb? This investigation builds series and parallel circuit understanding through a
   diagnostic problem that makes circuit design genuinely matter.
 subjects:

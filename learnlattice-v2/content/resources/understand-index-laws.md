@@ -1,6 +1,6 @@
 ---
 title: "Understand Index Laws"
-date: 2026-03-17
+date: 2026-01-27
 description: "A visual step-by-step explainer for index laws, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

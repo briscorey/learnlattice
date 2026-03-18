@@ -1,6 +1,6 @@
 ---
 title: "The Million Dollar Question"
-date: 2026-03-03
+date: 2025-11-20
 description: "If you spent one million dollars at one dollar per second, how long would it take? This investigation uses a single provocative question to build scale reasoning, estimation fluency, and scientific notation across number sense."
 subjects:
   - "Mathematics"

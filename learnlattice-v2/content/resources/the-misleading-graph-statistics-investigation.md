@@ -1,6 +1,6 @@
 ---
 title: "The Misleading Graph"
-date: 2026-03-03
+date: 2026-01-07
 description: "Two graphs show exactly the same data — one looks like a crisis, one looks like everything is fine. How? This investigation builds statistical literacy by putting students in the position of both the deceiver and the detective."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "The Egg Drop Challenge"
-date: 2026-03-10
+date: 2026-02-09
 description: "A raw egg dropped from 3 metres will smash. But astronauts survive re-entry at 28,000 km/h. The physics is the same. Design a container that protects an egg from a 3-metre drop using only paper and ta"
 subjects:
   - "Physics"

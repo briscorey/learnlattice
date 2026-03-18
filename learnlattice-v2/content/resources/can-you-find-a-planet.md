@@ -1,6 +1,6 @@
 ---
 title: "Can You Find a Planet You Cannot See?"
-date: 2026-03-10
+date: 2026-01-15
 description: "In 2017, NASA discovered 7 Earth-sized planets orbiting a star 40 light-years away. Nobody has ever seen them. How do you discover a planet you cannot see?"
 subjects:
   - "Space Science"

@@ -1,6 +1,6 @@
 ---
 title: "The Discount Shopping Challenge"
-date: 2026-03-17
+date: 2025-11-21
 description: "Students compare percentage discounts, buy-one-get-one deals, and bulk pricing to determine which offers genuinely save the most money."
 subjects:
   - "Mathematics"

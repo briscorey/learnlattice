@@ -1,6 +1,6 @@
 ---
 title: "Grade 6 Body Systems Inquiry Companion Investigation Pack"
-date: 2026-02-28
+date: 2025-12-16
 description: "Companion investigation pack for grade 6 body systems inquiry unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Biology"

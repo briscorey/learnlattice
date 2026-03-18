@@ -1,6 +1,6 @@
 ---
 title: "IDU: Is Our Water Safe? — A Mathematical and Scientific Investigation"
-date: 2026-03-17
+date: 2026-03-02
 description: "Students test local water samples for pH, turbidity, dissolved solids, and bacterial contamination, then use statistical analysis to determine whether the water meets WHO safety standards. A genuine math-science interdisciplinary investigation connecting chemistry, ecology, and data analysis."
 subjects:
   - "Mathematics"

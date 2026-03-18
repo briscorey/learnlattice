@@ -1,6 +1,6 @@
 ---
 title: "Scaling the Solar System"
-date: 2026-03-08
+date: 2026-01-05
 description: "If Earth were a peppercorn, how far away would Neptune be? This interdisciplinary investigation uses proportional reasoning to build a scale model of the solar system — and reveals why our intuitions about space are always wrong."
 subjects:
   - "Mathematics"

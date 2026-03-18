@@ -1,7 +1,7 @@
 ---
 title: "Circuit Challenge"
 layout: "game"
-date: 2026-03-16
+date: 2026-01-02
 description: "From naming components to troubleshooting faults. Build your understanding of electrical circuits through 4 stages of increasing challenge."
 subjects:
   - "Science"

@@ -1,6 +1,6 @@
 ---
 title: "What Lives in Our Schoolyard?"
-date: 2026-03-08
+date: 2025-09-05
 description: "Every schoolyard is an ecosystem. This investigation sends students outside with quadrats and observation logs to discover biodiversity they walk past every day without noticing."
 subjects:
   - "Ecology"

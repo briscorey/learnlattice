@@ -1,6 +1,6 @@
 ---
 title: "Grade 7 Electromagnetism and Circuits Companion Lab Activity"
-date: 2026-02-28
+date: 2025-12-30
 description: "Companion lab activity for grade 7 electromagnetism and circuits unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Science"

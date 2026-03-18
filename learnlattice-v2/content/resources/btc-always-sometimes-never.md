@@ -1,6 +1,6 @@
 ---
 title: "Always, Sometimes, Never: Number Properties"
-date: 2026-03-17
+date: 2026-02-05
 description: "Sort 12 mathematical statements into Always True, Sometimes True, or Never True — then PROVE your classification. A thinking task that develops mathematical reasoning and the critical distinction between examples and proof."
 subjects:
   - "Mathematics"

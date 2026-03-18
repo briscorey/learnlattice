@@ -1,6 +1,6 @@
 ---
 title: "The Chocolate Bar Problem"
-date: 2026-03-10
+date: 2026-01-05
 description: "Three friends share 2 chocolate bars equally. Each person gets 2/3 of a bar. But HOW do you cut 2 bars into 3 equal pieces? There are at least 4 different ways — and they all give the same answer."
 subjects:
   - "Mathematics"

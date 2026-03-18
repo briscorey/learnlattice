@@ -1,6 +1,6 @@
 ---
 title: "Investigating Simultaneous Equations Through Balances"
-date: 2026-03-17
+date: 2026-03-13
 description: "Students use balance puzzles and systematic trial to investigate when two linear relationships are simultaneously true, building intuition for solving simultaneous equations."
 subjects:
   - "Mathematics"

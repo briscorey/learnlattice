@@ -1,6 +1,6 @@
 ---
 title: "The 28-Night Moon Journal"
-date: 2026-03-10
+date: 2026-03-09
 description: "The Moon changes shape every night — but it is always a sphere. Draw what you see for 28 nights, and discover the pattern that ancient civilisations used to build their calendars."
 subjects:
   - "Space Science"

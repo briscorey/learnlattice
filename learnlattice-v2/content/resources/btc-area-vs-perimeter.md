@@ -1,6 +1,6 @@
 ---
 title: "Same Area, Different Perimeter"
-date: 2026-03-17
+date: 2025-09-11
 description: "Can two shapes have the same area but different perimeters? What is the largest perimeter you can make with exactly 12 square units of area? A visual thinking task that challenges a deep misconception about area and perimeter."
 subjects:
   - "Mathematics"

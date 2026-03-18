@@ -1,6 +1,6 @@
 ---
 title: "The Growing Squares"
-date: 2026-03-10
+date: 2026-02-26
 description: "Build a square from tiles. Now build a bigger square around it. How many tiles did you add? Build another layer. See the pattern? You just discovered something mathematicians call the difference of sq"
 subjects:
   - "Mathematics"

@@ -1,7 +1,7 @@
 ---
 layout: "game"
 title: "Tectonic Puzzle"
-date: 2026-03-08
+date: 2025-11-05
 description: "The continents were once joined as Pangaea. Can you put them back together? Drag continental plates to reconstruct the supercontinent using fossil, climate, and rock evidence — just like Alfred Wegener did in 1912."
 subjects:
   - "Earth Science"

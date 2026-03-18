@@ -1,6 +1,6 @@
 ---
 title: "Grade 6 Force and Motion Companion Lab Activity"
-date: 2026-02-28
+date: 2026-01-30
 description: "Companion lab activity for grade 6 force and motion unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Science"

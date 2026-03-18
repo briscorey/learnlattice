@@ -1,6 +1,6 @@
 ---
 title: "What Does Level 7 Look Like? Particle Theory"
-date: 2026-03-08
+date: 2025-12-04
 description: "Three student explanations of why ice floats on water using particle theory. From vague answers to precise scientific reasoning with correct terminology."
 subjects:
   - "Chemistry"

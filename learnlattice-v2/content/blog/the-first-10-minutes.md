@@ -1,6 +1,6 @@
 ---
 title: "The First 10 Minutes: Hooking Non-English Speakers on a Math Problem"
-date: 2026-03-08
+date: 2025-09-28
 description: "Most lessons are won or lost in the opening minutes. Here is exactly how I design the first 10 minutes of a math lesson for a room full of students who do not share my language — and why getting this right changes everything that follows."
 pillar: "Craft"
 tags:

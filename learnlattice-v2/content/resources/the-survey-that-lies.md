@@ -1,6 +1,6 @@
 ---
 title: "The Survey That Lies"
-date: 2026-03-10
+date: 2025-11-20
 description: "90% of students prefer our school lunches! (Survey of 10 students. All were on the school council. The question was: 'Don't you love the new menu?') Can you spot every trick?"
 subjects:
   - "Mathematics"

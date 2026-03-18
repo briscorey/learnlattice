@@ -1,6 +1,6 @@
 ---
 title: "Thinking Classrooms Meet MYP: How Liljedahl's 14 Practices Work in an International School"
-date: 2026-03-08
+date: 2025-10-12
 description: "Building Thinking Classrooms was written for North American public schools. Here's what happens when you implement it in an MYP classroom with multilingual learners — what transfers directly, what needs adapting, and the three practices that changed my teaching the most."
 pillar: "Thinking"
 tags:

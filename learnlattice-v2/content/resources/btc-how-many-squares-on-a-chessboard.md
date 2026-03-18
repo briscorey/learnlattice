@@ -1,6 +1,6 @@
 ---
 title: "How Many Squares on a Chessboard?"
-date: 2026-03-17
+date: 2025-11-10
 description: "A chessboard has 64 small squares. But how many squares of ALL sizes? This visual thinking task leads to the sum of square numbers and a surprising connection to algebraic proof."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: Geometric Investigation'
-date: 2026-03-08
+date: 2025-10-06
 description: A ready-to-use MYP Criterion B assessment task investigating the relationship between the number of sides of a polygon and the sum of its interior angles. Annotated responses at levels 3-4,
   5-6, and 7-8.
 subjects:

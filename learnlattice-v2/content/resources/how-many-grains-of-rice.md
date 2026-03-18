@@ -1,6 +1,6 @@
 ---
 title: "How Many Grains of Rice Fill a Classroom?"
-date: 2026-03-10
+date: 2025-12-29
 description: "How many grains of rice would it take to fill your classroom from floor to ceiling? Most people guess a few million. The real answer is in the billions. How far off is your intuition?"
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "The Water Jug Problem"
-date: 2026-03-17
+date: 2026-02-25
 description: "You have a 5-litre jug and a 3-litre jug. How can you measure exactly 4 litres? A classic problem-solving task that develops logical reasoning and systematic thinking at vertical whiteboards."
 subjects:
   - "Mathematics"

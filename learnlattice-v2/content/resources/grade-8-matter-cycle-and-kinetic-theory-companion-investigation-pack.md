@@ -1,6 +1,6 @@
 ---
 title: "Grade 8 Matter Cycle and Kinetic Theory Companion Investigation Pack"
-date: 2026-02-28
+date: 2026-01-09
 description: "Companion investigation pack for grade 8 matter cycle and kinetic theory unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Chemistry"

@@ -1,6 +1,6 @@
 ---
 title: "The Impossible Triangle"
-date: 2026-03-10
+date: 2026-02-09
 description: "Can you build a triangle with sides 3cm, 4cm, and 10cm? Try it. You cannot. Why not? And can you find the rule that tells you which triangles are possible?"
 subjects:
   - "Mathematics"

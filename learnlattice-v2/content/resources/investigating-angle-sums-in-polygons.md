@@ -1,6 +1,6 @@
 ---
 title: "Investigating Angle Sums in Polygons"
-date: 2026-03-17
+date: 2025-12-17
 description: "Students measure and calculate angle sums for polygons with 3, 4, 5, 6... sides, discover the pattern, and develop a general formula using triangulation."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "From Statements of Inquiry to Inquiry Questions: 20 Before-and-After Examples"
-date: 2026-03-17
+date: 2026-03-15
 description: "The Enhanced MYP lets teachers replace Statements of Inquiry with inquiry questions. Here are 20 real conversions for MYP mathematics and sciences — showing how to turn compliance sentences into questions students actually want to answer."
 seo_title: "MYP Inquiry Questions — 20 Examples from Statements of Inquiry | LearnLattice"
 seo_description: "20 real before-and-after examples converting MYP Statements of Inquiry into inquiry questions for mathematics and sciences. Practical guide for Enhanced MYP."

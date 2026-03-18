@@ -1,6 +1,6 @@
 ---
 title: "The Earthquake Detective"
-date: 2026-03-10
+date: 2026-01-06
 description: "Three seismograph stations detect the same earthquake at different times. Using only the time differences and a compass, can you locate exactly where it happened?"
 subjects:
   - "Earth Science"

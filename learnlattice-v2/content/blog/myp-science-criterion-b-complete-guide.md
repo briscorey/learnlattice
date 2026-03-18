@@ -1,6 +1,6 @@
 ---
 title: "MYP Sciences Criterion B: The Complete Teacher's Guide to Inquiring and Designing"
-date: 2026-03-17
+date: 2026-02-24
 description: "The definitive guide to MYP Science Criterion B — from writing testable research questions to designing controlled experiments. Includes the critical difference between outlining and explaining a method, common mistakes, and free investigation packs."
 seo_title: "MYP Science Criterion B Guide — Inquiring & Designing | LearnLattice"
 seo_description: "Complete free guide to MYP Sciences Criterion B. Learn to teach research questions, hypothesis writing, and experimental design with annotated exemplars and free resources."

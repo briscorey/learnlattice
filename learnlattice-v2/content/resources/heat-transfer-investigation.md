@@ -1,6 +1,6 @@
 ---
 title: "Why Is the Metal Seat Colder?"
-date: 2026-03-08
+date: 2025-12-05
 description: "A metal bench and a wooden bench sit in the same park at the same temperature. The metal one feels freezing. The wooden one feels fine. They are the same temperature. Why does one feel colder? This investigation challenges the intuition that touch tells us temperature."
 subjects:
   - "Physics"

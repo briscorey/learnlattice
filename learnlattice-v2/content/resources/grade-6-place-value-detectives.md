@@ -1,6 +1,6 @@
 ---
 title: Place Value Detectives
-date: 2026-03-08
+date: 2025-11-10
 description: The number 111 means something completely different in base 10, base 2, and base 5. This investigation explores place value by building numbers in unfamiliar bases — revealing that our number
   system is a design choice, not a mathematical necessity.
 subjects:

@@ -1,6 +1,6 @@
 ---
 title: "The Colour-Changing Cabbage"
-date: 2026-03-10
+date: 2025-12-08
 description: "Red cabbage juice turns pink in lemon juice and green in baking soda. But it is the same liquid. What is it detecting?"
 subjects:
   - "Chemistry"

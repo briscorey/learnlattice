@@ -1,6 +1,6 @@
 ---
 title: "Photosynthesis and Cellular Respiration Comparison"
-date: 2026-02-23
+date: 2026-01-06
 description: "A biology comparison task that helps students connect energy transfer, matter cycling, and cell function through diagramming and evidence-based explanation."
 subjects:
   - "Biology"

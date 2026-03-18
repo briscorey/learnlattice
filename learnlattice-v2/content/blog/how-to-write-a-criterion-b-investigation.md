@@ -1,6 +1,6 @@
 ---
 title: "How to Write a Criterion B Investigation That Students Actually Want to Do"
-date: 2026-03-08
+date: 2025-11-03
 description: "MYP Criterion B investigations don't have to be dry pattern-matching exercises. Here's how I design investigations that start with genuine curiosity and end with students who can actually investigate — with examples, common mistakes, and the teacher moves that make them work."
 pillar: "IB Practice"
 tags:

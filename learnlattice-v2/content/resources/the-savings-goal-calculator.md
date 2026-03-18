@@ -1,6 +1,6 @@
 ---
 title: "The Savings Goal Calculator"
-date: 2026-03-17
+date: 2026-02-16
 description: "Students calculate how long it takes to save for a specific item using different saving strategies, comparing simple saving to earning interest."
 subjects:
   - "Mathematics"

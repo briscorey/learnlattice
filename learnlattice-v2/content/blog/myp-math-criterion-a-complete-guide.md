@@ -1,6 +1,6 @@
 ---
 title: "MYP Mathematics Criterion A: The Complete Teacher's Guide to Knowing and Understanding"
-date: 2026-03-17
+date: 2026-01-20
 description: "Everything MYP mathematics teachers need to know about Criterion A — what each achievement level really means, how to design tasks that assess genuine understanding, common mistakes to avoid, and free resources for every grade level."
 seo_title: "MYP Maths Criterion A Guide — Knowing & Understanding | LearnLattice"
 seo_description: "Complete free guide to MYP Mathematics Criterion A. Plain-language rubric breakdown, task design tips, annotated exemplars, and classroom-ready resources for Grade 6-10."

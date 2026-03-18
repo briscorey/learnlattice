@@ -1,6 +1,6 @@
 ---
 title: "IDU: Earthquake Risk — Where Should We Build?"
-date: 2026-03-17
+date: 2025-12-01
 description: "Students analyse real seismic data to map earthquake risk zones, calculate statistical probabilities of future events, and evaluate where it is safe to build infrastructure. A math-science IDU connecting earth science, statistics, and real-world decision making."
 subjects:
   - "Mathematics"

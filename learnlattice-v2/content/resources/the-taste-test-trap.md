@@ -1,6 +1,6 @@
 ---
 title: "The Taste Test Trap"
-date: 2026-03-10
+date: 2025-11-28
 description: "A student claims they can tell the difference between two brands of cola. You test them — they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"
 subjects:
   - "Mathematics"

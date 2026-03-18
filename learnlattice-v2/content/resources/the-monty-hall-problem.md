@@ -1,6 +1,6 @@
 ---
 title: The Monty Hall Problem
-date: 2026-03-03
+date: 2025-09-08
 description: There are three doors. Behind one is a car. You pick Door 1. The host opens Door 3 — it's a goat. Should you switch? The correct answer has triggered arguments among mathematicians, letters
   to newspapers, and a genuine crisis in probabilistic reasoning. Run the simulation. Prove the answer. Survive the argument.
 subjects:

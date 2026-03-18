@@ -1,6 +1,6 @@
 ---
 title: "Pandemic Math: Modeling Disease Transmission"
-date: 2026-03-15
+date: 2026-02-09
 description: "Students use real WHO epidemiological data to explore how diseases spread exponentially, build SIR models in spreadsheets, and evaluate how mathematical models informed public health decisions — discovering that exponential growth is the most dangerous pattern humans consistently fail to understand."
 subjects:
   - "Mathematics"

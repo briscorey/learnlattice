@@ -1,6 +1,6 @@
 ---
 title: "Investigating Quadratic Patterns"
-date: 2026-03-17
+date: 2026-01-05
 description: "Students explore growth patterns where the second differences are constant, discovering quadratic relationships through hands-on pattern building and systematic tabulation."
 subjects:
   - "Mathematics"

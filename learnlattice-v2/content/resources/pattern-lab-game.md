@@ -1,7 +1,7 @@
 ---
 layout: "game"
 title: "Pattern Lab"
-date: 2026-03-09
+date: 2025-11-21
 description: "A logic simulator for algebraic thinking. Observe input-output pairs, discover the hidden rule, then predict new outputs. 10 levels from linear to exponential — tests pattern recognition and formula writing."
 subjects:
   - "Mathematics"

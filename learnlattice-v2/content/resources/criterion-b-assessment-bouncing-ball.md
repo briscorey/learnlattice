@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: The Bouncing Ball'
-date: 2026-03-08
+date: 2025-10-16
 description: A complete MYP Science Criterion B assessment task with three annotated student responses at levels 3-4, 5-6, and 7-8. Students investigate the relationship between drop height and bounce height.
   Includes the task, mark scheme, and commentary on experimental design quality.
 subjects:

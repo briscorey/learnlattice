@@ -1,6 +1,6 @@
 ---
 title: "Understand Trigonometric Ratios"
-date: 2026-03-17
+date: 2026-01-19
 description: "A visual step-by-step explainer for trigonometric ratios, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

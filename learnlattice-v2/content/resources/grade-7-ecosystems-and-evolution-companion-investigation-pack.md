@@ -1,6 +1,6 @@
 ---
 title: Grade 7 Ecosystems and Evolution Companion Investigation Pack
-date: 2026-02-28
+date: 2026-03-06
 description: Companion investigation pack for grade 7 ecosystems and evolution unit. Built for MYP curriculum alignment and MYP inquiry-based teaching.
 subjects:
 - Ecology

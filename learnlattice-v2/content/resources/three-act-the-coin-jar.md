@@ -1,6 +1,6 @@
 ---
 title: "3-Act: How Much Money in the Jar?"
-date: 2026-03-17
+date: 2026-02-04
 description: "A large glass jar is full of mixed coins. Students estimate the total value using volume, density, and statistical sampling. A 3-Act Task connecting estimation, measurement, and proportional reasoning."
 subjects:
   - "Mathematics"

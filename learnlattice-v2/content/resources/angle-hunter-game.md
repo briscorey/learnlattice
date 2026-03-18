@@ -1,7 +1,7 @@
 ---
 layout: "game"
 title: "Angle Hunter"
-date: 2026-03-16
+date: 2025-10-27
 description: "Classify angles, find missing angles on lines and at points, use triangle and quadrilateral rules, and apply parallel line angle theorems."
 subjects:
   - "Mathematics"

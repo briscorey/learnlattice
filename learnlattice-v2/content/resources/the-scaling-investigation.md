@@ -1,6 +1,6 @@
 ---
 title: "The Scaling Investigation"
-date: 2026-03-17
+date: 2025-10-06
 description: "Students investigate what happens to area and volume when linear dimensions are scaled by different factors, discovering the square-cube relationship through systematic experimentation."
 subjects:
   - "Mathematics"

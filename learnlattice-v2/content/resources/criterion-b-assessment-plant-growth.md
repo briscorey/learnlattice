@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: What Do Plants Need?'
-date: 2026-03-08
+date: 2025-09-29
 description: A Criterion B science assessment for Grade 6 where students design an experiment to test what conditions plants need to grow. Includes three annotated student responses demonstrating the progression
   from basic observation to controlled experimental design.
 subjects:

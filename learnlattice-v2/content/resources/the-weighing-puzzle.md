@@ -1,6 +1,6 @@
 ---
 title: "The Weighing Puzzle"
-date: 2026-03-10
+date: 2026-03-12
 description: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation — without writi"
 subjects:
   - "Mathematics"

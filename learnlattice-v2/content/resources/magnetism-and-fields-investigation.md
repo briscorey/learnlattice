@@ -1,6 +1,6 @@
 ---
 title: "The Invisible Force Field"
-date: 2026-03-08
+date: 2026-03-17
 description: "You can't see a magnetic field. But scatter iron filings on a sheet of paper above a magnet and suddenly the invisible becomes visible. This investigation maps magnetic fields to build the concept of fields as a way of describing action at a distance."
 subjects:
   - "Physics"

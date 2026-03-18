@@ -1,6 +1,6 @@
 ---
 title: "Understand Fractions, Decimals, and Percentages"
-date: 2026-03-17
+date: 2026-03-10
 description: "A visual step-by-step explainer for fractions, decimals, and percentages, designed for MYP students including EAL learners. Builds understanding through worked examples with clear diagrams."
 subjects:
   - "Mathematics"

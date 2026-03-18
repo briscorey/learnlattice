@@ -1,6 +1,6 @@
 ---
 title: "The Population Crash"
-date: 2026-03-10
+date: 2025-10-30
 description: "A population of deer doubles every year on an island with no predators. Year 1: 10. Year 2: 20. Year 3: 40. Year 10: 10,240. By year 15, they are all dead. What happened?"
 subjects:
   - "Ecology"

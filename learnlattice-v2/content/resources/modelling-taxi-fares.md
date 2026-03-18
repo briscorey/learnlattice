@@ -1,6 +1,6 @@
 ---
 title: "Modelling Taxi Fares"
-date: 2026-03-17
+date: 2025-12-22
 description: "Students investigate taxi pricing structures (flag fall plus per-km rate), compare companies, and advise which is cheapest for different distances."
 subjects:
   - "Mathematics"

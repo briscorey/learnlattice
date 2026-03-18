@@ -1,6 +1,6 @@
 ---
 title: Why Does Dividing by a Half Make You Bigger?
-date: 2026-03-03
+date: 2025-10-23
 description: Most students can execute fraction division. Almost none can explain why it works. This investigation dismantles the 'flip and multiply' rule and rebuilds it from scratch — through measurement,
   grouping, and the question that should have been asked years earlier.
 subjects:

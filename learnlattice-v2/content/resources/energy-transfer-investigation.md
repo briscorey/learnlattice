@@ -1,6 +1,6 @@
 ---
 title: "Where Does the Energy Go?"
-date: 2026-03-08
+date: 2026-01-12
 description: "A ball bounces lower each time. A car brakes and the tyres get hot. A phone charges and warms up. Energy is never created or destroyed — so where does it go? This investigation traces energy transfers through systems to build the law of conservation."
 subjects:
   - "Physics"

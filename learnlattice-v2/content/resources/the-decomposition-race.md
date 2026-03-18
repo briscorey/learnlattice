@@ -1,6 +1,6 @@
 ---
 title: "The Decomposition Race"
-date: 2026-03-10
+date: 2026-01-09
 description: "Bury a banana peel and a plastic bag side by side. Check back in two weeks. One has vanished. The other looks exactly the same. Why?"
 subjects:
   - "Ecology"

@@ -1,7 +1,7 @@
 ---
 title: "Transform!"
 layout: "game"
-date: 2026-03-16
+date: 2025-10-06
 description: "Identify, apply, and describe geometric transformations. Visual grid-based game covering translations, reflections, and rotations."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: Which Fractions Terminate?
-date: 2026-03-03
+date: 2025-10-28
 description: 1/2 = 0.5. 1/3 = 0.333... 1/4 = 0.25. 1/6 = 0.1666... Why do some fractions end and others go on forever? This investigation finds the rule, connects it to the structure of 10, and builds genuine
   fluency between fraction and decimal representations.
 subjects:

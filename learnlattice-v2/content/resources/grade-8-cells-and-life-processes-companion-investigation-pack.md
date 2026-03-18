@@ -1,6 +1,6 @@
 ---
 title: "Grade 8 Cells and Life Processes Companion Investigation Pack"
-date: 2026-02-28
+date: 2026-03-09
 description: "Companion investigation pack for grade 8 cells and life processes unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Biology"

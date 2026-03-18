@@ -1,6 +1,6 @@
 ---
 title: "Dead or Alive? The Criteria Problem"
-date: 2026-03-03
+date: 2025-10-27
 description: "Is a virus alive? Is fire? Is a seed? Is a stopped heart? This investigation uses genuinely hard edge cases to build rigorous criteria for life — and in doing so, reveals why the boundary between living and non-living is one of biology's deepest unsolved questions."
 subjects:
   - "Biology"

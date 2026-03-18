@@ -1,6 +1,6 @@
 ---
 title: "Planetary Data and Habitable Zones Investigation"
-date: 2026-02-17
+date: 2026-01-14
 description: "A space science investigation using planetary data tables to compare worlds, evaluate habitability, and reason about limits of indirect evidence."
 subjects:
   - "Space Science"

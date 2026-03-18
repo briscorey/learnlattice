@@ -1,6 +1,6 @@
 ---
 title: "Food Web Disruption Simulation"
-date: 2026-02-21
+date: 2026-02-23
 description: "An ecology simulation exploring trophic interactions, keystone species, and the ripple effects of disturbance across a food web."
 subjects:
   - "Ecology"

@@ -1,6 +1,6 @@
 ---
 title: What Does Level 7 Look Like? Number Patterns
-date: 2026-03-08
+date: 2025-10-23
 description: Three real student responses to the same Criterion B investigation — annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a surface-level answer from genuine mathematical justification.
 subjects:
 - Mathematics

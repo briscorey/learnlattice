@@ -1,6 +1,6 @@
 ---
 title: "MYP Mathematics Criterion C: The Complete Teacher's Guide to Communicating"
-date: 2026-03-17
+date: 2026-02-03
 description: "A comprehensive guide to MYP Criterion C in mathematics — what mathematical communication really means at each level, how to teach students to choose the right representation, and why 'show your working' is not enough."
 seo_title: "MYP Maths Criterion C Guide — Communicating | LearnLattice"
 seo_description: "Complete free guide to MYP Mathematics Criterion C. Learn what mathematical communication looks like at every level, with annotated exemplars and free resources."

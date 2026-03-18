@@ -1,6 +1,6 @@
 ---
 title: Rock Detectives
-date: 2026-03-08
+date: 2025-09-23
 description: Every rock tells a story. This investigation gives students a set of mystery rocks and the tools to classify them — without being told the categories first. The classification system emerges
   from observation.
 subjects:

@@ -1,6 +1,6 @@
 ---
 title: "The Power of Doubling"
-date: 2026-03-10
+date: 2026-02-16
 description: "Choose: $1 million today, or one penny that doubles every day for 30 days? The penny option is worth over $5 million by day 30. But on day 20, it was only worth $5,000. Exponential growth is invisible"
 subjects:
   - "Mathematics"

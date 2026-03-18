@@ -1,6 +1,6 @@
 ---
 title: "Join Dots"
-date: 2026-03-16
+date: 2025-11-27
 description: "Connect 4 meets MYP revision. Answer questions from algebra, science, probability, and more to earn your moves. Play against an AI opponent with 3 difficulty levels."
 subjects:
   - "Mathematics"

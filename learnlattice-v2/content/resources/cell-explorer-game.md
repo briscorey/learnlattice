@@ -1,7 +1,7 @@
 ---
 layout: "game"
 title: "Cell Explorer — Interactive Cell Game"
-date: 2026-02-28
+date: 2026-01-05
 description: "An interactive 2D game for exploring animal cell organelles. Click to learn, take the quiz, or build a cell from scratch. Built for MYP Biology and Grade 8 science."
 subjects:
   - "Biology"

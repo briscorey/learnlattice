@@ -1,6 +1,6 @@
 ---
 title: 'Criterion B Assessment: Number Patterns'
-date: 2026-03-08
+date: 2025-12-29
 description: A ready-to-use MYP Criterion B assessment task on number patterns with annotated student responses at levels 3-4, 5-6, and 7-8. Includes the task, marking notes, and analysis of what distinguishes
   each achievement level.
 subjects:

@@ -1,6 +1,6 @@
 ---
 title: "IDU: The Packaging Problem — Geometry Meets Sustainability"
-date: 2026-03-17
+date: 2025-11-13
 description: "Students design product packaging that minimises material waste while maximising volume. They calculate surface area to volume ratios, test structural integrity, and evaluate environmental impact. A math-science IDU connecting geometry, materials science, and sustainability."
 subjects:
   - "Mathematics"

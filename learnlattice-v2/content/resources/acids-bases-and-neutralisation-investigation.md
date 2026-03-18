@@ -1,6 +1,6 @@
 ---
 title: "Acids, Bases, and Neutralisation Investigation"
-date: 2026-02-14
+date: 2026-02-11
 description: "A chemistry investigation into pH, indicators, neutralisation, and real-world applications of acid-base reactions."
 subjects:
   - "Chemistry"

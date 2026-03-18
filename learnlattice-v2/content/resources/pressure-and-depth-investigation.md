@@ -1,6 +1,6 @@
 ---
 title: Why Do Your Ears Pop?
-date: 2026-03-08
+date: 2025-10-07
 description: Dive underwater and your ears hurt. Fly in a plane and they pop. Climb a mountain and a sealed bag of chips inflates. This investigation connects everyday pressure experiences to the particle
   model and builds the relationship between depth and pressure.
 subjects:

@@ -1,6 +1,6 @@
 ---
 title: "The Shadow Stick"
-date: 2026-03-10
+date: 2025-11-03
 description: "2,200 years ago, a Greek librarian measured the circumference of the Earth using a stick and its shadow. His answer was within 2% of the modern value. You can repeat his experiment today."
 subjects:
   - "Mathematics"

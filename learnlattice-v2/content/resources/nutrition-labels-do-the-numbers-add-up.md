@@ -1,6 +1,6 @@
 ---
 title: "Nutrition Labels: Do the Numbers Add Up?"
-date: 2026-03-15
+date: 2026-03-02
 description: "Students analyse real nutrition labels from foods across different countries, calculate percentages and ratios, compare energy content, and explain the biological role of macronutrients — connecting the mathematics of proportional reasoning to the science of nutrition through something they hold in their hands every day."
 subjects:
   - "Mathematics"

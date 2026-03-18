@@ -1,6 +1,6 @@
 ---
 title: "Is This Game Fair?"
-date: 2026-03-17
+date: 2025-12-08
 description: "Students investigate fairness in simple games by collecting experimental data, comparing to theoretical probability, and determining whether a game is biased."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "Grade 8 Light and Optical Systems Companion Lab Activity"
-date: 2026-02-28
+date: 2026-02-02
 description: "Companion lab activity for grade 8 light and optical systems unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Science"

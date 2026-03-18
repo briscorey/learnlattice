@@ -1,6 +1,6 @@
 ---
 title: "What Does Level 7 Look Like? Mathematical Argument"
-date: 2026-03-08
+date: 2025-12-23
 description: "Three student presentations of a geometric proof. From informal description to structured logical argument with diagrams."
 subjects:
   - "Mathematics"

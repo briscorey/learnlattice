@@ -1,6 +1,6 @@
 ---
 title: "Grade 9 Stars and Space Exploration Companion Investigation Pack"
-date: 2026-02-28
+date: 2025-10-27
 description: "Companion investigation pack for grade 9 stars and space exploration unit. Built for MYP curriculum alignment and MYP inquiry-based teaching."
 subjects:
   - "Space Science"

@@ -1,6 +1,6 @@
 ---
 title: "The Circular Prison Problem"
-date: 2026-03-17
+date: 2025-09-03
 description: "Prisoners standing in a circle eliminate every second person. Where should you stand to survive? A thinking task connecting patterns, modular arithmetic, and powers of 2 — known as the Josephus problem."
 subjects:
   - "Mathematics"

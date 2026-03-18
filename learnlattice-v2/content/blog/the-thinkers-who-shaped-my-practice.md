@@ -1,6 +1,6 @@
 ---
 title: "The Thinkers Who Shaped My Practice"
-date: 2026-03-09
+date: 2025-09-14
 description: "Six researchers changed how I teach mathematics and science. Not because I read their books — but because I tried their ideas on a Tuesday morning and watched what happened to a room full of thirteen-year-olds."
 pillar: "Thinking"
 tags:

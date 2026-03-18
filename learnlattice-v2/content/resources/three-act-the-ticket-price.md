@@ -1,6 +1,6 @@
 ---
 title: "3-Act: What Should We Charge for Tickets?"
-date: 2026-03-17
+date: 2025-12-01
 description: "The school dance needs to set ticket prices. Higher prices mean more revenue per ticket but fewer attendees. What price maximises total revenue? A 3-Act Task connecting quadratics, optimisation, and genuine decision-making."
 subjects:
   - "Mathematics"

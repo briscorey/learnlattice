@@ -1,6 +1,6 @@
 ---
 title: Survey Your School
-date: 2026-03-08
+date: 2025-11-06
 description: What's the most popular lunch option? How far do students travel to school? What time do they go to sleep? This investigation teaches data collection, display, and analysis through a survey
   that students design themselves about a question they actually care about.
 subjects:

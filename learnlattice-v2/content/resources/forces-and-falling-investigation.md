@@ -1,6 +1,6 @@
 ---
 title: "The Feather and the Hammer"
-date: 2026-03-08
+date: 2026-01-26
 description: "An astronaut drops a feather and a hammer on the Moon. They hit the ground at the same time. Why? This investigation builds the concept of gravitational acceleration from direct contradiction of student intuition."
 subjects:
   - "Physics"

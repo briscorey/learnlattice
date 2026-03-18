@@ -1,6 +1,6 @@
 ---
 title: "Is Your Streaming Habit Sustainable?"
-date: 2026-03-15
+date: 2026-01-12
 description: "Students research the hidden energy cost of streaming video, calculate their personal streaming carbon footprint, and use multiple mathematical representations to compare digital habits — connecting familiar behaviour to invisible environmental impact."
 subjects:
   - "Mathematics"

@@ -1,6 +1,6 @@
 ---
 title: "The Number Line Walk"
-date: 2026-03-10
+date: 2025-12-18
 description: "Stand in the middle of the room. That is zero. Walk 3 steps right — you are at +3. Walk 5 steps left — you are at -2. You just did subtraction with your feet. Now: what is -3 + 5?"
 subjects:
   - "Mathematics"

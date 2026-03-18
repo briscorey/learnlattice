@@ -1,6 +1,6 @@
 ---
 title: "Mapping Our School"
-date: 2026-03-17
+date: 2025-09-24
 description: "Students create a scale map of their school using measurement, scale factor, and coordinate geometry, applying mathematics to a real spatial problem."
 subjects:
   - "Mathematics"

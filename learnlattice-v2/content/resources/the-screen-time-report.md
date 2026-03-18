@@ -1,6 +1,6 @@
 ---
 title: "The Screen Time Report"
-date: 2026-03-17
+date: 2025-11-27
 description: "Students track their own screen time for a week, analyse the data, compare to health recommendations, and write a personal reflection."
 subjects:
   - "Mathematics"

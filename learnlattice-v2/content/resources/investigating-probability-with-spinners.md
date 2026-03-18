@@ -1,6 +1,6 @@
 ---
 title: "Investigating Probability with Spinners"
-date: 2026-03-17
+date: 2026-01-19
 description: "Students design, test, and modify spinners to investigate the relationship between sector size and experimental probability, building understanding of theoretical probability models."
 subjects:
   - "Mathematics"

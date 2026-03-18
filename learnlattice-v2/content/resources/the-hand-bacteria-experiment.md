@@ -1,6 +1,6 @@
 ---
 title: "The Hand Bacteria Experiment"
-date: 2026-03-10
+date: 2026-02-23
 description: "You wash your hands every day. But does it actually work? Students swab their hands before and after washing, grow bacteria on agar plates, and see the evidence with their own eyes."
 subjects:
   - "Biology"

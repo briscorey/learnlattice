@@ -1,6 +1,6 @@
 ---
 title: "Build a Volcano — Then Explain It"
-date: 2026-03-10
+date: 2026-01-26
 description: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"
 subjects:
   - "Earth Science"

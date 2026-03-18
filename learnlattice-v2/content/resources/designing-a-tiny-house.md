@@ -1,6 +1,6 @@
 ---
 title: "Designing a Tiny House"
-date: 2026-03-17
+date: 2026-01-16
 description: "Students apply area, volume, and scale drawing to design a tiny house within specific constraints, calculating material costs and optimising space."
 subjects:
   - "Mathematics"

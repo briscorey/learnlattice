@@ -1,6 +1,6 @@
 ---
 title: "Is Our School Canteen Healthy?"
-date: 2026-03-17
+date: 2026-02-25
 description: "Students collect and analyse nutritional data from the school canteen, compare to recommended daily intakes, and present findings with recommendations."
 subjects:
   - "Mathematics"

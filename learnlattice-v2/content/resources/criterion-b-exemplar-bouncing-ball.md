@@ -1,6 +1,6 @@
 ---
 title: What Does Level 7 Look Like? Bouncing Ball
-date: 2026-03-08
+date: 2025-11-03
 description: Three student responses to a Criterion B science investigation — annotated at levels 3-4, 5-6, and 7-8. A ball bounces lower each time. Students investigate the relationship between drop height
   and bounce height.
 subjects:

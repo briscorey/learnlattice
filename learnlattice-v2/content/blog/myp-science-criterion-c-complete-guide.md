@@ -1,6 +1,6 @@
 ---
 title: "MYP Sciences Criterion C: The Complete Teacher's Guide to Processing and Evaluating"
-date: 2026-03-17
+date: 2026-03-03
 description: "A comprehensive guide to MYP Science Criterion C — teaching students to process data, interpret results, evaluate experimental validity, and draw evidence-based conclusions. Includes annotated exemplars showing what each level looks like."
 seo_title: "MYP Science Criterion C Guide — Processing & Evaluating | LearnLattice"
 seo_description: "Complete free guide to MYP Sciences Criterion C. Teach data processing, graph interpretation, and experimental evaluation with annotated exemplars and free resources."

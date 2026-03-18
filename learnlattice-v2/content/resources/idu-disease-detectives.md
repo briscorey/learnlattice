@@ -1,6 +1,6 @@
 ---
 title: "IDU: Disease Detectives — Epidemiology Meets Statistics"
-date: 2026-03-17
+date: 2026-02-23
 description: "A mystery illness is spreading through the school. Students use contact tracing, statistical analysis, and biological knowledge to identify the source, model the spread, and propose interventions. A math-science IDU connecting statistics, probability, and infectious disease biology."
 subjects:
   - "Mathematics"

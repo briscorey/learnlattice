@@ -1,6 +1,6 @@
 ---
 title: "Planning a School Trip Budget"
-date: 2026-03-17
+date: 2025-10-28
 description: "Students use algebra to model the cost of a school trip with fixed and variable costs, determine break-even points, and recommend pricing to the school council."
 subjects:
   - "Mathematics"

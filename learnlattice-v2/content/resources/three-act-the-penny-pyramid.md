@@ -1,6 +1,6 @@
 ---
 title: "3-Act: The Doubling Problem"
-date: 2026-03-17
+date: 2026-03-11
 description: "Would you rather have one million dollars, or a penny that doubles every day for 30 days? A 3-Act Task that makes exponential growth visceral and connects to compound interest, population growth, and viral spread."
 subjects:
   - "Mathematics"

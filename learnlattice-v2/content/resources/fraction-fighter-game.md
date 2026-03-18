@@ -1,7 +1,7 @@
 ---
 title: "Fraction Fighter"
 layout: "game"
-date: 2026-03-16
+date: 2026-03-02
 description: "See fractions, find equivalents, compare them, calculate with them, and use them in real life. A 5-stage visual journey through fractions."
 subjects:
   - "Mathematics"
