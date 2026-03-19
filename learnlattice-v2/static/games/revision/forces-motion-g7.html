@@ -3,483 +3,1225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forces &amp; Motion Review — Grade 7</title>
+<title>Forces & Motion — Grade 7 Review</title>
 <!-- MYP Alignment
-   Criteria: A – Knowing & Understanding, D – Reflecting on Science
+   Criteria: A – Knowing & Understanding
    Key Concept: Relationships
-   Related Concepts: Models, Movement, Consequences
-   ATL: Critical thinking — analyse cause-effect in force scenarios
+   Related Concepts: Function, Interaction
+   ATL: Critical thinking
    Global Context: Scientific and Technical Innovation
 -->
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;overflow-x:hidden}
-.container{max-width:860px;margin:0 auto;padding:20px;min-height:100vh;display:flex;flex-direction:column}
-.header{text-align:center;padding:20px 0 10px}
-.header h1{font-size:1.6rem;font-weight:700;color:#f8fafc;letter-spacing:-.02em}
-.header .subtitle{font-size:.85rem;color:#94a3b8;margin-top:4px}
-.myp-badge{display:inline-block;background:rgba(59,130,246,.15);color:#60a5fa;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:8px;letter-spacing:.03em}
-.progress-bar{display:flex;gap:6px;margin:18px 0 8px}
-.progress-step{flex:1;height:6px;border-radius:3px;background:#1e293b;transition:background .4s}
-.progress-step.completed{background:#22c55e}
-.progress-step.active{background:#3b82f6;animation:pulse-bar 1.5s infinite}
-@keyframes pulse-bar{0%,100%{opacity:1}50%{opacity:.6}}
-.progress-labels{display:flex;gap:6px;margin-bottom:20px}
-.progress-labels span{flex:1;text-align:center;font-size:.6rem;color:#475569;font-weight:500}
-.progress-labels span.active{color:#93c5fd}
-.progress-labels span.completed{color:#86efac}
-.stage{background:#1e293b;border-radius:16px;padding:28px;flex:1;display:flex;flex-direction:column;border:1px solid #334155}
-.stage-header{margin-bottom:20px}
-.stage-num{font-size:.7rem;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:.08em}
-.stage-title{font-size:1.3rem;font-weight:700;margin:4px 0;color:#f1f5f9}
-.stage-intention{font-size:.82rem;color:#94a3b8;font-style:italic}
-.question-text{font-size:1rem;color:#e2e8f0;margin-bottom:18px;line-height:1.6}
-.question-counter{font-size:.75rem;color:#64748b;margin-bottom:10px}
-.options{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-.option-btn{background:#0f172a;border:2px solid #334155;border-radius:12px;padding:14px 18px;font-size:.92rem;color:#e2e8f0;cursor:pointer;text-align:left;transition:all .2s;font-family:inherit}
-.option-btn:hover:not(.disabled){border-color:#3b82f6;background:rgba(59,130,246,.08)}
-.option-btn.correct{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}
-.option-btn.incorrect{border-color:#ef4444;background:rgba(239,68,68,.08);color:#fca5a5}
-.option-btn.disabled{cursor:default;opacity:.6}
-.tf-row{display:flex;gap:12px;margin-bottom:16px}
-.tf-btn{flex:1;background:#0f172a;border:2px solid #334155;border-radius:12px;padding:16px;font-size:1rem;font-weight:600;color:#e2e8f0;cursor:pointer;text-align:center;transition:all .2s;font-family:inherit}
-.tf-btn:hover:not(.disabled){border-color:#3b82f6}
-.tf-btn.correct{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}
-.tf-btn.incorrect{border-color:#ef4444;background:rgba(239,68,68,.08);color:#fca5a5}
-.tf-btn.disabled{cursor:default;opacity:.6}
-.fill-sentence{font-size:1rem;color:#e2e8f0;line-height:2;margin-bottom:16px}
-.blank-slot{display:inline-block;min-width:110px;border-bottom:2px dashed #3b82f6;padding:2px 8px;margin:0 4px;text-align:center;color:#93c5fd;font-weight:600;cursor:pointer;transition:all .2s;vertical-align:bottom;min-height:1.4em}
-.blank-slot.filled{border-bottom-style:solid}
-.blank-slot.correct-slot{border-color:#22c55e;color:#86efac}
-.blank-slot.incorrect-slot{border-color:#ef4444;color:#fca5a5}
-.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.word-chip{background:#3b82f6;color:#fff;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:500;user-select:none;transition:all .15s}
-.word-chip:hover:not(.used){background:#2563eb;transform:scale(1.03)}
-.word-chip.used{opacity:.35;cursor:default}
-.order-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
-.order-item{display:flex;align-items:center;gap:12px;background:#0f172a;border:2px solid #334155;border-radius:10px;padding:12px 16px;transition:all .2s}
-.order-num{width:28px;height:28px;border-radius:50%;background:#334155;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#94a3b8;flex-shrink:0}
-.order-text{font-size:.88rem;color:#e2e8f0;flex:1}
-.order-arrows{display:flex;flex-direction:column;gap:2px;margin-left:auto}
-.arrow-btn{background:none;border:1px solid #475569;color:#94a3b8;width:26px;height:22px;border-radius:4px;cursor:pointer;font-size:.7rem;display:flex;align-items:center;justify-content:center;font-family:inherit}
-.arrow-btn:hover:not(:disabled){border-color:#3b82f6;color:#3b82f6}
-.arrow-btn:disabled{opacity:.3;cursor:default}
-.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-.match-col-header{font-size:.72rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.06em;padding-bottom:4px}
-.match-item{background:#0f172a;border:2px solid #334155;border-radius:10px;padding:11px 14px;font-size:.85rem;color:#e2e8f0;cursor:pointer;transition:all .2s;text-align:center}
-.match-item:hover:not(.matched){border-color:#3b82f6}
-.match-item.selected{border-color:#f59e0b;background:rgba(245,158,11,.1)}
-.match-item.matched{border-color:#22c55e;background:rgba(34,197,94,.08);opacity:.7;cursor:default}
-.match-item.wrong-flash{border-color:#ef4444;animation:shake .4s}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-.multi-options{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-.multi-btn{background:#0f172a;border:2px solid #334155;border-radius:12px;padding:14px 18px;font-size:.92rem;color:#e2e8f0;cursor:pointer;text-align:left;transition:all .2s;font-family:inherit;display:flex;align-items:center;gap:10px}
-.multi-btn:hover:not(.disabled){border-color:#3b82f6;background:rgba(59,130,246,.08)}
-.multi-btn.toggled{border-color:#f59e0b;background:rgba(245,158,11,.1)}
-.multi-btn.correct{border-color:#22c55e;background:rgba(34,197,94,.12);color:#86efac}
-.multi-btn.incorrect{border-color:#ef4444;background:rgba(239,68,68,.08);color:#fca5a5}
-.multi-btn.missed{border-color:#22c55e;border-style:dashed;background:rgba(34,197,94,.05)}
-.multi-btn.disabled{cursor:default}
-.check-box{width:20px;height:20px;border:2px solid #475569;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem}
-.multi-btn.toggled .check-box{border-color:#f59e0b;background:rgba(245,158,11,.3)}
-.multi-btn.toggled .check-box::after{content:'✓';color:#f59e0b}
-.multi-btn.correct .check-box{border-color:#22c55e;background:rgba(34,197,94,.3)}
-.multi-btn.correct .check-box::after{content:'✓';color:#22c55e}
-.feedback{padding:14px 18px;border-radius:12px;margin-bottom:16px;font-size:.88rem;line-height:1.5;display:none}
-.feedback.correct{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86efac;display:block}
-.feedback.incorrect{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#fca5a5;display:block}
-.feedback .why{margin-top:8px;font-size:.82rem;color:#94a3b8}
-.feedback .why strong{color:#cbd5e1}
-.btn{padding:12px 28px;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
-.btn-primary{background:#3b82f6;color:#fff}
-.btn-primary:hover{background:#2563eb}
-.btn-success{background:#22c55e;color:#fff}
-.btn-success:hover{background:#16a34a}
-.btn-secondary{background:#334155;color:#e2e8f0}
-.btn-secondary:hover{background:#475569}
-.btn-row{display:flex;gap:10px;margin-top:auto;padding-top:16px;justify-content:flex-end}
-.score-display{position:fixed;top:16px;right:16px;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:10px 16px;font-size:.8rem;color:#94a3b8;z-index:10}
-.score-display .score-num{font-size:1.1rem;font-weight:700;color:#f8fafc}
-.transition-screen{text-align:center;padding:40px 20px}
-.transition-screen .emoji{font-size:3rem;margin-bottom:16px}
-.transition-screen h2{font-size:1.3rem;color:#f1f5f9;margin-bottom:8px}
-.transition-screen p{color:#94a3b8;font-size:.9rem;margin-bottom:6px}
-.transition-screen .stage-score{font-size:1rem;color:#22c55e;font-weight:600;margin:12px 0}
-.final-screen{text-align:center;padding:40px 20px}
-.final-screen h2{font-size:1.6rem;color:#f8fafc;margin-bottom:8px}
-.final-score{font-size:3rem;font-weight:800;color:#22c55e;margin:16px 0}
-.final-screen .grade{font-size:1rem;color:#94a3b8;margin-bottom:24px}
-.stage-breakdown{display:flex;flex-direction:column;gap:8px;margin:20px auto;max-width:400px;text-align:left}
-.stage-result{display:flex;justify-content:space-between;padding:8px 14px;background:#0f172a;border-radius:8px;font-size:.85rem}
-.stage-result .name{color:#94a3b8}
-.stage-result .sc{color:#22c55e;font-weight:600}
-.transfer-prompt{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);border-radius:12px;padding:18px;margin-top:24px;text-align:left}
-.transfer-prompt h3{color:#60a5fa;font-size:.85rem;margin-bottom:8px}
-.transfer-prompt p{color:#e2e8f0;font-size:.88rem;line-height:1.5}
-.intro-screen{text-align:center;padding:30px 20px}
-.intro-screen h2{font-size:1.5rem;margin-bottom:12px;color:#f8fafc}
-.intro-screen p{color:#94a3b8;font-size:.92rem;margin-bottom:8px;line-height:1.5}
-.intro-topics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
-.intro-topic{background:rgba(59,130,246,.12);color:#93c5fd;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:500}
-.soi{background:rgba(59,130,246,.08);border-left:3px solid #3b82f6;padding:12px 16px;margin:16px 0;text-align:left;font-size:.85rem;color:#93c5fd;font-style:italic;line-height:1.5;border-radius:0 8px 8px 0}
-@media(max-width:600px){.container{padding:12px}.stage{padding:18px}.match-grid{grid-template-columns:1fr}.score-display{top:auto;bottom:12px;right:12px}.tf-row{flex-direction:column}}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface-2: #242836;
+  --border: #2e3348;
+  --text: #e8eaf0;
+  --text-muted: #8b90a5;
+  --primary: #6c8cff;
+  --primary-glow: rgba(108,140,255,0.15);
+  --success: #4ade80;
+  --success-glow: rgba(74,222,128,0.15);
+  --error: #f87171;
+  --error-glow: rgba(248,113,113,0.15);
+  --warning: #fbbf24;
+  --accent: #a78bfa;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* === LAYOUT === */
+.app { max-width: 720px; margin: 0 auto; padding: 16px; }
+
+/* === HEADER BAR === */
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  margin-bottom: 16px; flex-wrap: wrap; gap: 12px;
+}
+.header-left { display: flex; align-items: center; gap: 14px; }
+.header-right { display: flex; align-items: center; gap: 16px; }
+
+/* Progress Ring */
+.progress-ring-wrap { position: relative; width: 48px; height: 48px; }
+.progress-ring { transform: rotate(-90deg); }
+.progress-ring-bg { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-fill { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 0.5s ease; }
+.progress-ring-text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-size: 11px; font-weight: 700; color: var(--primary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Streak */
+.streak {
+  display: flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px; font-weight: 600; color: var(--warning);
+}
+.streak svg { width: 20px; height: 20px; }
+
+/* Score */
+.score-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px; color: var(--text-muted);
+}
+.score-display span { color: var(--success); font-weight: 600; }
+
+/* === STAGE INDICATOR === */
+.stage-bar {
+  display: flex; gap: 4px; margin-bottom: 16px;
+}
+.stage-pip {
+  flex: 1; height: 6px; border-radius: 3px;
+  background: var(--border); transition: background 0.4s;
+}
+.stage-pip.active { background: var(--primary); }
+.stage-pip.complete { background: var(--success); }
+
+.stage-label {
+  text-align: center; margin-bottom: 16px;
+  font-size: 13px; color: var(--text-muted); font-weight: 500;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* === QUESTION CARD === */
+.q-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; margin-bottom: 16px;
+  animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+.q-number {
+  font-size: 12px; font-weight: 600; color: var(--primary);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+}
+.q-type-badge {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 4px; margin-left: 8px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.q-type-badge.calc { background: rgba(251,191,36,0.15); color: var(--warning); }
+.q-type-badge.diagram { background: rgba(167,139,250,0.15); color: var(--accent); }
+.q-type-badge.drag { background: rgba(108,140,255,0.15); color: var(--primary); }
+.q-type-badge.scenario { background: rgba(74,222,128,0.15); color: var(--success); }
+.q-type-badge.mcq { background: rgba(139,144,165,0.15); color: var(--text-muted); }
+
+.q-text {
+  font-size: 17px; font-weight: 500; line-height: 1.6;
+  margin-bottom: 20px;
+}
+.q-text .keyword { color: var(--primary); font-weight: 600; }
+
+/* === MCQ OPTIONS === */
+.options { display: flex; flex-direction: column; gap: 8px; }
+.opt-btn {
+  display: block; width: 100%; text-align: left;
+  padding: 14px 16px; border-radius: var(--radius-sm);
+  background: var(--surface-2); border: 1px solid var(--border);
+  color: var(--text); font-size: 15px; font-family: inherit;
+  cursor: pointer; transition: all 0.2s;
+}
+.opt-btn:hover:not(.locked) { border-color: var(--primary); background: var(--primary-glow); }
+.opt-btn.correct { border-color: var(--success); background: var(--success-glow); color: var(--success); }
+.opt-btn.incorrect { border-color: var(--error); background: var(--error-glow); color: var(--error); }
+.opt-btn.locked { cursor: default; opacity: 0.6; }
+.opt-btn.reveal { border-color: var(--success); background: var(--success-glow); }
+
+/* === CALC INPUT === */
+.calc-input-wrap { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.calc-input {
+  flex: 1; min-width: 120px; padding: 12px 16px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); color: var(--text);
+  font-family: 'JetBrains Mono', monospace; font-size: 16px;
+  outline: none; transition: border-color 0.2s;
+}
+.calc-input:focus { border-color: var(--primary); }
+.calc-input.correct { border-color: var(--success); }
+.calc-input.incorrect { border-color: var(--error); }
+.calc-unit { font-size: 14px; color: var(--text-muted); font-weight: 500; min-width: 30px; }
+.calc-submit {
+  padding: 12px 24px; border: none; border-radius: var(--radius-sm);
+  background: var(--primary); color: #fff; font-weight: 600;
+  font-family: inherit; font-size: 14px; cursor: pointer;
+  transition: opacity 0.2s;
+}
+.calc-submit:hover { opacity: 0.85; }
+.calc-submit:disabled { opacity: 0.4; cursor: default; }
+
+/* === DRAG SORT === */
+.drag-zone {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 12px; background: var(--surface-2);
+  border: 2px dashed var(--border); border-radius: var(--radius);
+  min-height: 60px; transition: border-color 0.2s;
+}
+.drag-zone.over { border-color: var(--primary); }
+.drag-item {
+  padding: 12px 16px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  cursor: grab; font-size: 14px; font-weight: 500;
+  user-select: none; transition: all 0.2s; display: flex;
+  align-items: center; gap: 10px;
+}
+.drag-item:active { cursor: grabbing; opacity: 0.7; }
+.drag-item .grip { color: var(--text-muted); font-size: 16px; }
+.drag-item.correct-pos { border-color: var(--success); background: var(--success-glow); }
+.drag-item.incorrect-pos { border-color: var(--error); background: var(--error-glow); }
+.drag-label { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+.drag-submit { margin-top: 8px; }
+
+/* === FORCE DIAGRAM === */
+.diagram-wrap {
+  display: flex; justify-content: center;
+  margin: 16px 0; padding: 16px;
+  background: var(--surface-2); border-radius: var(--radius);
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+
+/* === FEEDBACK === */
+.feedback {
+  margin-top: 16px; padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px; line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+.feedback.correct { background: var(--success-glow); border-left: 3px solid var(--success); }
+.feedback.incorrect { background: var(--error-glow); border-left: 3px solid var(--error); }
+.feedback strong { display: block; margin-bottom: 4px; }
+
+.next-btn {
+  display: block; width: 100%; margin-top: 16px;
+  padding: 14px; border: none; border-radius: var(--radius-sm);
+  background: var(--primary); color: #fff; font-size: 15px;
+  font-weight: 600; font-family: inherit; cursor: pointer;
+  transition: opacity 0.2s;
+}
+.next-btn:hover { opacity: 0.85; }
+
+/* === INTRO / STAGE TRANSITION / RESULTS === */
+.screen {
+  text-align: center; padding: 40px 20px;
+  animation: fadeIn 0.4s ease;
+}
+.screen h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.screen h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.screen p { color: var(--text-muted); font-size: 15px; margin-bottom: 6px; }
+.screen .soi {
+  font-style: italic; color: var(--accent);
+  font-size: 13px; margin: 16px auto; max-width: 480px;
+}
+.screen .start-btn {
+  display: inline-block; margin-top: 24px; padding: 14px 40px;
+  background: var(--primary); color: #fff; border: none;
+  border-radius: var(--radius-sm); font-size: 16px; font-weight: 600;
+  font-family: inherit; cursor: pointer; transition: opacity 0.2s;
+}
+.screen .start-btn:hover { opacity: 0.85; }
+
+.stage-complete-icon { font-size: 48px; margin-bottom: 16px; }
+
+/* === ACHIEVEMENTS === */
+.achievements {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 10px; margin: 20px 0;
+}
+.badge {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 20px; font-size: 12px;
+  font-weight: 600; background: var(--surface-2);
+  border: 1px solid var(--border); color: var(--text-muted);
+  transition: all 0.3s;
+}
+.badge.earned { border-color: var(--warning); color: var(--warning); background: rgba(251,191,36,0.1); }
+.badge .badge-icon { font-size: 16px; }
+
+/* Achievement popup */
+.achievement-popup {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+  padding: 12px 24px; background: var(--surface);
+  border: 1px solid var(--warning); border-radius: var(--radius);
+  color: var(--warning); font-weight: 600; font-size: 14px;
+  z-index: 100; animation: popIn 0.4s ease, popOut 0.4s ease 2.2s forwards;
+  box-shadow: 0 4px 20px rgba(251,191,36,0.2);
+}
+@keyframes popIn { from { opacity:0; transform:translateX(-50%) translateY(-20px); } }
+@keyframes popOut { to { opacity:0; transform:translateX(-50%) translateY(-20px); } }
+
+/* Results summary */
+.results-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+  gap: 12px; margin: 24px 0; text-align: center;
+}
+.result-stat {
+  padding: 16px; background: var(--surface-2);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.result-stat .val {
+  font-size: 28px; font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+}
+.result-stat .label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+.transfer-prompt {
+  margin-top: 24px; padding: 16px; background: var(--primary-glow);
+  border: 1px solid var(--primary); border-radius: var(--radius);
+  font-size: 14px; color: var(--primary); text-align: left;
+}
+.transfer-prompt strong { display: block; margin-bottom: 4px; }
+
+/* === MOBILE === */
+@media (max-width: 480px) {
+  .app { padding: 10px; }
+  .header { padding: 10px 12px; }
+  .q-card { padding: 18px 16px; }
+  .q-text { font-size: 15px; }
+  .opt-btn { padding: 12px 14px; font-size: 14px; }
+  .screen h1 { font-size: 24px; }
+}
 </style>
 </head>
 <body>
-<div class="container" id="app"></div>
+<div class="app" id="app"></div>
+
 <script>
-const STAGES=[
-// ======== STAGE 1: TYPES OF FORCES ========
-{num:1,title:"Types of Forces",intention:"I can identify and classify forces as contact or non-contact, balanced or unbalanced.",
-questions:[
-{type:"matching",text:"Match each <strong>force</strong> to the correct category: <strong>contact</strong> or <strong>non-contact</strong>.",
-left:["Friction","Gravity","Air resistance","Magnetism"],
-right:["Non-contact","Contact","Non-contact","Contact"],
-pairs:[[0,3],[1,0],[2,1],[3,2]],
-hint:"Contact forces require objects to be touching. Non-contact forces act at a distance — no physical contact needed.",
-why:"<strong>Friction</strong> and <strong>air resistance</strong> are contact forces — they need surfaces or objects to be touching. <strong>Gravity</strong> and <strong>magnetism</strong> are non-contact forces — they act at a distance through fields."},
-{type:"mcq",text:"A book is sitting still on a table. What can you say about the forces acting on it?",
-options:["No forces are acting on it","Only gravity is acting on it","The forces are balanced — gravity pulls down, the table pushes up","The forces are unbalanced"],
-correct:2,
-hint:"The book is not moving and not accelerating. If forces were unbalanced, it would start to move. If no forces acted, what would hold it down?",
-why:"The book has <strong>two forces</strong> acting on it: <strong>gravity pulling down</strong> and the <strong>normal force of the table pushing up</strong>. These are equal in size and opposite in direction — they are <strong>balanced</strong>, so the book stays still."},
-{type:"tf",text:"True or False: If the forces on an object are balanced, the object must be stationary (not moving).",
-correct:false,
-hint:"Think about a car cruising at constant speed on a highway. Are the forces balanced or unbalanced?",
-why:"<strong>False.</strong> Balanced forces mean <strong>no change in motion</strong> — not necessarily zero motion. An object moving at constant speed in a straight line has balanced forces. Balanced forces = no acceleration."},
-{type:"mcq",text:"Which of these is an example of an unbalanced force?",
-options:["A parked car on flat ground","A skydiver falling at constant speed (terminal velocity)","A football being kicked and accelerating forward","A book resting on a shelf"],
-correct:2,
-hint:"Unbalanced forces cause a change in motion — speeding up, slowing down, or changing direction.",
-why:"When a football is kicked, the <strong>forward force from the foot is greater than friction and air resistance</strong>, creating an unbalanced force that causes the ball to <strong>accelerate</strong>. The other examples all have balanced forces."},
-{type:"multi",text:"Select ALL the non-contact forces from the list below.",
-options:["Friction","Gravity","Tension","Magnetism","Air resistance","Electrostatic force"],
-correct:[1,3,5],
-hint:"Non-contact forces can act without the objects physically touching. Think about what can pull or push through empty space.",
-why:"<strong>Gravity</strong>, <strong>magnetism</strong>, and <strong>electrostatic force</strong> are all non-contact forces — they act through fields without requiring physical contact. Friction, tension, and air resistance all require contact between objects."},
-{type:"mcq",text:"A car is slowing down on a road. What type of force is friction in this situation?",
-options:["A balanced force","An unbalanced force opposing the motion","A non-contact force","Friction is not involved in slowing down"],
-correct:1,
-hint:"If the car is slowing down, there must be a net force acting against its direction of motion...",
-why:"When the driver stops accelerating, <strong>friction</strong> (and air resistance) become the dominant force, acting <strong>opposite to the direction of motion</strong>. This creates an <strong>unbalanced force</strong> that decelerates the car."},
-{type:"fill",text:"Complete the sentence using the word bank.",
-sentence:"When forces on an object are |___| , the object will either stay still or keep moving at constant speed. When forces are |___| , the object will |___| — it speeds up, slows down, or changes direction.",
-blanks:["balanced","unbalanced","accelerate"],
-bank:["balanced","unbalanced","accelerate","decelerate","stop","equal"],
-hint:"Balanced = no change in motion. Unbalanced = change in motion. The scientific word for 'change in speed or direction' starts with A.",
-why:"<strong>Balanced</strong> forces produce no change in motion. <strong>Unbalanced</strong> forces cause the object to <strong>accelerate</strong> — which in physics means any change in speed or direction, not just speeding up."}
-]},
+// === FORCES & MOTION G7 REVIEW — 44 QUESTIONS ===
+// === MYP Alignment: Criterion A, Key Concept: Relationships ===
 
-// ======== STAGE 2: NET FORCE & MOTION ========
-{num:2,title:"Net Force & Motion",intention:"I can calculate net force and predict how an object will move.",
-questions:[
-{type:"mcq",text:"Two people push a box in the same direction. One pushes with 30 N and the other with 20 N. What is the net force?",
-options:["10 N","50 N","25 N","0 N"],
-correct:1,
-hint:"When forces act in the SAME direction, you add them together.",
-why:"Forces in the same direction are <strong>added</strong>: 30 N + 20 N = <strong>50 N</strong> in the direction of the push. The box accelerates in that direction."},
-{type:"mcq",text:"A rope is being pulled with 40 N to the left and 55 N to the right. What is the net force?",
-options:["95 N to the right","15 N to the right","15 N to the left","95 N to the left"],
-correct:1,
-hint:"When forces act in OPPOSITE directions, subtract the smaller from the larger. The net force acts in the direction of the larger force.",
-why:"Forces in opposite directions are <strong>subtracted</strong>: 55 N − 40 N = <strong>15 N to the right</strong> (the direction of the larger force). The object accelerates to the right."},
-{type:"tf",text:"True or False: If the net force on an object is zero, the object cannot be moving.",
-correct:false,
-hint:"Think about Newton's first law — what happens to an object already in motion if no net force acts on it?",
-why:"<strong>False.</strong> Zero net force means zero acceleration — the object does not change its motion. If it was already moving, it continues moving at <strong>constant velocity</strong>. This is Newton's first law."},
-{type:"mcq",text:"A 600 N skydiver reaches terminal velocity. What is the air resistance force at this point?",
-options:["0 N","300 N","600 N","1200 N"],
-correct:2,
-hint:"Terminal velocity means constant speed — no acceleration. What must be true about the forces for acceleration to be zero?",
-why:"At terminal velocity, the skydiver falls at <strong>constant speed</strong>, meaning forces are <strong>balanced</strong>. Air resistance pushing up must <strong>equal</strong> the weight pulling down: <strong>600 N</strong>."},
-{type:"order",text:"A ball is thrown upward. Put the <strong>events in order</strong> from first to last.",
-items:["Hand applies an upward unbalanced force","Ball accelerates upward","Gravity gradually slows the ball down","Ball momentarily stops at the highest point","Gravity accelerates the ball back down"],
-correct:[0,1,2,3,4],
-hint:"Start with the throw. Think about what happens to the ball's speed as gravity pulls it back — it slows, stops, then falls.",
-why:"The hand provides an <strong>unbalanced upward force</strong>, launching the ball. Once released, <strong>gravity</strong> is the only significant force — it decelerates the ball until it stops at the peak, then accelerates it back down."},
-{type:"fill",text:"Complete the sentence using the word bank.",
-sentence:"The net force on an object is the |___| of all forces acting on it. If the net force is zero, the forces are |___| and there is no |___| .",
-blanks:["combination","balanced","acceleration"],
-bank:["combination","sum","balanced","unbalanced","acceleration","friction"],
-hint:"Net force is what you get when you combine all forces (adding same direction, subtracting opposite). Zero net force = balanced = no change in motion.",
-why:"Net force is the <strong>combination</strong> of all forces. When net force is zero, forces are <strong>balanced</strong> and there is no <strong>acceleration</strong> — the object maintains its current state of motion."},
-{type:"mcq",text:"Two teams play tug-of-war. Team A pulls with 500 N. Team B pulls with 500 N. What happens?",
-options:["The rope snaps","Team A wins","The rope does not move — forces are balanced","Both teams fall over"],
-correct:2,
-hint:"Equal forces in opposite directions give a net force of...",
-why:"500 N − 500 N = <strong>0 N net force</strong>. The forces are perfectly <strong>balanced</strong>, so the rope does not accelerate in either direction. Neither team moves."},
-{type:"mcq",text:"A car has an engine force of 4000 N forward and total friction of 1500 N backward. What is the net force and what happens?",
-options:["5500 N forward — the car accelerates","2500 N forward — the car accelerates","2500 N backward — the car decelerates","1500 N forward — the car moves at constant speed"],
-correct:1,
-hint:"Opposite directions: subtract. Which force is bigger? The net force acts in the direction of the bigger force.",
-why:"4000 N − 1500 N = <strong>2500 N forward</strong>. Since the net force is forward and non-zero, the car <strong>accelerates forward</strong>. It would only travel at constant speed if net force were zero."}
-]},
-
-// ======== STAGE 3: NEWTON'S LAWS ========
-{num:3,title:"Newton's Laws of Motion",intention:"I can state and apply Newton's three laws to real situations.",
-questions:[
-{type:"matching",text:"Match each of <strong>Newton's Laws</strong> to its correct description.",
-left:["First Law","Second Law","Third Law"],
-right:["Every action has an equal and opposite reaction","An object stays at rest or in constant motion unless acted on by an unbalanced force","Force equals mass times acceleration (F = ma)"],
-pairs:[[0,1],[1,2],[2,0]],
-hint:"First law is about inertia (resistance to change). Second law is the equation. Third law is about action-reaction pairs.",
-why:"<strong>First Law (Inertia):</strong> objects resist changes in motion. <strong>Second Law:</strong> F = ma — more force = more acceleration, more mass = less acceleration. <strong>Third Law:</strong> forces always come in equal and opposite pairs."},
-{type:"mcq",text:"You are standing on a bus that suddenly brakes. You lurch forward. Which law explains this?",
-options:["Newton's First Law — your body wants to keep moving","Newton's Second Law — the braking force accelerates you","Newton's Third Law — the bus pushes you and you push the bus","The Law of Gravity"],
-correct:0,
-hint:"Your body was moving forward with the bus. When the bus stops suddenly, what does your body want to keep doing?",
-why:"<strong>Newton's First Law (inertia)</strong>: your body was moving forward and resists the change in motion. When the bus decelerates, your body continues forward because no force has yet acted on YOU to slow you down."},
-{type:"mcq",text:"Using F = ma, what force is needed to accelerate a 10 kg object at 3 m/s²?",
-options:["3.3 N","13 N","30 N","7 N"],
-correct:2,
-hint:"F = m × a. Substitute the values: F = 10 × 3.",
-why:"F = ma = 10 kg × 3 m/s² = <strong>30 N</strong>. The unit of force (Newton) is defined as the force needed to accelerate 1 kg by 1 m/s²."},
-{type:"mcq",text:"If you double the mass but keep the same force, what happens to the acceleration?",
-options:["It doubles","It stays the same","It halves","It quadruples"],
-correct:2,
-hint:"Rearrange F = ma to get a = F/m. If m gets bigger and F stays the same...",
-why:"From a = F/m, if mass doubles and force stays constant, acceleration is <strong>halved</strong>. More mass means more inertia — it is harder to accelerate. This is why a truck accelerates more slowly than a car with the same engine force."},
-{type:"tf",text:"True or False: When you push a wall, the wall pushes back on you with the same force.",
-correct:true,
-hint:"Think about Newton's Third Law — what does it say about forces between two objects?",
-why:"<strong>True.</strong> Newton's Third Law: when you push the wall with force F, the wall pushes back on you with <strong>equal force F in the opposite direction</strong>. This is why your hand feels the push. Action-reaction forces always act on <strong>different objects</strong>."},
-{type:"mcq",text:"A swimmer pushes backward on the water with their hands. What happens?",
-options:["Nothing — water cannot push back","The water pushes the swimmer forward (Third Law)","The swimmer moves backward","The water disappears"],
-correct:1,
-hint:"Newton's Third Law: if the swimmer pushes the water backward, the water must push the swimmer...",
-why:"<strong>Newton's Third Law:</strong> the swimmer pushes the water backward (action), and the water pushes the swimmer <strong>forward</strong> (reaction). These forces are <strong>equal in size, opposite in direction</strong>, and act on <strong>different objects</strong>."},
-{type:"multi",text:"Select ALL the statements that correctly describe Newton's First Law.",
-options:["Objects at rest stay at rest unless a force acts on them","Heavier objects fall faster than light objects","Objects in motion stay in motion at constant speed unless a force acts on them","F = ma","Inertia is the tendency of an object to resist changes in its motion","An apple falling from a tree is an example of the first law"],
-correct:[0,2,4],
-hint:"The first law is about INERTIA — the resistance to change in motion. It applies to both stationary and moving objects. It is NOT F = ma (that is the second law).",
-why:"Newton's First Law says objects at rest <strong>stay at rest</strong>, and objects in motion <strong>stay in motion at constant speed</strong>, unless acted on by an unbalanced force. <strong>Inertia</strong> is the name for this tendency. F = ma is the Second Law. The apple falls due to an unbalanced force (gravity), which is actually the opposite of the first law in action."},
-{type:"fill",text:"Complete the sentence using the word bank.",
-sentence:"Newton's Second Law states that force equals |___| multiplied by |___| . This means that for the same force, a heavier object will have |___| acceleration.",
-blanks:["mass","acceleration","less"],
-bank:["mass","weight","acceleration","speed","less","more"],
-hint:"The equation is F = m × a. If mass goes up but force stays the same, what happens to acceleration?",
-why:"F = <strong>mass</strong> × <strong>acceleration</strong>. For the same force, increasing mass means <strong>less</strong> acceleration. This is why it takes more force to accelerate a truck than a bicycle."}
-]},
-
-// ======== STAGE 4: MASS, WEIGHT & GRAVITY ========
-{num:4,title:"Mass, Weight & Gravity",intention:"I can distinguish mass from weight and explain how gravity affects objects.",
-questions:[
-{type:"matching",text:"Match each <strong>property</strong> to the correct description.",
-left:["Mass","Weight","Gravity"],
-right:["A force pulling objects toward each other","The amount of matter in an object","A force caused by gravity acting on mass"],
-pairs:[[0,1],[1,2],[2,0]],
-hint:"Mass is about how much 'stuff' is in an object. Weight is a force. Gravity is the cause of weight.",
-why:"<strong>Mass</strong> = the amount of matter in an object (measured in kg, does not change with location). <strong>Weight</strong> = the gravitational force acting on that mass (measured in N, changes with location). <strong>Gravity</strong> = the force of attraction between objects with mass."},
-{type:"mcq",text:"An astronaut has a mass of 80 kg on Earth. What is their mass on the Moon?",
-options:["80 kg — mass does not change","About 13 kg — the Moon has less gravity","0 kg — there is no gravity in space","160 kg — you weigh more in space"],
-correct:0,
-hint:"Mass is the amount of matter in your body. Does going to the Moon remove any atoms from your body?",
-why:"Mass is <strong>80 kg everywhere</strong> — the Moon, Mars, space. Mass is the amount of matter in the object and <strong>never changes with location</strong>. What changes is <strong>weight</strong>, because gravitational field strength is different."},
-{type:"mcq",text:"The gravitational field strength on Earth is approximately 10 N/kg. What is the weight of a 5 kg bag of rice?",
-options:["5 N","15 N","50 N","0.5 N"],
-correct:2,
-hint:"Weight = mass × gravitational field strength. W = m × g = 5 × 10.",
-why:"W = mg = 5 kg × 10 N/kg = <strong>50 N</strong>. The unit of weight is <strong>Newtons (N)</strong> because weight is a force. The unit of mass is <strong>kilograms (kg)</strong>."},
-{type:"tf",text:"True or False: A feather and a bowling ball dropped at the same height in a vacuum (no air) would hit the ground at the same time.",
-correct:true,
-hint:"In a vacuum there is no air resistance. What does gravity do to all objects regardless of mass? Think about what Galileo discovered.",
-why:"<strong>True.</strong> In a vacuum, <strong>all objects fall at the same rate</strong> regardless of mass — they experience the same gravitational acceleration (about 10 m/s² on Earth). On Earth's surface, air resistance makes lighter objects fall slower, but gravity itself treats all masses equally."},
-{type:"mcq",text:"The Moon has a gravitational field strength of about 1.6 N/kg. What would the 80 kg astronaut weigh on the Moon?",
-options:["80 N","800 N","128 N","50 N"],
-correct:2,
-hint:"Weight = mass × gravitational field strength. W = 80 × 1.6.",
-why:"W = mg = 80 kg × 1.6 N/kg = <strong>128 N</strong>. On Earth, the same astronaut weighs 80 × 10 = 800 N. The astronaut's <strong>mass stays at 80 kg</strong>, but their <strong>weight drops</strong> because the Moon's gravity is weaker."},
-{type:"fill",text:"Complete the sentence using the word bank.",
-sentence:"Weight is calculated using the equation W = m × |___| . Mass is measured in |___| and weight is measured in |___| .",
-blanks:["g","kg","N"],
-bank:["g","a","kg","N","m/s","J"],
-hint:"g = gravitational field strength (about 10 N/kg on Earth). Mass is in kilograms. Weight is a force, so its unit is...",
-why:"W = m × <strong>g</strong> (gravitational field strength). Mass is measured in <strong>kg</strong>. Weight is a force measured in <strong>N</strong> (Newtons). This is one of the most common mistakes students make — mixing up the units."},
-{type:"multi",text:"Select ALL the statements that are TRUE about mass and weight.",
-options:["Mass changes depending on where you are","Weight changes depending on where you are","Mass is measured in Newtons","Weight is a force","An object with more mass has more inertia","You would weigh less on the Moon but your mass stays the same"],
-correct:[1,3,4,5],
-hint:"Four of these are correct. Remember: mass = amount of matter (constant), weight = gravitational force (changes with location).",
-why:"<strong>Weight changes with location</strong> (different gravity), is a <strong>force</strong> (measured in N), and you <strong>weigh less on the Moon</strong>. More mass means more <strong>inertia</strong> (resistance to acceleration). Mass does NOT change with location and is measured in kg, not Newtons."},
-{type:"mcq",text:"Why do astronauts on the International Space Station appear to float?",
-options:["There is no gravity in space","They are too far from Earth for gravity to reach them","They are in constant free fall around Earth — everything falls at the same rate","The space station creates anti-gravity"],
-correct:2,
-hint:"The ISS is only about 400 km above Earth. Gravity is still about 90% as strong there. So why do they float?",
-why:"The ISS and astronauts are in <strong>constant free fall</strong> around Earth — they are falling toward Earth but also moving sideways fast enough to keep missing it (orbit). Since everything falls at the same rate, nothing pushes on the astronauts, creating the sensation of <strong>weightlessness</strong>. Gravity is very much still there."}
-]},
-
-// ======== STAGE 5: SIMPLE MACHINES ========
-{num:5,title:"Simple Machines",intention:"I can explain how levers, gears, and other simple machines multiply force or change direction.",
-questions:[
-{type:"mcq",text:"What is the main purpose of a simple machine?",
-options:["To create energy from nothing","To multiply force, change direction of force, or increase distance","To eliminate friction completely","To make objects lighter"],
-correct:1,
-hint:"Simple machines do not create energy — they transform it. They make tasks easier by changing the way force is applied.",
-why:"Simple machines <strong>multiply force</strong>, <strong>change its direction</strong>, or <strong>increase the distance</strong> over which it acts. They do NOT create energy — there is always a trade-off (more force = less distance, or vice versa)."},
-{type:"matching",text:"Match each <strong>lever class</strong> to its correct arrangement.",
-left:["Class 1 lever","Class 2 lever","Class 3 lever"],
-right:["Fulcrum between effort and load (e.g. tweezers, fishing rod)","Fulcrum at one end, load in the middle (e.g. wheelbarrow)","Fulcrum in the middle (e.g. seesaw, scissors)"],
-pairs:[[0,2],[1,1],[2,0]],
-hint:"Class 1: fulcrum in the MIDDLE (like a seesaw). Class 2: LOAD in the middle (like a wheelbarrow — the wheel is the fulcrum). Class 3: EFFORT in the middle (like tweezers).",
-why:"<strong>Class 1:</strong> fulcrum between effort and load (seesaw, scissors). <strong>Class 2:</strong> load between fulcrum and effort (wheelbarrow, nutcracker). <strong>Class 3:</strong> effort between fulcrum and load (tweezers, fishing rod). Class 3 levers multiply distance/speed, not force."},
-{type:"mcq",text:"A seesaw is a Class 1 lever. If you want to lift a heavier person on the other end, what should you do?",
-options:["Sit closer to the fulcrum","Sit further from the fulcrum","It makes no difference where you sit","Push down harder but stay in the same spot"],
-correct:1,
-hint:"Think about the moment (turning effect): moment = force × distance from fulcrum. How can you increase your moment without changing your weight?",
-why:"Moment = force × distance from fulcrum. By sitting <strong>further from the fulcrum</strong>, you increase your distance, which increases your <strong>turning effect (moment)</strong>. This is why a small child can balance a heavy adult on a seesaw by sitting further out."},
-{type:"tf",text:"True or False: When two gears are meshed together, they always turn in the same direction.",
-correct:false,
-hint:"Picture two gears with their teeth interlocking. If one turns clockwise, the teeth push the other gear...",
-why:"<strong>False.</strong> When two gears are meshed (teeth interlocking), they turn in <strong>opposite directions</strong>. If the driving gear turns clockwise, the driven gear turns <strong>anticlockwise</strong>. To make gears turn in the same direction, you need an <strong>idler gear</strong> (a third gear) between them."},
-{type:"mcq",text:"A large gear with 40 teeth drives a small gear with 10 teeth. If the large gear makes 1 full turn, how many turns does the small gear make?",
-options:["1 turn","4 turns","10 turns","0.25 turns"],
-correct:1,
-hint:"The gear ratio is 40:10, which simplifies to 4:1. For every 1 turn of the large gear, the small gear turns...",
-why:"Gear ratio = 40 ÷ 10 = <strong>4</strong>. The small gear turns <strong>4 times</strong> for every 1 turn of the large gear. It spins faster but with <strong>less force</strong> (less torque). This is a trade-off: speed up = force down."},
-{type:"mcq",text:"In a system of three gears in a line (A meshes with B, B meshes with C), if gear A turns clockwise, what direction does gear C turn?",
-options:["Clockwise","Anticlockwise","It does not turn","It could go either way"],
-correct:0,
-hint:"A turns clockwise → B turns anticlockwise (opposite to A) → C turns... (opposite to B)",
-why:"A turns clockwise, so B (meshed with A) turns <strong>anticlockwise</strong>. Then C (meshed with B) turns <strong>clockwise</strong> — opposite to B, same as A. The middle gear (B) is called an <strong>idler gear</strong> and its job is to reverse direction so that A and C turn the same way."},
-{type:"multi",text:"Select ALL the examples of simple machines.",
-options:["A ramp (inclined plane)","A car engine","Scissors (two Class 1 levers)","A pulley lifting a flag","A computer","A screw holding wood together"],
-correct:[0,2,3,5],
-hint:"Simple machines are basic mechanical devices with few or no moving parts. A car engine and computer are complex machines made of many simple machines working together.",
-why:"<strong>Ramps</strong> (inclined planes), <strong>scissors</strong> (levers), <strong>pulleys</strong>, and <strong>screws</strong> are all simple machines. A car engine and computer are <strong>complex machines</strong> — they combine many simple machines. The six classic simple machines are: lever, wheel and axle, pulley, inclined plane, wedge, and screw."},
-{type:"fill",text:"Complete the sentence using the word bank.",
-sentence:"Simple machines make work easier by trading force for |___| . A longer ramp requires less |___| to lift an object, but you must push it over a greater |___| .",
-blanks:["distance","force","distance"],
-bank:["distance","force","energy","speed","distance","weight"],
-hint:"Simple machines cannot create energy. If you use less force, you must apply it over a greater... The ramp is a great example of this trade-off.",
-why:"Simple machines trade force for <strong>distance</strong>. A ramp lets you use less <strong>force</strong> to raise an object, but you push it over a longer <strong>distance</strong>. The total work (force × distance) stays the same — energy is conserved."}
-]}
+const STAGES = [
+  { name: "Recall & Recognise", desc: "I can identify and name forces and motion vocabulary.", qRange: [0,8] },
+  { name: "Calculate & Apply", desc: "I can use formulas to calculate force, speed, and weight.", qRange: [9,17] },
+  { name: "Interpret Diagrams", desc: "I can read and interpret force diagrams and determine net force.", qRange: [18,26] },
+  { name: "Analyse & Transfer", desc: "I can apply forces concepts to real-world scenarios.", qRange: [27,35] },
+  { name: "Evaluate & Synthesise", desc: "I can evaluate complex situations, spot errors, and reason about motion.", qRange: [36,43] }
 ];
 
-// =====================================================================
-//  GAME ENGINE (same as Earth Science review — reusable)
-// =====================================================================
-let state={currentStage:-1,currentQ:0,score:0,stageScores:[0,0,0,0,0],stageMax:[],answered:false,matchState:null,orderState:null,fillState:null,multiState:null,phase:'intro'};
-STAGES.forEach(s=>state.stageMax.push(s.questions.length));
+// Question types: mcq, calc, drag, diagram, scenario
+const QUESTIONS = [
+  // === STAGE 1: Recall & Recognise (Q0–Q8) ===
+  { type:"mcq", q:"What is a <span class='keyword'>force</span>?",
+    opts:["A push or pull that acts on an object","The speed of an object","The mass of an object","The weight of an object"],
+    ans:0, hint:"Think about what happens when you push a door or pull a rope.", why:"A force is a push or a pull that can change the motion, shape, or direction of an object." },
+  { type:"mcq", q:"Which unit do we use to measure <span class='keyword'>force</span>?",
+    opts:["Newtons (N)","Kilograms (kg)","Metres per second (m/s)","Joules (J)"],
+    ans:0, hint:"This unit is named after a famous scientist who studied gravity.", why:"Force is measured in Newtons (N), named after Sir Isaac Newton." },
+  { type:"mcq", q:"What is the difference between <span class='keyword'>mass</span> and <span class='keyword'>weight</span>?",
+    opts:["Mass is the amount of matter; weight is the force of gravity on that matter","They are the same thing","Mass changes on different planets; weight stays the same","Weight is measured in kilograms"],
+    ans:0, hint:"One of these changes if you go to the Moon. The other does not.", why:"Mass (kg) is how much matter is in an object — it stays the same everywhere. Weight (N) is the gravitational force on that mass — it changes with gravity." },
+  { type:"mcq", q:"Which of these is a <span class='keyword'>contact force</span>?",
+    opts:["Friction","Gravity","Magnetism","Electrostatic force"],
+    ans:0, hint:"Contact forces need objects to be touching.", why:"Friction is a contact force — it happens when two surfaces rub against each other. Gravity, magnetism, and electrostatic forces can act at a distance." },
+  { type:"mcq", q:"Which of these is a <span class='keyword'>non-contact force</span>?",
+    opts:["Gravity","Air resistance","Friction","Normal force"],
+    ans:0, hint:"Non-contact forces can act without the objects touching.", why:"Gravity acts at a distance — the Earth pulls you down without touching you. Friction, air resistance, and normal force all require contact." },
+  { type:"mcq", q:"What does <span class='keyword'>air resistance</span> do to a moving object?",
+    opts:["Slows it down by pushing against the direction of motion","Speeds it up","Has no effect","Pushes it sideways"],
+    ans:0, hint:"Think about what you feel when you run fast — the air pushes against you.", why:"Air resistance (drag) is a friction force from air particles hitting the object. It always acts opposite to the direction of motion." },
+  { type:"mcq", q:"An object at rest stays at rest unless acted on by a force. This describes which of <span class='keyword'>Newton's Laws</span>?",
+    opts:["Newton's First Law","Newton's Second Law","Newton's Third Law","The Law of Gravity"],
+    ans:0, hint:"This law is about what happens when forces are balanced (no net force).", why:"Newton's First Law (inertia) says objects keep doing what they are doing — staying still or moving at constant speed — unless a net force acts on them." },
+  { type:"drag", q:"Put these types of forces into the correct category.",
+    categories:["Contact Forces","Non-Contact Forces"],
+    items:[
+      {text:"Friction", correct:0}, {text:"Gravity", correct:1},
+      {text:"Air resistance", correct:0}, {text:"Magnetism", correct:1},
+      {text:"Normal force", correct:0}, {text:"Electrostatic force", correct:1}
+    ],
+    hint:"Contact forces need the objects to be touching. Non-contact forces act across a gap.",
+    why:"Contact: friction, air resistance, normal force (all require touching). Non-contact: gravity, magnetism, electrostatic (all act at a distance)." },
+  { type:"mcq", q:"What happens to the motion of an object when the forces on it are <span class='keyword'>balanced</span>?",
+    opts:["It stays still or moves at a constant speed","It speeds up","It slows down","It changes direction"],
+    ans:0, hint:"Balanced means the net force is zero — so what changes?", why:"When forces are balanced (net force = 0), there is no change in motion. The object either stays still or continues moving at the same speed in the same direction." },
 
-function render(){
-const app=document.getElementById('app');
-if(state.phase==='intro')return renderIntro(app);
-if(state.phase==='final')return renderFinal(app);
-if(state.phase==='transition')return renderTransition(app);
-renderStage(app);
+  // === STAGE 2: Calculate & Apply (Q9–Q17) ===
+  { type:"calc", q:"A car has a mass of <span class='keyword'>1200 kg</span> and accelerates at <span class='keyword'>3 m/s²</span>. Calculate the force. Use: F = m × a",
+    answer:3600, unit:"N", tolerance:1,
+    hint:"Multiply the mass by the acceleration. F = 1200 × 3", why:"F = m × a = 1200 × 3 = 3600 N. The larger the mass or acceleration, the greater the force needed." },
+  { type:"calc", q:"A cyclist travels <span class='keyword'>240 metres</span> in <span class='keyword'>60 seconds</span>. What is their speed? Use: speed = distance ÷ time",
+    answer:4, unit:"m/s", tolerance:0.1,
+    hint:"Divide the distance by the time. 240 ÷ 60", why:"Speed = distance ÷ time = 240 ÷ 60 = 4 m/s. This is the average speed over the whole journey." },
+  { type:"calc", q:"What is the <span class='keyword'>weight</span> of an object with a mass of <span class='keyword'>8 kg</span> on Earth? Use: W = m × g (g = 10 N/kg)",
+    answer:80, unit:"N", tolerance:1,
+    hint:"Multiply the mass by gravitational field strength. 8 × 10", why:"W = m × g = 8 × 10 = 80 N. Weight is a force, so it is measured in Newtons." },
+  { type:"calc", q:"A force of <span class='keyword'>500 N</span> acts on an object with mass <span class='keyword'>50 kg</span>. What is the acceleration? Use: a = F ÷ m",
+    answer:10, unit:"m/s²", tolerance:0.1,
+    hint:"Rearrange F = m × a to find a. Divide the force by the mass.", why:"a = F ÷ m = 500 ÷ 50 = 10 m/s². A bigger force on the same mass gives a bigger acceleration." },
+  { type:"calc", q:"A runner covers <span class='keyword'>100 m</span> at a speed of <span class='keyword'>8 m/s</span>. How long does it take? Use: time = distance ÷ speed",
+    answer:12.5, unit:"s", tolerance:0.1,
+    hint:"Rearrange speed = distance ÷ time. Time = 100 ÷ 8", why:"Time = distance ÷ speed = 100 ÷ 8 = 12.5 seconds." },
+  { type:"calc", q:"On the Moon, g = <span class='keyword'>1.6 N/kg</span>. What is the weight of a <span class='keyword'>70 kg</span> astronaut on the Moon?",
+    answer:112, unit:"N", tolerance:1,
+    hint:"Use W = m × g, but with the Moon's gravity value. 70 × 1.6", why:"W = m × g = 70 × 1.6 = 112 N. The astronaut's mass (70 kg) stays the same, but weight is much less on the Moon because gravity is weaker." },
+  { type:"mcq", q:"A 2 kg ball is dropped. Using g = 10 N/kg, what is the net downward force if air resistance is <span class='keyword'>5 N</span>?",
+    opts:["15 N","20 N","5 N","25 N"],
+    ans:0, hint:"First find the weight (W = m × g = 2 × 10 = 20 N). Then subtract the air resistance.", why:"Weight = 2 × 10 = 20 N downward. Air resistance = 5 N upward. Net force = 20 − 5 = 15 N downward." },
+  { type:"calc", q:"A car travels at <span class='keyword'>20 m/s</span> for <span class='keyword'>30 seconds</span>. How far does it travel? Use: distance = speed × time",
+    answer:600, unit:"m", tolerance:1,
+    hint:"Multiply speed by time. 20 × 30", why:"Distance = speed × time = 20 × 30 = 600 m." },
+
+  // === STAGE 3: Interpret Diagrams (Q18–Q26) ===
+  { type:"diagram", q:"Look at the force diagram. The object has a <span class='keyword'>10 N</span> force pushing right and a <span class='keyword'>10 N</span> force pushing left. What is the net force?",
+    diagram:"balanced", opts:["0 N — forces are balanced","20 N to the right","20 N to the left","10 N to the right"],
+    ans:0, hint:"When forces are equal and opposite, they cancel each other out.", why:"10 N right + 10 N left = 0 N net force. The forces are balanced, so the object will not change its motion." },
+  { type:"diagram", q:"This object has <span class='keyword'>15 N</span> pushing right and <span class='keyword'>8 N</span> pushing left. What is the net force and direction?",
+    diagram:"unbalanced_right", opts:["7 N to the right","23 N to the right","7 N to the left","8 N to the right"],
+    ans:0, hint:"Subtract the smaller force from the larger. The net force goes in the direction of the larger force.", why:"Net force = 15 − 8 = 7 N to the right. The object will accelerate to the right." },
+  { type:"diagram", q:"An object has <span class='keyword'>weight = 30 N</span> pulling down and <span class='keyword'>normal force = 30 N</span> pushing up. It also has <span class='keyword'>12 N</span> friction left and <span class='keyword'>20 N</span> applied force right. What is the net force?",
+    diagram:"complex", opts:["8 N to the right","32 N to the right","0 N","12 N to the left"],
+    ans:0, hint:"Vertical forces cancel (30 up, 30 down). For horizontal: 20 right − 12 left = ?", why:"Vertical: 30 N up + 30 N down = 0 (balanced). Horizontal: 20 N right − 12 N left = 8 N right. The object accelerates to the right." },
+  { type:"mcq", q:"In a force diagram, arrows represent forces. A <span class='keyword'>longer arrow</span> means:",
+    opts:["A bigger force","A faster speed","More mass","More friction"],
+    ans:0, hint:"The arrow length is proportional to something about the force.", why:"In force diagrams, the length of the arrow shows the size (magnitude) of the force. Longer arrow = bigger force." },
+  { type:"diagram", q:"A skydiver falls with <span class='keyword'>weight = 800 N</span> down and <span class='keyword'>air resistance = 800 N</span> up. What is happening?",
+    diagram:"terminal", opts:["Falling at constant speed (terminal velocity)","Speeding up","Slowing down","Not moving"],
+    ans:0, hint:"The forces are balanced. What does Newton's First Law tell us about balanced forces and motion?", why:"When weight equals air resistance, net force = 0. By Newton's First Law, the skydiver continues at constant speed. This is called terminal velocity." },
+  { type:"mcq", q:"A box is pushed across a floor. The push force is <span class='keyword'>greater than</span> friction. The box will:",
+    opts:["Accelerate in the direction of the push","Move at constant speed","Slow down","Stay still"],
+    ans:0, hint:"If the forces are unbalanced (push > friction), what does Newton's Second Law say?", why:"Unbalanced force in the direction of the push means a net force exists. F = ma tells us the object accelerates." },
+  { type:"drag", q:"Put these stages of a skydiver's fall in the correct order, from jump to landing.",
+    categories:["Order (first to last)"],
+    items:[
+      {text:"1. Jumps — accelerates due to gravity", correct:0, order:0},
+      {text:"2. Speeds up — air resistance increases", correct:0, order:1},
+      {text:"3. Air resistance = weight — terminal velocity", correct:0, order:2},
+      {text:"4. Parachute opens — air resistance suddenly increases", correct:0, order:3},
+      {text:"5. Decelerates — slows to new lower terminal velocity", correct:0, order:4}
+    ],
+    isOrdered:true,
+    hint:"Start from when gravity is the only large force, then think about what changes as speed increases.",
+    why:"The key idea is that air resistance depends on speed. As speed increases, drag increases until it balances weight (terminal velocity). The parachute increases drag dramatically." },
+  { type:"diagram", q:"Two forces act on a ball: <span class='keyword'>6 N up</span> and <span class='keyword'>14 N down</span>. What is the net force?",
+    diagram:"vertical_unbalanced", opts:["8 N downward","20 N downward","8 N upward","6 N upward"],
+    ans:0, hint:"Subtract the smaller from the larger. Which direction is the bigger force?", why:"Net force = 14 N down − 6 N up = 8 N downward. The ball will accelerate downward." },
+  { type:"mcq", q:"A car moves at constant velocity on a highway. What can you say about the forces?",
+    opts:["The forces are balanced (net force = 0)","The engine force is greater than friction","There are no forces acting on the car","Friction is greater than the engine force"],
+    ans:0, hint:"Constant velocity means no acceleration. What does that tell you about net force?", why:"Constant velocity means zero acceleration, which means zero net force. The driving force equals the total resistive forces (friction + air resistance)." },
+
+  // === STAGE 4: Analyse & Transfer (Q27–Q35) ===
+  { type:"scenario", q:"A student says: <em>'My book is sitting on the table. There are no forces acting on it because it is not moving.'</em> Is this correct? Explain.",
+    opts:["No — there are forces (weight down, normal force up) but they are balanced","Yes — no forces means no movement","No — only gravity acts on it","Yes — forces only exist when objects move"],
+    ans:0, hint:"Just because something is still does not mean there are no forces. Think about what holds the book up.", why:"The book has weight pulling it down and the table pushes it up (normal force). These are balanced, so the net force is zero — but the forces still exist." },
+  { type:"scenario", q:"A rocket in space fires its engines briefly, then turns them off. What happens to the rocket in the vacuum of space?",
+    opts:["It continues at constant speed in a straight line","It gradually slows down and stops","It speeds up forever","It immediately stops"],
+    ans:0, hint:"In space there is no air resistance or friction. Apply Newton's First Law.", why:"No friction or air resistance in space means no net force after engines stop. By Newton's First Law, the rocket continues at constant velocity forever (until another force acts)." },
+  { type:"scenario", q:"Two teams pull on a rope in a tug of war. Team A pulls with <span class='keyword'>500 N</span> and Team B pulls with <span class='keyword'>450 N</span>. What is the net force and which team wins?",
+    opts:["50 N toward Team A — Team A wins","950 N — both teams win","50 N toward Team B — Team B wins","0 N — it's a draw"],
+    ans:0, hint:"Subtract the smaller force from the larger. The rope moves toward the team with the bigger force.", why:"Net force = 500 − 450 = 50 N toward Team A. The rope (and Team B) accelerate toward Team A." },
+  { type:"calc", q:"A shopping trolley has mass <span class='keyword'>25 kg</span>. You push it with <span class='keyword'>40 N</span> but friction is <span class='keyword'>15 N</span>. What is the acceleration? Use: a = net force ÷ mass",
+    answer:1, unit:"m/s²", tolerance:0.1,
+    hint:"First find net force: 40 − 15 = 25 N. Then use a = F ÷ m.", why:"Net force = 40 − 15 = 25 N. Acceleration = 25 ÷ 25 = 1 m/s²." },
+  { type:"scenario", q:"You push a friend on a skateboard. As you push them, you feel yourself being pushed backward. This is an example of:",
+    opts:["Newton's Third Law — action and reaction forces","Newton's First Law — inertia","Newton's Second Law — F = ma","Friction slowing you down"],
+    ans:0, hint:"When you push someone, they push you back. These are equal and opposite forces.", why:"Newton's Third Law: every action has an equal and opposite reaction. You push your friend forward, your friend pushes you backward with the same force." },
+  { type:"scenario", q:"Two cars have the same engine force. Car A has mass <span class='keyword'>1000 kg</span> and Car B has mass <span class='keyword'>2000 kg</span>. Which car accelerates faster?",
+    opts:["Car A — less mass means more acceleration for the same force","Car B — more mass means more acceleration","They accelerate equally","Cannot tell without knowing the force"],
+    ans:0, hint:"Use F = ma. If F is the same but m is smaller, what happens to a?", why:"F = ma, so a = F/m. Same force, smaller mass = bigger acceleration. Car A accelerates twice as fast as Car B." },
+  { type:"scenario", q:"A cyclist stops pedalling on a flat road. Explain why the bicycle eventually stops.",
+    opts:["Friction and air resistance are unbalanced forces that decelerate the bike","The bike runs out of energy","Gravity pulls the bike backward","The wheels stop because they are round"],
+    ans:0, hint:"What forces are still acting after the cyclist stops pedalling?", why:"Without pedalling, there is no forward force. Friction (wheels on road) and air resistance still push backward. These unbalanced forces cause deceleration until the bike stops." },
+  { type:"drag", q:"Match each of Newton's Laws to the correct description.",
+    categories:["Match"],
+    items:[
+      {text:"Objects at rest stay at rest unless a net force acts", correct:0, label:"First Law"},
+      {text:"F = m × a", correct:0, label:"Second Law"},
+      {text:"Every action has an equal and opposite reaction", correct:0, label:"Third Law"}
+    ],
+    isMatch: true,
+    matchLabels:["First Law","Second Law","Third Law"],
+    hint:"First = inertia, Second = the equation, Third = action-reaction pairs.",
+    why:"First Law: inertia (no net force = no change in motion). Second Law: F = ma (force causes acceleration). Third Law: forces come in equal and opposite pairs." },
+  { type:"scenario", q:"A heavy truck and a small car crash head-on. According to Newton's Third Law, compare the forces they exert on each other.",
+    opts:["The forces are equal in size but opposite in direction","The truck exerts a greater force","The car exerts a greater force","The forces depend on which vehicle was moving faster"],
+    ans:0, hint:"Newton's Third Law says action and reaction are always equal. Does mass matter for the forces?", why:"Newton's Third Law: the truck pushes the car with the same force that the car pushes the truck. The forces are equal and opposite. However, the car accelerates more (F = ma, smaller mass = bigger acceleration) — that is why the car gets more damaged." },
+
+  // === STAGE 5: Evaluate & Synthesise (Q36–Q43) ===
+  { type:"scenario", q:"A student writes: <em>'A ball thrown upward slows down because the force of the throw gets weaker as it goes higher.'</em> Identify the error.",
+    opts:["The throw force only acts during contact — after release, gravity is the only force (plus air resistance)","The student is correct","The ball slows down because air pushes it up","The ball has no forces once in the air"],
+    ans:0, hint:"Once the ball leaves your hand, does the 'push' force still act? Think about contact forces.", why:"The throwing force is a contact force — it stops the moment the ball leaves your hand. After that, only gravity (down) and air resistance (opposing motion) act. The ball decelerates because of gravity, not because the 'throw weakens'." },
+  { type:"calc", q:"A car decelerates from <span class='keyword'>30 m/s</span> to <span class='keyword'>10 m/s</span> in <span class='keyword'>5 seconds</span>. The car's mass is <span class='keyword'>1500 kg</span>. What is the braking force? Use: a = (v−u) ÷ t, then F = m × a",
+    answer:6000, unit:"N", tolerance:10,
+    hint:"Step 1: a = (10 − 30) ÷ 5 = −4 m/s². Step 2: F = 1500 × 4 = 6000 N. Give the force as a positive number.",
+    why:"Acceleration = (10 − 30) ÷ 5 = −4 m/s² (deceleration). Braking force = 1500 × 4 = 6000 N opposing the direction of motion." },
+  { type:"scenario", q:"Design an experiment to test how <span class='keyword'>surface type</span> affects friction. Choose the correct set of variables.",
+    opts:["IV: surface type; DV: force needed to pull object; CV: mass of object, speed of pulling","IV: mass; DV: surface type; CV: force","IV: force; DV: speed; CV: surface and mass","IV: surface type; DV: mass; CV: force"],
+    ans:0, hint:"The independent variable is what you change. The dependent variable is what you measure. Controlled variables stay the same.", why:"We change the surface (IV) and measure how much force is needed to slide the object (DV). We keep the mass and pulling speed the same (CV) so the test is fair." },
+  { type:"scenario", q:"A student claims: <em>'Heavier objects fall faster than lighter objects.'</em> Evaluate this claim.",
+    opts:["In a vacuum this is wrong (they fall at the same rate), but in air the claim can appear true due to different air resistance effects","The student is fully correct","The student is fully incorrect — lighter objects always fall faster","Weight has nothing to do with falling speed"],
+    ans:0, hint:"Think about what Galileo showed, but also about what happens in real life with air resistance.", why:"In a vacuum, all objects accelerate at g regardless of mass. In air, shape and surface area matter — a feather falls slowly due to high air resistance relative to its weight. The misconception comes from everyday experience where air resistance is not controlled." },
+  { type:"drag", q:"Rank these scenarios from <span class='keyword'>lowest</span> to <span class='keyword'>highest</span> net force.",
+    categories:["Lowest to Highest Net Force"],
+    items:[
+      {text:"Book on table (balanced)", correct:0, order:0},
+      {text:"Person walking (slight net forward force)", correct:0, order:1},
+      {text:"Car accelerating onto highway", correct:0, order:2},
+      {text:"Rocket launching into space", correct:0, order:3}
+    ],
+    isOrdered:true,
+    hint:"Think about which situation has the most acceleration. More acceleration = more net force.",
+    why:"Book: 0 N net force. Walking: small net force (~10–50 N). Car accelerating: moderate (~3000–5000 N). Rocket launch: enormous (~30,000,000+ N). Net force determines acceleration (F = ma)." },
+  { type:"scenario", q:"A parachutist opens their parachute and decelerates. A student says: <em>'The parachutist decelerates because gravity gets weaker when the parachute opens.'</em> What is wrong?",
+    opts:["Gravity stays the same — air resistance suddenly increases, creating an upward net force that causes deceleration","Gravity does get weaker as you get higher","The parachute blocks gravity","The student is correct"],
+    ans:0, hint:"Does opening a parachute change gravity? What does it change?", why:"Gravity (weight) does not change when the parachute opens. The parachute increases the surface area, which massively increases air resistance (upward). Now air resistance > weight, so the net force is upward, causing deceleration." },
+  { type:"scenario", q:"If you are standing on a scale in a lift (elevator), the scale reads <span class='keyword'>higher than your weight</span> when the lift accelerates upward. Why?",
+    opts:["The floor pushes you up with extra force to accelerate you — the scale measures this increased normal force","You gain mass when the lift goes up","Gravity is stronger inside the lift","The scale is broken"],
+    ans:0, hint:"The scale measures the normal force, not just your weight. When you accelerate upward, the floor needs to push harder.", why:"When accelerating upward, the net upward force must be greater than your weight. The floor (and scale) push you with a force = weight + (mass × acceleration). The scale reads this increased normal force, making you feel heavier." },
+  { type:"scenario", q:"Think about a real-world example where understanding forces has improved safety. Which of these best shows this?",
+    opts:["Car crumple zones increase the time of impact, reducing the force on passengers (F = ma; longer time = less deceleration = less force)","Faster cars are safer because they have more force","Heavier cars are safer because they have more mass","Seatbelts work by making you lighter"],
+    ans:0, hint:"To reduce force, you can increase the time over which the change in speed happens. Which design does this?", why:"Crumple zones extend the time of deceleration during a crash. Since a = Δv/t, increasing t decreases a, and since F = ma, less acceleration means less force on passengers. This is a direct application of Newton's Second Law to save lives." }
+];
+
+// === GAME STATE ===
+const SAVE_KEY = "fm_g7_review_v1";
+
+function freshState() {
+  return {
+    screen: "intro",
+    currentQ: 0,
+    currentStage: 0,
+    score: 0,
+    streak: 0,
+    bestStreak: 0,
+    answered: 0,
+    stageScores: [0,0,0,0,0],
+    stageAttempts: [0,0,0,0,0],
+    achievements: {
+      streak3: false, streak5: false, streak10: false,
+      perfectStage: false, allCalc: false, speedDemon: false,
+      complete: false
+    },
+    calcCorrect: 0, calcTotal: 0,
+    questionStartTime: 0,
+    fastAnswers: 0,
+    qResults: [] // tracks each answered question: {idx, correct}
+  };
 }
 
-function renderIntro(app){
-const totalQ=state.stageMax.reduce((a,b)=>a+b,0);
-app.innerHTML=`
-<div class="header"><h1>Forces &amp; Motion Review</h1><div class="subtitle">Grade 7 — General Revision</div><div class="myp-badge">Key Concept: Relationships</div></div>
-<div class="stage intro-screen">
-<h2>Welcome, Physicist</h2>
-<p>Review everything you've learned about forces, Newton's laws, and simple machines.</p>
-<div class="soi">"The relationship between force, mass, and motion determines how objects interact and how machines make work easier."</div>
-<div class="intro-topics">
-<span class="intro-topic">Contact &amp; Non-Contact Forces</span>
-<span class="intro-topic">Balanced &amp; Unbalanced</span>
-<span class="intro-topic">Net Force</span>
-<span class="intro-topic">Newton's Three Laws</span>
-<span class="intro-topic">Mass vs Weight</span>
-<span class="intro-topic">Gravity</span>
-<span class="intro-topic">Levers &amp; Gears</span>
-<span class="intro-topic">Simple Machines</span>
-</div>
-<p>5 stages &middot; ${totalQ} questions &middot; Multiple question types</p>
-<p style="font-size:.82rem;color:#64748b;margin-top:4px;">MCQ &middot; True/False &middot; Ordering &middot; Matching &middot; Fill-the-Blank &middot; Multi-Select</p>
-<div class="btn-row" style="justify-content:center;margin-top:20px;"><button class="btn btn-primary" onclick="startGame()">Start Review</button></div>
-</div>`;}
+function saveState() {
+  try {
+    const toSave = {
+      currentQ: state.currentQ,
+      score: state.score,
+      streak: state.streak,
+      bestStreak: state.bestStreak,
+      answered: state.answered,
+      stageScores: state.stageScores,
+      stageAttempts: state.stageAttempts,
+      achievements: state.achievements,
+      calcCorrect: state.calcCorrect,
+      calcTotal: state.calcTotal,
+      fastAnswers: state.fastAnswers,
+      qResults: state.qResults,
+      savedAt: Date.now()
+    };
+    localStorage.setItem(SAVE_KEY, JSON.stringify(toSave));
+  } catch(e) { /* storage unavailable — fail silently */ }
+}
 
-function startGame(){state.currentStage=0;state.currentQ=0;state.phase='playing';state.answered=false;render();}
+function loadState() {
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if(!raw) return null;
+    const saved = JSON.parse(raw);
+    // Validate — must have answered at least 1 and not be complete
+    if(!saved || typeof saved.currentQ !== "number" || saved.answered < 1) return null;
+    if(saved.achievements && saved.achievements.complete) return null; // finished — no resume
+    return saved;
+  } catch(e) { return null; }
+}
 
-function progressHTML(){
-const labels=STAGES.map((s,i)=>{let c=i<state.currentStage?'completed':i===state.currentStage?'active':'';return`<span class="${c}">${s.title}</span>`;}).join('');
-const steps=STAGES.map((_,i)=>{let c=i<state.currentStage?'completed':i===state.currentStage?'active':'';return`<div class="progress-step ${c}"></div>`;}).join('');
-return`<div class="progress-bar">${steps}</div><div class="progress-labels">${labels}</div>`;}
+function clearSave() {
+  try { localStorage.removeItem(SAVE_KEY); } catch(e) {}
+}
 
-function renderStage(app){
-const stg=STAGES[state.currentStage],q=stg.questions[state.currentQ];let qHTML='';
-if(q.type==='mcq')qHTML=renderMCQ(q);else if(q.type==='tf')qHTML=renderTF(q);else if(q.type==='order'||q.type==='drag-sort')qHTML=renderOrder(q);else if(q.type==='matching')qHTML=renderMatching(q);else if(q.type==='fill')qHTML=renderFill(q);else if(q.type==='multi')qHTML=renderMulti(q);
-app.innerHTML=`
-<div class="header"><h1>Forces &amp; Motion Review</h1></div>${progressHTML()}
-<div class="score-display">Score <span class="score-num">${state.score}</span></div>
-<div class="stage">
-<div class="stage-header"><div class="stage-num">Stage ${stg.num} of 5</div><div class="stage-title">${stg.title}</div><div class="stage-intention">${stg.intention}</div></div>
-<div class="question-counter">Question ${state.currentQ+1} of ${stg.questions.length}</div>
-<div class="question-text">${q.text}</div>${qHTML}<div id="feedback" class="feedback"></div><div class="btn-row" id="btnRow"></div></div>`;
-if(q.type==='order'||q.type==='drag-sort')initOrder();if(q.type==='matching')initMatching();if(q.type==='fill')initFill(q);if(q.type==='multi')initMulti();}
+function resumeFromSave(saved) {
+  state = freshState();
+  state.currentQ = saved.currentQ;
+  state.score = saved.score;
+  state.streak = saved.streak;
+  state.bestStreak = saved.bestStreak;
+  state.answered = saved.answered;
+  state.stageScores = saved.stageScores || [0,0,0,0,0];
+  state.stageAttempts = saved.stageAttempts || [0,0,0,0,0];
+  state.achievements = saved.achievements || freshState().achievements;
+  state.calcCorrect = saved.calcCorrect || 0;
+  state.calcTotal = saved.calcTotal || 0;
+  state.fastAnswers = saved.fastAnswers || 0;
+  state.qResults = saved.qResults || [];
+  state.screen = "game";
+  state.questionStartTime = Date.now();
+}
 
-// === MCQ ===
-function renderMCQ(q){return`<div class="options">${q.options.map((o,i)=>`<button class="option-btn" onclick="checkMCQ(${i})" id="opt${i}">${o}</button>`).join('')}</div>`;}
-function checkMCQ(idx){if(state.answered)return;state.answered=true;const q=STAGES[state.currentStage].questions[state.currentQ];const ok=idx===q.correct;document.querySelectorAll('.option-btn').forEach((b,i)=>{b.classList.add('disabled');if(i===q.correct)b.classList.add('correct');if(i===idx&&!ok)b.classList.add('incorrect');});if(ok){state.score++;state.stageScores[state.currentStage]++;}showFeedback(ok,q);showNextBtn();}
+let state = freshState();
 
-// === TRUE/FALSE ===
-function renderTF(q){return`<div class="tf-row"><button class="tf-btn" id="tfTrue" onclick="checkTF(true)">True</button><button class="tf-btn" id="tfFalse" onclick="checkTF(false)">False</button></div>`;}
-function checkTF(val){if(state.answered)return;state.answered=true;const q=STAGES[state.currentStage].questions[state.currentQ];const ok=val===q.correct;document.getElementById('tfTrue').classList.add('disabled');document.getElementById('tfFalse').classList.add('disabled');document.getElementById(q.correct?'tfTrue':'tfFalse').classList.add('correct');if(!ok)document.getElementById(val?'tfTrue':'tfFalse').classList.add('incorrect');if(ok){state.score++;state.stageScores[state.currentStage]++;}showFeedback(ok,q);showNextBtn();}
+const app = document.getElementById("app");
 
-// === ORDER ===
-function renderOrder(q){const items=[...q.items];for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}state.orderState=[...items];return`<div class="order-list" id="orderList"></div><div style="text-align:center;margin-bottom:8px;"><button class="btn btn-primary" onclick="checkOrder()" id="checkOrderBtn">Check Order</button></div>`;}
-function initOrder(){renderOrderList();}
-function renderOrderList(){const list=document.getElementById('orderList');if(!list)return;list.innerHTML=state.orderState.map((item,i)=>`<div class="order-item" id="oi${i}"><div class="order-num">${i+1}</div><div class="order-text">${item}</div><div class="order-arrows"><button class="arrow-btn" onclick="moveOrder(${i},-1)" ${i===0?'disabled':''}>&#9650;</button><button class="arrow-btn" onclick="moveOrder(${i},1)" ${i===state.orderState.length-1?'disabled':''}>&#9660;</button></div></div>`).join('');}
-function moveOrder(idx,dir){if(state.answered)return;const n=idx+dir;if(n<0||n>=state.orderState.length)return;[state.orderState[idx],state.orderState[n]]=[state.orderState[n],state.orderState[idx]];renderOrderList();}
-function checkOrder(){if(state.answered)return;state.answered=true;const q=STAGES[state.currentStage].questions[state.currentQ];const correct=q.correct?q.items.map((_,i)=>q.items[q.correct[i]]):q.items;const ok=state.orderState.every((item,i)=>item===q.items[i]);document.querySelectorAll('.order-item').forEach((el,i)=>{if(state.orderState[i]===q.items[i]){el.style.borderColor='#22c55e';el.querySelector('.order-num').style.background='#22c55e';el.querySelector('.order-num').style.color='#fff';}else{el.style.borderColor='#ef4444';}el.querySelectorAll('.arrow-btn').forEach(b=>b.disabled=true);});document.getElementById('checkOrderBtn').style.display='none';if(ok){state.score++;state.stageScores[state.currentStage]++;}showFeedback(ok,q);showNextBtn();}
+// === RENDER FUNCTIONS ===
+function render() {
+  switch(state.screen) {
+    case "intro": renderIntro(); break;
+    case "game": renderGame(); break;
+    case "stageTransition": renderStageTransition(); break;
+    case "results": renderResults(); break;
+  }
+}
 
-// === MATCHING ===
-function renderMatching(q){const rm=q.right.map((_,i)=>i);for(let i=rm.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rm[i],rm[j]]=[rm[j],rm[i]];}state.matchState={selected:null,side:null,matched:[],rightMap:rm,attempts:0};let rows='';for(let i=0;i<q.left.length;i++){rows+=`<div class="match-item" id="mL${i}" onclick="selectMatch('left',${i})">${q.left[i]}</div><div class="match-item" id="mR${rm[i]}" onclick="selectMatch('right',${rm[i]})">${q.right[rm[i]]}</div>`;}return`<div class="match-grid"><div class="match-col-header">Term</div><div class="match-col-header">Description</div>${rows}</div><div id="matchHint" style="font-size:.82rem;color:#64748b;text-align:center;">Select one from each column to match them.</div>`;}
-function initMatching(){}
-function selectMatch(side,idx){if(state.answered)return;const q=STAGES[state.currentStage].questions[state.currentQ];const ms=state.matchState;if(ms.matched.some(m=>(side==='left'&&m[0]===idx)||(side==='right'&&m[1]===idx)))return;const el=document.getElementById(side==='left'?`mL${idx}`:`mR${idx}`);el.classList.remove('wrong-flash');if(ms.selected!==null&&ms.side!==side){const li=side==='left'?idx:ms.selected,ri=side==='right'?idx:ms.selected;const pair=q.pairs.find(p=>p[0]===li);if(pair&&pair[1]===ri){ms.matched.push([li,ri]);document.getElementById(`mL${li}`).classList.add('matched');document.getElementById(`mR${ri}`).classList.add('matched');document.getElementById(`mL${li}`).classList.remove('selected');document.getElementById(`mR${ri}`).classList.remove('selected');if(ms.side==='left')document.getElementById(`mL${ms.selected}`).classList.remove('selected');else document.getElementById(`mR${ms.selected}`).classList.remove('selected');ms.selected=null;ms.side=null;if(ms.matched.length===q.left.length){state.answered=true;const ok=ms.attempts<q.left.length;if(ok){state.score++;state.stageScores[state.currentStage]++;}showFeedback(true,q);showNextBtn();}}else{ms.attempts++;el.classList.add('wrong-flash');const prev=document.getElementById(ms.side==='left'?`mL${ms.selected}`:`mR${ms.selected}`);prev.classList.add('wrong-flash');prev.classList.remove('selected');ms.selected=null;ms.side=null;document.getElementById('matchHint').innerHTML=`<span style="color:#fca5a5;">${q.hint}</span>`;setTimeout(()=>{el.classList.remove('wrong-flash');prev.classList.remove('wrong-flash');},500);}}else{if(ms.selected!==null&&ms.side===side){document.getElementById(side==='left'?`mL${ms.selected}`:`mR${ms.selected}`).classList.remove('selected');}el.classList.add('selected');ms.selected=idx;ms.side=side;}}
+function renderIntro() {
+  const saved = loadState();
+  const resumeHTML = saved ? `
+    <div style="margin-top:20px; padding:16px; background:var(--surface-2); border:1px solid var(--primary); border-radius:var(--radius);">
+      <p style="font-size:14px; color:var(--primary); font-weight:600; margin-bottom:4px;">Saved progress found</p>
+      <p style="font-size:13px; color:var(--text-muted);">Question ${saved.currentQ + 1} of ${QUESTIONS.length} · ${saved.score}/${saved.answered} correct · Stage ${getStageForQ(saved.currentQ) + 1}</p>
+      <div style="display:flex; gap:8px; margin-top:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="start-btn" style="margin:0; padding:12px 32px; font-size:15px;" onclick="resumeGame()">Continue →</button>
+        <button class="start-btn" style="margin:0; padding:12px 32px; font-size:15px; background:var(--surface); border:1px solid var(--border); color:var(--text-muted);" onclick="startFresh()">Start Over</button>
+      </div>
+    </div>
+  ` : `<button class="start-btn" onclick="startGame()">Begin Review</button>`;
 
-// === FILL ===
-function renderFill(q){const bank=[...q.bank];for(let i=bank.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bank[i],bank[j]]=[bank[j],bank[i]];}state.fillState={placed:new Array(q.blanks.length).fill(null),activeBlank:0,bank};const parts=q.sentence.split('|___|');let html='<div class="fill-sentence">';parts.forEach((p,i)=>{html+=p;if(i<parts.length-1)html+=`<span class="blank-slot" id="blank${i}" onclick="selectBlank(${i})">▾</span>`;});html+='</div>';html+=`<div class="word-bank" id="wordBank">${bank.map((w,i)=>`<span class="word-chip" id="chip${i}" onclick="placeWord(${i})">${w}</span>`).join('')}</div>`;html+=`<div style="text-align:center;margin-bottom:8px;"><button class="btn btn-primary" onclick="checkFill()" id="checkFillBtn">Check Answer</button></div>`;return html;}
-function initFill(q){highlightBlank(0);}
-function selectBlank(idx){if(state.answered)return;const fs=state.fillState;if(fs.placed[idx]!==null){const ci=fs.bank.indexOf(fs.placed[idx]);if(ci>=0)document.getElementById(`chip${ci}`).classList.remove('used');fs.placed[idx]=null;document.getElementById(`blank${idx}`).textContent='▾';document.getElementById(`blank${idx}`).classList.remove('filled');}fs.activeBlank=idx;highlightBlank(idx);}
-function highlightBlank(idx){const q=STAGES[state.currentStage].questions[state.currentQ];for(let i=0;i<q.blanks.length;i++){const el=document.getElementById(`blank${i}`);if(el)el.style.borderBottomColor=i===idx?'#f59e0b':'#3b82f6';}}
-function placeWord(ci){if(state.answered)return;const fs=state.fillState;const w=fs.bank[ci];const chip=document.getElementById(`chip${ci}`);if(chip.classList.contains('used'))return;const bi=fs.activeBlank;if(fs.placed[bi]!==null){const old=fs.bank.indexOf(fs.placed[bi]);if(old>=0)document.getElementById(`chip${old}`).classList.remove('used');}fs.placed[bi]=w;chip.classList.add('used');const blank=document.getElementById(`blank${bi}`);blank.textContent=w;blank.classList.add('filled');const q=STAGES[state.currentStage].questions[state.currentQ];for(let i=0;i<q.blanks.length;i++){const next=(bi+1+i)%q.blanks.length;if(fs.placed[next]===null){fs.activeBlank=next;highlightBlank(next);return;}}highlightBlank(-1);}
-function checkFill(){if(state.answered)return;const q=STAGES[state.currentStage].questions[state.currentQ];const fs=state.fillState;if(fs.placed.includes(null)){document.getElementById('feedback').className='feedback incorrect';document.getElementById('feedback').innerHTML='Fill in all the blanks before checking.';document.getElementById('feedback').style.display='block';return;}state.answered=true;const ok=fs.placed.every((w,i)=>w===q.blanks[i]);q.blanks.forEach((correct,i)=>{const el=document.getElementById(`blank${i}`);if(fs.placed[i]===correct)el.classList.add('correct-slot');else{el.classList.add('incorrect-slot');el.textContent=correct;}});document.getElementById('checkFillBtn').style.display='none';document.querySelectorAll('.word-chip').forEach(c=>c.style.cursor='default');if(ok){state.score++;state.stageScores[state.currentStage]++;}showFeedback(ok,q);showNextBtn();}
+  app.innerHTML = `
+    <div class="screen">
+      <h1>Forces & Motion</h1>
+      <p>Grade 7 — Exam Revision</p>
+      <p class="soi">"Relationships between forces and motion help us understand interaction and function in the context of scientific and technical innovation."</p>
+      <div style="margin:20px 0;">
+        <p style="font-size:13px;"><strong style="color:var(--primary);">Key Concept:</strong> Relationships &nbsp;|&nbsp; <strong style="color:var(--accent);">Related:</strong> Function, Interaction</p>
+        <p style="font-size:13px; margin-top:4px;"><strong style="color:var(--warning);">ATL:</strong> Critical Thinking</p>
+      </div>
+      <p style="font-size:14px; margin-top:16px; color:var(--text);">${QUESTIONS.length} questions across 5 stages</p>
+      <p style="font-size:13px;">Recall → Calculate → Diagrams → Analyse → Evaluate</p>
+      ${resumeHTML}
+    </div>
+  `;
+}
 
-// === MULTI-SELECT ===
-function renderMulti(q){return`<div class="multi-options">${q.options.map((o,i)=>`<button class="multi-btn" id="multi${i}" onclick="toggleMulti(${i})"><span class="check-box"></span><span>${o}</span></button>`).join('')}</div><div style="text-align:center;margin-bottom:8px;"><button class="btn btn-primary" onclick="checkMulti()" id="checkMultiBtn">Check Answer</button></div>`;}
-function initMulti(){state.multiState={toggled:new Set()};}
-function toggleMulti(idx){if(state.answered)return;const ms=state.multiState;const el=document.getElementById(`multi${idx}`);if(ms.toggled.has(idx)){ms.toggled.delete(idx);el.classList.remove('toggled');}else{ms.toggled.add(idx);el.classList.add('toggled');}}
-function checkMulti(){if(state.answered)return;const q=STAGES[state.currentStage].questions[state.currentQ];const ms=state.multiState;if(ms.toggled.size===0){document.getElementById('feedback').className='feedback incorrect';document.getElementById('feedback').innerHTML='Select at least one option before checking.';document.getElementById('feedback').style.display='block';return;}state.answered=true;const cs=new Set(q.correct);const ok=ms.toggled.size===cs.size&&[...ms.toggled].every(v=>cs.has(v));q.options.forEach((_,i)=>{const el=document.getElementById(`multi${i}`);el.classList.add('disabled');if(cs.has(i)&&ms.toggled.has(i))el.classList.add('correct');else if(!cs.has(i)&&ms.toggled.has(i))el.classList.add('incorrect');else if(cs.has(i)&&!ms.toggled.has(i))el.classList.add('missed');});document.getElementById('checkMultiBtn').style.display='none';if(ok){state.score++;state.stageScores[state.currentStage]++;}showFeedback(ok,q);showNextBtn();}
+function startGame() {
+  state = freshState();
+  state.screen = "game";
+  state.questionStartTime = Date.now();
+  clearSave();
+  render();
+}
 
-// === FEEDBACK & NAV ===
-function showFeedback(ok,q){const fb=document.getElementById('feedback');fb.className=ok?'feedback correct':'feedback incorrect';fb.innerHTML=ok?`&#10003; Correct!<div class="why">${q.why}</div>`:`&#10007; Not quite. ${q.hint}<div class="why"><strong>The answer:</strong> ${q.why}</div>`;}
-function showNextBtn(){const stg=STAGES[state.currentStage];const lastQ=state.currentQ>=stg.questions.length-1;const lastS=state.currentStage>=STAGES.length-1;const row=document.getElementById('btnRow');if(lastQ&&lastS)row.innerHTML=`<button class="btn btn-success" onclick="showFinal()">See Results</button>`;else if(lastQ)row.innerHTML=`<button class="btn btn-success" onclick="nextStage()">Complete Stage →</button>`;else row.innerHTML=`<button class="btn btn-primary" onclick="nextQuestion()">Next Question →</button>`;}
-function nextQuestion(){state.currentQ++;state.answered=false;state.matchState=null;state.orderState=null;state.fillState=null;state.multiState=null;render();}
-function nextStage(){state.phase='transition';render();}
+window.resumeGame = function() {
+  const saved = loadState();
+  if(saved) {
+    resumeFromSave(saved);
+    render();
+  } else {
+    startGame();
+  }
+};
 
-function renderTransition(app){const stg=STAGES[state.currentStage];const sc=state.stageScores[state.currentStage],mx=state.stageMax[state.currentStage];const pct=Math.round(sc/mx*100);const emoji=pct>=70?'🌟':pct>=50?'👍':'💪';const msg=pct>=70?'Great work!':pct>=50?'Good effort — keep building!':'Keep going — revision builds mastery!';const nxt=STAGES[state.currentStage+1];app.innerHTML=`<div class="header"><h1>Forces &amp; Motion Review</h1></div>${progressHTML()}<div class="score-display">Score <span class="score-num">${state.score}</span></div><div class="stage transition-screen"><div class="emoji">${emoji}</div><h2>Stage ${stg.num} Complete: ${stg.title}</h2><div class="stage-score">${sc} / ${mx} (${pct}%)</div><p>${msg}</p><p style="margin-top:20px;color:#64748b;">Next up:</p><h2 style="font-size:1.1rem;color:#93c5fd;">Stage ${nxt.num}: ${nxt.title}</h2><p style="color:#94a3b8;font-style:italic;font-size:.85rem;">${nxt.intention}</p><div class="btn-row" style="justify-content:center;margin-top:24px;"><button class="btn btn-primary" onclick="proceedNext()">Continue →</button></div></div>`;}
-function proceedNext(){state.currentStage++;state.currentQ=0;state.answered=false;state.phase='playing';render();}
+window.startFresh = function() {
+  clearSave();
+  startGame();
+};
 
-function showFinal(){state.phase='final';render();}
-function renderFinal(app){const total=state.stageMax.reduce((a,b)=>a+b,0);const pct=Math.round(state.score/total*100);let grade=pct>=90?'Outstanding':pct>=70?'Proficient':pct>=50?'Developing':'Emerging';let emoji=pct>=90?'🏆':pct>=70?'🌟':pct>=50?'📈':'🌱';const bd=STAGES.map((s,i)=>`<div class="stage-result"><span class="name">${s.title}</span><span class="sc">${state.stageScores[i]}/${state.stageMax[i]}</span></div>`).join('');app.innerHTML=`<div class="header"><h1>Forces &amp; Motion Review</h1></div><div class="stage final-screen"><div style="font-size:3rem;">${emoji}</div><h2>Review Complete!</h2><div class="final-score">${state.score} / ${total} (${pct}%)</div><div class="grade">${grade}</div><div class="stage-breakdown">${bd}</div><div class="transfer-prompt"><h3>Now think about this...</h3><p>Everything you reviewed connects through one idea: <strong>relationships</strong>. Force and mass determine acceleration. Gravity and mass determine weight. Effort, load, and fulcrum position determine mechanical advantage. Every force has a consequence — and understanding these relationships is what lets engineers design machines, architects build bridges, and astronauts travel to space.</p><p style="margin-top:10px;">Look around the room right now — how many forces are acting on the objects you can see? How many simple machines can you spot?</p></div><div class="btn-row" style="justify-content:center;margin-top:20px;"><button class="btn btn-secondary" onclick="resetGame()">Try Again</button></div></div>`;}
+function getStageForQ(qi) {
+  for(let i = 0; i < STAGES.length; i++) {
+    if(qi >= STAGES[i].qRange[0] && qi <= STAGES[i].qRange[1]) return i;
+  }
+  return STAGES.length - 1;
+}
 
-function resetGame(){state={currentStage:-1,currentQ:0,score:0,stageScores:[0,0,0,0,0],stageMax:state.stageMax,answered:false,matchState:null,orderState:null,fillState:null,multiState:null,phase:'intro'};render();}
+function progressPercent() {
+  return Math.round((state.answered / QUESTIONS.length) * 100);
+}
 
+function renderHeader() {
+  const pct = progressPercent();
+  const circumference = 2 * Math.PI * 18;
+  const offset = circumference - (pct / 100) * circumference;
+  return `
+    <div class="header">
+      <div class="header-left">
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" width="48" height="48">
+            <circle class="progress-ring-bg" cx="24" cy="24" r="18"/>
+            <circle class="progress-ring-fill" cx="24" cy="24" r="18"
+              stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"/>
+          </svg>
+          <div class="progress-ring-text">${pct}%</div>
+        </div>
+        <div class="streak">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z"/></svg>
+          ${state.streak}
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="score-display"><span>${state.score}</span> / ${state.answered}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderStagePips() {
+  const currentStage = getStageForQ(state.currentQ);
+  return `
+    <div class="stage-bar">
+      ${STAGES.map((s, i) => {
+        let cls = "";
+        if(i < currentStage) cls = "complete";
+        else if(i === currentStage) cls = "active";
+        return `<div class="stage-pip ${cls}"></div>`;
+      }).join("")}
+    </div>
+    <div class="stage-label">Stage ${currentStage + 1}: ${STAGES[currentStage].name}</div>
+  `;
+}
+
+// === FORCE DIAGRAMS (SVG) ===
+function renderForceDiagram(type) {
+  const w = 320, h = 200, cx = 160, cy = 100;
+  let arrows = "";
+  const boxSize = 40;
+
+  function arrow(x1,y1,x2,y2,label,color="#e8eaf0") {
+    const angle = Math.atan2(y2-y1, x2-x1);
+    const headLen = 10;
+    const ax = x2 - headLen * Math.cos(angle - 0.4);
+    const ay = y2 - headLen * Math.sin(angle - 0.4);
+    const bx = x2 - headLen * Math.cos(angle + 0.4);
+    const by = y2 - headLen * Math.sin(angle + 0.4);
+    const mx = (x1+x2)/2, my = (y1+y2)/2;
+    const labelOffset = (x2-x1) === 0 ? (x1 < cx ? -12 : 12) : (y1 < cy ? -12 : 14);
+    const textAnchor = (x2-x1) === 0 ? (x1 < cx ? "end" : "start") : "middle";
+    const lx = (x2-x1) === 0 ? mx + labelOffset : mx;
+    const ly = (x2-x1) === 0 ? my : my + labelOffset;
+    return `
+      <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="2.5"/>
+      <polygon points="${x2},${y2} ${ax},${ay} ${bx},${by}" fill="${color}"/>
+      <text x="${lx}" y="${ly}" fill="${color}" font-size="12" font-weight="600" text-anchor="${textAnchor}" font-family="DM Sans, sans-serif">${label}</text>
+    `;
+  }
+
+  const box = `<rect x="${cx-boxSize/2}" y="${cy-boxSize/2}" width="${boxSize}" height="${boxSize}" rx="6" fill="#242836" stroke="#6c8cff" stroke-width="2"/>`;
+
+  switch(type) {
+    case "balanced":
+      arrows = arrow(cx-boxSize/2, cy, cx-90, cy, "10 N", "#f87171") +
+               arrow(cx+boxSize/2, cy, cx+90, cy, "10 N", "#4ade80");
+      break;
+    case "unbalanced_right":
+      arrows = arrow(cx-boxSize/2, cy, cx-60, cy, "8 N", "#f87171") +
+               arrow(cx+boxSize/2, cy, cx+100, cy, "15 N", "#4ade80");
+      break;
+    case "complex":
+      arrows = arrow(cx, cy-boxSize/2, cx, cy-80, "30 N", "#4ade80") +
+               arrow(cx, cy+boxSize/2, cx, cy+80, "30 N", "#f87171") +
+               arrow(cx-boxSize/2, cy, cx-70, cy, "12 N", "#fbbf24") +
+               arrow(cx+boxSize/2, cy, cx+100, cy, "20 N", "#a78bfa");
+      break;
+    case "terminal":
+      arrows = arrow(cx, cy-boxSize/2, cx, cy-85, "800 N", "#4ade80") +
+               arrow(cx, cy+boxSize/2, cx, cy+85, "800 N", "#f87171");
+      break;
+    case "vertical_unbalanced":
+      arrows = arrow(cx, cy-boxSize/2, cx, cy-55, "6 N", "#4ade80") +
+               arrow(cx, cy+boxSize/2, cx, cy+90, "14 N", "#f87171");
+      break;
+  }
+
+  return `<div class="diagram-wrap">
+    <svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
+      ${box}${arrows}
+    </svg>
+  </div>`;
+}
+
+// === RENDER GAME ===
+function renderGame() {
+  const q = QUESTIONS[state.currentQ];
+  const qNum = state.currentQ + 1;
+  const typeBadge = {
+    mcq: '<span class="q-type-badge mcq">Multiple Choice</span>',
+    calc: '<span class="q-type-badge calc">Calculate</span>',
+    drag: '<span class="q-type-badge drag">Sort / Match</span>',
+    diagram: '<span class="q-type-badge diagram">Diagram</span>',
+    scenario: '<span class="q-type-badge scenario">Scenario</span>'
+  };
+
+  let body = "";
+
+  switch(q.type) {
+    case "mcq":
+    case "scenario":
+      body = `<div class="options">${q.opts.map((o,i) =>
+        `<button class="opt-btn" onclick="answerMCQ(${i})" id="opt-${i}">${o}</button>`
+      ).join("")}</div>`;
+      break;
+
+    case "calc":
+      body = `<div class="calc-input-wrap">
+        <input type="number" step="any" class="calc-input" id="calc-in" placeholder="Your answer..." onkeydown="if(event.key==='Enter')answerCalc()">
+        <span class="calc-unit">${q.unit}</span>
+        <button class="calc-submit" onclick="answerCalc()">Check</button>
+      </div>`;
+      break;
+
+    case "diagram":
+      body = renderForceDiagram(q.diagram) +
+        `<div class="options">${q.opts.map((o,i) =>
+          `<button class="opt-btn" onclick="answerMCQ(${i})" id="opt-${i}">${o}</button>`
+        ).join("")}</div>`;
+      break;
+
+    case "drag":
+      if(q.isMatch) {
+        body = renderMatchQuestion(q);
+      } else if(q.isOrdered) {
+        body = renderOrderQuestion(q);
+      } else {
+        body = renderCategoryDrag(q);
+      }
+      break;
+  }
+
+  app.innerHTML = `
+    ${renderHeader()}
+    ${renderStagePips()}
+    <div class="q-card" id="q-card">
+      <div class="q-number">Question ${qNum} of ${QUESTIONS.length} ${typeBadge[q.type] || typeBadge[q.type === "scenario" ? "scenario" : "mcq"]}</div>
+      <div class="q-text">${q.q}</div>
+      ${body}
+      <div id="feedback-area"></div>
+    </div>
+  `;
+
+  // Focus calc input
+  if(q.type === "calc") {
+    setTimeout(() => { const el = document.getElementById("calc-in"); if(el) el.focus(); }, 100);
+  }
+}
+
+// === DRAG: CATEGORY SORT ===
+function renderCategoryDrag(q) {
+  // Shuffle items
+  const shuffled = [...q.items].sort(() => Math.random() - 0.5);
+  window._dragItems = shuffled;
+  window._dragState = shuffled.map(() => -1); // -1 = unassigned
+
+  let html = `<div id="drag-area">`;
+  html += `<div class="drag-label">Drag items to a category, or tap an item then tap a category</div>`;
+  html += `<div id="source-zone" class="drag-zone" style="margin-bottom:12px;">`;
+  shuffled.forEach((item, i) => {
+    html += `<div class="drag-item" draggable="true" id="ditem-${i}" onclick="tapDragItem(${i})"><span class="grip">⠿</span> ${item.text}</div>`;
+  });
+  html += `</div>`;
+
+  q.categories.forEach((cat, ci) => {
+    html += `<div class="drag-label">${cat}</div>`;
+    html += `<div class="drag-zone" id="cat-${ci}" ondrop="dropItem(event,${ci})" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" onclick="tapCategory(${ci})"></div>`;
+  });
+
+  html += `<button class="calc-submit drag-submit" onclick="checkDrag()">Check Order</button></div>`;
+  return html;
+}
+
+// === DRAG: ORDERED SORT ===
+function renderOrderQuestion(q) {
+  const shuffled = [...q.items].sort(() => Math.random() - 0.5);
+  window._orderItems = shuffled;
+
+  let html = `<div id="drag-area">`;
+  html += `<div class="drag-label">${q.categories[0]}</div>`;
+  html += `<div class="drag-zone" id="order-zone">`;
+  shuffled.forEach((item, i) => {
+    html += `<div class="drag-item" draggable="true" id="oitem-${i}" data-idx="${i}" ondragstart="orderDragStart(event,${i})" ondragover="event.preventDefault()" ondrop="orderDrop(event,${i})"><span class="grip">⠿</span> ${item.text}</div>`;
+  });
+  html += `</div>`;
+  html += `<button class="calc-submit drag-submit" onclick="checkOrder()">Check Order</button></div>`;
+  return html;
+}
+
+// === DRAG: MATCH ===
+function renderMatchQuestion(q) {
+  const shuffled = [...q.items].sort(() => Math.random() - 0.5);
+  window._matchItems = shuffled;
+  window._matchState = shuffled.map(() => -1);
+
+  let html = `<div id="drag-area"><div class="drag-label">Match each description to the correct law</div>`;
+  shuffled.forEach((item, i) => {
+    html += `<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+      <select id="match-${i}" style="padding:8px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:14px;">
+        <option value="-1">Select...</option>
+        ${q.matchLabels.map((l,li) => `<option value="${li}">${l}</option>`).join("")}
+      </select>
+      <span style="font-size:14px;">${item.text}</span>
+    </div>`;
+  });
+  html += `<button class="calc-submit drag-submit" onclick="checkMatch()">Check Matches</button></div>`;
+  return html;
+}
+
+// === DRAG INTERACTION HANDLERS ===
+let selectedDragItem = -1;
+
+window.tapDragItem = function(idx) {
+  selectedDragItem = idx;
+  document.querySelectorAll('.drag-item').forEach(el => el.style.outline = "none");
+  const el = document.getElementById(`ditem-${idx}`);
+  if(el) el.style.outline = "2px solid var(--primary)";
+};
+
+window.tapCategory = function(catIdx) {
+  if(selectedDragItem < 0) return;
+  const el = document.getElementById(`ditem-${selectedDragItem}`);
+  const zone = document.getElementById(`cat-${catIdx}`);
+  if(el && zone) {
+    zone.appendChild(el);
+    window._dragState[selectedDragItem] = catIdx;
+    el.style.outline = "none";
+    selectedDragItem = -1;
+  }
+};
+
+// HTML5 drag
+document.addEventListener("dragstart", (e) => {
+  if(e.target.classList && e.target.classList.contains("drag-item")) {
+    e.dataTransfer.setData("text/plain", e.target.id);
+  }
+});
+
+window.dropItem = function(e, catIdx) {
+  e.preventDefault();
+  e.currentTarget.classList.remove("over");
+  const id = e.dataTransfer.getData("text/plain");
+  const el = document.getElementById(id);
+  if(el) {
+    e.currentTarget.appendChild(el);
+    const idx = parseInt(id.split("-")[1]);
+    window._dragState[idx] = catIdx;
+  }
+};
+
+// Order drag
+window.orderDragStart = function(e, idx) {
+  e.dataTransfer.setData("text/plain", idx.toString());
+};
+
+window.orderDrop = function(e, targetIdx) {
+  e.preventDefault();
+  const srcIdx = parseInt(e.dataTransfer.getData("text/plain"));
+  if(srcIdx === targetIdx) return;
+  const zone = document.getElementById("order-zone");
+  const items = [...zone.children];
+  const srcEl = items[srcIdx];
+  const targetEl = items[targetIdx];
+  if(srcIdx < targetIdx) {
+    zone.insertBefore(srcEl, targetEl.nextSibling);
+  } else {
+    zone.insertBefore(srcEl, targetEl);
+  }
+  // Update array
+  const moved = window._orderItems.splice(srcIdx, 1)[0];
+  window._orderItems.splice(targetIdx, 0, moved);
+  // Re-assign IDs
+  [...zone.children].forEach((el, i) => {
+    el.id = `oitem-${i}`;
+    el.setAttribute("data-idx", i);
+    el.setAttribute("ondragstart", `orderDragStart(event,${i})`);
+    el.setAttribute("ondrop", `orderDrop(event,${i})`);
+  });
+};
+
+// === ANSWER HANDLERS ===
+window.answerMCQ = function(idx) {
+  const q = QUESTIONS[state.currentQ];
+  const correct = idx === q.ans;
+  const stage = getStageForQ(state.currentQ);
+
+  // Lock all options
+  document.querySelectorAll(".opt-btn").forEach((btn, i) => {
+    btn.classList.add("locked");
+    if(i === q.ans) btn.classList.add(correct ? "correct" : "reveal");
+    if(i === idx && !correct) btn.classList.add("incorrect");
+  });
+
+  recordAnswer(correct, q, stage);
+};
+
+window.answerCalc = function() {
+  const q = QUESTIONS[state.currentQ];
+  const input = document.getElementById("calc-in");
+  const val = parseFloat(input.value);
+  if(isNaN(val)) return;
+
+  const correct = Math.abs(val - q.answer) <= q.tolerance;
+  const stage = getStageForQ(state.currentQ);
+  input.classList.add(correct ? "correct" : "incorrect");
+  input.disabled = true;
+  document.querySelector(".calc-submit").disabled = true;
+
+  state.calcTotal++;
+  if(correct) state.calcCorrect++;
+
+  recordAnswer(correct, q, stage);
+};
+
+window.checkDrag = function() {
+  const q = QUESTIONS[state.currentQ];
+  const stage = getStageForQ(state.currentQ);
+  let allCorrect = true;
+
+  window._dragItems.forEach((item, i) => {
+    const assigned = window._dragState[i];
+    const el = document.getElementById(`ditem-${i}`);
+    if(assigned === item.correct) {
+      if(el) el.classList.add("correct-pos");
+    } else {
+      allCorrect = false;
+      if(el) el.classList.add("incorrect-pos");
+    }
+  });
+
+  document.querySelector(".drag-submit").disabled = true;
+  recordAnswer(allCorrect, q, stage);
+};
+
+window.checkOrder = function() {
+  const q = QUESTIONS[state.currentQ];
+  const stage = getStageForQ(state.currentQ);
+  let allCorrect = true;
+
+  window._orderItems.forEach((item, i) => {
+    const el = document.getElementById(`oitem-${i}`);
+    if(item.order === i) {
+      if(el) el.classList.add("correct-pos");
+    } else {
+      allCorrect = false;
+      if(el) el.classList.add("incorrect-pos");
+    }
+  });
+
+  document.querySelector(".drag-submit").disabled = true;
+  recordAnswer(allCorrect, q, stage);
+};
+
+window.checkMatch = function() {
+  const q = QUESTIONS[state.currentQ];
+  const stage = getStageForQ(state.currentQ);
+  let allCorrect = true;
+  const correctMapping = {0:0, 1:1, 2:2}; // items in shuffled order need matchLabel index
+
+  window._matchItems.forEach((item, i) => {
+    const sel = document.getElementById(`match-${i}`);
+    const chosen = parseInt(sel.value);
+    const expected = q.matchLabels.indexOf(item.label);
+    if(chosen !== expected) allCorrect = false;
+    sel.disabled = true;
+    sel.style.borderColor = (chosen === expected) ? "var(--success)" : "var(--error)";
+  });
+
+  document.querySelector(".drag-submit").disabled = true;
+  recordAnswer(allCorrect, q, stage);
+};
+
+function recordAnswer(correct, q, stage) {
+  state.answered++;
+  state.stageAttempts[stage]++;
+  state.qResults.push({ idx: state.currentQ, correct: correct });
+
+  if(correct) {
+    state.score++;
+    state.streak++;
+    state.stageScores[stage]++;
+    if(state.streak > state.bestStreak) state.bestStreak = state.streak;
+  } else {
+    state.streak = 0;
+  }
+
+  // Fast answer check (under 8 seconds)
+  const elapsed = Date.now() - state.questionStartTime;
+  if(correct && elapsed < 8000) state.fastAnswers++;
+
+  // Check achievements
+  checkAchievements();
+
+  // Save progress after every answer
+  saveState();
+
+  // Show feedback
+  const fb = document.getElementById("feedback-area");
+  fb.innerHTML = `
+    <div class="feedback ${correct ? "correct" : "incorrect"}">
+      <strong>${correct ? "✓ Correct!" : "✗ Not quite"}</strong>
+      ${correct ? "" : `<p style="margin-bottom:6px;"><em>Hint: ${q.hint}</em></p>`}
+      <p>${q.why}</p>
+    </div>
+    <button class="next-btn" onclick="nextQuestion()">
+      ${state.currentQ < QUESTIONS.length - 1 ? "Next Question →" : "See Results →"}
+    </button>
+  `;
+
+  // Update header
+  const headerEl = document.querySelector(".header");
+  if(headerEl) headerEl.outerHTML = renderHeader();
+}
+
+function checkAchievements() {
+  const a = state.achievements;
+  let newAchievement = null;
+
+  if(state.streak >= 3 && !a.streak3) { a.streak3 = true; newAchievement = "🔥 3 Streak!"; }
+  if(state.streak >= 5 && !a.streak5) { a.streak5 = true; newAchievement = "🔥 5 Streak!"; }
+  if(state.streak >= 10 && !a.streak10) { a.streak10 = true; newAchievement = "💎 10 Streak!"; }
+
+  // Perfect stage check
+  const currentStage = getStageForQ(state.currentQ);
+  const s = STAGES[currentStage];
+  const stageLen = s.qRange[1] - s.qRange[0] + 1;
+  if(state.stageScores[currentStage] === stageLen && state.stageAttempts[currentStage] === stageLen && !a.perfectStage) {
+    a.perfectStage = true; newAchievement = "⭐ Perfect Stage!";
+  }
+
+  // All calc correct
+  if(state.calcTotal >= 4 && state.calcCorrect === state.calcTotal && !a.allCalc) {
+    a.allCalc = true; newAchievement = "🧮 Calculator Pro!";
+  }
+
+  // Speed demon (5+ fast answers)
+  if(state.fastAnswers >= 5 && !a.speedDemon) {
+    a.speedDemon = true; newAchievement = "⚡ Speed Demon!";
+  }
+
+  if(newAchievement) showAchievementPopup(newAchievement);
+}
+
+function showAchievementPopup(text) {
+  const popup = document.createElement("div");
+  popup.className = "achievement-popup";
+  popup.textContent = text;
+  document.body.appendChild(popup);
+  setTimeout(() => popup.remove(), 2800);
+}
+
+window.nextQuestion = function() {
+  const currentStage = getStageForQ(state.currentQ);
+  const nextQ = state.currentQ + 1;
+
+  if(nextQ >= QUESTIONS.length) {
+    state.achievements.complete = true;
+    state.screen = "results";
+    clearSave(); // completed — no need to resume
+    render();
+    return;
+  }
+
+  const nextStage = getStageForQ(nextQ);
+  if(nextStage !== currentStage) {
+    state.currentQ = nextQ;
+    state.screen = "stageTransition";
+    saveState(); // save at stage boundary
+    render();
+  } else {
+    state.currentQ = nextQ;
+    state.questionStartTime = Date.now();
+    saveState(); // save before rendering next question
+    render();
+  }
+};
+
+function renderStageTransition() {
+  const prevStage = getStageForQ(state.currentQ - 1);
+  const nextStage = getStageForQ(state.currentQ);
+  const pScore = state.stageScores[prevStage];
+  const pTotal = state.stageAttempts[prevStage];
+  const pct = Math.round((pScore / pTotal) * 100);
+
+  app.innerHTML = `
+    <div class="screen">
+      <div class="stage-complete-icon">${pct >= 80 ? "🎉" : pct >= 50 ? "👍" : "💪"}</div>
+      <h2>Stage ${prevStage + 1} Complete</h2>
+      <p>${STAGES[prevStage].name}: ${pScore} / ${pTotal} (${pct}%)</p>
+      <p style="margin-top:16px; font-size:16px; color:var(--text);">Up next:</p>
+      <h2 style="color:var(--primary); margin-top:4px;">Stage ${nextStage + 1}: ${STAGES[nextStage].name}</h2>
+      <p style="font-style:italic; font-size:14px; margin-top:4px;">${STAGES[nextStage].desc}</p>
+      <button class="start-btn" onclick="continueGame()">Continue →</button>
+    </div>
+  `;
+}
+
+window.continueGame = function() {
+  state.screen = "game";
+  state.questionStartTime = Date.now();
+  render();
+};
+
+function renderResults() {
+  const pct = Math.round((state.score / QUESTIONS.length) * 100);
+  const grade = pct >= 90 ? "Outstanding" : pct >= 75 ? "Great work" : pct >= 50 ? "Good effort" : "Keep practising";
+
+  const badges = [
+    { key:"streak3", icon:"🔥", label:"3 Streak" },
+    { key:"streak5", icon:"🔥", label:"5 Streak" },
+    { key:"streak10", icon:"💎", label:"10 Streak" },
+    { key:"perfectStage", icon:"⭐", label:"Perfect Stage" },
+    { key:"allCalc", icon:"🧮", label:"Calc Pro" },
+    { key:"speedDemon", icon:"⚡", label:"Speed Demon" },
+    { key:"complete", icon:"🏆", label:"Completed" }
+  ];
+
+  app.innerHTML = `
+    <div class="screen">
+      <h1>${grade}!</h1>
+      <p style="font-size:18px; color:var(--text); margin:8px 0;">${state.score} / ${QUESTIONS.length} (${pct}%)</p>
+
+      <div class="results-grid">
+        <div class="result-stat"><div class="val" style="color:var(--success);">${state.score}</div><div class="label">Correct</div></div>
+        <div class="result-stat"><div class="val" style="color:var(--error);">${QUESTIONS.length - state.score}</div><div class="label">Incorrect</div></div>
+        <div class="result-stat"><div class="val" style="color:var(--warning);">${state.bestStreak}</div><div class="label">Best Streak</div></div>
+      </div>
+
+      <p style="font-size:14px; font-weight:600; margin:16px 0 8px;">Stage Breakdown</p>
+      <div class="results-grid">
+        ${STAGES.map((s, i) => {
+          const sPct = state.stageAttempts[i] > 0 ? Math.round((state.stageScores[i] / state.stageAttempts[i]) * 100) : 0;
+          return `<div class="result-stat">
+            <div class="val" style="color:${sPct >= 80 ? 'var(--success)' : sPct >= 50 ? 'var(--warning)' : 'var(--error)'};">${sPct}%</div>
+            <div class="label">${s.name}</div>
+          </div>`;
+        }).join("")}
+      </div>
+
+      <div class="achievements">
+        ${badges.map(b => `<div class="badge ${state.achievements[b.key] ? 'earned' : ''}"><span class="badge-icon">${b.icon}</span> ${b.label}</div>`).join("")}
+      </div>
+
+      <div class="transfer-prompt">
+        <strong>Think Further (Transfer)</strong>
+        Where do you see forces and motion in your daily life? Think about: riding a bike, catching a ball, a car braking, a plane flying. How do Newton's Laws explain what happens? Discuss with a partner.
+      </div>
+
+      <button class="start-btn" onclick="resetGame()" style="margin-top:24px;">Play Again</button>
+    </div>
+  `;
+}
+
+window.resetGame = function() {
+  clearSave();
+  state = freshState();
+  render();
+};
+
+// === INIT ===
 render();
 </script>
-<!-- Teacher Notes:
-  MYP Alignment: Criteria A (Knowing & Understanding), D (Reflecting on Science)
-  Key Concept: Relationships | Related Concepts: Models, Movement, Consequences
-  ATL: Critical thinking (cause-effect in force scenarios)
-  Global Context: Scientific and Technical Innovation
-
-  Question Types Used: MCQ, True/False, Ordering, Matching, Fill-the-Blank, Multi-Select (39 questions total)
-
-  Suggested Debrief Questions:
-  1. How do Newton's three laws connect to each other? Can you explain a single event (like kicking a ball) using all three?
-  2. Why is the distinction between mass and weight important for space travel?
-  3. If simple machines cannot create energy, how do they make work easier? What is the trade-off?
-  4. Where in your daily life do you use Class 1, 2, and 3 levers without thinking about it?
-  5. How does friction help us as much as it hinders us?
-
-  Differentiation:
-  - Support: Work in pairs. Provide a formula card (F=ma, W=mg) for reference. Allow re-attempts.
-  - Extension: Design a Rube Goldberg machine on paper that uses all three classes of lever, two gear changes, and at least one inclined plane.
-
-  Estimated Play Time: 25-30 minutes total (~5-6 min per stage)
--->
 </body>
 </html>

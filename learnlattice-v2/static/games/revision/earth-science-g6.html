@@ -592,22 +592,52 @@ const STAGES = [
 ];
 
 // =====================================================================
-//  GAME STATE
+//  GAME STATE + SAVE SYSTEM
 // =====================================================================
-let state = {
-  currentStage: -1,
-  currentQ: 0,
-  score: 0,
-  stageScores: [0,0,0,0,0],
-  stageMax: [],
-  answered: false,
-  matchState: null,
-  orderState: null,
-  fillState: null,
-  multiState: null,
-  phase: 'intro'
-};
-STAGES.forEach(s => state.stageMax.push(s.questions.length));
+const SAVE_KEY = "es_g6_review_v1";
+const STAGE_MAX = STAGES.map(s => s.questions.length);
+
+function freshState() {
+  return {
+    currentStage: -1, currentQ: 0, score: 0,
+    stageScores: [0,0,0,0,0], stageMax: STAGE_MAX.slice(),
+    answered: false, matchState: null, orderState: null,
+    fillState: null, multiState: null, phase: 'intro'
+  };
+}
+function saveState() {
+  try {
+    localStorage.setItem(SAVE_KEY, JSON.stringify({
+      currentStage: state.currentStage, currentQ: state.currentQ,
+      score: state.score, stageScores: state.stageScores, savedAt: Date.now()
+    }));
+  } catch(e) {}
+}
+function loadSave() {
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if (!raw) return null;
+    const s = JSON.parse(raw);
+    if (!s || typeof s.currentStage !== 'number' || s.currentStage < 0) return null;
+    // Check if completed (last stage, last question)
+    const lastStage = STAGES.length - 1;
+    if (s.currentStage > lastStage) return null;
+    return s;
+  } catch(e) { return null; }
+}
+function clearSave() { try { localStorage.removeItem(SAVE_KEY); } catch(e) {} }
+function resumeFromSave(s) {
+  state = freshState();
+  state.currentStage = s.currentStage;
+  state.currentQ = s.currentQ;
+  state.score = s.score;
+  state.stageScores = s.stageScores || [0,0,0,0,0];
+  state.phase = 'playing';
+  state.answered = false;
+}
+
+let state = freshState();
+state.stageMax = STAGE_MAX.slice();
 
 // =====================================================================
 //  RENDER ENGINE
@@ -622,6 +652,19 @@ function render() {
 
 function renderIntro(app) {
   const totalQ = state.stageMax.reduce((a,b) => a+b, 0);
+  const saved = loadSave();
+  const resumeHTML = saved ? `
+    <div style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.4);border-radius:12px;padding:16px;margin-top:16px;">
+      <p style="color:#60a5fa;font-weight:600;font-size:.9rem;margin-bottom:4px;">Saved progress found</p>
+      <p style="color:#94a3b8;font-size:.82rem;">Stage ${saved.currentStage + 1} · Question ${saved.currentQ + 1} · Score: ${saved.score}</p>
+      <div class="btn-row" style="justify-content:center;margin-top:12px;gap:8px;">
+        <button class="btn btn-primary" onclick="resumeGame()">Continue →</button>
+        <button class="btn btn-secondary" onclick="startFresh()">Start Over</button>
+      </div>
+    </div>
+  ` : `<div class="btn-row" style="justify-content:center;margin-top:20px;">
+        <button class="btn btn-primary" onclick="startGame()">Start Review</button>
+      </div>`;
   app.innerHTML = `
     <div class="header">
       <h1>Earth Science Review</h1>
@@ -642,13 +685,13 @@ function renderIntro(app) {
       </div>
       <p>5 stages &middot; ${totalQ} questions &middot; Multiple question types</p>
       <p style="font-size:0.82rem;color:#64748b;margin-top:4px;">MCQ &middot; True/False &middot; Ordering &middot; Matching &middot; Fill-the-Blank &middot; Multi-Select</p>
-      <div class="btn-row" style="justify-content:center;margin-top:20px;">
-        <button class="btn btn-primary" onclick="startGame()">Start Review</button>
-      </div>
+      ${resumeHTML}
     </div>`;
 }
 
-function startGame() { state.currentStage = 0; state.currentQ = 0; state.phase = 'playing'; state.answered = false; render(); }
+function startGame() { state = freshState(); state.stageMax = STAGE_MAX.slice(); state.currentStage = 0; state.currentQ = 0; state.phase = 'playing'; state.answered = false; clearSave(); render(); }
+function resumeGame() { const s = loadSave(); if(s) { resumeFromSave(s); render(); } else { startGame(); } }
+function startFresh() { clearSave(); startGame(); }
 
 function progressHTML() {
   const labels = STAGES.map((s,i) => {
@@ -1004,8 +1047,8 @@ function showNextBtn() {
   else if (lastQ) row.innerHTML = `<button class="btn btn-success" onclick="nextStage()">Complete Stage →</button>`;
   else row.innerHTML = `<button class="btn btn-primary" onclick="nextQuestion()">Next Question →</button>`;
 }
-function nextQuestion() { state.currentQ++; state.answered = false; state.matchState = null; state.orderState = null; state.fillState = null; state.multiState = null; render(); }
-function nextStage() { state.phase = 'transition'; render(); }
+function nextQuestion() { state.currentQ++; state.answered = false; state.matchState = null; state.orderState = null; state.fillState = null; state.multiState = null; saveState(); render(); }
+function nextStage() { state.phase = 'transition'; saveState(); render(); }
 
 function renderTransition(app) {
   const stg = STAGES[state.currentStage];
@@ -1031,9 +1074,9 @@ function renderTransition(app) {
       </div>
     </div>`;
 }
-function proceedNext() { state.currentStage++; state.currentQ = 0; state.answered = false; state.phase = 'playing'; render(); }
+function proceedNext() { state.currentStage++; state.currentQ = 0; state.answered = false; state.phase = 'playing'; saveState(); render(); }
 
-function showFinal() { state.phase = 'final'; render(); }
+function showFinal() { state.phase = 'final'; clearSave(); render(); }
 function renderFinal(app) {
   const total = state.stageMax.reduce((a,b)=>a+b,0);
   const pct = Math.round(state.score/total*100);
@@ -1061,8 +1104,8 @@ function renderFinal(app) {
     </div>`;
 }
 function resetGame() {
-  state = { currentStage:-1, currentQ:0, score:0, stageScores:[0,0,0,0,0], stageMax:state.stageMax,
-    answered:false, matchState:null, orderState:null, fillState:null, multiState:null, phase:'intro' };
+  clearSave();
+  state = freshState(); state.stageMax = STAGE_MAX.slice();
   render();
 }
 

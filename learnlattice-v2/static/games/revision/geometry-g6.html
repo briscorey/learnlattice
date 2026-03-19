@@ -276,9 +276,19 @@ const STAGE_NAMES=["Perimeter","Area of 2D Shapes","Surface Area","Volume & Capa
 const STAGE_INT=["I can calculate the perimeter of rectangles, triangles, and circles.","I can calculate the area of rectangles, triangles, parallelograms, and circles.","I can find the surface area of prisms and cylinders.","I can calculate the volume of prisms, cylinders, cones, and spheres.","I can choose the correct formula and apply it in real-world contexts."];
 
 // =====================================================================
-//  GAME STATE
+//  GAME STATE + SAVE SYSTEM
 // =====================================================================
-let S={stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[]};
+const SAVE_KEY="geo_g6_review_v1";
+function freshS(){return{stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[]};}
+function saveProgress(){
+  try{localStorage.setItem(SAVE_KEY,JSON.stringify({stage:S.stage,qi:S.qi,score:S.score,ss:S.ss,stageLens:stageLens,savedAt:Date.now()}));}catch(e){}
+}
+function loadSave(){
+  try{const r=localStorage.getItem(SAVE_KEY);if(!r)return null;const s=JSON.parse(r);
+  if(!s||typeof s.stage!=='number'||s.stage<0)return null;return s;}catch(e){return null;}
+}
+function clearSave(){try{localStorage.removeItem(SAVE_KEY);}catch(e){}}
+let S=freshS();
 
 function render(){
   const p=document.getElementById('reviewPanel');
@@ -290,14 +300,27 @@ function render(){
 
 function renderIntro(p){
   const tq=STAGE_NAMES.length*6;
+  const saved=loadSave();
+  const resumeHTML=saved?`
+    <div style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.4);border-radius:12px;padding:16px;margin-top:16px;">
+      <p style="color:#60a5fa;font-weight:600;font-size:.9rem;margin-bottom:4px;">Saved progress found</p>
+      <p style="color:#94a3b8;font-size:.82rem;">Stage ${saved.stage+1}: ${STAGE_NAMES[saved.stage]} · Score: ${saved.score}</p>
+      <div class="btn-row" style="justify-content:center;margin-top:12px;gap:8px;">
+        <button class="btn btn-p" onclick="resumeGame()">Continue →</button>
+        <button class="btn btn-s" onclick="startFresh()">Start Over</button>
+      </div>
+    </div>
+  `:`<div class="btn-row" style="justify-content:center;margin-top:16px"><button class="btn btn-p" onclick="startGame()">Start Review</button></div>`;
   p.innerHTML=`<div class="stage intro"><h2>Welcome, Mathematician</h2><p>Review perimeter, area, volume, and capacity across 5 stages.</p>
   <div class="soi">"Understanding the form of shapes allows us to measure, compare, and design the world around us."</div>
   <div class="intro-topics">${['Perimeter','Circumference','Area','Surface Area','Volume','Capacity','Rectangles','Triangles','Circles','Cylinders','Cones','Spheres'].map(t=>'<span class="intro-topic">'+t+'</span>').join('')}</div>
   <p>5 stages · ~30 questions · Use the 📐 Formula Sheet tab and 🧮 Calculator any time</p>
-  <div class="btn-row" style="justify-content:center;margin-top:16px"><button class="btn btn-p" onclick="startGame()">Start Review</button></div></div>`;
+  ${resumeHTML}</div>`;
 }
 
-function startGame(){S.stage=0;S.qi=0;S.phase='play';S.ans=false;S.qs=genQ(0);S.sm=S.qs.map(()=>1);render();}
+function startGame(){S=freshS();S.stage=0;S.qi=0;S.phase='play';S.ans=false;S.qs=genQ(0);S.sm=S.qs.map(()=>1);clearSave();render();}
+function resumeGame(){const s=loadSave();if(s){S=freshS();S.stage=s.stage;S.qi=s.qi;S.score=s.score;S.ss=s.ss||[0,0,0,0,0];S.qs=genQ(s.stage);S.sm=S.qs.map(()=>1);S.phase='play';S.ans=false;if(s.stageLens)stageLens=s.stageLens;render();}else{startGame();}}
+function startFresh(){clearSave();startGame();}
 
 function renderStage(p){
   const q=S.qs[S.qi];
@@ -373,8 +396,8 @@ function showNext(){
   else r.innerHTML='<button class="btn btn-p" onclick="nextQ()">Next Question →</button>';
 }
 
-function nextQ(){S.qi++;S.ans=false;render();}
-function nextStage(){S.phase='trans';render();}
+function nextQ(){S.qi++;S.ans=false;saveProgress();render();}
+function nextStage(){S.phase='trans';saveProgress();render();}
 
 function renderTrans(p){
   const sc=S.ss[S.stage],mx=S.qs.length;const pct=Math.round(sc/mx*100);
@@ -383,9 +406,9 @@ function renderTrans(p){
   p.innerHTML=`<div class="score-chip">Score <b>${S.score}</b></div><div class="stage trans"><div class="em">${em}</div><h2>Stage ${S.stage+1} Complete: ${STAGE_NAMES[S.stage]}</h2><div class="sc">${sc}/${mx} (${pct}%)</div><p>${pct>=70?'Great work!':pct>=50?'Good effort!':'Keep going — revision builds mastery!'}</p><p style="margin-top:16px;color:#64748b">Next: <strong style="color:#93c5fd">${nxt}</strong></p><div class="btn-row" style="justify-content:center;margin-top:20px"><button class="btn btn-p" onclick="proceedNext()">Continue →</button></div></div>`;
 }
 
-function proceedNext(){S.stage++;S.qi=0;S.ans=false;S.qs=genQ(S.stage);S.sm=S.qs.map(()=>1);S.phase='play';render();}
+function proceedNext(){S.stage++;S.qi=0;S.ans=false;S.qs=genQ(S.stage);S.sm=S.qs.map(()=>1);S.phase='play';saveProgress();render();}
 
-function showFinal(){S.phase='final';render();}
+function showFinal(){S.phase='final';clearSave();render();}
 function renderFinal(p){
   const tot=S.ss.reduce((a,b)=>a+b,0);const mx=S.ss.length*6;// approx
   // Count actual total from stage question lengths
@@ -403,13 +426,13 @@ let stageLens=[0,0,0,0,0];
 function getStageLen(i){return stageLens[i]||6;}
 function getTotalQ(){return stageLens.reduce((a,b)=>a+b,0)||30;}
 
-function resetGame(){S={stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[]};render();}
+function resetGame(){clearSave();S=freshS();render();}
 
 // Override startGame and proceedNext to track lengths
 const _startGame=startGame;
-startGame=function(){_startGame();stageLens[0]=S.qs.length;};
+startGame=function(){_startGame();stageLens[0]=S.qs.length;saveProgress();};
 const _proceedNext=proceedNext;
-proceedNext=function(){_proceedNext();stageLens[S.stage]=S.qs.length;};
+proceedNext=function(){_proceedNext();stageLens[S.stage]=S.qs.length;saveProgress();};
 
 // =====================================================================
 //  FORMULA SHEET
