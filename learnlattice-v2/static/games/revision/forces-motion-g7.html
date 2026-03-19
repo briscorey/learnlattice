@@ -330,9 +330,9 @@ const QUESTIONS = [
   { type:"mcq", q:"Which of these is a <span class='keyword'>non-contact force</span>?",
     opts:["Gravity","Air resistance","Friction","Normal force"],
     ans:0, hint:"Non-contact forces can act without the objects touching.", why:"Gravity acts at a distance — the Earth pulls you down without touching you. Friction, air resistance, and normal force all require contact." },
-  { type:"mcq", q:"What does <span class='keyword'>air resistance</span> do to a moving object?",
-    opts:["Slows it down by pushing against the direction of motion","Speeds it up","Has no effect","Pushes it sideways"],
-    ans:0, hint:"Think about what you feel when you run fast — the air pushes against you.", why:"Air resistance (drag) is a friction force from air particles hitting the object. It always acts opposite to the direction of motion." },
+  { type:"diagram", q:"Look at this diagram. The same box is pushed with the same force across three surfaces. Which surface has the <span class='keyword'>most friction</span>?",
+    diagram:"surfaces", opts:["Ice — the box barely slows down","Wood — medium resistance","Carpet — the box is hardest to push","All surfaces have the same friction"],
+    ans:2, hint:"Rougher surfaces have more friction. Look at the length of the red friction arrows.", why:"<span class='keyword'>Carpet</span> has the most friction because it has the roughest surface. The rougher the surface, the more the tiny bumps catch and resist the sliding motion. Ice is very smooth, so friction is very low." },
   { type:"mcq", q:"An object at rest stays at rest unless acted on by a force. This describes which of <span class='keyword'>Newton's Laws</span>?",
     opts:["Newton's First Law","Newton's Second Law","Newton's Third Law","The Law of Gravity"],
     ans:0, hint:"This law is about what happens when forces are balanced (no net force).", why:"Newton's First Law (inertia) says objects keep doing what they are doing — staying still or moving at constant speed — unless a net force acts on them." },
@@ -345,9 +345,9 @@ const QUESTIONS = [
     ],
     hint:"Contact forces need the objects to be touching. Non-contact forces act across a gap.",
     why:"Contact: friction, air resistance, normal force (all require touching). Non-contact: gravity, magnetism, electrostatic (all act at a distance)." },
-  { type:"mcq", q:"What happens to the motion of an object when the forces on it are <span class='keyword'>balanced</span>?",
-    opts:["It stays still or moves at a constant speed","It speeds up","It slows down","It changes direction"],
-    ans:0, hint:"Balanced means the net force is zero — so what changes?", why:"When forces are balanced (net force = 0), there is no change in motion. The object either stays still or continues moving at the same speed in the same direction." },
+  { type:"diagram", q:"<span class='keyword'>Gear A</span> turns clockwise. The teeth of Gear A and Gear B are meshed together. Which direction does <span class='keyword'>Gear B</span> turn?",
+    diagram:"gear_pair", opts:["Clockwise (same direction as Gear A)","Anticlockwise (opposite direction to Gear A)","It does not turn","It could go either way"],
+    ans:1, hint:"When two gears are meshed, their teeth push against each other. If one goes clockwise, the other must go...", why:"When two gears mesh, they always turn in <span class='keyword'>opposite directions</span>. If Gear A turns clockwise, Gear B turns anticlockwise. This is because the teeth push against each other at the contact point." },
 
   // === STAGE 2: Calculate & Apply (Q9–Q17) ===
   { type:"calc", q:"A car has a mass of <span class='keyword'>1200 kg</span> and accelerates at <span class='keyword'>3 m/s²</span>. Calculate the force. Use: F = m × a",
@@ -414,9 +414,9 @@ const QUESTIONS = [
   { type:"scenario", q:"A student says: <em>'My book is sitting on the table. There are no forces acting on it because it is not moving.'</em> Is this correct? Explain.",
     opts:["No — there are forces (weight down, normal force up) but they are balanced","Yes — no forces means no movement","No — only gravity acts on it","Yes — forces only exist when objects move"],
     ans:0, hint:"Just because something is still does not mean there are no forces. Think about what holds the book up.", why:"The book has weight pulling it down and the table pushes it up (normal force). These are balanced, so the net force is zero — but the forces still exist." },
-  { type:"scenario", q:"A rocket in space fires its engines briefly, then turns them off. What happens to the rocket in the vacuum of space?",
-    opts:["It continues at constant speed in a straight line","It gradually slows down and stops","It speeds up forever","It immediately stops"],
-    ans:0, hint:"In space there is no air resistance or friction. Apply Newton's First Law.", why:"No friction or air resistance in space means no net force after engines stop. By Newton's First Law, the rocket continues at constant velocity forever (until another force acts)." },
+  { type:"diagram", q:"In this gear chain, <span class='keyword'>Gear 1</span> turns clockwise (CW). What direction does <span class='keyword'>Gear 3</span> turn?",
+    diagram:"gear_chain3", opts:["Clockwise — same as Gear 1","Anticlockwise — opposite to Gear 1","It does not move","It spins both ways"],
+    ans:0, hint:"Work through the chain step by step: Gear 1 is CW, so Gear 2 must be... and then Gear 3 must be...", why:"Gear 1 (CW) → Gear 2 (<span class='keyword'>anticlockwise</span>) → Gear 3 (<span class='keyword'>clockwise</span>). Each gear reverses direction. With an <span class='keyword'>odd number</span> of gears, the last gear turns the <span class='keyword'>same direction</span> as the first. With an even number, it turns the opposite direction." },
   { type:"scenario", q:"Two teams pull on a rope in a tug of war. Team A pulls with <span class='keyword'>500 N</span> and Team B pulls with <span class='keyword'>450 N</span>. What is the net force and which team wins?",
     opts:["50 N toward Team A — Team A wins","950 N — both teams win","50 N toward Team B — Team B wins","0 N — it's a draw"],
     ans:0, hint:"Subtract the smaller force from the larger. The rope moves toward the team with the bigger force.", why:"Net force = 500 − 450 = 50 N toward Team A. The rope (and Team B) accelerate toward Team A." },
@@ -429,9 +429,9 @@ const QUESTIONS = [
   { type:"scenario", q:"Two cars have the same engine force. Car A has mass <span class='keyword'>1000 kg</span> and Car B has mass <span class='keyword'>2000 kg</span>. Which car accelerates faster?",
     opts:["Car A — less mass means more acceleration for the same force","Car B — more mass means more acceleration","They accelerate equally","Cannot tell without knowing the force"],
     ans:0, hint:"Use F = ma. If F is the same but m is smaller, what happens to a?", why:"F = ma, so a = F/m. Same force, smaller mass = bigger acceleration. Car A accelerates twice as fast as Car B." },
-  { type:"scenario", q:"A cyclist stops pedalling on a flat road. Explain why the bicycle eventually stops.",
-    opts:["Friction and air resistance are unbalanced forces that decelerate the bike","The bike runs out of energy","Gravity pulls the bike backward","The wheels stop because they are round"],
-    ans:0, hint:"What forces are still acting after the cyclist stops pedalling?", why:"Without pedalling, there is no forward force. Friction (wheels on road) and air resistance still push backward. These unbalanced forces cause deceleration until the bike stops." },
+  { type:"diagram", q:"Look at the diagram. A hiking boot and a dress shoe are on the same wet surface. Why does the <span class='keyword'>hiking boot</span> have more grip?",
+    diagram:"shoe_grip", opts:["The hiking boot has a rougher sole with deeper treads, creating more friction","The hiking boot is heavier","The dress shoe is made of better material","Friction does not depend on the surface"],
+    ans:0, hint:"Friction depends on two things: the surfaces in contact and the force pushing them together. Which sole has more texture?", why:"The hiking boot has a <span class='keyword'>rough, textured sole</span> with deep treads that grip the surface. More texture = more contact points = more friction. The smooth dress shoe slides easily because there are fewer contact points. This is why we choose different shoes for different activities." },
   { type:"drag", q:"Match each of Newton's Laws to the correct description.",
     categories:["Match"],
     items:[
@@ -455,12 +455,12 @@ const QUESTIONS = [
     answer:6000, unit:"N", tolerance:10,
     hint:"Step 1: a = (10 − 30) ÷ 5 = −4 m/s². Step 2: F = 1500 × 4 = 6000 N. Give the force as a positive number.",
     why:"Acceleration = (10 − 30) ÷ 5 = −4 m/s² (deceleration). Braking force = 1500 × 4 = 6000 N opposing the direction of motion." },
-  { type:"scenario", q:"Design an experiment to test how <span class='keyword'>surface type</span> affects friction. Choose the correct set of variables.",
-    opts:["IV: surface type; DV: force needed to pull object; CV: mass of object, speed of pulling","IV: mass; DV: surface type; CV: force","IV: force; DV: speed; CV: surface and mass","IV: surface type; DV: mass; CV: force"],
-    ans:0, hint:"The independent variable is what you change. The dependent variable is what you measure. Controlled variables stay the same.", why:"We change the surface (IV) and measure how much force is needed to slide the object (DV). We keep the mass and pulling speed the same (CV) so the test is fair." },
-  { type:"scenario", q:"A student claims: <em>'Heavier objects fall faster than lighter objects.'</em> Evaluate this claim.",
-    opts:["In a vacuum this is wrong (they fall at the same rate), but in air the claim can appear true due to different air resistance effects","The student is fully correct","The student is fully incorrect — lighter objects always fall faster","Weight has nothing to do with falling speed"],
-    ans:0, hint:"Think about what Galileo showed, but also about what happens in real life with air resistance.", why:"In a vacuum, all objects accelerate at g regardless of mass. In air, shape and surface area matter — a feather falls slowly due to high air resistance relative to its weight. The misconception comes from everyday experience where air resistance is not controlled." },
+  { type:"diagram", q:"Study this friction experiment setup. A student drags a block across different surfaces and measures the force. What is the <span class='keyword'>dependent variable</span> (what they measure)?",
+    diagram:"experiment", opts:["The force needed to pull the block at constant speed","The type of surface","The mass of the block","The speed of pulling"],
+    ans:0, hint:"Look at the diagram labels. The DV is what you measure — it changes depending on which surface you use.", why:"The <span class='keyword'>dependent variable is the force (N)</span> measured by the force meter. It changes depending on the surface. The independent variable is the surface type (what you change). The controlled variables are the mass and pulling speed (what you keep the same)." },
+  { type:"diagram", q:"In this 4-gear chain, <span class='keyword'>Gear 1</span> turns anticlockwise. What direction does <span class='keyword'>Gear 4</span> turn?",
+    diagram:"gear_chain4", opts:["Clockwise","Anticlockwise — same as Gear 1","It does not move","It depends on the gear sizes"],
+    ans:0, hint:"Count the gears: 4 gears = even number. Each gear reverses direction. Gear 1 is anti-CW, Gear 2 is CW, Gear 3 is...", why:"Gear 1 (anti-CW) → Gear 2 (CW) → Gear 3 (anti-CW) → Gear 4 (<span class='keyword'>CW</span>). With 4 gears (even number), the last gear turns <span class='keyword'>opposite</span> to the first. The rule: odd number of gears = same direction, even number = opposite direction." },
   { type:"drag", q:"Rank these scenarios from <span class='keyword'>lowest</span> to <span class='keyword'>highest</span> net force.",
     categories:["Lowest to Highest Net Force"],
     items:[
@@ -800,6 +800,160 @@ function renderLeverDiagram(type) {
   </div>`;
 }
 
+// === GEAR DIAGRAMS (SVG) ===
+function renderGearDiagram(type) {
+  function gear(cx, cy, r, label, color, arrowDir) {
+    const teeth = 10;
+    let path = "";
+    for (let i = 0; i < teeth; i++) {
+      const a1 = (i / teeth) * Math.PI * 2;
+      const a2 = ((i + 0.3) / teeth) * Math.PI * 2;
+      const a3 = ((i + 0.5) / teeth) * Math.PI * 2;
+      const a4 = ((i + 0.8) / teeth) * Math.PI * 2;
+      const ir = r - 4, or = r + 6;
+      if (i === 0) path += `M ${cx + ir * Math.cos(a1)} ${cy + ir * Math.sin(a1)} `;
+      path += `L ${cx + or * Math.cos(a2)} ${cy + or * Math.sin(a2)} `;
+      path += `L ${cx + or * Math.cos(a3)} ${cy + or * Math.sin(a3)} `;
+      path += `L ${cx + ir * Math.cos(a4)} ${cy + ir * Math.sin(a4)} `;
+    }
+    path += "Z";
+    const arrow = arrowDir === "cw" ?
+      `<path d="M ${cx-12} ${cy-r+14} A ${r-14} ${r-14} 0 0 1 ${cx+12} ${cy-r+14}" fill="none" stroke="#fbbf24" stroke-width="2" marker-end="url(#garr)"/>` :
+      arrowDir === "ccw" ?
+      `<path d="M ${cx+12} ${cy-r+14} A ${r-14} ${r-14} 0 0 0 ${cx-12} ${cy-r+14}" fill="none" stroke="#fbbf24" stroke-width="2" marker-end="url(#garr)"/>` : "";
+    return `<path d="${path}" fill="${color}" opacity="0.3" stroke="${color}" stroke-width="1.5"/>
+      <circle cx="${cx}" cy="${cy}" r="5" fill="${color}"/>
+      <text x="${cx}" y="${cy+r+20}" text-anchor="middle" fill="${color}" font-size="12" font-weight="700" font-family="DM Sans, sans-serif">${label}</text>
+      ${arrow}`;
+  }
+  let svg = "";
+  const defs = `<defs><marker id="garr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#fbbf24"/></marker></defs>`;
+  switch(type) {
+    case "gear_pair":
+      svg = `<svg viewBox="0 0 320 180" width="300" height="170" xmlns="http://www.w3.org/2000/svg">${defs}
+        ${gear(100, 80, 40, "Gear A", "#6c8cff", "cw")}
+        ${gear(210, 80, 40, "Gear B", "#f87171", "")}
+        <text x="160" y="165" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">Teeth are meshed together</text>
+        <text x="100" y="135" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">↻ Clockwise</text>
+      </svg>`;
+      break;
+    case "gear_chain3":
+      svg = `<svg viewBox="0 0 400 180" width="380" height="170" xmlns="http://www.w3.org/2000/svg">${defs}
+        ${gear(70, 80, 35, "Gear 1", "#6c8cff", "cw")}
+        ${gear(170, 80, 35, "Gear 2", "#a78bfa", "")}
+        ${gear(270, 80, 35, "Gear 3", "#f87171", "")}
+        <text x="70" y="135" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">↻ CW</text>
+        <text x="170" y="135" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">?</text>
+        <text x="270" y="135" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">?</text>
+        <text x="200" y="170" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">Each gear meshes with the next</text>
+      </svg>`;
+      break;
+    case "gear_chain4":
+      svg = `<svg viewBox="0 0 440 180" width="420" height="170" xmlns="http://www.w3.org/2000/svg">${defs}
+        ${gear(60, 80, 30, "Gear 1", "#6c8cff", "ccw")}
+        ${gear(145, 80, 30, "Gear 2", "#a78bfa", "")}
+        ${gear(230, 80, 30, "Gear 3", "#4ade80", "")}
+        ${gear(315, 80, 30, "Gear 4", "#f87171", "")}
+        <text x="60" y="130" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">↺ Anti-CW</text>
+        <text x="145" y="130" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">?</text>
+        <text x="230" y="130" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">?</text>
+        <text x="315" y="130" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">?</text>
+        <text x="220" y="168" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">Each gear meshes with the next in the chain</text>
+      </svg>`;
+      break;
+  }
+  return `<div class="diagram-wrap">${svg}</div>`;
+}
+
+// === FRICTION SURFACE DIAGRAMS (SVG) ===
+function renderFrictionDiagram(type) {
+  switch(type) {
+    case "surfaces":
+      return `<div class="diagram-wrap">
+        <svg viewBox="0 0 400 220" width="380" height="210" xmlns="http://www.w3.org/2000/svg">
+          <text x="200" y="18" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700" font-family="DM Sans, sans-serif">Friction on Different Surfaces</text>
+          <!-- Ice -->
+          <rect x="20" y="40" width="360" height="36" rx="4" fill="#93c5fd" opacity="0.15" stroke="#93c5fd"/>
+          <rect x="170" y="44" width="40" height="28" rx="4" fill="#6c8cff" stroke="#8aa4ff"/>
+          <line x1="170" y1="58" x2="130" y2="58" stroke="#4ade80" stroke-width="2" marker-end="url(#fa)"/>
+          <text x="115" y="55" text-anchor="end" fill="#4ade80" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">Push →</text>
+          <line x1="210" y1="58" x2="225" y2="58" stroke="#f87171" stroke-width="2" marker-end="url(#fb)"/>
+          <text x="260" y="62" fill="#f87171" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">← Tiny friction</text>
+          <text x="30" y="62" fill="#93c5fd" font-size="11" font-weight="600" font-family="DM Sans, sans-serif">ICE</text>
+          <!-- Wood -->
+          <rect x="20" y="90" width="360" height="36" rx="4" fill="#fbbf24" opacity="0.15" stroke="#fbbf24"/>
+          <rect x="170" y="94" width="40" height="28" rx="4" fill="#6c8cff" stroke="#8aa4ff"/>
+          <line x1="170" y1="108" x2="120" y2="108" stroke="#4ade80" stroke-width="2" marker-end="url(#fa)"/>
+          <text x="105" y="105" text-anchor="end" fill="#4ade80" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">Push →</text>
+          <line x1="210" y1="108" x2="245" y2="108" stroke="#f87171" stroke-width="2.5" marker-end="url(#fb)"/>
+          <text x="260" y="112" fill="#f87171" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">← Medium friction</text>
+          <text x="30" y="112" fill="#fbbf24" font-size="11" font-weight="600" font-family="DM Sans, sans-serif">WOOD</text>
+          <!-- Carpet -->
+          <rect x="20" y="140" width="360" height="36" rx="4" fill="#f87171" opacity="0.15" stroke="#f87171"/>
+          <rect x="170" y="144" width="40" height="28" rx="4" fill="#6c8cff" stroke="#8aa4ff"/>
+          <line x1="170" y1="158" x2="110" y2="158" stroke="#4ade80" stroke-width="2" marker-end="url(#fa)"/>
+          <text x="95" y="155" text-anchor="end" fill="#4ade80" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">Push →</text>
+          <line x1="210" y1="158" x2="270" y2="158" stroke="#f87171" stroke-width="3.5" marker-end="url(#fb)"/>
+          <text x="285" y="162" fill="#f87171" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">← Large friction</text>
+          <text x="30" y="162" fill="#f87171" font-size="11" font-weight="600" font-family="DM Sans, sans-serif">CARPET</text>
+          <text x="200" y="200" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">Same box, same push force, different surfaces</text>
+          <text x="200" y="215" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">Longer red arrow = more friction force</text>
+          <defs><marker id="fa" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10 0L0 5L10 10z" fill="#4ade80"/></marker><marker id="fb" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10 0L0 5L10 10z" fill="#f87171"/></marker></defs>
+        </svg>
+      </div>`;
+    case "experiment":
+      return `<div class="diagram-wrap">
+        <svg viewBox="0 0 400 200" width="380" height="190" xmlns="http://www.w3.org/2000/svg">
+          <text x="200" y="18" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="DM Sans, sans-serif">Friction Experiment Setup</text>
+          <!-- Table surface -->
+          <rect x="30" y="100" width="340" height="12" rx="2" fill="#5b3a1a" stroke="#8b6914"/>
+          <text x="200" y="130" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">Test surface (change this)</text>
+          <!-- Block -->
+          <rect x="140" y="68" width="50" height="32" rx="4" fill="#6c8cff" stroke="#8aa4ff" stroke-width="1.5"/>
+          <text x="165" y="88" text-anchor="middle" fill="#fff" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">Block</text>
+          <!-- Spring scale / force meter -->
+          <line x1="190" y1="84" x2="260" y2="84" stroke="#4ade80" stroke-width="2"/>
+          <rect x="260" y="74" width="60" height="20" rx="4" fill="#242836" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="290" y="88" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="600" font-family="DM Sans, sans-serif">Force (N)</text>
+          <!-- Arrow showing pull direction -->
+          <line x1="320" y1="84" x2="360" y2="84" stroke="#4ade80" stroke-width="2.5" marker-end="url(#fex)"/>
+          <text x="355" y="75" fill="#4ade80" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">Pull →</text>
+          <!-- Labels -->
+          <text x="165" y="60" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">Same mass</text>
+          <text x="290" y="150" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">Measure the force needed</text>
+          <text x="290" y="163" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">to slide the block at constant speed</text>
+          <!-- Variable labels -->
+          <rect x="30" y="170" width="100" height="24" rx="4" fill="rgba(59,130,246,.1)" stroke="#3b82f6"/>
+          <text x="80" y="186" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">IV: Surface type</text>
+          <rect x="150" y="170" width="100" height="24" rx="4" fill="rgba(74,222,128,.1)" stroke="#22c55e"/>
+          <text x="200" y="186" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">DV: Force (N)</text>
+          <rect x="270" y="170" width="100" height="24" rx="4" fill="rgba(251,146,60,.1)" stroke="#fb923c"/>
+          <text x="320" y="186" text-anchor="middle" fill="#fb923c" font-size="9" font-weight="600" font-family="DM Sans, sans-serif">CV: Mass, speed</text>
+          <defs><marker id="fex" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4ade80"/></marker></defs>
+        </svg>
+      </div>`;
+    case "shoe_grip":
+      return `<div class="diagram-wrap">
+        <svg viewBox="0 0 360 160" width="340" height="150" xmlns="http://www.w3.org/2000/svg">
+          <text x="180" y="16" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="DM Sans, sans-serif">Friction: Rough vs Smooth Soles</text>
+          <!-- Rough shoe -->
+          <rect x="20" y="50" width="130" height="40" rx="6" fill="#6c8cff" opacity="0.3" stroke="#6c8cff"/>
+          <text x="85" y="75" text-anchor="middle" fill="#6c8cff" font-size="11" font-weight="600" font-family="DM Sans, sans-serif">Hiking boot</text>
+          <line x1="20" y1="90" x2="150" y2="90" stroke="#f87171" stroke-width="3" stroke-dasharray="4,3"/>
+          <text x="85" y="108" text-anchor="middle" fill="#f87171" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">HIGH friction grip</text>
+          <!-- Smooth shoe -->
+          <rect x="200" y="50" width="130" height="40" rx="6" fill="#a78bfa" opacity="0.3" stroke="#a78bfa"/>
+          <text x="265" y="75" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="600" font-family="DM Sans, sans-serif">Dress shoe</text>
+          <line x1="200" y1="90" x2="330" y2="90" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="265" y="108" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">LOW friction grip</text>
+          <!-- Surface -->
+          <rect x="10" y="118" width="340" height="8" rx="2" fill="#5b3a1a"/>
+          <text x="180" y="145" text-anchor="middle" fill="#8b90a5" font-size="9" font-family="DM Sans, sans-serif">Same wet surface</text>
+        </svg>
+      </div>`;
+  }
+}
+
 // === RENDER GAME ===
 function renderGame() {
   const q = QUESTIONS[state.currentQ];
@@ -832,7 +986,10 @@ function renderGame() {
 
     case "diagram":
       const isLever = q.diagram && q.diagram.startsWith("class");
-      body = (isLever ? renderLeverDiagram(q.diagram) : renderForceDiagram(q.diagram)) +
+      const isGear = q.diagram && q.diagram.startsWith("gear");
+      const isFriction = q.diagram && (q.diagram === "surfaces" || q.diagram === "experiment" || q.diagram === "shoe_grip");
+      const diagramHTML = isLever ? renderLeverDiagram(q.diagram) : isGear ? renderGearDiagram(q.diagram) : isFriction ? renderFrictionDiagram(q.diagram) : renderForceDiagram(q.diagram);
+      body = diagramHTML +
         `<div class="options">${q.opts.map((o,i) =>
           `<button class="opt-btn" onclick="answerMCQ(${i})" id="opt-${i}">${o}</button>`
         ).join("")}</div>`;
