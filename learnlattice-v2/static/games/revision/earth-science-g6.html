@@ -148,7 +148,7 @@ function fS(){return{stg:0,qi:0,sc:0,str:0,bs:0,ans:0,ss:Array(STAGES.length).fi
 function sv(){try{localStorage.setItem(SK,JSON.stringify({stg:S.stg,qi:S.qi,sc:S.sc,str:S.str,bs:S.bs,ans:S.ans,ss:S.ss,sa:S.sa,qr:S.qr,t:Date.now()}));}catch(e){}}
 function ld(){try{const r=localStorage.getItem(SK);if(!r)return null;const s=JSON.parse(r);if(!s||typeof s.stg!=='number'||s.ans<1)return null;return s;}catch(e){return null;}}
 function cl(){try{localStorage.removeItem(SK);}catch(e){}}
-function gAQ(){if(S.rm&&S.rq.length>0){const idx=S.rq[S.qi];const si=findStg(idx);const qi2=idx-stgStart(si);return STAGES[si].questions[qi2]}return gAQ()}
+function gAQ(){if(S.rm&&S.rq.length>0){const idx=S.rq[S.qi];const si=findStg(idx);const qi2=idx-stgStart(si);return STAGES[si].questions[qi2]}return STAGES[S.stg].questions[S.qi]}
 function gAQI(){if(S.rm)return S.rq[S.qi];let idx=0;for(let i=0;i<S.stg;i++)idx+=STAGES[i].questions.length;return idx+S.qi}
 function gTQ(){return S.rm?S.rq.length:TQ}
 function findStg(flatIdx){let c=0;for(let i=0;i<STAGES.length;i++){c+=STAGES[i].questions.length;if(flatIdx<c)return i}return STAGES.length-1}
