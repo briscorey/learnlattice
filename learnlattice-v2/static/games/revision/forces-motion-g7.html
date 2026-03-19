@@ -505,7 +505,9 @@ function freshState() {
     calcCorrect: 0, calcTotal: 0,
     questionStartTime: 0,
     fastAnswers: 0,
-    qResults: [] // tracks each answered question: {idx, correct}
+    qResults: [], // tracks each answered question: {idx, correct}
+    retryMode: false,
+    retryQueue: [] // indices of wrong questions for retry
   };
 }
 
@@ -638,7 +640,7 @@ function getStageForQ(qi) {
 }
 
 function progressPercent() {
-  return Math.round((state.answered / QUESTIONS.length) * 100);
+  return Math.round((state.answered / getTotalActiveQuestions()) * 100);
 }
 
 function renderHeader() {
@@ -956,7 +958,7 @@ function renderFrictionDiagram(type) {
 
 // === RENDER GAME ===
 function renderGame() {
-  const q = QUESTIONS[state.currentQ];
+  const q = getActiveQuestion();
   const qNum = state.currentQ + 1;
   const typeBadge = {
     mcq: '<span class="q-type-badge mcq">Multiple Choice</span>',
@@ -1008,9 +1010,9 @@ function renderGame() {
 
   app.innerHTML = `
     ${renderHeader()}
-    ${renderStagePips()}
+    ${state.retryMode ? '<div class="stage-label" style="color:var(--error);">Retry Mode — Mistakes Only</div>' : renderStagePips()}
     <div class="q-card" id="q-card">
-      <div class="q-number">Question ${qNum} of ${QUESTIONS.length} ${typeBadge[q.type] || typeBadge[q.type === "scenario" ? "scenario" : "mcq"]}</div>
+      <div class="q-number">Question ${qNum} of ${getTotalActiveQuestions()} ${typeBadge[q.type] || typeBadge[q.type === "scenario" ? "scenario" : "mcq"]}</div>
       <div class="q-text">${q.q}</div>
       ${body}
       <div id="feedback-area"></div>
@@ -1156,7 +1158,7 @@ window.orderDrop = function(e, targetIdx) {
 
 // === ANSWER HANDLERS ===
 window.answerMCQ = function(idx) {
-  const q = QUESTIONS[state.currentQ];
+  const q = getActiveQuestion();
   const correct = idx === q.ans;
   const stage = getStageForQ(state.currentQ);
 
@@ -1171,7 +1173,7 @@ window.answerMCQ = function(idx) {
 };
 
 window.answerCalc = function() {
-  const q = QUESTIONS[state.currentQ];
+  const q = getActiveQuestion();
   const input = document.getElementById("calc-in");
   const val = parseFloat(input.value);
   if(isNaN(val)) return;
@@ -1189,7 +1191,7 @@ window.answerCalc = function() {
 };
 
 window.checkDrag = function() {
-  const q = QUESTIONS[state.currentQ];
+  const q = getActiveQuestion();
   const stage = getStageForQ(state.currentQ);
   let allCorrect = true;
 
@@ -1209,7 +1211,7 @@ window.checkDrag = function() {
 };
 
 window.checkOrder = function() {
-  const q = QUESTIONS[state.currentQ];
+  const q = getActiveQuestion();
   const stage = getStageForQ(state.currentQ);
   let allCorrect = true;
 
@@ -1228,7 +1230,7 @@ window.checkOrder = function() {
 };
 
 window.checkMatch = function() {
-  const q = QUESTIONS[state.currentQ];
+  const q = getActiveQuestion();
   const stage = getStageForQ(state.currentQ);
   let allCorrect = true;
   const correctMapping = {0:0, 1:1, 2:2}; // items in shuffled order need matchLabel index
@@ -1249,7 +1251,7 @@ window.checkMatch = function() {
 function recordAnswer(correct, q, stage) {
   state.answered++;
   state.stageAttempts[stage]++;
-  state.qResults.push({ idx: state.currentQ, correct: correct });
+  state.qResults.push({ idx: getActiveQuestionIndex(), correct: correct });
 
   if(correct) {
     state.score++;
@@ -1279,7 +1281,7 @@ function recordAnswer(correct, q, stage) {
       <p>${q.why}</p>
     </div>
     <button class="next-btn" onclick="nextQuestion()">
-      ${state.currentQ < QUESTIONS.length - 1 ? "Next Question →" : "See Results →"}
+      ${state.currentQ < getTotalActiveQuestions() - 1 ? "Next Question →" : "See Results →"}
     </button>
   `;
 
@@ -1326,29 +1328,33 @@ function showAchievementPopup(text) {
 }
 
 window.nextQuestion = function() {
-  const currentStage = getStageForQ(state.currentQ);
   const nextQ = state.currentQ + 1;
 
-  if(nextQ >= QUESTIONS.length) {
+  if(nextQ >= getTotalActiveQuestions()) {
     state.achievements.complete = true;
     state.screen = "results";
-    clearSave(); // completed — no need to resume
+    clearSave();
     render();
     return;
   }
 
-  const nextStage = getStageForQ(nextQ);
-  if(nextStage !== currentStage) {
-    state.currentQ = nextQ;
-    state.screen = "stageTransition";
-    saveState(); // save at stage boundary
-    render();
-  } else {
-    state.currentQ = nextQ;
-    state.questionStartTime = Date.now();
-    saveState(); // save before rendering next question
-    render();
+  state.currentQ = nextQ;
+  state.questionStartTime = Date.now();
+
+  // Skip stage transitions in retry mode
+  if(!state.retryMode) {
+    const currentStage = getStageForQ(state.currentQ - 1);
+    const nextStage = getStageForQ(state.currentQ);
+    if(nextStage !== currentStage) {
+      state.screen = "stageTransition";
+      saveState();
+      render();
+      return;
+    }
   }
+
+  saveState();
+  render();
 };
 
 function renderStageTransition() {
@@ -1378,8 +1384,9 @@ window.continueGame = function() {
 };
 
 function renderResults() {
-  const pct = Math.round((state.score / QUESTIONS.length) * 100);
+  const totalQ = getTotalActiveQuestions(); const pct = Math.round((state.score / totalQ) * 100);
   const grade = pct >= 90 ? "Outstanding" : pct >= 75 ? "Great work" : pct >= 50 ? "Good effort" : "Keep practising";
+  const wrongCount = state.qResults.filter(r => !r.correct).length;
 
   const badges = [
     { key:"streak3", icon:"🔥", label:"3 Streak" },
@@ -1391,27 +1398,41 @@ function renderResults() {
     { key:"complete", icon:"🏆", label:"Completed" }
   ];
 
+  // Build stage breakdown HTML separately to avoid nested template issues
+  let stageHTML = "";
+  if(!state.retryMode) {
+    stageHTML = '<p style="font-size:14px; font-weight:600; margin:16px 0 8px;">Stage Breakdown</p><div class="results-grid">';
+    STAGES.forEach(function(s, i) {
+      const sPct = state.stageAttempts[i] > 0 ? Math.round((state.stageScores[i] / state.stageAttempts[i]) * 100) : 0;
+      const col = sPct >= 80 ? 'var(--success)' : sPct >= 50 ? 'var(--warning)' : 'var(--error)';
+      stageHTML += '<div class="result-stat"><div class="val" style="color:' + col + ';">' + sPct + '%</div><div class="label">' + s.name + '</div></div>';
+    });
+    stageHTML += '</div>';
+  } else {
+    stageHTML = '<p style="font-size:14px; font-weight:600; margin:16px 0 8px; color:var(--error);">Retry Results — Mistakes Only</p>';
+  }
+
+  // Build retry/play buttons
+  let btnsHTML = '<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:24px;">';
+  if(wrongCount > 0) {
+    btnsHTML += '<button class="start-btn" onclick="retryMistakes()" style="background:var(--error);">Retry ' + wrongCount + ' Mistake' + (wrongCount===1?'':'s') + '</button>';
+  }
+  const secondStyle = wrongCount > 0 ? 'background:var(--surface-2); border:1px solid var(--border); color:var(--text-muted);' : '';
+  const secondLabel = state.retryMode ? 'Full Review' : 'Play Again';
+  btnsHTML += '<button class="start-btn" onclick="resetGame()" style="' + secondStyle + '">' + secondLabel + '</button></div>';
+
   app.innerHTML = `
     <div class="screen">
       <h1>${grade}!</h1>
-      <p style="font-size:18px; color:var(--text); margin:8px 0;">${state.score} / ${QUESTIONS.length} (${pct}%)</p>
+      <p style="font-size:18px; color:var(--text); margin:8px 0;">${state.score} / ${totalQ} (${pct}%)</p>
 
       <div class="results-grid">
         <div class="result-stat"><div class="val" style="color:var(--success);">${state.score}</div><div class="label">Correct</div></div>
-        <div class="result-stat"><div class="val" style="color:var(--error);">${QUESTIONS.length - state.score}</div><div class="label">Incorrect</div></div>
+        <div class="result-stat"><div class="val" style="color:var(--error);">${totalQ - state.score}</div><div class="label">Incorrect</div></div>
         <div class="result-stat"><div class="val" style="color:var(--warning);">${state.bestStreak}</div><div class="label">Best Streak</div></div>
       </div>
 
-      <p style="font-size:14px; font-weight:600; margin:16px 0 8px;">Stage Breakdown</p>
-      <div class="results-grid">
-        ${STAGES.map((s, i) => {
-          const sPct = state.stageAttempts[i] > 0 ? Math.round((state.stageScores[i] / state.stageAttempts[i]) * 100) : 0;
-          return `<div class="result-stat">
-            <div class="val" style="color:${sPct >= 80 ? 'var(--success)' : sPct >= 50 ? 'var(--warning)' : 'var(--error)'};">${sPct}%</div>
-            <div class="label">${s.name}</div>
-          </div>`;
-        }).join("")}
-      </div>
+      ${stageHTML}
 
       <div class="achievements">
         ${badges.map(b => `<div class="badge ${state.achievements[b.key] ? 'earned' : ''}"><span class="badge-icon">${b.icon}</span> ${b.label}</div>`).join("")}
@@ -1422,7 +1443,7 @@ function renderResults() {
         Where do you see forces and motion in your daily life? Think about: riding a bike, catching a ball, a car braking, a plane flying. How do Newton's Laws explain what happens? Discuss with a partner.
       </div>
 
-      <button class="start-btn" onclick="resetGame()" style="margin-top:24px;">Play Again</button>
+      ${btnsHTML}
     </div>
   `;
 }
@@ -1432,6 +1453,38 @@ window.resetGame = function() {
   state = freshState();
   render();
 };
+
+window.retryMistakes = function() {
+  const wrongQs = state.qResults.filter(r => !r.correct).map(r => r.idx);
+  if(wrongQs.length === 0) return;
+  const prevResults = state.qResults.slice(); // preserve for display
+  state = freshState();
+  state.retryMode = true;
+  state.retryQueue = wrongQs;
+  state.screen = "game";
+  state.currentQ = 0;
+  state.questionStartTime = Date.now();
+  clearSave();
+  render();
+};
+
+function getActiveQuestion() {
+  if(state.retryMode && state.retryQueue.length > 0) {
+    return QUESTIONS[state.retryQueue[state.currentQ]];
+  }
+  return QUESTIONS[state.currentQ];
+}
+
+function getActiveQuestionIndex() {
+  if(state.retryMode && state.retryQueue.length > 0) {
+    return state.retryQueue[state.currentQ];
+  }
+  return state.currentQ;
+}
+
+function getTotalActiveQuestions() {
+  return state.retryMode ? state.retryQueue.length : QUESTIONS.length;
+}
 
 // === INIT ===
 render();

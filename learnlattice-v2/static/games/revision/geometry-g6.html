@@ -279,9 +279,9 @@ const STAGE_INT=["I can calculate the perimeter of rectangles, triangles, and ci
 //  GAME STATE + SAVE SYSTEM
 // =====================================================================
 const SAVE_KEY="geo_g6_review_v1";
-function freshS(){return{stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[]};}
+function freshS(){return{stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[],qr:[],rm:false,rqs:[]};}
 function saveProgress(){
-  try{localStorage.setItem(SAVE_KEY,JSON.stringify({stage:S.stage,qi:S.qi,score:S.score,ss:S.ss,stageLens:stageLens,savedAt:Date.now()}));}catch(e){}
+  try{localStorage.setItem(SAVE_KEY,JSON.stringify({stage:S.stage,qi:S.qi,score:S.score,ss:S.ss,stageLens:stageLens,qr:S.qr,savedAt:Date.now()}));}catch(e){}
 }
 function loadSave(){
   try{const r=localStorage.getItem(SAVE_KEY);if(!r)return null;const s=JSON.parse(r);
@@ -319,7 +319,7 @@ function renderIntro(p){
 }
 
 function startGame(){S=freshS();S.stage=0;S.qi=0;S.phase='play';S.ans=false;S.qs=genQ(0);S.sm=S.qs.map(()=>1);clearSave();render();}
-function resumeGame(){const s=loadSave();if(s){S=freshS();S.stage=s.stage;S.qi=s.qi;S.score=s.score;S.ss=s.ss||[0,0,0,0,0];S.qs=genQ(s.stage);S.sm=S.qs.map(()=>1);S.phase='play';S.ans=false;if(s.stageLens)stageLens=s.stageLens;render();}else{startGame();}}
+function resumeGame(){const s=loadSave();if(s){S=freshS();S.stage=s.stage;S.qi=s.qi;S.score=s.score;S.ss=s.ss||[0,0,0,0,0];S.qr=s.qr||[];S.qs=genQ(s.stage);S.sm=S.qs.map(()=>1);S.phase='play';S.ans=false;if(s.stageLens)stageLens=s.stageLens;render();}else{startGame();}}
 function startFresh(){clearSave();startGame();}
 
 function renderStage(p){
@@ -327,14 +327,15 @@ function renderStage(p){
   let qHTML='';
   if(q.type==='mcq') qHTML=renderMCQ(q);
   else qHTML=renderCalcQ(q);
-  p.innerHTML=`
+  const progHTML=S.rm?'<div style="text-align:center;font-size:.85rem;font-weight:600;color:#ef4444;margin:12px 0">Retry Mode — Mistakes Only</div>':`
     <div class="progress-bar">${STAGE_NAMES.map((_,i)=>'<div class="prog-step '+(i<S.stage?'done':i===S.stage?'now':'')+'"></div>').join('')}</div>
-    <div class="prog-labels">${STAGE_NAMES.map((n,i)=>'<span class="'+(i<S.stage?'done':i===S.stage?'now':'')+'">'+n+'</span>').join('')}</div>
+    <div class="prog-labels">${STAGE_NAMES.map((n,i)=>'<span class="'+(i<S.stage?'done':i===S.stage?'now':'')+'">'+n+'</span>').join('')}</div>`;
+  const stgInfo=S.rm?'':'<div class="stg-num">Stage '+(S.stage+1)+' of 5</div><div class="stg-title">'+STAGE_NAMES[S.stage]+'</div><div class="stg-int">'+STAGE_INT[S.stage]+'</div>';
+  p.innerHTML=`
+    ${progHTML}
     <div class="score-chip">Score <b>${S.score}</b></div>
     <div class="stage">
-      <div class="stg-num">Stage ${S.stage+1} of 5</div>
-      <div class="stg-title">${STAGE_NAMES[S.stage]}</div>
-      <div class="stg-int">${STAGE_INT[S.stage]}</div>
+      ${stgInfo}
       <div class="q-count">Question ${S.qi+1} of ${S.qs.length}</div>
       <div class="q-text">${q.text}</div>
       ${qHTML}
@@ -364,7 +365,8 @@ function checkCalcQ(){
   inp.classList.add(ok?'correct':'wrong');
   inp.disabled=true;
   document.querySelector('.q-submit').disabled=true;
-  if(ok){S.score++;S.ss[S.stage]++;}
+  if(ok){S.score++;if(!S.rm)S.ss[S.stage]++;}
+  S.qr.push({q:q,ok:ok});
   showFB(ok,q.hint,"The answer is <strong>"+correct+" "+q.unit+"</strong>. "+q.hint);
   showNext();
 }
@@ -377,7 +379,8 @@ function checkMCQ(i){
   if(S.ans)return;S.ans=true;
   const q=S.qs[S.qi];const ok=i===q.correct;
   document.querySelectorAll('.opt').forEach((b,j)=>{b.classList.add('dis');if(j===q.correct)b.classList.add('cor');if(j===i&&!ok)b.classList.add('inc');});
-  if(ok){S.score++;S.ss[S.stage]++;}
+  if(ok){S.score++;if(!S.rm)S.ss[S.stage]++;}
+  S.qr.push({q:q,ok:ok});
   showFB(ok,q.hint,q.why);showNext();
 }
 
@@ -390,9 +393,9 @@ function showFB(ok,hint,why){
 function showNext(){
   const r=document.getElementById('btnRow');
   const lastQ=S.qi>=S.qs.length-1;
-  const lastS=S.stage>=4;
+  const lastS=S.rm?true:(S.stage>=4);
   if(lastQ&&lastS)r.innerHTML='<button class="btn btn-g" onclick="showFinal()">See Results</button>';
-  else if(lastQ)r.innerHTML='<button class="btn btn-g" onclick="nextStage()">Complete Stage →</button>';
+  else if(lastQ&&!S.rm)r.innerHTML='<button class="btn btn-g" onclick="nextStage()">Complete Stage →</button>';
   else r.innerHTML='<button class="btn btn-p" onclick="nextQ()">Next Question →</button>';
 }
 
@@ -410,15 +413,28 @@ function proceedNext(){S.stage++;S.qi=0;S.ans=false;S.qs=genQ(S.stage);S.sm=S.qs
 
 function showFinal(){S.phase='final';clearSave();render();}
 function renderFinal(p){
-  const tot=S.ss.reduce((a,b)=>a+b,0);const mx=S.ss.length*6;// approx
-  // Count actual total from stage question lengths
-  const pct=Math.round(tot/getTotalQ()*100);
+  const tot=S.score;const tq=S.rm?S.qs.length:getTotalQ();
+  const pct=Math.round(tot/tq*100);
   const grd=pct>=90?'Outstanding':pct>=70?'Proficient':pct>=50?'Developing':'Emerging';
   const em=pct>=90?'🏆':pct>=70?'🌟':pct>=50?'📈':'🌱';
-  p.innerHTML=`<div class="stage final"><div style="font-size:2.8rem">${em}</div><h2>Review Complete!</h2><div class="big">${tot}/${getTotalQ()} (${pct}%)</div><div class="grd">${grd}</div>
-  <div class="stg-bd">${STAGE_NAMES.map((n,i)=>'<div class="stg-r"><span class="n">'+n+'</span><span class="s">'+S.ss[i]+'/'+getStageLen(i)+'</span></div>').join('')}</div>
-  <div class="transfer"><h3>Now think about this...</h3><p>Every object around you has measurable properties — perimeter, area, volume. The phone in your pocket, the room you're in, the water bottle on your desk. Geometry isn't abstract — it's how we measure and build the real world. Which formula would you use to figure out how much paint you need for a wall? How much water fits in a swimming pool?</p></div>
-  <div class="btn-row" style="justify-content:center;margin-top:16px"><button class="btn btn-s" onclick="resetGame()">Try Again</button></div></div>`;
+  const wc=S.qr.filter(function(r){return!r.ok}).length;
+  var sgHTML='';
+  if(!S.rm){
+    sgHTML='<div class="stg-bd">';
+    for(var i=0;i<STAGE_NAMES.length;i++){sgHTML+='<div class="stg-r"><span class="n">'+STAGE_NAMES[i]+'</span><span class="s">'+S.ss[i]+'/'+getStageLen(i)+'</span></div>'}
+    sgHTML+='</div>';
+  }else{sgHTML='<div style="text-align:center;color:#ef4444;font-weight:600;font-size:.9rem;margin:12px 0">Retry Results — Mistakes Only</div>'}
+  var btns='<div class="btn-row" style="justify-content:center;margin-top:16px;gap:8px">';
+  if(wc>0)btns+='<button class="btn btn-g" onclick="retryMistakes()" style="background:#ef4444;border-color:#ef4444">Retry '+wc+' Mistake'+(wc===1?'':'s')+'</button>';
+  var s2style=wc>0?'background:transparent;border-color:#475569;color:#94a3b8':'';
+  btns+='<button class="btn btn-s" onclick="resetGame()" style="'+s2style+'">'+(S.rm?'Full Review':'Try Again')+'</button></div>';
+  p.innerHTML='<div class="stage final"><div style="font-size:2.8rem">'+em+'</div><h2>Review Complete!</h2><div class="big">'+tot+'/'+tq+' ('+pct+'%)</div><div class="grd">'+grd+'</div>'+sgHTML+'<div class="transfer"><h3>Now think about this...</h3><p>Every object around you has measurable properties — perimeter, area, volume. The phone in your pocket, the room you\'re in, the water bottle on your desk. Geometry isn\'t abstract — it\'s how we measure and build the real world.</p></div>'+btns+'</div>';
+}
+
+function retryMistakes(){
+  var wrongQs=S.qr.filter(function(r){return!r.ok}).map(function(r){return r.q});
+  if(wrongQs.length===0)return;
+  S=freshS();S.rm=true;S.qs=wrongQs;S.sm=wrongQs.map(function(){return 1});S.stage=0;S.qi=0;S.phase='play';S.ans=false;clearSave();render();
 }
 
 // Track total questions across stages
