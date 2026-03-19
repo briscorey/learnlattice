@@ -62,6 +62,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);min-h
 .rb p:first-child{color:var(--pr);font-weight:600;font-size:14px;margin-bottom:4px}.rb p:nth-child(2){color:var(--mt);font-size:12px}
 .rbb{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
 @media(max-width:500px){.app{padding:10px}.cd{padding:18px 14px}.qt{font-size:14px}.mg{grid-template-columns:1fr}.scr h1{font-size:22px}}
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:hidden}
+.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;border-radius:2px;animation:cF 1.8s ease-out forwards}
+@keyframes cF{0%{transform:translateY(0) rotate(0) scale(1);opacity:1}100%{transform:translateY(100vh) rotate(720deg) scale(.3);opacity:0}}
+.score-pop{position:fixed;z-index:150;font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--ok);pointer-events:none;animation:sP 1s ease-out forwards}
+.score-miss{position:fixed;z-index:150;font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--er);pointer-events:none;animation:sP .8s ease-out forwards}
+@keyframes sP{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-50px) scale(1.3)}}
+.strk.s2 svg{filter:drop-shadow(0 0 4px rgba(251,191,36,.4))}.strk.s5 svg{filter:drop-shadow(0 0 8px rgba(251,191,36,.6));transform:scale(1.1)}.strk.s5{color:#f59e0b}
+.strk.s10 svg{filter:drop-shadow(0 0 14px rgba(245,158,11,.8));transform:scale(1.25);animation:fP .6s ease infinite}.strk.s10{color:#ef4444;font-size:18px}
+@keyframes fP{0%,100%{transform:scale(1.25)}50%{transform:scale(1.35)}}
+@keyframes shk{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+.shake{animation:shk .4s ease}
+.diff-stars{display:inline-block;margin-left:10px;font-size:11px;letter-spacing:1px}.diff-stars .star-on{color:var(--wa)}.diff-stars .star-off{color:var(--bd)}
+.cd.correct-glow{animation:cG .6s ease}@keyframes cG{0%{box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{box-shadow:0 0 20px 4px rgba(74,222,128,.15)}100%{box-shadow:none}}
+.cd.wrong-glow{animation:wG .5s ease}@keyframes wG{0%{box-shadow:0 0 0 0 rgba(248,113,113,.4)}50%{box-shadow:0 0 15px 3px rgba(248,113,113,.1)}100%{box-shadow:none}}
+.scr.stage-celebrate{position:relative}.scr.stage-celebrate::before{content:'';position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(74,222,128,.15) 0%,transparent 70%);animation:clP 1.5s ease-out;pointer-events:none}@keyframes clP{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(-50%,-50%) scale(3);opacity:0}}
 </style>
 </head>
 <body>
@@ -171,7 +186,7 @@ function fresh(){cl();go()}
 function rG(){const q=gAQ();const bm={mcq:'mcq',tf:'tf',diagram:'dia',order:'drg',matching:'drg',fill:'fil',multi:'mul'};
 let b='';if(q.dia&&diagMap[q.dia])b+=`<div class="dw">${diagMap[q.dia]()}</div>`;
 switch(q.type){case'mcq':case'diagram':b+=rMCQ(q);break;case'tf':b+=rTF();break;case'order':b+=rOrd(q);break;case'matching':b+=rMat(q);break;case'fill':b+=rFil(q);break;case'multi':b+=rMul(q);break;}
-A.innerHTML=`${rH()}${rP()}<div class="cd" id="qc"><div class="qn">Question ${S.ans+1} of ${gTQ()} <span class="qb ${bm[q.type]||'mcq'}">${q.type==='diagram'?'diagram':q.type}</span></div><div class="qt">${q.q}</div>${b}<div id="fb"></div></div>`}
+A.innerHTML=`${rH()}${rP()}<div class="cd" id="qc"><div class="qn">Question ${S.ans+1} of ${gTQ()} <span class="qb ${bm[q.type]||'mcq'}">${q.type==='diagram'?'diagram':q.type}</span> ${diffStars(S.qi)}</div><div class="qt">${q.q}</div>${b}<div id="fb"></div></div>`}
 
 function rMCQ(q){return`<div class="os">${q.opts.map((o,i)=>`<button class="ob" onclick="aM(${i})" id="o${i}">${o}</button>`).join('')}</div>`}
 function rTF(){return`<div class="tfr"><button class="tfb" onclick="aT(true)" id="tt">True</button><button class="tfb" onclick="aT(false)" id="tf">False</button></div>`}
@@ -192,9 +207,28 @@ window.cF=function(){const q=gAQ();let ok=true;q.blanks.forEach((b,i)=>{const el
 window.tM=function(i){const el=document.getElementById(`mo${i}`);if(el.classList.contains('lk'))return;if(window._ms2.has(i)){window._ms2.delete(i);el.classList.remove('sel')}else{window._ms2.add(i);el.classList.add('sel')}}
 window.cMu=function(){const q=gAQ(),sel=[...window._ms2],cr=new Set(q.correct);let ok=sel.length===cr.size&&sel.every(i=>cr.has(i));q.opts.forEach((_,i)=>{const el=document.getElementById(`mo${i}`);el.classList.add('lk');if(cr.has(i))el.classList.add('ok-m2');else if(sel.includes(i))el.classList.add('no-m2')});document.querySelector('.sub').disabled=true;rec(ok,q)}
 
-function rec(ok,q){S.ans++;S.sa[S.stg]++;S.qr.push({idx:gAQI(),ok:ok});if(ok){S.sc++;S.str++;S.ss[S.stg]++;if(S.str>S.bs)S.bs=S.str}else S.str=0;sv();const totalAQ=gTQ();const isL=S.rm?(S.qi>=totalAQ-1):(S.qi>=STAGES[S.stg].questions.length-1);const isLS=S.rm?isL:(S.stg>=STAGES.length-1);const nxAct=isL&&isLS?'goF()':isL&&!S.rm?'goTr()':'nQ()';const nxLbl=isL&&isLS?'See Results →':isL&&!S.rm?'Complete Stage →':'Next Question →';document.getElementById('fb').innerHTML=`<div class="fb ${ok?'fbok':'fbno'}"><strong>${ok?'✓ Correct!':'✗ Not quite'}</strong>${ok?'':`<p style="margin-bottom:6px"><em>Hint: ${q.hint}</em></p>`}<p>${q.why}</p></div><button class="nx" onclick="${nxAct}">${nxLbl}</button>`}
+function rec(ok,q){
+  const prevStr=S.str;
+  S.ans++;S.sa[S.stg]++;S.qr.push({idx:gAQI(),ok:ok});
+  if(ok){S.sc++;S.str++;S.ss[S.stg]++;if(S.str>S.bs)S.bs=S.str}else S.str=0;
+  sv();
+  // Celebrations
+  glowC(ok);scorePop(ok);
+  if(ok&&S.str>=3)confetti(8+S.str*2);
+  if(!ok&&prevStr>=3)shakeC();
+  setTimeout(streakVis,100);
+  const totalAQ=gTQ();const isL=S.rm?(S.qi>=totalAQ-1):(S.qi>=STAGES[S.stg].questions.length-1);const isLS=S.rm?isL:(S.stg>=STAGES.length-1);const nxAct=isL&&isLS?'goF()':isL&&!S.rm?'goTr()':'nQ()';const nxLbl=isL&&isLS?'See Results →':isL&&!S.rm?'Complete Stage →':'Next Question →';document.getElementById('fb').innerHTML=`<div class="fb ${ok?'fbok':'fbno'}"><strong>${ok?'✓ Correct!':'✗ Not quite'}</strong>${ok?'':`<p style="margin-bottom:6px"><em>Hint: ${q.hint}</em></p>`}<p>${q.why}</p></div><button class="nx" onclick="${nxAct}">${nxLbl}</button>`
+}
+
+// CELEBRATION FUNCTIONS
+function confetti(n){const c=document.createElement('div');c.className='confetti-container';document.body.appendChild(c);const cols=['#4ade80','#fbbf24','#6c8cff','#a78bfa','#f87171','#22d3ee'];for(let i=0;i<n;i++){const p=document.createElement('div');p.className='confetti-piece';p.style.left=(Math.random()*100)+'%';p.style.backgroundColor=cols[Math.floor(Math.random()*cols.length)];p.style.animationDelay=(Math.random()*.5)+'s';p.style.animationDuration=(1.2+Math.random())+'s';const sz=5+Math.random()*6;p.style.width=sz+'px';p.style.height=sz+'px';if(Math.random()>.5)p.style.borderRadius='50%';c.appendChild(p)}setTimeout(function(){c.remove()},2500)}
+function scorePop(ok){const p=document.createElement('div');p.className=ok?'score-pop':'score-miss';p.textContent=ok?'+1':'✗';p.style.top='60px';p.style.right='40px';document.body.appendChild(p);setTimeout(function(){p.remove()},1100)}
+function streakVis(){const el=document.querySelector('.strk');if(!el)return;el.classList.remove('s2','s5','s10');if(S.str>=10)el.classList.add('s10');else if(S.str>=5)el.classList.add('s5');else if(S.str>=2)el.classList.add('s2')}
+function shakeC(){const c=document.getElementById('qc');if(c){c.classList.add('shake');setTimeout(function(){c.classList.remove('shake')},500)}}
+function glowC(ok){const c=document.getElementById('qc');if(c)c.classList.add(ok?'correct-glow':'wrong-glow')}
+function diffStars(qi){const p=qi/gTQ();let s=1;if(p>=.8)s=3;else if(p>=.4)s=2;return'<span class="diff-stars"><span class="star-on">'+'★'.repeat(s)+'</span><span class="star-off">'+'☆'.repeat(3-s)+'</span></span>'}
 window.nQ=function(){S.qi++;sv();R()};window.goTr=function(){S.ph='trans';sv();R()};window.goF=function(){S.ph='final';cl();R()};
-function rT(){const sc=S.ss[S.stg],mx=S.sa[S.stg],p=Math.round(sc/mx*100),em=p>=70?'🌟':p>=50?'👍':'💪',nx=STAGES[S.stg+1];A.innerHTML=`<div class="scr"><div style="font-size:48px">${em}</div><h2>Stage ${S.stg+1} Complete: ${STAGES[S.stg].title}</h2><p style="color:var(--ok);font-weight:600;font-size:16px">${sc}/${mx} (${p}%)</p><p>${p>=70?'Great work!':p>=50?'Good effort!':'Keep going!'}</p><p style="margin-top:16px">Up next:</p><h2 style="color:var(--pr)">${nx.title}</h2><p style="font-style:italic">${nx.int}</p><button class="stb" onclick="pN()">Continue →</button></div>`}
+function rT(){const sc=S.ss[S.stg],mx=S.sa[S.stg],p=Math.round(sc/mx*100),em=p>=70?'🌟':p>=50?'👍':'💪',nx=STAGES[S.stg+1];if(p>=70)confetti(25);A.innerHTML=`<div class="scr stage-celebrate"><div style="font-size:48px">${em}</div><h2>Stage ${S.stg+1} Complete: ${STAGES[S.stg].title}</h2><p style="color:var(--ok);font-weight:600;font-size:16px">${sc}/${mx} (${p}%)</p><p>${p>=70?'Great work!':p>=50?'Good effort!':'Keep going!'}</p><p style="margin-top:16px">Up next:</p><h2 style="color:var(--pr)">${nx.title}</h2><p style="font-style:italic">${nx.int}</p><button class="stb" onclick="pN()">Continue →</button></div>`}
 window.pN=function(){S.stg++;S.qi=0;S.ph='game';sv();R()};
 function rF(){const tq=gTQ(),p=Math.round(S.sc/tq*100),g=p>=90?'Outstanding!':p>=75?'Great work!':p>=50?'Good effort':'Keep practising';const wc=S.qr.filter(r=>!r.ok).length;
 let sgHTML='';

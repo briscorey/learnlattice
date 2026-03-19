@@ -295,6 +295,49 @@ body {
   .opt-btn { padding: 12px 14px; font-size: 14px; }
   .screen h1 { font-size: 24px; }
 }
+
+/* === CELEBRATIONS === */
+.confetti-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 200; overflow: hidden; }
+.confetti-piece { position: absolute; width: 8px; height: 8px; top: -10px; border-radius: 2px; animation: confettiFall 1.8s ease-out forwards; }
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg) scale(0.3); opacity: 0; }
+}
+
+/* Score +1 float */
+.score-pop { position: fixed; z-index: 150; font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--success); pointer-events: none; animation: scorePop 1s ease-out forwards; }
+@keyframes scorePop { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-50px) scale(1.3); } }
+
+/* Score wrong flash */
+.score-miss { position: fixed; z-index: 150; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: var(--error); pointer-events: none; animation: scorePop 0.8s ease-out forwards; }
+
+/* Streak flame growth */
+.streak.s2 svg { filter: drop-shadow(0 0 4px rgba(251,191,36,0.4)); }
+.streak.s5 svg { filter: drop-shadow(0 0 8px rgba(251,191,36,0.6)); transform: scale(1.1); }
+.streak.s5 { color: #f59e0b; }
+.streak.s10 svg { filter: drop-shadow(0 0 14px rgba(245,158,11,0.8)); transform: scale(1.25); animation: flamePulse 0.6s ease infinite; }
+.streak.s10 { color: #ef4444; font-size: 18px; }
+@keyframes flamePulse { 0%,100% { transform: scale(1.25); } 50% { transform: scale(1.35); } }
+
+/* Streak break shake */
+@keyframes shakeIt { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+.shake { animation: shakeIt 0.4s ease; }
+
+/* Difficulty stars */
+.diff-stars { display: inline-block; margin-left: 10px; font-size: 11px; letter-spacing: 1px; }
+.diff-stars .star-on { color: var(--warning); }
+.diff-stars .star-off { color: var(--border); }
+
+/* Stage complete celebration */
+.stage-celebrate { position: relative; }
+.stage-celebrate::before { content: ''; position: absolute; top: 50%; left: 50%; width: 200px; height: 200px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%); animation: celebPulse 1.5s ease-out; pointer-events: none; }
+@keyframes celebPulse { 0% { transform: translate(-50%,-50%) scale(0.3); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(3); opacity: 0; } }
+
+/* Correct answer glow */
+.q-card.correct-glow { animation: correctGlow 0.6s ease; }
+@keyframes correctGlow { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); } 50% { box-shadow: 0 0 20px 4px rgba(74,222,128,0.15); } 100% { box-shadow: none; } }
+.q-card.wrong-glow { animation: wrongGlow 0.5s ease; }
+@keyframes wrongGlow { 0% { box-shadow: 0 0 0 0 rgba(248,113,113,0.4); } 50% { box-shadow: 0 0 15px 3px rgba(248,113,113,0.1); } 100% { box-shadow: none; } }
 </style>
 </head>
 <body>
@@ -1012,7 +1055,7 @@ function renderGame() {
     ${renderHeader()}
     ${state.retryMode ? '<div class="stage-label" style="color:var(--error);">Retry Mode — Mistakes Only</div>' : renderStagePips()}
     <div class="q-card" id="q-card">
-      <div class="q-number">Question ${qNum} of ${getTotalActiveQuestions()} ${typeBadge[q.type] || typeBadge[q.type === "scenario" ? "scenario" : "mcq"]}</div>
+      <div class="q-number">Question ${qNum} of ${getTotalActiveQuestions()} ${typeBadge[q.type] || typeBadge[q.type === "scenario" ? "scenario" : "mcq"]} ${getDifficultyStars(state.currentQ)}</div>
       <div class="q-text">${q.q}</div>
       ${body}
       <div id="feedback-area"></div>
@@ -1253,6 +1296,7 @@ function recordAnswer(correct, q, stage) {
   state.stageAttempts[stage]++;
   state.qResults.push({ idx: getActiveQuestionIndex(), correct: correct });
 
+  const prevStreak = state.streak;
   if(correct) {
     state.score++;
     state.streak++;
@@ -1271,6 +1315,13 @@ function recordAnswer(correct, q, stage) {
 
   // Save progress after every answer
   saveState();
+
+  // === CELEBRATIONS ===
+  glowCard(correct);
+  showScorePop(correct);
+  if(correct && state.streak >= 3) spawnConfetti(8 + state.streak * 2);
+  if(!correct) shakeOnStreakBreak(prevStreak);
+  setTimeout(updateStreakVisual, 100);
 
   // Show feedback
   const fb = document.getElementById("feedback-area");
@@ -1364,8 +1415,11 @@ function renderStageTransition() {
   const pTotal = state.stageAttempts[prevStage];
   const pct = Math.round((pScore / pTotal) * 100);
 
+  // Celebrate stage completion
+  if(pct >= 70) spawnConfetti(25);
+
   app.innerHTML = `
-    <div class="screen">
+    <div class="screen stage-celebrate">
       <div class="stage-complete-icon">${pct >= 80 ? "🎉" : pct >= 50 ? "👍" : "💪"}</div>
       <h2>Stage ${prevStage + 1} Complete</h2>
       <p>${STAGES[prevStage].name}: ${pScore} / ${pTotal} (${pct}%)</p>
@@ -1387,6 +1441,10 @@ function renderResults() {
   const totalQ = getTotalActiveQuestions(); const pct = Math.round((state.score / totalQ) * 100);
   const grade = pct >= 90 ? "Outstanding" : pct >= 75 ? "Great work" : pct >= 50 ? "Good effort" : "Keep practising";
   const wrongCount = state.qResults.filter(r => !r.correct).length;
+
+  // Celebrate completion
+  if(pct >= 70) spawnConfetti(40);
+  else if(pct >= 50) spawnConfetti(15);
 
   const badges = [
     { key:"streak3", icon:"🔥", label:"3 Streak" },
@@ -1484,6 +1542,77 @@ function getActiveQuestionIndex() {
 
 function getTotalActiveQuestions() {
   return state.retryMode ? state.retryQueue.length : QUESTIONS.length;
+}
+
+// === CELEBRATION SYSTEM ===
+function spawnConfetti(count) {
+  const container = document.createElement('div');
+  container.className = 'confetti-container';
+  document.body.appendChild(container);
+  const colors = ['#4ade80','#fbbf24','#6c8cff','#a78bfa','#f87171','#22d3ee'];
+  for(let i = 0; i < count; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = (Math.random() * 100) + '%';
+    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = (Math.random() * 0.5) + 's';
+    piece.style.animationDuration = (1.2 + Math.random() * 1) + 's';
+    const size = 5 + Math.random() * 6;
+    piece.style.width = size + 'px';
+    piece.style.height = size + 'px';
+    if(Math.random() > 0.5) piece.style.borderRadius = '50%';
+    container.appendChild(piece);
+  }
+  setTimeout(function() { container.remove(); }, 2500);
+}
+
+function showScorePop(correct) {
+  const pop = document.createElement('div');
+  pop.className = correct ? 'score-pop' : 'score-miss';
+  pop.textContent = correct ? '+1' : '✗';
+  const hdr = document.querySelector('.header') || document.querySelector('.hdr');
+  if(hdr) {
+    const rect = hdr.getBoundingClientRect();
+    pop.style.top = (rect.bottom - 10) + 'px';
+    pop.style.right = '40px';
+  } else {
+    pop.style.top = '60px';
+    pop.style.right = '40px';
+  }
+  document.body.appendChild(pop);
+  setTimeout(function() { pop.remove(); }, 1100);
+}
+
+function updateStreakVisual() {
+  const streakEl = document.querySelector('.streak');
+  if(!streakEl) return;
+  streakEl.classList.remove('s2','s5','s10');
+  if(state.streak >= 10) streakEl.classList.add('s10');
+  else if(state.streak >= 5) streakEl.classList.add('s5');
+  else if(state.streak >= 2) streakEl.classList.add('s2');
+}
+
+function shakeOnStreakBreak(wasStreak) {
+  if(wasStreak >= 3) {
+    const card = document.getElementById('q-card') || document.getElementById('qc');
+    if(card) { card.classList.add('shake'); setTimeout(function() { card.classList.remove('shake'); }, 500); }
+  }
+}
+
+function glowCard(correct) {
+  const card = document.getElementById('q-card') || document.getElementById('qc');
+  if(card) card.classList.add(correct ? 'correct-glow' : 'wrong-glow');
+}
+
+function getDifficultyStars(qIndex) {
+  const totalQ = getTotalActiveQuestions();
+  const pct = qIndex / totalQ;
+  let stars = 1;
+  if(pct >= 0.8) stars = 3;
+  else if(pct >= 0.4) stars = 2;
+  const on = '★'.repeat(stars);
+  const off = '☆'.repeat(3 - stars);
+  return '<span class="diff-stars"><span class="star-on">' + on + '</span><span class="star-off">' + off + '</span></span>';
 }
 
 // === INIT ===

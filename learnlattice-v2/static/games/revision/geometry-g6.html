@@ -147,6 +147,24 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f
   .score-chip{top:auto;bottom:70px;right:10px}
   .calc-overlay{width:calc(100vw - 32px);right:16px;left:16px}
 }
+
+/* CELEBRATIONS */
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:hidden}
+.confetti-piece{position:absolute;width:8px;height:8px;top:-10px;border-radius:2px;animation:cFall 1.8s ease-out forwards}
+@keyframes cFall{0%{transform:translateY(0) rotate(0) scale(1);opacity:1}100%{transform:translateY(100vh) rotate(720deg) scale(.3);opacity:0}}
+.score-pop{position:fixed;z-index:150;font-family:'Segoe UI',system-ui,sans-serif;font-size:18px;font-weight:700;color:#22c55e;pointer-events:none;animation:sPop 1s ease-out forwards}
+.score-miss{position:fixed;z-index:150;font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;font-weight:700;color:#ef4444;pointer-events:none;animation:sPop .8s ease-out forwards}
+@keyframes sPop{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-50px) scale(1.3)}}
+.score-chip.s2{filter:drop-shadow(0 0 4px rgba(251,191,36,.4))}
+.score-chip.s5{filter:drop-shadow(0 0 8px rgba(251,191,36,.6));color:#f59e0b}
+.score-chip.s10{filter:drop-shadow(0 0 14px rgba(245,158,11,.8));animation:flPulse .6s ease infinite;color:#ef4444}
+@keyframes flPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes shakeIt{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+.shake{animation:shakeIt .4s ease}
+.diff-stars{display:inline-block;margin-left:8px;font-size:11px;letter-spacing:1px}.diff-stars .star-on{color:#fbbf24}.diff-stars .star-off{color:#334155}
+.stage.correct-glow{animation:cGlow .6s ease}@keyframes cGlow{0%{box-shadow:0 0 0 0 rgba(34,197,94,.4)}50%{box-shadow:0 0 20px 4px rgba(34,197,94,.15)}100%{box-shadow:none}}
+.stage.wrong-glow{animation:wGlow .5s ease}@keyframes wGlow{0%{box-shadow:0 0 0 0 rgba(239,68,68,.4)}50%{box-shadow:0 0 15px 3px rgba(239,68,68,.1)}100%{box-shadow:none}}
+.trans.stage-celebrate{position:relative}.trans.stage-celebrate::before{content:'';position:absolute;top:50%;left:50%;width:200px;height:200px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(74,222,128,.15) 0%,transparent 70%);animation:celPulse 1.5s ease-out;pointer-events:none}@keyframes celPulse{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(-50%,-50%) scale(3);opacity:0}}
 </style>
 </head>
 <body>
@@ -279,7 +297,7 @@ const STAGE_INT=["I can calculate the perimeter of rectangles, triangles, and ci
 //  GAME STATE + SAVE SYSTEM
 // =====================================================================
 const SAVE_KEY="geo_g6_review_v1";
-function freshS(){return{stage:-1,qi:0,score:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[],qr:[],rm:false,rqs:[]};}
+function freshS(){return{stage:-1,qi:0,score:0,str:0,bs:0,ss:[0,0,0,0,0],sm:[],ans:false,phase:'intro',qs:[],qr:[],rm:false,rqs:[]};}
 function saveProgress(){
   try{localStorage.setItem(SAVE_KEY,JSON.stringify({stage:S.stage,qi:S.qi,score:S.score,ss:S.ss,stageLens:stageLens,qr:S.qr,savedAt:Date.now()}));}catch(e){}
 }
@@ -333,10 +351,10 @@ function renderStage(p){
   const stgInfo=S.rm?'':'<div class="stg-num">Stage '+(S.stage+1)+' of 5</div><div class="stg-title">'+STAGE_NAMES[S.stage]+'</div><div class="stg-int">'+STAGE_INT[S.stage]+'</div>';
   p.innerHTML=`
     ${progHTML}
-    <div class="score-chip">Score <b>${S.score}</b></div>
+    <div class="score-chip">Score <b>${S.score}</b>${S.str>=2?' · 🔥'+S.str:''}</div>
     <div class="stage">
       ${stgInfo}
-      <div class="q-count">Question ${S.qi+1} of ${S.qs.length}</div>
+      <div class="q-count">Question ${S.qi+1} of ${S.qs.length} ${gDiffStars(S.qi,S.qs.length)}</div>
       <div class="q-text">${q.text}</div>
       ${qHTML}
       <div id="fb" class="fb"></div>
@@ -365,8 +383,13 @@ function checkCalcQ(){
   inp.classList.add(ok?'correct':'wrong');
   inp.disabled=true;
   document.querySelector('.q-submit').disabled=true;
-  if(ok){S.score++;if(!S.rm)S.ss[S.stage]++;}
+  const prevStr=S.str;
+  if(ok){S.score++;if(!S.rm)S.ss[S.stage]++;S.str++;if(S.str>S.bs)S.bs=S.str}else{S.str=0}
   S.qr.push({q:q,ok:ok});
+  gGlow(ok);gScorePop(ok);
+  if(ok&&S.str>=3)gConfetti(8+S.str*2);
+  if(!ok&&prevStr>=3)gShake();
+  setTimeout(gStreakVis,100);
   showFB(ok,q.hint,"The answer is <strong>"+correct+" "+q.unit+"</strong>. "+q.hint);
   showNext();
 }
@@ -379,8 +402,13 @@ function checkMCQ(i){
   if(S.ans)return;S.ans=true;
   const q=S.qs[S.qi];const ok=i===q.correct;
   document.querySelectorAll('.opt').forEach((b,j)=>{b.classList.add('dis');if(j===q.correct)b.classList.add('cor');if(j===i&&!ok)b.classList.add('inc');});
-  if(ok){S.score++;if(!S.rm)S.ss[S.stage]++;}
+  const prevStr=S.str;
+  if(ok){S.score++;if(!S.rm)S.ss[S.stage]++;S.str++;if(S.str>S.bs)S.bs=S.str}else{S.str=0}
   S.qr.push({q:q,ok:ok});
+  gGlow(ok);gScorePop(ok);
+  if(ok&&S.str>=3)gConfetti(8+S.str*2);
+  if(!ok&&prevStr>=3)gShake();
+  setTimeout(gStreakVis,100);
   showFB(ok,q.hint,q.why);showNext();
 }
 
@@ -406,7 +434,8 @@ function renderTrans(p){
   const sc=S.ss[S.stage],mx=S.qs.length;const pct=Math.round(sc/mx*100);
   const em=pct>=70?'🌟':pct>=50?'👍':'💪';
   const nxt=STAGE_NAMES[S.stage+1];
-  p.innerHTML=`<div class="score-chip">Score <b>${S.score}</b></div><div class="stage trans"><div class="em">${em}</div><h2>Stage ${S.stage+1} Complete: ${STAGE_NAMES[S.stage]}</h2><div class="sc">${sc}/${mx} (${pct}%)</div><p>${pct>=70?'Great work!':pct>=50?'Good effort!':'Keep going — revision builds mastery!'}</p><p style="margin-top:16px;color:#64748b">Next: <strong style="color:#93c5fd">${nxt}</strong></p><div class="btn-row" style="justify-content:center;margin-top:20px"><button class="btn btn-p" onclick="proceedNext()">Continue →</button></div></div>`;
+  if(pct>=70)gConfetti(25);
+  p.innerHTML=`<div class="score-chip">Score <b>${S.score}</b></div><div class="stage trans stage-celebrate"><div class="em">${em}</div><h2>Stage ${S.stage+1} Complete: ${STAGE_NAMES[S.stage]}</h2><div class="sc">${sc}/${mx} (${pct}%)</div><p>${pct>=70?'Great work!':pct>=50?'Good effort!':'Keep going — revision builds mastery!'}</p><p style="margin-top:16px;color:#64748b">Next: <strong style="color:#93c5fd">${nxt}</strong></p><div class="btn-row" style="justify-content:center;margin-top:20px"><button class="btn btn-p" onclick="proceedNext()">Continue →</button></div></div>`;
 }
 
 function proceedNext(){S.stage++;S.qi=0;S.ans=false;S.qs=genQ(S.stage);S.sm=S.qs.map(()=>1);S.phase='play';saveProgress();render();}
@@ -418,6 +447,7 @@ function renderFinal(p){
   const grd=pct>=90?'Outstanding':pct>=70?'Proficient':pct>=50?'Developing':'Emerging';
   const em=pct>=90?'🏆':pct>=70?'🌟':pct>=50?'📈':'🌱';
   const wc=S.qr.filter(function(r){return!r.ok}).length;
+  if(pct>=70)gConfetti(40);else if(pct>=50)gConfetti(15);
   var sgHTML='';
   if(!S.rm){
     sgHTML='<div class="stg-bd">';
@@ -428,7 +458,7 @@ function renderFinal(p){
   if(wc>0)btns+='<button class="btn btn-g" onclick="retryMistakes()" style="background:#ef4444;border-color:#ef4444">Retry '+wc+' Mistake'+(wc===1?'':'s')+'</button>';
   var s2style=wc>0?'background:transparent;border-color:#475569;color:#94a3b8':'';
   btns+='<button class="btn btn-s" onclick="resetGame()" style="'+s2style+'">'+(S.rm?'Full Review':'Try Again')+'</button></div>';
-  p.innerHTML='<div class="stage final"><div style="font-size:2.8rem">'+em+'</div><h2>Review Complete!</h2><div class="big">'+tot+'/'+tq+' ('+pct+'%)</div><div class="grd">'+grd+'</div>'+sgHTML+'<div class="transfer"><h3>Now think about this...</h3><p>Every object around you has measurable properties — perimeter, area, volume. The phone in your pocket, the room you\'re in, the water bottle on your desk. Geometry isn\'t abstract — it\'s how we measure and build the real world.</p></div>'+btns+'</div>';
+  p.innerHTML='<div class="stage final"><div style="font-size:2.8rem">'+em+'</div><h2>Review Complete!</h2><div class="big">'+tot+'/'+tq+' ('+pct+'%)</div><div class="grd">'+grd+'</div>'+(S.bs>=2?'<div style="text-align:center;margin:8px 0;color:#fbbf24;font-size:.9rem;font-weight:600">🔥 Best Streak: '+S.bs+'</div>':'')+sgHTML+'<div class="transfer"><h3>Now think about this...</h3><p>Every object around you has measurable properties — perimeter, area, volume. The phone in your pocket, the room you\'re in, the water bottle on your desk. Geometry isn\'t abstract — it\'s how we measure and build the real world.</p></div>'+btns+'</div>';
 }
 
 function retryMistakes(){
@@ -449,6 +479,14 @@ const _startGame=startGame;
 startGame=function(){_startGame();stageLens[0]=S.qs.length;saveProgress();};
 const _proceedNext=proceedNext;
 proceedNext=function(){_proceedNext();stageLens[S.stage]=S.qs.length;saveProgress();};
+
+// === CELEBRATION SYSTEM ===
+function gConfetti(n){var c=document.createElement('div');c.className='confetti-container';document.body.appendChild(c);var cols=['#4ade80','#fbbf24','#3b82f6','#a78bfa','#f87171','#22d3ee'];for(var i=0;i<n;i++){var p=document.createElement('div');p.className='confetti-piece';p.style.left=(Math.random()*100)+'%';p.style.backgroundColor=cols[Math.floor(Math.random()*cols.length)];p.style.animationDelay=(Math.random()*.5)+'s';p.style.animationDuration=(1.2+Math.random())+'s';var sz=5+Math.random()*6;p.style.width=sz+'px';p.style.height=sz+'px';if(Math.random()>.5)p.style.borderRadius='50%';c.appendChild(p)}setTimeout(function(){c.remove()},2500)}
+function gScorePop(ok){var p=document.createElement('div');p.className=ok?'score-pop':'score-miss';p.textContent=ok?'+1':'✗';p.style.top='60px';p.style.right='40px';document.body.appendChild(p);setTimeout(function(){p.remove()},1100)}
+function gStreakVis(){var el=document.querySelector('.score-chip');if(!el)return;el.classList.remove('s2','s5','s10');if(S.str>=10)el.classList.add('s10');else if(S.str>=5)el.classList.add('s5');else if(S.str>=2)el.classList.add('s2')}
+function gShake(){var c=document.querySelector('.stage');if(c){c.classList.add('shake');setTimeout(function(){c.classList.remove('shake')},500)}}
+function gGlow(ok){var c=document.querySelector('.stage');if(c)c.classList.add(ok?'correct-glow':'wrong-glow')}
+function gDiffStars(qi,total){var p=qi/Math.max(total,1);var s=1;if(p>=.8)s=3;else if(p>=.4)s=2;return'<span class="diff-stars"><span class="star-on">'+'★'.repeat(s)+'</span><span class="star-off">'+'☆'.repeat(3-s)+'</span></span>'}
 
 // =====================================================================
 //  FORMULA SHEET
