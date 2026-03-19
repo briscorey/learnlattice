@@ -388,24 +388,21 @@ const QUESTIONS = [
   { type:"mcq", q:"In a force diagram, arrows represent forces. A <span class='keyword'>longer arrow</span> means:",
     opts:["A bigger force","A faster speed","More mass","More friction"],
     ans:0, hint:"The arrow length is proportional to something about the force.", why:"In force diagrams, the length of the arrow shows the size (magnitude) of the force. Longer arrow = bigger force." },
-  { type:"diagram", q:"A skydiver falls with <span class='keyword'>weight = 800 N</span> down and <span class='keyword'>air resistance = 800 N</span> up. What is happening?",
-    diagram:"terminal", opts:["Falling at constant speed (terminal velocity)","Speeding up","Slowing down","Not moving"],
-    ans:0, hint:"The forces are balanced. What does Newton's First Law tell us about balanced forces and motion?", why:"When weight equals air resistance, net force = 0. By Newton's First Law, the skydiver continues at constant speed. This is called terminal velocity." },
+  { type:"diagram", q:"Look at this <span class='keyword'>Class 1 lever</span> diagram. Where is the fulcrum located?",
+    diagram:"class1", opts:["Between the effort and the load","At one end, with the load at the other end","Next to the effort force","There is no fulcrum"],
+    ans:0, hint:"In a Class 1 lever, the fulcrum (pivot point) sits between where you push and what you are lifting.", why:"In a <span class='keyword'>Class 1 lever</span>, the fulcrum is between the effort and the load. Examples: seesaw, scissors, pliers. This is like a balance — push one side down, the other side goes up." },
   { type:"mcq", q:"A box is pushed across a floor. The push force is <span class='keyword'>greater than</span> friction. The box will:",
     opts:["Accelerate in the direction of the push","Move at constant speed","Slow down","Stay still"],
     ans:0, hint:"If the forces are unbalanced (push > friction), what does Newton's Second Law say?", why:"Unbalanced force in the direction of the push means a net force exists. F = ma tells us the object accelerates." },
-  { type:"drag", q:"Put these stages of a skydiver's fall in the correct order, from jump to landing.",
-    categories:["Order (first to last)"],
+  { type:"drag", q:"Sort these everyday tools into the correct <span class='keyword'>lever class</span>.",
+    categories:["Class 1 (fulcrum in middle)","Class 2 (load in middle)","Class 3 (effort in middle)"],
     items:[
-      {text:"1. Jumps — accelerates due to gravity", correct:0, order:0},
-      {text:"2. Speeds up — air resistance increases", correct:0, order:1},
-      {text:"3. Air resistance = weight — terminal velocity", correct:0, order:2},
-      {text:"4. Parachute opens — air resistance suddenly increases", correct:0, order:3},
-      {text:"5. Decelerates — slows to new lower terminal velocity", correct:0, order:4}
+      {text:"Scissors", correct:0}, {text:"Wheelbarrow", correct:1},
+      {text:"Tweezers", correct:2}, {text:"Seesaw", correct:0},
+      {text:"Bottle opener", correct:1}, {text:"Fishing rod", correct:2}
     ],
-    isOrdered:true,
-    hint:"Start from when gravity is the only large force, then think about what changes as speed increases.",
-    why:"The key idea is that air resistance depends on speed. As speed increases, drag increases until it balances weight (terminal velocity). The parachute increases drag dramatically." },
+    hint:"Class 1: fulcrum between effort and load (like a seesaw). Class 2: load between fulcrum and effort (like a wheelbarrow). Class 3: effort between fulcrum and load (like tweezers).",
+    why:"<span class='keyword'>Class 1</span>: scissors, seesaw (fulcrum in middle). <span class='keyword'>Class 2</span>: wheelbarrow, bottle opener (load in middle — these multiply force). <span class='keyword'>Class 3</span>: tweezers, fishing rod (effort in middle — these multiply distance/speed)." },
   { type:"diagram", q:"Two forces act on a ball: <span class='keyword'>6 N up</span> and <span class='keyword'>14 N down</span>. What is the net force?",
     diagram:"vertical_unbalanced", opts:["8 N downward","20 N downward","8 N upward","6 N upward"],
     ans:0, hint:"Subtract the smaller from the larger. Which direction is the bigger force?", why:"Net force = 14 N down − 6 N up = 8 N downward. The ball will accelerate downward." },
@@ -475,9 +472,9 @@ const QUESTIONS = [
     isOrdered:true,
     hint:"Think about which situation has the most acceleration. More acceleration = more net force.",
     why:"Book: 0 N net force. Walking: small net force (~10–50 N). Car accelerating: moderate (~3000–5000 N). Rocket launch: enormous (~30,000,000+ N). Net force determines acceleration (F = ma)." },
-  { type:"scenario", q:"A parachutist opens their parachute and decelerates. A student says: <em>'The parachutist decelerates because gravity gets weaker when the parachute opens.'</em> What is wrong?",
-    opts:["Gravity stays the same — air resistance suddenly increases, creating an upward net force that causes deceleration","Gravity does get weaker as you get higher","The parachute blocks gravity","The student is correct"],
-    ans:0, hint:"Does opening a parachute change gravity? What does it change?", why:"Gravity (weight) does not change when the parachute opens. The parachute increases the surface area, which massively increases air resistance (upward). Now air resistance > weight, so the net force is upward, causing deceleration." },
+  { type:"diagram", q:"Look at this lever diagram. The <span class='keyword'>fulcrum is at one end</span>, the <span class='keyword'>effort is in the middle</span>, and the <span class='keyword'>load is at the other end</span>. What class is this lever?",
+    diagram:"class_unknown", opts:["Class 1 — fulcrum is between effort and load","Class 2 — load is between fulcrum and effort","Class 3 — effort is between fulcrum and load","This is not a lever"],
+    ans:2, hint:"Look carefully at the positions: fulcrum at the end, effort in the middle, load at the far end. In which class is the effort between the other two?", why:"This is a <span class='keyword'>Class 3 lever</span>: the effort is applied between the fulcrum and the load. Class 3 levers do not multiply force — instead they multiply the distance or speed of movement. Examples: tweezers, fishing rods, brooms, and your forearm." },
   { type:"scenario", q:"If you are standing on a scale in a lift (elevator), the scale reads <span class='keyword'>higher than your weight</span> when the lift accelerates upward. Why?",
     opts:["The floor pushes you up with extra force to accelerate you — the scale measures this increased normal force","You gain mass when the lift goes up","Gravity is stronger inside the lift","The scale is broken"],
     ans:0, hint:"The scale measures the normal force, not just your weight. When you accelerate upward, the floor needs to push harder.", why:"When accelerating upward, the net upward force must be greater than your weight. The floor (and scale) push you with a force = weight + (mass × acceleration). The scale reads this increased normal force, making you feel heavier." },
@@ -728,10 +725,6 @@ function renderForceDiagram(type) {
                arrow(cx-boxSize/2, cy, cx-70, cy, "12 N", "#fbbf24") +
                arrow(cx+boxSize/2, cy, cx+100, cy, "20 N", "#a78bfa");
       break;
-    case "terminal":
-      arrows = arrow(cx, cy-boxSize/2, cx, cy-85, "800 N", "#4ade80") +
-               arrow(cx, cy+boxSize/2, cx, cy+85, "800 N", "#f87171");
-      break;
     case "vertical_unbalanced":
       arrows = arrow(cx, cy-boxSize/2, cx, cy-55, "6 N", "#4ade80") +
                arrow(cx, cy+boxSize/2, cx, cy+90, "14 N", "#f87171");
@@ -742,6 +735,68 @@ function renderForceDiagram(type) {
     <svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
       ${box}${arrows}
     </svg>
+  </div>`;
+}
+
+// === LEVER DIAGRAMS (SVG) ===
+function renderLeverDiagram(type) {
+  const w = 360, h = 180;
+  // Lever bar, fulcrum triangle, effort arrow, load arrow, labels
+  function fulcrum(fx, fy) {
+    return `<polygon points="${fx},${fy} ${fx-16},${fy+24} ${fx+16},${fy+24}" fill="#6c8cff" stroke="#8aa4ff" stroke-width="1.5"/>
+    <text x="${fx}" y="${fy+38}" text-anchor="middle" fill="#6c8cff" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">Fulcrum</text>`;
+  }
+  function effortArrow(x, y1, y2, label) {
+    return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="#4ade80" stroke-width="2.5"/>
+    <polygon points="${x},${y2} ${x-6},${y2+10} ${x+6},${y2+10}" fill="#4ade80"/>
+    <text x="${x}" y="${y2+24}" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">${label}</text>`;
+  }
+  function loadArrow(x, y1, y2, label) {
+    return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="#f87171" stroke-width="2.5"/>
+    <polygon points="${x},${y2} ${x-6},${y2-10} ${x+6},${y2-10}" fill="#f87171"/>
+    <text x="${x}" y="${y1-10}" text-anchor="middle" fill="#f87171" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">${label}</text>`;
+  }
+  let svg = "";
+  const barY = 70;
+  switch(type) {
+    case "class1": // Fulcrum in middle: seesaw, scissors
+      svg = `<rect x="40" y="${barY}" width="280" height="8" rx="4" fill="#e8eaf0"/>` +
+        fulcrum(180, barY+8) +
+        effortArrow(80, barY, barY-50, "Effort ↓") +
+        loadArrow(280, barY, barY+55, "Load ↓") +
+        `<text x="180" y="16" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700" font-family="DM Sans, sans-serif">CLASS 1 LEVER</text>
+        <text x="180" y="165" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">e.g. seesaw, scissors, pliers</text>`;
+      break;
+    case "class2": // Fulcrum at end, load in middle
+      svg = `<rect x="40" y="${barY}" width="280" height="8" rx="4" fill="#e8eaf0"/>` +
+        fulcrum(40, barY+8) +
+        loadArrow(180, barY, barY+55, "Load ↓") +
+        effortArrow(300, barY, barY-50, "Effort ↓") +
+        `<text x="180" y="16" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700" font-family="DM Sans, sans-serif">CLASS 2 LEVER</text>
+        <text x="180" y="165" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">e.g. wheelbarrow, nutcracker, bottle opener</text>`;
+      break;
+    case "class3": // Fulcrum at end, effort in middle
+      svg = `<rect x="40" y="${barY}" width="280" height="8" rx="4" fill="#e8eaf0"/>` +
+        fulcrum(40, barY+8) +
+        effortArrow(160, barY, barY-50, "Effort ↓") +
+        loadArrow(300, barY, barY+55, "Load ↓") +
+        `<text x="180" y="16" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700" font-family="DM Sans, sans-serif">CLASS 3 LEVER</text>
+        <text x="180" y="165" text-anchor="middle" fill="#8b90a5" font-size="10" font-family="DM Sans, sans-serif">e.g. tweezers, fishing rod, broom</text>`;
+      break;
+    case "class_unknown": // No labels — student must identify
+      svg = `<rect x="40" y="${barY}" width="280" height="8" rx="4" fill="#e8eaf0"/>` +
+        `<polygon points="40,${barY+8} 24,${barY+32} 56,${barY+32}" fill="#6c8cff" stroke="#8aa4ff" stroke-width="1.5"/>` +
+        `<line x1="160" y1="${barY}" x2="160" y2="${barY-45}" stroke="#4ade80" stroke-width="2.5"/>
+        <polygon points="160,${barY-45} 154,${barY-35} 166,${barY-35}" fill="#4ade80"/>
+        <text x="160" y="${barY-52}" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">Effort</text>` +
+        `<line x1="300" y1="${barY+8}" x2="300" y2="${barY+55}" stroke="#f87171" stroke-width="2.5"/>
+        <polygon points="300,${barY+55} 294,${barY+45} 306,${barY+45}" fill="#f87171"/>
+        <text x="300" y="${barY-8}" text-anchor="middle" fill="#f87171" font-size="10" font-weight="600" font-family="DM Sans, sans-serif">Load</text>` +
+        `<text x="180" y="16" text-anchor="middle" fill="#8b90a5" font-size="12" font-weight="600" font-family="DM Sans, sans-serif">What class is this lever?</text>`;
+      break;
+  }
+  return `<div class="diagram-wrap">
+    <svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">${svg}</svg>
   </div>`;
 }
 
@@ -776,7 +831,8 @@ function renderGame() {
       break;
 
     case "diagram":
-      body = renderForceDiagram(q.diagram) +
+      const isLever = q.diagram && q.diagram.startsWith("class");
+      body = (isLever ? renderLeverDiagram(q.diagram) : renderForceDiagram(q.diagram)) +
         `<div class="options">${q.opts.map((o,i) =>
           `<button class="opt-btn" onclick="answerMCQ(${i})" id="opt-${i}">${o}</button>`
         ).join("")}</div>`;
