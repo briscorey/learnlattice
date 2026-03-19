@@ -149,7 +149,85 @@ function svgRingOfFire(){return`<svg viewBox="0 0 480 280" width="460" height="2
 
 function svgCauseChain(){return`<svg viewBox="0 0 440 80" width="420" height="70" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="20" width="78" height="36" rx="8" fill="#f5d060" opacity=".2" stroke="#f5d060" stroke-width="1.5"/><text x="39" y="43" text-anchor="middle" fill="#f5d060" font-size="10" font-weight="600" font-family="DM Sans">Core Heat</text><line x1="80" y1="38" x2="105" y2="38" stroke="#fb923c" stroke-width="2" marker-end="url(#cc)"/><rect x="107" y="20" width="78" height="36" rx="8" fill="#ef4444" opacity=".2" stroke="#ef4444" stroke-width="1.5"/><text x="146" y="43" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600" font-family="DM Sans">Convection</text><line x1="187" y1="38" x2="212" y2="38" stroke="#fb923c" stroke-width="2" marker-end="url(#cc)"/><rect x="214" y="20" width="78" height="36" rx="8" fill="#3b82f6" opacity=".2" stroke="#3b82f6" stroke-width="1.5"/><text x="253" y="43" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600" font-family="DM Sans">Plates Move</text><line x1="294" y1="38" x2="319" y2="38" stroke="#fb923c" stroke-width="2" marker-end="url(#cc)"/><rect x="321" y="20" width="105" height="36" rx="8" fill="#22c55e" opacity=".2" stroke="#22c55e" stroke-width="1.5"/><text x="373" y="36" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="600" font-family="DM Sans">Earthquakes</text><text x="373" y="49" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="600" font-family="DM Sans">& Volcanoes</text><defs><marker id="cc" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#fb923c"/></marker></defs></svg>`;}
 
-const diagMap={layers:()=>svgLayers(false),layersL:()=>svgLayers(true),convection:svgConvection,divergent:svgDivergent,convergent:svgConvergent,transform:svgTransform,pangaea:svgPangaea,ringoffire:svgRingOfFire,causechain:svgCauseChain};
+function svgTempGradient(){return`<svg viewBox="0 0 440 200" width="420" height="190" xmlns="http://www.w3.org/2000/svg">
+<text x="220" y="16" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="DM Sans">Temperature Through Earth's Layers</text>
+<!-- Layers bar -->
+<rect x="40" y="35" width="70" height="150" rx="6" fill="#5b3a1a"/><text x="75" y="50" text-anchor="middle" fill="#d4a050" font-size="8" font-weight="600" font-family="DM Sans">Crust</text>
+<rect x="110" y="35" width="100" height="150" rx="0" fill="#c45a2b" opacity=".5"/><text x="160" y="50" text-anchor="middle" fill="#d4713a" font-size="8" font-weight="600" font-family="DM Sans">Mantle</text>
+<rect x="210" y="35" width="80" height="150" rx="0" fill="#e8a520" opacity=".4"/><text x="250" y="50" text-anchor="middle" fill="#e8a520" font-size="8" font-weight="600" font-family="DM Sans">Outer Core</text>
+<rect x="290" y="35" width="70" height="150" rx="6" fill="#f5d060" opacity=".4"/><text x="325" y="50" text-anchor="middle" fill="#f5d060" font-size="8" font-weight="600" font-family="DM Sans">Inner Core</text>
+<!-- Temperature line -->
+<polyline points="55,165 130,140 200,100 260,70 330,55" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+<!-- Temp labels -->
+<text x="55" y="180" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="DM Sans">~20°C</text>
+<text x="160" y="180" text-anchor="middle" fill="#fb923c" font-size="9" font-family="DM Sans">~1000°C</text>
+<text x="250" y="180" text-anchor="middle" fill="#ef4444" font-size="9" font-family="DM Sans">~4000°C</text>
+<text x="325" y="180" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600" font-family="DM Sans">~5500°C</text>
+<!-- Arrow label -->
+<text x="395" y="115" fill="#ef4444" font-size="10" font-weight="600" font-family="DM Sans">HOT →</text>
+<text x="395" y="130" fill="#93c5fd" font-size="10" font-weight="600" font-family="DM Sans">← COOL</text>
+<!-- Y axis -->
+<line x1="38" y1="55" x2="38" y2="170" stroke="#475569" stroke-width="1"/><text x="25" y="115" text-anchor="middle" fill="#64748b" font-size="8" font-family="DM Sans" transform="rotate(-90,25,115)">Temperature</text>
+</svg>`;}
+
+function svgDriftTimeline(){return`<svg viewBox="0 0 460 170" width="440" height="160" xmlns="http://www.w3.org/2000/svg">
+<text x="230" y="14" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700" font-family="DM Sans">Continental Drift Over Time</text>
+<!-- Frame 1: Pangaea -->
+<rect x="5" y="25" width="140" height="110" rx="8" fill="#0c2d5c"/>
+<path d="M40 55C55 45,95 42,110 55C120 65,118 85,105 92C92 100,60 102,48 92C36 82,30 65,40 55Z" fill="#5b8c3a" opacity=".7"/>
+<text x="75" y="78" text-anchor="middle" fill="#fff" font-size="9" font-weight="700" font-family="DM Sans">Pangaea</text>
+<text x="75" y="148" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="DM Sans">~300 Mya</text>
+<!-- Arrow 1 -->
+<text x="155" y="80" fill="#fb923c" font-size="18" font-family="DM Sans">→</text>
+<!-- Frame 2: Breaking apart -->
+<rect x="170" y="25" width="140" height="110" rx="8" fill="#0c2d5c"/>
+<path d="M195 55C205 48,225 46,235 55C240 62,238 72,230 76C222 80,210 78,205 72Z" fill="#5b8c3a" opacity=".7"/>
+<path d="M225 82C232 78,250 77,258 85C264 93,260 103,250 106C240 109,228 105,225 97Z" fill="#5b8c3a" opacity=".7"/>
+<line x1="215" y1="70" x2="240" y2="90" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="240" y="148" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="DM Sans">~150 Mya</text>
+<!-- Arrow 2 -->
+<text x="320" y="80" fill="#fb923c" font-size="18" font-family="DM Sans">→</text>
+<!-- Frame 3: Today -->
+<rect x="335" y="25" width="120" height="110" rx="8" fill="#0c2d5c"/>
+<ellipse cx="360" cy="65" rx="12" ry="18" fill="#5b8c3a" opacity=".6"/><text x="360" y="69" text-anchor="middle" fill="#8bbb70" font-size="6" font-family="DM Sans">Am</text>
+<ellipse cx="395" cy="58" rx="8" ry="12" fill="#5b8c3a" opacity=".6"/><text x="395" y="62" text-anchor="middle" fill="#8bbb70" font-size="5" font-family="DM Sans">Eu</text>
+<ellipse cx="405" cy="80" rx="7" ry="8" fill="#5b8c3a" opacity=".6"/><text x="405" y="83" text-anchor="middle" fill="#8bbb70" font-size="5" font-family="DM Sans">Af</text>
+<ellipse cx="420" cy="100" rx="10" ry="7" fill="#5b8c3a" opacity=".6"/><text x="420" y="103" text-anchor="middle" fill="#8bbb70" font-size="5" font-family="DM Sans">Au</text>
+<ellipse cx="375" cy="105" rx="6" ry="10" fill="#5b8c3a" opacity=".6"/><text x="375" y="108" text-anchor="middle" fill="#8bbb70" font-size="5" font-family="DM Sans">SA</text>
+<text x="395" y="148" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="DM Sans">Today</text>
+</svg>`;}
+
+function svgPlateMap(){return`<svg viewBox="0 0 460 220" width="440" height="210" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="460" height="220" rx="10" fill="#0c2d5c"/>
+<text x="230" y="16" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700" font-family="DM Sans">Major Plate Boundaries</text>
+<!-- Simplified continents -->
+<ellipse cx="130" cy="80" rx="45" ry="30" fill="#3a5c3a" opacity=".4"/><text x="130" y="84" text-anchor="middle" fill="#8bbb70" font-size="7" font-family="DM Sans">N. America</text>
+<ellipse cx="140" cy="145" rx="25" ry="30" fill="#3a5c3a" opacity=".4"/><text x="140" y="148" text-anchor="middle" fill="#8bbb70" font-size="7" font-family="DM Sans">S. America</text>
+<ellipse cx="250" cy="80" rx="40" ry="22" fill="#3a5c3a" opacity=".4"/><text x="250" y="84" text-anchor="middle" fill="#8bbb70" font-size="7" font-family="DM Sans">Eurasia</text>
+<ellipse cx="260" cy="130" rx="22" ry="25" fill="#3a5c3a" opacity=".4"/><text x="260" y="134" text-anchor="middle" fill="#8bbb70" font-size="7" font-family="DM Sans">Africa</text>
+<ellipse cx="340" cy="100" rx="20" ry="15" fill="#3a5c3a" opacity=".4"/><text x="340" y="104" text-anchor="middle" fill="#8bbb70" font-size="6" font-family="DM Sans">India</text>
+<ellipse cx="370" cy="160" rx="25" ry="15" fill="#3a5c3a" opacity=".4"/><text x="370" y="164" text-anchor="middle" fill="#8bbb70" font-size="7" font-family="DM Sans">Australia</text>
+<!-- Boundary markers -->
+<!-- Mid-Atlantic Ridge (divergent) -->
+<line x1="190" y1="40" x2="195" y2="190" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="6,3"/>
+<text x="200" y="38" fill="#22c55e" font-size="7" font-weight="600" font-family="DM Sans">A</text>
+<!-- Himalayas (convergent continent-continent) -->
+<line x1="295" y1="90" x2="330" y2="95" stroke="#ef4444" stroke-width="3"/>
+<text x="315" y="88" fill="#ef4444" font-size="7" font-weight="600" font-family="DM Sans">B</text>
+<!-- San Andreas (transform) -->
+<line x1="95" y1="80" x2="100" y2="110" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="4,3"/>
+<text x="85" y="98" fill="#fbbf24" font-size="7" font-weight="600" font-family="DM Sans">C</text>
+<!-- Ring of Fire / Andes (convergent ocean-continent) -->
+<line x1="115" y1="130" x2="118" y2="175" stroke="#ef4444" stroke-width="2.5"/>
+<text x="105" y="158" fill="#ef4444" font-size="7" font-weight="600" font-family="DM Sans">D</text>
+<!-- Legend -->
+<rect x="10" y="195" width="440" height="20" rx="4" fill="rgba(255,255,255,.05)"/>
+<line x1="20" y1="206" x2="40" y2="206" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/><text x="44" y="209" fill="#22c55e" font-size="7" font-family="DM Sans">Divergent</text>
+<line x1="110" y1="206" x2="130" y2="206" stroke="#ef4444" stroke-width="2"/><text x="134" y="209" fill="#ef4444" font-size="7" font-family="DM Sans">Convergent</text>
+<line x1="210" y1="206" x2="230" y2="206" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2"/><text x="234" y="209" fill="#fbbf24" font-size="7" font-family="DM Sans">Transform</text>
+</svg>`;}
+
+const diagMap={layers:()=>svgLayers(false),layersL:()=>svgLayers(true),convection:svgConvection,divergent:svgDivergent,convergent:svgConvergent,transform:svgTransform,pangaea:svgPangaea,ringoffire:svgRingOfFire,causechain:svgCauseChain,tempgradient:svgTempGradient,drifttimeline:svgDriftTimeline,platemap:svgPlateMap};
 
 // QUESTION DATA — 40 QUESTIONS
 const STAGES=[
@@ -161,7 +239,8 @@ const STAGES=[
 {type:"mcq",q:"The inner core is solid even though it is the <span class='kw'>hottest</span> part. Why?",opts:["The outer core cools it","It is not that hot","Extreme pressure keeps it solid","It is made of gas"],ans:2,hint:"Extreme pressure can prevent melting even at very high temperatures.",why:"The inner core is over 5,000°C, but <span class='kw'>immense pressure</span> keeps the iron and nickel solid."},
 {type:"mcq",q:"What <span class='kw'>state</span> is the outer core?",opts:["Gas","Liquid","Solid","Plasma"],ans:1,hint:"Unlike the inner core, the pressure is not high enough to keep it solid.",why:"The outer core is <span class='kw'>liquid</span> iron and nickel. Its movement creates Earth's magnetic field."},
 {type:"fill",q:"Complete using the word bank.",sentence:"The mantle is mostly |___| rock that flows very |___| . This is driven by |___| from the core.",blanks:["solid","slowly","heat"],bank:["heat","liquid","solid","quickly","slowly","gravity"],hint:"The mantle is NOT liquid — it flows like thick toffee over millions of years.",why:"The mantle is <span class='kw'>solid</span> but flows <span class='kw'>slowly</span> driven by <span class='kw'>heat</span> from the core."},
-{type:"diagram",dia:"layers",q:"Looking at this unlabelled diagram, the <span class='kw'>innermost yellow circle</span> represents which layer?",opts:["Outer Core","Crust","Mantle","Inner Core"],ans:3,hint:"The smallest circle at the very centre represents the deepest layer.",why:"The innermost circle is the <span class='kw'>Inner Core</span> — solid iron and nickel at extreme temperature and pressure."}
+{type:"diagram",dia:"layers",q:"Looking at this unlabelled diagram, the <span class='kw'>innermost yellow circle</span> represents which layer?",opts:["Outer Core","Crust","Mantle","Inner Core"],ans:3,hint:"The smallest circle at the very centre represents the deepest layer.",why:"The innermost circle is the <span class='kw'>Inner Core</span> — solid iron and nickel at extreme temperature and pressure."},
+{type:"diagram",dia:"tempgradient",q:"Study this temperature graph. What <span class='kw'>pattern</span> does temperature follow as you go deeper into the Earth?",opts:["Temperature stays the same at every depth","Temperature decreases as you go deeper","Temperature increases as you go deeper","Temperature goes up then down"],ans:2,hint:"Look at the red line — which direction does it go from left (surface) to right (core)?",why:"Temperature <span class='kw'>increases</span> as you go deeper. The surface is ~20°C, the mantle reaches ~1000°C, and the inner core is over 5,500°C. This heat drives convection currents."}
 ]},
 {num:2,title:"Convection Engine",int:"I can explain how convection currents drive plate movement.",questions:[
 {type:"diagram",dia:"convection",q:"Study the convection diagram. What is the main <span class='kw'>energy source</span>?",opts:["The Moon's gravity","Heat from Earth's core","Surface wind","The Sun"],ans:1,hint:"Look at the bottom of the diagram — what is labelled as the heat source?",why:"<span class='kw'>Radioactive decay</span> and residual heat keep the core hot, driving mantle convection."},
@@ -171,7 +250,8 @@ const STAGES=[
 {type:"mcq",q:"Where do plates <span class='kw'>pull apart</span> in relation to convection?",opts:["In the middle of the mantle","Where currents sink","At the core","Where currents rise and spread sideways"],ans:3,hint:"Follow the arrows to where they reach the surface and diverge.",why:"Plates separate where rising currents reach the crust and <span class='kw'>spread in opposite directions</span> — creating divergent boundaries."},
 {type:"fill",q:"Complete the convection cycle.",sentence:"When rock is heated it becomes less |___| and rises. Near the crust it |___| and becomes more dense, then it |___| back down.",blanks:["dense","cools","sinks"],bank:["dense","light","cools","heats","sinks","rises"],hint:"Hot = less dense = rises. Cold = more dense = sinks.",why:"Heated rock is less <span class='kw'>dense</span> (rises). Near the crust it <span class='kw'>cools</span>, gets denser, and <span class='kw'>sinks</span>."},
 {type:"mcq",q:"A student says: <em>'Convection makes the mantle liquid.'</em> What is wrong?",opts:["Nothing — it IS liquid","The mantle is gas","The mantle is solid but flows slowly","Convection only happens in the core"],ans:2,hint:"Common misconception — is the mantle liquid or solid?",why:"The mantle is <span class='kw'>solid rock</span> that flows extremely slowly. Convection does not melt it."},
-{type:"multi",q:"Select <span class='kw'>ALL</span> correct statements about convection.",opts:["Driven by core heat","They cause plate movement","They happen instantly","They form circular loops","They only happen in the outer core"],correct:[0,1,3],hint:"Three are correct. Think about speed, shape, and what they drive.",why:"Convection: <span class='kw'>driven by heat</span>, <span class='kw'>moves plates</span>, forms <span class='kw'>circular loops</span>. They are incredibly slow, not instant, and occur in the mantle."}
+{type:"multi",q:"Select <span class='kw'>ALL</span> correct statements about convection.",opts:["Driven by core heat","They cause plate movement","They happen instantly","They form circular loops","They only happen in the outer core"],correct:[0,1,3],hint:"Three are correct. Think about speed, shape, and what they drive.",why:"Convection: <span class='kw'>driven by heat</span>, <span class='kw'>moves plates</span>, forms <span class='kw'>circular loops</span>. They are incredibly slow, not instant, and occur in the mantle."},
+{type:"diagram",dia:"convection",q:"Look at the diagram again. The <span class='kw'>red arrows</span> show hot rock rising. What do the <span class='kw'>blue arrows</span> show?",opts:["Magma erupting from volcanoes","Cool rock sinking back toward the core","Water flowing underground","The crust moving sideways"],ans:1,hint:"Blue = cool. What happens to rock when it cools down near the crust?",why:"The blue arrows show <span class='kw'>cool, dense rock sinking</span> back down toward the core. It cooled near the crust, became denser, and sinks — completing the convection loop."}
 ]},
 {num:3,title:"Plate Boundaries",int:"I can describe the three boundary types and their features.",questions:[
 {type:"diagram",dia:"divergent",q:"Study the <span class='kw'>divergent boundary</span>. What happens here?",opts:["Plates slide past each other","Plates collide, mountains form","Plates apart, new crust forms","Plates stack up"],ans:2,hint:"Look at the arrows and the gap between the plates.",why:"At divergent boundaries, plates move apart. Magma rises to create <span class='kw'>new oceanic crust</span>. Mid-ocean ridges form."},
@@ -183,7 +263,8 @@ const STAGES=[
 {type:"order",q:"Put these in order from <span class='kw'>first</span> (top) to <span class='kw'>last</span> (bottom). How does a volcanic eruption happen?",items:["Oceanic plate meets continental plate","Denser oceanic plate subducts","Subducting plate melts","Magma rises through cracks","Volcano erupts at surface"],correct:[0,1,2,3,4],hint:"Start with the plates meeting, then follow the process underground.",why:"Plates meet → subduction → melting → magma rises → eruption. Volcanoes form in <span class='kw'>lines above subduction zones</span>."},
 {type:"mcq",q:"What forms on the sea floor at a <span class='kw'>divergent</span> boundary?",opts:["Coral reef","Flat plain","Deep trench","Mid-ocean ridge"],ans:3,hint:"When plates pull apart, magma rises and solidifies into a raised feature.",why:"A <span class='kw'>mid-ocean ridge</span> — an underwater mountain chain where new crust forms. The Mid-Atlantic Ridge is the best known."},
 {type:"multi",q:"Select <span class='kw'>ALL</span> the major tectonic plates from this list.",opts:["Pacific Plate","Atlantic Plate","Eurasian Plate","African Plate","Arctic Plate","South American Plate"],correct:[0,2,3,5],hint:"There is no 'Atlantic Plate' or 'Arctic Plate'. Think about which continents and oceans have their own plate.",why:"The major plates include: <span class='kw'>Pacific</span> (largest), <span class='kw'>Eurasian</span>, <span class='kw'>African</span>, <span class='kw'>South American</span>, North American, Indo-Australian, and Antarctic. There is no Atlantic Plate — the Mid-Atlantic Ridge splits between other plates."},
-{type:"matching",q:"Match each <span class='kw'>tectonic plate</span> to its location.",left:["Pacific Plate","Eurasian Plate","Nazca Plate","Indo-Australian Plate"],right:["Under India, Australia and Indian Ocean","Under Europe and most of Asia","Under the Pacific Ocean (largest plate)","Under the eastern Pacific Ocean floor, near South America"],pairs:[[0,2],[1,1],[2,3],[3,0]],hint:"The Pacific Plate is the largest. The Nazca Plate is small and sits next to South America. The Eurasian Plate covers Europe and Asia.",why:"<span class='kw'>Pacific</span> = largest, under Pacific Ocean. <span class='kw'>Eurasian</span> = Europe + Asia. <span class='kw'>Nazca</span> = small oceanic plate near South America (subducts under it). <span class='kw'>Indo-Australian</span> = India, Australia, Indian Ocean."}
+{type:"matching",q:"Match each <span class='kw'>tectonic plate</span> to its location.",left:["Pacific Plate","Eurasian Plate","Nazca Plate","Indo-Australian Plate"],right:["Under India, Australia and Indian Ocean","Under Europe and most of Asia","Under the Pacific Ocean (largest plate)","Under the eastern Pacific Ocean floor, near South America"],pairs:[[0,2],[1,1],[2,3],[3,0]],hint:"The Pacific Plate is the largest. The Nazca Plate is small and sits next to South America. The Eurasian Plate covers Europe and Asia.",why:"<span class='kw'>Pacific</span> = largest, under Pacific Ocean. <span class='kw'>Eurasian</span> = Europe + Asia. <span class='kw'>Nazca</span> = small oceanic plate near South America (subducts under it). <span class='kw'>Indo-Australian</span> = India, Australia, Indian Ocean."},
+{type:"diagram",dia:"platemap",q:"Study this plate boundary map. Point <span class='kw'>B</span> (red line between India and Eurasia) marks the Himalayas. What type of boundary is this?",opts:["Divergent — plates pulling apart","Transform — plates sliding past each other","Convergent (continent-continent) — two continents colliding","Convergent (ocean-continent) — subduction"],ans:2,hint:"India and Eurasia are both continental plates. They are pushing into each other. Neither can subduct.",why:"Point B is a <span class='kw'>continent-continent convergent boundary</span>. The Indian Plate pushed into the Eurasian Plate, and since neither is dense enough to subduct, the crust crumpled upward to form the Himalayas — the tallest mountains on Earth."}
 ]},
 {num:4,title:"Continental Drift",int:"I can explain continental drift and evaluate Wegener's evidence.",questions:[
 {type:"diagram",dia:"pangaea",q:"This map shows <span class='kw'>Pangaea</span>. What was it?",opts:["An ancient ocean","A supercontinent","The first tectonic plate","A type of volcano"],ans:1,hint:"'Pan' = all, 'gaea' = Earth/land.",why:"<span class='kw'>Pangaea</span> was a supercontinent ~300 million years ago when all landmasses were joined."},
@@ -193,7 +274,8 @@ const STAGES=[
 {type:"tf",q:"True or False: <em>Mesosaurus</em> fossils are found on <span class='kw'>both</span> South America and Africa.",ans:true,hint:"It was a freshwater reptile — could it swim across the Atlantic?",why:"<strong>True.</strong> Mesosaurus was a freshwater reptile that could not cross an ocean, proving the continents were once joined."},
 {type:"order",q:"Put these in order from <span class='kw'>earliest</span> (top) to <span class='kw'>most recent</span> (bottom).",items:["Pangaea exists (~300 Mya)","Pangaea breaks apart (~200 Mya)","Atlantic Ocean forms (~150 Mya)","Wegener proposes drift (1912)","Sea-floor spreading discovered (1960s)"],correct:[0,1,2,3,4],hint:"Start with the supercontinent, end with the science.",why:"Pangaea ~300 Mya → breakup ~200 Mya → Atlantic ~150 Mya → Wegener 1912 → confirmation 1960s."},
 {type:"mcq",q:"What finally explained <span class='kw'>how</span> plates move?",opts:["Sea-floor spreading at mid-ocean ridges","Earthquake data","Volcanic records","Fossil evidence"],ans:0,hint:"New crust was found forming at the bottom of the ocean.",why:"<span class='kw'>Sea-floor spreading</span> at mid-ocean ridges showed new crust forms and pushes plates apart."},
-{type:"mcq",q:"How fast do tectonic plates move?",opts:["1–10 km/year","1–10 m/year","They stopped moving","1–10 cm/year (fingernail speed)"],ans:3,hint:"You would never notice it in a lifetime.",why:"Plates move <span class='kw'>1–10 cm per year</span> — about as fast as your fingernails grow."}
+{type:"mcq",q:"How fast do tectonic plates move?",opts:["1–10 km/year","1–10 m/year","They stopped moving","1–10 cm/year (fingernail speed)"],ans:3,hint:"You would never notice it in a lifetime.",why:"Plates move <span class='kw'>1–10 cm per year</span> — about as fast as your fingernails grow."},
+{type:"diagram",dia:"drifttimeline",q:"Study this timeline. About how long did it take for Pangaea to break apart into the continents we see today?",opts:["About 300 years","About 300 million years","About 3000 years","It happened overnight"],ans:1,hint:"Look at the dates: Pangaea existed ~300 Mya, and today the continents are fully separated.",why:"Continental drift took about <span class='kw'>300 million years</span>. Pangaea started breaking apart ~200 Mya and the continents are still moving today. This shows how incredibly slow — but constant — tectonic change is."}
 ]},
 {num:5,title:"Putting It Together",int:"I can connect interior processes to surface events.",questions:[
 {type:"diagram",dia:"causechain",q:"Study this cause-effect chain. If <span class='kw'>convection stopped</span>, what would happen?",opts:["Heat would move plates directly","Plates would gradually stop","The core would cool instantly","Earthquakes would increase"],ans:1,hint:"Remove the link between heat and plate movement. What breaks?",why:"Without convection, there is <span class='kw'>no mechanism</span> to transfer core heat into plate motion. Plates would slow and stop."},
