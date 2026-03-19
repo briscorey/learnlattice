@@ -4,1134 +4,196 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Earth Science Review — Grade 6</title>
-<!-- MYP Alignment
-   Criteria: A – Knowing & Understanding, D – Reflecting on Science
-   Key Concept: Change
-   Related Concepts: Environment, Models
-   ATL: Critical thinking — analyse cause-effect chains
-   Global Context: Orientation in space and time
--->
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
-
-.container { max-width: 860px; margin: 0 auto; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; }
-
-.header { text-align: center; padding: 20px 0 10px; }
-.header h1 { font-size: 1.6rem; font-weight: 700; color: #f8fafc; letter-spacing: -0.02em; }
-.header .subtitle { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
-.myp-badge { display: inline-block; background: rgba(251,146,60,0.15); color: #fb923c; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-top: 8px; letter-spacing: 0.03em; }
-
-.progress-bar { display: flex; gap: 6px; margin: 18px 0 8px; }
-.progress-step { flex: 1; height: 6px; border-radius: 3px; background: #1e293b; transition: background 0.4s; }
-.progress-step.completed { background: #22c55e; }
-.progress-step.active { background: #3b82f6; animation: pulse-bar 1.5s infinite; }
-@keyframes pulse-bar { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
-.progress-labels { display: flex; gap: 6px; margin-bottom: 20px; }
-.progress-labels span { flex: 1; text-align: center; font-size: 0.62rem; color: #475569; font-weight: 500; }
-.progress-labels span.active { color: #93c5fd; }
-.progress-labels span.completed { color: #86efac; }
-
-.stage { background: #1e293b; border-radius: 16px; padding: 28px; flex: 1; display: flex; flex-direction: column; border: 1px solid #334155; }
-.stage-header { margin-bottom: 20px; }
-.stage-num { font-size: 0.7rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.08em; }
-.stage-title { font-size: 1.3rem; font-weight: 700; margin: 4px 0; color: #f1f5f9; }
-.stage-intention { font-size: 0.82rem; color: #94a3b8; font-style: italic; }
-
-.question-text { font-size: 1rem; color: #e2e8f0; margin-bottom: 18px; line-height: 1.6; }
-.question-counter { font-size: 0.75rem; color: #64748b; margin-bottom: 10px; }
-
-.options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-.option-btn { background: #0f172a; border: 2px solid #334155; border-radius: 12px; padding: 14px 18px; font-size: 0.92rem; color: #e2e8f0; cursor: pointer; text-align: left; transition: all 0.2s; font-family: inherit; }
-.option-btn:hover:not(.disabled) { border-color: #3b82f6; background: rgba(59,130,246,0.08); }
-.option-btn.correct { border-color: #22c55e; background: rgba(34,197,94,0.12); color: #86efac; }
-.option-btn.incorrect { border-color: #ef4444; background: rgba(239,68,68,0.08); color: #fca5a5; }
-.option-btn.disabled { cursor: default; opacity: 0.6; }
-.option-btn.show-correct { border-color: #22c55e; background: rgba(34,197,94,0.08); }
-
-/* TRUE/FALSE */
-.tf-row { display: flex; gap: 12px; margin-bottom: 16px; }
-.tf-btn { flex: 1; background: #0f172a; border: 2px solid #334155; border-radius: 12px; padding: 16px; font-size: 1rem; font-weight: 600; color: #e2e8f0; cursor: pointer; text-align: center; transition: all 0.2s; font-family: inherit; }
-.tf-btn:hover:not(.disabled) { border-color: #3b82f6; }
-.tf-btn.correct { border-color: #22c55e; background: rgba(34,197,94,0.12); color: #86efac; }
-.tf-btn.incorrect { border-color: #ef4444; background: rgba(239,68,68,0.08); color: #fca5a5; }
-.tf-btn.disabled { cursor: default; opacity: 0.6; }
-.tf-btn.show-correct { border-color: #22c55e; background: rgba(34,197,94,0.08); }
-
-/* FILL BLANK */
-.fill-sentence { font-size: 1rem; color: #e2e8f0; line-height: 2; margin-bottom: 16px; }
-.blank-slot { display: inline-block; min-width: 120px; border-bottom: 2px dashed #3b82f6; padding: 2px 8px; margin: 0 4px; text-align: center; color: #93c5fd; font-weight: 600; cursor: pointer; transition: all 0.2s; vertical-align: bottom; min-height: 1.4em; }
-.blank-slot.filled { border-bottom-style: solid; }
-.blank-slot.correct-slot { border-color: #22c55e; color: #86efac; }
-.blank-slot.incorrect-slot { border-color: #ef4444; color: #fca5a5; }
-.word-bank { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-.word-chip { background: #3b82f6; color: #fff; padding: 7px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 500; user-select: none; transition: all 0.15s; }
-.word-chip:hover:not(.used) { background: #2563eb; transform: scale(1.03); }
-.word-chip.used { opacity: 0.35; cursor: default; }
-
-/* ORDER */
-.order-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-.order-item { display: flex; align-items: center; gap: 12px; background: #0f172a; border: 2px solid #334155; border-radius: 10px; padding: 12px 16px; transition: all 0.2s; }
-.order-num { width: 28px; height: 28px; border-radius: 50%; background: #334155; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: #94a3b8; flex-shrink: 0; }
-.order-text { font-size: 0.88rem; color: #e2e8f0; flex: 1; }
-.order-arrows { display: flex; flex-direction: column; gap: 2px; margin-left: auto; }
-.arrow-btn { background: none; border: 1px solid #475569; color: #94a3b8; width: 26px; height: 22px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-family: inherit; }
-.arrow-btn:hover:not(:disabled) { border-color: #3b82f6; color: #3b82f6; }
-.arrow-btn:disabled { opacity: 0.3; cursor: default; }
-
-/* MATCHING */
-.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-.match-col-header { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 4px; }
-.match-item { background: #0f172a; border: 2px solid #334155; border-radius: 10px; padding: 11px 14px; font-size: 0.85rem; color: #e2e8f0; cursor: pointer; transition: all 0.2s; text-align: center; }
-.match-item:hover:not(.matched) { border-color: #3b82f6; }
-.match-item.selected { border-color: #f59e0b; background: rgba(245,158,11,0.1); }
-.match-item.matched { border-color: #22c55e; background: rgba(34,197,94,0.08); opacity: 0.7; cursor: default; }
-.match-item.wrong-flash { border-color: #ef4444; animation: shake 0.4s; }
-@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
-
-/* MULTI-SELECT */
-.multi-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-.multi-btn { background: #0f172a; border: 2px solid #334155; border-radius: 12px; padding: 14px 18px; font-size: 0.92rem; color: #e2e8f0; cursor: pointer; text-align: left; transition: all 0.2s; font-family: inherit; display: flex; align-items: center; gap: 10px; }
-.multi-btn:hover:not(.disabled) { border-color: #3b82f6; background: rgba(59,130,246,0.08); }
-.multi-btn.toggled { border-color: #f59e0b; background: rgba(245,158,11,0.1); }
-.multi-btn.correct { border-color: #22c55e; background: rgba(34,197,94,0.12); color: #86efac; }
-.multi-btn.incorrect { border-color: #ef4444; background: rgba(239,68,68,0.08); color: #fca5a5; }
-.multi-btn.missed { border-color: #22c55e; border-style: dashed; background: rgba(34,197,94,0.05); }
-.multi-btn.disabled { cursor: default; }
-.check-box { width: 20px; height: 20px; border: 2px solid #475569; border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
-.multi-btn.toggled .check-box { border-color: #f59e0b; background: rgba(245,158,11,0.3); }
-.multi-btn.toggled .check-box::after { content: '✓'; color: #f59e0b; }
-.multi-btn.correct .check-box { border-color: #22c55e; background: rgba(34,197,94,0.3); }
-.multi-btn.correct .check-box::after { content: '✓'; color: #22c55e; }
-
-.feedback { padding: 14px 18px; border-radius: 12px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.5; display: none; }
-.feedback.correct { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: #86efac; display: block; }
-.feedback.incorrect { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; display: block; }
-.feedback .why { margin-top: 8px; font-size: 0.82rem; color: #94a3b8; }
-.feedback .why strong { color: #cbd5e1; }
-
-.btn { padding: 12px 28px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s; }
-.btn-primary { background: #3b82f6; color: #fff; }
-.btn-primary:hover { background: #2563eb; }
-.btn-success { background: #22c55e; color: #fff; }
-.btn-success:hover { background: #16a34a; }
-.btn-secondary { background: #334155; color: #e2e8f0; }
-.btn-secondary:hover { background: #475569; }
-.btn-row { display: flex; gap: 10px; margin-top: auto; padding-top: 16px; justify-content: flex-end; }
-
-.score-display { position: fixed; top: 16px; right: 16px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 10px 16px; font-size: 0.8rem; color: #94a3b8; z-index: 10; }
-.score-display .score-num { font-size: 1.1rem; font-weight: 700; color: #f8fafc; }
-
-.transition-screen { text-align: center; padding: 40px 20px; }
-.transition-screen .emoji { font-size: 3rem; margin-bottom: 16px; }
-.transition-screen h2 { font-size: 1.3rem; color: #f1f5f9; margin-bottom: 8px; }
-.transition-screen p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px; }
-.transition-screen .stage-score { font-size: 1rem; color: #22c55e; font-weight: 600; margin: 12px 0; }
-
-.final-screen { text-align: center; padding: 40px 20px; }
-.final-screen h2 { font-size: 1.6rem; color: #f8fafc; margin-bottom: 8px; }
-.final-score { font-size: 3rem; font-weight: 800; color: #22c55e; margin: 16px 0; }
-.final-screen .grade { font-size: 1rem; color: #94a3b8; margin-bottom: 24px; }
-.stage-breakdown { display: flex; flex-direction: column; gap: 8px; margin: 20px auto; max-width: 400px; text-align: left; }
-.stage-result { display: flex; justify-content: space-between; padding: 8px 14px; background: #0f172a; border-radius: 8px; font-size: 0.85rem; }
-.stage-result .name { color: #94a3b8; }
-.stage-result .sc { color: #22c55e; font-weight: 600; }
-.transfer-prompt { background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.3); border-radius: 12px; padding: 18px; margin-top: 24px; text-align: left; }
-.transfer-prompt h3 { color: #fb923c; font-size: 0.85rem; margin-bottom: 8px; }
-.transfer-prompt p { color: #e2e8f0; font-size: 0.88rem; line-height: 1.5; }
-
-.intro-screen { text-align: center; padding: 30px 20px; }
-.intro-screen h2 { font-size: 1.5rem; margin-bottom: 12px; color: #f8fafc; }
-.intro-screen p { color: #94a3b8; font-size: 0.92rem; margin-bottom: 8px; line-height: 1.5; }
-.intro-topics { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 20px 0; }
-.intro-topic { background: rgba(59,130,246,0.12); color: #93c5fd; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
-.soi { background: rgba(251,146,60,0.08); border-left: 3px solid #fb923c; padding: 12px 16px; margin: 16px 0; text-align: left; font-size: 0.85rem; color: #fbbf24; font-style: italic; line-height: 1.5; border-radius: 0 8px 8px 0; }
-
-@media (max-width: 600px) {
-  .container { padding: 12px; }
-  .stage { padding: 18px; }
-  .match-grid { grid-template-columns: 1fr; }
-  .score-display { top: auto; bottom: 12px; right: 12px; }
-  .tf-row { flex-direction: column; }
-}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0c1222;--sf:#151d2e;--sf2:#1c2640;--bd:#2a3650;--tx:#e2e8f4;--mt:#8892a8;--pr:#3b82f6;--pg:rgba(59,130,246,.12);--ok:#22c55e;--og:rgba(34,197,94,.1);--er:#ef4444;--eg:rgba(239,68,68,.08);--wa:#fb923c;--ac:#a78bfa;--r:14px;--rs:10px}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;line-height:1.5}
+.app{max-width:740px;margin:0 auto;padding:16px}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:14px;flex-wrap:wrap;gap:10px}
+.hdr-l{display:flex;align-items:center;gap:14px}.hdr-r{display:flex;align-items:center;gap:14px}
+.prw{position:relative;width:46px;height:46px}.prg{transform:rotate(-90deg)}.prg-bg{fill:none;stroke:var(--bd);stroke-width:4}.prg-f{fill:none;stroke:var(--pr);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .5s}
+.prt{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:11px;font-weight:700;color:var(--pr);font-family:'JetBrains Mono',monospace}
+.strk{display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--wa)}
+.strk svg{width:18px;height:18px}.scd{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--mt)}.scd b{color:var(--ok)}
+.sb{display:flex;gap:4px;margin-bottom:6px}.sp{flex:1;height:5px;border-radius:3px;background:var(--bd);transition:background .4s}.sp.on{background:var(--pr)}.sp.dn{background:var(--ok)}
+.sl{text-align:center;margin-bottom:14px;font-size:12px;color:var(--mt);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+.cd{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:24px;margin-bottom:14px;animation:fu .35s}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.qn{font-size:11px;font-weight:600;color:var(--pr);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.qb{display:inline-block;font-size:9px;font-weight:600;padding:2px 8px;border-radius:4px;margin-left:8px;text-transform:uppercase;letter-spacing:.5px}
+.qb.mcq{background:rgba(139,144,165,.12);color:var(--mt)}.qb.tf{background:rgba(34,197,94,.12);color:var(--ok)}.qb.dia{background:rgba(167,139,250,.12);color:var(--ac)}.qb.drg{background:rgba(59,130,246,.12);color:var(--pr)}.qb.fil{background:rgba(251,146,60,.12);color:var(--wa)}.qb.mul{background:rgba(244,63,94,.12);color:#f43f5e}.qb.lbl{background:rgba(6,182,212,.12);color:#06b6d4}
+.qt{font-size:16px;font-weight:500;line-height:1.6;margin-bottom:18px}.qt .kw{color:var(--pr);font-weight:600}
+.dw{display:flex;justify-content:center;margin:16px 0;padding:16px;background:var(--sf2);border-radius:var(--r);overflow-x:auto}.dw svg{max-width:100%;height:auto}
+.os{display:flex;flex-direction:column;gap:8px}
+.ob{display:block;width:100%;text-align:left;padding:13px 16px;border-radius:var(--rs);background:var(--sf2);border:1px solid var(--bd);color:var(--tx);font-size:14px;font-family:inherit;cursor:pointer;transition:all .2s}
+.ob:hover:not(.lk){border-color:var(--pr);background:var(--pg)}.ob.ok{border-color:var(--ok);background:var(--og);color:var(--ok)}.ob.no{border-color:var(--er);background:var(--eg);color:var(--er)}.ob.lk{cursor:default;opacity:.55}.ob.rv{border-color:var(--ok);background:var(--og)}
+.tfr{display:flex;gap:10px;margin-bottom:14px}
+.tfb{flex:1;padding:14px;border-radius:var(--rs);background:var(--sf2);border:1px solid var(--bd);color:var(--tx);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;text-align:center;transition:all .2s}
+.tfb:hover:not(.lk){border-color:var(--pr)}.tfb.ok{border-color:var(--ok);background:var(--og);color:var(--ok)}.tfb.no{border-color:var(--er);background:var(--eg);color:var(--er)}.tfb.lk{cursor:default;opacity:.55}.tfb.rv{border-color:var(--ok);background:var(--og)}
+.ol{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.oi{display:flex;align-items:center;gap:12px;background:var(--sf2);border:1px solid var(--bd);border-radius:var(--rs);padding:12px 16px}
+.on{width:26px;height:26px;border-radius:50%;background:var(--bd);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--mt);flex-shrink:0}.ot{font-size:13px;flex:1}
+.oa{display:flex;flex-direction:column;gap:2px;margin-left:auto}
+.ab{background:none;border:1px solid #475569;color:var(--mt);width:24px;height:20px;border-radius:4px;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.ab:hover:not(:disabled){border-color:var(--pr);color:var(--pr)}.ab:disabled{opacity:.25;cursor:default}
+.oi.ok-o{border-color:var(--ok);background:var(--og)}.oi.no-o{border-color:var(--er);background:var(--eg)}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.mi{background:var(--sf2);border:2px solid var(--bd);border-radius:var(--rs);padding:10px 14px;font-size:13px;cursor:pointer;text-align:center;transition:all .2s}
+.mi:hover:not(.lk){border-color:var(--pr)}.mi.sel{border-color:var(--pr);background:var(--pg)}.mi.ok-m{border-color:var(--ok);background:var(--og)}.mi.no-m{border-color:var(--er);background:var(--eg)}.mi.lk{cursor:default}
+.ml{font-size:11px;color:var(--mt);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;text-align:center}
+.fs{font-size:15px;line-height:2.2;margin-bottom:14px}
+.bk{display:inline-block;min-width:100px;border-bottom:2px dashed var(--pr);padding:2px 8px;margin:0 4px;text-align:center;color:#93c5fd;font-weight:600;cursor:pointer;vertical-align:bottom;min-height:1.4em;transition:all .2s}.bk.fd{border-bottom-style:solid}.bk.ok-b{border-color:var(--ok);color:var(--ok)}.bk.no-b{border-color:var(--er);color:var(--er)}
+.wb{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.wc{background:var(--pr);color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;user-select:none;transition:all .15s}.wc:hover:not(.ud){background:#2563eb;transform:scale(1.03)}.wc.ud{opacity:.3;cursor:default}
+.mo{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:var(--rs);background:var(--sf2);border:1px solid var(--bd);cursor:pointer;transition:all .2s;margin-bottom:8px;font-size:14px}
+.mo:hover:not(.lk){border-color:var(--pr)}.mo .mx{width:18px;height:18px;border:2px solid var(--bd);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;transition:all .2s}
+.mo.sel .mx{border-color:var(--pr);background:var(--pr);color:#fff}.mo.ok-m2{border-color:var(--ok);background:var(--og)}.mo.ok-m2 .mx{border-color:var(--ok);background:var(--ok);color:#fff}.mo.no-m2{border-color:var(--er);background:var(--eg)}.mo.lk{cursor:default;opacity:.6}
+.sub{padding:12px 24px;border:none;border-radius:var(--rs);background:var(--pr);color:#fff;font-weight:600;font-family:inherit;font-size:14px;cursor:pointer;transition:opacity .2s}.sub:hover{opacity:.85}.sub:disabled{opacity:.35;cursor:default}
+.fb{margin-top:16px;padding:14px 16px;border-radius:var(--rs);font-size:13px;line-height:1.5;animation:fu .3s}.fb.fbok{background:var(--og);border-left:3px solid var(--ok)}.fb.fbno{background:var(--eg);border-left:3px solid var(--er)}.fb strong{display:block;margin-bottom:4px}
+.nx{display:block;width:100%;margin-top:14px;padding:14px;border:none;border-radius:var(--rs);background:var(--pr);color:#fff;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;transition:opacity .2s}.nx:hover{opacity:.85}
+.scr{text-align:center;padding:36px 20px;animation:fu .4s}.scr h1{font-size:26px;font-weight:700;margin-bottom:6px}.scr h2{font-size:20px;font-weight:700;margin-bottom:6px}.scr p{color:var(--mt);font-size:14px;margin-bottom:5px}
+.soi{font-style:italic;color:var(--ac);font-size:13px;margin:14px auto;max-width:480px;background:rgba(167,139,250,.06);border-left:3px solid var(--ac);padding:10px 14px;text-align:left;border-radius:0 var(--rs) var(--rs) 0}
+.stb{display:inline-block;margin-top:20px;padding:14px 36px;background:var(--pr);color:#fff;border:none;border-radius:var(--rs);font-size:16px;font-weight:600;font-family:inherit;cursor:pointer;transition:opacity .2s}.stb:hover{opacity:.85}
+.tt{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0}.tg{background:rgba(251,146,60,.1);color:var(--wa);padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:20px 0;text-align:center}.rs{padding:14px;background:var(--sf2);border-radius:var(--rs);border:1px solid var(--bd)}.rs .v{font-size:26px;font-weight:700;font-family:'JetBrains Mono',monospace}.rs .l{font-size:11px;color:var(--mt);margin-top:3px}
+.tr{margin-top:20px;padding:14px;background:var(--pg);border:1px solid var(--pr);border-radius:var(--r);font-size:13px;color:var(--pr);text-align:left}.tr strong{display:block;margin-bottom:4px}
+.rb{margin-top:16px;padding:16px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.35);border-radius:var(--r)}
+.rb p:first-child{color:var(--pr);font-weight:600;font-size:14px;margin-bottom:4px}.rb p:nth-child(2){color:var(--mt);font-size:12px}
+.rbb{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
+@media(max-width:500px){.app{padding:10px}.cd{padding:18px 14px}.qt{font-size:14px}.mg{grid-template-columns:1fr}.scr h1{font-size:22px}}
 </style>
 </head>
 <body>
-<div class="container" id="app"></div>
-
+<div class="app" id="app"></div>
 <script>
-// =====================================================================
-//  GAME DATA — 5 stages, 7–8 questions each ≈ 37 questions total
-// =====================================================================
-const STAGES = [
-  // ======== STAGE 1: EARTH'S LAYERS ========
-  {
-    num: 1, title: "Earth's Layers", intention: "I can identify and describe Earth's layers and their properties.",
-    questions: [
-      {
-        type: "drag-sort",
-        text: "Arrange Earth's layers from the <strong>outermost</strong> (top) to the <strong>innermost</strong> (bottom).",
-        items: ["Inner Core", "Crust", "Outer Core", "Mantle"],
-        correct: ["Crust", "Mantle", "Outer Core", "Inner Core"],
-        hint: "Think about digging straight down — which layer would you hit first?",
-        why: "Earth has four main layers. The <strong>crust</strong> is the thin outer shell we live on, then the thick <strong>mantle</strong>, the liquid <strong>outer core</strong>, and the solid <strong>inner core</strong> at the centre."
-      },
-      {
-        type: "matching",
-        text: "Match each <strong>layer</strong> to its approximate <strong>thickness</strong>.",
-        left: ["Crust", "Mantle", "Outer Core", "Inner Core"],
-        right: ["~1,200 km", "~2,200 km", "~2,900 km", "~5–70 km"],
-        pairs: [[0,3],[1,2],[2,1],[3,0]],
-        hint: "The mantle is by far the thickest. The crust is the thinnest — it varies from about 5 km under oceans to 70 km under mountains.",
-        why: "The <strong>crust</strong> (5–70 km) is paper-thin compared to the <strong>mantle</strong> (~2,900 km). The <strong>outer core</strong> (~2,200 km) and <strong>inner core</strong> (~1,200 km radius) make up the centre."
-      },
-      {
-        type: "mcq",
-        text: "Which layer of the Earth is the thickest?",
-        options: ["Crust", "Mantle", "Outer Core", "Inner Core"],
-        correct: 1,
-        hint: "It makes up about 84% of Earth's total volume.",
-        why: "The <strong>mantle</strong> is roughly 2,900 km thick — far thicker than any other layer. It is mostly solid rock but can flow very slowly over long time periods."
-      },
-      {
-        type: "tf",
-        text: "True or False: The oceanic crust is thicker than the continental crust.",
-        correct: false,
-        hint: "Think about what sits on top of each type — continents are much heavier than ocean water, so the crust beneath them must be thicker to support them.",
-        why: "<strong>False.</strong> Continental crust is thicker (30–70 km) but less dense. Oceanic crust is thinner (5–10 km) but denser. This density difference is key to understanding subduction."
-      },
-      {
-        type: "mcq",
-        text: "The inner core is solid even though it is the hottest part of Earth. Why?",
-        options: ["It is made of gas", "Extreme pressure keeps it solid", "It is cooled by the outer core", "It is not actually that hot"],
-        correct: 1,
-        hint: "Think about what happens when you squeeze something really hard — does it become easier or harder to melt?",
-        why: "The inner core reaches over 5,000°C, but the <strong>immense pressure</strong> from all the layers above squeezes the iron and nickel so tightly that it stays solid."
-      },
-      {
-        type: "mcq",
-        text: "What state of matter is the outer core?",
-        options: ["Solid", "Liquid", "Gas", "Plasma"],
-        correct: 1,
-        hint: "It is made of iron and nickel, but unlike the inner core, the pressure is not quite high enough to keep it solid.",
-        why: "The outer core is <strong>liquid</strong> iron and nickel. Its swirling movement creates Earth's magnetic field, which protects us from harmful solar radiation."
-      },
-      {
-        type: "fill",
-        text: "Complete the sentence using the word bank.",
-        sentence: "The mantle is made mostly of |___| rock that can flow very |___| over millions of years. This slow flow is caused by |___| from the core below.",
-        blanks: ["solid", "slowly", "heat"],
-        bank: ["heat", "liquid", "solid", "quickly", "slowly", "gravity"],
-        hint: "The mantle is NOT liquid — it is solid rock that behaves like a very thick, slow-moving fluid over long time periods. What energy source drives this?",
-        why: "The mantle is <strong>solid</strong> rock, but at geological timescales it flows very <strong>slowly</strong> (like extremely thick toffee). This movement is driven by <strong>heat</strong> from the core — a process called convection."
-      },
-      {
-        type: "mcq",
-        text: "Which of these is the best analogy for the mantle's behaviour?",
-        options: ["Water flowing in a river", "A block of ice sitting still", "Thick honey being slowly heated — it stays thick but gradually moves", "Air blowing in the wind"],
-        correct: 2,
-        hint: "The mantle is solid, but it is not rigid. It moves incredibly slowly. What everyday substance is thick but can still flow?",
-        why: "The mantle behaves like <strong>very thick honey or toffee</strong> being heated. It is technically solid, but over millions of years the rock flows in slow convection currents. It is not a liquid, and it is definitely not a gas."
-      }
-    ]
-  },
+// SVG DIAGRAMS
+function svgLayers(labeled){
+  const lbls=labeled?['Crust','Mantle','Outer Core','Inner Core']:['?','?','?','?'];
+  const subs=labeled?['5–70 km · Solid','~2,900 km · Flows slowly','~2,200 km · Liquid','~1,200 km · Solid']:['','','',''];
+  return`<svg viewBox="0 0 400 400" width="340" height="340" xmlns="http://www.w3.org/2000/svg"><circle cx="200" cy="200" r="190" fill="#5b3a1a" stroke="#8b6914" stroke-width="2"/><circle cx="200" cy="200" r="155" fill="#c45a2b" stroke="#d4713a"/><circle cx="200" cy="200" r="95" fill="#e8a520" stroke="#f0b840"/><circle cx="200" cy="200" r="50" fill="#f5d060" stroke="#fce090"/>
+  <text x="200" y="25" text-anchor="middle" fill="#c0a060" font-size="12" font-weight="600" font-family="DM Sans">${lbls[0]}</text>${subs[0]?`<text x="200" y="39" text-anchor="middle" fill="rgba(192,160,96,.7)" font-size="9" font-family="DM Sans">${subs[0]}</text>`:''}
+  <text x="200" y="70" text-anchor="middle" fill="#fce4a0" font-size="12" font-weight="600" font-family="DM Sans">${lbls[1]}</text>${subs[1]?`<text x="200" y="84" text-anchor="middle" fill="rgba(252,228,160,.7)" font-size="9" font-family="DM Sans">${subs[1]}</text>`:''}
+  <text x="200" y="140" text-anchor="middle" fill="#fff" font-size="12" font-weight="600" font-family="DM Sans">${lbls[2]}</text>${subs[2]?`<text x="200" y="154" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="9" font-family="DM Sans">${subs[2]}</text>`:''}
+  <text x="200" y="205" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="DM Sans">${lbls[3]}</text>${subs[3]?`<text x="200" y="219" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="9" font-family="DM Sans">${subs[3]}</text>`:''}
+  <line x1="200" y1="10" x2="200" y2="390" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/></svg>`;
+}
+function svgConvection(){return`<svg viewBox="0 0 440 260" width="400" height="240" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="10" width="400" height="28" rx="6" fill="#5b3a1a" stroke="#8b6914"/><text x="220" y="29" text-anchor="middle" fill="#d4a050" font-size="11" font-weight="600" font-family="DM Sans">CRUST (plates)</text><rect x="20" y="38" width="400" height="170" fill="#c45a2b" opacity=".2"/><text x="220" y="128" text-anchor="middle" fill="#d4713a" font-size="13" font-weight="600" font-family="DM Sans" opacity=".4">MANTLE</text><rect x="20" y="208" width="400" height="36" rx="6" fill="#f5d060" opacity=".25"/><text x="220" y="232" text-anchor="middle" fill="#f5d060" font-size="11" font-weight="600" font-family="DM Sans">CORE (heat source) 🔥</text><path d="M120 200C120 100,120 70,160 45L200 45" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#a1)"/><path d="M200 50L60 50C45 50,35 70,35 90L35 200" fill="none" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#a2)"/><path d="M300 200C300 100,300 70,260 45L220 45" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#a3)"/><path d="M220 50L380 50C395 50,405 70,405 90L405 200" fill="none" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#a4)"/><text x="50" y="155" fill="#3b82f6" font-size="9" font-weight="600" font-family="DM Sans" transform="rotate(-90,50,155)">Cools ↓</text><text x="135" y="155" fill="#ef4444" font-size="9" font-weight="600" font-family="DM Sans" transform="rotate(-90,135,155)">Hot ↑</text><text x="310" y="155" fill="#ef4444" font-size="9" font-weight="600" font-family="DM Sans" transform="rotate(-90,310,155)">Hot ↑</text><text x="395" y="155" fill="#3b82f6" font-size="9" font-weight="600" font-family="DM Sans" transform="rotate(90,395,155)">Cools ↓</text><text x="150" y="44" fill="#fb923c" font-size="9" font-family="DM Sans">← plates apart →</text><defs><marker id="a1" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ef4444"/></marker><marker id="a2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3b82f6"/></marker><marker id="a3" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ef4444"/></marker><marker id="a4" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3b82f6"/></marker></defs></svg>`;}
+function svgDivergent(){return`<svg viewBox="0 0 400 190" width="380" height="180" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="120" width="400" height="70" fill="#c45a2b" opacity=".2"/><text x="200" y="165" text-anchor="middle" fill="#d4713a" font-size="10" font-family="DM Sans" opacity=".5">Mantle</text><rect x="10" y="60" width="170" height="50" rx="4" fill="#5b3a1a" stroke="#8b6914"/><text x="95" y="90" text-anchor="middle" fill="#d4a050" font-size="11" font-weight="600" font-family="DM Sans">← Plate A</text><rect x="220" y="60" width="170" height="50" rx="4" fill="#5b3a1a" stroke="#8b6914"/><text x="305" y="90" text-anchor="middle" fill="#d4a050" font-size="11" font-weight="600" font-family="DM Sans">Plate B →</text><rect x="182" y="50" width="36" height="70" rx="3" fill="#ef4444" opacity=".3"/><text x="200" y="42" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600" font-family="DM Sans">New crust ↑</text><line x1="200" y1="145" x2="200" y2="78" stroke="#ef4444" stroke-width="2.5" marker-end="url(#mu)"/><text x="200" y="15" text-anchor="middle" fill="#fb923c" font-size="12" font-weight="700" font-family="DM Sans">DIVERGENT BOUNDARY</text><defs><marker id="mu" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 10L5 0L10 10z" fill="#ef4444"/></marker></defs></svg>`;}
+function svgConvergent(){return`<svg viewBox="0 0 400 210" width="380" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="135" width="400" height="75" fill="#c45a2b" opacity=".2"/><path d="M10 80L180 80L210 135L230 175" fill="none" stroke="#3b82f6" stroke-width="3"/><rect x="10" y="70" width="170" height="18" rx="3" fill="#2563eb" opacity=".4"/><text x="95" y="65" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600" font-family="DM Sans">Oceanic plate (denser) →</text><rect x="200" y="55" width="190" height="30" rx="4" fill="#5b3a1a" stroke="#8b6914"/><text x="295" y="75" text-anchor="middle" fill="#d4a050" font-size="10" font-weight="600" font-family="DM Sans">← Continental plate</text><polygon points="215,55 232,22 249,55" fill="#8b6914" stroke="#a07820"/><text x="232" y="16" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600" font-family="DM Sans">🌋</text><text x="200" y="205" text-anchor="middle" fill="#fb923c" font-size="12" font-weight="700" font-family="DM Sans">CONVERGENT (subduction)</text></svg>`;}
+function svgTransform(){return`<svg viewBox="0 0 400 150" width="380" height="140" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="95" width="400" height="55" fill="#c45a2b" opacity=".15"/><rect x="10" y="35" width="180" height="45" rx="4" fill="#5b3a1a" stroke="#8b6914"/><text x="100" y="62" text-anchor="middle" fill="#d4a050" font-size="11" font-weight="600" font-family="DM Sans">Plate A ↑</text><rect x="210" y="45" width="180" height="45" rx="4" fill="#5b3a1a" stroke="#8b6914"/><text x="300" y="72" text-anchor="middle" fill="#d4a050" font-size="11" font-weight="600" font-family="DM Sans">↓ Plate B</text><line x1="195" y1="15" x2="195" y2="130" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/><text x="197" y="12" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600" font-family="DM Sans">Fault</text><text x="200" y="145" text-anchor="middle" fill="#fb923c" font-size="12" font-weight="700" font-family="DM Sans">TRANSFORM BOUNDARY</text></svg>`;}
+function svgPangaea(){return`<svg viewBox="0 0 380 240" width="360" height="220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="380" height="240" rx="12" fill="#0c2d5c"/><path d="M110 35C150 25,240 20,285 45C325 65,335 105,315 135C295 165,265 185,245 205C225 225,165 235,125 215C85 195,45 165,40 125C35 85,70 45,110 35Z" fill="#5b8c3a" stroke="#7ab050" stroke-width="2"/><text x="185" y="115" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" font-family="DM Sans">PANGAEA</text><text x="185" y="135" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10" font-family="DM Sans">~300 million years ago</text><text x="45" y="228" fill="rgba(147,197,253,.4)" font-size="9" font-family="DM Sans">Panthalassa Ocean</text></svg>`;}
+function svgRingOfFire(){return`<svg viewBox="0 0 420 240" width="400" height="220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="420" height="240" rx="12" fill="#0c2d5c"/><ellipse cx="95" cy="95" rx="55" ry="42" fill="#3a5c3a" opacity=".5"/><text x="95" y="99" text-anchor="middle" fill="#8bbb70" font-size="9" font-family="DM Sans">Americas</text><ellipse cx="270" cy="75" rx="48" ry="32" fill="#3a5c3a" opacity=".5"/><text x="270" y="79" text-anchor="middle" fill="#8bbb70" font-size="9" font-family="DM Sans">Asia</text><ellipse cx="305" cy="170" rx="32" ry="22" fill="#3a5c3a" opacity=".5"/><text x="305" y="174" text-anchor="middle" fill="#8bbb70" font-size="9" font-family="DM Sans">Oceania</text><path d="M55 150C45 115,55 55,95 35C135 15,195 10,250 25C305 40,345 75,355 125C365 175,335 210,285 220" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4" opacity=".7"/><circle cx="60" cy="135" r="4" fill="#ef4444"/><circle cx="75" cy="70" r="4" fill="#ef4444"/><circle cx="135" cy="25" r="4" fill="#ef4444"/><circle cx="250" cy="30" r="4" fill="#ef4444"/><circle cx="340" cy="95" r="4" fill="#ef4444"/><circle cx="350" cy="155" r="4" fill="#ef4444"/><circle cx="315" cy="210" r="4" fill="#ef4444"/><text x="210" y="235" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="700" font-family="DM Sans">THE RING OF FIRE</text><text x="400" y="16" text-anchor="end" fill="#ef4444" font-size="8" font-family="DM Sans">🔴 active volcanoes</text></svg>`;}
+function svgCauseChain(){return`<svg viewBox="0 0 440 80" width="420" height="70" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="20" width="78" height="36" rx="8" fill="#f5d060" opacity=".2" stroke="#f5d060" stroke-width="1.5"/><text x="39" y="43" text-anchor="middle" fill="#f5d060" font-size="10" font-weight="600" font-family="DM Sans">Core Heat</text><line x1="80" y1="38" x2="105" y2="38" stroke="#fb923c" stroke-width="2" marker-end="url(#cc)"/><rect x="107" y="20" width="78" height="36" rx="8" fill="#ef4444" opacity=".2" stroke="#ef4444" stroke-width="1.5"/><text x="146" y="43" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600" font-family="DM Sans">Convection</text><line x1="187" y1="38" x2="212" y2="38" stroke="#fb923c" stroke-width="2" marker-end="url(#cc)"/><rect x="214" y="20" width="78" height="36" rx="8" fill="#3b82f6" opacity=".2" stroke="#3b82f6" stroke-width="1.5"/><text x="253" y="43" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600" font-family="DM Sans">Plates Move</text><line x1="294" y1="38" x2="319" y2="38" stroke="#fb923c" stroke-width="2" marker-end="url(#cc)"/><rect x="321" y="20" width="105" height="36" rx="8" fill="#22c55e" opacity=".2" stroke="#22c55e" stroke-width="1.5"/><text x="373" y="36" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="600" font-family="DM Sans">Earthquakes</text><text x="373" y="49" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="600" font-family="DM Sans">& Volcanoes</text><defs><marker id="cc" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#fb923c"/></marker></defs></svg>`;}
 
-  // ======== STAGE 2: CONVECTION CURRENTS ========
-  {
-    num: 2, title: "The Convection Engine", intention: "I can explain how convection currents in the mantle drive plate movement.",
-    questions: [
-      {
-        type: "order",
-        text: "Put the steps of a <strong>convection current</strong> in the mantle in the correct order.",
-        items: [
-          "Hot rock near the core rises slowly",
-          "Rock reaches the top of the mantle and moves sideways",
-          "Rock cools down near the crust",
-          "Cooler, denser rock sinks back down",
-          "The cycle repeats continuously"
-        ],
-        correct: [0,1,2,3,4],
-        hint: "Convection always starts with heating at the bottom. Hot material rises, cools, then sinks — forming a loop.",
-        why: "Convection currents are <strong>circular flows</strong> driven by heat from the core. Hot rock rises, spreads sideways beneath the crust (dragging plates), cools, sinks, and repeats. This is the engine that moves tectonic plates."
-      },
-      {
-        type: "mcq",
-        text: "What is the main energy source that drives convection currents in the mantle?",
-        options: ["Energy from the Sun", "Heat from Earth's core", "Gravity from the Moon", "Wind on the surface"],
-        correct: 1,
-        hint: "Convection needs a heat source below. Where is the hottest part of Earth?",
-        why: "<strong>Radioactive decay</strong> and residual heat from Earth's formation keep the core extremely hot. This heat transfers to the mantle, driving the slow convection currents that move tectonic plates."
-      },
-      {
-        type: "mcq",
-        text: "Why does hot rock in the mantle rise upward?",
-        options: ["It is pushed up by earthquakes", "It becomes less dense when heated", "Gravity pulls it up", "The crust sucks it up"],
-        correct: 1,
-        hint: "Think about what happens when you heat water in a pot — why does the warm water rise?",
-        why: "When rock is heated, it <strong>expands slightly and becomes less dense</strong> than the cooler rock around it. Less dense material floats upward — just like a hot air balloon rises because hot air is less dense than cool air."
-      },
-      {
-        type: "tf",
-        text: "True or False: Convection currents can only happen in liquids, not in solids.",
-        correct: false,
-        hint: "Remember what you learned about the mantle — it is solid rock, but it still flows very slowly...",
-        why: "<strong>False.</strong> Convection can occur in any material that can flow. The mantle is solid, but over millions of years it flows slowly enough for convection to happen. This is sometimes called <strong>solid-state convection</strong>."
-      },
-      {
-        type: "fill",
-        text: "Complete the sentence using the word bank.",
-        sentence: "When mantle rock is heated, it becomes less |___| and rises. When it cools near the |___| , it becomes more dense and |___| back down.",
-        blanks: ["dense", "crust", "sinks"],
-        bank: ["dense", "light", "crust", "core", "sinks", "rises"],
-        hint: "The key word here is DENSITY. Hot = less dense = rises. Cool = more dense = ?",
-        why: "Convection is all about <strong>density</strong>. Heated rock expands, becomes less <strong>dense</strong>, and rises toward the <strong>crust</strong>. Once it cools, it becomes denser and <strong>sinks</strong> back down. This loop is what drags tectonic plates."
-      },
-      {
-        type: "mcq",
-        text: "How fast do convection currents move tectonic plates?",
-        options: ["A few centimetres per year", "A few metres per day", "A few kilometres per hour", "They don't actually move plates"],
-        correct: 0,
-        hint: "Think about how fast your fingernails grow...",
-        why: "Tectonic plates move at roughly <strong>2–10 cm per year</strong> — about as fast as your fingernails grow. Slow, but over millions of years, this moves continents thousands of kilometres."
-      },
-      {
-        type: "mcq",
-        text: "Which everyday example is the BEST model for convection currents?",
-        options: ["A ball rolling down a hill", "Heating a pot of soup — warm soup rises from the bottom and cool soup sinks", "Mixing paint in a bucket", "Ice cubes melting in a glass"],
-        correct: 1,
-        hint: "Which option involves heating from below causing circular movement?",
-        why: "Heating soup in a pot is the classic model: heat from the stove (like Earth's core) warms the bottom, hot soup <strong>rises</strong>, spreads across the surface, <strong>cools</strong>, and sinks back down — exactly like mantle convection."
-      },
-      {
-        type: "multi",
-        text: "Select ALL the correct statements about convection currents. (Choose more than one.)",
-        options: [
-          "They move in circular loops",
-          "They are driven by heat from the Sun",
-          "They cause tectonic plates to move",
-          "They only happen in the outer core",
-          "Hot material rises because it is less dense",
-          "They move very fast — several km per hour"
-        ],
-        correct: [0, 2, 4],
-        hint: "Three of these are correct. Think about what drives convection (not the Sun), where it happens (the mantle), and how fast plates move (very slow).",
-        why: "Convection currents move in <strong>circular loops</strong>, <strong>cause plate movement</strong>, and work because <strong>hot material is less dense and rises</strong>. They are driven by core heat (not the Sun), happen in the mantle (not just the outer core), and are extremely slow."
-      }
-    ]
-  },
+const diagMap={layers:()=>svgLayers(false),layersL:()=>svgLayers(true),convection:svgConvection,divergent:svgDivergent,convergent:svgConvergent,transform:svgTransform,pangaea:svgPangaea,ringoffire:svgRingOfFire,causechain:svgCauseChain};
 
-  // ======== STAGE 3: PLATE BOUNDARIES ========
-  {
-    num: 3, title: "Plate Boundaries", intention: "I can classify boundary types and predict their effects on Earth's surface.",
-    questions: [
-      {
-        type: "matching",
-        text: "Match each <strong>plate boundary type</strong> with its correct description.",
-        left: ["Divergent", "Convergent", "Transform"],
-        right: ["Plates slide past each other", "Plates move apart", "Plates push together"],
-        pairs: [[0,1],[1,2],[2,0]],
-        hint: "Think about the word roots: 'diverge' means to separate, 'converge' means to come together, 'transform' means to change direction.",
-        why: "At <strong>divergent</strong> boundaries plates pull apart (new crust forms). At <strong>convergent</strong> boundaries plates collide (mountains or subduction). At <strong>transform</strong> boundaries plates grind sideways past each other (earthquakes)."
-      },
-      {
-        type: "matching",
-        text: "Match each <strong>real-world example</strong> to the correct boundary type.",
-        left: ["Mid-Atlantic Ridge", "Himalayas", "San Andreas Fault", "Mariana Trench"],
-        right: ["Transform", "Convergent (ocean-ocean)", "Divergent", "Convergent (continent-continent)"],
-        pairs: [[0,2],[1,3],[2,0],[3,1]],
-        hint: "The Mid-Atlantic Ridge is where plates pull apart. The Himalayas formed when India crashed into Asia. The San Andreas is where plates slide past each other. The Mariana Trench is where one oceanic plate dives under another.",
-        why: "The <strong>Mid-Atlantic Ridge</strong> = divergent (new ocean floor). <strong>Himalayas</strong> = convergent continent-continent (both push up). <strong>San Andreas</strong> = transform (sideways grinding). <strong>Mariana Trench</strong> = convergent ocean-ocean (one subducts)."
-      },
-      {
-        type: "mcq",
-        text: "At a convergent boundary where an oceanic plate meets a continental plate, what happens?",
-        options: ["They bounce apart", "The oceanic plate slides under the continental plate", "The continental plate slides under the oceanic plate", "Both plates rise up equally"],
-        correct: 1,
-        hint: "Oceanic crust is denser (heavier) than continental crust. Which one would sink?",
-        why: "Oceanic crust is <strong>denser</strong> than continental crust, so it is forced downward in a process called <strong>subduction</strong>. This creates deep ocean trenches, volcanic arcs, and earthquakes."
-      },
-      {
-        type: "mcq",
-        text: "What forms at a divergent boundary on the ocean floor?",
-        options: ["A deep trench", "A mid-ocean ridge with new crust", "A mountain range like the Himalayas", "Nothing visible"],
-        correct: 1,
-        hint: "When plates pull apart underwater, magma rises to fill the gap...",
-        why: "At underwater divergent boundaries, magma rises from the mantle to fill the gap, cooling into new oceanic crust. This builds <strong>mid-ocean ridges</strong> — the longest mountain chains on Earth — through a process called <strong>sea-floor spreading</strong>."
-      },
-      {
-        type: "tf",
-        text: "True or False: Volcanoes can form at BOTH convergent and divergent boundaries.",
-        correct: true,
-        hint: "Think about what happens at each: at convergent boundaries, subducting rock melts. At divergent boundaries, magma rises to fill the gap...",
-        why: "<strong>True.</strong> At convergent boundaries, the subducting plate melts and magma rises to form volcanic arcs (e.g. Ring of Fire). At divergent boundaries, magma rises to fill the gap between plates (e.g. Iceland). Volcanoes are <strong>rare</strong> at transform boundaries."
-      },
-      {
-        type: "mcq",
-        text: "Which natural hazard is MOST associated with transform boundaries?",
-        options: ["Volcanic eruptions", "Tsunamis", "Earthquakes", "Flooding"],
-        correct: 2,
-        hint: "Think about the San Andreas Fault in California — what is it famous for?",
-        why: "Transform boundaries produce <strong>earthquakes</strong> as plates grind past each other. Friction causes stress to build up, then releases suddenly. The San Andreas Fault is a famous transform boundary."
-      },
-      {
-        type: "mcq",
-        text: "When two continental plates converge, neither subducts. Why not?",
-        options: ["Continental plates are too thin", "Both plates have similar low density, so neither sinks", "They are moving too slowly", "Continental plates are made of liquid rock"],
-        correct: 1,
-        hint: "Subduction happens when a denser plate sinks beneath a less dense plate. What if both plates have the same density?",
-        why: "Continental crust is <strong>buoyant</strong> — both plates have similar low density, so neither can sink beneath the other. Instead, they crumple and fold upward, forming massive <strong>mountain ranges</strong> like the Himalayas."
-      },
-      {
-        type: "fill",
-        text: "Complete the sentence using the word bank.",
-        sentence: "At a convergent boundary, when oceanic crust meets continental crust, the |___| plate subducts because it is more |___| . The sinking plate melts, and magma rises to form |___| .",
-        blanks: ["oceanic", "dense", "volcanoes"],
-        bank: ["oceanic", "continental", "dense", "light", "volcanoes", "trenches"],
-        hint: "Which type of crust is heavier? What happens when rock melts underground and rises to the surface?",
-        why: "The <strong>oceanic</strong> plate subducts because it is more <strong>dense</strong>. As it sinks deeper, increasing temperature melts the rock, and the resulting magma rises through the continental plate to form <strong>volcanoes</strong>."
-      },
-      {
-        type: "matching",
-        text: "Match each <strong>tectonic plate</strong> to the continent or ocean it is mostly under.",
-        left: ["Pacific Plate", "African Plate", "Eurasian Plate", "North American Plate"],
-        right: ["Under North America and western Atlantic", "Under Europe and most of Asia", "Under Africa and surrounding ocean floor", "Under the Pacific Ocean (largest plate)"],
-        pairs: [[0,3],[1,2],[2,1],[3,0]],
-        hint: "The Pacific Plate is the largest on Earth and is almost entirely oceanic. The other three are named after the continents they carry.",
-        why: "The <strong>Pacific Plate</strong> is the largest and is mostly oceanic crust. The <strong>African</strong>, <strong>Eurasian</strong>, and <strong>North American</strong> plates are named after the continents they carry, but they also include large areas of ocean floor around those continents."
-      },
-      {
-        type: "multi",
-        text: "Select ALL of the following that are major tectonic plates.",
-        options: [
-          "Pacific Plate",
-          "Atlantic Plate",
-          "South American Plate",
-          "Antarctic Plate",
-          "Saharan Plate",
-          "Indo-Australian Plate"
-        ],
-        correct: [0, 2, 3, 5],
-        hint: "There is no plate named after the Atlantic Ocean or the Sahara Desert. Four of these are real major plates.",
-        why: "The major tectonic plates include: <strong>Pacific, North American, South American, African, Eurasian, Antarctic, and Indo-Australian</strong>. There is no \"Atlantic Plate\" \u2014 the Atlantic Ocean floor is split between the plates on either side. There is also no \"Saharan Plate\" \u2014 the Sahara sits on the African Plate."
-      },
-      {
-        type: "mcq",
-        text: "The Nazca Plate is a smaller oceanic plate in the eastern Pacific. It is subducting under the South American Plate. What does this convergent boundary produce?",
-        options: ["A mid-ocean ridge", "The Andes Mountains and volcanoes along South America\u2019s west coast", "The Amazon Rainforest", "The Atlantic Ocean"],
-        correct: 1,
-        hint: "When an oceanic plate subducts under a continental plate, the melting rock rises as magma and forms a chain of mountains and volcanoes on the continent.",
-        why: "The <strong>Nazca Plate</strong> subducts under the <strong>South American Plate</strong>, creating the <strong>Andes Mountains</strong> \u2014 the longest continental mountain range \u2014 and a chain of active volcanoes along South America\u2019s western coast. This is a classic example of ocean-continent convergence."
-      }
-    ]
-  },
-
-  // ======== STAGE 4: CONTINENTAL DRIFT ========
-  {
-    num: 4, title: "Continental Drift", intention: "I can use evidence to support Wegener's theory of continental drift.",
-    questions: [
-      {
-        type: "mcq",
-        text: "Who proposed the theory of continental drift?",
-        options: ["Charles Darwin", "Alfred Wegener", "Isaac Newton", "Marie Curie"],
-        correct: 1,
-        hint: "This German scientist and meteorologist proposed the idea in 1912.",
-        why: "<strong>Alfred Wegener</strong> proposed in 1912 that all continents were once joined in a supercontinent called <strong>Pangaea</strong>. His idea was rejected at first because he could not explain the mechanism."
-      },
-      {
-        type: "mcq",
-        text: "What was the name of the supercontinent that Wegener proposed?",
-        options: ["Gondwana", "Laurasia", "Pangaea", "Rodinia"],
-        correct: 2,
-        hint: "The name means 'all lands' in Greek.",
-        why: "<strong>Pangaea</strong> (meaning 'all lands') existed about 300–200 million years ago. It broke apart into Laurasia (north) and Gondwana (south) before further splitting into today's continents."
-      },
-      {
-        type: "matching",
-        text: "Match each <strong>type of evidence</strong> for continental drift with the correct example.",
-        left: ["Fossil evidence", "Rock evidence", "Shape evidence", "Climate evidence"],
-        right: ["Glacial scratches found in tropical Africa", "South America and Africa fit like puzzle pieces", "Same age mountain ranges on different continents", "Mesosaurus found on both South America and Africa"],
-        pairs: [[0,3],[1,2],[2,1],[3,0]],
-        hint: "Think about what each type means. Fossils = living things. Rocks = geological formations. Shape = coastlines. Climate = weather patterns from the past.",
-        why: "Wegener gathered <strong>four types of evidence</strong>: matching fossils across oceans, similar rock formations lining up, jigsaw-like coastline shapes, and tropical fossils in polar regions (and vice versa)."
-      },
-      {
-        type: "mcq",
-        text: "Fossils of the freshwater reptile <em>Mesosaurus</em> have been found in both South America and Africa. Why does this support continental drift?",
-        options: ["Mesosaurus could fly between continents", "Mesosaurus could swim across the Atlantic Ocean", "The continents must have been joined when Mesosaurus was alive", "Scientists planted the fossils there"],
-        correct: 2,
-        hint: "Mesosaurus was a small freshwater reptile. Could it survive a journey across thousands of kilometres of salty ocean?",
-        why: "Mesosaurus was a <strong>small freshwater reptile</strong> — it could not possibly swim across a vast, salty ocean. The only explanation is that South America and Africa were <strong>joined together</strong> when Mesosaurus was alive, about 270 million years ago."
-      },
-      {
-        type: "mcq",
-        text: "Why was Wegener's theory rejected by most scientists at the time?",
-        options: ["His evidence was wrong", "He could not explain what force moved the continents", "Continental drift was already disproven", "He did not have any evidence"],
-        correct: 1,
-        hint: "His evidence was actually quite strong. The problem was about the 'how', not the 'what'.",
-        why: "Wegener had strong evidence <em>that</em> continents moved, but could not explain <em>how</em>. It was not until the 1960s that scientists discovered <strong>sea-floor spreading and convection currents</strong>, providing the missing mechanism."
-      },
-      {
-        type: "tf",
-        text: "True or False: Wegener's theory was immediately accepted by the scientific community in 1912.",
-        correct: false,
-        hint: "Most scientists rejected his idea during his lifetime...",
-        why: "<strong>False.</strong> Wegener's theory was <strong>rejected for about 50 years</strong>. It was not accepted until the 1960s when new evidence about sea-floor spreading provided the mechanism he could not explain. This shows how science requires both evidence AND explanation."
-      },
-      {
-        type: "multi",
-        text: "Select ALL the pieces of evidence that Wegener used to support continental drift. (Choose more than one.)",
-        options: [
-          "Matching fossils found on different continents",
-          "GPS tracking of plate movement",
-          "Jigsaw-like fit of coastlines (especially South America and Africa)",
-          "Matching rock types and mountain chains across oceans",
-          "Satellite images of the ocean floor",
-          "Glacial deposits found in places that are now tropical"
-        ],
-        correct: [0, 2, 3, 5],
-        hint: "GPS and satellites did not exist in 1912. Four of these options were available to Wegener.",
-        why: "Wegener used: <strong>matching fossils</strong>, <strong>coastline fit</strong>, <strong>matching rocks/mountains</strong>, and <strong>ancient glacial evidence</strong> in tropical regions. GPS and satellite technology came decades later and eventually helped <em>confirm</em> his theory."
-      },
-      {
-        type: "order",
-        text: "Put these events in <strong>chronological order</strong> — from earliest to most recent.",
-        items: [
-          "Pangaea exists as one supercontinent (~300 Mya)",
-          "Pangaea begins to break apart (~200 Mya)",
-          "The Atlantic Ocean starts forming (~150 Mya)",
-          "Wegener proposes continental drift (1912)",
-          "Sea-floor spreading discovered, theory accepted (1960s)"
-        ],
-        correct: [0,1,2,3,4],
-        hint: "Start with when all the land was joined together, then follow the breakup and the science.",
-        why: "Pangaea existed ~300 million years ago, began breaking up ~200 Mya, the Atlantic opened ~150 Mya. <strong>Wegener proposed his theory in 1912</strong>, but it took until the <strong>1960s</strong> for the discovery of sea-floor spreading to provide the mechanism and gain acceptance."
-      }
-    ]
-  },
-
-  // ======== STAGE 5: PUTTING IT TOGETHER ========
-  {
-    num: 5, title: "Putting It Together", intention: "I can connect Earth's interior processes to surface phenomena like earthquakes and volcanoes.",
-    questions: [
-      {
-        type: "order",
-        text: "Put the <strong>cause-effect chain</strong> in order, from deep inside Earth to the surface event.",
-        items: [
-          "Radioactive decay heats Earth's core",
-          "Heat causes convection currents in the mantle",
-          "Convection currents drag tectonic plates",
-          "Plates converge at a subduction zone",
-          "A volcanic eruption occurs at the surface"
-        ],
-        correct: [0,1,2,3,4],
-        hint: "Start with the energy source deep inside Earth and follow the chain upward to what we see on the surface.",
-        why: "This is the <strong>key idea of the whole unit</strong>: heat deep inside Earth → convection in the mantle → plate movement → boundary interactions → surface events (earthquakes, volcanoes, mountains). Change below drives change above."
-      },
-      {
-        type: "mcq",
-        text: "A city is located on the boundary where two plates push toward each other. One plate is oceanic, one is continental. What TWO hazards should this city prepare for?",
-        options: ["Earthquakes and volcanoes", "Tornadoes and floods", "Volcanoes and blizzards", "Earthquakes and droughts"],
-        correct: 0,
-        hint: "At a convergent boundary with subduction, the sinking plate generates intense friction AND melts to produce magma...",
-        why: "Convergent boundaries with subduction produce both <strong>earthquakes</strong> (friction from plates colliding) and <strong>volcanoes</strong> (melted subducting plate rising as magma). The Pacific Ring of Fire is a real-world example."
-      },
-      {
-        type: "mcq",
-        text: "If convection currents in the mantle suddenly stopped, which of these would EVENTUALLY happen?",
-        options: ["Plates would continue at the same speed", "Plate movement would gradually stop", "Earthquakes would increase", "Volcanoes would become more active"],
-        correct: 1,
-        hint: "What is the engine driving plate movement? If you turn off the engine...",
-        why: "Convection currents are the <strong>driving force</strong> behind plate tectonics. Without them, plates would gradually slow and stop. Over geological time, earthquakes and volcanic activity would decrease dramatically."
-      },
-      {
-        type: "tf",
-        text: "True or False: Earthquakes can only occur at plate boundaries.",
-        correct: false,
-        hint: "Most earthquakes happen at boundaries, but think about whether the middle of a plate is ever under any stress at all...",
-        why: "<strong>False.</strong> While most earthquakes occur at plate boundaries, <strong>intraplate earthquakes</strong> can happen in the middle of plates due to ancient faults, stress transfer, or hotspot activity. However, boundary earthquakes are far more common and usually stronger."
-      },
-      {
-        type: "matching",
-        text: "Match each <strong>surface feature</strong> to the process that creates it.",
-        left: ["Mid-ocean ridge", "Deep ocean trench", "Fold mountains", "Rift valley"],
-        right: ["Continental plates diverging on land", "Oceanic plates diverging underwater", "Oceanic plate subducting under another plate", "Two continental plates colliding"],
-        pairs: [[0,1],[1,2],[2,3],[3,0]],
-        hint: "Mid-ocean ridges form where plates pull apart underwater. Trenches form where plates subduct. Fold mountains form where continents collide. Rift valleys form where land plates pull apart.",
-        why: "<strong>Mid-ocean ridges</strong> = oceanic divergence (new crust). <strong>Trenches</strong> = subduction. <strong>Fold mountains</strong> = continent-continent collision. <strong>Rift valleys</strong> = continental divergence (like the East African Rift)."
-      },
-      {
-        type: "multi",
-        text: "Select ALL the statements that correctly connect Earth's interior to surface events. (Choose more than one.)",
-        options: [
-          "Heat from the core drives convection which moves plates",
-          "Volcanoes form because the Sun heats the surface",
-          "Plate boundaries are where most earthquakes and volcanoes occur",
-          "Continental drift is caused by wind and ocean currents",
-          "The density difference between oceanic and continental crust explains subduction",
-          "Mountains form instantly when plates collide"
-        ],
-        correct: [0, 2, 4],
-        hint: "Three are correct. Think about what drives the whole system (internal heat, not the Sun or wind), where hazards concentrate (boundaries), and what controls subduction (density).",
-        why: "<strong>Core heat drives convection and plate movement.</strong> Most earthquakes and volcanoes occur at <strong>plate boundaries</strong>. <strong>Density differences</strong> between oceanic and continental crust explain why oceanic plates subduct. Mountains form over millions of years, not instantly."
-      },
-      {
-        type: "mcq",
-        text: "How does the concept of <em>change</em> connect everything you have learned in this unit?",
-        options: [
-          "Earth looks the same as it always has",
-          "Change only happens during earthquakes",
-          "Earth's interior drives continuous, slow change that reshapes the surface over millions of years",
-          "Change only happens quickly and suddenly"
-        ],
-        correct: 2,
-        hint: "Think big picture — from the heat in the core to the mountains on the surface. Is Earth static or dynamic?",
-        why: "The Key Concept of <strong>Change</strong> runs through everything: heat changes rock behaviour, convection changes plate positions, plate movement changes the surface. Earth is a <strong>dynamic, constantly changing system</strong> — most change is incredibly slow but relentless."
-      }
-    ]
-  }
+// QUESTION DATA — 40 QUESTIONS
+const STAGES=[
+{num:1,title:"Earth's Layers",int:"I can identify and describe Earth's layers.",questions:[
+{type:"diagram",dia:"layersL",q:"Study this labelled diagram. Which layer is the <span class='kw'>thickest</span>?",opts:["Crust","Mantle","Outer Core","Inner Core"],ans:1,hint:"Look at the km values on the diagram.",why:"The <span class='kw'>mantle</span> is ~2,900 km thick — far thicker than any other layer."},
+{type:"order",q:"Arrange Earth's layers from <span class='kw'>outermost</span> to <span class='kw'>innermost</span>.",items:["Inner Core","Crust","Outer Core","Mantle"],correct:["Crust","Mantle","Outer Core","Inner Core"],hint:"Start from where we live and dig down.",why:"From outside in: <span class='kw'>Crust → Mantle → Outer Core → Inner Core</span>."},
+{type:"matching",q:"Match each layer to its <span class='kw'>thickness</span>.",left:["Crust","Mantle","Outer Core","Inner Core"],right:["~1,200 km","~2,200 km","~2,900 km","5–70 km"],pairs:[[0,3],[1,2],[2,1],[3,0]],hint:"The mantle is the thickest. The crust is the thinnest.",why:"Crust (5–70 km), Mantle (~2,900 km), Outer Core (~2,200 km), Inner Core (~1,200 km radius)."},
+{type:"tf",q:"True or False: <span class='kw'>Oceanic crust</span> is thicker than continental crust.",ans:false,hint:"Continental crust supports heavy mountains — it must be thicker.",why:"<strong>False.</strong> Continental crust is thicker (30–70 km) but less dense. Oceanic crust is thinner (5–10 km) but denser."},
+{type:"mcq",q:"The inner core is solid even though it is the <span class='kw'>hottest</span> part. Why?",opts:["It is made of gas","Extreme pressure keeps it solid","The outer core cools it","It is not that hot"],ans:1,hint:"Extreme pressure can prevent melting even at very high temperatures.",why:"The inner core is over 5,000°C, but <span class='kw'>immense pressure</span> keeps the iron and nickel solid."},
+{type:"mcq",q:"What <span class='kw'>state</span> is the outer core?",opts:["Solid","Liquid","Gas","Plasma"],ans:1,hint:"Unlike the inner core, the pressure is not high enough to keep it solid.",why:"The outer core is <span class='kw'>liquid</span> iron and nickel. Its movement creates Earth's magnetic field."},
+{type:"fill",q:"Complete using the word bank.",sentence:"The mantle is mostly |___| rock that flows very |___| . This is driven by |___| from the core.",blanks:["solid","slowly","heat"],bank:["heat","liquid","solid","quickly","slowly","gravity"],hint:"The mantle is NOT liquid — it flows like thick toffee over millions of years.",why:"The mantle is <span class='kw'>solid</span> but flows <span class='kw'>slowly</span> driven by <span class='kw'>heat</span> from the core."},
+{type:"diagram",dia:"layers",q:"Looking at this unlabelled diagram, the <span class='kw'>innermost yellow circle</span> represents which layer?",opts:["Crust","Mantle","Outer Core","Inner Core"],ans:3,hint:"The smallest circle at the very centre represents the deepest layer.",why:"The innermost circle is the <span class='kw'>Inner Core</span> — solid iron and nickel at extreme temperature and pressure."}
+]},
+{num:2,title:"Convection Engine",int:"I can explain how convection currents drive plate movement.",questions:[
+{type:"diagram",dia:"convection",q:"Study the convection diagram. What is the main <span class='kw'>energy source</span>?",opts:["The Sun","Heat from Earth's core","The Moon's gravity","Surface wind"],ans:1,hint:"Look at the bottom of the diagram — what is labelled as the heat source?",why:"<span class='kw'>Radioactive decay</span> and residual heat keep the core hot, driving mantle convection."},
+{type:"order",q:"Order the steps of a <span class='kw'>convection current</span>.",items:["Hot rock near the core rises","Rock spreads sideways at the top","Rock cools near the crust","Cool dense rock sinks back down","The cycle repeats"],correct:[0,1,2,3,4],hint:"Start with heating at the bottom. Hot rises, cools, sinks.",why:"Convection: hot rock rises → spreads sideways → cools → sinks → repeats. This moves tectonic plates."},
+{type:"mcq",q:"Why does <span class='kw'>hot rock</span> rise in the mantle?",opts:["Earthquakes push it","It becomes less dense","Gravity pulls it up","The crust pulls it"],ans:1,hint:"What happens to water when you heat it? Hot = less dense = rises.",why:"Heated rock <span class='kw'>expands and becomes less dense</span>, so it rises — like a hot air balloon."},
+{type:"tf",q:"True or False: Convection can <span class='kw'>only</span> happen in liquids.",ans:false,hint:"The mantle is solid rock, but convection still happens there...",why:"<strong>False.</strong> The solid mantle still convects because rock can flow plastically over millions of years."},
+{type:"mcq",q:"Where do plates <span class='kw'>pull apart</span> in relation to convection?",opts:["Where currents sink","Where currents rise and spread sideways","At the core","In the middle of the mantle"],ans:1,hint:"Follow the arrows to where they reach the surface and diverge.",why:"Plates separate where rising currents reach the crust and <span class='kw'>spread in opposite directions</span> — creating divergent boundaries."},
+{type:"fill",q:"Complete the convection cycle.",sentence:"When rock is heated it becomes less |___| and rises. Near the crust it |___| and becomes more dense, then it |___| back down.",blanks:["dense","cools","sinks"],bank:["dense","light","cools","heats","sinks","rises"],hint:"Hot = less dense = rises. Cold = more dense = sinks.",why:"Heated rock is less <span class='kw'>dense</span> (rises). Near the crust it <span class='kw'>cools</span>, gets denser, and <span class='kw'>sinks</span>."},
+{type:"mcq",q:"A student says: <em>'Convection makes the mantle liquid.'</em> What is wrong?",opts:["Nothing — it IS liquid","The mantle is solid but flows slowly","The mantle is gas","Convection only happens in the core"],ans:1,hint:"Common misconception — is the mantle liquid or solid?",why:"The mantle is <span class='kw'>solid rock</span> that flows extremely slowly. Convection does not melt it."},
+{type:"multi",q:"Select <span class='kw'>ALL</span> correct statements about convection.",opts:["Driven by core heat","They cause plate movement","They happen instantly","They form circular loops","They only happen in the outer core"],correct:[0,1,3],hint:"Three are correct. Think about speed, shape, and what they drive.",why:"Convection: <span class='kw'>driven by heat</span>, <span class='kw'>moves plates</span>, forms <span class='kw'>circular loops</span>. They are incredibly slow, not instant, and occur in the mantle."}
+]},
+{num:3,title:"Plate Boundaries",int:"I can describe the three boundary types and their features.",questions:[
+{type:"diagram",dia:"divergent",q:"Study the <span class='kw'>divergent boundary</span>. What happens here?",opts:["Plates apart, new crust forms","Plates collide, mountains form","Plates slide past each other","Plates stack up"],ans:0,hint:"Look at the arrows and the gap between the plates.",why:"At divergent boundaries, plates move apart. Magma rises to create <span class='kw'>new oceanic crust</span>. Mid-ocean ridges form."},
+{type:"diagram",dia:"convergent",q:"In this <span class='kw'>convergent boundary</span>, what happens to the oceanic plate?",opts:["Rises above continental plate","Subducts beneath continental plate","Slides sideways","Moves away"],ans:1,hint:"The oceanic plate is denser — what happens when dense meets less dense?",why:"The denser oceanic plate <span class='kw'>subducts</span> beneath the continental plate, creating trenches and volcanic arcs."},
+{type:"diagram",dia:"transform",q:"At this <span class='kw'>transform boundary</span>, what hazard is most common?",opts:["Volcanoes","Tsunamis","Earthquakes","Tornadoes"],ans:2,hint:"The plates grind past each other — they stick, then slip suddenly.",why:"Transform boundaries produce <span class='kw'>earthquakes</span> from friction. The San Andreas Fault is a famous example."},
+{type:"matching",q:"Match each <span class='kw'>boundary</span> to its surface feature.",left:["Divergent","Convergent (ocean-continent)","Convergent (continent-continent)","Transform"],right:["Fold mountains (e.g. Himalayas)","Mid-ocean ridge","Trench + coastal volcanoes","Earthquake fault line"],pairs:[[0,1],[1,2],[2,0],[3,3]],hint:"Divergent = new crust. Ocean-continent = subduction + volcano. Continent-continent = mountains. Transform = fault.",why:"Divergent → ridges. Ocean-continent → trench + volcanoes. Continent-continent → fold mountains. Transform → faults."},
+{type:"mcq",q:"The Himalayas formed from two <span class='kw'>continental plates</span> colliding. Why no volcanoes?",opts:["Not hot enough","Neither plate subducts, so no melting","All boundaries have volcanoes","It is actually divergent"],ans:1,hint:"Volcanoes need magma from a subducting plate melting. Can two continents subduct?",why:"Neither continental plate is dense enough to subduct. <span class='kw'>No subduction = no melting = no magma = no volcanoes</span>."},
+{type:"tf",q:"True or False: The <span class='kw'>Ring of Fire</span> is around the Pacific Plate.",ans:true,hint:"Where are most earthquakes and volcanoes concentrated?",why:"<strong>True.</strong> ~75% of Earth's volcanoes and ~90% of earthquakes occur around the <span class='kw'>Pacific Plate</span>."},
+{type:"order",q:"Order how a <span class='kw'>volcanic eruption</span> happens at a convergent boundary.",items:["Oceanic plate meets continental plate","Denser oceanic plate subducts","Subducting plate melts","Magma rises through cracks","Volcano erupts at surface"],correct:[0,1,2,3,4],hint:"Start with the plates meeting, then follow the process underground.",why:"Plates meet → subduction → melting → magma rises → eruption. Volcanoes form in <span class='kw'>lines above subduction zones</span>."},
+{type:"mcq",q:"What forms on the sea floor at a <span class='kw'>divergent</span> boundary?",opts:["Deep trench","Mid-ocean ridge","Flat plain","Coral reef"],ans:1,hint:"When plates pull apart, magma rises and solidifies into a raised feature.",why:"A <span class='kw'>mid-ocean ridge</span> — an underwater mountain chain where new crust forms. The Mid-Atlantic Ridge is the best known."}
+]},
+{num:4,title:"Continental Drift",int:"I can explain continental drift and evaluate Wegener's evidence.",questions:[
+{type:"diagram",dia:"pangaea",q:"This map shows <span class='kw'>Pangaea</span>. What was it?",opts:["An ancient ocean","A supercontinent","A type of volcano","The first tectonic plate"],ans:1,hint:"'Pan' = all, 'gaea' = Earth/land.",why:"<span class='kw'>Pangaea</span> was a supercontinent ~300 million years ago when all landmasses were joined."},
+{type:"mcq",q:"Who proposed <span class='kw'>continental drift</span>?",opts:["Newton","Wegener","Darwin","Einstein"],ans:1,hint:"He noticed South America and Africa fit together like puzzle pieces.",why:"<span class='kw'>Alfred Wegener</span> proposed continental drift in 1912."},
+{type:"multi",q:"Select <span class='kw'>ALL</span> evidence Wegener used.",opts:["Matching fossils across continents","GPS tracking","Coastline jigsaw fit","Matching rock types across oceans","Satellite images","Glacial deposits in tropical areas"],correct:[0,2,3,5],hint:"GPS and satellites did not exist in 1912. Four were available to Wegener.",why:"Wegener used: <span class='kw'>fossils</span>, <span class='kw'>coastline fit</span>, <span class='kw'>matching rocks</span>, and <span class='kw'>glacial evidence</span>."},
+{type:"mcq",q:"Why was Wegener's theory <span class='kw'>rejected</span> at first?",opts:["Evidence was wrong","He could not explain the mechanism","It was already proved wrong","He was not a geologist"],ans:1,hint:"Scientists wanted to know HOW continents could move.",why:"Wegener could not explain <span class='kw'>what force moved the continents</span>. Sea-floor spreading in the 1960s provided the mechanism."},
+{type:"tf",q:"True or False: <em>Mesosaurus</em> fossils are found on <span class='kw'>both</span> South America and Africa.",ans:true,hint:"It was a freshwater reptile — could it swim across the Atlantic?",why:"<strong>True.</strong> Mesosaurus was a freshwater reptile that could not cross an ocean, proving the continents were once joined."},
+{type:"order",q:"Order these events <span class='kw'>chronologically</span>.",items:["Pangaea exists (~300 Mya)","Pangaea breaks apart (~200 Mya)","Atlantic Ocean forms (~150 Mya)","Wegener proposes drift (1912)","Sea-floor spreading discovered (1960s)"],correct:[0,1,2,3,4],hint:"Start with the supercontinent, end with the science.",why:"Pangaea ~300 Mya → breakup ~200 Mya → Atlantic ~150 Mya → Wegener 1912 → confirmation 1960s."},
+{type:"mcq",q:"What finally explained <span class='kw'>how</span> plates move?",opts:["Fossil evidence","Sea-floor spreading at mid-ocean ridges","Earthquake data","Volcanic records"],ans:1,hint:"New crust was found forming at the bottom of the ocean.",why:"<span class='kw'>Sea-floor spreading</span> at mid-ocean ridges showed new crust forms and pushes plates apart."},
+{type:"mcq",q:"How fast do tectonic plates move?",opts:["1–10 cm/year (fingernail speed)","1–10 m/year","1–10 km/year","They stopped moving"],ans:0,hint:"You would never notice it in a lifetime.",why:"Plates move <span class='kw'>1–10 cm per year</span> — about as fast as your fingernails grow."}
+]},
+{num:5,title:"Putting It Together",int:"I can connect interior processes to surface events.",questions:[
+{type:"diagram",dia:"causechain",q:"Study this cause-effect chain. If <span class='kw'>convection stopped</span>, what would happen?",opts:["Heat would move plates directly","Plates would gradually stop","Earthquakes would increase","The core would cool instantly"],ans:1,hint:"Remove the link between heat and plate movement. What breaks?",why:"Without convection, there is <span class='kw'>no mechanism</span> to transfer core heat into plate motion. Plates would slow and stop."},
+{type:"diagram",dia:"ringoffire",q:"Why are volcanoes concentrated in the <span class='kw'>Ring of Fire</span> pattern?",opts:["Random chance","Pacific Plate surrounded by subduction zones","The Sun heats the Pacific more","Volcanoes only form near water"],ans:1,hint:"The dots trace the edge of one particular plate.",why:"The Ring of Fire follows the <span class='kw'>Pacific Plate</span> edges — surrounded by subduction zones where oceanic crust subducts and melts."},
+{type:"mcq",q:"A city at an ocean-continent boundary should prepare for which <span class='kw'>TWO</span> hazards?",opts:["Earthquakes + volcanoes","Tornadoes + floods","Volcanoes + blizzards","Earthquakes + droughts"],ans:0,hint:"Subduction causes friction (one hazard) and melting (another hazard).",why:"Convergent subduction boundaries produce <span class='kw'>earthquakes</span> (friction) and <span class='kw'>volcanoes</span> (melting plate)."},
+{type:"tf",q:"True or False: Earthquakes can <span class='kw'>only</span> happen at plate boundaries.",ans:false,hint:"Most happen at boundaries, but can the middle of a plate ever crack?",why:"<strong>False.</strong> <span class='kw'>Intraplate earthquakes</span> can occur due to ancient faults or stress transfer."},
+{type:"matching",q:"Match each <span class='kw'>feature</span> to its process.",left:["Mid-ocean ridge","Deep trench","Fold mountains","Rift valley"],right:["Continental divergence on land","Oceanic divergence","Plate subduction","Continental collision"],pairs:[[0,1],[1,2],[2,3],[3,0]],hint:"Ridges = divergent. Trenches = subduction. Fold mountains = collision. Rifts = land divergence.",why:"Ridges = oceanic divergence. Trenches = subduction. Fold mountains = continent collision. Rifts = continental divergence."},
+{type:"multi",q:"Select <span class='kw'>ALL</span> correct statements.",opts:["Core heat drives convection and plate movement","Volcanoes form because the Sun heats the surface","Most hazards occur at plate boundaries","Continental drift is caused by wind","Density differences explain subduction","Mountains form instantly"],correct:[0,2,4],hint:"Three are correct. Think about what drives the system and where hazards occur.",why:"Core heat → convection → plates. Hazards at boundaries. Density explains subduction. NOT the Sun, wind, or instant."},
+{type:"order",q:"Order this <span class='kw'>cause-effect chain</span> from deep inside Earth to the surface.",items:["Radioactive decay heats the core","Convection currents form in mantle","Currents drag tectonic plates","Plates converge at subduction zone","Volcanic eruption at surface"],correct:[0,1,2,3,4],hint:"Start with the deepest energy source and follow upward.",why:"This is the <span class='kw'>key idea</span>: heat → convection → plate movement → boundary interaction → surface events."},
+{type:"mcq",q:"How does <em>change</em> connect everything in this unit?",opts:["Earth never changes","Change only happens in earthquakes","Earth's interior drives continuous slow change over millions of years","Change is only sudden"],ans:2,hint:"Think big picture — from core to surface.",why:"The Key Concept of <span class='kw'>Change</span>: heat changes rock, convection changes plate positions, plates reshape the surface. Earth is <span class='kw'>dynamic and constantly changing</span>."}
+]}
 ];
 
-// =====================================================================
-//  GAME STATE + SAVE SYSTEM
-// =====================================================================
-const SAVE_KEY = "es_g6_review_v1";
-const STAGE_MAX = STAGES.map(s => s.questions.length);
+// SAVE SYSTEM
+const SK="es_g6_review_v2",SM=STAGES.map(s=>s.questions.length),TQ=SM.reduce((a,b)=>a+b,0);
+function fS(){return{stg:0,qi:0,sc:0,str:0,bs:0,ans:0,ss:Array(STAGES.length).fill(0),sa:Array(STAGES.length).fill(0),ph:'intro'}}
+function sv(){try{localStorage.setItem(SK,JSON.stringify({stg:S.stg,qi:S.qi,sc:S.sc,str:S.str,bs:S.bs,ans:S.ans,ss:S.ss,sa:S.sa,t:Date.now()}));}catch(e){}}
+function ld(){try{const r=localStorage.getItem(SK);if(!r)return null;const s=JSON.parse(r);if(!s||typeof s.stg!=='number'||s.ans<1)return null;return s;}catch(e){return null;}}
+function cl(){try{localStorage.removeItem(SK);}catch(e){}}
+let S=fS();const A=document.getElementById('app');
 
-function freshState() {
-  return {
-    currentStage: -1, currentQ: 0, score: 0,
-    stageScores: [0,0,0,0,0], stageMax: STAGE_MAX.slice(),
-    answered: false, matchState: null, orderState: null,
-    fillState: null, multiState: null, phase: 'intro'
-  };
-}
-function saveState() {
-  try {
-    localStorage.setItem(SAVE_KEY, JSON.stringify({
-      currentStage: state.currentStage, currentQ: state.currentQ,
-      score: state.score, stageScores: state.stageScores, savedAt: Date.now()
-    }));
-  } catch(e) {}
-}
-function loadSave() {
-  try {
-    const raw = localStorage.getItem(SAVE_KEY);
-    if (!raw) return null;
-    const s = JSON.parse(raw);
-    if (!s || typeof s.currentStage !== 'number' || s.currentStage < 0) return null;
-    // Check if completed (last stage, last question)
-    const lastStage = STAGES.length - 1;
-    if (s.currentStage > lastStage) return null;
-    return s;
-  } catch(e) { return null; }
-}
-function clearSave() { try { localStorage.removeItem(SAVE_KEY); } catch(e) {} }
-function resumeFromSave(s) {
-  state = freshState();
-  state.currentStage = s.currentStage;
-  state.currentQ = s.currentQ;
-  state.score = s.score;
-  state.stageScores = s.stageScores || [0,0,0,0,0];
-  state.phase = 'playing';
-  state.answered = false;
-}
+// RENDER
+function R(){if(S.ph==='intro')rI();else if(S.ph==='game')rG();else if(S.ph==='trans')rT();else rF();}
+function pc(){return Math.round(S.ans/TQ*100)}
+function rH(){const p=pc(),c=2*Math.PI*18,o=c-(p/100)*c;return`<div class="hdr"><div class="hdr-l"><div class="prw"><svg class="prg" width="46" height="46"><circle class="prg-bg" cx="23" cy="23" r="18"/><circle class="prg-f" cx="23" cy="23" r="18" stroke-dasharray="${c}" stroke-dashoffset="${o}"/></svg><div class="prt">${p}%</div></div><div class="strk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z"/></svg>${S.str}</div></div><div class="hdr-r"><div class="scd"><b>${S.sc}</b>/${S.ans}</div></div></div>`}
+function rP(){return`<div class="sb">${STAGES.map((_,i)=>`<div class="sp ${i<S.stg?'dn':i===S.stg?'on':''}"></div>`).join('')}</div><div class="sl">Stage ${S.stg+1}: ${STAGES[S.stg].title}</div>`}
 
-let state = freshState();
-state.stageMax = STAGE_MAX.slice();
+// INTRO
+function rI(){const sv2=ld();const rh=sv2?`<div class="rb"><p>Saved progress found</p><p>Stage ${sv2.stg+1} · Q${sv2.qi+1} · Score: ${sv2.sc}/${sv2.ans}</p><div class="rbb"><button class="stb" style="margin:0;padding:12px 28px;font-size:14px" onclick="resume()">Continue →</button><button class="stb" style="margin:0;padding:12px 28px;font-size:14px;background:var(--sf2);border:1px solid var(--bd);color:var(--mt)" onclick="fresh()">Start Over</button></div></div>`:`<button class="stb" onclick="go()">Start Review</button>`;A.innerHTML=`<div class="scr"><h1>🌍 Earth Science Review</h1><p>Grade 6 — Exam Revision</p><div class="soi">"Change in Earth's environment can be understood through models of its internal structure and processes."</div><div class="tt">${['Layers','Convection','Plate Boundaries','Continental Drift','Ring of Fire','Earthquakes','Volcanoes'].map(t=>`<span class="tg">${t}</span>`).join('')}</div><p>${TQ} questions · 5 stages · Interactive SVG diagrams</p><p style="font-size:12px;color:#64748b">MCQ · True/False · Ordering · Matching · Fill-the-Blank · Multi-Select · Diagram Study</p>${rh}</div>`}
+function go(){S=fS();S.ph='game';cl();R()}
+function resume(){const s=ld();if(s){S=fS();S.stg=s.stg;S.qi=s.qi;S.sc=s.sc;S.str=s.str||0;S.bs=s.bs||0;S.ans=s.ans;S.ss=s.ss;S.sa=s.sa;S.ph='game';R()}else go()}
+function fresh(){cl();go()}
 
-// =====================================================================
-//  RENDER ENGINE
-// =====================================================================
-function render() {
-  const app = document.getElementById('app');
-  if (state.phase === 'intro') return renderIntro(app);
-  if (state.phase === 'final') return renderFinal(app);
-  if (state.phase === 'transition') return renderTransition(app);
-  renderStage(app);
-}
+// GAME
+function rG(){const st=STAGES[S.stg],q=st.questions[S.qi];const bm={mcq:'mcq',tf:'tf',diagram:'dia',order:'drg',matching:'drg',fill:'fil',multi:'mul'};
+let b='';if(q.dia&&diagMap[q.dia])b+=`<div class="dw">${diagMap[q.dia]()}</div>`;
+switch(q.type){case'mcq':case'diagram':b+=rMCQ(q);break;case'tf':b+=rTF();break;case'order':b+=rOrd(q);break;case'matching':b+=rMat(q);break;case'fill':b+=rFil(q);break;case'multi':b+=rMul(q);break;}
+A.innerHTML=`${rH()}${rP()}<div class="cd" id="qc"><div class="qn">Question ${S.ans+1} of ${TQ} <span class="qb ${bm[q.type]||'mcq'}">${q.type==='diagram'?'diagram':q.type}</span></div><div class="qt">${q.q}</div>${b}<div id="fb"></div></div>`}
 
-function renderIntro(app) {
-  const totalQ = state.stageMax.reduce((a,b) => a+b, 0);
-  const saved = loadSave();
-  const resumeHTML = saved ? `
-    <div style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.4);border-radius:12px;padding:16px;margin-top:16px;">
-      <p style="color:#60a5fa;font-weight:600;font-size:.9rem;margin-bottom:4px;">Saved progress found</p>
-      <p style="color:#94a3b8;font-size:.82rem;">Stage ${saved.currentStage + 1} · Question ${saved.currentQ + 1} · Score: ${saved.score}</p>
-      <div class="btn-row" style="justify-content:center;margin-top:12px;gap:8px;">
-        <button class="btn btn-primary" onclick="resumeGame()">Continue →</button>
-        <button class="btn btn-secondary" onclick="startFresh()">Start Over</button>
-      </div>
-    </div>
-  ` : `<div class="btn-row" style="justify-content:center;margin-top:20px;">
-        <button class="btn btn-primary" onclick="startGame()">Start Review</button>
-      </div>`;
-  app.innerHTML = `
-    <div class="header">
-      <h1>Earth Science Review</h1>
-      <div class="subtitle">Grade 6 — General Revision</div>
-      <div class="myp-badge">Key Concept: Change</div>
-    </div>
-    <div class="stage intro-screen">
-      <h2>Welcome, Explorer</h2>
-      <p>Review everything you've learned about Earth's dynamic interior and how it shapes our planet's surface.</p>
-      <div class="soi">"Change in Earth's environment can be understood through models of its internal structure and processes."</div>
-      <div class="intro-topics">
-        <span class="intro-topic">Layers of the Earth</span>
-        <span class="intro-topic">Convection Currents</span>
-        <span class="intro-topic">Plate Tectonics</span>
-        <span class="intro-topic">Plate Boundaries</span>
-        <span class="intro-topic">Continental Drift</span>
-        <span class="intro-topic">Earthquakes &amp; Volcanoes</span>
-      </div>
-      <p>5 stages &middot; ${totalQ} questions &middot; Multiple question types</p>
-      <p style="font-size:0.82rem;color:#64748b;margin-top:4px;">MCQ &middot; True/False &middot; Ordering &middot; Matching &middot; Fill-the-Blank &middot; Multi-Select</p>
-      ${resumeHTML}
-    </div>`;
-}
+function rMCQ(q){return`<div class="os">${q.opts.map((o,i)=>`<button class="ob" onclick="aM(${i})" id="o${i}">${o}</button>`).join('')}</div>`}
+function rTF(){return`<div class="tfr"><button class="tfb" onclick="aT(true)" id="tt">True</button><button class="tfb" onclick="aT(false)" id="tf">False</button></div>`}
+function rOrd(q){const sh=[...q.items].sort(()=>Math.random()-.5);window._o=sh;return`<div class="ol" id="ol">${sh.map((t,i)=>`<div class="oi" id="oi${i}"><div class="on">${i+1}</div><div class="ot">${t}</div><div class="oa"><button class="ab" onclick="mO(${i},-1)"${i===0?' disabled':''}>▲</button><button class="ab" onclick="mO(${i},1)"${i===sh.length-1?' disabled':''}>▼</button></div></div>`).join('')}</div><button class="sub" onclick="cO()">Check Order</button>`}
+function rMat(q){const sh=[...q.right].sort(()=>Math.random()-.5);window._mr=sh;window._ms={l:-1};window._mp=[];return`<div class="ml">Left</div><div class="ml" style="grid-column:2">Right</div><div class="mg" id="mg">${q.left.map((l,i)=>`<div class="mi" id="ml${i}" onclick="sM('l',${i})">${l}</div><div class="mi" id="mr${i}" onclick="sM('r',${i})">${sh[i]}</div>`).join('')}</div><button class="sub" onclick="cM()">Check Matches</button>`}
+function rFil(q){window._fb=q.blanks.slice();window._fc=Array(q.blanks.length).fill(null);window._fi=0;const pts=q.sentence.split('|___|');let h='<div class="fs">';pts.forEach((p,i)=>{h+=p;if(i<pts.length-1)h+=`<span class="bk" id="bl${i}" onclick="window._fi=${i}">&nbsp;</span>`});h+='</div>';const sb=[...q.bank].sort(()=>Math.random()-.5);h+=`<div class="wb">${sb.map((w,i)=>`<span class="wc" id="wc${i}" onclick="pW(${i},'${w}')">${w}</span>`).join('')}</div><button class="sub" id="fs" onclick="cF()" disabled>Check Answer</button>`;return h}
+function rMul(q){window._ms2=new Set();return`<div id="mos">${q.opts.map((o,i)=>`<div class="mo" id="mo${i}" onclick="tM(${i})"><div class="mx">✓</div><div>${o}</div></div>`).join('')}</div><button class="sub" onclick="cMu()">Check Selection</button>`}
 
-function startGame() { state = freshState(); state.stageMax = STAGE_MAX.slice(); state.currentStage = 0; state.currentQ = 0; state.phase = 'playing'; state.answered = false; clearSave(); render(); }
-function resumeGame() { const s = loadSave(); if(s) { resumeFromSave(s); render(); } else { startGame(); } }
-function startFresh() { clearSave(); startGame(); }
+// ANSWER HANDLERS
+window.aM=function(i){const q=STAGES[S.stg].questions[S.qi],ok=i===q.ans;document.querySelectorAll('.ob').forEach((b,j)=>{b.classList.add('lk');if(j===q.ans)b.classList.add(ok?'ok':'rv');if(j===i&&!ok)b.classList.add('no')});rec(ok,q)}
+window.aT=function(v){const q=STAGES[S.stg].questions[S.qi],ok=v===q.ans;const t=document.getElementById('tt'),f=document.getElementById('tf');t.classList.add('lk');f.classList.add('lk');if(q.ans){t.classList.add(ok?'ok':'rv')}else{f.classList.add(ok?'ok':'rv')}if(!ok){if(v)t.classList.add('no');else f.classList.add('no')}rec(ok,q)}
+window.mO=function(i,d){const l=window._o,j=i+d;if(j<0||j>=l.length)return;[l[i],l[j]]=[l[j],l[i]];const el=document.getElementById('ol');el.innerHTML=l.map((t,k)=>`<div class="oi" id="oi${k}"><div class="on">${k+1}</div><div class="ot">${t}</div><div class="oa"><button class="ab" onclick="mO(${k},-1)"${k===0?' disabled':''}>▲</button><button class="ab" onclick="mO(${k},1)"${k===l.length-1?' disabled':''}>▼</button></div></div>`).join('')}
+window.cO=function(){const q=STAGES[S.stg].questions[S.qi];let ok=true;window._o.forEach((t,i)=>{const el=document.getElementById(`oi${i}`);if(t===q.correct[i])el.classList.add('ok-o');else{el.classList.add('no-o');ok=false}});document.querySelector('.sub').disabled=true;rec(ok,q)}
+window.sM=function(side,i){if(document.getElementById(`m${side}${i}`).classList.contains('lk'))return;if(side==='l'){document.querySelectorAll('[id^=ml]').forEach(e=>e.classList.remove('sel'));document.getElementById(`ml${i}`).classList.add('sel');window._ms.l=i}else{if(window._ms.l<0)return;window._mp.push({l:window._ms.l,r:i});document.getElementById(`ml${window._ms.l}`).classList.add('lk');document.getElementById(`mr${i}`).classList.add('lk');document.getElementById(`ml${window._ms.l}`).classList.remove('sel');window._ms.l=-1}}
+window.cM=function(){const q=STAGES[S.stg].questions[S.qi];let ok=true;q.pairs.forEach(([li,ri])=>{const rIdx=window._mr.indexOf(q.right[ri]);const p=window._mp.find(p=>p.l===li);if(!p||p.r!==rIdx)ok=false});window._mp.forEach(p=>{const cr=q.pairs.find(x=>x[0]===p.l);const ei=window._mr.indexOf(q.right[cr[1]]);if(p.r===ei){document.getElementById(`ml${p.l}`).classList.add('ok-m');document.getElementById(`mr${p.r}`).classList.add('ok-m')}else{document.getElementById(`ml${p.l}`).classList.add('no-m');document.getElementById(`mr${p.r}`).classList.add('no-m')}});document.querySelector('.sub').disabled=true;rec(ok,q)}
+window.pW=function(i,w){const el=document.getElementById(`wc${i}`);if(el.classList.contains('ud'))return;el.classList.add('ud');window._fc[window._fi]=w;document.getElementById(`bl${window._fi}`).textContent=w;document.getElementById(`bl${window._fi}`).classList.add('fd');for(let j=0;j<window._fc.length;j++){if(!window._fc[j]){window._fi=j;break}}if(window._fc.every(v=>v!==null))document.getElementById('fs').disabled=false}
+window.cF=function(){const q=STAGES[S.stg].questions[S.qi];let ok=true;q.blanks.forEach((b,i)=>{const el=document.getElementById(`bl${i}`);if(window._fc[i]===b)el.classList.add('ok-b');else{el.classList.add('no-b');ok=false}});document.getElementById('fs').disabled=true;rec(ok,q)}
+window.tM=function(i){const el=document.getElementById(`mo${i}`);if(el.classList.contains('lk'))return;if(window._ms2.has(i)){window._ms2.delete(i);el.classList.remove('sel')}else{window._ms2.add(i);el.classList.add('sel')}}
+window.cMu=function(){const q=STAGES[S.stg].questions[S.qi],sel=[...window._ms2],cr=new Set(q.correct);let ok=sel.length===cr.size&&sel.every(i=>cr.has(i));q.opts.forEach((_,i)=>{const el=document.getElementById(`mo${i}`);el.classList.add('lk');if(cr.has(i))el.classList.add('ok-m2');else if(sel.includes(i))el.classList.add('no-m2')});document.querySelector('.sub').disabled=true;rec(ok,q)}
 
-function progressHTML() {
-  const labels = STAGES.map((s,i) => {
-    let c = i < state.currentStage ? 'completed' : i === state.currentStage ? 'active' : '';
-    return `<span class="${c}">${s.title}</span>`;
-  }).join('');
-  const steps = STAGES.map((_,i) => {
-    let c = i < state.currentStage ? 'completed' : i === state.currentStage ? 'active' : '';
-    return `<div class="progress-step ${c}"></div>`;
-  }).join('');
-  return `<div class="progress-bar">${steps}</div><div class="progress-labels">${labels}</div>`;
-}
-
-function renderStage(app) {
-  const stg = STAGES[state.currentStage];
-  const q = stg.questions[state.currentQ];
-  let qHTML = '';
-  if (q.type === 'mcq') qHTML = renderMCQ(q);
-  else if (q.type === 'tf') qHTML = renderTF(q);
-  else if (q.type === 'order' || q.type === 'drag-sort') qHTML = renderOrder(q);
-  else if (q.type === 'matching') qHTML = renderMatching(q);
-  else if (q.type === 'fill') qHTML = renderFill(q);
-  else if (q.type === 'multi') qHTML = renderMulti(q);
-
-  app.innerHTML = `
-    <div class="header"><h1>Earth Science Review</h1></div>
-    ${progressHTML()}
-    <div class="score-display">Score <span class="score-num">${state.score}</span></div>
-    <div class="stage">
-      <div class="stage-header">
-        <div class="stage-num">Stage ${stg.num} of 5</div>
-        <div class="stage-title">${stg.title}</div>
-        <div class="stage-intention">${stg.intention}</div>
-      </div>
-      <div class="question-counter">Question ${state.currentQ + 1} of ${stg.questions.length}</div>
-      <div class="question-text">${q.text}</div>
-      ${qHTML}
-      <div id="feedback" class="feedback"></div>
-      <div class="btn-row" id="btnRow"></div>
-    </div>`;
-
-  if (q.type === 'order' || q.type === 'drag-sort') initOrder();
-  if (q.type === 'matching') initMatching();
-  if (q.type === 'fill') initFill(q);
-  if (q.type === 'multi') initMulti();
-}
-
-// === MCQ ===
-function renderMCQ(q) {
-  return `<div class="options">${q.options.map((o,i) =>
-    `<button class="option-btn" onclick="checkMCQ(${i})" id="opt${i}">${o}</button>`
-  ).join('')}</div>`;
-}
-function checkMCQ(idx) {
-  if (state.answered) return;
-  state.answered = true;
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  const ok = idx === q.correct;
-  document.querySelectorAll('.option-btn').forEach((b,i) => {
-    b.classList.add('disabled');
-    if (i === q.correct) b.classList.add('correct');
-    if (i === idx && !ok) b.classList.add('incorrect');
-  });
-  if (ok) { state.score++; state.stageScores[state.currentStage]++; }
-  showFeedback(ok, q); showNextBtn();
-}
-
-// === TRUE / FALSE ===
-function renderTF(q) {
-  return `<div class="tf-row">
-    <button class="tf-btn" id="tfTrue" onclick="checkTF(true)">True</button>
-    <button class="tf-btn" id="tfFalse" onclick="checkTF(false)">False</button>
-  </div>`;
-}
-function checkTF(val) {
-  if (state.answered) return;
-  state.answered = true;
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  const ok = val === q.correct;
-  document.getElementById('tfTrue').classList.add('disabled');
-  document.getElementById('tfFalse').classList.add('disabled');
-  const correctId = q.correct ? 'tfTrue' : 'tfFalse';
-  const chosenId = val ? 'tfTrue' : 'tfFalse';
-  document.getElementById(correctId).classList.add('correct');
-  if (!ok) document.getElementById(chosenId).classList.add('incorrect');
-  if (ok) { state.score++; state.stageScores[state.currentStage]++; }
-  showFeedback(ok, q); showNextBtn();
-}
-
-// === ORDER / DRAG-SORT ===
-function renderOrder(q) {
-  const items = q.type === 'drag-sort' ? [...q.items] : [...q.items];
-  // Shuffle
-  for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [items[i],items[j]]=[items[j],items[i]]; }
-  state.orderState = [...items];
-  return `<div class="order-list" id="orderList"></div>
-    <div style="text-align:center;margin-bottom:8px;">
-      <button class="btn btn-primary" onclick="checkOrder()" id="checkOrderBtn">Check Order</button>
-    </div>`;
-}
-function initOrder() { renderOrderList(); }
-function renderOrderList() {
-  const list = document.getElementById('orderList');
-  if (!list) return;
-  list.innerHTML = state.orderState.map((item,i) =>
-    `<div class="order-item" id="oi${i}">
-      <div class="order-num">${i+1}</div>
-      <div class="order-text">${item}</div>
-      <div class="order-arrows">
-        <button class="arrow-btn" onclick="moveOrder(${i},-1)" ${i===0?'disabled':''}>&#9650;</button>
-        <button class="arrow-btn" onclick="moveOrder(${i},1)" ${i===state.orderState.length-1?'disabled':''}>&#9660;</button>
-      </div>
-    </div>`
-  ).join('');
-}
-function moveOrder(idx, dir) {
-  if (state.answered) return;
-  const n = idx + dir;
-  if (n < 0 || n >= state.orderState.length) return;
-  [state.orderState[idx], state.orderState[n]] = [state.orderState[n], state.orderState[idx]];
-  renderOrderList();
-}
-function checkOrder() {
-  if (state.answered) return;
-  state.answered = true;
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  const correct = q.type === 'drag-sort' ? q.correct : q.items;
-  const ok = state.orderState.every((item,i) => item === correct[i]);
-  document.querySelectorAll('.order-item').forEach((el,i) => {
-    if (state.orderState[i] === correct[i]) {
-      el.style.borderColor = '#22c55e';
-      el.querySelector('.order-num').style.background = '#22c55e';
-      el.querySelector('.order-num').style.color = '#fff';
-    } else { el.style.borderColor = '#ef4444'; }
-    el.querySelectorAll('.arrow-btn').forEach(b => b.disabled = true);
-  });
-  document.getElementById('checkOrderBtn').style.display = 'none';
-  if (ok) { state.score++; state.stageScores[state.currentStage]++; }
-  showFeedback(ok, q); showNextBtn();
-}
-
-// === MATCHING ===
-function renderMatching(q) {
-  const rm = q.right.map((_,i) => i);
-  for (let i = rm.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [rm[i],rm[j]]=[rm[j],rm[i]]; }
-  state.matchState = { selected: null, side: null, matched: [], rightMap: rm, attempts: 0 };
-  let rows = '';
-  for (let i = 0; i < q.left.length; i++) {
-    rows += `<div class="match-item" id="mL${i}" onclick="selectMatch('left',${i})">${q.left[i]}</div>
-             <div class="match-item" id="mR${rm[i]}" onclick="selectMatch('right',${rm[i]})">${q.right[rm[i]]}</div>`;
-  }
-  return `<div class="match-grid">
-    <div class="match-col-header">Term</div><div class="match-col-header">Description</div>
-    ${rows}
-  </div><div id="matchHint" style="font-size:0.82rem;color:#64748b;text-align:center;">Select one from each column to match them.</div>`;
-}
-function initMatching() {}
-function selectMatch(side, idx) {
-  if (state.answered) return;
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  const ms = state.matchState;
-  if (ms.matched.some(m => (side==='left'&&m[0]===idx)||(side==='right'&&m[1]===idx))) return;
-  const el = document.getElementById(side==='left'?`mL${idx}`:`mR${idx}`);
-  el.classList.remove('wrong-flash');
-
-  if (ms.selected !== null && ms.side !== side) {
-    const li = side==='left'?idx:ms.selected, ri = side==='right'?idx:ms.selected;
-    const pair = q.pairs.find(p => p[0]===li);
-    if (pair && pair[1]===ri) {
-      ms.matched.push([li,ri]);
-      document.getElementById(`mL${li}`).classList.add('matched');
-      document.getElementById(`mR${ri}`).classList.add('matched');
-      document.getElementById(`mL${li}`).classList.remove('selected');
-      document.getElementById(`mR${ri}`).classList.remove('selected');
-      if (ms.side==='left') document.getElementById(`mL${ms.selected}`).classList.remove('selected');
-      else document.getElementById(`mR${ms.selected}`).classList.remove('selected');
-      ms.selected = null; ms.side = null;
-      if (ms.matched.length === q.left.length) {
-        state.answered = true;
-        const ok = ms.attempts < q.left.length;
-        if (ok) { state.score++; state.stageScores[state.currentStage]++; }
-        showFeedback(true, q); showNextBtn();
-      }
-    } else {
-      ms.attempts++;
-      el.classList.add('wrong-flash');
-      const prev = document.getElementById(ms.side==='left'?`mL${ms.selected}`:`mR${ms.selected}`);
-      prev.classList.add('wrong-flash'); prev.classList.remove('selected');
-      ms.selected = null; ms.side = null;
-      document.getElementById('matchHint').innerHTML = `<span style="color:#fca5a5;">${q.hint}</span>`;
-      setTimeout(() => { el.classList.remove('wrong-flash'); prev.classList.remove('wrong-flash'); }, 500);
-    }
-  } else {
-    if (ms.selected !== null && ms.side === side) {
-      document.getElementById(side==='left'?`mL${ms.selected}`:`mR${ms.selected}`).classList.remove('selected');
-    }
-    el.classList.add('selected'); ms.selected = idx; ms.side = side;
-  }
-}
-
-// === FILL THE BLANK ===
-function renderFill(q) {
-  // Build word bank (shuffled)
-  const bank = [...q.bank];
-  for (let i = bank.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [bank[i],bank[j]]=[bank[j],bank[i]]; }
-  state.fillState = { placed: new Array(q.blanks.length).fill(null), activeBlank: 0, bank };
-
-  const parts = q.sentence.split('|___|');
-  let html = '<div class="fill-sentence">';
-  parts.forEach((p, i) => {
-    html += p;
-    if (i < parts.length - 1) html += `<span class="blank-slot" id="blank${i}" onclick="selectBlank(${i})">${i === 0 ? '▾' : '▾'}</span>`;
-  });
-  html += '</div>';
-  html += `<div class="word-bank" id="wordBank">${bank.map((w,i) =>
-    `<span class="word-chip" id="chip${i}" onclick="placeWord(${i})">${w}</span>`
-  ).join('')}</div>`;
-  html += `<div style="text-align:center;margin-bottom:8px;">
-    <button class="btn btn-primary" onclick="checkFill()" id="checkFillBtn">Check Answer</button>
-  </div>`;
-  return html;
-}
-function initFill(q) { highlightBlank(0); }
-function selectBlank(idx) {
-  if (state.answered) return;
-  const fs = state.fillState;
-  // If blank already has a word, return it to bank
-  if (fs.placed[idx] !== null) {
-    const chipIdx = fs.bank.indexOf(fs.placed[idx]);
-    if (chipIdx >= 0) document.getElementById(`chip${chipIdx}`).classList.remove('used');
-    fs.placed[idx] = null;
-    document.getElementById(`blank${idx}`).textContent = '▾';
-    document.getElementById(`blank${idx}`).classList.remove('filled');
-  }
-  fs.activeBlank = idx;
-  highlightBlank(idx);
-}
-function highlightBlank(idx) {
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  for (let i = 0; i < q.blanks.length; i++) {
-    const el = document.getElementById(`blank${i}`);
-    if (el) el.style.borderBottomColor = i === idx ? '#f59e0b' : '#3b82f6';
-  }
-}
-function placeWord(chipIdx) {
-  if (state.answered) return;
-  const fs = state.fillState;
-  const word = fs.bank[chipIdx];
-  const chip = document.getElementById(`chip${chipIdx}`);
-  if (chip.classList.contains('used')) return;
-
-  // Place in active blank
-  const bi = fs.activeBlank;
-  // If blank already has a word, return old word
-  if (fs.placed[bi] !== null) {
-    const oldIdx = fs.bank.indexOf(fs.placed[bi]);
-    if (oldIdx >= 0) document.getElementById(`chip${oldIdx}`).classList.remove('used');
-  }
-  fs.placed[bi] = word;
-  chip.classList.add('used');
-  const blank = document.getElementById(`blank${bi}`);
-  blank.textContent = word;
-  blank.classList.add('filled');
-
-  // Move to next empty blank
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  for (let i = 0; i < q.blanks.length; i++) {
-    const next = (bi + 1 + i) % q.blanks.length;
-    if (fs.placed[next] === null) { fs.activeBlank = next; highlightBlank(next); return; }
-  }
-  highlightBlank(-1); // All filled
-}
-function checkFill() {
-  if (state.answered) return;
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  const fs = state.fillState;
-  if (fs.placed.includes(null)) {
-    document.getElementById('feedback').className = 'feedback incorrect';
-    document.getElementById('feedback').innerHTML = 'Fill in all the blanks before checking.';
-    document.getElementById('feedback').style.display = 'block';
-    return;
-  }
-  state.answered = true;
-  const ok = fs.placed.every((w,i) => w === q.blanks[i]);
-  q.blanks.forEach((correct, i) => {
-    const el = document.getElementById(`blank${i}`);
-    if (fs.placed[i] === correct) el.classList.add('correct-slot');
-    else { el.classList.add('incorrect-slot'); el.textContent = correct; }
-  });
-  document.getElementById('checkFillBtn').style.display = 'none';
-  document.querySelectorAll('.word-chip').forEach(c => c.style.cursor = 'default');
-  if (ok) { state.score++; state.stageScores[state.currentStage]++; }
-  showFeedback(ok, q); showNextBtn();
-}
-
-// === MULTI-SELECT ===
-function renderMulti(q) {
-  return `<div class="multi-options">${q.options.map((o,i) =>
-    `<button class="multi-btn" id="multi${i}" onclick="toggleMulti(${i})"><span class="check-box"></span><span>${o}</span></button>`
-  ).join('')}</div>
-  <div style="text-align:center;margin-bottom:8px;">
-    <button class="btn btn-primary" onclick="checkMulti()" id="checkMultiBtn">Check Answer</button>
-  </div>`;
-}
-function initMulti() { state.multiState = { toggled: new Set() }; }
-function toggleMulti(idx) {
-  if (state.answered) return;
-  const ms = state.multiState;
-  const el = document.getElementById(`multi${idx}`);
-  if (ms.toggled.has(idx)) { ms.toggled.delete(idx); el.classList.remove('toggled'); }
-  else { ms.toggled.add(idx); el.classList.add('toggled'); }
-}
-function checkMulti() {
-  if (state.answered) return;
-  const q = STAGES[state.currentStage].questions[state.currentQ];
-  const ms = state.multiState;
-  if (ms.toggled.size === 0) {
-    document.getElementById('feedback').className = 'feedback incorrect';
-    document.getElementById('feedback').innerHTML = 'Select at least one option before checking.';
-    document.getElementById('feedback').style.display = 'block';
-    return;
-  }
-  state.answered = true;
-  const correctSet = new Set(q.correct);
-  const ok = ms.toggled.size === correctSet.size && [...ms.toggled].every(v => correctSet.has(v));
-
-  q.options.forEach((_, i) => {
-    const el = document.getElementById(`multi${i}`);
-    el.classList.add('disabled');
-    if (correctSet.has(i) && ms.toggled.has(i)) el.classList.add('correct');
-    else if (!correctSet.has(i) && ms.toggled.has(i)) el.classList.add('incorrect');
-    else if (correctSet.has(i) && !ms.toggled.has(i)) el.classList.add('missed');
-  });
-  document.getElementById('checkMultiBtn').style.display = 'none';
-  if (ok) { state.score++; state.stageScores[state.currentStage]++; }
-  showFeedback(ok, q); showNextBtn();
-}
-
-// === FEEDBACK & NAV ===
-function showFeedback(ok, q) {
-  const fb = document.getElementById('feedback');
-  fb.className = ok ? 'feedback correct' : 'feedback incorrect';
-  fb.innerHTML = ok
-    ? `&#10003; Correct!<div class="why">${q.why}</div>`
-    : `&#10007; Not quite. ${q.hint}<div class="why"><strong>The answer:</strong> ${q.why}</div>`;
-}
-function showNextBtn() {
-  const stg = STAGES[state.currentStage];
-  const lastQ = state.currentQ >= stg.questions.length - 1;
-  const lastS = state.currentStage >= STAGES.length - 1;
-  const row = document.getElementById('btnRow');
-  if (lastQ && lastS) row.innerHTML = `<button class="btn btn-success" onclick="showFinal()">See Results</button>`;
-  else if (lastQ) row.innerHTML = `<button class="btn btn-success" onclick="nextStage()">Complete Stage →</button>`;
-  else row.innerHTML = `<button class="btn btn-primary" onclick="nextQuestion()">Next Question →</button>`;
-}
-function nextQuestion() { state.currentQ++; state.answered = false; state.matchState = null; state.orderState = null; state.fillState = null; state.multiState = null; saveState(); render(); }
-function nextStage() { state.phase = 'transition'; saveState(); render(); }
-
-function renderTransition(app) {
-  const stg = STAGES[state.currentStage];
-  const sc = state.stageScores[state.currentStage], mx = state.stageMax[state.currentStage];
-  const pct = Math.round(sc/mx*100);
-  const emoji = pct>=70?'🌟':pct>=50?'👍':'💪';
-  const msg = pct>=70?'Great work!':pct>=50?'Good effort — keep building!':'Keep going — revision builds mastery!';
-  const nxt = STAGES[state.currentStage+1];
-  app.innerHTML = `
-    <div class="header"><h1>Earth Science Review</h1></div>
-    ${progressHTML()}
-    <div class="score-display">Score <span class="score-num">${state.score}</span></div>
-    <div class="stage transition-screen">
-      <div class="emoji">${emoji}</div>
-      <h2>Stage ${stg.num} Complete: ${stg.title}</h2>
-      <div class="stage-score">${sc} / ${mx} (${pct}%)</div>
-      <p>${msg}</p>
-      <p style="margin-top:20px;color:#64748b;">Next up:</p>
-      <h2 style="font-size:1.1rem;color:#93c5fd;">Stage ${nxt.num}: ${nxt.title}</h2>
-      <p style="color:#94a3b8;font-style:italic;font-size:0.85rem;">${nxt.intention}</p>
-      <div class="btn-row" style="justify-content:center;margin-top:24px;">
-        <button class="btn btn-primary" onclick="proceedNext()">Continue →</button>
-      </div>
-    </div>`;
-}
-function proceedNext() { state.currentStage++; state.currentQ = 0; state.answered = false; state.phase = 'playing'; saveState(); render(); }
-
-function showFinal() { state.phase = 'final'; clearSave(); render(); }
-function renderFinal(app) {
-  const total = state.stageMax.reduce((a,b)=>a+b,0);
-  const pct = Math.round(state.score/total*100);
-  let grade = pct>=90?'Outstanding':pct>=70?'Proficient':pct>=50?'Developing':'Emerging';
-  let emoji = pct>=90?'🏆':pct>=70?'🌟':pct>=50?'📈':'🌱';
-  const bd = STAGES.map((s,i) =>
-    `<div class="stage-result"><span class="name">${s.title}</span><span class="sc">${state.stageScores[i]}/${state.stageMax[i]}</span></div>`
-  ).join('');
-  app.innerHTML = `
-    <div class="header"><h1>Earth Science Review</h1></div>
-    <div class="stage final-screen">
-      <div style="font-size:3rem;">${emoji}</div>
-      <h2>Review Complete!</h2>
-      <div class="final-score">${state.score} / ${total} (${pct}%)</div>
-      <div class="grade">${grade}</div>
-      <div class="stage-breakdown">${bd}</div>
-      <div class="transfer-prompt">
-        <h3>Now think about this...</h3>
-        <p>Everything you reviewed connects through one idea: <strong>change</strong>. Heat deep inside Earth drives convection, which moves plates, which reshapes the surface over millions of years. Next time you see a mountain range, a volcanic island, or hear about an earthquake — you now understand the engine driving it all.</p>
-        <p style="margin-top:10px;">Where in the world can you find evidence of these processes happening <em>right now</em>?</p>
-      </div>
-      <div class="btn-row" style="justify-content:center;margin-top:20px;">
-        <button class="btn btn-secondary" onclick="resetGame()">Try Again</button>
-      </div>
-    </div>`;
-}
-function resetGame() {
-  clearSave();
-  state = freshState(); state.stageMax = STAGE_MAX.slice();
-  render();
-}
-
-render();
+function rec(ok,q){S.ans++;S.sa[S.stg]++;if(ok){S.sc++;S.str++;S.ss[S.stg]++;if(S.str>S.bs)S.bs=S.str}else S.str=0;sv();const isL=S.qi>=STAGES[S.stg].questions.length-1,isLS=S.stg>=STAGES.length-1;document.getElementById('fb').innerHTML=`<div class="fb ${ok?'fbok':'fbno'}"><strong>${ok?'✓ Correct!':'✗ Not quite'}</strong>${ok?'':`<p style="margin-bottom:6px"><em>Hint: ${q.hint}</em></p>`}<p>${q.why}</p></div><button class="nx" onclick="${isL&&isLS?'goF()':isL?'goTr()':'nQ()'}">  ${isL&&isLS?'See Results →':isL?'Complete Stage →':'Next Question →'}</button>`}
+window.nQ=function(){S.qi++;sv();R()};window.goTr=function(){S.ph='trans';sv();R()};window.goF=function(){S.ph='final';cl();R()};
+function rT(){const sc=S.ss[S.stg],mx=S.sa[S.stg],p=Math.round(sc/mx*100),em=p>=70?'🌟':p>=50?'👍':'💪',nx=STAGES[S.stg+1];A.innerHTML=`<div class="scr"><div style="font-size:48px">${em}</div><h2>Stage ${S.stg+1} Complete: ${STAGES[S.stg].title}</h2><p style="color:var(--ok);font-weight:600;font-size:16px">${sc}/${mx} (${p}%)</p><p>${p>=70?'Great work!':p>=50?'Good effort!':'Keep going!'}</p><p style="margin-top:16px">Up next:</p><h2 style="color:var(--pr)">${nx.title}</h2><p style="font-style:italic">${nx.int}</p><button class="stb" onclick="pN()">Continue →</button></div>`}
+window.pN=function(){S.stg++;S.qi=0;S.ph='game';sv();R()};
+function rF(){const p=Math.round(S.sc/TQ*100),g=p>=90?'Outstanding!':p>=75?'Great work!':p>=50?'Good effort':'Keep practising';A.innerHTML=`<div class="scr"><h1>${g}</h1><p style="font-size:18px;color:var(--tx)">${S.sc}/${TQ} (${p}%)</p><div class="rg"><div class="rs"><div class="v" style="color:var(--ok)">${S.sc}</div><div class="l">Correct</div></div><div class="rs"><div class="v" style="color:var(--er)">${TQ-S.sc}</div><div class="l">Incorrect</div></div><div class="rs"><div class="v" style="color:var(--wa)">${S.bs}</div><div class="l">Best Streak</div></div></div><p style="font-weight:600;margin:16px 0 8px">Stage Breakdown</p><div class="rg">${STAGES.map((s,i)=>{const sp=S.sa[i]>0?Math.round(S.ss[i]/S.sa[i]*100):0;return`<div class="rs"><div class="v" style="color:${sp>=70?'var(--ok)':sp>=50?'var(--wa)':'var(--er)'}">${sp}%</div><div class="l">${s.title}</div></div>`}).join('')}</div><div class="tr"><strong>Think Further</strong>Everything connects through <span class="kw">change</span>. Heat inside Earth drives convection → moves plates → reshapes the surface over millions of years. Next time you see a mountain or hear about an earthquake — you understand the engine driving it.</div><button class="stb" onclick="rst()" style="margin-top:20px">Play Again</button></div>`}
+window.rst=function(){cl();S=fS();R()};
+R();
 </script>
-
-<!-- Teacher Notes:
-  MYP Alignment: Criteria A (Knowing & Understanding), D (Reflecting on Science)
-  Key Concept: Change | Related Concepts: Environment, Models
-  ATL: Critical thinking (cause-effect chains, evaluating evidence)
-  Global Context: Orientation in space and time
-
-  Question Types Used: MCQ, True/False, Ordering, Matching, Fill-the-Blank, Multi-Select (40 questions total)
-
-  Suggested Debrief Questions:
-  1. How does the concept of "change" connect what happens inside Earth to what we see on the surface?
-  2. Why was Wegener's evidence not enough to convince scientists at first? What does this tell us about how science works?
-  3. If you could place a GPS tracker on any tectonic plate, which would you choose and why?
-  4. How might life on Earth be different if convection currents stopped?
-  5. What is the relationship between the type of plate boundary and the type of hazard produced?
-
-  Differentiation:
-  - Support: Students can work in pairs. Print hint text as a scaffold sheet. Allow two attempts per question.
-  - Extension: After completing, students draw a single cause-chain diagram connecting all 5 stages. Or write a "letter from Wegener" explaining his frustration.
-
-  Estimated Play Time: 25-30 minutes total (~5-6 min per stage)
--->
 </body>
 </html>
