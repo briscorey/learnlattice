@@ -13,6 +13,7 @@
       t.classList.toggle('open', open);
       t.setAttribute('aria-expanded', open);
       if (n) n.classList.toggle('nav-open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
     });
     p.querySelectorAll('a').forEach(function(a) {
       a.addEventListener('click', function() {
@@ -20,6 +21,7 @@
         t.classList.remove('open');
         t.setAttribute('aria-expanded', 'false');
         if (n) n.classList.remove('nav-open');
+        document.body.style.overflow = '';
       });
     });
   })();
