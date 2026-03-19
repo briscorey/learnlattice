@@ -86,9 +86,6 @@ We offer complete Criterion B assessment packs, each including the task, mark sc
 
 These investigations are designed for classroom use — low-floor, high-ceiling, with teacher moves and warm-up activities:
 
-- [The Savings Race](/resources/grade-8-compound-interest-investigation/) — Grade 8
-- [The Phone Plan Problem](/resources/grade-8-simultaneous-equations-investigation/) — Grade 8
-- [The Bridge Parabola](/resources/grade-9-quadratic-investigation/) — Grade 9
 - [How Many Grains of Rice Fill a Classroom?](/resources/how-many-grains-of-rice/) — Grade 6, Grade 7
 - [The Growing Squares](/resources/the-growing-squares/) — Grade 6, Grade 7
 - [The Handshake Problem](/resources/the-handshake-problem/) — Grade 7, Grade 8

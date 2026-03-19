@@ -74,4 +74,3 @@ For marking, the [Report Comment Bank](/assessment/comments/) has ready-to-use c
 - [Number Patterns Exemplar](/resources/criterion-b-exemplar-number-patterns/) — verification vs. justification
 - [Bouncing Ball Exemplar](/resources/criterion-b-exemplar-bouncing-ball/) — handling anomalous data
 - [Report Comment Bank](/assessment/comments/) — ready-to-use feedback
-- [Worked Example: nth Term](/resources/worked-example-nth-term/) — step-by-step for students

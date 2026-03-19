@@ -13,6 +13,6 @@ Our geometry resources cover angle properties, coordinate geometry, transformati
 
 ### Geometry as Investigation
 
-The strongest MYP geometry tasks ask students to discover properties rather than apply given formulas. Our [Tessellation Explorer](/resources/grade-6-tessellation-explorer-investigation/) lets students investigate which polygons tessellate and why. The [Circle Theorems](/resources/grade-9-circle-theorems-investigation/) investigation guides students to discover angle relationships through construction before they see the formal proofs.
+The strongest MYP geometry tasks ask students to discover properties rather than apply given formulas. Our [Tessellation Explorer](/resources/grade-6-tessellation-explorer-investigation/) lets students investigate which polygons tessellate and why, discovering angle relationships through construction before they see the formal proofs.
 
 Browse all geometry resources below, or visit [/subjects/mathematics/](/subjects/mathematics/) for the full mathematics collection.

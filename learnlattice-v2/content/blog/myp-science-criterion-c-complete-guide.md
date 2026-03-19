@@ -53,7 +53,6 @@ A student who always draws a line graph regardless of data type is capped at lev
 ## Free Criterion C Science Resources on LearnLattice
 
 - [Acids, Bases, and Neutralisation Investigation](/resources/acids-bases-and-neutralisation-investigation/) — MYP Year 2, MYP Year 3
-- [Climate Data and Biome Shifts Analysis](/resources/climate-data-and-biome-shifts-analysis/) — MYP Year 4
 - [What Does Level 7 Look Like? Lab Report Communication](/resources/criterion-c-exemplar-lab-report/) — Grade 8, Grade 9
 - [The Sinking Orange](/resources/density-and-floating-investigation/) — Grade 6, Grade 7
 - [Where Does the Energy Go?](/resources/energy-transfer-investigation/) — Grade 7, Grade 8

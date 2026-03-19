@@ -192,37 +192,6 @@
 
 
 
-// Count-up animation for stat numbers
-  (function() {
-    function animateCount(el) {
-      const target = parseInt(el.dataset.count, 10);
-      if (isNaN(target)) return;
-      const duration = 1400;
-      const start = performance.now();
-      function step(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        // ease out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(eased * target);
-        el.textContent = current + (target > 10 ? '+' : '');
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = target + (target > 10 ? '+' : '');
-      }
-      requestAnimationFrame(step);
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat-num[data-count]').forEach(el => observer.observe(el));
-  })();
-
 // ─── MEGA MENU keyboard nav + click-outside ───────────────────────────────
   (function() {
     var items = document.querySelectorAll('.nav-item.has-dropdown');

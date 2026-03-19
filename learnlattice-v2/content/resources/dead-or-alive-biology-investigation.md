@@ -132,8 +132,8 @@ parent_summary: 'Your child is exploring what makes something alive by testing e
   fire and viruses are alive. Ask them: can you name the 7 characteristics?'
 sequence:
   prev: null
-  next: /resources/grade-6-habitats-investigation/
-  next_label: Micro-Habitats Under a Log
+  next: null
+  next_label: ""
   unit: Living Things
 differentiated:
   approaching: List the 7 characteristics. For each one, write YES or NO for fire.

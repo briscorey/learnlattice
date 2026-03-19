@@ -131,8 +131,8 @@ parent_summary: 'Your child is learning about probability by testing whether a d
   Ask them: if you roll a die 60 times, how many 6s should you get?'
 sequence:
   prev: null
-  next: /resources/grade-8-probability-two-events/
-  next_label: Two Dice, One Question
+  next: null
+  next_label: ""
   unit: Probability & Statistics
 differentiated:
   approaching: Roll the die 30 times. Count how many times each number appears. Is

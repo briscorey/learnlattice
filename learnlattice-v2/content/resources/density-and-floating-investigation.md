@@ -123,8 +123,8 @@ parent_summary: 'Your child is learning about density — why some objects float
   orange floats?'
 sequence:
   prev: null
-  next: /resources/grade-8-conservation-of-mass-investigation/
-  next_label: Where Did the Mass Go?
+  next: null
+  next_label: ""
   unit: Properties of Matter
 differentiated:
   approaching: Measure mass and volume of 3 objects. Calculate density. Do they float
