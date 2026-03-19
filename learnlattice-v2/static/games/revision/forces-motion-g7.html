@@ -504,7 +504,7 @@ const QUESTIONS = [
   { type:"diagram", q:"In this 4-gear chain, <span class='keyword'>Gear 1</span> turns anticlockwise. What direction does <span class='keyword'>Gear 4</span> turn?",
     diagram:"gear_chain4", opts:["It depends on the gear sizes","Clockwise","It does not move","Anticlockwise — same as Gear 1"],
     ans:1, hint:"Count the gears: 4 gears. Each gear reverses direction. Gear 1 is anti-CW, so Gear 2 is CW, Gear 3 is anti-CW, Gear 4 is...", why:"Gear 1 (anti-CW) → Gear 2 (CW) → Gear 3 (anti-CW) → Gear 4 (<span class='keyword'>CW</span>). Each gear turns the opposite way to the one before it. Simple rule: odd number of gears = last goes same way as first. Even number = last goes opposite way." },
-  { type:"drag", q:"Rank these scenarios from <span class='keyword'>lowest</span> to <span class='keyword'>highest</span> net force.",
+  { type:"drag", q:"Rank from <span class='keyword'>lowest</span> net force (top) to <span class='keyword'>highest</span> net force (bottom).",
     categories:["Lowest to Highest Net Force"],
     items:[
       {text:"Book on table (balanced)", correct:0, order:0},
@@ -1102,6 +1102,7 @@ function renderOrderQuestion(q) {
 
   let html = `<div id="drag-area">`;
   html += `<div class="drag-label">${q.categories[0]}</div>`;
+  html += `<div style="text-align:center;font-size:11px;color:var(--warning);font-weight:600;margin-bottom:6px;letter-spacing:.5px">⬆ FIRST · · · LAST ⬇</div>`;
   html += `<div class="drag-zone" id="order-zone">`;
   shuffled.forEach((item, i) => {
     html += `<div class="drag-item" draggable="true" id="oitem-${i}" data-idx="${i}" ondragstart="orderDragStart(event,${i})" ondragover="event.preventDefault()" ondrop="orderDrop(event,${i})"><span class="grip">⠿</span> ${item.text}</div>`;
