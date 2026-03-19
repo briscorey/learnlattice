@@ -550,7 +550,8 @@ function freshState() {
     fastAnswers: 0,
     qResults: [], // tracks each answered question: {idx, correct}
     retryMode: false,
-    retryQueue: [] // indices of wrong questions for retry
+    retryQueue: [], // indices of wrong questions for retry
+    answerLocked: false
   };
 }
 
@@ -1001,6 +1002,8 @@ function renderFrictionDiagram(type) {
 
 // === RENDER GAME ===
 function renderGame() {
+  state._navLocked = false;
+  state.answerLocked = false;
   const q = getActiveQuestion();
   const qNum = state.currentQ + 1;
   const typeBadge = {
@@ -1201,6 +1204,8 @@ window.orderDrop = function(e, targetIdx) {
 
 // === ANSWER HANDLERS ===
 window.answerMCQ = function(idx) {
+  if(state.answerLocked) return;
+  state.answerLocked = true;
   const q = getActiveQuestion();
   const correct = idx === q.ans;
   const stage = getStageForQ(state.currentQ);
@@ -1216,6 +1221,7 @@ window.answerMCQ = function(idx) {
 };
 
 window.answerCalc = function() {
+  if(state.answerLocked) return;
   const q = getActiveQuestion();
   const input = document.getElementById("calc-in");
   const val = parseFloat(input.value);
@@ -1234,6 +1240,8 @@ window.answerCalc = function() {
 };
 
 window.checkDrag = function() {
+  if(state.answerLocked) return;
+  state.answerLocked = true;
   const q = getActiveQuestion();
   const stage = getStageForQ(state.currentQ);
   let allCorrect = true;
@@ -1254,6 +1262,8 @@ window.checkDrag = function() {
 };
 
 window.checkOrder = function() {
+  if(state.answerLocked) return;
+  state.answerLocked = true;
   const q = getActiveQuestion();
   const stage = getStageForQ(state.currentQ);
   let allCorrect = true;
@@ -1273,6 +1283,8 @@ window.checkOrder = function() {
 };
 
 window.checkMatch = function() {
+  if(state.answerLocked) return;
+  state.answerLocked = true;
   const q = getActiveQuestion();
   const stage = getStageForQ(state.currentQ);
   let allCorrect = true;
@@ -1379,6 +1391,9 @@ function showAchievementPopup(text) {
 }
 
 window.nextQuestion = function() {
+  if(state._navLocked) return;
+  state._navLocked = true;
+  state.answerLocked = false;
   const nextQ = state.currentQ + 1;
 
   if(nextQ >= getTotalActiveQuestions()) {
@@ -1432,6 +1447,8 @@ function renderStageTransition() {
 }
 
 window.continueGame = function() {
+  if(state._navLocked) return;
+  state._navLocked = true;
   state.screen = "game";
   state.questionStartTime = Date.now();
   render();
