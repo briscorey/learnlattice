@@ -6,17 +6,20 @@
   (function() {
     var t = document.querySelector('.nav-toggle');
     var p = document.querySelector('.nav-panel');
+    var n = document.querySelector('nav');
     if (!t || !p) return;
     t.addEventListener('click', function() {
       var open = p.classList.toggle('open');
       t.classList.toggle('open', open);
       t.setAttribute('aria-expanded', open);
+      if (n) n.classList.toggle('nav-open', open);
     });
     p.querySelectorAll('a').forEach(function(a) {
       a.addEventListener('click', function() {
         p.classList.remove('open');
         t.classList.remove('open');
         t.setAttribute('aria-expanded', 'false');
+        if (n) n.classList.remove('nav-open');
       });
     });
   })();
