@@ -1444,6 +1444,7 @@ window.nextQuestion = function() {
 };
 
 function renderStageTransition() {
+  state._navLocked = false;
   const prevStage = getStageForQ(state.currentQ - 1);
   const nextStage = getStageForQ(state.currentQ);
   const pScore = state.stageScores[prevStage];
@@ -1475,6 +1476,7 @@ window.continueGame = function() {
 };
 
 function renderResults() {
+  state._navLocked = false;
   const totalQ = getTotalActiveQuestions(); const pct = Math.round((state.score / totalQ) * 100);
   const grade = pct >= 90 ? "Outstanding" : pct >= 75 ? "Great work" : pct >= 50 ? "Good effort" : "Keep practising";
   const wrongCount = state.qResults.filter(r => !r.correct).length;
