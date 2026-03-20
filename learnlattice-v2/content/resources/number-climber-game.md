@@ -2,8 +2,8 @@
 layout: "game"
 title: "Number Climber"
 date: 2026-02-09
-description: "A Phaser 3 physics platformer where you jump between platforms and solve math problems to climb higher. Progressive difficulty from basic arithmetic to algebra. Built with real arcade physics, particle effects, and camera follow."
-hook: "A Phaser 3 physics platformer where you jump between platforms and solve math problems to climb higher"
+description: "A Phaser 3 physics platformer where you jump between platforms and solve maths questions at gate checkpoints. 65+ questions across three difficulty tiers (Foundation, Developing, Extending) with misconception-targeted hints on wrong answers, brief explanations on correct answers, mobile touch controls, lava-pause during questions, and a repeat-prevention system. Progressive difficulty from integers and percentages through to standard form and compound interest."
+hook: "A Phaser 3 physics platformer where you jump between platforms and solve maths problems to climb higher"
 subjects:
   - "Mathematics"
 math_topic: Number Sense
@@ -32,11 +32,23 @@ download_url: ""
 download_label: ""
 game_url: "/games/number-climber.html?embed=1"
 seo_title: "Number Climber — Free MYP Maths Game | Grade 6-9"
-seo_description: "Free interactive MYP mathematics game for Grade 6-9. A Phaser 3 physics platformer where you jump between platforms and solve math pr"
+seo_description: "Free interactive MYP mathematics game for Grade 6-9. A Phaser 3 physics platformer with 65+ questions, hints on wrong answers, and three difficulty tiers."
 ---
 
 ## How to Play
-Use **arrow keys** (or A/D) to move left and right. Press **Space** (or Up) to jump. Land on a platform to trigger a math question. Answer correctly to unlock the next platform and keep climbing. Wrong answers shake the platform and push you down.
-The questions get harder as you climb — from basic arithmetic near the ground to algebra and powers at the top.
-## Built with Phaser 3
-This game uses [Phaser 3](https://phaser.io/), a professional HTML5 game framework. Features include: arcade physics with gravity and collision, camera follow with deadzone, procedural platform generation, particle effects on correct answers, and progressive difficulty scaling.
+Use **arrow keys** (or A/D) to move left and right. Press **Space** (or Up) to jump. On mobile, use the on-screen touch controls.
+
+Every 5 platforms, a **gate** blocks your path. Answer the maths question correctly to unlock it and keep climbing. Questions get harder as you go — from integers and percentages (Foundation) through algebra and sequences (Developing) to standard form and compound interest (Extending).
+
+**Wrong answers show a hint** targeting the most common misconception for that question. **Correct answers show a brief explanation** so you learn as you play. The lava pauses while you answer, so take your time to think.
+
+## Features
+- 65+ questions across three difficulty tiers with no repeats until the pool cycles
+- Misconception-targeted hints on every wrong answer
+- Brief "why" explanations on every correct answer
+- Lava pauses during gate questions (fair play)
+- Mobile touch controls (auto-detected)
+- Enemies spawn later and slower in early game
+- Longer timer for harder questions (8s / 10s / 12s)
+- MYP Key Concept and Statement of Inquiry on intro screen
+- Transfer prompt at game over connecting maths to real life
