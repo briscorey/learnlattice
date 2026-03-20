@@ -241,7 +241,7 @@ update:function(){
     if(gr)this.coyT=8;else if(this.coyT>0)this.coyT--;
     var jp=Phaser.Input.Keyboard.JustDown(cursors.up)||Phaser.Input.Keyboard.JustDown(cursors.space)||Phaser.Input.Keyboard.JustDown(this.kW)||touchJump;
     if(jp)this.jmpB=8;else if(this.jmpB>0)this.jmpB--;
-    if(this.jmpB>0&&this.coyT>0){player.setVelocityY(-380);this.jmpB=0;this.coyT=0}
+    if(this.jmpB>0&&this.coyT>0){player.setVelocityY(-330);this.jmpB=0;this.coyT=0}
     touchJump=false;
   }else{player.setVelocityX(0);if(player.body.velocity.y>0)player.setVelocityY(0)}
   this.shSpr.setPosition(player.x,player.y).setVisible(hasShield);
@@ -252,6 +252,21 @@ update:function(){
   this.lavaGfx.y=lavaY;this.lavaGlow.y=lavaY-80;
   if(player.y>lavaY-20)loseLife('lava');
   if(player.y>this.cameras.main.scrollY+GH+100)loseLife('fell');
+  // === GATE BARRIER: block player from rising past unanswered gates ===
+  if(!qShowing){
+    for(var gi=0;gi<platList.length;gi++){
+      var gp=platList[gi];
+      if(gp.isGate&&!gp.answered){
+        // If player is trying to pass above this gate, push them down
+        var barrierY=gp.y-8; // just above the gate platform
+        if(player.y<barrierY&&player.body.velocity.y<0){
+          player.y=barrierY;
+          player.setVelocityY(40); // gentle bounce down
+        }
+        break; // only check the lowest unanswered gate
+      }
+    }
+  }
   while(lastPY>player.y-700)mkP(this);
   enemies.forEach(function(e){
     if(!e.sprite||!e.sprite.active)return;
@@ -264,10 +279,10 @@ update:function(){
 }});
 
 function mkP(sc){
-  var gap=48+Math.random()*20,y=lastPY-gap;
+  var gap=55+Math.random()*22,y=lastPY-gap;
   var px=platList.length>0?platList[platList.length-1].x:GW/2;
-  var minX=Math.max(70,px-200),maxX=Math.min(GW-70,px+200);
-  var x=minX+Math.random()*(maxX-minX),w=95+Math.random()*65;
+  var minX=Math.max(70,px-180),maxX=Math.min(GW-70,px+180);
+  var x=minX+Math.random()*(maxX-minX),w=80+Math.random()*55;
   gateCounter++;
   var isGate=gateCounter%5===0&&platList.length>3;
   var isBonus=!isGate&&Math.random()<0.3;
@@ -278,7 +293,7 @@ function mkP(sc){
   var pd={visual:pv,x:x,y:y,answered:false,isGate:isGate,isBonus:isBonus,collected:false};platList.push(pd);lastPY=y;
   if(isGate){
     pd.lock=sc.add.text(x,y-20,'\u{1F512}',{fontSize:'18px'}).setOrigin(.5);
-    pd.beam=sc.add.rectangle(x,y-1,w+40,4,0xec4899,.4);
+    pd.beam=sc.add.rectangle(GW/2,y-1,GW,4,0xec4899,.4);
     sc.tweens.add({targets:pd.beam,alpha:.15,duration:800,yoyo:true,repeat:-1});
     pd.gateNum=Math.floor(gateCounter/5);
   }
@@ -401,7 +416,7 @@ function gameOver(){
 var game;
 window.startGame=function(){
   document.getElementById('startScr').style.display='none';
-  if(!game)game=new Phaser.Game({type:Phaser.AUTO,width:GW,height:GH,parent:'gc',backgroundColor:'#0f0a1e',physics:{default:'arcade',arcade:{gravity:{y:520},debug:false}},scene:[GS],scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_HORIZONTALLY}});
+  if(!game)game=new Phaser.Game({type:Phaser.AUTO,width:GW,height:GH,parent:'gc',backgroundColor:'#0f0a1e',physics:{default:'arcade',arcade:{gravity:{y:600},debug:false}},scene:[GS],scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_HORIZONTALLY}});
   setTimeout(function(){active=true},500);
 };
 window.restartGame=function(){
