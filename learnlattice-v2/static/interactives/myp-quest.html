@@ -300,7 +300,7 @@ var usedQs={};
 var canvas,ctx;
 var player={x:40,y:420,vx:0,vy:0,w:24,h:32,grounded:false,facing:1,jumpsLeft:2,jumpHeld:false,energy:100};
 var keys={};
-var GRAVITY=0.45,JUMP=-12,SPEED=5,MAX_JUMPS=2;
+var GRAVITY=0.55,JUMP=-11,SPEED=4.5,MAX_JUMPS=1;
 var collected=[],particles=[],levelWon=false,dead=false,frameCount=0;
 var cameraX=0,cameraY=0,shakeTime=0;
 var questionActive=false,gateIndex=-1;
@@ -353,30 +353,32 @@ function buildLevel(){
   var nPlats=5+currentLevel*2;
   var nColl=3+currentLevel;
   var nHaz=Math.min(1+currentLevel,6);
-  var nGates=Math.min(Math.ceil(currentLevel/2),3); // 1 gate lvl1-2, 2 gates lvl3-4, 3 gates lvl5+
-  var maxVertGap=45+Math.min(currentLevel*5,35);
-  var maxHorizGap=70+Math.min(currentLevel*10,70);
-  var minPlatW=75-Math.min(currentLevel*4,25);
+  var nGates=Math.min(1+Math.floor(currentLevel/2),4); // 1 gate lvl1, 2 at lvl2-3, 3 at lvl4-5, 4 at lvl6+
+  var nEnemies=Math.min(currentLevel,5); // enemies scale with level
+  var maxVertGap=55+Math.min(currentLevel*6,35);
+  var maxHorizGap=90+Math.min(currentLevel*12,80);
+  var minPlatW=65-Math.min(currentLevel*4,25);
   
   var platforms=[];
   var collectibles=[];
   var hazards=[];
+  var enemies=[];
   var gates=[];
 
   // Build staircase
-  var firstY=380-Math.random()*15;
+  var firstY=370-Math.random()*15;
   var firstX=60+Math.random()*80;
-  var firstW=100+Math.random()*50;
+  var firstW=90+Math.random()*40;
   platforms.push({x:Math.round(firstX),y:Math.round(firstY),w:Math.round(firstW),h:16});
   var lastX=firstX+firstW/2,lastY=firstY;
 
   for(var i=1;i<nPlats;i++){
     var goRight=Math.random()>0.35;
-    var dx=goRight?(50+Math.random()*maxHorizGap):-(50+Math.random()*maxHorizGap);
-    var dy=-(25+Math.random()*maxVertGap);
+    var dx=goRight?(60+Math.random()*maxHorizGap):-(60+Math.random()*maxHorizGap);
+    var dy=-(35+Math.random()*maxVertGap);
     var x=lastX+dx;
     var y=lastY+dy;
-    var w=Math.max(minPlatW,55+Math.random()*75);
+    var w=Math.max(minPlatW,45+Math.random()*60);
     if(x<20)x=20+Math.random()*80;
     if(x+w>840)x=840-w-Math.random()*80;
     if(y<50)y=50+Math.random()*30;
@@ -454,10 +456,47 @@ function buildLevel(){
     if(selectedTheme.id==='forces')hType='friction';
     if(selectedTheme.id==='ecology')hType='pollution';
     hazards.push({x:Math.round(hx),y:440,w:28+Math.round(Math.random()*20),type:hType});
-    // Platform hazards from level 3+
-    if(currentLevel>=3&&i<platforms.length-1&&Math.random()<0.3){
+    // Platform hazards from level 2+
+    if(currentLevel>=2&&i<platforms.length-1&&Math.random()<0.35){
       var pp=platforms[Math.min(i+2,platforms.length-1)];
       hazards.push({x:pp.x+Math.round(Math.random()*(pp.w-20)),y:pp.y,w:20,type:hType,onPlatform:true});
+    }
+  }
+
+  // === ENEMIES ===
+  // Patrollers: walk back and forth on platforms
+  // Flyers: bob up and down in the air between platforms
+  // Fallers: drop from above periodically
+  for(var ei=0;ei<nEnemies;ei++){
+    var ePlat=platforms[Math.min(2+ei*2,platforms.length-1)];
+    if(ePlat.isGate)continue; // no enemies on gate platforms
+    var eType;
+    var roll=Math.random();
+    if(roll<0.45)eType='patrol';
+    else if(roll<0.75)eType='fly';
+    else eType='fall';
+    
+    if(eType==='patrol'){
+      enemies.push({type:'patrol',x:ePlat.x+ePlat.w/2,y:ePlat.y-14,
+        minX:ePlat.x+6,maxX:ePlat.x+ePlat.w-6,
+        dir:Math.random()>0.5?1:-1,speed:0.5+Math.random()*0.8+currentLevel*0.1,
+        w:14,h:14});
+    }else if(eType==='fly'){
+      var flyX=ePlat.x+ePlat.w/2+(Math.random()-0.5)*80;
+      var flyY=ePlat.y-40-Math.random()*30;
+      enemies.push({type:'fly',x:flyX,y:flyY,baseY:flyY,
+        minX:Math.max(10,flyX-50),maxX:Math.min(850,flyX+50),
+        dir:Math.random()>0.5?1:-1,speed:0.6+Math.random()*0.5+currentLevel*0.08,
+        bobSpeed:0.03+Math.random()*0.02,bobAmp:12+Math.random()*8,
+        w:16,h:12,angle:Math.random()*Math.PI*2});
+    }else{
+      var fallX=ePlat.x+Math.random()*ePlat.w;
+      enemies.push({type:'fall',x:fallX,y:ePlat.y-120-Math.random()*60,
+        baseY:ePlat.y-120,fallTo:ePlat.y-10,
+        speed:1.5+Math.random()+currentLevel*0.2,
+        timer:0,interval:120+Math.floor(Math.random()*80),
+        falling:false,returning:false,
+        w:10,h:10});
     }
   }
 
@@ -478,7 +517,7 @@ function buildLevel(){
   var highest=platforms.reduce(function(a,b){return a.y<b.y?a:b});
   
   return{
-    platforms:platforms,collectibles:collectibles,hazards:hazards,gates:gateIndices,
+    platforms:platforms,collectibles:collectibles,hazards:hazards,enemies:enemies,gates:gateIndices,
     exit:{x:highest.x+highest.w/2-12,y:highest.y-32},
     spawn:{x:40,y:408},
     theme_fact:fact,
@@ -601,11 +640,6 @@ function update(){
       if(player.currentGravZone==='high')jumpForce=JUMP*0.6;
       player.vy=jumpForce;
       player.jumpsLeft--;player.jumpHeld=true;player.grounded=false;
-      if(player.jumpsLeft<MAX_JUMPS-1){
-        for(var p=0;p<6;p++){
-          particles.push({x:player.x+player.w/2,y:player.y+player.h,vx:(Math.random()-0.5)*3,vy:Math.random()*2,life:15,color:'rgba(255,255,255,0.5)'});
-        }
-      }
     }
   }
   if(!jumpKey)player.jumpHeld=false;
@@ -687,6 +721,53 @@ function update(){
     }
   });
   
+  // === GATE BARRIER: block player from rising past unanswered gates ===
+  for(var gi=0;gi<levelData.platforms.length;gi++){
+    var gp=levelData.platforms[gi];
+    if(gp.isGate&&!gp.gateAnswered){
+      var barrierY=gp.y-6;
+      if(player.y<barrierY&&player.vy<0){
+        player.y=barrierY;
+        player.vy=30;
+      }
+      break; // only check lowest unanswered gate
+    }
+  }
+  
+  // === ENEMIES ===
+  if(levelData.enemies){
+    levelData.enemies.forEach(function(e){
+      if(e.type==='patrol'){
+        e.x+=e.dir*e.speed;
+        if(e.x<=e.minX||e.x>=e.maxX)e.dir*=-1;
+      }else if(e.type==='fly'){
+        e.x+=e.dir*e.speed;
+        if(e.x<=e.minX||e.x>=e.maxX)e.dir*=-1;
+        e.angle+=e.bobSpeed;
+        e.y=e.baseY+Math.sin(e.angle)*e.bobAmp;
+      }else if(e.type==='fall'){
+        e.timer++;
+        if(!e.falling&&!e.returning&&e.timer>=e.interval){
+          e.falling=true;e.timer=0;
+        }
+        if(e.falling){
+          e.y+=e.speed;
+          if(e.y>=e.fallTo){e.y=e.fallTo;e.falling=false;e.returning=true;e.timer=0;}
+        }
+        if(e.returning){
+          e.y-=e.speed*0.4;
+          if(e.y<=e.baseY){e.y=e.baseY;e.returning=false;e.timer=0;}
+        }
+      }
+      // Collision with player
+      var ew=e.w||14,eh=e.h||14;
+      if(Math.abs(player.x+player.w/2-e.x)<(player.w/2+ew/2)&&
+         Math.abs(player.y+player.h/2-e.y)<(player.h/2+eh/2)){
+        playerDie();
+      }
+    });
+  }
+  
   // Exit
   var ex=levelData.exit;
   if(Math.abs(player.x+player.w/2-ex.x-12)<24&&Math.abs(player.y+player.h/2-ex.y-16)<28){
@@ -758,6 +839,8 @@ function render(){
     // Gate indicators
     if(p.isGate){
       if(!p.gateAnswered){
+        // Full-width barrier beam
+        c.fillStyle='rgba(239,68,68,.12)';c.fillRect(0,p.y-4,860,4);
         c.fillStyle='rgba(255,100,100,.6)';c.fillRect(p.x,p.y-3,p.w,3);
         c.font='12px sans-serif';c.textAlign='center';c.fillText('\u{1F512}',p.x+p.w/2,p.y-8);
       }else{
@@ -795,6 +878,47 @@ function render(){
       for(var i=0;i<h.w;i+=12){c.beginPath();c.moveTo(h.x+i,hy);c.lineTo(h.x+i+6,hy-14);c.lineTo(h.x+i+12,hy);c.fill()}
     }
   });
+  
+  // === ENEMIES ===
+  if(levelData.enemies){
+    levelData.enemies.forEach(function(e){
+      c.save();
+      if(e.type==='patrol'){
+        // Red square with angry eyes — walks on platforms
+        c.fillStyle='#ef4444';
+        roundRect(c,e.x-7,e.y-7,14,14,3);c.fill();
+        c.fillStyle='#fff';c.fillRect(e.x-5,e.y-4,4,4);c.fillRect(e.x+1,e.y-4,4,4);
+        c.fillStyle='#1a1a2e';c.fillRect(e.x-4,e.y-3,2,2);c.fillRect(e.x+2,e.y-3,2,2);
+        // Angry eyebrows
+        c.strokeStyle='#fff';c.lineWidth=1.5;
+        c.beginPath();c.moveTo(e.x-6,e.y-6);c.lineTo(e.x-2,e.y-5);c.stroke();
+        c.beginPath();c.moveTo(e.x+6,e.y-6);c.lineTo(e.x+2,e.y-5);c.stroke();
+      }else if(e.type==='fly'){
+        // Purple diamond with wings — bobs through air
+        c.fillStyle='#a855f7';
+        c.beginPath();c.moveTo(e.x,e.y-8);c.lineTo(e.x+8,e.y);c.lineTo(e.x,e.y+6);c.lineTo(e.x-8,e.y);c.closePath();c.fill();
+        // Wings
+        var wingOff=Math.sin(frameCount*0.15)*3;
+        c.fillStyle='rgba(168,85,247,.5)';
+        c.beginPath();c.moveTo(e.x-7,e.y);c.lineTo(e.x-16,e.y-4+wingOff);c.lineTo(e.x-7,e.y+3);c.fill();
+        c.beginPath();c.moveTo(e.x+7,e.y);c.lineTo(e.x+16,e.y-4+wingOff);c.lineTo(e.x+7,e.y+3);c.fill();
+        // Eyes
+        c.fillStyle='#fff';c.fillRect(e.x-3,e.y-3,3,3);c.fillRect(e.x+1,e.y-3,3,3);
+      }else if(e.type==='fall'){
+        // Orange triangle — drops from above
+        c.fillStyle=e.falling?'#ef4444':'#f97316';
+        c.beginPath();c.moveTo(e.x-6,e.y-6);c.lineTo(e.x+6,e.y-6);c.lineTo(e.x,e.y+8);c.closePath();c.fill();
+        // Warning flash when about to fall
+        if(!e.falling&&!e.returning&&e.timer>e.interval-30){
+          c.globalAlpha=0.3+Math.sin(frameCount*0.3)*0.3;
+          c.strokeStyle='#ef4444';c.lineWidth=2;
+          c.beginPath();c.moveTo(e.x,e.y+10);c.lineTo(e.x,e.y+22);c.stroke();
+          c.globalAlpha=1;
+        }
+      }
+      c.restore();
+    });
+  }
   
   // Collectibles
   levelData.collectibles.forEach(function(col,i){
@@ -839,8 +963,6 @@ function render(){
   else if(Math.abs(player.vx)>1){var step=Math.sin(frameCount*0.2)*4;c.fillStyle='#4f46e5';c.fillRect(-8+step,14,7,4);c.fillRect(2-step,14,7,4)}
   else{c.fillStyle='#4f46e5';c.fillRect(-8,14,7,4);c.fillRect(2,14,7,4)}
   c.restore();
-  // Jump indicators
-  for(var ji=0;ji<player.jumpsLeft;ji++){c.fillStyle='rgba(99,102,241,0.6)';c.beginPath();c.arc(player.x+player.w/2-4+ji*8,player.y+player.h+6,2.5,0,Math.PI*2);c.fill()}
   
   // Energy meter (energy theme only)
   if(selectedTheme.id==='energy'){
