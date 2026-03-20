@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>MYP Quest — LearnLattice</title>
 <!-- MYP Alignment
+   Criteria: A – Knowing & Understanding, C – Communicating
    Key Concept: Logic, Systems
+   Related Concepts: Equivalence, Models, Environment, Interaction
    ATL: Critical thinking, Transfer
    Global Context: Scientific and Technical Innovation
 -->
@@ -13,34 +15,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0a1a;--surface:rgba(20,20,40,.85);--border:rgba(100,120,255,.15);--ink:#e8eaff;--muted:#7a7eaa;--accent:#6366f1;--accent2:#22d3ee;--gold:#fbbf24;--danger:#ef4444;--success:#22c55e}
-body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;min-height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-
-/* Starfield bg */
+body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;min-height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;touch-action:none;-webkit-user-select:none;user-select:none}
 .stars{position:fixed;inset:0;z-index:0}
 .star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:twinkle var(--d,3s) ease-in-out infinite var(--del,0s)}
 @keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
-
 .app{position:relative;z-index:1;width:100%;max-width:900px;padding:16px}
-
-/* Title screen */
 .title-screen{text-align:center;animation:fadeUp .6s ease}
-.title-screen h1{font-family:'Press Start 2P',monospace;font-size:clamp(20px,4vw,32px);background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;line-height:1.4}
-.title-screen .sub{font-size:14px;color:var(--muted);margin-bottom:28px}
-
-/* Theme selector */
-.themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:24px}
-.theme-card{padding:18px 16px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface);backdrop-filter:blur(8px);cursor:pointer;transition:all .2s;text-align:left}
+.title-screen h1{font-family:'Press Start 2P',monospace;font-size:clamp(18px,4vw,28px);background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;line-height:1.4}
+.title-screen .sub{font-size:13px;color:var(--muted);margin-bottom:8px}
+.title-screen .myp-frame{font-size:11px;color:#7a7eaa;margin-bottom:16px;line-height:1.6}
+.title-screen .myp-frame strong{color:var(--accent2)}
+.themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:20px}
+.theme-card{padding:14px 14px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface);backdrop-filter:blur(8px);cursor:pointer;transition:all .2s;text-align:left}
 .theme-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(99,102,241,.2)}
 .theme-card.selected{border-color:var(--accent2);background:rgba(34,211,238,.08);box-shadow:0 0 0 2px rgba(34,211,238,.2)}
-.theme-icon{font-size:1.8rem;margin-bottom:8px}
-.theme-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.theme-desc{font-size:11px;color:var(--muted);line-height:1.4}
-
-.start-btn{padding:14px 40px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;letter-spacing:.5px}
+.theme-icon{font-size:1.6rem;margin-bottom:6px}
+.theme-name{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.theme-desc{font-size:10px;color:var(--muted);line-height:1.4}
+.start-btn{padding:14px 40px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;letter-spacing:.5px;-webkit-tap-highlight-color:transparent}
 .start-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,.4)}
 .start-btn:disabled{opacity:.4;cursor:default;transform:none}
-
-/* Game screen */
+.start-btn:active{transform:scale(.96)}
 .game-screen{display:none}
 .game-hud{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;margin-bottom:8px;background:var(--surface);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px}
 .hud-left,.hud-right{display:flex;align-items:center;gap:16px}
@@ -50,253 +45,365 @@ body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;min-h
 .hud-item.lives strong{color:var(--danger)}
 .hud-item.level strong{color:var(--accent2)}
 .hud-theme{font-size:11px;color:var(--accent2);font-weight:600}
-
-canvas{display:block;border-radius:14px;border:1px solid var(--border);background:#0a0a1a}
-
-/* Loading overlay */
-.loading{display:none;position:absolute;inset:0;background:rgba(10,10,26,.9);backdrop-filter:blur(8px);z-index:100;flex-direction:column;align-items:center;justify-content:center;border-radius:14px}
-.loading.show{display:flex}
-.loading h3{font-family:'Press Start 2P',monospace;font-size:12px;color:var(--accent2);margin-bottom:12px}
-.loading p{font-size:13px;color:var(--muted);max-width:300px;text-align:center;line-height:1.5}
+canvas{display:block;border-radius:14px;border:1px solid var(--border);background:#0a0a1a;max-width:100%}
+.overlay-panel{display:none;position:absolute;inset:0;background:rgba(10,10,26,.9);backdrop-filter:blur(8px);z-index:100;flex-direction:column;align-items:center;justify-content:center;border-radius:14px}
+.overlay-panel.show{display:flex}
+.overlay-panel h2{font-family:'Press Start 2P',monospace;font-size:14px;margin-bottom:8px}
+.overlay-panel h3{font-family:'Press Start 2P',monospace;font-size:12px;color:var(--accent2);margin-bottom:12px}
+.overlay-panel p{font-size:13px;color:var(--muted);max-width:340px;text-align:center;line-height:1.5;margin-bottom:10px}
 .loading-bar{width:200px;height:4px;background:rgba(255,255,255,.1);border-radius:2px;margin-top:16px;overflow:hidden}
 .loading-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;animation:loadPulse 1.5s ease-in-out infinite;width:60%}
 @keyframes loadPulse{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
-
-/* Level complete overlay */
-.level-complete{display:none;position:absolute;inset:0;background:rgba(10,10,26,.85);backdrop-filter:blur(8px);z-index:100;flex-direction:column;align-items:center;justify-content:center;border-radius:14px}
-.level-complete.show{display:flex}
-.level-complete h2{font-family:'Press Start 2P',monospace;font-size:16px;color:var(--gold);margin-bottom:8px}
-.level-complete p{font-size:13px;color:var(--muted);margin-bottom:20px;text-align:center;max-width:300px;line-height:1.5}
-.level-complete .next-btn{padding:12px 32px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
-
-/* Game over */
-.game-over{display:none;position:absolute;inset:0;background:rgba(10,10,26,.9);backdrop-filter:blur(8px);z-index:100;flex-direction:column;align-items:center;justify-content:center;border-radius:14px}
-.game-over.show{display:flex}
-.game-over h2{font-family:'Press Start 2P',monospace;font-size:16px;color:var(--danger);margin-bottom:8px}
-
-/* Level theme selector between levels */
+.next-btn{padding:12px 32px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;-webkit-tap-highlight-color:transparent}
+.next-btn:active{transform:scale(.96)}
 .next-theme{margin-top:12px}
 .next-theme label{font-size:11px;color:var(--muted);display:block;margin-bottom:6px}
 .next-theme select{padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--ink);font-family:inherit;font-size:12px;outline:none}
-
+/* Question gate overlay */
+#questionGate{z-index:110}
+#questionGate .qg-label{font-size:10px;color:var(--accent2);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700}
+#questionGate .qg-text{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px;line-height:1.4;white-space:pre-line;max-width:400px;text-align:center}
+#questionGate .qg-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:380px;width:100%}
+#questionGate .qg-btn{padding:12px 16px;border-radius:10px;border:2px solid var(--border);background:rgba(99,102,241,.08);color:var(--ink);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent}
+#questionGate .qg-btn:hover{background:rgba(99,102,241,.2);border-color:var(--accent)}
+#questionGate .qg-btn:active{transform:scale(.96)}
+#questionGate .qg-btn.correct{background:rgba(34,197,94,.25);border-color:var(--success);color:#bbf7d0}
+#questionGate .qg-btn.wrong{background:rgba(239,68,68,.25);border-color:var(--danger);color:#fca5a5}
+#questionGate .qg-hint{margin-top:10px;font-size:12px;color:#fde68a;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:8px;padding:8px 12px;max-width:380px;line-height:1.5;display:none}
+#questionGate .qg-why{margin-top:8px;font-size:12px;color:#bbf7d0;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:8px 12px;max-width:380px;line-height:1.5;display:none}
+/* Touch controls */
+.touch-controls{position:absolute;bottom:4px;left:0;right:0;height:100px;display:none;z-index:15;pointer-events:auto}
+.touch-btn{position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid rgba(99,102,241,.25);background:rgba(99,102,241,.08);display:flex;align-items:center;justify-content:center;font-size:24px;color:rgba(99,102,241,.5);-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.touch-btn:active{background:rgba(99,102,241,.25)}
+.touch-left{left:12px;bottom:16px}
+.touch-right{left:86px;bottom:16px}
+.touch-jump{right:12px;bottom:16px}
+@media(hover:none)and(pointer:coarse){.touch-controls{display:flex}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
-
 <div class="stars" id="stars"></div>
-
 <div class="app" id="app">
-  <!-- Title / Theme Select -->
   <div class="title-screen" id="titleScreen">
     <h1>MYP QUEST</h1>
-    <p class="sub">An AI-generated platformer. Each level is designed by Claude based on the topic you choose.</p>
-    <p style="font-size:12px;color:var(--muted);margin-bottom:20px">Choose a theme to start your adventure:</p>
+    <p class="sub">A platformer with knowledge gates. Each theme has unique mechanics, hazards, and questions.</p>
+    <div class="myp-frame"><strong>Key Concepts:</strong> Logic, Systems &nbsp;&middot;&nbsp; <strong>ATL:</strong> Critical Thinking<br><em>"Logical reasoning and systematic thinking help us understand complex systems."</em></div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:16px">Choose a theme to start:</p>
     <div class="themes" id="themeGrid"></div>
-    <button class="start-btn" id="startBtn" disabled onclick="startGame()">Start Adventure →</button>
+    <button class="start-btn" id="startBtn" disabled onclick="startGame()">Start Adventure &rarr;</button>
+    <div style="margin-top:12px;font-size:10px;color:#555;line-height:1.6">&larr; &rarr; / A D to move &middot; Space / Up to jump &middot; Touch controls on mobile</div>
   </div>
-
-  <!-- Game -->
   <div class="game-screen" id="gameScreen" style="position:relative">
     <div class="game-hud">
       <div class="hud-left">
-        <div class="hud-item level">🏔️ <strong id="hudLevel">1</strong></div>
+        <div class="hud-item level">&#x1F3D4;&#xFE0F; <strong id="hudLevel">1</strong></div>
         <span class="hud-theme" id="hudTheme"></span>
       </div>
       <div class="hud-right">
-        <div class="hud-item gold">⭐ <strong id="hudScore">0</strong></div>
-        <div class="hud-item lives">❤️ <strong id="hudLives">3</strong></div>
+        <div class="hud-item gold">&#x2B50; <strong id="hudScore">0</strong></div>
+        <div class="hud-item lives">&#x2764;&#xFE0F; <strong id="hudLives">3</strong></div>
       </div>
     </div>
     <canvas id="gameCanvas" width="860" height="480"></canvas>
-    
-    <div class="loading" id="loading">
+    <div class="overlay-panel" id="loading">
       <h3>GENERATING LEVEL...</h3>
-      <p id="loadMsg">Claude is designing a level about <strong>your topic</strong>...</p>
+      <p id="loadMsg">Building level...</p>
       <div class="loading-bar"><div class="loading-fill"></div></div>
     </div>
-    
-    <div class="level-complete" id="levelComplete">
-      <h2>⭐ LEVEL COMPLETE!</h2>
+    <div class="overlay-panel" id="levelComplete">
+      <h2 style="color:var(--gold)">&#x2B50; LEVEL COMPLETE!</h2>
       <p id="lcMsg"></p>
       <div class="next-theme">
-        <label>Choose theme for next level:</label>
+        <label>Theme for next level:</label>
         <select id="nextThemeSelect"></select>
       </div>
-      <button class="next-btn" onclick="nextLevel()" style="margin-top:12px">Next Level →</button>
+      <button class="next-btn" onclick="nextLevel()" style="margin-top:12px">Next Level &rarr;</button>
     </div>
-    
-    <div class="game-over" id="gameOver">
-      <h2>GAME OVER</h2>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">You reached Level <strong id="goLevel">1</strong> with <strong id="goScore">0</strong> stars!</p>
-      <button class="next-btn" onclick="location.reload()">Try Again</button>
+    <div class="overlay-panel" id="gameOver">
+      <h2 style="color:var(--danger)">GAME OVER</h2>
+      <p>You reached Level <strong id="goLevel">1</strong> with <strong id="goScore">0</strong> stars!</p>
+      <p id="goTransfer" style="font-size:11px;color:#fde68a;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.15);border-radius:8px;padding:8px 12px;max-width:320px"></p>
+      <button class="next-btn" onclick="location.reload()" style="margin-top:8px">Try Again</button>
+    </div>
+    <div class="overlay-panel" id="questionGate">
+      <div class="qg-label" id="qgLabel">&#x1F512; KNOWLEDGE GATE</div>
+      <div class="qg-text" id="qgText"></div>
+      <div class="qg-opts" id="qgOpts"></div>
+      <div class="qg-hint" id="qgHint"></div>
+      <div class="qg-why" id="qgWhy"></div>
+    </div>
+    <div class="touch-controls">
+      <div class="touch-btn touch-left" id="tLeft">&#x25C0;</div>
+      <div class="touch-btn touch-right" id="tRight">&#x25B6;</div>
+      <div class="touch-btn touch-jump" id="tJump">&#x25B2;</div>
     </div>
   </div>
 </div>
-
 <script>
-// ═══════════════════════════════════════════
-// MYP QUEST — AI-Generated Platformer
-// ═══════════════════════════════════════════
+(function(){
+'use strict';
 
-// ─── Theme data (MYP topics) ───
-var THEMES = [
-  {id:'algebra',name:'Algebra Land',icon:'📐',desc:'Equations, patterns, and variables',colors:['#0D9488','#14b8a6','#134E4A']},
-  {id:'cells',name:'Cell World',icon:'🔬',desc:'Organelles, membranes, and microscopic life',colors:['#059669','#10b981','#064e3b']},
-  {id:'forces',name:'Force Fields',icon:'💪',desc:'Gravity, friction, and Newton\'s laws',colors:['#2563eb','#3b82f6','#1e3a5f']},
-  {id:'ecology',name:'Eco Realm',icon:'🌿',desc:'Ecosystems, food chains, and habitats',colors:['#16a34a','#4ade80','#14532d']},
-  {id:'probability',name:'Chance Canyon',icon:'🎲',desc:'Probability, randomness, and outcomes',colors:['#7c3aed','#a78bfa','#3b1f6e']},
-  {id:'chemistry',name:'Reaction Zone',icon:'⚗️',desc:'Elements, reactions, and particle theory',colors:['#dc2626','#f87171','#450a0a']},
-  {id:'energy',name:'Energy Peaks',icon:'⚡',desc:'Kinetic, potential, and thermal energy',colors:['#d97706','#fbbf24','#451a03']},
-  {id:'space',name:'Cosmic Voyage',icon:'🚀',desc:'Planets, stars, and the universe',colors:['#6366f1','#818cf8','#1e1b4b']},
+// ═══════════════════════════════════════════
+// THEME DATA — each has unique mechanics
+// ═══════════════════════════════════════════
+var THEMES=[
+  {id:'algebra',name:'Algebra Land',icon:'\u{1F4D0}',desc:'Equations, patterns, variables',colors:['#0D9488','#14b8a6','#134E4A'],
+   mechanic:'equation_platforms',mechanicDesc:'Some platforms show equations \u2014 only the TRUE ones are solid!',
+   groundEmoji:'\u{1F4D0}',bgDecoWord:'f(x)'},
+  {id:'cells',name:'Cell World',icon:'\u{1F52C}',desc:'Organelles, membranes, microscopic life',colors:['#059669','#10b981','#064e3b'],
+   mechanic:'membrane_walls',mechanicDesc:'Semi-permeable membranes block some paths. Collect enzymes to pass!',
+   groundEmoji:'\u{1F9EB}',bgDecoWord:'DNA'},
+  {id:'forces',name:'Force Fields',icon:'\u{1F4AA}',desc:'Gravity, friction, Newton\'s laws',colors:['#2563eb','#3b82f6','#1e3a5f'],
+   mechanic:'gravity_zones',mechanicDesc:'Gravity zones change your jump! Blue = low gravity, red = high gravity.',
+   groundEmoji:'\u2B07\uFE0F',bgDecoWord:'F=ma'},
+  {id:'ecology',name:'Eco Realm',icon:'\u{1F33F}',desc:'Ecosystems, food chains, habitats',colors:['#16a34a','#4ade80','#14532d'],
+   mechanic:'food_chain',mechanicDesc:'Collect organisms in order: producer \u2192 primary \u2192 secondary consumer!',
+   groundEmoji:'\u{1F33F}',bgDecoWord:'Eco'},
+  {id:'probability',name:'Chance Canyon',icon:'\u{1F3B2}',desc:'Probability, randomness, outcomes',colors:['#7c3aed','#a78bfa','#3b1f6e'],
+   mechanic:'random_platforms',mechanicDesc:'Some platforms vanish randomly! Higher probability = safer.',
+   groundEmoji:'\u{1F3B2}',bgDecoWord:'P(A)'},
+  {id:'chemistry',name:'Reaction Zone',icon:'\u2697\uFE0F',desc:'Elements, reactions, particle theory',colors:['#dc2626','#f87171','#450a0a'],
+   mechanic:'reaction_hazards',mechanicDesc:'Acid pools and exothermic bursts! Collect catalysts to neutralise.',
+   groundEmoji:'\u2697\uFE0F',bgDecoWord:'pH'},
+  {id:'energy',name:'Energy Peaks',icon:'\u26A1',desc:'Kinetic, potential, thermal energy',colors:['#d97706','#fbbf24','#451a03'],
+   mechanic:'energy_bar',mechanicDesc:'You have an energy meter! Jumping costs KE. Collect energy tokens to refuel.',
+   groundEmoji:'\u26A1',bgDecoWord:'KE'},
+  {id:'space',name:'Cosmic Voyage',icon:'\u{1F680}',desc:'Planets, stars, and the universe',colors:['#6366f1','#818cf8','#1e1b4b'],
+   mechanic:'orbit_platforms',mechanicDesc:'Platforms orbit! Time your jumps with their rotation.',
+   groundEmoji:'\u{1F680}',bgDecoWord:'AU'},
 ];
 
-var selectedTheme = null;
-var currentLevel = 1;
-var score = 0;
-var lives = 3;
-var levelData = null;
-var gameLoop = null;
+// ═══════════════════════════════════════════
+// QUESTION BANKS — per theme, 12+ each
+// ═══════════════════════════════════════════
+var QUESTIONS={
+algebra:[
+  {q:'Solve: 3x + 5 = 20',c:'x = 5',w:['x = 4','x = 6','x = 3'],hint:'Subtract 5 first, then divide by 3.',why:'3x = 15, so x = 5.'},
+  {q:'Simplify: 2(x + 4)',c:'2x + 8',w:['2x + 4','x + 8','2x + 6'],hint:'Multiply the 2 by BOTH terms inside.',why:'2 \u00d7 x + 2 \u00d7 4 = 2x + 8.'},
+  {q:'T(n) = 3n \u2212 1\nWhat is T(5)?',c:'14',w:['15','16','12'],hint:'Substitute n = 5.',why:'3(5) \u2212 1 = 14.'},
+  {q:'What is the gradient\nof y = 4x + 3?',c:'4',w:['3','7','4x'],hint:'In y = mx + c, the gradient is m.',why:'The coefficient of x is 4.'},
+  {q:'Factorise: x\u00b2 + 5x',c:'x(x + 5)',w:['x(x + 4)','5(x + 1)','x\u00b2(5)'],hint:'Find the common factor of both terms.',why:'x is common: x(x + 5).'},
+  {q:'Solve: x/3 = 7',c:'x = 21',w:['x = 10','x = 4','x = 24'],hint:'Multiply both sides by 3.',why:'x = 7 \u00d7 3 = 21.'},
+  {q:'5, 9, 13, 17, ?\nNext term?',c:'21',w:['19','20','22'],hint:'Find the common difference (+4).',why:'17 + 4 = 21.'},
+  {q:'Expand: (x + 2)(x + 3)',c:'x\u00b2 + 5x + 6',w:['x\u00b2 + 6x + 5','x\u00b2 + 5x + 5','2x + 6'],hint:'Use FOIL: First, Outside, Inside, Last.',why:'x\u00b2 + 3x + 2x + 6 = x\u00b2 + 5x + 6.'},
+  {q:'If y = 2x \u2212 1,\nwhat is y when x = 0?',c:'-1',w:['0','1','2'],hint:'Substitute x = 0 into the equation.',why:'2(0) \u2212 1 = \u22121.'},
+  {q:'Solve: 2x + 3 = x + 8',c:'x = 5',w:['x = 4','x = 11','x = 3'],hint:'Get all x terms on one side.',why:'x + 3 = 8, so x = 5.'},
+  {q:'What is 3\u207b\u00b9?',c:'1/3',w:['3','-3','-1/3'],hint:'Negative exponent = reciprocal.',why:'3\u207b\u00b9 = 1/3.'},
+  {q:'Simplify: 4a + 3b \u2212 2a + b',c:'2a + 4b',w:['6a + 4b','2a + 2b','6a + 2b'],hint:'Collect like terms separately.',why:'(4a \u2212 2a) + (3b + b) = 2a + 4b.'},
+],
+cells:[
+  {q:'Which organelle\nproduces energy?',c:'Mitochondria',w:['Nucleus','Ribosome','Vacuole'],hint:'It\'s called the "powerhouse of the cell".',why:'Mitochondria carry out aerobic respiration.'},
+  {q:'What controls what\nenters and leaves a cell?',c:'Cell membrane',w:['Cell wall','Nucleus','Cytoplasm'],hint:'It\'s semi-permeable.',why:'The cell membrane is selectively permeable.'},
+  {q:'Which is found in plant\ncells but NOT animal cells?',c:'Cell wall',w:['Nucleus','Ribosome','Mitochondria'],hint:'It provides rigid structure.',why:'Cell walls (cellulose) are unique to plant cells.'},
+  {q:'What is the function\nof ribosomes?',c:'Protein synthesis',w:['Energy production','Cell division','Storage'],hint:'They translate mRNA into amino acid chains.',why:'Ribosomes assemble proteins.'},
+  {q:'Where is DNA found\nin a eukaryotic cell?',c:'Nucleus',w:['Cytoplasm','Membrane','Ribosome'],hint:'It\'s in the "control centre".',why:'DNA is housed in the nucleus.'},
+  {q:'What process divides\na cell into two identical cells?',c:'Mitosis',w:['Meiosis','Osmosis','Diffusion'],hint:'It produces genetically identical daughter cells.',why:'Mitosis = identical cell division.'},
+  {q:'What does the vacuole\ndo in a plant cell?',c:'Stores water and nutrients',w:['Makes energy','Makes protein','Controls genes'],hint:'It\'s the large central storage compartment.',why:'The vacuole stores water, maintaining turgor pressure.'},
+  {q:'What is osmosis?',c:'Water moving through\na membrane',w:['Gas exchange','Cell division','Energy release'],hint:'It\'s about water specifically, not any substance.',why:'Osmosis is water diffusion across a semi-permeable membrane.'},
+  {q:'Which organelle carries\nout photosynthesis?',c:'Chloroplast',w:['Mitochondria','Ribosome','Vacuole'],hint:'It contains chlorophyll (green pigment).',why:'Chloroplasts trap light energy for photosynthesis.'},
+  {q:'What are enzymes\nmade of?',c:'Proteins',w:['Lipids','Carbohydrates','Nucleic acids'],hint:'Ribosomes make them.',why:'Enzymes are biological catalysts made of protein.'},
+  {q:'What happens during\ndiffusion?',c:'Particles move from\nhigh to low concentration',w:['Low to high conc.','Only in liquids','Requires energy'],hint:'Particles spread out naturally \u2014 no energy needed.',why:'Diffusion is passive movement down a concentration gradient.'},
+  {q:'Red blood cells have\nno nucleus. Why?',c:'More room for\nhaemoglobin',w:['They don\'t need DNA','They\'re too small','They move too fast'],hint:'What do red blood cells carry?',why:'No nucleus = more space for oxygen-carrying haemoglobin.'},
+],
+forces:[
+  {q:'What is Newton\'s\nFirst Law?',c:'Objects stay at rest or\nmove unless a force acts',w:['F = ma','Every action has\nan opposite reaction','Gravity pulls down'],hint:'Think about inertia.',why:'An object stays in its state unless acted on by a force.'},
+  {q:'Weight = ?',c:'mass \u00d7 g',w:['mass \u00f7 g','mass + g','force \u00d7 distance'],hint:'g \u2248 10 N/kg on Earth.',why:'Weight = mass \u00d7 gravitational field strength.'},
+  {q:'What are the units\nof force?',c:'Newtons (N)',w:['Kilograms (kg)','Metres (m)','Joules (J)'],hint:'Named after Isaac Newton.',why:'Force is measured in Newtons.'},
+  {q:'What force opposes\nmotion between surfaces?',c:'Friction',w:['Gravity','Magnetism','Tension'],hint:'It generates heat.',why:'Friction resists sliding between surfaces.'},
+  {q:'A 5 kg object. g = 10.\nWeight = ?',c:'50 N',w:['5 N','15 N','500 N'],hint:'W = m \u00d7 g = 5 \u00d7 10.',why:'5 \u00d7 10 = 50 N.'},
+  {q:'What is terminal\nvelocity?',c:'When air resistance\nequals weight',w:['Maximum speed possible','When you stop moving','When friction = 0'],hint:'Resultant force becomes zero.',why:'At terminal velocity, drag = weight, so acceleration = 0.'},
+  {q:'Newton\'s 3rd Law:\nAction and reaction are...',c:'Equal and opposite',w:['Equal and same direction','Different sizes','Only for gravity'],hint:'Push a wall \u2014 it pushes back.',why:'Every force has an equal and opposite reaction force.'},
+  {q:'What does F = ma\ncalculate?',c:'Resultant force',w:['Weight','Speed','Energy'],hint:'Newton\'s Second Law.',why:'Force = mass \u00d7 acceleration.'},
+  {q:'A car brakes. What\nhappens to its KE?',c:'Transferred to\nheat via friction',w:['Destroyed','Stored as GPE','Increases'],hint:'Energy is conserved, not lost.',why:'KE transfers to thermal energy through brake friction.'},
+  {q:'Which has more\nmomentum: a truck or\nbicycle at same speed?',c:'Truck',w:['Bicycle','Same','Depends on friction'],hint:'Momentum = mass \u00d7 velocity.',why:'Truck has much more mass, so more momentum.'},
+  {q:'What is pressure\nequal to?',c:'Force \u00f7 Area',w:['Force \u00d7 Area','Mass \u00d7 g','Force \u00d7 Distance'],hint:'Smaller area = more pressure.',why:'P = F/A. Units: Pascals (Pa).'},
+  {q:'Balanced forces mean\nthe object...',c:'Stays at constant\nvelocity (or rest)',w:['Accelerates','Decelerates','Explodes'],hint:'No resultant force = no acceleration.',why:'Balanced forces = zero resultant = no change in velocity.'},
+],
+ecology:[
+  {q:'What do producers\ndo?',c:'Make food via\nphotosynthesis',w:['Eat other organisms','Decompose dead matter','Hunt prey'],hint:'They\'re at the bottom of food chains.',why:'Producers convert light energy into glucose.'},
+  {q:'Energy transfer between\ntrophic levels is about...',c:'10%',w:['50%','90%','100%'],hint:'Most energy is lost as heat.',why:'Only ~10% passes to the next level; ~90% is lost.'},
+  {q:'What is biodiversity?',c:'Variety of life in\nan area',w:['Number of plants only','Size of organisms','Age of ecosystem'],hint:'Bio = life, diversity = variety.',why:'Biodiversity = the range of different species in an ecosystem.'},
+  {q:'A food chain starts\nwith a...',c:'Producer',w:['Consumer','Decomposer','Predator'],hint:'Something that makes its own food.',why:'Producers (plants) are always the first trophic level.'},
+  {q:'What is an apex\npredator?',c:'Top consumer with\nno natural predators',w:['Fastest animal','Largest animal','Most common species'],hint:'They\'re at the top of the food chain.',why:'Apex predators have no organisms that hunt them.'},
+  {q:'What do decomposers\ndo?',c:'Break down dead matter\nand recycle nutrients',w:['Eat live plants','Produce oxygen','Provide shade'],hint:'Think fungi and bacteria.',why:'Decomposers return nutrients to the soil.'},
+  {q:'Removing a predator from\nan ecosystem would...',c:'Increase prey population\n(then crash)',w:['Nothing changes','Prey disappear','Plants increase'],hint:'Without predators, prey reproduce unchecked.',why:'Prey boom \u2192 overgraze \u2192 habitat collapse \u2192 population crash.'},
+  {q:'What is a habitat?',c:'The natural environment\nwhere an organism lives',w:['A type of food','An animal\'s diet','A migration route'],hint:'It provides food, shelter, water.',why:'A habitat is the place an organism calls home.'},
+  {q:'Which is a primary\nconsumer?',c:'Rabbit',w:['Fox','Eagle','Mushroom'],hint:'Primary consumers eat producers (plants).',why:'Rabbits are herbivores \u2014 they eat plants directly.'},
+  {q:'What is a trophic\ncascade?',c:'When change at one level\nripples through all others',w:['A waterfall in a forest','When all species die','A type of volcano'],hint:'Like removing wolves from Yellowstone.',why:'Changes at one trophic level cascade up/down the food web.'},
+  {q:'Carbon dioxide is removed\nfrom the air by...',c:'Photosynthesis',w:['Respiration','Combustion','Decomposition'],hint:'Plants absorb CO\u2082.',why:'6CO\u2082 + 6H\u2082O \u2192 C\u2086H\u2081\u2082O\u2086 + 6O\u2082.'},
+  {q:'What is carrying\ncapacity?',c:'Maximum population an\nenvironment can support',w:['How much animals can\ncarry','Speed of growth','Size of territory'],hint:'Limited by food, water, space.',why:'Carrying capacity depends on available resources.'},
+],
+probability:[
+  {q:'P(heads) on a\nfair coin = ?',c:'1/2',w:['1/4','1/3','1'],hint:'Two equally likely outcomes.',why:'1 favourable out of 2 possible = 1/2.'},
+  {q:'If P(A) = 0.3,\nthen P(not A) = ?',c:'0.7',w:['0.3','1.3','0'],hint:'P(A) + P(not A) = 1.',why:'1 \u2212 0.3 = 0.7.'},
+  {q:'P(even number)\non a fair die = ?',c:'1/2',w:['1/3','1/6','2/3'],hint:'Count the even outcomes: 2, 4, 6.',why:'3 out of 6 = 1/2.'},
+  {q:'For independent events,\nP(A and B) = ?',c:'P(A) \u00d7 P(B)',w:['P(A) + P(B)','P(A) \u2212 P(B)','P(A) \u00f7 P(B)'],hint:'AND means multiply for independent events.',why:'Independent events: multiply probabilities.'},
+  {q:'A bag has 3 red and\n7 blue. P(red) = ?',c:'3/10',w:['3/7','7/10','1/3'],hint:'Total = 3 + 7 = 10.',why:'3 favourable out of 10 total = 3/10.'},
+  {q:'What does P = 0 mean?',c:'Impossible',w:['Certain','Unlikely','Even chance'],hint:'The lowest probability possible.',why:'P = 0 means the event cannot happen.'},
+  {q:'What does P = 1 mean?',c:'Certain',w:['Impossible','Unlikely','Likely'],hint:'The highest probability possible.',why:'P = 1 means the event will definitely happen.'},
+  {q:'Two dice are rolled.\nP(double 6) = ?',c:'1/36',w:['1/12','1/6','2/36'],hint:'P(6) \u00d7 P(6) = 1/6 \u00d7 1/6.',why:'1/6 \u00d7 1/6 = 1/36.'},
+  {q:'What is relative\nfrequency?',c:'Experimental probability\nfrom trials',w:['Theoretical probability','Number of outcomes','Expected value'],hint:'It\'s based on actual results, not theory.',why:'Relative freq = successful trials \u00f7 total trials.'},
+  {q:'Flipping a coin 3 times.\nHow many outcomes?',c:'8',w:['6','3','9'],hint:'2 \u00d7 2 \u00d7 2.',why:'2\u00b3 = 8 possible outcomes.'},
+  {q:'What is a sample\nspace?',c:'All possible outcomes\nof an experiment',w:['One outcome','The most likely result','A type of average'],hint:'It\'s the complete set.',why:'Sample space = the set of all possible outcomes.'},
+  {q:'A spinner has 4 equal\nsections: R,B,G,Y.\nP(not red) = ?',c:'3/4',w:['1/4','1/2','2/4'],hint:'3 sections are not red.',why:'3 out of 4 = 3/4.'},
+],
+chemistry:[
+  {q:'What is conservation\nof mass?',c:'Total mass stays the\nsame in a reaction',w:['Mass is created','Mass is destroyed','Mass always increases'],hint:'Atoms are rearranged, not created or destroyed.',why:'No atoms are gained or lost in a chemical reaction.'},
+  {q:'What is the pH of\na neutral substance?',c:'7',w:['0','14','1'],hint:'Right in the middle of the pH scale.',why:'pH 7 = neutral (e.g. pure water).'},
+  {q:'What happens in an\nexothermic reaction?',c:'Heat is released\nto surroundings',w:['Heat is absorbed','Temperature decreases','Nothing changes'],hint:'Exo = out. Thermic = heat.',why:'Exothermic reactions release energy as heat.'},
+  {q:'What are the products\nof combustion?',c:'CO\u2082 + H\u2082O',w:['O\u2082 + C','H\u2082 + CO','N\u2082 + O\u2082'],hint:'Fuel + oxygen \u2192 ...',why:'Complete combustion produces carbon dioxide and water.'},
+  {q:'What is an element?',c:'A substance made of\none type of atom',w:['Two types of atom','A mixture','A compound'],hint:'It cannot be broken down chemically.',why:'Elements contain only one kind of atom.'},
+  {q:'Acids have a pH of...',c:'Less than 7',w:['More than 7','Exactly 7','More than 14'],hint:'Think lemon juice, vinegar.',why:'Acids: pH 0\u20136. Lower = stronger acid.'},
+  {q:'What is a compound?',c:'Two or more elements\nchemically bonded',w:['A single element','A mixture','A solution'],hint:'H\u2082O is an example \u2014 hydrogen + oxygen bonded.',why:'Compounds have atoms of different elements bonded together.'},
+  {q:'In the particle model,\nsolid particles are...',c:'Close together, vibrating\nin fixed positions',w:['Far apart, moving fast','Sliding past each other','Not moving at all'],hint:'Solids have a fixed shape.',why:'Particles vibrate but stay in fixed positions.'},
+  {q:'What does a catalyst\ndo?',c:'Speeds up a reaction\nwithout being used up',w:['Slows down reactions','Gets used up','Creates new elements'],hint:'It lowers the activation energy.',why:'Catalysts provide an alternative pathway with lower activation energy.'},
+  {q:'Alkalis have a pH of...',c:'More than 7',w:['Less than 7','Exactly 7','Less than 0'],hint:'Think soap, bleach.',why:'Alkalis: pH 8\u201314. Higher = stronger alkali.'},
+  {q:'What is the test\nfor CO\u2082?',c:'Turns limewater\nmilky/cloudy',w:['Pops with a flame','Relights a glowing splint','Turns litmus red'],hint:'Bubble the gas through limewater.',why:'CO\u2082 + Ca(OH)\u2082 \u2192 CaCO\u2083 (white precipitate = milky).'},
+  {q:'What is an endothermic\nreaction?',c:'Absorbs heat from\nsurroundings',w:['Releases heat','No energy change','Produces light'],hint:'Endo = in. The surroundings cool down.',why:'Endothermic reactions take in energy, cooling surroundings.'},
+],
+energy:[
+  {q:'KE = ?',c:'\u00bd \u00d7 mass \u00d7 velocity\u00b2',w:['mass \u00d7 g \u00d7 h','force \u00d7 distance','mass \u00d7 velocity'],hint:'Kinetic energy depends on speed SQUARED.',why:'KE = \u00bdmv\u00b2.'},
+  {q:'GPE = ?',c:'mass \u00d7 g \u00d7 height',w:['\u00bd \u00d7 m \u00d7 v\u00b2','force \u00d7 time','mass \u00d7 height'],hint:'Gravitational potential energy \u2014 don\'t forget g!',why:'GPE = mgh.'},
+  {q:'Energy cannot be\ncreated or...',c:'Destroyed',w:['Transferred','Changed','Measured'],hint:'This is the law of conservation of energy.',why:'Energy is always conserved \u2014 only transferred or transformed.'},
+  {q:'What is efficiency?',c:'Useful output \u00f7\ntotal input \u00d7 100%',w:['Input \u00f7 output','Total energy \u00d7 100','Wasted energy'],hint:'How much useful energy compared to total.',why:'Efficiency = (useful output / total input) \u00d7 100%.'},
+  {q:'A ball at the top of\na hill has mostly...',c:'Gravitational PE',w:['Kinetic energy','Thermal energy','Sound energy'],hint:'It\'s high up but not moving.',why:'Height = gravitational potential energy store.'},
+  {q:'As a ball falls,\nGPE converts to...',c:'Kinetic energy',w:['Thermal energy','Sound energy','Chemical energy'],hint:'It speeds up as it falls.',why:'GPE \u2192 KE as the ball accelerates downward.'},
+  {q:'What are the units\nof energy?',c:'Joules (J)',w:['Newtons (N)','Watts (W)','Kilograms (kg)'],hint:'Named after James Prescott Joule.',why:'Energy is measured in Joules.'},
+  {q:'What is power?',c:'Energy transferred\nper second',w:['Total energy','Force \u00d7 distance','Mass \u00d7 velocity'],hint:'Power = energy / time. Units: Watts.',why:'P = E/t. 1 Watt = 1 Joule per second.'},
+  {q:'A 2 kg ball moves at\n3 m/s. KE = ?',c:'9 J',w:['6 J','18 J','3 J'],hint:'KE = \u00bd \u00d7 2 \u00d7 3\u00b2.',why:'\u00bd \u00d7 2 \u00d7 9 = 9 J.'},
+  {q:'Most wasted energy\nin machines becomes...',c:'Thermal energy (heat)',w:['Light','Sound','Chemical energy'],hint:'Feel a machine after running \u2014 it\'s warm.',why:'Friction causes most energy to dissipate as heat.'},
+  {q:'What type of energy\nis in food and fuel?',c:'Chemical energy',w:['Kinetic energy','Nuclear energy','Elastic energy'],hint:'Released during digestion or combustion.',why:'Chemical energy is stored in bonds between atoms.'},
+  {q:'A 500W microwave runs\nfor 60s. Energy used?',c:'30,000 J',w:['500 J','30 J','3,000 J'],hint:'E = P \u00d7 t = 500 \u00d7 60.',why:'500 \u00d7 60 = 30,000 J (30 kJ).'},
+],
+space:[
+  {q:'How long does sunlight\ntake to reach Earth?',c:'~8 minutes',w:['~1 second','~1 hour','~1 day'],hint:'The Sun is about 150 million km away.',why:'Light travels at 300,000 km/s \u00d7 ~500s \u2248 8 min.'},
+  {q:'What is the largest\nplanet in our solar system?',c:'Jupiter',w:['Saturn','Neptune','Earth'],hint:'It\'s a gas giant.',why:'Jupiter has a diameter of ~140,000 km.'},
+  {q:'Stars produce energy\nby...',c:'Nuclear fusion',w:['Burning gas','Chemical reactions','Fission'],hint:'Hydrogen nuclei combine.',why:'Stars fuse hydrogen into helium, releasing enormous energy.'},
+  {q:'A light-year is a\nunit of...',c:'Distance',w:['Time','Speed','Mass'],hint:'It\'s how far light travels in one year.',why:'1 light-year \u2248 9.46 trillion km.'},
+  {q:'What causes the\nseasons on Earth?',c:'Axial tilt (23.5\u00b0)',w:['Distance from Sun','Moon\'s gravity','Solar flares'],hint:'The Earth is tilted on its axis.',why:'The 23.5\u00b0 tilt means sunlight hits at different angles year-round.'},
+  {q:'What is a galaxy?',c:'A system of billions\nof stars',w:['A single star','A planet','A nebula'],hint:'We live in the Milky Way.',why:'Galaxies contain billions of stars, gas, and dark matter.'},
+  {q:'The Moon\'s phases are\ncaused by...',c:'Its position relative\nto the Sun and Earth',w:['Earth\'s shadow','The Moon rotating','The Sun dimming'],hint:'We see different amounts of the lit side.',why:'As the Moon orbits, the sunlit portion we see changes.'},
+  {q:'What is the order of\nthe inner planets?',c:'Mercury, Venus,\nEarth, Mars',w:['Venus, Mercury,\nEarth, Mars','Mercury, Earth,\nVenus, Mars','Earth, Venus,\nMercury, Mars'],hint:'My Very Easy Method...',why:'Mercury (closest), Venus, Earth, Mars.'},
+  {q:'What is a nebula?',c:'A cloud of gas and\ndust in space',w:['A type of star','A black hole','A comet'],hint:'Stars are born inside them.',why:'Nebulae are stellar nurseries where new stars form.'},
+  {q:'What keeps planets\nin orbit around the Sun?',c:'Gravity',w:['Magnetism','Friction','The solar wind'],hint:'It pulls objects toward each other.',why:'The Sun\'s gravitational pull keeps planets in orbit.'},
+  {q:'How long does Earth\ntake to orbit the Sun?',c:'365.25 days',w:['30 days','24 hours','7 days'],hint:'That\'s why we have leap years.',why:'1 year = 365.25 days (the .25 adds up to a leap day every 4 years).'},
+  {q:'What type of star\nis our Sun?',c:'Yellow dwarf\n(main sequence)',w:['Red giant','White dwarf','Supergiant'],hint:'It\'s a medium-sized, middle-aged star.',why:'The Sun is a G-type main sequence star (yellow dwarf).'},
+]
+};
 
-// ─── Stars background ───
-(function(){
-  var el = document.getElementById('stars');
-  for(var i=0;i<80;i++){
-    var s = document.createElement('div');
-    s.className='star';
-    s.style.left=Math.random()*100+'%';
-    s.style.top=Math.random()*100+'%';
-    s.style.setProperty('--d',(2+Math.random()*4)+'s');
-    s.style.setProperty('--del',Math.random()*3+'s');
-    s.style.opacity=Math.random()*.5+.1;
-    s.style.width=s.style.height=(1+Math.random()*2)+'px';
-    el.appendChild(s);
-  }
-})();
+// ═══════════════════════════════════════════
+// GAME STATE
+// ═══════════════════════════════════════════
+var selectedTheme=null,currentLevel=1,score=0,lives=3,levelData=null,gameLoop=null;
+var usedQs={};
+var canvas,ctx;
+var player={x:40,y:420,vx:0,vy:0,w:24,h:32,grounded:false,facing:1,jumpsLeft:2,jumpHeld:false,energy:100};
+var keys={};
+var GRAVITY=0.45,JUMP=-12,SPEED=5,MAX_JUMPS=2;
+var collected=[],particles=[],levelWon=false,dead=false,frameCount=0;
+var cameraX=0,cameraY=0,shakeTime=0;
+var questionActive=false,gateIndex=-1;
+var touchLeft=false,touchRight=false,touchJump=false;
+var energyMeter=100; // for energy theme
 
-// ─── Theme selection ───
-function renderThemes() {
+// Stars bg
+(function(){var el=document.getElementById('stars');for(var i=0;i<60;i++){var s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.setProperty('--d',(2+Math.random()*4)+'s');s.style.setProperty('--del',Math.random()*3+'s');s.style.opacity=Math.random()*.5+.1;s.style.width=s.style.height=(1+Math.random()*2)+'px';el.appendChild(s)}})();
+
+// ═══════════════════════════════════════════
+// THEME SELECTION
+// ═══════════════════════════════════════════
+function renderThemes(){
   var html='';
   THEMES.forEach(function(t){
     html+='<div class="theme-card" data-id="'+t.id+'" onclick="selectTheme(\''+t.id+'\')"><div class="theme-icon">'+t.icon+'</div><div class="theme-name">'+t.name+'</div><div class="theme-desc">'+t.desc+'</div></div>';
   });
   document.getElementById('themeGrid').innerHTML=html;
-  // Also populate next-theme select
   var sel='';
   THEMES.forEach(function(t){sel+='<option value="'+t.id+'">'+t.icon+' '+t.name+'</option>';});
   document.getElementById('nextThemeSelect').innerHTML=sel;
 }
-
 window.selectTheme=function(id){
   selectedTheme=THEMES.find(function(t){return t.id===id});
   document.querySelectorAll('.theme-card').forEach(function(c){c.classList.toggle('selected',c.dataset.id===id)});
   document.getElementById('startBtn').disabled=false;
 };
-
 window.startGame=function(){
   document.getElementById('titleScreen').style.display='none';
   document.getElementById('gameScreen').style.display='block';
-  currentLevel=1;score=0;lives=3;
+  currentLevel=1;score=0;lives=3;usedQs={};
   generateLevel();
 };
 
-// ─── Level Generation (AI or fallback) ───
+// ═══════════════════════════════════════════
+// LEVEL GENERATION — theme-differentiated
+// ═══════════════════════════════════════════
 function generateLevel(){
   var loading=document.getElementById('loading');
   loading.classList.add('show');
-  document.getElementById('loadMsg').innerHTML='Claude is designing Level '+currentLevel+' about <strong>'+selectedTheme.name+'</strong>...';
-  
-  var prompt='You are a game level designer. Generate a platformer level for the theme "'+selectedTheme.name+'" ('+selectedTheme.desc+'). This is level '+currentLevel+' so difficulty should be '+(currentLevel<=2?'easy':currentLevel<=4?'medium':'hard')+'. Respond with ONLY a JSON object (no markdown, no backticks) with this exact structure: {"platforms":[{"x":number,"y":number,"w":number,"h":number}],"collectibles":[{"x":number,"y":number,"type":"star"}],"hazards":[{"x":number,"y":number,"w":number}],"exit":{"x":number,"y":number},"spawn":{"x":number,"y":number},"theme_fact":"one short educational fact about '+selectedTheme.id+'","decoration_text":"a short thematic word to display in background"}. Canvas is 860x480. Ground is at y=440. Platforms should have y between 100-400, x between 0-800, w between 60-200, h=16. Include '+(3+currentLevel)+' platforms, '+(2+currentLevel)+' collectibles, and '+(Math.min(currentLevel-1,4))+' hazards. Exit should be on a high platform (y<200). Spawn at x:40,y:420.';
-
-  // Try API call, fallback to procedural
-  callClaudeAPI(prompt).then(function(data){
-    levelData=data;
+  document.getElementById('loadMsg').innerHTML='Building Level '+currentLevel+': <strong>'+selectedTheme.name+'</strong>...';
+  setTimeout(function(){
+    levelData=buildLevel();
     loading.classList.remove('show');
     initLevel();
-  }).catch(function(err){
-    console.log('API fallback:',err);
-    levelData=generateProceduralLevel();
-    loading.classList.remove('show');
-    initLevel();
-  });
+  },400);
 }
 
-function callClaudeAPI(prompt){
-  var controller = new AbortController();
-  var timeoutId = setTimeout(function(){ controller.abort(); }, 8000);
+function buildLevel(){
+  var nPlats=5+currentLevel*2;
+  var nColl=3+currentLevel;
+  var nHaz=Math.min(1+currentLevel,6);
+  var nGates=Math.min(Math.ceil(currentLevel/2),3); // 1 gate lvl1-2, 2 gates lvl3-4, 3 gates lvl5+
+  var maxVertGap=45+Math.min(currentLevel*5,35);
+  var maxHorizGap=70+Math.min(currentLevel*10,70);
+  var minPlatW=75-Math.min(currentLevel*4,25);
   
-  return fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({
-      model:'claude-sonnet-4-20250514',
-      max_tokens:1000,
-      messages:[{role:'user',content:prompt}]
-    }),
-    signal: controller.signal
-  }).then(function(r){
-    clearTimeout(timeoutId);
-    if(!r.ok) throw new Error('API returned '+r.status);
-    return r.json();
-  }).then(function(data){
-    if(!data.content||!data.content.length) throw new Error('Empty response');
-    var text=data.content.map(function(c){return c.text||''}).join('');
-    var clean=text.replace(/```json|```/g,'').trim();
-    var parsed=JSON.parse(clean);
-    if(!parsed.platforms||!parsed.exit) throw new Error('Invalid level data');
-    return parsed;
-  });
-}
-
-function generateProceduralLevel(){
   var platforms=[];
   var collectibles=[];
   var hazards=[];
-  var nPlats=4+currentLevel;
-  var nColl=3+currentLevel;
-  var nHaz=Math.min(Math.floor(currentLevel/2),4);
-  
-  // GUARANTEED REACHABLE: staircase pattern with safe gaps
-  // Max jump height with JUMP=-12, GRAVITY=0.45 is ~160px
-  // Keep vertical gaps under 100px so double jump isn't always needed
-  var maxVertGap=55+Math.min(currentLevel*5,30); // 60-85px gaps
-  var maxHorizGap=80+Math.min(currentLevel*10,60); // 80-140px gaps
-  var minPlatW=80-Math.min(currentLevel*3,20); // narrower at higher levels
-  
-  // First platform: always easy to reach from ground (y=440)
-  var firstY=380-Math.random()*20; // 360-380, easy jump from ground
-  var firstX=80+Math.random()*100;
-  var firstW=100+Math.random()*60;
+  var gates=[];
+
+  // Build staircase
+  var firstY=380-Math.random()*15;
+  var firstX=60+Math.random()*80;
+  var firstW=100+Math.random()*50;
   platforms.push({x:Math.round(firstX),y:Math.round(firstY),w:Math.round(firstW),h:16});
-  
-  var lastX=firstX+firstW/2;
-  var lastY=firstY;
-  
-  // Build staircase with zigzag
+  var lastX=firstX+firstW/2,lastY=firstY;
+
   for(var i=1;i<nPlats;i++){
-    var goRight=Math.random()>0.3;
-    var dx=goRight?(60+Math.random()*maxHorizGap):-(60+Math.random()*maxHorizGap);
-    var dy=-(30+Math.random()*maxVertGap); // always go UP
+    var goRight=Math.random()>0.35;
+    var dx=goRight?(50+Math.random()*maxHorizGap):-(50+Math.random()*maxHorizGap);
+    var dy=-(25+Math.random()*maxVertGap);
     var x=lastX+dx;
     var y=lastY+dy;
+    var w=Math.max(minPlatW,55+Math.random()*75);
+    if(x<20)x=20+Math.random()*80;
+    if(x+w>840)x=840-w-Math.random()*80;
+    if(y<50)y=50+Math.random()*30;
+    if(y>390)y=390;
     
-    // Keep in bounds
-    var w=Math.max(minPlatW,60+Math.random()*80);
-    if(x<20)x=20+Math.random()*100;
-    if(x+w>840)x=840-w-Math.random()*100;
-    if(y<60)y=60+Math.random()*40;
-    if(y>380)y=380;
+    var plat={x:Math.round(x),y:Math.round(y),w:Math.round(w),h:16,idx:i};
     
-    var plat={x:Math.round(x),y:Math.round(y),w:Math.round(w),h:16};
-    
-    // Add movement to some platforms (from level 2+)
-    if(currentLevel>=2&&Math.random()<0.25){
+    // Theme-specific platform mechanics
+    if(selectedTheme.id==='probability'&&currentLevel>=2&&Math.random()<0.3){
+      plat.vanishChance=0.3+Math.random()*0.3; // 30-60% chance to vanish
+      plat.vanishTimer=0;plat.visible=true;plat.vanishCycle=90+Math.floor(Math.random()*60);
+    }
+    if(selectedTheme.id==='space'&&currentLevel>=2&&Math.random()<0.25){
+      plat.orbit=true;plat.orbitCX=plat.x+plat.w/2;plat.orbitCY=plat.y;
+      plat.orbitR=20+Math.random()*15;plat.orbitSpeed=0.01+Math.random()*0.01;plat.orbitAngle=Math.random()*Math.PI*2;
+    }
+    if(selectedTheme.id==='forces'&&currentLevel>=2&&Math.random()<0.3){
+      plat.gravityZone=Math.random()>0.5?'low':'high';
+    }
+    // Moving platforms for all themes from level 3+
+    if(currentLevel>=3&&Math.random()<0.2&&!plat.orbit&&!plat.vanishChance){
       if(Math.random()>0.5){
-        plat.moveX=true;plat.moveSpeed=0.5+Math.random()*0.8;
-        plat.moveDir=1;plat.moveMin=Math.max(10,plat.x-40);plat.moveMax=Math.min(820,plat.x+40);
-      } else {
-        plat.moveY=true;plat.moveSpeedY=0.3+Math.random()*0.5;
-        plat.moveDirY=1;plat.moveMinY=Math.max(60,plat.y-25);plat.moveMaxY=Math.min(420,plat.y+25);
+        plat.moveX=true;plat.moveSpeed=0.4+Math.random()*0.6;
+        plat.moveDir=1;plat.moveMin=Math.max(10,plat.x-35);plat.moveMax=Math.min(830,plat.x+35);
+      }else{
+        plat.moveY=true;plat.moveSpeedY=0.3+Math.random()*0.4;
+        plat.moveDirY=1;plat.moveMinY=Math.max(50,plat.y-20);plat.moveMaxY=Math.min(420,plat.y+20);
       }
     }
     
@@ -304,77 +411,159 @@ function generateProceduralLevel(){
     lastX=x+w/2;lastY=y;
   }
   
-  // Collectibles: one per platform + floating extras
-  for(var i=0;i<Math.min(nColl,platforms.length);i++){
-    var p=platforms[i];
-    collectibles.push({x:p.x+p.w/2,y:p.y-28,renderY:p.y-28,type:'star'});
+  // Knowledge gates — placed on certain platforms
+  var gateIndices=[];
+  var step=Math.floor(platforms.length/(nGates+1));
+  for(var g=0;g<nGates;g++){
+    var gi=Math.min(step*(g+1),platforms.length-2);
+    if(gi<2)gi=2;
+    gateIndices.push(gi);
+    platforms[gi].isGate=true;
+    platforms[gi].gateAnswered=false;
+    platforms[gi].gateQ=getThemeQuestion();
   }
-  // Extra floating collectibles between platforms
+
+  // Collectibles
+  for(var i=0;i<Math.min(nColl,platforms.length);i++){
+    var p=platforms[Math.min(i,platforms.length-1)];
+    var cType='star';
+    // Ecology: food chain collectibles
+    if(selectedTheme.id==='ecology'&&i<3){
+      cType=['producer','primary','secondary'][i];
+    }
+    // Energy: energy tokens
+    if(selectedTheme.id==='energy'&&Math.random()<0.4){
+      cType='energy';
+    }
+    // Chemistry: catalyst
+    if(selectedTheme.id==='chemistry'&&i===0){
+      cType='catalyst';
+    }
+    collectibles.push({x:p.x+p.w/2,y:p.y-28,renderY:p.y-28,type:cType});
+  }
   for(var i=platforms.length;i<nColl;i++){
     var p1=platforms[Math.floor(Math.random()*platforms.length)];
-    collectibles.push({x:p1.x+p1.w*Math.random(),y:p1.y-50-Math.random()*30,renderY:p1.y-50,type:'star'});
+    collectibles.push({x:p1.x+p1.w*Math.random(),y:p1.y-50-Math.random()*25,renderY:p1.y-50,type:'star'});
   }
   
-  // Hazards on ground — spread across the level
+  // Hazards — theme-specific
   for(var i=0;i<nHaz;i++){
-    var hx=150+i*(600/Math.max(nHaz,1))+Math.random()*60;
-    hazards.push({x:Math.round(hx),y:440,w:30+Math.round(Math.random()*25)});
+    var hx=120+i*(620/Math.max(nHaz,1))+Math.random()*50;
+    var hType='spikes';
+    if(selectedTheme.id==='chemistry')hType='acid';
+    if(selectedTheme.id==='forces')hType='friction';
+    if(selectedTheme.id==='ecology')hType='pollution';
+    hazards.push({x:Math.round(hx),y:440,w:28+Math.round(Math.random()*20),type:hType});
+    // Platform hazards from level 3+
+    if(currentLevel>=3&&i<platforms.length-1&&Math.random()<0.3){
+      var pp=platforms[Math.min(i+2,platforms.length-1)];
+      hazards.push({x:pp.x+Math.round(Math.random()*(pp.w-20)),y:pp.y,w:20,type:hType,onPlatform:true});
+    }
   }
-  
-  // More facts per topic
+
+  // Facts
   var factsMap={
-    algebra:['Variables represent unknown values.','The gradient tells you how steep a line is.','A sequence follows a rule to generate each term.','Factorising is the reverse of expanding brackets.'],
-    cells:['Cells are the basic units of life.','Mitochondria produce energy via respiration.','Plant cells have cell walls; animal cells don\'t.','Red blood cells have no nucleus.'],
-    forces:['Newton\'s 3rd law: every action has an equal opposite reaction.','Weight = mass × gravitational field strength.','Friction opposes motion between surfaces.','Terminal velocity: air resistance equals weight.'],
-    ecology:['Producers make food through photosynthesis.','Energy decreases by ~90% at each trophic level.','Decomposers recycle nutrients from dead matter.','Biodiversity measures the variety of life in an area.'],
-    probability:['Probability ranges from 0 (impossible) to 1 (certain).','P(not A) = 1 − P(A).','For independent events: P(A and B) = P(A) × P(B).','Relative frequency approaches theoretical probability.'],
-    chemistry:['Chemical reactions rearrange atoms, not create them.','Conservation of mass: total mass stays the same.','Exothermic reactions release heat energy.','The pH scale runs from 0 (acid) to 14 (alkali).'],
-    energy:['Energy cannot be created or destroyed.','KE = ½ × mass × velocity².','GPE = mass × g × height.','Efficiency = useful output ÷ total input.'],
-    space:['Light from the Sun takes 8 minutes to reach Earth.','Jupiter is the largest planet in our solar system.','Stars produce energy by nuclear fusion.','A light-year is a unit of distance, not time.']
+    algebra:['Variables represent unknown values in equations.','The gradient tells you how steep a line is.','A sequence follows a rule to generate each term.','Factorising is the reverse of expanding.','y = mx + c is the equation of a straight line.'],
+    cells:['Cells are the basic units of all living things.','Mitochondria produce ATP via respiration.','Plant cells have rigid cell walls for support.','Diffusion moves particles from high to low concentration.','DNA carries the genetic instructions for life.'],
+    forces:['Newton\'s 1st law: objects resist changes in motion.','Weight = mass \u00d7 gravitational field strength.','Friction converts kinetic energy to heat.','At terminal velocity, resultant force = 0.','Momentum = mass \u00d7 velocity.'],
+    ecology:['Producers make food through photosynthesis.','Only ~10% of energy transfers between trophic levels.','Decomposers recycle nutrients from dead matter.','Biodiversity measures the variety of life in an area.','Trophic cascades ripple through entire ecosystems.'],
+    probability:['Probability ranges from 0 (impossible) to 1 (certain).','P(not A) = 1 \u2212 P(A).','For independent events: P(A and B) = P(A) \u00d7 P(B).','Relative frequency converges on theoretical probability.','Sample space = the set of all possible outcomes.'],
+    chemistry:['Chemical reactions rearrange atoms, not create them.','Conservation of mass: total mass stays the same.','Exothermic reactions release heat to surroundings.','pH 7 is neutral; <7 acidic; >7 alkaline.','Catalysts speed reactions without being used up.'],
+    energy:['Energy cannot be created or destroyed \u2014 only transferred.','KE = \u00bd \u00d7 mass \u00d7 velocity\u00b2.','GPE = mass \u00d7 g \u00d7 height.','Efficiency = useful output \u00f7 total input.','Most wasted energy becomes thermal energy (heat).'],
+    space:['Sunlight takes ~8 minutes to reach Earth.','Jupiter is the largest planet in our solar system.','Stars produce energy by nuclear fusion.','A light-year is a unit of distance, not time.','The 23.5\u00b0 axial tilt causes Earth\'s seasons.']
   };
-  var topicFacts=factsMap[selectedTheme.id]||factsMap.algebra;
-  var fact=topicFacts[Math.floor(Math.random()*topicFacts.length)];
+  var facts=factsMap[selectedTheme.id]||factsMap.algebra;
+  var fact=facts[Math.floor(Math.random()*facts.length)];
   
-  // Exit on the highest platform
   var highest=platforms.reduce(function(a,b){return a.y<b.y?a:b});
   
-  return {
-    platforms:platforms,
-    collectibles:collectibles,
-    hazards:hazards,
+  return{
+    platforms:platforms,collectibles:collectibles,hazards:hazards,gates:gateIndices,
     exit:{x:highest.x+highest.w/2-12,y:highest.y-32},
     spawn:{x:40,y:408},
     theme_fact:fact,
-    decoration_text:selectedTheme.name.split(' ')[0]
+    decoration_text:selectedTheme.bgDecoWord
   };
 }
 
-// ─── Game Engine ───
-var canvas,ctx;
-var player={x:40,y:420,vx:0,vy:0,w:24,h:32,grounded:false,facing:1,jumpsLeft:2,jumpHeld:false};
-var keys={};
-var GRAVITY=0.45;
-var JUMP=-12;
-var SPEED=5;
-var MAX_JUMPS=2; // double jump
-var collected=[];
-var particles=[];
-var levelWon=false;
-var dead=false;
-var frameCount=0;
-var cameraX=0; // for screen shake
-var cameraY=0;
-var shakeTime=0;
+function getThemeQuestion(){
+  var pool=QUESTIONS[selectedTheme.id]||QUESTIONS.algebra;
+  if(!usedQs[selectedTheme.id])usedQs[selectedTheme.id]=new Set();
+  var used=usedQs[selectedTheme.id];
+  if(used.size>=pool.length-2)used.clear();
+  var idx,tries=0;
+  do{idx=Math.floor(Math.random()*pool.length);tries++}while(used.has(idx)&&tries<20);
+  used.add(idx);
+  var q=pool[idx];
+  var answers=[q.c].concat(q.w);
+  for(var i=answers.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=answers[i];answers[i]=answers[j];answers[j]=t}
+  return{text:q.q,answers:answers,correct:q.c,hint:q.hint,why:q.why};
+}
 
+// ═══════════════════════════════════════════
+// QUESTION GATE UI
+// ═══════════════════════════════════════════
+function showGateQuestion(platIdx){
+  if(questionActive)return;
+  questionActive=true;gateIndex=platIdx;
+  var plat=levelData.platforms[platIdx];
+  var q=plat.gateQ;
+  document.getElementById('qgLabel').textContent='\u{1F512} KNOWLEDGE GATE \u00b7 '+selectedTheme.name;
+  document.getElementById('qgText').textContent=q.text;
+  document.getElementById('qgHint').style.display='none';
+  document.getElementById('qgWhy').style.display='none';
+  var opts=document.getElementById('qgOpts');opts.innerHTML='';
+  q.answers.forEach(function(a){
+    var btn=document.createElement('button');btn.className='qg-btn';btn.textContent=a;
+    btn.onclick=function(){answerGate(a,btn,plat)};
+    opts.appendChild(btn);
+  });
+  document.getElementById('questionGate').classList.add('show');
+}
+
+function answerGate(answer,btn,plat){
+  document.querySelectorAll('.qg-btn').forEach(function(b){b.onclick=null});
+  var q=plat.gateQ;
+  if(String(answer)===String(q.correct)){
+    btn.classList.add('correct');
+    plat.gateAnswered=true;
+    score+=25;
+    document.getElementById('hudScore').textContent=score;
+    if(q.why){
+      document.getElementById('qgWhy').textContent='\u2705 '+q.why;
+      document.getElementById('qgWhy').style.display='block';
+    }
+    setTimeout(function(){
+      document.getElementById('questionGate').classList.remove('show');
+      questionActive=false;gateIndex=-1;
+    },1200);
+  }else{
+    btn.classList.add('wrong');
+    document.querySelectorAll('.qg-btn').forEach(function(b){if(String(b.textContent)===String(q.correct))b.classList.add('correct')});
+    if(q.hint){
+      document.getElementById('qgHint').textContent='\u{1F4A1} '+q.hint;
+      document.getElementById('qgHint').style.display='block';
+    }
+    setTimeout(function(){
+      document.getElementById('questionGate').classList.remove('show');
+      questionActive=false;gateIndex=-1;
+      // Knock player back down
+      player.vy=-6;player.y+=10;
+      shakeTime=10;
+    },1800);
+  }
+}
+
+// ═══════════════════════════════════════════
+// GAME ENGINE
+// ═══════════════════════════════════════════
 function initLevel(){
   canvas=document.getElementById('gameCanvas');
   ctx=canvas.getContext('2d');
-  player.x=levelData.spawn.x;
-  player.y=levelData.spawn.y;
+  player.x=levelData.spawn.x;player.y=levelData.spawn.y;
   player.vx=0;player.vy=0;player.grounded=false;player.jumpsLeft=MAX_JUMPS;player.jumpHeld=false;
-  collected=[];
-  particles=[];
-  levelWon=false;dead=false;
+  energyMeter=100;
+  collected=[];particles=[];levelWon=false;dead=false;questionActive=false;gateIndex=-1;
   document.getElementById('hudLevel').textContent=currentLevel;
   document.getElementById('hudScore').textContent=score;
   document.getElementById('hudLives').textContent=lives;
@@ -384,95 +573,116 @@ function initLevel(){
 }
 
 function tick(){
-  if(levelWon||dead){return}
+  if(levelWon||dead)return;
   frameCount++;
-  update();
+  if(!questionActive){update()}
   render();
   gameLoop=requestAnimationFrame(tick);
 }
 
 function update(){
-  // Input — movement
-  if(keys['ArrowLeft']||keys['KeyA']){player.vx=-SPEED;player.facing=-1}
-  else if(keys['ArrowRight']||keys['KeyD']){player.vx=SPEED;player.facing=1}
+  var left=keys['ArrowLeft']||keys['KeyA']||touchLeft;
+  var right=keys['ArrowRight']||keys['KeyD']||touchRight;
+  if(left){player.vx=-SPEED;player.facing=-1}
+  else if(right){player.vx=SPEED;player.facing=1}
   else{player.vx*=0.85;if(Math.abs(player.vx)<0.3)player.vx=0}
   
-  // Jump — with double jump and variable height
-  var jumpKey=keys['ArrowUp']||keys['KeyW']||keys['Space'];
+  var jumpKey=keys['ArrowUp']||keys['KeyW']||keys['Space']||touchJump;
   if(jumpKey&&!player.jumpHeld&&player.jumpsLeft>0){
-    player.vy=JUMP;
-    player.jumpsLeft--;
-    player.jumpHeld=true;
-    player.grounded=false;
-    // Double jump particles
-    if(player.jumpsLeft<MAX_JUMPS-1){
-      for(var p=0;p<6;p++){
-        particles.push({x:player.x+player.w/2,y:player.y+player.h,vx:(Math.random()-0.5)*3,vy:Math.random()*2,life:15,color:'rgba(255,255,255,0.5)'});
+    // Energy theme: jumping costs energy
+    if(selectedTheme.id==='energy'){
+      if(energyMeter<10){jumpKey=false;}
+      else{energyMeter=Math.max(0,energyMeter-15);}
+    }
+    if(jumpKey){
+      var jumpForce=JUMP;
+      // Forces theme: gravity zones affect jump
+      if(player.currentGravZone==='low')jumpForce=JUMP*1.4;
+      if(player.currentGravZone==='high')jumpForce=JUMP*0.6;
+      player.vy=jumpForce;
+      player.jumpsLeft--;player.jumpHeld=true;player.grounded=false;
+      if(player.jumpsLeft<MAX_JUMPS-1){
+        for(var p=0;p<6;p++){
+          particles.push({x:player.x+player.w/2,y:player.y+player.h,vx:(Math.random()-0.5)*3,vy:Math.random()*2,life:15,color:'rgba(255,255,255,0.5)'});
+        }
       }
     }
   }
   if(!jumpKey)player.jumpHeld=false;
-  // Variable jump: release early = shorter jump
   if(!jumpKey&&player.vy<-4)player.vy*=0.85;
+  touchJump=false;
   
-  // Physics
+  // Energy regen
+  if(selectedTheme.id==='energy'&&player.grounded){energyMeter=Math.min(100,energyMeter+0.3)}
+  
   player.vy+=GRAVITY;
-  if(player.vy>12)player.vy=12; // terminal velocity
-  player.x+=player.vx;
-  player.y+=player.vy;
+  if(player.vy>12)player.vy=12;
+  player.x+=player.vx;player.y+=player.vy;
   
-  // Ground collision
   player.grounded=false;
+  player.currentGravZone=null;
   if(player.y+player.h>=440){player.y=440-player.h;player.vy=0;player.grounded=true;player.jumpsLeft=MAX_JUMPS}
   
-  // Platform collision — fixed: removed the vx!==0 guard
-  levelData.platforms.forEach(function(p){
-    // Moving platforms
-    if(p.moveX){
-      p.x+=p.moveDir*p.moveSpeed;
-      if(p.x<p.moveMin||p.x>p.moveMax)p.moveDir*=-1;
+  levelData.platforms.forEach(function(p,pi){
+    // Probability vanishing platforms
+    if(p.vanishChance!==undefined){
+      p.vanishTimer=(p.vanishTimer||0)+1;
+      if(p.vanishTimer%p.vanishCycle===0){
+        p.visible=Math.random()>p.vanishChance;
+      }
+      if(!p.visible)return;
     }
-    if(p.moveY){
-      p.y+=p.moveDirY*p.moveSpeedY;
-      if(p.y<p.moveMinY||p.y>p.moveMaxY)p.moveDirY*=-1;
+    // Orbit platforms
+    if(p.orbit){
+      p.orbitAngle+=p.orbitSpeed;
+      p.x=p.orbitCX+Math.cos(p.orbitAngle)*p.orbitR-p.w/2;
+      p.y=p.orbitCY+Math.sin(p.orbitAngle)*p.orbitR;
+    }
+    // Moving platforms
+    if(p.moveX){p.x+=p.moveDir*p.moveSpeed;if(p.x<p.moveMin||p.x>p.moveMax)p.moveDir*=-1}
+    if(p.moveY){p.y+=p.moveDirY*p.moveSpeedY;if(p.y<p.moveMinY||p.y>p.moveMaxY)p.moveDirY*=-1}
+    
+    // Gravity zone
+    if(p.gravityZone&&Math.abs(player.x+player.w/2-(p.x+p.w/2))<p.w&&Math.abs(player.y-(p.y-40))<60){
+      player.currentGravZone=p.gravityZone;
     }
     
     // Land on top
-    if(player.vy>=0&&
-       player.x+player.w>p.x+4&&player.x<p.x+p.w-4&&
-       player.y+player.h>=p.y&&player.y+player.h<=p.y+16){
-      player.y=p.y-player.h;
-      player.vy=0;
-      player.grounded=true;
-      player.jumpsLeft=MAX_JUMPS;
-      // Carry player on moving platform
+    if(player.vy>=0&&player.x+player.w>p.x+4&&player.x<p.x+p.w-4&&player.y+player.h>=p.y&&player.y+player.h<=p.y+16){
+      // Gate check
+      if(p.isGate&&!p.gateAnswered){
+        player.y=p.y-player.h;player.vy=0;player.grounded=true;player.jumpsLeft=MAX_JUMPS;
+        showGateQuestion(pi);
+        return;
+      }
+      player.y=p.y-player.h;player.vy=0;player.grounded=true;player.jumpsLeft=MAX_JUMPS;
       if(p.moveX)player.x+=p.moveDir*p.moveSpeed;
     }
   });
   
-  // Wall bounds
   if(player.x<0)player.x=0;
   if(player.x+player.w>860)player.x=860-player.w;
   if(player.y<-50){player.y=-50;player.vy=0}
   
   // Collectibles
-  levelData.collectibles.forEach(function(c,i){
+  levelData.collectibles.forEach(function(col,i){
     if(collected.indexOf(i)!==-1)return;
-    // Bobbing animation
-    c.renderY=c.y+Math.sin(frameCount*0.05+i*2)*4;
-    if(Math.abs(player.x+player.w/2-c.x)<22&&Math.abs(player.y+player.h/2-c.renderY)<22){
+    col.renderY=col.y+Math.sin(frameCount*0.05+i*2)*4;
+    if(Math.abs(player.x+player.w/2-col.x)<22&&Math.abs(player.y+player.h/2-col.renderY)<22){
       collected.push(i);
-      score+=10;
+      if(col.type==='energy'){energyMeter=Math.min(100,energyMeter+30);score+=5;}
+      else{score+=10;}
       document.getElementById('hudScore').textContent=score;
-      for(var p=0;p<12;p++){
-        particles.push({x:c.x,y:c.renderY,vx:(Math.random()-0.5)*5,vy:-Math.random()*4,life:25,color:selectedTheme.colors[0]});
+      for(var p=0;p<10;p++){
+        particles.push({x:col.x,y:col.renderY,vx:(Math.random()-0.5)*5,vy:-Math.random()*4,life:25,color:selectedTheme.colors[0]});
       }
     }
   });
   
   // Hazards
   levelData.hazards.forEach(function(h){
-    if(player.x+player.w>h.x+4&&player.x<h.x+h.w-4&&player.y+player.h>h.y-12&&player.y+player.h<=h.y+4){
+    var hy=h.onPlatform?h.y-12:h.y-12;
+    if(player.x+player.w>h.x+4&&player.x<h.x+h.w-4&&player.y+player.h>hy&&player.y+player.h<=h.y+4){
       playerDie();
     }
   });
@@ -480,228 +690,183 @@ function update(){
   // Exit
   var ex=levelData.exit;
   if(Math.abs(player.x+player.w/2-ex.x-12)<24&&Math.abs(player.y+player.h/2-ex.y-16)<28){
-    levelWon=true;
-    score+=50;
+    levelWon=true;score+=50;
     document.getElementById('hudScore').textContent=score;
     showLevelComplete();
   }
   
-  // Fell off
-  if(player.y>520){playerDie()}
+  if(player.y>520)playerDie();
   
-  // Screen shake decay
-  if(shakeTime>0){
-    shakeTime--;
-    cameraX=(Math.random()-0.5)*shakeTime*0.8;
-    cameraY=(Math.random()-0.5)*shakeTime*0.8;
-  } else {cameraX=0;cameraY=0}
-  
-  // Update particles
+  if(shakeTime>0){shakeTime--;cameraX=(Math.random()-0.5)*shakeTime*0.8;cameraY=(Math.random()-0.5)*shakeTime*0.8}else{cameraX=0;cameraY=0}
   particles=particles.filter(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=0.1;p.life--;return p.life>0});
 }
 
 function playerDie(){
-  dead=true;
-  lives--;
-  shakeTime=15;
+  dead=true;lives--;shakeTime=15;
   document.getElementById('hudLives').textContent=lives;
   if(lives<=0){
     document.getElementById('goLevel').textContent=currentLevel;
     document.getElementById('goScore').textContent=score;
+    var transfers=['How does the topic you chose connect to your everyday life? Think of one example.','What was the hardest question? Could you explain the answer to a friend now?','Which theme would you choose differently next time, and why?'];
+    document.getElementById('goTransfer').innerHTML='\u{1F914} <strong>Reflect:</strong> '+transfers[Math.floor(Math.random()*transfers.length)];
     document.getElementById('gameOver').classList.add('show');
-  } else {
-    // Respawn after brief delay
+  }else{
     setTimeout(function(){
-      dead=false;
-      player.x=levelData.spawn.x;
-      player.y=levelData.spawn.y;
-      player.vx=0;player.vy=0;player.jumpsLeft=MAX_JUMPS;
+      dead=false;player.x=levelData.spawn.x;player.y=levelData.spawn.y;
+      player.vx=0;player.vy=0;player.jumpsLeft=MAX_JUMPS;energyMeter=100;
       gameLoop=requestAnimationFrame(tick);
     },800);
   }
 }
 
+// ═══════════════════════════════════════════
+// RENDERING — theme-differentiated
+// ═══════════════════════════════════════════
 function render(){
-  var c=ctx;
-  var tc=selectedTheme.colors;
+  var c=ctx;var tc=selectedTheme.colors;
+  c.save();c.translate(cameraX,cameraY);
   
-  c.save();
-  c.translate(cameraX,cameraY); // screen shake
+  // Background
+  var bg=c.createLinearGradient(0,0,0,480);bg.addColorStop(0,tc[2]);bg.addColorStop(1,'#0a0a1a');
+  c.fillStyle=bg;c.fillRect(-4,-4,868,488);
   
-  // Background gradient
-  var bg=c.createLinearGradient(0,0,0,480);
-  bg.addColorStop(0,tc[2]);
-  bg.addColorStop(1,'#0a0a1a');
-  c.fillStyle=bg;
-  c.fillRect(-4,-4,868,488);
-  
-  // Background decoration text
+  // Decoration text
   if(levelData.decoration_text){
-    c.save();
-    c.globalAlpha=0.04;
-    c.font='bold 120px "Press Start 2P",monospace';
-    c.fillStyle='#fff';
-    c.textAlign='center';
-    c.fillText(levelData.decoration_text,430,300);
-    c.restore();
+    c.save();c.globalAlpha=0.04;c.font='bold 100px "Press Start 2P",monospace';c.fillStyle='#fff';c.textAlign='center';
+    c.fillText(levelData.decoration_text,430,300);c.restore();
   }
-  
-  // Stars in background
-  for(var i=0;i<20;i++){
-    var sx=(i*137+frameCount*0.2)%860;
-    var sy=(i*89)%300+20;
-    c.fillStyle='rgba(255,255,255,'+(0.1+Math.sin(frameCount*0.02+i)*0.1)+')';
-    c.fillRect(sx,sy,1.5,1.5);
-  }
+  // Bg stars
+  for(var i=0;i<20;i++){var sx=(i*137+frameCount*0.2)%860;var sy=(i*89)%300+20;c.fillStyle='rgba(255,255,255,'+(0.1+Math.sin(frameCount*0.02+i)*0.1)+')';c.fillRect(sx,sy,1.5,1.5)}
   
   // Ground
-  c.fillStyle=tc[2];
-  c.fillRect(0,440,860,40);
-  c.fillStyle='rgba(255,255,255,.05)';
-  for(var i=0;i<860;i+=20){c.fillRect(i,440,1,40)}
+  c.fillStyle=tc[2];c.fillRect(0,440,860,40);
+  c.fillStyle='rgba(255,255,255,.05)';for(var i=0;i<860;i+=20){c.fillRect(i,440,1,40)}
   
   // Platforms
-  levelData.platforms.forEach(function(p){
-    var pg=c.createLinearGradient(p.x,p.y,p.x,p.y+p.h);
-    pg.addColorStop(0,tc[0]);
-    pg.addColorStop(1,tc[1]);
-    c.fillStyle=pg;
-    roundRect(c,p.x,p.y,p.w,p.h,4);
-    c.fill();
-    // Shine
-    c.fillStyle='rgba(255,255,255,.15)';
-    c.fillRect(p.x+2,p.y+1,p.w-4,3);
-  });
-  
-  // Hazards (spikes)
-  levelData.hazards.forEach(function(h){
-    c.fillStyle=tc[0]==='#dc2626'?'#ef4444':'#ef4444';
-    for(var i=0;i<h.w;i+=12){
-      c.beginPath();
-      c.moveTo(h.x+i,h.y);
-      c.lineTo(h.x+i+6,h.y-14);
-      c.lineTo(h.x+i+12,h.y);
-      c.fill();
+  levelData.platforms.forEach(function(p,pi){
+    if(p.vanishChance!==undefined&&!p.visible){
+      // Ghost outline for vanished probability platforms
+      c.save();c.globalAlpha=0.15;c.strokeStyle=tc[0];c.lineWidth=1;c.setLineDash([4,4]);
+      c.strokeRect(p.x,p.y,p.w,p.h);c.setLineDash([]);c.restore();
+      return;
+    }
+    
+    var pg=c.createLinearGradient(p.x,p.y,p.x,p.y+p.h);pg.addColorStop(0,tc[0]);pg.addColorStop(1,tc[1]);
+    c.fillStyle=pg;roundRect(c,p.x,p.y,p.w,p.h,4);c.fill();
+    c.fillStyle='rgba(255,255,255,.15)';c.fillRect(p.x+2,p.y+1,p.w-4,3);
+    
+    // Gate indicators
+    if(p.isGate){
+      if(!p.gateAnswered){
+        c.fillStyle='rgba(255,100,100,.6)';c.fillRect(p.x,p.y-3,p.w,3);
+        c.font='12px sans-serif';c.textAlign='center';c.fillText('\u{1F512}',p.x+p.w/2,p.y-8);
+      }else{
+        c.fillStyle='rgba(34,197,94,.6)';c.fillRect(p.x,p.y-3,p.w,3);
+        c.font='12px sans-serif';c.textAlign='center';c.fillText('\u2705',p.x+p.w/2,p.y-8);
+      }
+    }
+    // Gravity zone indicator (forces theme)
+    if(p.gravityZone){
+      c.save();c.globalAlpha=0.15;
+      c.fillStyle=p.gravityZone==='low'?'#3b82f6':'#ef4444';
+      c.fillRect(p.x-10,p.y-50,p.w+20,60);c.restore();
+      c.font='8px Outfit';c.fillStyle=p.gravityZone==='low'?'#93c5fd':'#fca5a5';c.textAlign='center';
+      c.fillText(p.gravityZone==='low'?'\u2B06 LOW-G':'\u2B07 HIGH-G',p.x+p.w/2,p.y-4);
+    }
+    // Probability vanish indicator
+    if(p.vanishChance!==undefined&&p.visible){
+      c.font='8px Outfit';c.fillStyle='#c4b5fd';c.textAlign='center';
+      c.fillText('P='+((1-p.vanishChance)*100).toFixed(0)+'%',p.x+p.w/2,p.y-4);
     }
   });
   
-  // Collectibles (stars) — bobbing
+  // Hazards
+  levelData.hazards.forEach(function(h){
+    var hy=h.y;
+    if(h.type==='acid'){
+      c.fillStyle='rgba(34,197,94,.4)';c.fillRect(h.x,hy-6,h.w,6);
+      c.fillStyle='#22c55e';
+      for(var i=0;i<h.w;i+=8){var bubY=hy-8-Math.sin(frameCount*0.05+i)*3;c.beginPath();c.arc(h.x+i+4,bubY,2,0,Math.PI*2);c.fill()}
+    }else if(h.type==='pollution'){
+      c.fillStyle='rgba(120,113,108,.5)';c.fillRect(h.x,hy-8,h.w,8);
+      c.font='10px sans-serif';c.fillText('\u2601\uFE0F',h.x+h.w/2-5,hy-2);
+    }else{
+      c.fillStyle='#ef4444';
+      for(var i=0;i<h.w;i+=12){c.beginPath();c.moveTo(h.x+i,hy);c.lineTo(h.x+i+6,hy-14);c.lineTo(h.x+i+12,hy);c.fill()}
+    }
+  });
+  
+  // Collectibles
   levelData.collectibles.forEach(function(col,i){
     if(collected.indexOf(i)!==-1)return;
-    var renderY=col.renderY||col.y;
-    c.save();
-    c.translate(col.x,renderY);
-    c.rotate(frameCount*0.03);
-    // Glow
-    c.shadowColor='#fbbf24';
-    c.shadowBlur=12;
-    drawStar(c,0,0,8,4,5);
-    c.fillStyle='#fbbf24';
-    c.fill();
-    c.shadowBlur=0;
+    var ry=col.renderY||col.y;
+    c.save();c.translate(col.x,ry);
+    if(col.type==='star'){
+      c.rotate(frameCount*0.03);c.shadowColor='#fbbf24';c.shadowBlur=12;
+      drawStar(c,0,0,8,4,5);c.fillStyle='#fbbf24';c.fill();c.shadowBlur=0;
+    }else if(col.type==='energy'){
+      c.font='14px sans-serif';c.textAlign='center';c.fillText('\u26A1',0,5);
+    }else if(col.type==='producer'){
+      c.font='14px sans-serif';c.textAlign='center';c.fillText('\u{1F33F}',0,5);
+    }else if(col.type==='primary'){
+      c.font='14px sans-serif';c.textAlign='center';c.fillText('\u{1F407}',0,5);
+    }else if(col.type==='secondary'){
+      c.font='14px sans-serif';c.textAlign='center';c.fillText('\u{1F985}',0,5);
+    }else if(col.type==='catalyst'){
+      c.font='14px sans-serif';c.textAlign='center';c.fillText('\u2697\uFE0F',0,5);
+    }else{
+      c.rotate(frameCount*0.03);c.shadowColor='#fbbf24';c.shadowBlur=12;
+      drawStar(c,0,0,8,4,5);c.fillStyle='#fbbf24';c.fill();c.shadowBlur=0;
+    }
     c.restore();
   });
   
   // Exit portal
   var ex=levelData.exit;
-  c.save();
-  c.translate(ex.x+12,ex.y+16);
-  // Pulsing ring
+  c.save();c.translate(ex.x+12,ex.y+16);
   var pulse=Math.sin(frameCount*0.06)*4;
-  c.strokeStyle=tc[0];
-  c.lineWidth=3;
-  c.beginPath();
-  c.arc(0,0,14+pulse,0,Math.PI*2);
-  c.stroke();
-  c.strokeStyle='rgba(255,255,255,.3)';
-  c.lineWidth=1;
-  c.beginPath();
-  c.arc(0,0,18+pulse,0,Math.PI*2);
-  c.stroke();
-  // Arrow
-  c.fillStyle='#fff';
-  c.font='16px sans-serif';
-  c.textAlign='center';
-  c.fillText('🚪',0,5);
+  c.strokeStyle=tc[0];c.lineWidth=3;c.beginPath();c.arc(0,0,14+pulse,0,Math.PI*2);c.stroke();
+  c.strokeStyle='rgba(255,255,255,.3)';c.lineWidth=1;c.beginPath();c.arc(0,0,18+pulse,0,Math.PI*2);c.stroke();
+  c.fillStyle='#fff';c.font='16px sans-serif';c.textAlign='center';c.fillText('\u{1F6AA}',0,5);
   c.restore();
   
   // Player
-  c.save();
-  c.translate(player.x+player.w/2,player.y+player.h/2);
-  c.scale(player.facing,1);
-  // Body
-  c.fillStyle='#6366f1';
-  roundRect(c,-10,-14,20,28,6);c.fill();
-  // Eyes
-  c.fillStyle='#fff';
-  c.fillRect(2,-8,5,5);
-  c.fillRect(-1,-8,5,5);
-  // Pupils
-  c.fillStyle='#1e1b4b';
-  c.fillRect(4,-7,2,3);
-  c.fillRect(1,-7,2,3);
-  // Feet — animate when moving
-  if(!player.grounded){
-    c.fillStyle='#4f46e5';
-    c.fillRect(-8,14,7,4);
-    c.fillRect(2,14,7,4);
-  } else if(Math.abs(player.vx)>1) {
-    var step=Math.sin(frameCount*0.2)*4;
-    c.fillStyle='#4f46e5';
-    c.fillRect(-8+step,14,7,4);
-    c.fillRect(2-step,14,7,4);
-  } else {
-    c.fillStyle='#4f46e5';
-    c.fillRect(-8,14,7,4);
-    c.fillRect(2,14,7,4);
-  }
-  // Double jump indicator — small dots below character
+  c.save();c.translate(player.x+player.w/2,player.y+player.h/2);c.scale(player.facing,1);
+  c.fillStyle='#6366f1';roundRect(c,-10,-14,20,28,6);c.fill();
+  c.fillStyle='#fff';c.fillRect(2,-8,5,5);c.fillRect(-1,-8,5,5);
+  c.fillStyle='#1e1b4b';c.fillRect(4,-7,2,3);c.fillRect(1,-7,2,3);
+  if(!player.grounded){c.fillStyle='#4f46e5';c.fillRect(-8,14,7,4);c.fillRect(2,14,7,4)}
+  else if(Math.abs(player.vx)>1){var step=Math.sin(frameCount*0.2)*4;c.fillStyle='#4f46e5';c.fillRect(-8+step,14,7,4);c.fillRect(2-step,14,7,4)}
+  else{c.fillStyle='#4f46e5';c.fillRect(-8,14,7,4);c.fillRect(2,14,7,4)}
   c.restore();
-  for(var ji=0;ji<player.jumpsLeft;ji++){
-    c.fillStyle='rgba(99,102,241,0.6)';
-    c.beginPath();
-    c.arc(player.x+player.w/2-4+ji*8,player.y+player.h+6,2.5,0,Math.PI*2);
-    c.fill();
+  // Jump indicators
+  for(var ji=0;ji<player.jumpsLeft;ji++){c.fillStyle='rgba(99,102,241,0.6)';c.beginPath();c.arc(player.x+player.w/2-4+ji*8,player.y+player.h+6,2.5,0,Math.PI*2);c.fill()}
+  
+  // Energy meter (energy theme only)
+  if(selectedTheme.id==='energy'){
+    c.fillStyle='rgba(0,0,0,.4)';roundRect(c,10,10,104,12,4);c.fill();
+    c.fillStyle=energyMeter>30?'#fbbf24':'#ef4444';roundRect(c,12,12,energyMeter,8,3);c.fill();
+    c.fillStyle='#fff';c.font='8px Outfit';c.textAlign='left';c.fillText('KE: '+Math.round(energyMeter)+'%',14,19);
   }
   
   // Particles
-  particles.forEach(function(p){
-    c.globalAlpha=p.life/30;
-    c.fillStyle=p.color;
-    c.fillRect(p.x-2,p.y-2,4,4);
-  });
+  particles.forEach(function(p){c.globalAlpha=p.life/30;c.fillStyle=p.color;c.fillRect(p.x-2,p.y-2,4,4)});
   c.globalAlpha=1;
   
-  // Theme fact at bottom
-  if(levelData.theme_fact){
-    c.fillStyle='rgba(255,255,255,.5)';
-    c.font='10px Outfit,sans-serif';
-    c.textAlign='center';
-    c.fillText('💡 '+levelData.theme_fact,430,472);
-  }
+  // Fact
+  if(levelData.theme_fact){c.fillStyle='rgba(255,255,255,.5)';c.font='10px Outfit,sans-serif';c.textAlign='center';c.fillText('\u{1F4A1} '+levelData.theme_fact,430,472)}
   
-  c.restore(); // end screen shake transform
+  c.restore();
 }
 
 function roundRect(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);c.closePath()}
-
-function drawStar(c,cx,cy,outer,inner,points){
-  c.beginPath();
-  for(var i=0;i<points*2;i++){
-    var r=i%2===0?outer:inner;
-    var a=Math.PI/points*i-Math.PI/2;
-    if(i===0)c.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
-    else c.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
-  }
-  c.closePath();
-}
+function drawStar(c,cx,cy,outer,inner,points){c.beginPath();for(var i=0;i<points*2;i++){var r=i%2===0?outer:inner;var a=Math.PI/points*i-Math.PI/2;if(i===0)c.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a));else c.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a))}c.closePath()}
 
 function showLevelComplete(){
-  document.getElementById('lcMsg').innerHTML='You collected '+(collected.length*10)+' stars!<br><em>"'+levelData.theme_fact+'"</em>';
+  document.getElementById('lcMsg').innerHTML='You collected '+score+' stars!<br><em>"\u{1F4A1} '+levelData.theme_fact+'"</em>';
   document.getElementById('nextThemeSelect').value=selectedTheme.id;
   document.getElementById('levelComplete').classList.add('show');
 }
-
 window.nextLevel=function(){
   document.getElementById('levelComplete').classList.remove('show');
   currentLevel++;
@@ -710,12 +875,30 @@ window.nextLevel=function(){
   generateLevel();
 };
 
-// ─── Input ───
+// ═══════════════════════════════════════════
+// INPUT
+// ═══════════════════════════════════════════
 document.addEventListener('keydown',function(e){keys[e.code]=true;if(['Space','ArrowUp','ArrowDown'].indexOf(e.code)!==-1)e.preventDefault()});
 document.addEventListener('keyup',function(e){keys[e.code]=false});
 
-// ─── Init ───
+// Touch controls
+(function(){
+  var tL=document.getElementById('tLeft'),tR=document.getElementById('tRight'),tJ=document.getElementById('tJump');
+  if(!tL)return;
+  function pv(e){e.preventDefault()}
+  tL.addEventListener('touchstart',function(e){pv(e);touchLeft=true});
+  tL.addEventListener('touchend',function(e){pv(e);touchLeft=false});
+  tL.addEventListener('touchcancel',function(){touchLeft=false});
+  tR.addEventListener('touchstart',function(e){pv(e);touchRight=true});
+  tR.addEventListener('touchend',function(e){pv(e);touchRight=false});
+  tR.addEventListener('touchcancel',function(){touchRight=false});
+  tJ.addEventListener('touchstart',function(e){pv(e);touchJump=true});
+  tJ.addEventListener('touchend',function(e){pv(e)});
+  tJ.addEventListener('touchcancel',function(){});
+})();
+
 renderThemes();
+})();
 </script>
 </body>
 </html>
