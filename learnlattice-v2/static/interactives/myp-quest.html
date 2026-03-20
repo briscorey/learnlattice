@@ -722,15 +722,18 @@ function update(){
   });
   
   // === GATE BARRIER: block player from rising past unanswered gates ===
+  // Player must be able to jump UP TO the gate platform and land on it,
+  // but cannot rise ABOVE the gate. Barrier is set well above the platform
+  // surface so the player can land, but not skip past.
   for(var gi=0;gi<levelData.platforms.length;gi++){
     var gp=levelData.platforms[gi];
     if(gp.isGate&&!gp.gateAnswered){
-      var barrierY=gp.y-6;
+      var barrierY=gp.y-50; // allows landing on gate but blocks skipping past
       if(player.y<barrierY&&player.vy<0){
         player.y=barrierY;
-        player.vy=30;
+        player.vy=15;
       }
-      break; // only check lowest unanswered gate
+      break;
     }
   }
   
@@ -839,8 +842,8 @@ function render(){
     // Gate indicators
     if(p.isGate){
       if(!p.gateAnswered){
-        // Full-width barrier beam
-        c.fillStyle='rgba(239,68,68,.12)';c.fillRect(0,p.y-4,860,4);
+        // Full-width barrier beam — renders above the gate platform
+        c.fillStyle='rgba(239,68,68,.08)';c.fillRect(0,p.y-50,860,3);
         c.fillStyle='rgba(255,100,100,.6)';c.fillRect(p.x,p.y-3,p.w,3);
         c.font='12px sans-serif';c.textAlign='center';c.fillText('\u{1F512}',p.x+p.w/2,p.y-8);
       }else{
