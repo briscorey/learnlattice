@@ -102,6 +102,14 @@ journal_prompts:
 - "What is the most convincing argument that life exists elsewhere in the universe?"
 seo_title: "Is There Life on Other Planets? | MYP Space Science Inves..."
 seo_description: "Free MYP Space Science investigation using real NASA exoplanet data. Students evaluate habitable zone candidates, define conditions for life, and learn how scientists search for biosignatures."
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

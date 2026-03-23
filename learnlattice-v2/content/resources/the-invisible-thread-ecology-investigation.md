@@ -119,6 +119,14 @@ journal_prompts:
 - What would happen if you added a new species to the web?
 seo_title: "The Invisible Thread | MYP Ecology Crit B & Crit D"
 seo_description: "Free MYP Ecology investigation pack targeting Criterion B, Criterion D for Grade 7-9. A fishing boat thousands of kilometres away can collapse a f"
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

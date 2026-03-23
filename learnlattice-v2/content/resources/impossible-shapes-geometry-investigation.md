@@ -134,6 +134,10 @@ journal_prompts:
 hook: "Can you predict a polygon's angle sum without measuring a single angle?"
 seo_title: "Impossible Shapes | MYP Maths Crit A & Crit B | Grade 7-8"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion B for Grade 7-8. Can you draw a triangle where all three angles are 90°? On a"
+differentiated:
+  approaching: "Work through the guided version with scaffolded tables. Focus on describing the pattern you see."
+  meeting: "Complete the investigation independently. Find the pattern, write a general rule, and verify it."
+  exceeding: "Extend with your own question. Prove why your formula must work. Connect to another area of mathematics."
 ---
 
 ## The Hook

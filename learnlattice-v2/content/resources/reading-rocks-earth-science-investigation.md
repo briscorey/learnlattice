@@ -114,6 +114,14 @@ journal_prompts:
 - If you found an unknown rock, what would you check first?
 seo_title: "Reading Rocks: How We Know What We Cannot See | MYP Crite..."
 seo_description: "Free MYP Earth Science investigation pack targeting Criterion B, Criterion D for Grade 7-9. Nobody has ever seen a tectonic plate move. Nobody has seen "
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

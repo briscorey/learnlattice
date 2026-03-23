@@ -21,6 +21,68 @@ hook: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot 
 warmup: "Drop an antacid tablet in water. Time how long the fizzing lasts. Now predict: will a crushed tablet fizz faster or slower? Test it."
 seo_title: "The Fizzing Tablet Race | MYP Chemistry | Grade 8-9"
 seo_description: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot one finishes in half the time. Why does temperature make reactions faster?"
+teacher_moves:
+  - title: "Predictions before data"
+    description: "Have every student commit to a prediction before any data is collected. Write predictions on the board. The gap between prediction and reality is where learning happens."
+  - title: "Think-pair-share the key question"
+    description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question."
+  - title: "Claim-evidence-reasoning"
+    description: "Push students beyond description. What is your claim? What evidence supports it? Why? This structure separates 3-4 work from 5-6 work."
+timeline: '0-5 min: Present the phenomenon. Students predict. | 5-10 min: Warmup discussion. | 10-35 min: Main investigation. | 35-45 min: Share findings. | 45-50 min: Exit ticket.'
+misconceptions:
+- myth: "Getting the right answer means you understand"
+  why: "Students focus on answers rather than reasoning"
+  truth: "Understanding means being able to explain WHY and predict what happens when conditions change."
+- myth: "Scientific models are exact copies of reality"
+  why: "Models look precise"
+  truth: "Models are simplified representations that help us understand patterns. They always have limitations."
+self_check:
+- level: Getting started
+  items:
+  - I understand what the investigation is asking
+  - I have started collecting data or working through the problem
+- level: Building understanding
+  items:
+  - I can describe the pattern or relationship I found
+  - I used a systematic approach
+- level: Going deeper
+  items:
+  - I can explain WHY the pattern works
+  - I verified my findings with additional cases
+- level: Pushing further
+  items:
+  - I can generalise my findings to new contexts
+  - I can evaluate limitations of my approach
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
+sentence_starters:
+  describing:
+  - "I observed that..."
+  - "The data shows..."
+  explaining:
+  - "This happens because..."
+  - "The evidence suggests..."
+  justifying:
+  - "I can support this because..."
+  - "The limitation is..."
+listen_for:
+- level: "3-4"
+  phrase: "Describes observations without connecting to an explanation"
+- level: "5-6"
+  phrase: "Explains the pattern using evidence from the investigation"
+- level: "7-8"
+  phrase: "Evaluates the method and connects findings to broader principles"
+journal_prompts:
+- "What was the most surprising thing you discovered today?"
+- "What strategy did you use, and would you change it next time?"
+- "How does this connect to something you already knew?"
+- "If you had more time, what would you investigate next?"
 ---
 ## The Hook
 

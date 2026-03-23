@@ -101,6 +101,14 @@ journal_prompts:
 - "Why do you think humans struggle to understand very large numbers?"
 seo_title: "How Far Is a Light-Year? | MYP Space Science Investigation"
 seo_description: "Free MYP Space Science investigation where students calculate light-years from first principles, build scale models of interstellar distances, and discover why telescopes are time machines."
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Work through the guided version with scaffolded tables. Focus on describing the pattern you see."
+  meeting: "Complete the investigation independently. Find the pattern, write a general rule, and verify it."
+  exceeding: "Extend with your own question. Prove why your formula must work. Connect to another area of mathematics."
 ---
 
 ## The Hook

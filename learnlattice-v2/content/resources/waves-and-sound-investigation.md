@@ -103,6 +103,19 @@ misconceptions:
     vibration). They are independent.
 seo_title: "Can You See Sound? | MYP Physics Crit A & Crit B | Grade 8-9"
 seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 8-9. Sound is invisible — but its effects are not. This investiga"
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
+journal_prompts:
+- "What was the most surprising thing you discovered today?"
+- "What strategy did you use, and would you change it next time?"
+- "How does this connect to something you already knew?"
+- "If you had more time, what would you investigate next?"
 ---
 
 ## The Hook

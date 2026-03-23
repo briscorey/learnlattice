@@ -111,6 +111,14 @@ journal_prompts:
 - What question about space do you most want answered?
 seo_title: "How Do We Know What Stars Are Made Of? | MYP Criterion B ..."
 seo_description: "Free MYP Space Science investigation pack targeting Criterion B, Criterion D for Grade 8-9. The nearest star beyond our Sun is 40 trillion kilometres aw"
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

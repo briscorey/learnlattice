@@ -102,6 +102,14 @@ journal_prompts:
 - "If you found a crater on Mars that was oval-shaped, what could you infer about the impact?"
 seo_title: "Crater Investigation — Drop Marbles into Flour | MYP Spac..."
 seo_description: "Free MYP Space Science investigation: students drop objects into flour to model lunar crater formation, measure relationships between energy and crater size, and compare to real Moon craters."
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

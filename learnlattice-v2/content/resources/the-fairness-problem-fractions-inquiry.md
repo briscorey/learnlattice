@@ -128,6 +128,10 @@ journal_prompts:
 - What would you tell someone who thinks 1/3 is less than 1/4?
 seo_title: "The Fairness Problem | MYP Maths Crit A & Crit D | Grade 6-7"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion D for Grade 6-7. Three people share 2 pizzas. Two people share 1 pizza. Who g"
+differentiated:
+  approaching: "Work through the guided version with scaffolded tables. Focus on describing the pattern you see."
+  meeting: "Complete the investigation independently. Find the pattern, write a general rule, and verify it."
+  exceeding: "Extend with your own question. Prove why your formula must work. Connect to another area of mathematics."
 ---
 
 ## The Hook

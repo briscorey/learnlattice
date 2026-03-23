@@ -115,6 +115,14 @@ journal_prompts:
 hook: "Same data, opposite conclusions. How?"
 seo_title: "The Misleading Graph | MYP Maths Crit C & Crit D | Grade 8-9"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 8-9. Two graphs show exactly the same data — one looks like a cri"
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Work through the guided version with scaffolded tables. Focus on describing the pattern you see."
+  meeting: "Complete the investigation independently. Find the pattern, write a general rule, and verify it."
+  exceeding: "Extend with your own question. Prove why your formula must work. Connect to another area of mathematics."
 ---
 
 ## The Hook

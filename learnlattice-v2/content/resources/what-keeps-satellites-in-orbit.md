@@ -102,6 +102,14 @@ journal_prompts:
 - "Why do you think we say astronauts experience 'weightlessness' when gravity is almost as strong as on the ground?"
 seo_title: "What Keeps Satellites in Orbit? | MYP Space Science Inves..."
 seo_description: "Free MYP Space Science investigation exploring orbital mechanics through Newton's cannonball, ISS tracking data, and the counterintuitive insight that orbiting means perpetually falling."
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

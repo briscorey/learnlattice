@@ -103,6 +103,19 @@ misconceptions:
     the object, but the acceleration is the same regardless of mass.
 seo_title: "The Feather and the Hammer | MYP Criterion B Physics"
 seo_description: "Free MYP Physics investigation pack targeting Criterion B, Criterion D for Grade 7-8. An astronaut drops a feather and a hammer on the Moon. They "
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
+journal_prompts:
+- "What was the most surprising thing you discovered today?"
+- "What strategy did you use, and would you change it next time?"
+- "How does this connect to something you already knew?"
+- "If you had more time, what would you investigate next?"
 ---
 
 ## The Hook

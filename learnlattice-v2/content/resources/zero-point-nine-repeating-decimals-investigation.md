@@ -112,6 +112,14 @@ journal_prompts:
 hook: "0.999... = 1. Not approximately. Exactly. Can you break the proof?"
 seo_title: "0.999... = 1? Prove It. | MYP Maths Crit A & Crit C"
 seo_description: "Free MYP Mathematics investigation pack targeting Criterion A, Criterion C for Grade 7-8. Is 0.999... (zero point nine repeating forever) equal to 1, "
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Work through the guided version with scaffolded tables. Focus on describing the pattern you see."
+  meeting: "Complete the investigation independently. Find the pattern, write a general rule, and verify it."
+  exceeding: "Extend with your own question. Prove why your formula must work. Connect to another area of mathematics."
 ---
 
 ## The Hook

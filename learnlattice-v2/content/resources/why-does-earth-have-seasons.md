@@ -100,6 +100,14 @@ journal_prompts:
 - "How does understanding seasons change how you think about climate in different countries?"
 seo_title: "Why Does Earth Have Seasons? | MYP Space Science Investig..."
 seo_description: "Free MYP Space Science investigation that demolishes the most common misconception about seasons. Students use a torch and globe to prove axial tilt drives seasons."
+exit_ticket:
+- "What is the key pattern or formula you discovered today?"
+- "Give one example that shows your finding works and explain why."
+- "Rate your confidence: 1 (not sure) to 5 (totally got it)."
+differentiated:
+  approaching: "Follow the guided procedure. Focus on careful observations and recording data accurately."
+  meeting: "Complete the investigation independently. Explain patterns using evidence and scientific reasoning."
+  exceeding: "Design an extension experiment. Evaluate your method and identify limitations."
 ---
 
 ## The Hook

@@ -115,6 +115,10 @@ journal_prompts:
 - How does understanding scale change how you think about space travel?
 seo_title: "Scaling the Solar System | MYP Criterion B Space Science"
 seo_description: "Free MYP Space Science investigation pack targeting Criterion B, Criterion C for Grade 6-7. If Earth were a peppercorn, how far away would Neptune be? T"
+differentiated:
+  approaching: "Work through the guided version with scaffolded tables. Focus on describing the pattern you see."
+  meeting: "Complete the investigation independently. Find the pattern, write a general rule, and verify it."
+  exceeding: "Extend with your own question. Prove why your formula must work. Connect to another area of mathematics."
 ---
 
 ## The Hook
