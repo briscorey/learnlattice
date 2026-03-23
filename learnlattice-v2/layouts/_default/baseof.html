@@ -26,7 +26,8 @@
   {{ partial "critical-css.html" . }}
   {{/* Main CSS loaded non-blocking — won't delay first paint */}}
   {{/* Non-blocking font loading — reduced weights */}}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
   {{/* KaTeX — only load on resource pages (saves ~150KB on non-resource pages) */}}
   {{ if and (eq .Section "resources") (not (eq (.Params.layout | default "") "game")) }}
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -81,8 +82,8 @@
   </div>
 
   {{ block "scripts" . }}{{ end }}
-  <script src="/js/micro-interactions.js?v=20260319" defer></script>
-  {{ if eq .Section "resources" }}<script src="/js/curiosity.js?v=20260319" defer></script>{{ end }}
+  <script src="/js/micro-interactions.js?v=20260323" defer></script>
+  {{ if eq .Section "resources" }}<script src="/js/curiosity.js?v=20260323" defer></script>{{ end }}
 
   <!-- KaTeX auto-render (only on resource pages) -->
   {{ if and (eq .Section "resources") (not (eq (.Params.layout | default "") "game")) }}
@@ -90,6 +91,6 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(', right:'\\)',display:false}],throwOnError:false});"></script>
   {{ end }}
 
-<script src="/js/site.js?v=20260319c" defer></script>
+<script src="/js/site.js?v=20260323c" defer></script>
 </body>
 </html>

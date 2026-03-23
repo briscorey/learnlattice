@@ -1,14 +1,1 @@
-<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="400" fill="#0f172a"/>
-  <text x="200" y="200" font-family="Georgia,serif" font-size="120" fill="#ef4444" opacity="0.06">✗</text>
-  <text x="400" y="200" font-family="Georgia,serif" font-size="120" fill="#ef4444" opacity="0.08">✗</text>
-  <text x="600" y="200" font-family="Georgia,serif" font-size="120" fill="#ef4444" opacity="0.10">✗</text>
-  <text x="800" y="200" font-family="Georgia,serif" font-size="120" fill="#ef4444" opacity="0.12">✗</text>
-  <text x="1000" y="200" font-family="Georgia,serif" font-size="120" fill="#ef4444" opacity="0.14">✗</text>
-  <text x="200" y="330" font-family="Georgia,serif" font-size="120" fill="#22c55e" opacity="0.06">✓</text>
-  <text x="400" y="330" font-family="Georgia,serif" font-size="120" fill="#22c55e" opacity="0.08">✓</text>
-  <text x="600" y="330" font-family="Georgia,serif" font-size="120" fill="#22c55e" opacity="0.10">✓</text>
-  <text x="800" y="330" font-family="Georgia,serif" font-size="120" fill="#22c55e" opacity="0.12">✓</text>
-  <text x="1000" y="330" font-family="Georgia,serif" font-size="120" fill="#22c55e" opacity="0.14">✓</text>
-  <line x1="150" y1="240" x2="1050" y2="240" stroke="#334155" stroke-width="1" opacity="0.3"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path fill="#0f172a" d="M0 0h1200v400H0z"/><text x="200" y="200" fill="#ef4444" font-family="Georgia,serif" font-size="120" opacity=".06">✗</text><text x="400" y="200" fill="#ef4444" font-family="Georgia,serif" font-size="120" opacity=".08">✗</text><text x="600" y="200" fill="#ef4444" font-family="Georgia,serif" font-size="120" opacity=".1">✗</text><text x="800" y="200" fill="#ef4444" font-family="Georgia,serif" font-size="120" opacity=".12">✗</text><text x="1000" y="200" fill="#ef4444" font-family="Georgia,serif" font-size="120" opacity=".14">✗</text><text x="200" y="330" fill="#22c55e" font-family="Georgia,serif" font-size="120" opacity=".06">✓</text><text x="400" y="330" fill="#22c55e" font-family="Georgia,serif" font-size="120" opacity=".08">✓</text><text x="600" y="330" fill="#22c55e" font-family="Georgia,serif" font-size="120" opacity=".1">✓</text><text x="800" y="330" fill="#22c55e" font-family="Georgia,serif" font-size="120" opacity=".12">✓</text><text x="1000" y="330" fill="#22c55e" font-family="Georgia,serif" font-size="120" opacity=".14">✓</text><path stroke="#334155" d="M150 240h900" opacity=".3"/></svg>
