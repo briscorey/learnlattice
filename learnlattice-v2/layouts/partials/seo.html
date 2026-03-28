@@ -8,7 +8,7 @@
 {{- $isBlog := eq .Section "blog" -}}
 {{- $isAssessment := eq .Section "assessment" -}}
 {{/* ── OG Image selection with IDU and fallback support ── */}}
-{{- $ogImage := "/img/og/default.svg" -}}
+{{- $ogImage := "/img/og/default.png" -}}
 {{- $ogImageAlt := printf "%s — LearnLattice" $title -}}
 {{- $ogHeight := "630" -}}
 {{- if $isBlog -}}
@@ -32,7 +32,7 @@
 {{- else if eq .Section "games" -}}
   {{- $ogImage = "/img/og/games.svg" -}}
 {{- else if $isAssessment -}}
-  {{- $ogImage = "/img/og/default.svg" -}}
+  {{- $ogImage = "/img/og/default.png" -}}
 {{- end -}}
 
 {{/* Canonical URL */}}
