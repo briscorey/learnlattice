@@ -1371,4 +1371,4 @@ html.dark .new-card:hover{border-color:var(--teal)}
   .hero-kicker-dot { animation: none; }
   .hero-btn { transition: none; }
   .hero-btn:hover { transform: none; }
-}
+}.nav-item.has-dropdown{position:relative}.nav-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:280px;padding:12px;background:var(--surface-card);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 40px rgba(13,78,74,.12);z-index:200;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}.nav-item.has-dropdown:hover .nav-dropdown,.nav-item.has-dropdown:focus-within .nav-dropdown{opacity:1;pointer-events:auto}.nav-dropdown.nav-mega{min-width:420px}@media(max-width:768px){.nav-dropdown{position:static;transform:none;min-width:0;opacity:1;pointer-events:auto;box-shadow:none;border:none;border-radius:0;background:transparent;padding:0 0 8px 16px}.nav-dropdown.nav-mega{min-width:0}}
