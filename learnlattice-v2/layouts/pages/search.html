@@ -54,48 +54,6 @@
 </section>
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-
-<style>
-.pf-hero{padding:48px 24px 28px;text-align:center;background:var(--surface-warm);border-bottom:1px solid var(--border)}
-.pf-hero-inner{max-width:900px;margin:0 auto}
-.pf-hero-kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:600;margin-bottom:8px}
-.pf-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--ink);margin-bottom:8px}
-.pf-hero p{color:var(--ink-muted);font-size:.92rem;line-height:1.5}
-.pf-search-section{max-width:1200px;margin:0 auto;padding:32px 24px 80px}
-.pf-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
-.pf-filters{position:sticky;top:80px;display:flex;flex-direction:column;gap:20px}
-.pf-filter-group h3{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--ink-muted);margin-bottom:8px}
-.pf-filter-group label{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.85rem;color:var(--ink);cursor:pointer;transition:color .15s}
-.pf-filter-group label:hover{color:var(--teal)}
-.pf-filter-group input[type="checkbox"]{accent-color:var(--teal);width:16px;height:16px;flex-shrink:0}
-.pf-filter-count{font-size:.7rem;color:var(--ink-muted);margin-left:auto;font-family:'JetBrains Mono',monospace}
-.pf-clear-btn{padding:8px 16px;border:1px solid var(--border);border-radius:8px;background:none;color:var(--teal);font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;margin-top:8px}
-.pf-clear-btn:hover{background:var(--teal-wash);border-color:var(--teal)}
-.pf-search-bar{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1.5px solid var(--border);border-radius:12px;background:var(--surface-card);transition:border-color .2s;margin-bottom:16px}
-.pf-search-bar:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.1)}
-.pf-input{flex:1;border:none;background:none;font-family:inherit;font-size:.95rem;color:var(--ink);outline:none}
-.pf-input::placeholder{color:var(--ink-muted)}
-.pf-status{font-size:.82rem;color:var(--ink-muted);margin-bottom:16px;font-family:'JetBrains Mono',monospace}
-.pf-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.pf-result-card{display:flex;flex-direction:column;padding:18px;background:var(--surface-card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
-.pf-result-card:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:var(--shadow-md)}
-.pf-result-subject{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--teal);margin-bottom:4px}
-.pf-result-card h3{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);line-height:1.3;margin-bottom:6px}
-.pf-result-card p{font-size:.8rem;color:var(--ink-muted);line-height:1.5;flex:1;margin-bottom:10px}
-.pf-result-tags{display:flex;flex-wrap:wrap;gap:4px}
-.pf-result-tag{font-size:.62rem;padding:2px 8px;border-radius:5px;background:var(--surface-warm);border:1px solid var(--border);color:var(--ink-muted)}
-.pf-empty{text-align:center;padding:48px 24px;color:var(--ink-muted);font-size:.95rem;grid-column:1/-1}
-.pf-mobile-filter-btn{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:12px 28px;background:var(--teal);color:#fff;border:none;border-radius:100px;font-family:inherit;font-size:.88rem;font-weight:600;cursor:pointer;box-shadow:0 4px 20px rgba(13,148,136,.3);z-index:50}
-html.dark .pf-search-bar{background:var(--surface-card);border-color:var(--border)}
-html.dark .pf-result-card{background:var(--surface-card);border-color:var(--border)}
-@media(max-width:768px){
-  .pf-layout{grid-template-columns:1fr}
-  .pf-filters{display:none;position:fixed;inset:0;z-index:200;background:var(--surface);padding:24px;overflow-y:auto}
-  .pf-filters.open{display:flex}
-  .pf-mobile-filter-btn{display:block}
-}
-</style>
-
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
   const pagefind = await import('/pagefind/pagefind.js');
