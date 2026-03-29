@@ -46,31 +46,22 @@
   </div>
 </section>
 
-<!-- ── POST GRID ── -->
+<!-- ── POST GRID (compact text-only) ── -->
 <section class="bl-grid-section">
   <div class="bl-grid" id="blGrid">
     {{ range $rest }}
-    {{ $slug := .File.ContentBaseName }}
-    {{ $imgPath := printf "img/blog/%s.svg" $slug }}
     {{ $pillar := .Params.pillar | default "Craft" | urlize }}
-    <article class="bl-card" data-pillar="{{ $pillar }}">
-      {{ if fileExists (printf "static/%s" $imgPath) }}
-      <a href="{{ .RelPermalink }}" class="bl-card-img">
-        <img src="/{{ $imgPath }}" alt="{{ .Title }}" loading="lazy">
-      </a>
-      {{ end }}
-      <div class="bl-card-body">
-        <div class="bl-card-meta">
-          {{ with .Params.pillar }}
-          <span class="bl-pillar bl-pillar--{{ . | urlize }}">{{ . }}</span>
-          {{ end }}
-          <time>{{ .Date.Format "Jan 2" }}</time>
-          {{ with .Params.reading_time }}<span>· {{ . }} min</span>{{ end }}
-        </div>
-        <h2 class="bl-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <p class="bl-card-desc">{{ .Description | truncate 140 }}</p>
+    <a href="{{ .RelPermalink }}" class="bl-card" data-pillar="{{ $pillar }}">
+      <div class="bl-card-meta">
+        {{ with .Params.pillar }}
+        <span class="bl-pillar bl-pillar--{{ . | urlize }}">{{ . }}</span>
+        {{ end }}
+        <time>{{ .Date.Format "Jan 2" }}</time>
+        {{ with .Params.reading_time }}<span>· {{ . }} min</span>{{ end }}
       </div>
-    </article>
+      <h2 class="bl-card-title">{{ .Title }}</h2>
+      <p class="bl-card-desc">{{ .Description | truncate 100 }}</p>
+    </a>
     {{ end }}
   </div>
   <div class="bl-empty" id="blEmpty" style="display:none">No posts in this category yet.</div>

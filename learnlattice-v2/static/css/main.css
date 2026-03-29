@@ -7,3 +7,16 @@
 
 /* ── Homepage credibility strip: prevent text clipping behind stats bar ── */
 .hp-cred{padding:24px 0;position:relative;z-index:1}
+
+/* ── Blog grid: compact text-only cards, 4 columns ── */
+.bl-grid{grid-template-columns:repeat(4,1fr)!important;gap:12px!important}
+.bl-card{padding:18px 20px!important;border-radius:12px!important;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.bl-card .bl-card-body{padding:0!important}
+.bl-card .bl-card-img{display:none!important}
+.bl-card-title{font-size:.92rem!important;line-height:1.3;margin-bottom:6px!important}
+.bl-card-title a{color:inherit;text-decoration:none}
+.bl-card-desc{font-size:.75rem!important;line-height:1.5;-webkit-line-clamp:3;-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}
+.bl-card-meta{margin-bottom:6px!important}
+@media(max-width:1024px){.bl-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:768px){.bl-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.bl-grid{grid-template-columns:1fr!important}}
