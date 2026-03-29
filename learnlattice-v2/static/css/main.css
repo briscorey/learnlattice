@@ -4,3 +4,6 @@
 
 /* ── Reveal safety: ensure content visible without JS ── */
 .no-js .reveal,.no-js .micro-reveal,.no-js .stagger-grid>*{opacity:1!important;transform:none!important;animation:none!important}
+
+/* ── Homepage credibility strip: prevent text clipping behind stats bar ── */
+.hp-cred{padding:24px 0;position:relative;z-index:1}
