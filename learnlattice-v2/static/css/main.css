@@ -20,3 +20,90 @@
 @media(max-width:1024px){.bl-grid{grid-template-columns:repeat(3,1fr)!important}}
 @media(max-width:768px){.bl-grid{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:480px){.bl-grid{grid-template-columns:1fr!important}}
+
+/* ══════════════════════════════════════════════════════════
+   INVESTIGATION BEAUTY PASS — elevate resource single pages
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Header: taller, more dramatic gradient, larger type ── */
+.rs-header{padding:48px 0 40px!important;position:relative;overflow:hidden}
+.rs-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--sc,var(--teal)),transparent)}
+.rs-header-bg{opacity:.06!important;width:400px!important;right:-40px;top:-20px;filter:blur(1px)}
+.rs-header-content h1{font-size:clamp(1.6rem,3.5vw,2.2rem)!important;line-height:1.12!important;letter-spacing:-.04em!important}
+.rs-hook{font-size:1.1rem!important;max-width:640px!important;line-height:1.55!important;color:var(--sc,var(--teal))!important;opacity:1!important;font-weight:400!important}
+
+/* ── Statement of Inquiry: elevated callout ── */
+.rs-soi{background:linear-gradient(135deg,color-mix(in srgb,var(--sc,var(--teal)) 6%,var(--surface-card)),color-mix(in srgb,var(--sc,var(--teal)) 2%,var(--surface-card)))!important;border:1px solid color-mix(in srgb,var(--sc,var(--teal)) 15%,transparent)!important;border-left:3px solid var(--sc,var(--teal))!important;border-radius:0 12px 12px 0!important;padding:16px 20px!important;font-size:.88rem!important}
+
+/* ── Content body: refined typography ── */
+.resource-content{font-size:1.02rem!important;line-height:1.82!important;color:var(--ink)!important}
+.resource-content p{margin-bottom:18px}
+.resource-content strong{color:var(--ink-deep);font-weight:600}
+
+/* ── H2 section headers: subject-colored left bar + subtle bg ── */
+.resource-content h2{position:relative;margin-top:56px!important;margin-bottom:20px!important;padding:20px 24px 16px 24px!important;font-size:1.35rem!important;background:color-mix(in srgb,var(--sc,var(--teal)) 4%,var(--surface))!important;border-radius:12px!important;border-left:4px solid var(--sc,var(--teal))!important;border-bottom:none!important}
+.resource-content h2::before{display:none!important}
+.resource-content h2:first-child{margin-top:0!important}
+
+/* ── H3 sub-headers: clean with subtle accent ── */
+.resource-content h3{margin-top:36px!important;padding-top:12px!important;font-size:1.1rem!important;color:var(--ink-deep)!important;border-top:1px solid var(--border)!important;position:relative;padding-left:16px!important}
+.resource-content h3::before{content:'';position:absolute;left:0;top:12px;width:4px;height:calc(100% - 12px);background:color-mix(in srgb,var(--sc,var(--teal)) 30%,transparent);border-radius:2px}
+
+/* ── Blockquotes: editorial pull-quote style ── */
+.resource-content blockquote{margin:32px 0!important;padding:24px 28px 24px 32px!important;border-left-width:4px!important;border-radius:0 16px 16px 0!important;font-size:1.05rem!important;line-height:1.7!important;position:relative}
+.resource-content blockquote::before{font-size:3.5rem!important;top:4px!important;left:10px!important;opacity:.1!important}
+
+/* ── Ordered/unordered lists: more space, subtle markers ── */
+.resource-content li{margin-bottom:10px!important;line-height:1.7!important;color:var(--ink)!important}
+.resource-content ol>li{padding-left:4px}
+.resource-content ul>li::marker{color:var(--sc,var(--teal))}
+.resource-content ol>li::marker{color:var(--sc,var(--teal));font-weight:700}
+
+/* ── Tables: refined with subject-colored header ── */
+.resource-content th{background:color-mix(in srgb,var(--sc,var(--teal)) 8%,var(--surface-warm))!important;color:var(--ink-deep)!important;font-weight:700!important;border-bottom:2px solid color-mix(in srgb,var(--sc,var(--teal)) 25%,var(--border))!important}
+.resource-content td{padding:12px 14px!important}
+.resource-content tbody tr:hover{background:color-mix(in srgb,var(--sc,var(--teal)) 3%,transparent)!important}
+
+/* ── Code blocks: cleaner ── */
+.resource-content pre{border-radius:12px!important;border:1px solid var(--border)!important;padding:20px 24px!important}
+.resource-content code{font-size:.85em!important;border-radius:5px!important}
+
+/* ── HR dividers: elegant gradient line ── */
+.resource-content hr{height:2px!important;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--sc,var(--teal)) 25%,var(--border)),transparent)!important;margin:48px 0!important;border:none!important}
+
+/* ── Sidebar cards: glass-like refinement ── */
+.rs-sidebar-card{border-radius:14px!important;padding:18px!important;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,0,0,.04)!important}
+.rs-sidebar-card h3{font-size:.82rem!important;letter-spacing:.03em}
+
+/* ── TOC card: subtle left accent ── */
+.rs-toc-card{border-left:3px solid color-mix(in srgb,var(--sc,var(--teal)) 30%,transparent)!important}
+
+/* ── Formula display: prominent ── */
+.rs-formula{font-size:1rem!important;padding:12px 16px!important;border-radius:10px!important;border:1px solid color-mix(in srgb,var(--sc,var(--teal)) 15%,transparent)!important;background:color-mix(in srgb,var(--sc,var(--teal)) 4%,var(--surface-warm))!important}
+
+/* ── Student tools: elevated card ── */
+.rs-student-tools{border-radius:16px!important;box-shadow:0 4px 20px rgba(0,0,0,.05)!important;margin-top:40px!important;overflow:hidden}
+.rs-st-tabs{background:color-mix(in srgb,var(--sc,var(--teal)) 4%,var(--surface-warm))!important}
+
+/* ── Stuck/hints section: softer ── */
+.stuck-section{border-radius:14px!important;margin-top:28px!important;box-shadow:0 2px 10px rgba(0,0,0,.03)!important}
+
+/* ── Sequence nav: pill-style ── */
+.rs-sequence{border-radius:12px!important;background:var(--surface-warm)!important;border:1px solid var(--border)!important;padding:14px 18px!important}
+
+/* ── Reading progress: thicker, more visible ── */
+.reading-progress{height:4px!important}
+.reading-progress-fill{border-radius:0 3px 3px 0!important}
+
+/* ── Print button & present: refined ── */
+.rs-hero-actions .classroom-mode-btn{border-radius:10px!important;padding:10px 18px!important;font-size:.82rem!important;box-shadow:0 3px 12px color-mix(in srgb,var(--sc,var(--teal)) 25%,transparent)!important}
+.rs-hero-actions .rs-print-btn{border-radius:10px!important;padding:10px 18px!important}
+
+/* ── Dark mode refinements ── */
+html.dark .resource-content h2{background:color-mix(in srgb,var(--sc,var(--teal)) 6%,#1e293b)!important}
+html.dark .resource-content h3::before{background:color-mix(in srgb,var(--sc,var(--teal)) 40%,transparent)}
+html.dark .resource-content blockquote{background:color-mix(in srgb,var(--sc,var(--teal)) 4%,#1e293b)!important}
+html.dark .rs-sidebar-card{box-shadow:0 2px 12px rgba(0,0,0,.2)!important}
+html.dark .rs-student-tools{box-shadow:0 4px 20px rgba(0,0,0,.2)!important}
+html.dark .rs-formula{background:color-mix(in srgb,var(--sc,var(--teal)) 6%,#1e293b)!important}
+html.dark .resource-content th{background:color-mix(in srgb,var(--sc,var(--teal)) 10%,#1e293b)!important}
