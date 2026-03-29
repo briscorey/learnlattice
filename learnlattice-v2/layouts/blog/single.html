@@ -4,10 +4,12 @@
   <div data-pagefind-filter="type:Blog Post"></div>
   <div data-pagefind-meta="title:{{ .Title }}, description:{{ .Description | default "" | truncate 150 }}"></div>
   {{ $slug := .File.ContentBaseName }}
-  {{ $headerImg := printf "/img/blog/%s.svg" $slug }}
+  {{ $headerImgFile := printf "img/blog/%s.svg" $slug }}
+  {{ if fileExists (printf "static/%s" $headerImgFile) }}
   <div class="blog-header-image">
-    <img src="{{ $headerImg }}" alt="" loading="eager" aria-hidden="true">
+    <img src="/{{ $headerImgFile }}" alt="" loading="eager" aria-hidden="true">
   </div>
+  {{ end }}
 
   <header class="blog-single-header">
     <a href="/blog/" class="blog-single-back">

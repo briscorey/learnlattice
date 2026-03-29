@@ -6,8 +6,11 @@
 {{ $rest := after 1 $sorted }}
 
 <!-- ── HERO: featured latest post ── -->
+{{ $heroSlug := $latest.File.ContentBaseName }}
+{{ $heroImgPath := printf "img/blog/%s.svg" $heroSlug }}
+{{ $heroHasImg := fileExists (printf "static/%s" $heroImgPath) }}
 <section class="bl-hero">
-  <div class="bl-hero-inner">
+  <div class="bl-hero-inner{{ if not $heroHasImg }} bl-hero-inner--text-only{{ end }}">
     <div class="bl-hero-text">
       <div class="bl-hero-kicker">
         <span class="bl-kicker-label">Latest</span>
@@ -20,10 +23,11 @@
       <p class="bl-hero-desc">{{ $latest.Description }}</p>
       <a href="{{ $latest.RelPermalink }}" class="bl-hero-cta">Read post →</a>
     </div>
-    {{ $slug := $latest.File.ContentBaseName }}
+    {{ if $heroHasImg }}
     <a href="{{ $latest.RelPermalink }}" class="bl-hero-img">
-      <img src="/img/blog/{{ $slug }}.svg" alt="{{ .Title }}" loading="eager">
+      <img src="/{{ $heroImgPath }}" alt="{{ $latest.Title }}" loading="eager">
     </a>
+    {{ end }}
   </div>
 </section>
 
@@ -47,11 +51,14 @@
   <div class="bl-grid" id="blGrid">
     {{ range $rest }}
     {{ $slug := .File.ContentBaseName }}
+    {{ $imgPath := printf "img/blog/%s.svg" $slug }}
     {{ $pillar := .Params.pillar | default "Craft" | urlize }}
     <article class="bl-card" data-pillar="{{ $pillar }}">
+      {{ if fileExists (printf "static/%s" $imgPath) }}
       <a href="{{ .RelPermalink }}" class="bl-card-img">
-        <img src="/img/blog/{{ $slug }}.svg" alt="{{ .Title }}" loading="lazy">
+        <img src="/{{ $imgPath }}" alt="{{ .Title }}" loading="lazy">
       </a>
+      {{ end }}
       <div class="bl-card-body">
         <div class="bl-card-meta">
           {{ with .Params.pillar }}
