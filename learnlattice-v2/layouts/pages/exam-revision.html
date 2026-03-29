@@ -143,5 +143,62 @@
     </div>
   </section>
 
+  {{ with .Content }}
+  <section class="seo-content-section">
+    <div class="seo-content-inner">
+      {{ . }}
+    </div>
+  </section>
+  {{ end }}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What MYP revision quizzes are available on LearnLattice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LearnLattice offers free interactive revision quizzes for MYP Grade 6 Earth Science (40 questions), Grade 7 Forces & Motion (39 questions), and Grade 6 Geometry (29 questions). Each quiz has 5 scaffolded stages with instant feedback and explanations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the MYP revision quizzes free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All revision quizzes on LearnLattice are completely free with no login required. They are designed by a working MYP teacher for classroom and independent revision use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does each MYP revision quiz take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each quiz takes approximately 25–30 minutes to complete all 5 stages. Students can pause and resume at any time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What topics do the MYP science revision quizzes cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Earth Science quiz covers Earth's layers, convection currents, plate tectonics, continental drift, volcanoes, and earthquakes. The Forces & Motion quiz covers types of forces, Newton's three laws, mass vs weight, gravity, and simple machines including levers and gears."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What MYP criteria do the revision quizzes assess?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The revision quizzes target MYP Criterion A (Knowing and Understanding) across both Mathematics and Sciences. Questions are scaffolded from recall through application to synthesis, mirroring the MYP achievement level descriptors."
+        }
+      }
+    ]
+  }
+  </script>
+
 </div>
 {{ end }}

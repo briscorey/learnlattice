@@ -25,8 +25,8 @@ global-contexts:
   - "Orientation in Space and Time"
 statement_of_inquiry: "Change in Earth's environment can be understood through models of its internal structure and processes."
 game_url: "/games/revision/earth-science-g6.html?embed=1"
-seo_title: "Earth Science Review Game — Grade 6 | MYP Plate Tectonics Revision"
-seo_description: "Free interactive Grade 6 Earth Science revision game. 40 questions across 5 stages: layers of the Earth, convection currents, tectonic plates, plate boundaries, continental drift, volcanoes and earthquakes."
+seo_title: "MYP Earth Science Revision Quiz — Grade 6 | Free 40-Question Review"
+seo_description: "Free interactive MYP Grade 6 Earth Science revision quiz. 40 questions across 5 stages covering Earth's layers, convection, plate tectonics, continental drift, volcanoes, and earthquakes. Instant feedback."
 revision: true
 ---
 

@@ -25,8 +25,8 @@ global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "The relationship between force, mass, and motion determines how objects interact and how machines make work easier."
 game_url: "/games/revision/forces-motion-g7.html?embed=1"
-seo_title: "Forces & Motion Review Game — Grade 7 | MYP Physics Revision"
-seo_description: "Free interactive Grade 7 Physics revision game. 39 questions across 5 stages: forces, net force, Newton's laws, mass vs weight, gravity, levers, gears, and simple machines."
+seo_title: "MYP Forces & Motion Revision Quiz — Grade 7 | Free 39-Question Review"
+seo_description: "Free interactive MYP Grade 7 Physics revision quiz. 39 questions on forces, Newton's laws, mass vs weight, gravity, levers, gears, and simple machines. Scaffolded stages with instant feedback."
 revision: true
 ---
 

@@ -26,8 +26,8 @@ global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding the form of shapes allows us to measure, compare, and design the world around us."
 game_url: "/games/revision/geometry-g6.html?embed=1"
-seo_title: "Geometry Review Game — Grade 6 | MYP Perimeter Area Volume Revision"
-seo_description: "Free interactive Grade 6 Geometry revision game. Perimeter, area, surface area, volume, and capacity with built-in formula sheet and calculator. Procedurally generated questions."
+seo_title: "MYP Geometry Revision Quiz — Grade 6 | Free Perimeter Area Volume Review"
+seo_description: "Free interactive MYP Grade 6 Geometry revision quiz. Perimeter, area, surface area, volume, and capacity with built-in formula sheet and calculator. Procedurally generated questions."
 revision: true
 ---
 
