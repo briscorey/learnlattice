@@ -7,32 +7,26 @@
 {{- $isResource := eq .Section "resources" -}}
 {{- $isBlog := eq .Section "blog" -}}
 {{- $isAssessment := eq .Section "assessment" -}}
-{{/* ── OG Image selection with IDU and fallback support ── */}}
+{{/* ── OG Image selection ── */}}
+{{/* IMPORTANT: Social platforms (Facebook, Twitter, LinkedIn) cannot render SVG.
+     Use PNG for og:image. SVGs are kept for internal branding only. */}}
 {{- $ogImage := "/img/og/default.png" -}}
-{{- $ogImageAlt := printf "%s — LearnLattice" $title -}}
+{{- $ogImageAlt := "" -}}
+{{- if .IsHome -}}
+  {{- $ogImageAlt = "LearnLattice — Free MYP Mathematics and Science Investigations" -}}
+{{- else -}}
+  {{- $ogImageAlt = printf "%s — LearnLattice" $title -}}
+{{- end -}}
 {{- $ogHeight := "630" -}}
-{{- if $isBlog -}}
-  {{- $ogImage = printf "/img/blog/%s.svg" .File.ContentBaseName -}}
-  {{- $ogHeight = "400" -}}
-{{- else if $isResource -}}
-  {{- $isIDU := false -}}
-  {{- range .Params.tags | default slice -}}
-    {{- if eq . "Interdisciplinary" }}{{ $isIDU = true }}{{ end -}}
-  {{- end -}}
-  {{- if $isIDU -}}
-    {{- $ogImage = "/img/og/interdisciplinary.svg" -}}
-  {{- else -}}
-    {{- with index (.Params.subjects | default slice) 0 -}}
-      {{- $subSlug := . | urlize -}}
-      {{- $ogImage = printf "/img/og/%s.svg" $subSlug -}}
+{{- $ogImageType := "image/png" -}}
+{{- if $isResource -}}
+  {{- with index (.Params.subjects | default slice) 0 -}}
+    {{- $subSlug := . | urlize -}}
+    {{- $pngPath := printf "img/og/%s.png" $subSlug -}}
+    {{- if fileExists (printf "static/%s" $pngPath) -}}
+      {{- $ogImage = printf "/img/og/%s.png" $subSlug -}}
     {{- end -}}
   {{- end -}}
-{{- else if and (eq .Section "subjects") .File -}}
-  {{- $ogImage = printf "/img/og/%s.svg" .File.ContentBaseName -}}
-{{- else if eq .Section "games" -}}
-  {{- $ogImage = "/img/og/games.svg" -}}
-{{- else if $isAssessment -}}
-  {{- $ogImage = "/img/og/default.png" -}}
 {{- end -}}
 
 {{/* Canonical URL */}}
@@ -50,9 +44,11 @@
 <meta property="og:site_name" content="{{ $siteName }}">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="{{ .Site.BaseURL }}{{ strings.TrimPrefix "/" $ogImage }}">
+<meta property="og:image:type" content="{{ $ogImageType }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="{{ $ogHeight }}">
 <meta property="og:image:alt" content="{{ $ogImageAlt }}">
+{{- if not .IsHome }}
 {{- with .Date }}
 <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
 {{- end }}
@@ -62,6 +58,7 @@
 <meta property="article:author" content="Corey Zocchi">
 {{- range .Params.tags | default slice }}
 <meta property="article:tag" content="{{ . }}">
+{{- end }}
 {{- end }}
 
 {{/* Twitter Card */}}
@@ -80,11 +77,31 @@
   "name": "{{ $siteName }}",
   "url": "{{ .Site.BaseURL }}",
   "description": "{{ .Site.Params.description }}",
+  "inLanguage": "en",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "{{ .Site.BaseURL }}?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "LearnLattice",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "founder": {
+    "@type": "Person",
+    "name": "Corey Zocchi",
+    "jobTitle": "MYP Mathematics & Science Teacher",
+    "url": "{{ .Site.BaseURL }}about/"
+  },
+  "areaServed": "Worldwide",
+  "knowsAbout": ["IB Middle Years Programme", "MYP Mathematics", "MYP Science", "Inquiry-Based Learning", "Educational Technology"],
+  "sameAs": [],
+  "logo": "{{ .Site.BaseURL }}favicon.svg"
 }
 </script>
 <script type="application/ld+json">

@@ -8,7 +8,7 @@
   {{/* ── Meta description: prefer seo_description → description → auto-generated ── */}}
   <meta name="description" content="{{ with .Params.seo_description }}{{ . | truncate 160 }}{{ else }}{{ with .Description }}{{ . | truncate 155 }}{{ else }}{{ if eq .Section "resources" }}Free MYP {{ with index (.Params.subjects | default slice) 0 }}{{ . }}{{ end }} {{ with index (.Params.resource_types | default (slice "resource")) 0 }}{{ . | lower }}{{ end }} for {{ delimit (.Params.year_levels | default (slice "middle school")) ", " }}. Inquiry-based, classroom-ready, with teacher moves and EAL scaffolds.{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}{{ end }}">
   {{/* ── noindex tag/taxonomy list pages to focus crawl budget ── */}}
-  {{ if and .IsNode (in (slice "tag" "resource_type") .Data.Singular) }}<meta name="robots" content="noindex, follow">{{ end }}
+  {{ if and .IsNode (in (slice "tag" "resource_type") .Data.Singular) }}<meta name="robots" content="noindex, follow">{{ else }}<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">{{ end }}
   <meta name="theme-color" content="#0D9488">
   <!-- Search Console verification — replace XXXX with your codes -->
   <!-- <meta name="google-site-verification" content="XXXX"> -->

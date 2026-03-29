@@ -1,6 +1,7 @@
 baseURL = "https://learnlattice.org"
 languageCode = "en-us"
 title = "LearnLattice"
+disableHugoGeneratorInject = true
 [pagination]
   pagerSize = 12
 summaryLength = 30
