@@ -156,62 +156,99 @@
               {{ end }}
             </div>
             {{ end }}
+
+            {{/* ── DIVIDER ── */}}
+            <div class="rs-toolkit-divider"></div>
+
+            {{/* ── TOC (auto-generated) ── */}}
+            <div class="rs-toc" id="rsToc">
+              <div class="rs-toolkit-card" style="border-left-color:var(--border)">
+                <div class="rs-toc-label">In this investigation</div>
+                <ul class="rs-toc-list" id="rsTocList"></ul>
+              </div>
+            </div>
+
+            {{/* ── AT A GLANCE ── */}}
+            <div class="rs-toolkit-card" style="border-left-color:var(--border)"><h4>📋 At a Glance</h4><dl class="rs-glance">{{ with $subject }}<div class="rs-glance-row"><dt>Subject</dt><dd>{{ . }}</dd></div>{{ end }}{{ with index .Params.year_levels 0 }}<div class="rs-glance-row"><dt>Grade</dt><dd>{{ . }}{{ with index $.Params.year_levels 1 }} & {{ . }}{{ end }}</dd></div>{{ end }}{{ with index .Params "key-concepts" }}{{ range . }}<div class="rs-glance-row"><dt>Key Concept</dt><dd><a href="/key-concepts/{{ . | urlize }}/" style="color:var(--teal);font-weight:600;text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}{{ with index .Params "global-contexts" }}{{ range . }}<div class="rs-glance-row"><dt>Global Context</dt><dd><a href="/global-contexts/{{ . | urlize }}/" style="color:var(--teal);text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}</dl>{{ with .Params.formula }}<div class="rs-formula">{{ . }}</div>{{ end }}{{ with .Params.statement_of_inquiry }}<div class="rs-soi"><span class="rs-soi-label">Statement of Inquiry</span>{{ . }}</div>{{ end }}</div>
+
+            {{/* ── EAL SUPPORT ── */}}
+            <div class="rs-toolkit-card rs-eal" style="border-left-color:var(--border)">
+              <h4>🌏 EAL Support</h4>
+              <p class="rs-eal-intro">Key words for this investigation:</p>
+              <div class="rs-eal-terms">{{ range first 8 .Params.tags }}{{ if not (or (hasPrefix . "Criterion") (hasPrefix . "Grade") (hasPrefix . "MYP") (eq . "Assessment") (eq . "Exemplars") (eq . "Annotated Student Work")) }}<span class="rs-eal-term">{{ . }}</span>{{ end }}{{ end }}</div>
+              <div class="rs-eal-frames">
+                <div class="rs-eal-frame">"I think _____ because _____."</div>
+                <div class="rs-eal-frame">"The pattern shows that _____."</div>
+                <div class="rs-eal-frame">"My evidence is _____."</div>
+              </div>
+              <a href="/vocabulary/" class="rs-eal-link">📖 Full Visual Vocabulary →</a>
+            </div>
+
+            {{/* ── CONNECTED RESOURCES ── */}}
+            {{ $related := .Site.RegularPages.Related . | first 5 }}{{ if $related }}
+            <div class="rs-toolkit-card" style="border-left-color:var(--border)"><h4>🗺️ Connected</h4><div class="rs-map-nodes">{{ range $related }}<a href="{{ .RelPermalink }}" class="rs-map-node" title="{{ .Title }}"><span class="rs-map-dot"></span><span>{{ .Title | truncate 35 "" }}</span></a>{{ end }}</div></div>
+            {{ end }}
+
+            {{/* ── TOPIC TAGS ── */}}
+            {{ $topicTags := slice }}{{ range .Params.tags }}{{ if not (or (hasPrefix . "Criterion") (hasPrefix . "Grade") (hasPrefix . "MYP") (eq . "Assessment") (eq . "Exemplars") (eq . "Annotated Student Work")) }}{{ $topicTags = $topicTags | append . }}{{ end }}{{ end }}{{ if $topicTags }}<div class="rs-toolkit-card" style="border-left-color:var(--border)"><div class="rs-topic-tags">{{ range first 6 $topicTags }}<a href="/tags/{{ . | urlize }}/" class="rs-topic-tag">{{ . }}</a>{{ end }}</div></div>{{ end }}
+
+            {{/* ── VISUAL EXPLAINER ── */}}
+            {{ $interactiveSidebar := partial "interactive-map.html" . }}
+            {{ if $interactiveSidebar.slug }}
+            <a href="/students/help/#{{ $interactiveSidebar.slug }}" class="rs-toolkit-card rs-sidebar-interactive" style="border-left-color:var(--border);text-decoration:none;display:flex;align-items:center;gap:10px">
+              <span class="rs-si-icon">🔍</span>
+              <div>
+                <div class="rs-si-title">Visual Explainer</div>
+                <div class="rs-si-topic">Understand {{ $interactiveSidebar.title }}</div>
+              </div>
+              <span class="rs-si-arrow">→</span>
+            </a>
+            {{ end }}
+
+            {{/* ── QUICK LINKS ── */}}
+            <div class="rs-toolkit-links">
+              <a href="/students/">🎓 Students</a>
+              <a href="/revision/">📖 Revision</a>
+              <a href="/vocabulary/">🔤 Vocabulary</a>
+            </div>
+          </div>
+        </div>
+        {{ else }}
+        {{/* ── No toolkit data — still show metadata column ── */}}
+        <div class="rs-content-right">
+          <div class="rs-toolkit-col">
+            <div class="rs-toc" id="rsToc">
+              <div class="rs-toolkit-card" style="border-left-color:var(--border)">
+                <div class="rs-toc-label">In this investigation</div>
+                <ul class="rs-toc-list" id="rsTocList"></ul>
+              </div>
+            </div>
+
+            <div class="rs-toolkit-card" style="border-left-color:var(--border)"><h4>📋 At a Glance</h4><dl class="rs-glance">{{ with $subject }}<div class="rs-glance-row"><dt>Subject</dt><dd>{{ . }}</dd></div>{{ end }}{{ with index .Params.year_levels 0 }}<div class="rs-glance-row"><dt>Grade</dt><dd>{{ . }}{{ with index $.Params.year_levels 1 }} & {{ . }}{{ end }}</dd></div>{{ end }}{{ with index .Params "key-concepts" }}{{ range . }}<div class="rs-glance-row"><dt>Key Concept</dt><dd><a href="/key-concepts/{{ . | urlize }}/" style="color:var(--teal);font-weight:600;text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}{{ with index .Params "global-contexts" }}{{ range . }}<div class="rs-glance-row"><dt>Global Context</dt><dd><a href="/global-contexts/{{ . | urlize }}/" style="color:var(--teal);text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}</dl>{{ with .Params.formula }}<div class="rs-formula">{{ . }}</div>{{ end }}{{ with .Params.statement_of_inquiry }}<div class="rs-soi"><span class="rs-soi-label">Statement of Inquiry</span>{{ . }}</div>{{ end }}</div>
+
+            <div class="rs-toolkit-card rs-eal" style="border-left-color:var(--border)">
+              <h4>🌏 EAL Support</h4>
+              <p class="rs-eal-intro">Key words for this investigation:</p>
+              <div class="rs-eal-terms">{{ range first 8 .Params.tags }}{{ if not (or (hasPrefix . "Criterion") (hasPrefix . "Grade") (hasPrefix . "MYP") (eq . "Assessment") (eq . "Exemplars") (eq . "Annotated Student Work")) }}<span class="rs-eal-term">{{ . }}</span>{{ end }}{{ end }}</div>
+              <div class="rs-eal-frames">
+                <div class="rs-eal-frame">"I think _____ because _____."</div>
+                <div class="rs-eal-frame">"The pattern shows that _____."</div>
+                <div class="rs-eal-frame">"My evidence is _____."</div>
+              </div>
+              <a href="/vocabulary/" class="rs-eal-link">📖 Full Visual Vocabulary →</a>
+            </div>
+
+            {{ $related := .Site.RegularPages.Related . | first 5 }}{{ if $related }}
+            <div class="rs-toolkit-card" style="border-left-color:var(--border)"><h4>🗺️ Connected</h4><div class="rs-map-nodes">{{ range $related }}<a href="{{ .RelPermalink }}" class="rs-map-node" title="{{ .Title }}"><span class="rs-map-dot"></span><span>{{ .Title | truncate 35 "" }}</span></a>{{ end }}</div></div>
+            {{ end }}
           </div>
         </div>
         {{ end }}
       </div>
-    </div>
 
-    <aside class="rs-sidebar">
-      {{/* ── TEACHER NOTES (collapsible, stays in sidebar) ── */}}
+      {{/* ── TEACHER NOTES (collapsible, below content) ── */}}
       {{ partial "teacher-notes-auto.html" . }}
-
-      {{/* ── AT A GLANCE ── */}}
-
-      {{/* Auto-generated Table of Contents */}}
-      <div class="rs-toc" id="rsToc">
-        <div class="rs-toc-card">
-          <div class="rs-toc-label">In this investigation</div>
-          <ul class="rs-toc-list" id="rsTocList"></ul>
-        </div>
-      </div>
-
-      <div class="rs-sidebar-card"><h3>At a Glance</h3><dl class="rs-glance">{{ with $subject }}<div class="rs-glance-row"><dt>Subject</dt><dd>{{ . }}</dd></div>{{ end }}{{ with index .Params.year_levels 0 }}<div class="rs-glance-row"><dt>Grade</dt><dd>{{ . }}{{ with index $.Params.year_levels 1 }} & {{ . }}{{ end }}</dd></div>{{ end }}{{ with index .Params "key-concepts" }}{{ range . }}<div class="rs-glance-row"><dt>Key Concept</dt><dd><a href="/key-concepts/{{ . | urlize }}/" style="color:var(--teal);font-weight:600;text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}{{ with index .Params "global-contexts" }}{{ range . }}<div class="rs-glance-row"><dt>Global Context</dt><dd><a href="/global-contexts/{{ . | urlize }}/" style="color:var(--teal);text-decoration:none">{{ . }}</a></dd></div>{{ end }}{{ end }}</dl>{{ with .Params.formula }}<div class="rs-formula">{{ . }}</div>{{ end }}{{ with .Params.statement_of_inquiry }}<div class="rs-soi"><span class="rs-soi-label">Statement of Inquiry</span>{{ . }}</div>{{ end }}</div>
-
-      {{/* EAL SUPPORT */}}
-      <div class="rs-sidebar-card rs-eal">
-        <h3>🌏 EAL Support</h3>
-        <p class="rs-eal-intro">Key words for this investigation:</p>
-        <div class="rs-eal-terms">{{ range first 8 .Params.tags }}{{ if not (or (hasPrefix . "Criterion") (hasPrefix . "Grade") (hasPrefix . "MYP") (eq . "Assessment") (eq . "Exemplars") (eq . "Annotated Student Work")) }}<span class="rs-eal-term">{{ . }}</span>{{ end }}{{ end }}</div>
-        <div class="rs-eal-frames">
-          <div class="rs-eal-frame">"I think _____ because _____."</div>
-          <div class="rs-eal-frame">"The pattern shows that _____."</div>
-          <div class="rs-eal-frame">"My evidence is _____."</div>
-        </div>
-        <a href="/vocabulary/" class="rs-eal-link">📖 Full Visual Vocabulary →</a>
-      </div>
-
-      {{ $topicTags := slice }}{{ range .Params.tags }}{{ if not (or (hasPrefix . "Criterion") (hasPrefix . "Grade") (hasPrefix . "MYP") (eq . "Assessment") (eq . "Exemplars") (eq . "Annotated Student Work")) }}{{ $topicTags = $topicTags | append . }}{{ end }}{{ end }}{{ if $topicTags }}<div class="rs-sidebar-card"><div class="rs-topic-tags">{{ range first 6 $topicTags }}<a href="/tags/{{ . | urlize }}/" class="rs-topic-tag">{{ . }}</a>{{ end }}</div></div>{{ end }}
-
-      {{ $related := .Site.RegularPages.Related . | first 5 }}{{ if $related }}<div class="rs-sidebar-card"><h3>🗺️ Connected</h3><div class="rs-map-nodes">{{ range $related }}<a href="{{ .RelPermalink }}" class="rs-map-node" title="{{ .Title }}"><span class="rs-map-dot"></span><span>{{ .Title | truncate 35 "" }}</span></a>{{ end }}</div></div>{{ end }}
-
-      {{ with .Params.parent_summary }}<div class="rs-sidebar-card rs-parent-summary"><h3>📨 Newsletter</h3><p>{{ . }}</p><button class="rs-copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></div>{{ end }}
-
-      {{/* ═══ POINT 4: Visual Explainer sidebar card ═══ */}}
-      {{ $interactiveSidebar := partial "interactive-map.html" . }}
-      {{ if $interactiveSidebar.slug }}
-      <a href="/students/help/#{{ $interactiveSidebar.slug }}" class="rs-sidebar-card rs-sidebar-interactive">
-        <span class="rs-si-icon">🔍</span>
-        <div>
-          <div class="rs-si-title">Visual Explainer</div>
-          <div class="rs-si-topic">Understand {{ $interactiveSidebar.title }}</div>
-        </div>
-        <span class="rs-si-arrow">→</span>
-      </a>
-      {{ end }}
-
-      <div class="rs-sidebar-links"><a href="/students/" class="rs-sidebar-link">🎓 Students</a><a href="/revision/" class="rs-sidebar-link">📖 Revision</a><a href="/vocabulary/" class="rs-sidebar-link">🔤 Vocabulary</a></div>
-    </aside>
+    </div>
   </div>
 </article>
 
