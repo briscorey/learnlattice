@@ -1,7 +1,7 @@
 ---
 title: "3-Act: Will the Tower of Cups Fall?"
 date: 2025-11-17
-description: "Students stack cups into a pyramid and predict the maximum height before collapse. A 3-Act Task connecting linear relationships, measurement, and structural reasoning — with a live classroom build."
+description: "Students stack cups into a pyramid and predict the maximum height before collapse. A 3-Act Task connecting linear relationships, measurement, and structural reasoning. with a live classroom build."
 subjects:
   - "Mathematics"
   - "Science"
@@ -23,7 +23,7 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Linear relationships between physical quantities allow us to predict outcomes — but real-world structures have limits that mathematical models must account for."
+statement_of_inquiry: "Linear relationships between physical quantities allow us to predict outcomes. but real-world structures have limits that mathematical models must account for."
 difficulty: "approaching"
 duration: "1 lesson"
 hook: "Stack cups into a pyramid. How many layers can you build before it collapses?"
@@ -118,7 +118,7 @@ Students build and measure:
 | 5 | 15 | ? |
 
 > **Two patterns to investigate:**
-> 1. What is the relationship between layers and height? (Linear — each layer adds the same amount)
+> 1. What is the relationship between layers and height? (Linear. each layer adds the same amount)
 > 2. What is the relationship between layers and cups used? (Triangular numbers!)
 
 **Height model:** H = a × layers + b (find a and b from your data)
@@ -150,7 +150,7 @@ Build as many layers as possible.
 
 **MYP Criterion B Connection:** Students investigate two patterns (height vs. layers, cups vs. layers), describe general rules, and verify them.
 
-**MYP Criterion D Connection:** When the tower collapses, the mathematical model meets reality. Students evaluate why the linear model fails and discuss structural limitations — pure Criterion D at levels 5-8.
+**MYP Criterion D Connection:** When the tower collapses, the mathematical model meets reality. Students evaluate why the linear model fails and discuss structural limitations. pure Criterion D at levels 5-8.
 
 **Cross-Disciplinary:** This connects to MYP Sciences (forces, centre of gravity, structural engineering) and could be co-assessed with a science teacher.
 

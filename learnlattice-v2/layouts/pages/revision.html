@@ -233,7 +233,7 @@ function showCard(){
     var answers = [item.a];
     var wrongs = item.wrong || [];
     wrongs.forEach(function(w){ if(answers.length < 4) answers.push(w); });
-    while(answers.length < 4) answers.push('—');
+    while(answers.length < 4) answers.push('-');
     shuffle(answers);
 
     arena.innerHTML = '<div style="width:100%;max-width:520px">' +

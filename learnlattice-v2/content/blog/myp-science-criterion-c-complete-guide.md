@@ -1,8 +1,8 @@
 ---
 title: "MYP Sciences Criterion C: The Complete Teacher's Guide to Processing and Evaluating"
 date: 2026-03-03
-description: "A comprehensive guide to MYP Science Criterion C — teaching students to process data, interpret results, evaluate experimental validity, and draw evidence-based conclusions. Includes annotated exemplars showing what each level looks like."
-seo_title: "MYP Science Criterion C Guide — Processing & Evaluating |..."
+description: "A comprehensive guide to MYP Science Criterion C. teaching students to process data, interpret results, evaluate experimental validity, and draw evidence-based conclusions. Includes annotated exemplars showing what each level looks like."
+seo_title: "MYP Science Criterion C Guide | Processing & Evaluating |..."
 seo_description: "Complete free guide to MYP Sciences Criterion C. Teach data processing, graph interpretation, and experimental evaluation with annotated exemplars and free resources."
 pillar: "Craft"
 reading_time: 12
@@ -16,11 +16,11 @@ tags:
 
 ## What MYP Sciences Criterion C Assesses
 
-Criterion C — Processing and Evaluating — is where scientific investigation produces meaning from data. Students collect raw data (from Criterion B's designed method), process it into forms that reveal patterns, interpret what those patterns mean scientifically, evaluate the reliability and validity of their method, and suggest improvements.
+Criterion C. Processing and Evaluating. is where scientific investigation produces meaning from data. Students collect raw data (from Criterion B's designed method), process it into forms that reveal patterns, interpret what those patterns mean scientifically, evaluate the reliability and validity of their method, and suggest improvements.
 
 The strands are: presenting collected and transformed data, interpreting data and explaining results using scientific reasoning, evaluating the validity of a hypothesis based on the outcome, evaluating the validity of the method based on the outcome, and explaining improvements or extensions to the method.
 
-This criterion bridges the experimental design of Criterion B and the real-world reflection of Criterion D. It is where students learn that data does not speak for itself — it must be processed, represented, interpreted, and critically evaluated.
+This criterion bridges the experimental design of Criterion B and the real-world reflection of Criterion D. It is where students learn that data does not speak for itself. it must be processed, represented, interpreted, and critically evaluated.
 
 ## The Achievement Levels in Plain Language
 
@@ -52,12 +52,12 @@ A student who always draws a line graph regardless of data type is capped at lev
 
 ## Free Criterion C Science Resources on LearnLattice
 
-- [Acids, Bases, and Neutralisation Investigation](/resources/acids-bases-and-neutralisation-investigation/) — MYP Year 2, MYP Year 3
-- [What Does Level 7 Look Like? Lab Report Communication](/resources/criterion-c-exemplar-lab-report/) — Grade 8, Grade 9
-- [The Sinking Orange](/resources/density-and-floating-investigation/) — Grade 6, Grade 7
-- [Where Does the Energy Go?](/resources/energy-transfer-investigation/) — Grade 7, Grade 8
-- [Grade 6 Force and Motion Companion Lab Activity](/resources/grade-6-force-and-motion-companion-lab/) — Grade 6, MYP Year 1
-- [Grade 6 Mixtures and Separation Companion Lab Activity](/resources/grade-6-mixtures-and-separation-companion-lab/) — Grade 6, MYP Year 1
-- [The Moon Journal](/resources/grade-6-moon-journal-investigation/) — Grade 6, MYP Year 1
+- [Acids, Bases, and Neutralisation Investigation](/resources/acids-bases-and-neutralisation-investigation/). MYP Year 2, MYP Year 3
+- [What Does Level 7 Look Like? Lab Report Communication](/resources/criterion-c-exemplar-lab-report/). Grade 8, Grade 9
+- [The Sinking Orange](/resources/density-and-floating-investigation/). Grade 6, Grade 7
+- [Where Does the Energy Go?](/resources/energy-transfer-investigation/). Grade 7, Grade 8
+- [Grade 6 Force and Motion Companion Lab Activity](/resources/grade-6-force-and-motion-companion-lab/). Grade 6, MYP Year 1
+- [Grade 6 Mixtures and Separation Companion Lab Activity](/resources/grade-6-mixtures-and-separation-companion-lab/). Grade 6, MYP Year 1
+- [The Moon Journal](/resources/grade-6-moon-journal-investigation/). Grade 6, MYP Year 1
 
 See also: [Criterion C Rubric Reference Card](/assessment/criterion-c/) for a printable desk reference.

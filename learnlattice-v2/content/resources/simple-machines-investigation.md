@@ -1,7 +1,7 @@
 ---
 title: "The Impossible Lift"
 date: 2025-12-22
-description: "Can one student lift a teacher off the ground using only a piece of rope and a stick? This investigation builds the concept of mechanical advantage through a challenge that seems impossible — until the physics makes it easy."
+description: "Can one student lift a teacher off the ground using only a piece of rope and a stick? This investigation builds the concept of mechanical advantage through a challenge that seems impossible. until the physics makes it easy."
 hook: "Can one student lift a teacher off the ground using only a piece of rope and a stick? This investigation builds the c..."
 subjects:
   - "Physics"
@@ -24,7 +24,7 @@ key-concepts:
   - "Systems"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Simple systems can amplify human capability — and the trade-off between force and distance reveals a fundamental principle of physics."
+statement_of_inquiry: "Simple systems can amplify human capability. and the trade-off between force and distance reveals a fundamental principle of physics."
 formula: "MA = load ÷ effort · work = force × distance"
 download_url: ""
 download_label: "Investigation Pack PDF"
@@ -119,9 +119,9 @@ Move the teacher to the far end. The student can no longer lift. **"Why?"**
 
 ## Core Concept: Levers and Mechanical Advantage
 
-A lever amplifies force — but it does so by increasing the distance over which the effort is applied. This is the fundamental trade-off of all simple machines: you cannot get more work out than you put in, but you can trade force for distance.
+A lever amplifies force. but it does so by increasing the distance over which the effort is applied. This is the fundamental trade-off of all simple machines: you cannot get more work out than you put in, but you can trade force for distance.
 
-**Mechanical advantage** = \\(\frac{\text{load}}{\text{effort}}\\). A lever with MA = 3 means you need only one-third the force — but you must push three times the distance.
+**Mechanical advantage** = \\(\frac{\text{load}}{\text{effort}}\\). A lever with MA = 3 means you need only one-third the force. but you must push three times the distance.
 
 ### Three classes of levers:
 - **Class 1:** Fulcrum between effort and load (seesaw, crowbar)
@@ -132,17 +132,17 @@ A lever amplifies force — but it does so by increasing the distance over which
 
 ## Tiered Tasks
 
-### Part A — Criterion A: Knowing and understanding (Levels 1-4)
+### Part A. Criterion A: Knowing and understanding (Levels 1-4)
 
 1. Identify the fulcrum, effort, and load in the classroom lever demonstration.
 2. Name two everyday objects that are Class 1 levers.
 3. If the effort arm is 2 metres and the load arm is 0.5 metres, calculate the mechanical advantage.
 
-### Part B — Criterion D: Applying in real-life contexts (Levels 3-6)
+### Part B. Criterion D: Applying in real-life contexts (Levels 3-6)
 
 Design a lever system that could lift a 50 kg object using a maximum effort force of 100 N. Draw a labelled diagram. Specify: where is the fulcrum? How long is each arm? What is the mechanical advantage? What is the trade-off?
 
-### Part C — Criterion B: Investigating patterns (Levels 5-8)
+### Part C. Criterion B: Investigating patterns (Levels 5-8)
 
 Using a ruler balanced on a pencil (or a purpose-built lever):
 1. Place a fixed load at one position
@@ -156,6 +156,6 @@ Using a ruler balanced on a pencil (or a purpose-built lever):
 
 ## Teaching Notes
 
-The "lift the teacher" demonstration requires a strong plank and a safe fulcrum. Test it before class. Use a teacher who is comfortable with the demonstration — the humour of a small student lifting a large teacher is part of what makes it memorable.
+The "lift the teacher" demonstration requires a strong plank and a safe fulcrum. Test it before class. Use a teacher who is comfortable with the demonstration. the humour of a small student lifting a large teacher is part of what makes it memorable.
 
 The EAL scaffold is the physical demonstration itself. The lever is visible. The cause and effect are immediate. No reading required to understand what happened.

@@ -22,7 +22,7 @@ tags:
 - Annotated Responses
 key_concept: Change
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: Systematic investigation of how one variable affects another allows us to identify cause-and-effect relationships — but only if we control everything else.
+statement_of_inquiry: Systematic investigation of how one variable affects another allows us to identify cause-and-effect relationships. but only if we control everything else.
 formula: rate of dissolving = mass dissolved ÷ time
 btc_practices:
 - Thinking Tasks
@@ -36,7 +36,7 @@ teacher_moves:
   body: 'For students struggling with experimental design, ask three questions: ''What are you changing? What are you measuring? What are you keeping the same?'' These three questions map directly to independent,
     dependent, and controlled variables.'
 - title: Graph before conclusion
-  body: Insist that students create their data display BEFORE writing their conclusion. The graph often reveals patterns that raw data tables hide — and the act of graphing forces students to think about
+  body: Insist that students create their data display BEFORE writing their conclusion. The graph often reveals patterns that raw data tables hide. and the act of graphing forces students to think about
     the relationship between variables.
 hook: 'What makes criterion b assessment: experimental investigation worth investigating?'
 warmup: 'Show students a simple example related to criterion b assessment: experimental investigation. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion.'
@@ -143,7 +143,7 @@ A student notices that sugar dissolves faster when stirred. They wonder whether 
 
 ### Why this is Level 3–4:
 
-The hypothesis is reasonable but lacks scientific reasoning (no "because"). The experimental design is vague — how much sugar? How much water? What temperature? What counts as "dissolved"? Only two data points with no repeats. The conclusion restates the finding without evaluating reliability.
+The hypothesis is reasonable but lacks scientific reasoning (no "because"). The experimental design is vague. how much sugar? How much water? What temperature? What counts as "dissolved"? Only two data points with no repeats. The conclusion restates the finding without evaluating reliability.
 
 ---
 
@@ -171,13 +171,13 @@ The hypothesis includes a scientific reason ("because smaller pieces expose more
 >
 > "The results show a clear inverse relationship between particle size and dissolving time. This is consistent with particle theory: dissolving occurs when water molecules collide with the surface of the solute. Smaller particles have a greater total surface area exposed to water (a cube cut in half has more exposed surface than the original cube), so more water-solute collisions occur per second, increasing the rate of dissolving.
 >
-> **Reliability:** My three trials showed reasonable consistency for whole and halved cubes (ranges of 12s and 18s), but wider variation for crushed sugar (range of 24s). This is likely because 'crushed' is harder to standardise — the particle size varies within each trial. To improve: I would use a sieve to create uniform particle sizes, use a colorimeter instead of visual observation to determine when dissolving is complete (removing subjective judgment), and increase to 5 trials.
+> **Reliability:** My three trials showed reasonable consistency for whole and halved cubes (ranges of 12s and 18s), but wider variation for crushed sugar (range of 24s). This is likely because 'crushed' is harder to standardise. the particle size varies within each trial. To improve: I would use a sieve to create uniform particle sizes, use a colorimeter instead of visual observation to determine when dissolving is complete (removing subjective judgment), and increase to 5 trials.
 >
-> **Extension:** This principle explains why powdered medicine dissolves faster than tablets, and why mortar-and-pestle grinding is used in chemistry to speed up reactions. The general principle — increasing surface area increases reaction rate — applies beyond dissolving to combustion, corrosion, and catalysis."
+> **Extension:** This principle explains why powdered medicine dissolves faster than tablets, and why mortar-and-pestle grinding is used in chemistry to speed up reactions. The general principle. increasing surface area increases reaction rate. applies beyond dissolving to combustion, corrosion, and catalysis."
 
 ### Why this is Level 7–8:
 
-The justification connects the results to particle theory (scientific explanation, not just observation). The reliability evaluation is specific — identifying which condition was least reliable and explaining why. The improvements are concrete and scientifically justified (sieve, colorimeter, more trials). The extension connects the finding to a general scientific principle with real-world examples.
+The justification connects the results to particle theory (scientific explanation, not just observation). The reliability evaluation is specific. identifying which condition was least reliable and explaining why. The improvements are concrete and scientifically justified (sieve, colorimeter, more trials). The extension connects the finding to a general scientific principle with real-world examples.
 
 ---
 

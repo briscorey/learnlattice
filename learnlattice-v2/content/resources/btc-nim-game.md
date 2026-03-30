@@ -27,7 +27,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "21 counters. Two players. Take 1, 2, or 3. Take the last one and you win. Is there a strategy that ALWAYS wins?"
 warmup: "Play with 5 counters first. Can the first player always win? What about 4 counters?"
-seo_title: "The Nim Game: Who Wins? — BTC Thinking Task | MYP Maths"
+seo_title: "The Nim Game: Who Wins? | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Place 21 counters on the table. Two players take turns removing 1, 2, or 3 count"
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -117,7 +117,7 @@ The key insight comes from thinking backwards:
 
 **Player 2 wins from 21 counters.** Player 1 takes k counters; Player 2 takes (4 − k). After each pair of turns, exactly 4 counters are removed. After 5 rounds: 21 − 20 = 1 counter left, and it is Player 1's turn. Player 1 takes it and wins.
 
-Wait — actually **Player 1 wins from 21!** (21 is not a multiple of 4.) Player 1 takes 1 counter, leaving 20 (a multiple of 4), and then mirrors the opponent's moves.
+Wait. actually **Player 1 wins from 21!** (21 is not a multiple of 4.) Player 1 takes 1 counter, leaving 20 (a multiple of 4), and then mirrors the opponent's moves.
 
 > **The strategy:** always leave your opponent on a multiple of 4.
 
@@ -134,7 +134,7 @@ Wait — actually **Player 1 wins from 21!** (21 is not a multiple of 4.) Player
 
 ## Teaching Notes
 
-**BTC Practices Used:** Game-based entry, random groups, vertical non-permanent surfaces. Students play before they analyse — the physical experience of winning and losing builds intuition.
+**BTC Practices Used:** Game-based entry, random groups, vertical non-permanent surfaces. Students play before they analyse. the physical experience of winning and losing builds intuition.
 
 **MYP Criterion B Connection:** Students discover the pattern of losing positions (multiples of 4), describe the winning strategy as a general rule, and justify why it works using modular arithmetic reasoning.
 

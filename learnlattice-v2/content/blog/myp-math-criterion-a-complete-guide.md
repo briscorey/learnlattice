@@ -1,8 +1,8 @@
 ---
 title: "MYP Mathematics Criterion A: The Complete Teacher's Guide to Knowing and Understanding"
 date: 2026-01-20
-description: "Everything MYP mathematics teachers need to know about Criterion A — what each achievement level really means, how to design tasks that assess genuine understanding, common mistakes to avoid, and free resources for every grade level."
-seo_title: "MYP Maths Criterion A Guide — Knowing & Understanding | L..."
+description: "Everything MYP mathematics teachers need to know about Criterion A. what each achievement level really means, how to design tasks that assess genuine understanding, common mistakes to avoid, and free resources for every grade level."
+seo_title: "MYP Maths Criterion A Guide | Knowing & Understanding | L..."
 seo_description: "Complete free guide to MYP Mathematics Criterion A. Plain-language rubric breakdown, task design tips, annotated exemplars, and classroom-ready resources for Grade 6-10."
 pillar: "Craft"
 reading_time: 12
@@ -16,7 +16,7 @@ tags:
 
 ## What MYP Mathematics Criterion A Actually Assesses
 
-Criterion A — Knowing and Understanding — is the most familiar of the four MYP mathematics criteria because it overlaps most closely with traditional assessment. Students demonstrate knowledge of mathematical concepts, apply algorithms, and solve problems in both familiar and unfamiliar situations. But the IB's version goes further than recall and procedure. At the highest levels, students must transfer understanding to novel contexts and explain *why* methods work, not just execute them correctly.
+Criterion A. Knowing and Understanding. is the most familiar of the four MYP mathematics criteria because it overlaps most closely with traditional assessment. Students demonstrate knowledge of mathematical concepts, apply algorithms, and solve problems in both familiar and unfamiliar situations. But the IB's version goes further than recall and procedure. At the highest levels, students must transfer understanding to novel contexts and explain *why* methods work, not just execute them correctly.
 
 The four strands at MYP Year 3 and above are: selecting appropriate mathematics when solving problems in both familiar and unfamiliar situations, applying the selected mathematics successfully when solving problems, and solving problems correctly in a variety of contexts. The emphasis on "unfamiliar situations" is what distinguishes MYP Criterion A from a traditional maths test. A student who can solve textbook exercises perfectly but freezes when the same concept appears in a new context has not demonstrated level 7-8 understanding.
 
@@ -32,7 +32,7 @@ The four strands at MYP Year 3 and above are: selecting appropriate mathematics 
 
 ### The Critical Jump: 5-6 to 7-8
 
-The difference between substantial and excellent in Criterion A comes down to transfer and explanation. A level 5-6 student can solve a percentage problem when it is labelled "percentage problem." A level 7-8 student recognises that a word problem about population growth, compound interest, or drug dosage all require the same exponential model — and can explain why.
+The difference between substantial and excellent in Criterion A comes down to transfer and explanation. A level 5-6 student can solve a percentage problem when it is labelled "percentage problem." A level 7-8 student recognises that a word problem about population growth, compound interest, or drug dosage all require the same exponential model. and can explain why.
 
 ## How to Design Criterion A Tasks That Differentiate
 
@@ -40,7 +40,7 @@ The most common mistake in Criterion A assessment is testing recall disguised as
 
 **Design principle 1: Include at least three levels of problem complexity.** Start with familiar problems (levels 1-4), progress to problems in slightly new contexts (levels 5-6), and finish with problems that require transfer to genuinely unfamiliar situations (levels 7-8).
 
-**Design principle 2: Require method selection.** Instead of "use Pythagoras' theorem to find x," present a real-world scenario where students must decide which mathematical tool is appropriate. A Level 7-8 student should be able to look at a triangle problem and decide whether to use Pythagoras, trigonometry, or similarity — and justify their choice.
+**Design principle 2: Require method selection.** Instead of "use Pythagoras' theorem to find x," present a real-world scenario where students must decide which mathematical tool is appropriate. A Level 7-8 student should be able to look at a triangle problem and decide whether to use Pythagoras, trigonometry, or similarity. and justify their choice.
 
 **Design principle 3: Include "explain why" questions.** At least one question should require students to explain a mathematical concept, not just use it. "Why does dividing by a fraction give a larger number?" tests understanding. "Calculate 3 ÷ ½" tests procedure.
 
@@ -52,23 +52,23 @@ First, use visual and numerical entry points before introducing word problems. A
 
 Second, provide a glossary of mathematical command terms in the student's first language. The IB publishes command term definitions, but having them in the student's mother tongue removes a layer of cognitive load.
 
-Third, distinguish between language errors and mathematical errors when assessing. A student who writes "the answer is bigger because you times it" has demonstrated understanding (multiplication increases the value) even though the mathematical vocabulary is imprecise. Criterion A assesses mathematical understanding, not English proficiency — that is what Criterion C is for.
+Third, distinguish between language errors and mathematical errors when assessing. A student who writes "the answer is bigger because you times it" has demonstrated understanding (multiplication increases the value) even though the mathematical vocabulary is imprecise. Criterion A assesses mathematical understanding, not English proficiency. that is what Criterion C is for.
 
 ## Free Criterion A Resources on LearnLattice
 
-- [Place Value Detectives](/resources/grade-6-place-value-detectives/) — Grade 6, MYP Year 1
-- [Impossible Shapes](/resources/impossible-shapes-geometry-investigation/) — Grade 7, Grade 8
-- [Nutrition Labels: Do the Numbers Add Up?](/resources/nutrition-labels-do-the-numbers-add-up/) — Grade 6, Grade 7
-- [The Bridges of Königsberg](/resources/the-bridges-of-konigsberg/) — Grade 7, Grade 8
-- [The Fairness Problem](/resources/the-fairness-problem-fractions-inquiry/) — Grade 6, Grade 7
-- [The Number That Broke Mathematics](/resources/the-number-that-broke-mathematics/) — Grade 8, Grade 9
-- [Which Fractions Terminate?](/resources/which-fractions-terminate/) — Grade 6, Grade 7
-- [Why Does Dividing by a Half Make You Bigger?](/resources/why-does-dividing-by-half-make-you-bigger/) — Grade 6, Grade 7
+- [Place Value Detectives](/resources/grade-6-place-value-detectives/). Grade 6, MYP Year 1
+- [Impossible Shapes](/resources/impossible-shapes-geometry-investigation/). Grade 7, Grade 8
+- [Nutrition Labels: Do the Numbers Add Up?](/resources/nutrition-labels-do-the-numbers-add-up/). Grade 6, Grade 7
+- [The Bridges of Königsberg](/resources/the-bridges-of-konigsberg/). Grade 7, Grade 8
+- [The Fairness Problem](/resources/the-fairness-problem-fractions-inquiry/). Grade 6, Grade 7
+- [The Number That Broke Mathematics](/resources/the-number-that-broke-mathematics/). Grade 8, Grade 9
+- [Which Fractions Terminate?](/resources/which-fractions-terminate/). Grade 6, Grade 7
+- [Why Does Dividing by a Half Make You Bigger?](/resources/why-does-dividing-by-half-make-you-bigger/). Grade 6, Grade 7
 
 See also: [Criterion A Rubric Reference Card](/assessment/criterion-a/) for a printable desk reference with student voice examples at every level.
 
 ## Recommended Reading
 
-- IB MYP Mathematics Guide (2014/2020) — the official criterion descriptors
-- [Five Criterion B Mistakes Teachers Make](/blog/five-criterion-b-mistakes/) — many of these apply to Criterion A assessment design too
-- [What Level 7 Actually Looks Like](/blog/what-level-7-actually-looks-like/) — cross-criterion analysis of excellent student work
+- IB MYP Mathematics Guide (2014/2020). the official criterion descriptors
+- [Five Criterion B Mistakes Teachers Make](/blog/five-criterion-b-mistakes/). many of these apply to Criterion A assessment design too
+- [What Level 7 Actually Looks Like](/blog/what-level-7-actually-looks-like/). cross-criterion analysis of excellent student work

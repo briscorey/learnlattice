@@ -2,7 +2,7 @@
 title: Population Prediction
 date: 2025-09-09
 description: A single bacterium divides every 20 minutes. After 24 hours, the colony would weigh more than the Earth. But it doesn't. Why not? This investigation connects exponential growth to ecological
-  limits — and asks whether human population growth faces the same constraints.
+  limits. and asks whether human population growth faces the same constraints.
 subjects:
 - Mathematics
 - Science
@@ -25,7 +25,7 @@ tags:
 - Criterion D
 key_concept: Systems
 global_context: Globalization and Sustainability
-statement_of_inquiry: Exponential patterns in natural systems eventually encounter limits — and understanding those limits requires both mathematical models and ecological thinking.
+statement_of_inquiry: Exponential patterns in natural systems eventually encounter limits. and understanding those limits requires both mathematical models and ecological thinking.
 formula: N = N₀ × 2^(t/d) where d = doubling time
 download_url: ''
 download_label: Investigation Pack PDF
@@ -122,7 +122,7 @@ Write on the board:
 
 Let students estimate. Most will guess thousands, maybe millions.
 
-The answer: \\(2^{72} \approx 4.7 \times 10^{21}\\) bacteria. If each weighs about \\(10^{-12}\\) grams, the total mass would be approximately 4,700 kg — after just ONE DAY from a single cell.
+The answer: \\(2^{72} \approx 4.7 \times 10^{21}\\) bacteria. If each weighs about \\(10^{-12}\\) grams, the total mass would be approximately 4,700 kg. after just ONE DAY from a single cell.
 
 After 48 hours, the colony would outweigh the Earth.
 
@@ -139,7 +139,7 @@ Exponential growth follows the pattern \\(N = N_0 \times 2^{t/d}\\), where:
 - \\(t\\) = time elapsed
 - \\(d\\) = doubling time
 
-This produces a J-shaped curve — slow at first, then explosively fast.
+This produces a J-shaped curve. slow at first, then explosively fast.
 
 ### The Ecology
 
@@ -150,19 +150,19 @@ In reality, no population grows exponentially forever. **Limiting factors** cons
 - Disease spreads
 - Space is exhausted
 
-The result is a **logistic growth curve** (S-shaped) — exponential at first, then slowing as the population approaches the **carrying capacity** of the environment.
+The result is a **logistic growth curve** (S-shaped). exponential at first, then slowing as the population approaches the **carrying capacity** of the environment.
 
 ---
 
 ## Tiered Tasks
 
-### Part A — Criterion B (Levels 1-4)
+### Part A. Criterion B (Levels 1-4)
 
 1. Starting with 1 bacterium that divides every 20 minutes, calculate the population at 20-minute intervals for 4 hours. Record in a table.
 2. Plot your data on a graph. Describe the shape of the curve.
 3. Use the formula \\(N = 2^{t/d}\\) to calculate the population after 8 hours (where \\(t = 480\\) min and \\(d = 20\\) min).
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 
 The world's human population has grown as follows:
 
@@ -181,7 +181,7 @@ The world's human population has grown as follows:
 2. Is the doubling time constant, increasing, or decreasing?
 3. Describe the pattern and explain what it means for future population growth
 
-### Part C — Criterion D (Levels 5-8)
+### Part C. Criterion D (Levels 5-8)
 
 Some scientists predict the human population will reach a maximum of approximately 10-11 billion around 2100, then stabilise or decline.
 
@@ -195,6 +195,6 @@ Some scientists predict the human population will reach a maximum of approximate
 
 This is a powerful **interdisciplinary unit** connecting MYP Mathematics (exponential functions, sequences, graphing) with MYP Science (ecology, carrying capacity, limiting factors).
 
-The hook works because the numbers are genuinely absurd — students do not believe the bacterial calculation until they work through it themselves. This is the power of exponential growth: it defies intuition.
+The hook works because the numbers are genuinely absurd. students do not believe the bacterial calculation until they work through it themselves. This is the power of exponential growth: it defies intuition.
 
 **BTC alignment:** This works exceptionally well with random groups at whiteboards. Give each group a different starting organism (bacteria, rabbits, algae) with different doubling times. They all discover the same J-curve pattern independently.

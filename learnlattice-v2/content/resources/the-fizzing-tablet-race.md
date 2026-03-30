@@ -15,7 +15,7 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "The rate of a chemical reaction depends on the energy and frequency of particle collisions — and temperature is a measure of that energy."
+statement_of_inquiry: "The rate of a chemical reaction depends on the energy and frequency of particle collisions. and temperature is a measure of that energy."
 difficulty: "meeting"
 hook: "Drop an antacid tablet in cold water. Now drop one in hot water. The hot one finishes in half the time. Why does temperature make reactions faster?"
 warmup: "Drop an antacid tablet in water. Time how long the fizzing lasts. Now predict: will a crushed tablet fizz faster or slower? Test it."
@@ -114,7 +114,7 @@ How does temperature affect the rate of reaction between an antacid tablet and w
 
 ## Analyse
 
-> Your graph should show a **curve** — not a straight line. As temperature increases, the time decreases, but not at a constant rate.
+> Your graph should show a **curve**. not a straight line. As temperature increases, the time decreases, but not at a constant rate.
 
 **Why?** Higher temperature means particles move faster. Faster particles collide more often and with more energy. More energetic collisions means more successful reactions per second.
 
@@ -130,12 +130,12 @@ Repeat the experiment at room temperature with:
 - A tablet broken into quarters
 - A crushed tablet
 
-**The crushed tablet reacts fastest.** More surface area means more particles are exposed to the water at once — more collisions per second.
+**The crushed tablet reacts fastest.** More surface area means more particles are exposed to the water at once. more collisions per second.
 
 ---
 
 ## Teaching Notes
 
-Antacid tablets are cheap, dramatic, and safe. The fizzing is visible, audible, and timed — three sensory channels of data. This is Papert's constructionism: students build their understanding of reaction rates from direct experience before encountering collision theory.
+Antacid tablets are cheap, dramatic, and safe. The fizzing is visible, audible, and timed. three sensory channels of data. This is Papert's constructionism: students build their understanding of reaction rates from direct experience before encountering collision theory.
 
-The temperature graph is reliably non-linear, which teaches an important lesson: not all relationships are straight lines. Students who expect y = mx + b are surprised — and that surprise creates a genuine need to understand why.
+The temperature graph is reliably non-linear, which teaches an important lesson: not all relationships are straight lines. Students who expect y = mx + b are surprised. and that surprise creates a genuine need to understand why.

@@ -24,7 +24,7 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "The relationship between forces acting on an object determines how it moves — and what we observe depends on the conditions we test."
+statement_of_inquiry: "The relationship between forces acting on an object determines how it moves. and what we observe depends on the conditions we test."
 formula: "F = mg · a = 9.8 m/s²"
 download_url: ""
 download_label: "Investigation Pack PDF"
@@ -49,11 +49,11 @@ listen_for:
 - level: 3-4
   phrase: The paper is lighter so it falls slower
 - level: 5-6
-  phrase: It is not about mass, it is about air resistance — the flat paper has more
+  phrase: It is not about mass, it is about air resistance. the flat paper has more
     surface area
 - level: 7-8
   phrase: In a vacuum all objects fall at the same rate because gravitational acceleration
-    is independent of mass — the Apollo 15 experiment proved this
+    is independent of mass. the Apollo 15 experiment proved this
 self_check:
 - level: Getting started
   items:
@@ -72,10 +72,10 @@ self_check:
   - I derived that mg = ma leads to g = a, showing mass cancels
   - I explored terminal velocity and why skydivers reach a maximum speed
 timeline: '0-5 min: Drop textbook vs flat paper. | 5-10 min: Crumple paper, drop again.
-  What changed? Mass or shape? | 10-20 min: Groups test different objects — heavy
+  What changed? Mass or shape? | 10-20 min: Groups test different objects. heavy
   vs light, big vs small. | 20-30 min: The feather and coin in a vacuum tube (video
-  or demo). | 30-40 min: Apollo 15 footage — hammer and feather on the Moon. | 40-50
-  min: The algebra — why does mass cancel?'
+  or demo). | 30-40 min: Apollo 15 footage. hammer and feather on the Moon. | 40-50
+  min: The algebra. why does mass cancel?'
 sentence_starters:
   describing:
   - When I dropped ___, it fell...
@@ -124,7 +124,7 @@ Show the Apollo 15 footage: Commander David Scott drops a hammer and a feather s
 
 Ask: **"Why don't they do this on Earth?"**
 
-Students will say: "Because of air." Then ask: **"So which one is gravity actually pulling harder — the hammer or the feather?"**
+Students will say: "Because of air." Then ask: **"So which one is gravity actually pulling harder. the hammer or the feather?"**
 
 This is where the argument starts. Most students believe gravity pulls heavier objects harder. They are right. But they draw the wrong conclusion from it. This investigation is the process of untangling that confusion.
 
@@ -152,12 +152,12 @@ The key insight: gravity *does* pull more on heavier objects (more force), but h
 
 ## Tiered Tasks
 
-### Part A — Criterion D: Applying physics in real-life contexts (Levels 1-4)
+### Part A. Criterion D: Applying physics in real-life contexts (Levels 1-4)
 
 1. A bowling ball and a tennis ball are dropped from the top of a building (ignore air resistance). Which hits the ground first? Explain using the equation \\(a = g\\).
 2. Now consider air resistance. A skydiver falls at a constant speed (terminal velocity). Draw a force diagram showing the forces acting on them. What must be true about the forces for velocity to be constant?
 
-### Part B — Criterion B: Investigating patterns (Levels 3-6)
+### Part B. Criterion B: Investigating patterns (Levels 3-6)
 
 Design an experiment to test whether mass affects the time it takes an object to fall a fixed distance. You will need:
 - At least 3 objects of different mass but similar shape
@@ -167,7 +167,7 @@ Design an experiment to test whether mass affects the time it takes an object to
 
 Record your data. Describe the pattern. Does mass affect fall time when shape is controlled?
 
-### Part C — Criterion B: Generalisation and justification (Levels 5-8)
+### Part C. Criterion B: Generalisation and justification (Levels 5-8)
 
 Using your experimental data and the equation \\(F = mg\\):
 1. Explain mathematically why all objects experience the same gravitational acceleration regardless of mass.
@@ -191,7 +191,7 @@ Using your experimental data and the equation \\(F = mg\\):
 
 This investigation works best as a 2-lesson sequence. Lesson 1: the demonstrations (paper drop, crumpled paper, video) and Part A. Lesson 2: the experimental investigation (Parts B and C).
 
-The key pedagogical move is resisting the urge to explain the answer after the hook. Let students sit with the contradiction. The Apollo 15 footage is genuinely surprising even to students who "know" the answer — seeing it happen on the Moon makes it real in a way that a textbook diagram never does.
+The key pedagogical move is resisting the urge to explain the answer after the hook. Let students sit with the contradiction. The Apollo 15 footage is genuinely surprising even to students who "know" the answer. seeing it happen on the Moon makes it real in a way that a textbook diagram never does.
 
 **BTC alignment:** This works beautifully with random groups at whiteboards. Give each group a different pair of objects to drop and compare. Then have groups visit each other's boards.
 

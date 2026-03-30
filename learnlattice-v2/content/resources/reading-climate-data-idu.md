@@ -2,7 +2,7 @@
 title: Reading Climate Data
 date: 2025-09-18
 description: Temperature records show the planet has warmed by about 1.1°C since pre-industrial times. That sounds small. This investigation teaches students to read, analyse, and interpret real climate
-  datasets — and to understand why 1.1°C is not a small number.
+  datasets. and to understand why 1.1°C is not a small number.
 subjects:
 - Mathematics
 - Science
@@ -26,7 +26,7 @@ tags:
 - Criterion D
 key_concept: Change
 global_context: Globalization and Sustainability
-statement_of_inquiry: Statistical analysis of real-world data reveals patterns of change that are invisible to casual observation — and the significance of those patterns depends on context, not just magnitude.
+statement_of_inquiry: Statistical analysis of real-world data reveals patterns of change that are invisible to casual observation. and the significance of those patterns depends on context, not just magnitude.
 formula: mean anomaly = observed temperature − baseline average
 download_url: ''
 download_label: Investigation Pack PDF
@@ -151,19 +151,19 @@ Plot the temperature anomaly for each decade from 1880 to 2020. Calculate the me
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 
 1. Create a clear, labelled line graph of decade-average temperature anomalies from 1880 to 2020
 2. Add a title, axis labels with units, and a line of best fit
 3. Describe the overall trend in 2-3 sentences
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 
 1. Calculate the rate of warming for three periods: 1880-1940, 1940-1980, 1980-2020
 2. Is the rate of warming increasing, decreasing, or staying the same?
 3. If the current rate continues, predict the anomaly in 2050. State your assumption.
 
-### Part C — Criterion D (Levels 5-8)
+### Part C. Criterion D (Levels 5-8)
 
 A climate sceptic says: "The climate has always changed. There's nothing unusual about the current warming."
 
@@ -178,6 +178,6 @@ Using your statistical analysis:
 
 This is an **interdisciplinary unit** connecting MYP Mathematics (statistics, data analysis, line of best fit, standard deviation) with MYP Science (climate systems, Earth science, evidence-based reasoning).
 
-**Important pedagogical note:** This investigation teaches students to read data, not to form political opinions. The statistical analysis is the learning goal. The data speaks for itself — students who engage honestly with the numbers will reach evidence-based conclusions regardless of prior beliefs.
+**Important pedagogical note:** This investigation teaches students to read data, not to form political opinions. The statistical analysis is the learning goal. The data speaks for itself. students who engage honestly with the numbers will reach evidence-based conclusions regardless of prior beliefs.
 
 **EAL scaffold:** The graph is visual. The trend is visible. Numbers are universal. Students who cannot follow a verbal explanation of climate change can still plot data, calculate means, and draw trend lines. The mathematics is the entry point.

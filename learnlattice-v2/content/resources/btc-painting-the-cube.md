@@ -28,7 +28,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "A 3×3×3 cube is painted red on all faces, then cut into 27 small cubes. How many small cubes have 3 red faces? 2 red faces? 1 red face? 0 red faces?"
 warmup: "Start with a 2×2×2 painted cube cut into 8 pieces. How many red faces does each small cube have?"
-seo_title: "Painting the Cube — BTC Thinking Task | MYP Maths"
+seo_title: "Painting the Cube | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. A 3×3×3 cube is painted red on all faces then cut into 27 small cubes. How many "
 teacher_moves:
   - title: "Start with the table, not the formula"

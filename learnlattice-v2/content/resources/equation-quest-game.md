@@ -23,15 +23,15 @@ tags:
   - "Solving"
   - "Variables"
 game_url: "/games/equation-quest.html?embed=1"
-seo_title: "Equation Quest — Free MYP Maths Game | Grade 6-8"
+seo_title: "Equation Quest | Free MYP Maths Game | Grade 6-8"
 seo_description: "Free interactive MYP mathematics game for Grade 6-8. A 5-stage journey from naming parts of an equation to solving real-world word pr"
 ---
 A scaffolded equation-solving game with 5 stages of increasing cognitive demand:
 
-1. **Identify** — Name the parts (variable, coefficient, constant)
-2. **One-Step** — Solve equations with one operation (3x = 12, x + 5 = 9)
-3. **Two-Step** — Solve equations with two operations (2x + 3 = 11)
-4. **Brackets** — Expand and solve (3(x + 2) = 15)
-5. **Real World** — Translate word problems into equations and solve
+1. **Identify**. Name the parts (variable, coefficient, constant)
+2. **One-Step**. Solve equations with one operation (3x = 12, x + 5 = 9)
+3. **Two-Step**. Solve equations with two operations (2x + 3 = 11)
+4. **Brackets**. Expand and solve (3(x + 2) = 15)
+5. **Real World**. Translate word problems into equations and solve
 
 Every wrong answer gives a targeted hint addressing the likely misconception. Streak bonuses reward consecutive correct answers. Randomised questions ensure replayability.

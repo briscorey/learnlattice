@@ -26,7 +26,7 @@ statement_of_inquiry: "Mathematical estimation combines measurement, sampling, a
 difficulty: "meeting"
 duration: "1-2 lessons"
 hook: "A jar is full of coins. How much money is in it?"
-warmup: "Without counting — how many coins are in your hand right now? Now count. How close were you?"
+warmup: "Without counting. how many coins are in your hand right now? Now count. How close were you?"
 seo_title: "3-Act Task: Coin Jar Estimation | MYP Maths Statistics"
 seo_description: "Free 3-Act maths task for MYP. Students estimate the value of coins in a jar using sampling, volume, and proportional reasoning. Criterion D & B."
 teacher_moves:
@@ -96,31 +96,31 @@ journal_prompts:
 
 *Present or describe:*
 
-A large glass jar, approximately 20 cm tall and 12 cm diameter, filled to the top with mixed coins (1 yuan, 5 jiao, 1 jiao — or adapt to your local currency).
+A large glass jar, approximately 20 cm tall and 12 cm diameter, filled to the top with mixed coins (1 yuan, 5 jiao, 1 jiao. or adapt to your local currency).
 
 > **The Question:** How much money is in the jar?
 
-Write your estimate. No calculations yet — pure estimation.
+Write your estimate. No calculations yet. pure estimation.
 
 ---
 
 ## Act 2: What Do You Need to Know?
 
-Students choose their strategy. Multiple approaches work — let them decide:
+Students choose their strategy. Multiple approaches work. let them decide:
 
-**Strategy A — Volume approach:**
+**Strategy A. Volume approach:**
 - Jar volume ≈ π × 6² × 20 ≈ 2,261 cm³
 - Coins occupy ~60% of the volume (packing efficiency)
 - Effective coin volume ≈ 1,357 cm³
 - Average coin volume ≈ 1.2 cm³
 - Estimated ~1,131 coins × average value
 
-**Strategy B — Weight approach:**
+**Strategy B. Weight approach:**
 - Weigh the full jar. Weigh the empty jar. Difference = coin mass.
 - Average coin mass ≈ 4g
 - Divide total mass by average mass → number of coins
 
-**Strategy C — Sample and scale:**
+**Strategy C. Sample and scale:**
 - Take a random scoop of coins (e.g., 1 cup)
 - Count coins and total value in the sample
 - Measure what fraction of the jar the cup represents
@@ -149,9 +149,9 @@ Count the actual total (or use a coin-counting machine).
 
 ## Teaching Notes
 
-**3-Act Structure:** Act 1 creates the question (everyone loves guessing money). Act 2 gives agency — students choose and justify their estimation strategy. Act 3 reveals and evaluates.
+**3-Act Structure:** Act 1 creates the question (everyone loves guessing money). Act 2 gives agency. students choose and justify their estimation strategy. Act 3 reveals and evaluates.
 
-**MYP Criterion D Connection:** Selecting an estimation strategy, applying it in context, interpreting the result, and evaluating its accuracy — all four Criterion D strands.
+**MYP Criterion D Connection:** Selecting an estimation strategy, applying it in context, interpreting the result, and evaluating its accuracy. all four Criterion D strands.
 
 **MYP Criterion B Connection:** If students investigate how sample size affects accuracy (Strategy C), they are investigating a statistical pattern.
 

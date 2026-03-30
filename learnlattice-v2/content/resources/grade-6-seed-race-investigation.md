@@ -1,7 +1,7 @@
 ---
 title: The Seed Race
 date: 2025-10-13
-description: Which conditions make seeds grow fastest? This investigation turns germination into a competition — every group controls a different variable, and the class discovers experimental design by
+description: Which conditions make seeds grow fastest? This investigation turns germination into a competition. every group controls a different variable, and the class discovers experimental design by
   actually doing it.
 subjects:
 - Biology
@@ -20,7 +20,7 @@ tags:
 - Criterion C
 key_concept: Change
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: Systematic investigation of variables allows us to determine which conditions drive change — and fair testing requires controlling everything except what we are testing.
+statement_of_inquiry: Systematic investigation of variables allows us to determine which conditions drive change. and fair testing requires controlling everything except what we are testing.
 formula: growth rate = change in height ÷ time
 download_url: ''
 download_label: Investigation Pack PDF
@@ -111,7 +111,7 @@ seo_description: "Free MYP Biology investigation pack targeting Criterion B, Cri
 
 ## The Hook
 
-Show two bean plants — one tall and healthy, one stunted and pale. Both planted on the same day from the same packet of seeds.
+Show two bean plants. one tall and healthy, one stunted and pale. Both planted on the same day from the same packet of seeds.
 
 Ask: **"Same seeds. Same day. Different results. What happened?"**
 
@@ -142,17 +142,17 @@ Pool all group data. Which variable had the biggest effect on growth? Which cond
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 1. Record your group's data in a table with dates, heights, and observations.
 2. Create a line graph showing seedling height over time.
 3. Write a conclusion: did your variable affect growth? How?
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 1. Compare your group's results with the control group. Calculate the percentage difference in final height.
 2. Which variable across ALL groups had the biggest effect on growth? Use class data to support your answer.
 3. Why was the control group necessary? What would happen to your conclusions without it?
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 1. A student says: "We proved that more water makes plants grow taller." Evaluate this claim. What are the limitations of your experiment? What would you need to do to make this conclusion more reliable?
 2. Design a follow-up experiment that tests the interaction between TWO variables (e.g., does the effect of light depend on how much water the plant gets?). Explain why single-variable experiments might miss important interactions.
 
@@ -162,6 +162,6 @@ Pool all group data. Which variable had the biggest effect on growth? Which cond
 
 Bean seeds are ideal: cheap, fast-growing (visible in 3-5 days), and robust enough to survive student handling. Mung beans or kidney beans both work well. Start on a Monday so the first measurements happen during the school week.
 
-This is a foundational scientific method investigation. By Grade 6, students should understand: independent variable, dependent variable, controlled variables, and why controls matter. The Seed Race makes these concepts concrete because students CARE about the outcome — they want their plant to win.
+This is a foundational scientific method investigation. By Grade 6, students should understand: independent variable, dependent variable, controlled variables, and why controls matter. The Seed Race makes these concepts concrete because students CARE about the outcome. they want their plant to win.
 
 **EAL scaffold:** Measuring height requires no English. Recording numbers in a table requires no English. The graph is visual. The competition format creates natural peer communication about what's working and why.

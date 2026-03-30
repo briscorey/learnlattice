@@ -3,8 +3,8 @@
 <section class="cmap-hero">
   <div class="cmap-hero-inner">
     <h1 class="cmap-title">Concept Map</h1>
-    <p class="cmap-subtitle">Every investigation, strand, and key concept — connected. Click any node to explore.</p>
-    <p style="font-size:.78rem;color:var(--ink-muted);margin-top:8px">👩‍🎓 <a href="/students/connections/" style="color:var(--teal);font-weight:600;text-decoration:none">Open the student version →</a> — a searchable, filterable concept map designed for self-directed learning.</p>
+    <p class="cmap-subtitle">Every investigation, strand, and key concept. connected. Click any node to explore.</p>
+    <p style="font-size:.78rem;color:var(--ink-muted);margin-top:8px">👩‍🎓 <a href="/students/connections/" style="color:var(--teal);font-weight:600;text-decoration:none">Open the student version →</a>. a searchable, filterable concept map designed for self-directed learning.</p>
     <div class="cmap-legend">
       <span class="cmap-legend-item"><span class="cmap-dot cmap-dot--math"></span> Mathematics</span>
       <span class="cmap-legend-item"><span class="cmap-dot cmap-dot--science"></span> Science</span>
@@ -22,7 +22,7 @@
 <section class="cmap-explore reveal">
   <div class="cmap-explore-inner">
     <h2>Explore by strand</h2>
-    <p>Every node in the map links to real classroom resources. Start anywhere — the lattice connects everything.</p>
+    <p>Every node in the map links to real classroom resources. Start anywhere. the lattice connects everything.</p>
     <div class="cmap-strand-grid">
       <a href="/subjects/mathematics/" class="cmap-strand-link cmap-strand-link--math">MYP Mathematics →</a>
       <a href="/subjects/biology/" class="cmap-strand-link cmap-strand-link--sci">Biology →</a>
@@ -75,7 +75,7 @@
 {{ $links = $links | append (dict "source" "Earth Science" "target" "Space Science" "type" "cross") }}
 {{ $links = $links | append (dict "source" "Decimals" "target" "Number Sense" "type" "cross") }}
 
-{{/* Investigations — ALL resources, flagships get larger size */}}
+{{/* Investigations. ALL resources, flagships get larger size */}}
 {{ $flagshipSlugs := slice "the-million-dollar-question-number-sense" "the-fairness-problem-fractions-inquiry" "zero-point-nine-repeating-decimals-investigation" "impossible-shapes-geometry-investigation" "the-staircase-problem-algebra-investigation" "is-this-die-cheating-probability-investigation" "the-misleading-graph-statistics-investigation" "dead-or-alive-biology-investigation" "the-invisible-thread-ecology-investigation" "reading-rocks-earth-science-investigation" "how-do-we-know-stars-space-investigation" "the-disappearing-candle-chemistry-investigation" }}
 
 {{ $allResources := where .Site.RegularPages "Section" "resources" }}
@@ -216,7 +216,7 @@
     .attr('stroke-width', 1)
     .attr('opacity', 0.3);
 
-  // Labels — only for hubs, strands, concepts, and large investigations
+  // Labels. only for hubs, strands, concepts, and large investigations
   node.append('text')
     .text(function(d) { return d.label; })
     .attr('text-anchor', 'middle')

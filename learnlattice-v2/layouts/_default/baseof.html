@@ -5,19 +5,19 @@
   <script>document.documentElement.classList.remove('no-js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{/* ── SEO-optimized title: prefer seo_title → auto-generated fallback ── */}}
-  <title>{{ if .IsHome }}{{ .Site.Title }} — Free MYP Mathematics & Science Investigations{{ else }}{{ with .Params.seo_title }}{{ . }}{{ else }}{{ $t := .Title }}{{ $suffix := .Site.Title }}{{ if eq .Section "resources" }}{{ with index (.Params.subjects | default slice) 0 }}{{ $suffix = printf "MYP %s %s | LearnLattice" . (index ($.Params.resource_types | default (slice "Resource")) 0) }}{{ end }}{{ else if eq .Section "blog" }}{{ $suffix = "MYP Teaching Blog | LearnLattice" }}{{ else if eq .Section "assessment" }}{{ $suffix = "MYP Assessment Guide | LearnLattice" }}{{ else }}{{ $suffix = "LearnLattice" }}{{ end }}{{ printf "%s | %s" $t $suffix }}{{ end }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }} | Free MYP Mathematics & Science Investigations{{ else }}{{ with .Params.seo_title }}{{ . }}{{ else }}{{ $t := .Title }}{{ $suffix := .Site.Title }}{{ if eq .Section "resources" }}{{ with index (.Params.subjects | default slice) 0 }}{{ $suffix = printf "MYP %s %s | LearnLattice" . (index ($.Params.resource_types | default (slice "Resource")) 0) }}{{ end }}{{ else if eq .Section "blog" }}{{ $suffix = "MYP Teaching Blog | LearnLattice" }}{{ else if eq .Section "assessment" }}{{ $suffix = "MYP Assessment Guide | LearnLattice" }}{{ else }}{{ $suffix = "LearnLattice" }}{{ end }}{{ printf "%s | %s" $t $suffix }}{{ end }}{{ end }}</title>
   {{/* ── Meta description: prefer seo_description → description → auto-generated ── */}}
   <meta name="description" content="{{ with .Params.seo_description }}{{ . | truncate 160 }}{{ else }}{{ with .Description }}{{ . | truncate 155 }}{{ else }}{{ if eq .Section "resources" }}Free MYP {{ with index (.Params.subjects | default slice) 0 }}{{ . }}{{ end }} {{ with index (.Params.resource_types | default (slice "resource")) 0 }}{{ . | lower }}{{ end }} for {{ delimit (.Params.year_levels | default (slice "middle school")) ", " }}. Inquiry-based, classroom-ready, with teacher moves and EAL scaffolds.{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}{{ end }}">
   {{/* ── noindex tag/taxonomy list pages to focus crawl budget ── */}}
   {{ if and .IsNode (in (slice "tag" "resource_type") .Data.Singular) }}<meta name="robots" content="noindex, follow">{{ else }}<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">{{ end }}
   <meta name="theme-color" content="#0D9488">
-  <!-- Search Console verification — replace XXXX with your codes -->
+  <!-- Search Console verification. replace XXXX with your codes -->
   <!-- <meta name="google-site-verification" content="XXXX"> -->
   <!-- <meta name="msvalidate.01" content="XXXX"> -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="alternate" type="application/rss+xml" title="LearnLattice — MYP Investigations" href="/index.xml">
+  <link rel="alternate" type="application/rss+xml" title="LearnLattice | MYP Investigations" href="/index.xml">
   {{ partial "seo.html" . }}
   {{/* Preconnect to external origins */}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,17 +25,17 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   {{/* Critical CSS inline for instant first paint (~1KB) */}}
   {{ partial "critical-css.html" . }}
-  {{/* Main CSS loaded non-blocking — won't delay first paint */}}
-  {{/* Non-blocking font loading — reduced weights */}}
+  {{/* Main CSS loaded non-blocking. won't delay first paint */}}
+  {{/* Non-blocking font loading. reduced weights */}}
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
-  {{/* KaTeX — only load on resource pages (saves ~150KB on non-resource pages) */}}
+  {{/* KaTeX. only load on resource pages (saves ~150KB on non-resource pages) */}}
   {{ if and (eq .Section "resources") (not (eq (.Params.layout | default "") "game")) }}
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"></noscript>
   {{ end }}
   {{ block "head" . }}{{ end }}
-  <!-- Plausible Analytics — cookie-free, GDPR compliant -->
+  <!-- Plausible Analytics. cookie-free, GDPR compliant -->
   <script defer data-domain="learnlattice.org" src="https://plausible.io/js/script.js"></script>
   <script>try{if(localStorage.getItem('ll-dark')==='1')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>

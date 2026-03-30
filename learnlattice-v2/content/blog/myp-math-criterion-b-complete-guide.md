@@ -1,8 +1,8 @@
 ---
 title: "MYP Mathematics Criterion B: The Complete Teacher's Guide to Investigating Patterns"
 date: 2026-01-27
-description: "The definitive guide to MYP Criterion B in mathematics — from designing investigations that students actually want to do, to understanding the critical difference between verification and proof, with annotated exemplars and free investigation packs."
-seo_title: "MYP Maths Criterion B Guide — Investigating Patterns | Le..."
+description: "The definitive guide to MYP Criterion B in mathematics. from designing investigations that students actually want to do, to understanding the critical difference between verification and proof, with annotated exemplars and free investigation packs."
+seo_title: "MYP Maths Criterion B Guide | Investigating Patterns | Le..."
 seo_description: "Complete free guide to MYP Mathematics Criterion B. Learn to design pattern investigations, distinguish verification from proof, and download free investigation packs."
 pillar: "Craft"
 reading_time: 14
@@ -16,7 +16,7 @@ tags:
 
 ## Why Criterion B Is the Heart of MYP Mathematics
 
-Criterion B — Investigating Patterns — is where MYP mathematics becomes genuinely different from every other middle school curriculum. Instead of solving problems someone else has set up, students discover patterns, formulate general rules, and provide mathematical justification for why those rules work. This is what mathematicians actually do, and it is the criterion that most clearly demonstrates the IB's commitment to inquiry-based learning.
+Criterion B. Investigating Patterns. is where MYP mathematics becomes genuinely different from every other middle school curriculum. Instead of solving problems someone else has set up, students discover patterns, formulate general rules, and provide mathematical justification for why those rules work. This is what mathematicians actually do, and it is the criterion that most clearly demonstrates the IB's commitment to inquiry-based learning.
 
 It is also the criterion that most teachers find hardest to teach, hardest to assess, and hardest to find quality resources for. This guide addresses all three challenges.
 
@@ -33,7 +33,7 @@ The progression from strand to strand maps directly onto the achievement levels.
 
 ## The Critical Distinction: Verification vs. Proof
 
-This is where most teacher confusion — and most student frustration — lives. The difference between levels 5-6 and levels 7-8 almost always comes down to whether the student *checked* that their rule works or *proved* why it must work.
+This is where most teacher confusion. and most student frustration. lives. The difference between levels 5-6 and levels 7-8 almost always comes down to whether the student *checked* that their rule works or *proved* why it must work.
 
 **Verification** means testing the rule against specific cases: "My rule is 3n + 1. I checked n = 10 and got 31, which matches the pattern." This is necessary but insufficient for levels 7-8.
 
@@ -41,15 +41,15 @@ This is where most teacher confusion — and most student frustration — lives.
 
 **Proof** means demonstrating algebraically or logically that the rule holds universally: "T(n+1) - T(n) = [3(n+1)+1] - [3n+1] = 3 for all n, confirming the common difference is always 3."
 
-Most students can learn to verify. Justification requires explicit teaching. Proof is where the highest-achieving students distinguish themselves — but only if the investigation is designed to make proof accessible.
+Most students can learn to verify. Justification requires explicit teaching. Proof is where the highest-achieving students distinguish themselves. but only if the investigation is designed to make proof accessible.
 
 ## How to Write a Criterion B Investigation Students Actually Want to Do
 
 The best investigations share four characteristics:
 
-**1. A visual, tactile entry point.** Start with blocks, matchsticks, dots, or shapes — something students can draw and count. The pattern should be visible before any algebra is introduced. This creates the low floor: every student can participate by drawing the first few cases.
+**1. A visual, tactile entry point.** Start with blocks, matchsticks, dots, or shapes. something students can draw and count. The pattern should be visible before any algebra is introduced. This creates the low floor: every student can participate by drawing the first few cases.
 
-**2. A genuinely surprising rule.** Avoid investigations where the answer is obvious from the first three cases. If the pattern is "add 2 each time" and students can see that immediately, there is no investigation — only calculation. The best patterns involve quadratic or geometric growth, or rules with a non-obvious constant.
+**2. A genuinely surprising rule.** Avoid investigations where the answer is obvious from the first three cases. If the pattern is "add 2 each time" and students can see that immediately, there is no investigation. only calculation. The best patterns involve quadratic or geometric growth, or rules with a non-obvious constant.
 
 **3. A path from concrete to abstract.** The investigation should naturally lead students from specific cases → table → graph → verbal description → algebraic formula → justification. Each step should feel like a logical next move, not a teacher-imposed requirement.
 
@@ -73,22 +73,22 @@ For a deeper dive: [Five Criterion B Mistakes Teachers Make (and How to Fix Them
 
 We offer complete Criterion B assessment packs, each including the task, mark scheme, and annotated student responses at levels 3-4, 5-6, and 7-8 with commentary explaining exactly what the student demonstrated:
 
-- [Criterion B Assessment: Data Investigation](/resources/criterion-b-assessment-data-investigation/) — Grade 8, Grade 9
-- [Criterion B Assessment: Geometric Investigation](/resources/criterion-b-assessment-geometric-investigation/) — Grade 7, Grade 8
-- [Criterion B Assessment: Number Patterns](/resources/criterion-b-assessment-number-patterns/) — Grade 7, Grade 8
-- [Criterion B Assessment: Questioning Statistical Claims](/resources/criterion-b-assessment-statistical-claims/) — Grade 8, Grade 9
-- [What Does Level 7 Look Like? Geometric Growth](/resources/criterion-b-exemplar-geometric-growth/) — Grade 8, Grade 9
-- [What Does Level 7 Look Like? Geometric Properties](/resources/criterion-b-exemplar-geometry/) — Grade 8, Grade 9
-- [What Does Level 7 Look Like? Number Patterns](/resources/criterion-b-exemplar-number-patterns/) — Grade 7, Grade 8
-- [What Does Level 7 Look Like? Statistical Claims](/resources/criterion-b-exemplar-statistics/) — Grade 8, Grade 9
+- [Criterion B Assessment: Data Investigation](/resources/criterion-b-assessment-data-investigation/). Grade 8, Grade 9
+- [Criterion B Assessment: Geometric Investigation](/resources/criterion-b-assessment-geometric-investigation/). Grade 7, Grade 8
+- [Criterion B Assessment: Number Patterns](/resources/criterion-b-assessment-number-patterns/). Grade 7, Grade 8
+- [Criterion B Assessment: Questioning Statistical Claims](/resources/criterion-b-assessment-statistical-claims/). Grade 8, Grade 9
+- [What Does Level 7 Look Like? Geometric Growth](/resources/criterion-b-exemplar-geometric-growth/). Grade 8, Grade 9
+- [What Does Level 7 Look Like? Geometric Properties](/resources/criterion-b-exemplar-geometry/). Grade 8, Grade 9
+- [What Does Level 7 Look Like? Number Patterns](/resources/criterion-b-exemplar-number-patterns/). Grade 7, Grade 8
+- [What Does Level 7 Look Like? Statistical Claims](/resources/criterion-b-exemplar-statistics/). Grade 8, Grade 9
 
 ## Criterion B Investigation Packs (Formative)
 
-These investigations are designed for classroom use — low-floor, high-ceiling, with teacher moves and warm-up activities:
+These investigations are designed for classroom use. low-floor, high-ceiling, with teacher moves and warm-up activities:
 
-- [How Many Grains of Rice Fill a Classroom?](/resources/how-many-grains-of-rice/) — Grade 6, Grade 7
-- [The Growing Squares](/resources/the-growing-squares/) — Grade 6, Grade 7
-- [The Handshake Problem](/resources/the-handshake-problem/) — Grade 7, Grade 8
+- [How Many Grains of Rice Fill a Classroom?](/resources/how-many-grains-of-rice/). Grade 6, Grade 7
+- [The Growing Squares](/resources/the-growing-squares/). Grade 6, Grade 7
+- [The Handshake Problem](/resources/the-handshake-problem/). Grade 7, Grade 8
 
 ## The Connection to Building Thinking Classrooms
 

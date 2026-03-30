@@ -1,6 +1,6 @@
 ---
 title: "Algebra"
-description: "Free MYP algebra investigations for Grades 7-9. Pattern-based, inquiry-driven tasks covering expressions, equations, functions, and generalisation — aligned to IB MYP Criterion B."
+description: "Free MYP algebra investigations for Grades 7-9. Pattern-based, inquiry-driven tasks covering expressions, equations, functions, and generalisation. aligned to IB MYP Criterion B."
 ---
 
 ## Free MYP Algebra Resources

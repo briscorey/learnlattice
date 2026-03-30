@@ -13,9 +13,9 @@
 {{- $ogImage := "/img/og/default.png" -}}
 {{- $ogImageAlt := "" -}}
 {{- if .IsHome -}}
-  {{- $ogImageAlt = "LearnLattice — Free MYP Mathematics and Science Investigations" -}}
+  {{- $ogImageAlt = "LearnLattice | Free MYP Mathematics and Science Investigations" -}}
 {{- else -}}
-  {{- $ogImageAlt = printf "%s — LearnLattice" $title -}}
+  {{- $ogImageAlt = printf "%s | LearnLattice" $title -}}
 {{- end -}}
 {{- $ogHeight := "630" -}}
 {{- $ogImageType := "image/png" -}}
@@ -36,7 +36,7 @@
 {{ end }}{{ end }}
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
 
-{{/* Open Graph — enhanced for social sharing */}}
+{{/* Open Graph. enhanced for social sharing */}}
 <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $desc | truncate 200 }}">
@@ -108,7 +108,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "LearnLattice — MYP Mathematics & Science",
+  "name": "LearnLattice | MYP Mathematics & Science",
   "description": "Free inquiry-based resources for IB Middle Years Programme",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Mathematics Resources", "url": "{{ .Site.BaseURL }}subjects/mathematics/"},
@@ -308,7 +308,7 @@
 {
   "@context": "https://schema.org",
   "@type": "EducationEvent",
-  "name": "AI in Action 2026 — How One Teacher Built 222 MYP Investigations",
+  "name": "AI in Action 2026 | How One Teacher Built 222 MYP Investigations",
   "description": "{{ $desc | truncate 300 }}",
   "url": "{{ $url }}",
   "startDate": "2026-05-09T09:00:00+08:00",

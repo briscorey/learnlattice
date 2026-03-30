@@ -1,7 +1,7 @@
 ---
 title: "Shadow Detectives"
 date: 2026-01-19
-description: "Your shadow is longer in the morning and shorter at noon. Why? This investigation uses shadow measurements to discover the relationship between the angle of a light source and the length of a shadow — connecting geometry to the motion of the Earth."
+description: "Your shadow is longer in the morning and shorter at noon. Why? This investigation uses shadow measurements to discover the relationship between the angle of a light source and the length of a shadow. connecting geometry to the motion of the Earth."
 hook: "Your shadow is longer in the morning and shorter at noon"
 subjects:
   - "Physics"
@@ -42,7 +42,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Claim-evidence-reasoning"
     description: "Push students beyond description. Ask: What is your claim? What evidence supports it? Why does that evidence support your claim? This structure separates 3-4 work from 5-6 work."
-timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation — students collect data or work through the task. | 35-45 min: Class discussion — share findings, address misconceptions. | 45-50 min: Exit ticket.'
+timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation. students collect data or work through the task. | 35-45 min: Class discussion. share findings, address misconceptions. | 45-50 min: Exit ticket.'
 warmup: "Show students a simple example related to the topic. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion."
 misconceptions:
 - myth: "Checking a few cases proves a formula"
@@ -114,7 +114,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Shadow Detectives" — a physics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Shadow Detectives". a physics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## The Hook
@@ -142,17 +142,17 @@ Plot shadow length against time. Plot shadow length against Sun angle. The relat
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 1. Record shadow lengths at 5 different times during the day
 2. Create a line graph of shadow length vs. time
 3. When was the shadow shortest? When was it longest? Explain why.
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 1. Plot shadow length against Sun angle
-2. Describe the pattern — is it linear?
+2. Describe the pattern. is it linear?
 3. Use the pattern to predict the shadow length at a Sun angle you didn't measure. Check your prediction if possible.
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 1. Show mathematically why the relationship between Sun angle and shadow length follows \\(L = \frac{h}{\tan(\theta)}\\).
 2. The ancient Greek Eratosthenes used shadow measurements to calculate the circumference of the Earth in 240 BCE. Research his method and explain how measuring a shadow at noon in two different cities gives you the size of the planet.
 
@@ -160,4 +160,4 @@ Plot shadow length against time. Plot shadow length against Sun angle. The relat
 
 ## Teaching Notes
 
-This investigation bridges Physics, Mathematics, and Earth Science. The outdoor data collection takes 5 minutes per measurement — set alarms and send two students out each time. The rest of the class can work on other tasks between measurements. By the end of the day, you have a complete dataset from the real world.
+This investigation bridges Physics, Mathematics, and Earth Science. The outdoor data collection takes 5 minutes per measurement. set alarms and send two students out each time. The rest of the class can work on other tasks between measurements. By the end of the day, you have a complete dataset from the real world.

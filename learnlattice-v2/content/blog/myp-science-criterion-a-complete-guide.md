@@ -1,8 +1,8 @@
 ---
 title: "MYP Sciences Criterion A: The Complete Teacher's Guide to Knowing and Understanding"
 date: 2026-02-17
-description: "Everything MYP science teachers need to know about Criterion A — assessing genuine scientific understanding, not just recall. Includes level descriptors in plain language, task design principles, EAL strategies, and free resources."
-seo_title: "MYP Science Criterion A Guide — Knowing & Understanding |..."
+description: "Everything MYP science teachers need to know about Criterion A. assessing genuine scientific understanding, not just recall. Includes level descriptors in plain language, task design principles, EAL strategies, and free resources."
+seo_title: "MYP Science Criterion A Guide | Knowing & Understanding |..."
 seo_description: "Complete free guide to MYP Sciences Criterion A. Plain-language rubric, task design tips for genuine understanding, annotated exemplars, and free science resources."
 pillar: "Craft"
 reading_time: 11
@@ -16,7 +16,7 @@ tags:
 
 ## What MYP Sciences Criterion A Actually Assesses
 
-Criterion A in MYP Sciences — Knowing and Understanding — assesses whether students can recall scientific knowledge, apply their understanding to solve problems, and analyse information to make scientifically supported judgements. While it shares a name with the mathematics version, the science Criterion A has a distinct emphasis: students must demonstrate understanding of scientific concepts, models, and theories, and use scientific knowledge to analyse problems and interpret information.
+Criterion A in MYP Sciences. Knowing and Understanding. assesses whether students can recall scientific knowledge, apply their understanding to solve problems, and analyse information to make scientifically supported judgements. While it shares a name with the mathematics version, the science Criterion A has a distinct emphasis: students must demonstrate understanding of scientific concepts, models, and theories, and use scientific knowledge to analyse problems and interpret information.
 
 The critical distinction from traditional science testing is the expectation that students *apply* knowledge to new situations, not merely reproduce it from memory. A student who can recite the definition of density but cannot use it to predict whether an object will float has not demonstrated Criterion A at levels 5-6 or above.
 
@@ -46,13 +46,13 @@ The most common mistake is creating tests that only assess the lowest levels. A 
 
 ## Free Criterion A Science Resources on LearnLattice
 
-- [Cell Explorer — Interactive Cell Game](/resources/cell-explorer-game/) — MYP Year 3, Grade 8
-- [What Does Level 7 Look Like? Explaining Body Systems](/resources/criterion-a-exemplar-biology-systems/) — Grade 8, Grade 9
-- [What Does Level 7 Look Like? Particle Theory](/resources/criterion-a-exemplar-particle-theory/) — Grade 8, Grade 9
-- [Dead or Alive? The Criteria Problem](/resources/dead-or-alive-biology-investigation/) — Grade 6, Grade 7
-- [The Circuit Detective](/resources/electricity-and-circuits-investigation/) — Grade 8, Grade 9
-- [Rock Detectives](/resources/grade-6-rock-detectives-investigation/) — Grade 6, MYP Year 1
-- [The Invisible Force Field](/resources/magnetism-and-fields-investigation/) — Grade 7, Grade 8
-- [Nutrition Labels: Do the Numbers Add Up?](/resources/nutrition-labels-do-the-numbers-add-up/) — Grade 6, Grade 7
+- [Cell Explorer. Interactive Cell Game](/resources/cell-explorer-game/). MYP Year 3, Grade 8
+- [What Does Level 7 Look Like? Explaining Body Systems](/resources/criterion-a-exemplar-biology-systems/). Grade 8, Grade 9
+- [What Does Level 7 Look Like? Particle Theory](/resources/criterion-a-exemplar-particle-theory/). Grade 8, Grade 9
+- [Dead or Alive? The Criteria Problem](/resources/dead-or-alive-biology-investigation/). Grade 6, Grade 7
+- [The Circuit Detective](/resources/electricity-and-circuits-investigation/). Grade 8, Grade 9
+- [Rock Detectives](/resources/grade-6-rock-detectives-investigation/). Grade 6, MYP Year 1
+- [The Invisible Force Field](/resources/magnetism-and-fields-investigation/). Grade 7, Grade 8
+- [Nutrition Labels: Do the Numbers Add Up?](/resources/nutrition-labels-do-the-numbers-add-up/). Grade 6, Grade 7
 
 See also: [Criterion A Rubric Reference Card](/assessment/criterion-a/) for a printable desk reference with student voice examples at every level.

@@ -1,7 +1,7 @@
 ---
 title: "The Pendulum Question"
 date: 2026-01-26
-description: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings — the weight, the angle, or the length? Only one of these matters. Which one?"
+description: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings. the weight, the angle, or the length? Only one of these matters. Which one?"
 subjects:
   - "Physics"
 year_levels:
@@ -15,10 +15,10 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "The period of a pendulum depends on a single variable — and discovering which one requires systematic investigation of all three."
+statement_of_inquiry: "The period of a pendulum depends on a single variable. and discovering which one requires systematic investigation of all three."
 difficulty: "meeting"
-hook: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings — the weight, the angle, or the length? Only one of these matters. Which one?"
-warmup: "Swing your arm like a pendulum. Now swing it faster. What did you change — the weight, the push, or the length? Can you swing it faster without changing anything?"
+hook: "A grandfather clock keeps perfect time with a swinging pendulum. But what controls how fast it swings. the weight, the angle, or the length? Only one of these matters. Which one?"
+warmup: "Swing your arm like a pendulum. Now swing it faster. What did you change. the weight, the push, or the length? Can you swing it faster without changing anything?"
 seo_title: "The Pendulum Question | MYP Physics | Grade 7-8"
 seo_description: "Free MYP physics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. A grandfather clock keeps perfect time w"
 teacher_moves:
@@ -126,7 +126,7 @@ A simple pendulum: string, a weight (washers or a bag of coins), a clamp or tape
 >
 > Length: **Strong effect.** Longer pendulums swing slower.
 
-Plot length vs period. The relationship is not linear — it is a **square root**:
+Plot length vs period. The relationship is not linear. it is a **square root**:
 
 $$T = 2\pi\sqrt{\frac{L}{g}}$$
 
@@ -144,6 +144,6 @@ Every grandfather clock uses this principle. The pendulum length is precisely ca
 
 ## Teaching Notes
 
-This investigation teaches experimental design better than almost anything else. Students must change one variable while controlling the others — and the result is genuinely surprising. Most students (and many adults) predict that mass will matter. The reveal that it does not is a powerful moment.
+This investigation teaches experimental design better than almost anything else. Students must change one variable while controlling the others. and the result is genuinely surprising. Most students (and many adults) predict that mass will matter. The reveal that it does not is a powerful moment.
 
 This is a Dan Meyer "be less helpful" investigation. Give students the three suspects and let them design the experiments themselves. Do not tell them the answer. Do not tell them the formula. Let the data speak.

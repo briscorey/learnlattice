@@ -1,5 +1,5 @@
 ---
-title: "IDU: The Body in Motion — Biomechanics Meets Kinematics"
+title: "IDU: The Body in Motion. Biomechanics Meets Kinematics"
 date: 2026-03-13
 description: "Students measure their own sprinting speed, reaction time, and jump height, then use physics equations and statistical analysis to investigate human performance limits. A math-science IDU connecting kinematics, biology, and data analysis through personal measurement."
 subjects:
@@ -31,10 +31,10 @@ related_concepts:
   - "Models"
 global-contexts:
   - "Identities and Relationships"
-statement_of_inquiry: "The relationship between physical variables in human movement can be modelled mathematically — but the models reveal as much about their limitations as they do about the body."
+statement_of_inquiry: "The relationship between physical variables in human movement can be modelled mathematically. but the models reveal as much about their limitations as they do about the body."
 difficulty: "meeting"
 duration: "4–5 lessons"
-hook: "Usain Bolt ran 100m in 9.58 seconds. His top speed was 44.72 km/h. But his average speed was only 37.6 km/h. Why the difference — and what does your own speed-time graph look like?"
+hook: "Usain Bolt ran 100m in 9.58 seconds. His top speed was 44.72 km/h. But his average speed was only 37.6 km/h. Why the difference. and what does your own speed-time graph look like?"
 warmup: "Sprint 20 metres as fast as you can. Time it. Now calculate your average speed. Is that your top speed? Why not?"
 seo_title: "IDU Body in Motion | MYP Math-Science Biomechanics"
 seo_description: "Free MYP interdisciplinary unit: students investigate human performance using kinematics and statistics. 5-lesson investigation with criterion mapping."
@@ -42,9 +42,9 @@ teacher_moves:
   - title: "Use their own data"
     description: "Students measure THEIR OWN sprint times, reaction times, and vertical jumps. The data is personal and compelling. Nobody argues about the relevance of the mathematics when it describes their own body."
   - title: "The speed-time graph is the key insight"
-    description: "Average speed disguises the acceleration phase. When students plot speed against time (using split times over 10m intervals), they discover the shape is not linear — it curves, peaks, and may even decline."
+    description: "Average speed disguises the acceleration phase. When students plot speed against time (using split times over 10m intervals), they discover the shape is not linear. it curves, peaks, and may even decline."
   - title: "Compare to Bolt"
-    description: "Overlay student data with Bolt is 100m split data (freely available). The mathematical comparison reveals why elite sprinters are extraordinary — the difference is in the acceleration phase, not the top speed."
+    description: "Overlay student data with Bolt is 100m split data (freely available). The mathematical comparison reveals why elite sprinters are extraordinary. the difference is in the acceleration phase, not the top speed."
 btc_practices:
   - "Outdoor data collection in random groups"
   - "Vertical whiteboards for speed-time graph construction"
@@ -107,7 +107,7 @@ journal_prompts:
 ---
 ## Overview: Why This Works as an IDU
 
-This investigation connects MYP Mathematics (algebra, graphing, statistics) with MYP Sciences (kinematics, biology of muscle contraction) through human movement. The interdisciplinary connection is genuine — understanding why Usain Bolt is fast requires both the physics of motion AND the biology of muscle fibres, combined with mathematical modelling.
+This investigation connects MYP Mathematics (algebra, graphing, statistics) with MYP Sciences (kinematics, biology of muscle contraction) through human movement. The interdisciplinary connection is genuine. understanding why Usain Bolt is fast requires both the physics of motion AND the biology of muscle fibres, combined with mathematical modelling.
 
 **Mathematics contributes:** Speed-distance-time calculations, speed-time graph construction, calculation of acceleration, linear vs non-linear modelling, statistical comparison of class data.
 
@@ -117,7 +117,7 @@ This investigation connects MYP Mathematics (algebra, graphing, statistics) with
 
 ## Unit Structure (4-5 Lessons)
 
-### Lesson 1: Data Collection — Measuring Human Performance
+### Lesson 1: Data Collection. Measuring Human Performance
 
 **Outdoor session.** Students work in groups of 4 to measure:
 
@@ -127,9 +127,9 @@ This investigation connects MYP Mathematics (algebra, graphing, statistics) with
 
 Each student records their own data AND the group mean for comparison.
 
-**Key design choice:** Split timing at 10m intervals is essential. Without it, students can only calculate average speed. With it, they can construct speed-time graphs that show acceleration — the mathematically interesting part.
+**Key design choice:** Split timing at 10m intervals is essential. Without it, students can only calculate average speed. With it, they can construct speed-time graphs that show acceleration. the mathematically interesting part.
 
-### Lesson 2: Mathematical Modelling — Speed, Acceleration, and Graphs
+### Lesson 2: Mathematical Modelling. Speed, Acceleration, and Graphs
 
 Students process their sprint data:
 
@@ -143,7 +143,7 @@ Students process their sprint data:
 
 **MYP Maths Criterion C:** The speed-time graph must be accurately constructed with appropriate scales, labels, and units.
 
-### Lesson 3: Scientific Analysis — Why Does Speed Change?
+### Lesson 3: Scientific Analysis. Why Does Speed Change?
 
 Connect the mathematical patterns to biological and physical explanations:
 
@@ -163,7 +163,7 @@ Students compare their data to:
 
 **MYP Maths Criterion D:** Apply mathematical models to evaluate human performance in a real-world context. Discuss limitations: Does the model predict performance accurately for distances longer than 40m? Why or why not?
 
-**MYP Science Criterion D:** Discuss the implications of performance science — doping, genetic advantages, training methods, and fairness in sport.
+**MYP Science Criterion D:** Discuss the implications of performance science. doping, genetic advantages, training methods, and fairness in sport.
 
 ### Lesson 5 (Extension): Can You Predict the 100m World Record?
 
@@ -181,7 +181,7 @@ Using historical world record data (1912–present), students model the trend an
 
 ## EAL Scaffolds
 
-- The physical data collection is fully accessible — running, jumping, and timing require no English
+- The physical data collection is fully accessible. running, jumping, and timing require no English
 - Provide a speed-time graph template with pre-labelled axes
 - Use sentence frames: "Between 0m and 10m, my speed was ___ m/s. This means I was accelerating at ___ m/s²."
 - Bilingual glossary: speed, velocity, acceleration, reaction time, force, friction, muscle fibre

@@ -1,6 +1,6 @@
 ---
 title: "Criterion D: Applying Mathematics in Real-Life Contexts"
-description: "A plain-language rubric reference for MYP Criterion D — what applying mathematics and science to real-world problems looks like at every level, with examples and common assessment mistakes."
+description: "A plain-language rubric reference for MYP Criterion D. what applying mathematics and science to real-world problems looks like at every level, with examples and common assessment mistakes."
 url: "/assessment/criterion-d/"
 layout: "rubric-card"
 criterion: "D"
@@ -22,7 +22,7 @@ A student working at level 7-8 in Criterion D does not just solve the problem. T
 
 ## Writing Effective Criterion D Tasks
 
-The best Criterion D tasks use genuinely messy real-world data — not textbook problems dressed up with a context sentence. A strong task might ask students to plan a budget using real prices, optimise a design using measurements they take themselves, or analyse real data to make a recommendation. The context should matter: if you could remove the real-world framing and the task would be unchanged, it is not a genuine Criterion D task.
+The best Criterion D tasks use genuinely messy real-world data. not textbook problems dressed up with a context sentence. A strong task might ask students to plan a budget using real prices, optimise a design using measurements they take themselves, or analyse real data to make a recommendation. The context should matter: if you could remove the real-world framing and the task would be unchanged, it is not a genuine Criterion D task.
 
 ## Criterion D Resources on LearnLattice
 

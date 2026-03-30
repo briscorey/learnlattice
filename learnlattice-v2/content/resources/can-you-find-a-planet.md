@@ -15,7 +15,7 @@ key-concepts:
   - "Logic"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "When direct observation is impossible, scientists use indirect evidence — and the quality of the inference depends on the quality of the data."
+statement_of_inquiry: "When direct observation is impossible, scientists use indirect evidence. and the quality of the inference depends on the quality of the data."
 difficulty: "exceeding"
 hook: "In 2017, NASA discovered 7 Earth-sized planets orbiting a star 40 light-years away. Nobody has ever seen them. How do you discover a planet you cannot see?"
 warmup: "You cannot see inside a wrapped present. How many different ways can you figure out what is inside WITHOUT opening it? List as many methods as you can in 2 minutes."
@@ -100,7 +100,7 @@ So how do we know they exist?
 
 When a planet passes in front of its star (from our perspective), it blocks a tiny fraction of the star's light. This is called a **transit**.
 
-For Earth-sized planets around Sun-sized stars, the dimming is about **0.01%** — one part in ten thousand. Incredibly small. But detectable.
+For Earth-sized planets around Sun-sized stars, the dimming is about **0.01%**. one part in ten thousand. Incredibly small. But detectable.
 
 ### The Simulation
 
@@ -147,6 +147,6 @@ Given the transit data below, calculate the relative sizes of three exoplanets:
 
 ## Teaching Notes
 
-This investigation connects proportion, percentages, and area calculations to cutting-edge astronomy. The transit simulation with a lamp and ping-pong ball makes the method concrete and testable — students see their light sensor dip and understand exactly what Kepler and TESS detect from space.
+This investigation connects proportion, percentages, and area calculations to cutting-edge astronomy. The transit simulation with a lamp and ping-pong ball makes the method concrete and testable. students see their light sensor dip and understand exactly what Kepler and TESS detect from space.
 
 The key pedagogical insight: we are teaching indirect evidence. Most of science relies on inferring things we cannot directly see. This is true for atoms, genes, black holes, and exoplanets. The habit of reasoning from evidence to conclusion is more important than any specific fact about TRAPPIST-1.

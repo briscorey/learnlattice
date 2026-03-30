@@ -1,6 +1,6 @@
 ---
 title: "MYP Global Contexts"
-description: "Browse all MYP resources organised by Global Context — from Scientific Innovation to Sustainability. Every investigation on LearnLattice connects learning to a real-world context."
+description: "Browse all MYP resources organised by Global Context. from Scientific Innovation to Sustainability. Every investigation on LearnLattice connects learning to a real-world context."
 url: "/global-contexts/"
 ---
 

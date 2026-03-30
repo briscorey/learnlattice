@@ -1,11 +1,11 @@
 ---
 title: "Number Sense"
-description: "Free MYP number sense investigations for Grades 6-8. Inquiry-based tasks covering place value, exponents, scientific notation, irrational numbers, and number systems — aligned to IB MYP criteria."
+description: "Free MYP number sense investigations for Grades 6-8. Inquiry-based tasks covering place value, exponents, scientific notation, irrational numbers, and number systems. aligned to IB MYP criteria."
 ---
 
 ## Free MYP Number Sense Resources
 
-Number sense is the foundation of mathematical thinking. Our resources build deep understanding of how numbers work — not just fluency with procedures.
+Number sense is the foundation of mathematical thinking. Our resources build deep understanding of how numbers work. not just fluency with procedures.
 
 ### Topics Covered
 

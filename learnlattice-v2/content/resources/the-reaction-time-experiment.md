@@ -1,7 +1,7 @@
 ---
 title: "How Fast Are You, Really?"
 date: 2026-01-19
-description: "Your partner drops a ruler. You catch it. The distance it falls tells you your reaction time — in milliseconds. But is your dominant hand actually faster? Only data can answer that."
+description: "Your partner drops a ruler. You catch it. The distance it falls tells you your reaction time. in milliseconds. But is your dominant hand actually faster? Only data can answer that."
 subjects:
   - "Mathematics"
 math_topic: Statistics
@@ -16,9 +16,9 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Identities and Relationships"
-statement_of_inquiry: "Comparing two data sets requires more than looking at averages — the spread and overlap of the data determine whether a difference is meaningful."
+statement_of_inquiry: "Comparing two data sets requires more than looking at averages. the spread and overlap of the data determine whether a difference is meaningful."
 difficulty: "meeting"
-hook: "Your partner drops a ruler. You catch it. The distance it falls tells you your reaction time — in milliseconds. But is your dominant hand actually faster? Only data can answer that."
+hook: "Your partner drops a ruler. You catch it. The distance it falls tells you your reaction time. in milliseconds. But is your dominant hand actually faster? Only data can answer that."
 warmup: "Clap your hands. How fast was that? Now clap the instant your partner says 'go.' Is there a delay? Why?"
 seo_title: "How Fast Are You, Really? | MYP Maths | Grade 7-8"
 seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. Your partner drops a ruler. You catch it"
@@ -29,7 +29,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Checking a few cases proves a formula"
   why: "If it works for 5 values it must always work"
@@ -100,7 +100,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "How Fast Are You, Really?" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "How Fast Are You, Really?". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -158,4 +158,4 @@ For each hand, calculate:
 
 This investigation teaches the most important idea in statistics: that comparing averages is not enough. Two means can differ by 15ms, but if the standard deviations are 30ms each, the difference is meaningless. The box plots make this visible.
 
-Every student produces unique data from their own body — which creates ownership and motivation. The physics formula for converting distance to time is a bonus cross-curricular connection.
+Every student produces unique data from their own body. which creates ownership and motivation. The physics formula for converting distance to time is a bonus cross-curricular connection.

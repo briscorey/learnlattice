@@ -1,11 +1,11 @@
 ---
 title: "Statistics"
-description: "Free MYP statistics and probability investigations for Grades 6-9. Data-driven tasks covering surveys, graphs, measures of centre, scatter plots, and probability — aligned to IB MYP criteria."
+description: "Free MYP statistics and probability investigations for Grades 6-9. Data-driven tasks covering surveys, graphs, measures of centre, scatter plots, and probability. aligned to IB MYP criteria."
 ---
 
 ## Free MYP Statistics and Probability Resources
 
-Statistics on LearnLattice starts with real questions and real data. Students collect, organise, represent, and interpret data to answer questions that matter to them — not textbook exercises with pre-cleaned datasets.
+Statistics on LearnLattice starts with real questions and real data. Students collect, organise, represent, and interpret data to answer questions that matter to them. not textbook exercises with pre-cleaned datasets.
 
 ### Topics Covered
 
@@ -13,6 +13,6 @@ Our statistics resources cover data collection and surveys, frequency tables and
 
 ### Data Literacy as a Life Skill
 
-MYP statistics is not just about calculating averages. Our resources like [The Survey That Lies](/resources/the-survey-that-lies/) and [The Misleading Graph](/resources/the-misleading-graph-statistics-investigation/) teach students to critically evaluate data claims — a skill that transfers far beyond the mathematics classroom.
+MYP statistics is not just about calculating averages. Our resources like [The Survey That Lies](/resources/the-survey-that-lies/) and [The Misleading Graph](/resources/the-misleading-graph-statistics-investigation/) teach students to critically evaluate data claims. a skill that transfers far beyond the mathematics classroom.
 
 For assessment, our [Criterion B packs](/assessment/criterion-b/) include statistics-specific investigations with annotated student work at three achievement levels.

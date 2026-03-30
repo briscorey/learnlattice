@@ -1,7 +1,7 @@
 ---
-title: "Build a Volcano — Then Explain It"
+title: "Build a Volcano. Then Explain It"
 date: 2026-01-26
-description: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"
+description: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano. using evidence, not just a fun reaction?"
 subjects:
   - "Earth Science"
 year_levels:
@@ -15,12 +15,12 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Orientation in Space and Time"
-statement_of_inquiry: "Models help us visualise processes we cannot directly observe — but every model has limitations that must be acknowledged."
+statement_of_inquiry: "Models help us visualise processes we cannot directly observe. but every model has limitations that must be acknowledged."
 difficulty: "approaching"
-hook: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"
+hook: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano. using evidence, not just a fun reaction?"
 warmup: "Name everything you think you know about volcanoes. Now sort your list into 'things I am sure about' and 'things I am guessing.' Be honest."
-seo_title: "Build a Volcano — Then Explain It | MYP Earth Science"
-seo_description: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano — using evidence, not just a fun reaction?"
+seo_title: "Build a Volcano | Then Explain It | MYP Earth Science"
+seo_description: "Everyone has seen a baking soda volcano. But can you explain what is ACTUALLY happening inside a real volcano. using evidence, not just a fun reaction?"
 teacher_moves:
   - title: "Predictions before data"
     description: "Have every student commit to a prediction before any data is collected. Write predictions on the board. The gap between prediction and reality is where learning happens."
@@ -115,8 +115,8 @@ This is where the real learning happens. Complete this comparison table:
 | Temperature | Room temperature | 700-1200°C |
 | What drives the eruption? | Acid-base reaction | Pressure from dissolved gases in magma |
 | What is the 'mountain' made of? | Clay | Layers of cooled lava and ash from previous eruptions |
-| Does it destroy the surrounding area? | No | Yes — pyroclastic flows, lahars, ash fall |
-| Does it create new land? | No | Yes — volcanic islands form this way |
+| Does it destroy the surrounding area? | No | Yes. pyroclastic flows, lahars, ash fall |
+| Does it create new land? | No | Yes. volcanic islands form this way |
 
 > **Write a paragraph:** "My model is useful because... but it is inaccurate because..."
 
@@ -124,7 +124,7 @@ This is where the real learning happens. Complete this comparison table:
 
 ## Part 3: The Real Science
 
-Volcanoes erupt because **magma under pressure contains dissolved gases** — like a shaken bottle of fizzy drink. When the pressure drops (the cap comes off), the gas expands explosively.
+Volcanoes erupt because **magma under pressure contains dissolved gases**. like a shaken bottle of fizzy drink. When the pressure drops (the cap comes off), the gas expands explosively.
 
 The type of eruption depends on the **viscosity of the magma**:
 - Low viscosity (runny) → gentle flows (like Hawaii)
@@ -134,6 +134,6 @@ The type of eruption depends on the **viscosity of the magma**:
 
 ## Teaching Notes
 
-Every school does the baking soda volcano. This investigation rescues it from being meaningless by adding the critical comparison table. The insight that models are ALWAYS wrong — but can still be useful — is one of the most important ideas in science.
+Every school does the baking soda volcano. This investigation rescues it from being meaningless by adding the critical comparison table. The insight that models are ALWAYS wrong. but can still be useful. is one of the most important ideas in science.
 
 This directly teaches MYP Criterion A (Knowing and Understanding) by requiring students to evaluate the limitations of a model. It is also a natural writing task for EAL students: the comparison table scaffolds the paragraph without prescribing every sentence.

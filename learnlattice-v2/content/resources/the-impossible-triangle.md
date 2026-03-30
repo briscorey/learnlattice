@@ -16,7 +16,7 @@ key-concepts:
   - "Form"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Not all measurements can form a triangle — and the constraint that determines which ones work reveals a fundamental property of space."
+statement_of_inquiry: "Not all measurements can form a triangle. and the constraint that determines which ones work reveals a fundamental property of space."
 difficulty: "meeting"
 hook: "Can you build a triangle with sides 3cm, 4cm, and 10cm? Try it. You cannot. Why not? And can you find the rule that tells you which triangles are possible?"
 warmup: "Cut three strips of paper: 5cm, 5cm, and 5cm. Can you make a triangle? Now try 5cm, 5cm, and 1cm. Now try 5cm, 5cm, and 11cm. What happened?"
@@ -29,7 +29,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Speed and velocity are the same thing"
   why: "In everyday language they are used interchangeably"
@@ -97,7 +97,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Impossible Triangle" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Impossible Triangle". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -150,4 +150,4 @@ If two sides are 5cm and 8cm, what are the possible lengths for the third side?
 
 ## Teaching Notes
 
-This is concrete before abstract. Students physically manipulate strips and discover the rule through failure — the moment they cannot close the triangle is visceral and memorable. Only after discovering the rule do they formalise it as an inequality.
+This is concrete before abstract. Students physically manipulate strips and discover the rule through failure. the moment they cannot close the triangle is visceral and memorable. Only after discovering the rule do they formalise it as an inequality.

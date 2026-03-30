@@ -1,6 +1,6 @@
 ---
 title: "Physics"
-description: "Free MYP physics investigations for Grades 6-9. Inquiry-based activities covering forces, energy, electricity, waves, motion, and light — aligned to IB MYP science criteria."
+description: "Free MYP physics investigations for Grades 6-9. Inquiry-based activities covering forces, energy, electricity, waves, motion, and light. aligned to IB MYP science criteria."
 ---
 
 ## Free MYP Physics Resources
@@ -13,6 +13,6 @@ Our physics resources cover forces and motion (including friction, gravity, and 
 
 ### Bridging Mathematics and Science
 
-Physics is where MYP mathematics and science naturally connect. Our investigations emphasise the mathematical relationships in physical systems — speed-distance-time graphs, proportional relationships in circuits, and data analysis in experimental science. Students practise [Criterion B](/assessment/criterion-b/) (investigating patterns) in a scientific context, building skills that transfer across both subject groups.
+Physics is where MYP mathematics and science naturally connect. Our investigations emphasise the mathematical relationships in physical systems. speed-distance-time graphs, proportional relationships in circuits, and data analysis in experimental science. Students practise [Criterion B](/assessment/criterion-b/) (investigating patterns) in a scientific context, building skills that transfer across both subject groups.
 
 For equipment lists, safety notes, and teacher guidance, every investigation includes a teaching layer with suggested timelines and common misconceptions.

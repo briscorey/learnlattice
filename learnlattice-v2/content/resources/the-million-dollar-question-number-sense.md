@@ -73,14 +73,14 @@ misconceptions:
 - myth: You can estimate by guessing
   why: Estimation feels like guessing
   truth: Good estimation uses calculation with rounded numbers. It is not a guess
-    — it is a calculation with simpler values.
+   . it is a calculation with simpler values.
 - myth: Scientific notation is just for scientists
   why: The name suggests it is specialised
   truth: Scientific notation is for anyone working with very large or very small numbers.
     It makes comparison possible.
 timeline: '0-5 min: Write the hook on the board. Silent thinking. | 5-15 min: Pairs
   estimate and share. | 15-30 min: Groups calculate with different denominations.
-  | 30-40 min: Gallery walk — compare approaches. | 40-50 min: Consolidate — what
+  | 30-40 min: Gallery walk. compare approaches. | 40-50 min: Consolidate. what
   surprised you?'
 sentence_starters:
   describing:
@@ -105,7 +105,7 @@ listen_for:
     which I can verify by working backwards
 warm_up:
   title: How long is a million seconds?
-  activity: 'Ask students to guess — write answers on the board. Don''t reveal the
+  activity: 'Ask students to guess. write answers on the board. Don''t reveal the
     answer. Then ask: how long is a billion seconds? The gap between guesses reveals
     whether they understand scale.'
   time: 5 minutes
@@ -153,7 +153,7 @@ Write this on the board before students arrive:
 
 > **$1,000,000. One dollar per second. How long?**
 
-Give them 60 seconds of silent thinking, no calculators. Then ask for estimates — hands up, no judgement. Write every answer on the board. You will likely get answers ranging from a few hours to several years. This range is the lesson.
+Give them 60 seconds of silent thinking, no calculators. Then ask for estimates. hands up, no judgement. Write every answer on the board. You will likely get answers ranging from a few hours to several years. This range is the lesson.
 
 The answer is **11.6 days**.
 
@@ -184,7 +184,7 @@ Watch what happens when you say that. Students who guessed "a few hours" are sur
   <span class="tm-phase-time">0–2 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Silent estimation</div>
-    <p>60 seconds of silent thinking, no calculators. Then hands up for estimates — write every answer on the board without judgement. You need the full range visible. Expect answers from "a few hours" to "several years."</p>
+    <p>60 seconds of silent thinking, no calculators. Then hands up for estimates. write every answer on the board without judgement. You need the full range visible. Expect answers from "a few hours" to "several years."</p>
   </div>
 </div>
 
@@ -208,23 +208,23 @@ Watch what happens when you say that. Students who guessed "a few hours" are sur
   <span class="tm-phase-time">5–10 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Circulate</div>
-    <p>Watch for groups converting seconds to minutes to hours to days. Some will get lost in the arithmetic — point at their million calculation and draw an arrow. The billion answer (31.7 years) will shock them again. Groups that finish early: "What about a trillion?"</p>
+    <p>Watch for groups converting seconds to minutes to hours to days. Some will get lost in the arithmetic. point at their million calculation and draw an arrow. The billion answer (31.7 years) will shock them again. Groups that finish early: "What about a trillion?"</p>
   </div>
 </div>
 
 <div class="tm-callout tm-callout--listen">
   <strong>What you're listening for</strong>
-  <p>"Wait, a billion is a thousand millions" — they're seeing multiplicative structure. "So a billion seconds is a thousand times longer" — they're scaling correctly. "That can't be right..." — the emotional disbelief IS the learning moment. Don't resolve it for them.</p>
+  <p>"Wait, a billion is a thousand millions". they're seeing multiplicative structure. "So a billion seconds is a thousand times longer". they're scaling correctly. "That can't be right...". the emotional disbelief IS the learning moment. Don't resolve it for them.</p>
 </div>
 
 <div class="tm-callout tm-callout--eal">
   <strong>EAL scaffold</strong>
-  <p>Numbers are universal — this problem requires almost no English. Write the conversion chain on the board as a reference: 60 sec → 1 min, 60 min → 1 hour, 24 hours → 1 day. Point at it when groups stall. The words "million," "billion," "trillion" may need explicit comparison: write 10⁶, 10⁹, 10¹² with the words beside them.</p>
+  <p>Numbers are universal. this problem requires almost no English. Write the conversion chain on the board as a reference: 60 sec → 1 min, 60 min → 1 hour, 24 hours → 1 day. Point at it when groups stall. The words "million," "billion," "trillion" may need explicit comparison: write 10⁶, 10⁹, 10¹² with the words beside them.</p>
 </div>
 
 <div class="tm-callout tm-callout--dontsay">
   <strong>Don't say this</strong>
-  <p>"A billion is 10⁹" — let them discover the power of ten relationship. "Use scientific notation" — if they reach for it naturally, great; if not, introduce it after they've felt the need for it.</p>
+  <p>"A billion is 10⁹". let them discover the power of ten relationship. "Use scientific notation". if they reach for it naturally, great; if not, introduce it after they've felt the need for it.</p>
 </div>
 
     </div>
@@ -234,7 +234,7 @@ Watch what happens when you say that. Students who guessed "a few hours" are sur
 
 ## Why This Investigation Matters
 
-Number sense — genuine fluency with the *size* and *structure* of numbers — is one of the most consequential things a middle school mathematics education can develop. Most students who struggle with algebra, statistics, and applied problems don't struggle because they can't calculate. They struggle because they have no felt sense of whether an answer is reasonable.
+Number sense. genuine fluency with the *size* and *structure* of numbers. is one of the most consequential things a middle school mathematics education can develop. Most students who struggle with algebra, statistics, and applied problems don't struggle because they can't calculate. They struggle because they have no felt sense of whether an answer is reasonable.
 
 This investigation builds that felt sense by starting with quantities that have emotional weight and real-world meaning.
 
@@ -265,12 +265,12 @@ where \\(1 \leq a < 10\\) and \\(n\\) is an integer.
 
 **Worked examples:**
 
-1. \\(3,400,000 = 3.4 \times 10^6\\) — move the decimal point 6 places left
-2. \\(0.000052 = 5.2 \times 10^{-5}\\) — move the decimal point 5 places right
-3. \\(1,000,000,000 = 1 \times 10^9\\) — exactly one billion
+1. \\(3,400,000 = 3.4 \times 10^6\\). move the decimal point 6 places left
+2. \\(0.000052 = 5.2 \times 10^{-5}\\). move the decimal point 5 places right
+3. \\(1,000,000,000 = 1 \times 10^9\\). exactly one billion
 
 **Comparing with scientific notation:**
-Which is larger — \\(4.2 \times 10^7\\) or \\(8.1 \times 10^6\\)?
+Which is larger. \\(4.2 \times 10^7\\) or \\(8.1 \times 10^6\\)?
 - Compare the exponents first: \\(10^7 > 10^6\\)
 - So \\(4.2 \times 10^7 > 8.1 \times 10^6\\), regardless of the coefficient
 
@@ -280,7 +280,7 @@ Which is larger — \\(4.2 \times 10^7\\) or \\(8.1 \times 10^6\\)?
 
 ## Investigation Tasks
 
-### Part A — The Spending Problem (Launch)
+### Part A. The Spending Problem (Launch)
 
 Working in groups, solve these problems using estimation first, then calculation. Show your reasoning at every step.
 
@@ -290,7 +290,7 @@ Working in groups, solve these problems using estimation first, then calculation
 
 3. A single strand of human DNA contains approximately 3 × 10⁹ base pairs. If you printed one base pair per millimetre, how long would the printed strand be? Express your answer in appropriate units.
 
-### Part B — The Comparison Task
+### Part B. The Comparison Task
 
 Each group receives a set of "large number cards" containing quantities like:
 - Grains of sand on Earth's beaches: ~7.5 × 10¹⁸
@@ -301,7 +301,7 @@ Each group receives a set of "large number cards" containing quantities like:
 
 **Task:** Order these quantities. Calculate meaningful ratios between them. Write one comparison that genuinely surprises you and explain why it surprises you.
 
-### Part C — The Design Challenge (Criterion D Task)
+### Part C. The Design Challenge (Criterion D Task)
 
 > *A local government is deciding between two infrastructure projects. Project A costs \\(4.5 million. Project B costs \\)2.3 billion. A newspaper headline reads: "New Project Costs Nearly Twice as Much as Previous Proposal."*
 
@@ -313,12 +313,12 @@ Each group receives a set of "large number cards" containing quantities like:
 
 ## Formative Assessment Checkpoints
 
-**Checkpoint 1 — Exit slip after Part A:**
+**Checkpoint 1. Exit slip after Part A:**
 "Explain in two sentences why 10⁹ is not just 'a bit bigger' than 10⁶."
 
 *What you're listening for:* students using the word "thousand times" or "multiply" rather than "add three zeros."
 
-**Checkpoint 2 — Mid-investigation discussion:**
+**Checkpoint 2. Mid-investigation discussion:**
 Put this on the board: "The US national debt is approximately $3.3 × 10¹³. Describe this number three different ways: in words, as a decimal, and in terms of how many millions it represents."
 
 *What you're listening for:* fluency converting between representations, and recognition that \\(10¹³\\) is ten million millions.
@@ -330,19 +330,19 @@ Put this on the board: "The US national debt is approximately $3.3 × 10¹³. De
 | What students often believe | What's accurate |
 |-----------------------------|----------------|
 | "A billion is about twice a million" | A billion is exactly 1,000 times a million |
-| "Scientific notation is just a shortcut for lazy people" | It's essential for any computation involving very large or very small numbers — without it, meaningful comparison becomes impossible |
-| "Adding a zero makes a number ten times bigger" | True — but students often don't apply this multiplicatively. They need to experience that going from 10⁶ to 10⁹ is multiplying by 1,000, not adding 3 |
-| "The number with more digits is always the bigger number" | True for whole numbers, but students confuse this when working in scientific notation — the exponent matters more than the coefficient |
+| "Scientific notation is just a shortcut for lazy people" | It's essential for any computation involving very large or very small numbers. without it, meaningful comparison becomes impossible |
+| "Adding a zero makes a number ten times bigger" | True. but students often don't apply this multiplicatively. They need to experience that going from 10⁶ to 10⁹ is multiplying by 1,000, not adding 3 |
+| "The number with more digits is always the bigger number" | True for whole numbers, but students confuse this when working in scientific notation. the exponent matters more than the coefficient |
 
 ---
 
 ## Teaching Notes
 
-**On running the hook:** Resist the urge to move to calculation immediately after revealing the answer. Sit in the surprise. Ask: "Why were our estimates so spread out?" This metacognitive moment — noticing that human intuition about large numbers is unreliable — is the affective engine that makes the investigation matter.
+**On running the hook:** Resist the urge to move to calculation immediately after revealing the answer. Sit in the surprise. Ask: "Why were our estimates so spread out?" This metacognitive moment. noticing that human intuition about large numbers is unreliable. is the affective engine that makes the investigation matter.
 
 **On grouping:** Part B works best with random groups and vertical whiteboards. The number comparison task generates genuine disagreement and argument, which is exactly what you want.
 
-**On Part C:** This is a Criterion D task in disguise. Students who can explain *why* the headline is misleading to a general audience are demonstrating transfer of mathematical understanding — they're not just calculating, they're reasoning about the role of mathematical representation in public communication.
+**On Part C:** This is a Criterion D task in disguise. Students who can explain *why* the headline is misleading to a general audience are demonstrating transfer of mathematical understanding. they're not just calculating, they're reasoning about the role of mathematical representation in public communication.
 
 **On timing:** This investigation runs well over 2–3 lessons. Part A is one full lesson. Parts B and C together are one to two lessons. The exit slip from Part A should inform how much scaffolding you provide in Part B.
 
@@ -354,7 +354,7 @@ Put this on the board: "The US national debt is approximately $3.3 × 10¹³. De
 
 Write "$1,000,000" on the board. Below it: **"If you spent one dollar every second, how long until it's gone?"** Say the question once. Point at the number. Set a 90-second silent timer for individual estimates.
 
-**Do not** give hints about units or conversion. The whole point is that students will underestimate catastrophically — and that surprise is the engine of the lesson.
+**Do not** give hints about units or conversion. The whole point is that students will underestimate catastrophically. and that surprise is the engine of the lesson.
 
 **EAL move:** Write "1 second = $1" and draw a clock tick. The visual is enough.
 
@@ -362,23 +362,23 @@ Write "$1,000,000" on the board. Below it: **"If you spent one dollar every seco
 
 **Watch for:** Students who convert to minutes but stop there. Walk over, point at their answer, write "days?" next to it with a question mark. Let them continue.
 
-**Watch for:** Students who get to ~11.5 days and think they're done. They've calculated for a million seconds but haven't yet felt the *scale*. Ask: "What about a billion?" — this is where the real learning happens.
+**Watch for:** Students who get to ~11.5 days and think they're done. They've calculated for a million seconds but haven't yet felt the *scale*. Ask: "What about a billion?". this is where the real learning happens.
 
 **Do not say:** "Use scientific notation." Wait until students are frustrated by the number of zeros, then ask: "Is there a shorter way to write this?"
 
-**Key moment:** When a student realises that a million seconds is about 11 days but a billion seconds is about 31 *years*, stop the class. Have that student share. This is the conceptual core — the jump from 10⁶ to 10⁹ is not "a bit more," it's a different human experience.
+**Key moment:** When a student realises that a million seconds is about 11 days but a billion seconds is about 31 *years*, stop the class. Have that student share. This is the conceptual core. the jump from 10⁶ to 10⁹ is not "a bit more," it's a different human experience.
 
 ### Pulling It Together (Minutes 25–35)
 
 Draw a number line on the board: 10³ → 10⁶ → 10⁹ → 10¹². Ask each group to label their time conversions underneath. The visual compression of the number line versus the experiential expansion of the times is the lesson's signature moment.
 
-**EAL move:** Use a table on the board — "seconds / minutes / hours / days / years" as column headers. Students can contribute numbers without needing to explain in English.
+**EAL move:** Use a table on the board. "seconds / minutes / hours / days / years" as column headers. Students can contribute numbers without needing to explain in English.
 
 ### What You Are Listening For
 
-- "Wait, that can't be right" — this means the scale surprise has landed
-- Students debating whether to round or be exact — this is a conversation about precision worth amplifying
-- "So a billionaire has..." — the connection to inequality and the Global Context is emerging naturally
+- "Wait, that can't be right". this means the scale surprise has landed
+- Students debating whether to round or be exact. this is a conversation about precision worth amplifying
+- "So a billionaire has...". the connection to inequality and the Global Context is emerging naturally
 
 ---
 
@@ -392,4 +392,4 @@ Draw a number line on the board: 10³ → 10⁶ → 10⁹ → 10¹². Ask each g
 
 ---
 
-> **The bigger idea:** This investigation is really about power and representation. The numbers we use to describe wealth, population, and scale are not neutral — they shape what we see as significant and what we dismiss. A student who finishes this unit with genuine number sense is also a student who is harder to mislead with large numbers in news media, political speeches, and advertising.
+> **The bigger idea:** This investigation is really about power and representation. The numbers we use to describe wealth, population, and scale are not neutral. they shape what we see as significant and what we dismiss. A student who finishes this unit with genuine number sense is also a student who is harder to mislead with large numbers in news media, political speeches, and advertising.

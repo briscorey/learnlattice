@@ -1,5 +1,5 @@
 ---
-title: "IDU: Disease Detectives — Epidemiology Meets Statistics"
+title: "IDU: Disease Detectives. Epidemiology Meets Statistics"
 date: 2026-02-23
 description: "A mystery illness is spreading through the school. Students use contact tracing, statistical analysis, and biological knowledge to identify the source, model the spread, and propose interventions. A math-science IDU connecting statistics, probability, and infectious disease biology."
 subjects:
@@ -30,10 +30,10 @@ related_concepts:
   - "Consequences"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Statistical patterns in disease data reveal the structure of transmission systems — and mathematical models allow us to predict and prevent outbreaks before they escalate."
+statement_of_inquiry: "Statistical patterns in disease data reveal the structure of transmission systems. and mathematical models allow us to predict and prevent outbreaks before they escalate."
 difficulty: "exceeding"
 duration: "4–5 lessons"
-hook: "23 students in our school reported feeling ill this week. Is this an outbreak — or just normal? And if it is an outbreak, can you find patient zero?"
+hook: "23 students in our school reported feeling ill this week. Is this an outbreak. or just normal? And if it is an outbreak, can you find patient zero?"
 warmup: "If one person in this room had a cold and shook hands with 3 people, and each of those people shook hands with 3 more, how many people would be 'infected' after 5 rounds?"
 seo_title: "IDU Disease Detectives | MYP Math-Science Epidemiology"
 seo_description: "Free MYP interdisciplinary unit: students investigate a simulated disease outbreak using statistics and biology. Contact tracing, modelling, and data analysis."
@@ -106,7 +106,7 @@ journal_prompts:
 ---
 ## Overview: Why This Works as an IDU
 
-This investigation connects MYP Mathematics (statistics, probability, exponential modelling) with MYP Sciences (infectious disease biology, epidemiology) through a simulated disease outbreak. The interdisciplinary need is genuine — epidemiology is inherently mathematical, and understanding disease spread requires both biological knowledge of transmission AND statistical analysis of patterns.
+This investigation connects MYP Mathematics (statistics, probability, exponential modelling) with MYP Sciences (infectious disease biology, epidemiology) through a simulated disease outbreak. The interdisciplinary need is genuine. epidemiology is inherently mathematical, and understanding disease spread requires both biological knowledge of transmission AND statistical analysis of patterns.
 
 **Mathematics contributes:** Data collection and organisation, frequency tables and epidemic curves (histograms), measures of central tendency and spread, probability calculations (risk ratios), exponential growth modelling, the reproduction number (R₀).
 
@@ -120,7 +120,7 @@ This investigation connects MYP Mathematics (statistics, probability, exponentia
 
 **Setup (before class):** Prepare identical cups of clear liquid for every student. One cup contains a few drops of indicator solution (phenolphthalein or starch/iodine). This is "patient zero."
 
-**Simulation:** Students exchange liquid with 3 different partners over 3 rounds (simulating social interaction). After all exchanges, add the test reagent — "infected" cups change colour.
+**Simulation:** Students exchange liquid with 3 different partners over 3 rounds (simulating social interaction). After all exchanges, add the test reagent. "infected" cups change colour.
 
 **The reveal:** Some students are "infected" and some are not. Record who is infected and who they exchanged with.
 
@@ -130,7 +130,7 @@ This investigation connects MYP Mathematics (statistics, probability, exponentia
 
 Students reconstruct the transmission network:
 1. Map all exchanges as a **network graph** (nodes = students, edges = exchanges)
-2. Build an **epidemic curve** — a histogram showing the number of new infections per round
+2. Build an **epidemic curve**. a histogram showing the number of new infections per round
 3. Calculate the **attack rate** (proportion infected) and **reproduction number** (average infections per infected person per round)
 
 **MYP Maths Criterion B:** Students investigate the pattern of disease spread, identify the exponential growth phase, and calculate R₀ from their data.
@@ -176,7 +176,7 @@ Each group presents a public health recommendation for a hypothetical outbreak s
 ## EAL Scaffolds
 
 - The physical simulation is fully participatory regardless of language level
-- Network graphs are visual — students can draw connections before writing analysis
+- Network graphs are visual. students can draw connections before writing analysis
 - Provide a data recording template with pre-labelled columns
 - Sentence frames: "The R₀ of our simulated outbreak was ___, which means each infected person spread the disease to approximately ___ others."
 - Key vocabulary with visual support: pathogen, transmission, epidemic curve, reproduction number, herd immunity, quarantine

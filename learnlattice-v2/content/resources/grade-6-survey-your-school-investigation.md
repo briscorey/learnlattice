@@ -23,7 +23,7 @@ tags:
 - Criterion D
 key_concept: Form
 global_context: Identities and Relationships
-statement_of_inquiry: The form in which we collect and present data determines what patterns we can see — and the questions we ask shape the answers we find.
+statement_of_inquiry: The form in which we collect and present data determines what patterns we can see. and the questions we ask shape the answers we find.
 formula: mean = sum of values ÷ number of values
 download_url: ''
 download_label: Investigation Pack PDF
@@ -139,21 +139,21 @@ Each group presents their findings to the class in a 2-minute presentation with 
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 1. Collect at least 30 responses to your survey question
 2. Organise data in a frequency table
 3. Create one appropriate graph or chart
 4. Write 3 sentences describing what your data shows
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 1. Calculate mean, median, and mode for your data (if numerical)
 2. Which measure of central tendency best represents your data? Why?
 3. Compare two subgroups (e.g., boys vs girls, Grade 6 vs Grade 7). Is there a difference? Describe the pattern.
 
-### Part C — Criterion D (Levels 5-8)
+### Part C. Criterion D (Levels 5-8)
 1. A school administrator wants to use your data to make a decision (e.g., changing lunch options, adjusting school start time). Write a recommendation based on your findings.
 2. What are the limitations of your data? What could you do differently to make your conclusions more reliable?
-3. Could your sample be biased? Explain how you would design a perfectly unbiased survey — and why this is practically impossible.
+3. Could your sample be biased? Explain how you would design a perfectly unbiased survey. and why this is practically impossible.
 
 ---
 
@@ -161,4 +161,4 @@ Each group presents their findings to the class in a 2-minute presentation with 
 
 This investigation takes 4-5 lessons: 1 for question design, 1 for data collection, 2 for analysis, 1 for presentations. It is one of the most authentic statistics experiences students can have because the data is real, the question is theirs, and the answer matters to them.
 
-The EAL scaffold is the data itself — numbers are universal. Students who struggle to write analytical paragraphs can still calculate, graph, and present visually. The mathematics carries the meaning.
+The EAL scaffold is the data itself. numbers are universal. Students who struggle to write analytical paragraphs can still calculate, graph, and present visually. The mathematics carries the meaning.

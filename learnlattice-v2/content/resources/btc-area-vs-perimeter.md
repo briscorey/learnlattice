@@ -22,12 +22,12 @@ key-concepts:
   - "Form"
 global-contexts:
   - "Personal and Cultural Expression"
-statement_of_inquiry: "Form and measurement are independent properties — shapes that look different can share hidden mathematical relationships."
+statement_of_inquiry: "Form and measurement are independent properties. shapes that look different can share hidden mathematical relationships."
 difficulty: "approaching"
 duration: "1 lesson"
 hook: "Using exactly 12 square tiles, what is the LARGEST perimeter you can make? What about the SMALLEST?"
 warmup: "Build a shape with 6 square tiles. Find its perimeter. Now rearrange the same 6 tiles into a different shape. Did the perimeter change?"
-seo_title: "Same Area, Different Perimeter — BTC Thinking Task | MYP ..."
+seo_title: "Same Area, Different Perimeter | BTC Thinking Task | MYP ..."
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Can two shapes have the same area but different perimeters? What is the largest "
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -122,7 +122,7 @@ Build at least 6 different shapes with 12 tiles and record:
 
 **Maximum perimeter:** A long thin line (1 × 12) gives perimeter 26. Can you do better with a non-rectangular shape? (Try a zigzag pattern.)
 
-**Minimum perimeter:** The most compact shape — closest to a square. For 12 tiles, a 3 × 4 rectangle gives 14. Can you do better?
+**Minimum perimeter:** The most compact shape. closest to a square. For 12 tiles, a 3 × 4 rectangle gives 14. Can you do better?
 
 > **Key insight:** Shared edges are hidden from the perimeter. Every time two tiles share an edge, the total perimeter decreases by 2. Maximum perimeter = minimum shared edges. Minimum perimeter = maximum shared edges.
 
@@ -130,7 +130,7 @@ Build at least 6 different shapes with 12 tiles and record:
 
 ## Extend to Circles
 
-Why are bubbles round? Because a circle has the **minimum perimeter for a given area** (or equivalently, the maximum area for a given perimeter). This is the **isoperimetric inequality** — one of the deepest results in geometry.
+Why are bubbles round? Because a circle has the **minimum perimeter for a given area** (or equivalently, the maximum area for a given perimeter). This is the **isoperimetric inequality**. one of the deepest results in geometry.
 
 ---
 

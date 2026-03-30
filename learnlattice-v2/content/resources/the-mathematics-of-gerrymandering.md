@@ -1,7 +1,7 @@
 ---
 title: "The Mathematics of Gerrymandering"
 date: 2025-11-24
-description: "Students use geometry — area, perimeter, compactness ratios — to investigate how drawing district boundaries can manipulate election outcomes. They calculate efficiency gaps, analyse real district maps, and evaluate whether mathematics can define political fairness."
+description: "Students use geometry. area, perimeter, compactness ratios. to investigate how drawing district boundaries can manipulate election outcomes. They calculate efficiency gaps, analyse real district maps, and evaluate whether mathematics can define political fairness."
 subjects:
   - "Mathematics"
 math_topic: geometry
@@ -28,7 +28,7 @@ related_concepts:
   - "Systems"
 global-contexts:
   - "Fairness and Development"
-statement_of_inquiry: "Mathematical measures of space and proportion can reveal — and challenge — hidden unfairness in how communities are represented."
+statement_of_inquiry: "Mathematical measures of space and proportion can reveal. and challenge. hidden unfairness in how communities are represented."
 difficulty: "extended"
 flagship: true
 download_url: ""
@@ -36,25 +36,25 @@ download_label: "Investigation Pack"
 duration: "2–3 lessons"
 hook: "In a country where 60% of people vote Blue, Red wins 70% of the seats. No fraud. No cheating. Just geometry. How?"
 warmup: "Give students a 5×5 grid with 15 blue cells and 10 red cells. Ask them to divide the grid into 5 districts of 5 cells each. Challenge 1: Make Blue win all 5 districts. Challenge 2: Make Red win 3 out of 5 districts despite having fewer cells. Challenge 3: Is Challenge 2 even possible? Try it."
-timeline: "0-5 min: The impossible puzzle — 60% Blue but Red wins? | 5-15 min: Grid activity — draw districts on the 5×5 grid to manipulate outcomes | 15-25 min: Introduce compactness measures — Polsby-Popper and Reock scores | 25-40 min: Analyse real district maps — calculate compactness, identify suspicious geometry | 40-50 min: Debate — should mathematics be used to draw political boundaries?"
+timeline: "0-5 min: The impossible puzzle. 60% Blue but Red wins? | 5-15 min: Grid activity. draw districts on the 5×5 grid to manipulate outcomes | 15-25 min: Introduce compactness measures. Polsby-Popper and Reock scores | 25-40 min: Analyse real district maps. calculate compactness, identify suspicious geometry | 40-50 min: Debate. should mathematics be used to draw political boundaries?"
 teacher_moves:
   - title: "Let students discover gerrymandering themselves"
     description: "Don't explain gerrymandering first. Give them the 5×5 grid and the two challenges. When they successfully make Red win despite having fewer cells, they've invented gerrymandering. NOW give it a name. The aha moment is 10x more powerful when they build the concept themselves."
   - title: "Make compactness physical"
     description: "Before calculating Polsby-Popper scores, have students draw 5 shapes on grid paper: a circle, a square, a long thin rectangle, an L-shape, and a jagged blob. Ask: Which looks most like a fair district? Which looks like someone drew it to include specific houses? The intuition precedes the formula."
   - title: "Navigate the politics carefully"
-    description: "This investigation is about mathematics, not about which party is right. Use fictional party names (Blue/Red) or historical examples from multiple countries. Frame it as: Can mathematics detect unfairness? — not: Is this party cheating? The mathematical principles are universal and non-partisan."
+    description: "This investigation is about mathematics, not about which party is right. Use fictional party names (Blue/Red) or historical examples from multiple countries. Frame it as: Can mathematics detect unfairness?. not: Is this party cheating? The mathematical principles are universal and non-partisan."
 listen_for:
   - level: "Approaching"
     phrase: "You can make Red win by putting all the Blue voters together in one district."
   - level: "Meeting"
     phrase: "By packing Blue voters into a few districts (where they win by huge margins) and cracking the rest across other districts (where they lose narrowly), you waste Blue votes."
   - level: "Exceeding"
-    phrase: "The efficiency gap measures wasted votes mathematically — a gap above 7% suggests partisan gerrymandering because it means one party's votes are systematically less effective than the other's."
+    phrase: "The efficiency gap measures wasted votes mathematically. a gap above 7% suggests partisan gerrymandering because it means one party's votes are systematically less effective than the other's."
 misconceptions:
   - myth: "Gerrymandering means cheating at elections"
     why: "Students conflate unfairness with illegality."
-    truth: "Gerrymandering is legal in many countries. District boundaries are redrawn regularly, and the party in power typically controls the process. This is precisely why mathematical measures of fairness matter — without objective criteria, the line between 'reasonable boundary' and 'manipulation' is invisible."
+    truth: "Gerrymandering is legal in many countries. District boundaries are redrawn regularly, and the party in power typically controls the process. This is precisely why mathematical measures of fairness matter. without objective criteria, the line between 'reasonable boundary' and 'manipulation' is invisible."
   - myth: "Compact districts are always fair"
     why: "Students assume that the neatest-looking map is the fairest."
     truth: "Compactness is one measure of fairness, but not the only one. Sometimes irregular districts are necessary to ensure minority representation (majority-minority districts). A perfectly compact map can still produce disproportionate outcomes. Multiple measures must be used together."
@@ -105,7 +105,7 @@ journal_prompts:
   - "I always thought elections were fair/unfair because ___. After this investigation, I think..."
   - "The most powerful thing about using mathematics to analyse politics is..."
   - "If I were designing a fair system for drawing district boundaries, I would..."
-parent_summary: "Students investigated how the geometry of district boundaries can influence election outcomes — a process called gerrymandering. Using grid-based activities, they discovered that drawing boundaries differently can change who wins even when the votes stay the same. They learned to calculate mathematical compactness measures (how circular a district is) and efficiency gaps (how many votes are 'wasted'). This investigation connects geometry (area, perimeter, ratios) to real-world fairness and democratic representation."
+parent_summary: "Students investigated how the geometry of district boundaries can influence election outcomes. a process called gerrymandering. Using grid-based activities, they discovered that drawing boundaries differently can change who wins even when the votes stay the same. They learned to calculate mathematical compactness measures (how circular a district is) and efficiency gaps (how many votes are 'wasted'). This investigation connects geometry (area, perimeter, ratios) to real-world fairness and democratic representation."
 quick_check:
   - type: "recall"
     q: "What is the difference between packing and cracking?"
@@ -121,7 +121,7 @@ btc_practices:
   - "Vertical Non-Permanent Surfaces"
   - "Thinking Tasks"
 seo_title: "The Mathematics of Gerrymandering | MYP Criterion C Maths"
-seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 9-10. Students use geometry — area, perimeter, compactness ratios "
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 9-10. Students use geometry. area, perimeter, compactness ratios "
 ---
 
 ## The Hook
@@ -161,7 +161,7 @@ You need to divide this grid into **5 districts of exactly 5 cells each.** Every
 
 ### Challenge 1: Fair Result
 
-Draw district boundaries so that **Blue wins 3 districts and Red wins 2** — proportional to the vote share.
+Draw district boundaries so that **Blue wins 3 districts and Red wins 2**. proportional to the vote share.
 
 ### Challenge 2: Blue Landslide
 
@@ -171,7 +171,7 @@ Draw district boundaries so that **Blue wins all 5 districts.**
 
 ### Challenge 3: Red Upset
 
-Draw district boundaries so that **Red wins 3 out of 5 districts** — a majority of seats despite having only 40% of voters.
+Draw district boundaries so that **Red wins 3 out of 5 districts**. a majority of seats despite having only 40% of voters.
 
 *(This should feel impossible. Try it. When you succeed, you've just discovered gerrymandering.)*
 
@@ -201,7 +201,7 @@ Where A = area of the district and P = perimeter of the district.
 
 - **PP = 1.0:** Perfect circle (maximally compact)
 - **PP = 0.5:** Roughly square
-- **PP < 0.2:** Very irregular — suspicious
+- **PP < 0.2:** Very irregular. suspicious
 
 ### Practice
 
@@ -229,7 +229,7 @@ For each of your 5 districts:
 
 ## Part C: The Efficiency Gap (Criterion B + D)
 
-Compactness measures shape. But the **efficiency gap** measures something deeper — whether votes are being wasted.
+Compactness measures shape. But the **efficiency gap** measures something deeper. whether votes are being wasted.
 
 ### How It Works
 
@@ -269,7 +269,7 @@ Compare the efficiency gap for your fair map vs. your gerrymandered map. What do
 Your teacher will provide images of real electoral districts from different countries.
 
 For each district:
-1. Estimate its Polsby-Popper score (exact calculation not needed — compare to reference shapes)
+1. Estimate its Polsby-Popper score (exact calculation not needed. compare to reference shapes)
 2. Does it look compact or gerrymandered?
 3. Research: Is there a historical or geographic reason for its shape?
 
@@ -281,14 +281,14 @@ Write a response to:
 
 Consider:
 - **For:** Mathematics is objective. Politicians drawing their own boundaries is a conflict of interest. Compactness scores and efficiency gaps provide measurable, non-partisan criteria.
-- **Against:** Mathematics doesn't understand communities. A river, a highway, a cultural boundary — these create natural districts that aren't compact. Minority representation may require non-compact districts. Who chooses the formula? That's still a political decision.
+- **Against:** Mathematics doesn't understand communities. A river, a highway, a cultural boundary. these create natural districts that aren't compact. Minority representation may require non-compact districts. Who chooses the formula? That's still a political decision.
 - **The nuance:** Maybe mathematics should inform boundaries without determining them. An independent commission using mathematical measures as guidelines, not rigid rules.
 
 Your response must:
 - Use specific mathematical evidence from Parts A, B, and C
 - Consider perspectives from at least two different countries or contexts
 - Acknowledge the limitations of mathematical approaches to political problems
-- Arrive at a justified position — not "it depends" without substance
+- Arrive at a justified position. not "it depends" without substance
 
 ---
 
@@ -309,19 +309,19 @@ Explain your metric with a formula, worked example, and justification for why it
 
 ### Why This Investigation Is Unique
 
-There is no MYP-level investigation on gerrymandering anywhere. This takes geometry — area, perimeter, ratios — and applies it to one of the most consequential real-world problems in democratic governance. Students who have never cared about perimeter calculations will care when the perimeter of a district determines who represents them.
+There is no MYP-level investigation on gerrymandering anywhere. This takes geometry. area, perimeter, ratios. and applies it to one of the most consequential real-world problems in democratic governance. Students who have never cared about perimeter calculations will care when the perimeter of a district determines who represents them.
 
 ### Navigating Political Sensitivity
 
-This investigation is explicitly designed to be **non-partisan.** The mathematical techniques of gerrymandering are used by parties across the political spectrum and in countries worldwide (USA, UK, France, India, Malaysia). Use fictional parties (Blue/Red) for the grid activities. When analysing real districts, include examples from multiple parties and countries. The investigation question is "Can mathematics detect unfairness?" — not "Who is cheating?"
+This investigation is explicitly designed to be **non-partisan.** The mathematical techniques of gerrymandering are used by parties across the political spectrum and in countries worldwide (USA, UK, France, India, Malaysia). Use fictional parties (Blue/Red) for the grid activities. When analysing real districts, include examples from multiple parties and countries. The investigation question is "Can mathematics detect unfairness?". not "Who is cheating?"
 
-If students ask about specific political situations, redirect to the mathematics: "That's an interesting question — let's see what the efficiency gap tells us about that map."
+If students ask about specific political situations, redirect to the mathematics: "That's an interesting question. let's see what the efficiency gap tells us about that map."
 
 ### Cross-Disciplinary Connections
 
 **Social Studies / Individuals & Societies:** Electoral systems, representation, democracy, minority rights. This investigation could be co-taught with a social studies colleague.
 
-**Science (Criterion D):** The methodology of quantitative analysis applied to social problems — how do you operationalise a concept like "fairness" into a measurable quantity?
+**Science (Criterion D):** The methodology of quantitative analysis applied to social problems. how do you operationalise a concept like "fairness" into a measurable quantity?
 
 ### International Context
 
@@ -340,7 +340,7 @@ Gerrymandering is not just a USA problem. Discuss:
 
 ### Equipment Needed
 
-- Printed 5×5 grids (multiple copies per student — they'll need several attempts)
+- Printed 5×5 grids (multiple copies per student. they'll need several attempts)
 - Coloured pencils or markers
 - Calculator
 - Grid paper for Polsby-Popper practice

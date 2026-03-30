@@ -93,24 +93,24 @@ journal_prompts:
 
 ## Overview
 
-Students explore visual growth patterns — matchstick shapes, tile borders, seating arrangements — and develop algebraic rules to describe them.
+Students explore visual growth patterns. matchstick shapes, tile borders, seating arrangements. and develop algebraic rules to describe them.
 
 ## The Investigation
 
 ### Setup
 Present three related visual patterns (e.g. triangles made from matchsticks: 3, 5, 7...). Students work in groups at vertical non-permanent surfaces.
 
-### Phase 1 — Gathering Data
+### Phase 1. Gathering Data
 - Draw or build patterns 1–6
 - Record results in a table: pattern number vs. count
 - Look for what stays the same and what changes
 
-### Phase 2 — Finding the Rule
+### Phase 2. Finding the Rule
 - Describe the pattern in words first: "Each time we add 2 matchsticks"
 - Connect the verbal description to algebra: **2n + 1**
 - Test the rule: does it work for pattern 10? Pattern 50?
 
-### Phase 3 — Extending
+### Phase 3. Extending
 - Predict the count for pattern 100 and pattern 1000
 - Investigate: "If I have 201 matchsticks, which pattern number is that?"
 - Compare: what changes if the shapes are squares instead of triangles?
@@ -130,7 +130,7 @@ Present three related visual patterns (e.g. triangles made from matchsticks: 3, 
 - **Visual anchor**: Colour-code the "fixed part" and "growing part" of each pattern
 
 ## Teacher Notes
-This works best as a **thinking classroom** task — groups at whiteboards, no individual worksheets until consolidation. Start with the matchstick pattern, then offer a choice of extension patterns at different difficulty levels.
+This works best as a **thinking classroom** task. groups at whiteboards, no individual worksheets until consolidation. Start with the matchstick pattern, then offer a choice of extension patterns at different difficulty levels.
 
 ## Success Criteria
 - I can organise my results in a clear table

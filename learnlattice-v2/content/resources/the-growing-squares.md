@@ -29,11 +29,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -84,7 +84,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -100,7 +100,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Growing Squares" — a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Growing Squares". a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -120,7 +120,7 @@ Why do square numbers grow by odd numbers? And can you prove it will ALWAYS work
 
 ## The Investigation
 
-### Part A — Build and Record
+### Part A. Build and Record
 
 | Side length | Total tiles | Tiles added | Odd number |
 |---|---|---|---|
@@ -131,7 +131,7 @@ Why do square numbers grow by odd numbers? And can you prove it will ALWAYS work
 | 5 | 25 | ? | ? |
 | 10 | ? | ? | ? |
 
-### Part B — See It
+### Part B. See It
 
 Draw the 3×3 square. Colour the new L-shaped border you added to the 2×2. Count the coloured tiles: there are 3 (one on top, one on the right, one in the corner).
 
@@ -141,7 +141,7 @@ The new layer always forms an **L-shape**. The L-shape for side length n has:
 - 1 tile in the corner
 - Total: 2(n-1) + 1 = **2n - 1** (an odd number!)
 
-### Part C — Prove It
+### Part C. Prove It
 
 $$n^2 - (n-1)^2 = n^2 - (n^2 - 2n + 1) = 2n - 1$$
 
@@ -153,6 +153,6 @@ The difference between consecutive square numbers is always an odd number. **Alw
 
 ## Teaching Notes
 
-This is Bruner's CPA in action. Concrete tiles → pictorial L-shapes → abstract algebra. Students who build the pattern physically can see why the formula works — the L-shape IS the formula, made visible.
+This is Bruner's CPA in action. Concrete tiles → pictorial L-shapes → abstract algebra. Students who build the pattern physically can see why the formula works. the L-shape IS the formula, made visible.
 
 Give students actual square tiles or grid paper and coloured pencils. The physical act of adding layers and counting creates an embodied understanding that no amount of symbolic manipulation can replicate.

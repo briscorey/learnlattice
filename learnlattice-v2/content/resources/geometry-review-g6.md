@@ -1,6 +1,6 @@
 ---
 layout: "game"
-title: "Geometry Review — Grade 6"
+title: "Geometry Review. Grade 6"
 date: 2026-03-18
 description: "Interactive review covering perimeter, area, surface area, volume, and capacity of 2D and 3D shapes. 5 scaffolded stages with procedurally generated questions, a searchable formula sheet, and a built-in calculator."
 hook: "Review perimeter, area, volume and capacity with a formula sheet and calculator built in"
@@ -26,7 +26,7 @@ global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "Understanding the form of shapes allows us to measure, compare, and design the world around us."
 game_url: "/games/revision/geometry-g6.html?embed=1"
-seo_title: "MYP Geometry Revision Quiz — Grade 6 | Free Perimeter Area Volume Review"
+seo_title: "MYP Geometry Revision Quiz | Grade 6 | Free Perimeter Area Volume Review"
 seo_description: "Free interactive MYP Grade 6 Geometry revision quiz. Perimeter, area, surface area, volume, and capacity with built-in formula sheet and calculator. Procedurally generated questions."
 revision: true
 ---
@@ -37,21 +37,21 @@ revision: true
 
 ### The 5 Stages
 
-**📏 Stage 1 — Perimeter** — Rectangles, squares, triangles, and circumference of circles.
+**📏 Stage 1. Perimeter**. Rectangles, squares, triangles, and circumference of circles.
 
-**📐 Stage 2 — Area of 2D Shapes** — Rectangles, squares, triangles, parallelograms, and circles.
+**📐 Stage 2. Area of 2D Shapes**. Rectangles, squares, triangles, parallelograms, and circles.
 
-**📦 Stage 3 — Surface Area** — Rectangular prisms, cubes, and cylinders.
+**📦 Stage 3. Surface Area**. Rectangular prisms, cubes, and cylinders.
 
-**🧊 Stage 4 — Volume & Capacity** — Rectangular prisms, cylinders, cones, spheres, and cm³ to mL/L conversion.
+**🧊 Stage 4. Volume & Capacity**. Rectangular prisms, cylinders, cones, spheres, and cm³ to mL/L conversion.
 
-**🔀 Stage 5 — Mixed Problems** — Real-world context questions where you choose the right formula.
+**🔀 Stage 5. Mixed Problems**. Real-world context questions where you choose the right formula.
 
 ### Built-In Tools
 
-**📐 Formula Sheet** — Click the Formula Sheet tab at the top to see all formulas. Type any shape name (e.g. "circle", "cone") to filter instantly.
+**📐 Formula Sheet**. Click the Formula Sheet tab at the top to see all formulas. Type any shape name (e.g. "circle", "cone") to filter instantly.
 
-**🧮 Calculator** — Click the calculator button in the bottom-right corner. Includes π, x², and √ buttons for geometry calculations.
+**🧮 Calculator**. Click the calculator button in the bottom-right corner. Includes π, x², and √ buttons for geometry calculations.
 
 ### Every Playthrough Is Different
 
@@ -63,7 +63,7 @@ Questions use randomly generated numbers, so you can replay for fresh practice e
 
 This review supports **Criterion A (Knowing and Understanding)** by testing recall of formulas, selection of the correct formula for each shape, and application in context.
 
-**Key Concept:** Form — the shape and structure of objects determines how we measure them.
+**Key Concept:** Form. the shape and structure of objects determines how we measure them.
 
 ### Estimated Time
 

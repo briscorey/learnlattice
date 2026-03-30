@@ -1,7 +1,7 @@
 ---
 title: "The Pizza Problem"
 date: 2025-12-05
-description: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close — and the answer reveals why area grows faster than you think."
+description: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close. and the answer reveals why area grows faster than you think."
 subjects:
   - "Mathematics"
 math_topic: Geometry
@@ -16,9 +16,9 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Fairness and Development"
-statement_of_inquiry: "When dimensions scale linearly, area scales quadratically — and this non-linear relationship leads to deeply counterintuitive results."
+statement_of_inquiry: "When dimensions scale linearly, area scales quadratically. and this non-linear relationship leads to deeply counterintuitive results."
 difficulty: "meeting"
-hook: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close — and the answer reveals why area grows faster than you think."
+hook: "A 12-inch pizza costs $12. A 16-inch pizza costs $16. Which is the better deal? It is not even close. and the answer reveals why area grows faster than you think."
 warmup: "Double the length of a square's sides. Does the area double? Draw it and count the squares."
 seo_title: "The Pizza Problem | Free MYP Maths Investigation | Grade 8-9"
 seo_description: "Free MYP mathematics investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. A 12-inch pizza costs $12. A 16-inch piz"
@@ -29,11 +29,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -84,7 +84,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -100,7 +100,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Pizza Problem" — a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Pizza Problem". a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -148,4 +148,4 @@ $$\text{Area scale factor} = (\text{length scale factor})^2$$
 
 Open with a genuine debate: "Which pizza should we order for the class?" Students instinctively go for two smalls or argue about toppings. The mathematical reveal is genuinely surprising and creates a "wait, really?" moment that anchors the concept.
 
-This investigation makes area scaling concrete and personally relevant. Every student will think about this the next time they order pizza — and that is exactly the point.
+This investigation makes area scaling concrete and personally relevant. Every student will think about this the next time they order pizza. and that is exactly the point.

@@ -20,7 +20,7 @@ tags:
 - Criterion C
 key_concept: Form
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: The form and properties of substances can be revealed through systematic testing — and careful observation distinguishes what appears identical.
+statement_of_inquiry: The form and properties of substances can be revealed through systematic testing. and careful observation distinguishes what appears identical.
 formula: ''
 download_url: ''
 download_label: Investigation Pack PDF
@@ -115,7 +115,7 @@ Place 5 small containers of white powder on each group's table, labelled only A,
 
 The powders are: baking soda, cornstarch, salt, sugar, plaster of Paris (or chalk powder).
 
-Ask: **"They all look the same. How would you figure out which is which — WITHOUT tasting any of them?"**
+Ask: **"They all look the same. How would you figure out which is which. WITHOUT tasting any of them?"**
 
 ---
 
@@ -138,18 +138,18 @@ Ask: **"They all look the same. How would you figure out which is which — WITH
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 1. Record your observations for all 5 powders across all 5 tests in a clear data table.
 2. Identify each powder. Explain which test was most useful for each identification.
 
-### Part B — Criterion B (Levels 3-6)
-Your teacher gives you a "mystery mixture" — two of the powders combined. Using your data table from Part A:
+### Part B. Criterion B (Levels 3-6)
+Your teacher gives you a "mystery mixture". two of the powders combined. Using your data table from Part A:
 1. Design a testing sequence to identify which two powders are in the mixture
 2. Carry out your tests
 3. Identify the components and explain your reasoning
 
-### Part C — Criterion B (Levels 5-8)
-Forensic scientists identify unknown substances using exactly this method — systematic testing against known properties.
+### Part C. Criterion B (Levels 5-8)
+Forensic scientists identify unknown substances using exactly this method. systematic testing against known properties.
 1. Why is it important to test against KNOWN samples rather than relying on descriptions from a textbook?
 2. Design a dichotomous key for the 5 powders that uses the minimum number of tests possible to identify any one powder
 3. What is the maximum number of tests needed if your key is optimally designed? Justify your answer mathematically.
@@ -158,8 +158,8 @@ Forensic scientists identify unknown substances using exactly this method — sy
 
 ## Teaching Notes
 
-This is one of the most reliable Grade 6 science lessons. Students are immediately engaged because it feels like forensic investigation. The EAL scaffold is the data table itself — students observe and record without needing to write paragraphs.
+This is one of the most reliable Grade 6 science lessons. Students are immediately engaged because it feels like forensic investigation. The EAL scaffold is the data table itself. students observe and record without needing to write paragraphs.
 
-Safety: ensure plaster of Paris does not get wet in large quantities (it heats as it sets). Small amounts in test tubes are fine. No tasting. Iodine stains — use lab coats or old shirts.
+Safety: ensure plaster of Paris does not get wet in large quantities (it heats as it sets). Small amounts in test tubes are fine. No tasting. Iodine stains. use lab coats or old shirts.
 
-The dichotomous key in Part C connects directly to the classification skills in the Rock Detectives investigation — building a throughline of inquiry skills across Grade 6 science.
+The dichotomous key in Part C connects directly to the classification skills in the Rock Detectives investigation. building a throughline of inquiry skills across Grade 6 science.

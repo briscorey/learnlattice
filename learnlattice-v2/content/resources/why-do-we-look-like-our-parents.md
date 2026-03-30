@@ -1,7 +1,7 @@
 ---
 title: "Why Do We Look Like Our Parents?"
 date: 2025-11-26
-description: "You have your mother's eyes and your father's nose — or so people say. But how does information travel from parent to child? Students model inheritance using coin flips and discover why siblings look different."
+description: "You have your mother's eyes and your father's nose. or so people say. But how does information travel from parent to child? Students model inheritance using coin flips and discover why siblings look different."
 subjects:
   - "Biology"
 year_levels:
@@ -18,16 +18,16 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Identities and Relationships"
-statement_of_inquiry: "The characteristics we inherit depend on the combination of information from both parents — and chance determines which combination we receive."
+statement_of_inquiry: "The characteristics we inherit depend on the combination of information from both parents. and chance determines which combination we receive."
 difficulty: "meeting"
 hook: "Identical twins share 100% of their DNA. Siblings share only 50%. But siblings come from the same two parents. Where does the other 50% go?"
 warmup: "Flip two coins 10 times. Record how many times you get two heads, two tails, or one of each. Does the result match what you expected?"
-timeline: "0-5 min: Warmup — coin flip prediction | 5-15 min: Model single-gene inheritance with coin pairs | 15-25 min: Predict ratios, compare to class data | 25-35 min: Extend to two genes — why siblings differ | 35-45 min: Connect to real traits | 45-50 min: Exit ticket and journal"
+timeline: "0-5 min: Warmup. coin flip prediction | 5-15 min: Model single-gene inheritance with coin pairs | 15-25 min: Predict ratios, compare to class data | 25-35 min: Extend to two genes. why siblings differ | 35-45 min: Connect to real traits | 45-50 min: Exit ticket and journal"
 teacher_moves:
   - title: "Coins before Punnett squares"
-    description: "Bruner's CPA principle — the coins are the concrete model. Students discover the 3:1 ratio physically before you ever draw a Punnett square. The square then explains what they already found."
+    description: "Bruner's CPA principle. the coins are the concrete model. Students discover the 3:1 ratio physically before you ever draw a Punnett square. The square then explains what they already found."
   - title: "Pool the class data"
-    description: "Individual coin flip results are noisy. Pool everyone's results on the board. The ratio emerges from large numbers — this is a beautiful organic lesson about sample size."
+    description: "Individual coin flip results are noisy. Pool everyone's results on the board. The ratio emerges from large numbers. this is a beautiful organic lesson about sample size."
   - title: "Be careful with human trait examples"
     description: "Avoid traits linked to disability or sensitive features. Tongue rolling, attached earlobes, and widow's peak are classic examples. Avoid eye colour (it is polygenic and more complex than textbooks suggest)."
 listen_for:
@@ -36,11 +36,11 @@ listen_for:
   - level: "5-6"
     phrase: "The ratio is about 3 to 1 because there are three ways to get at least one heads but only one way to get two tails"
   - level: "7-8"
-    phrase: "With multiple genes, the number of possible combinations is huge — that is why siblings can look so different even though they have the same parents"
+    phrase: "With multiple genes, the number of possible combinations is huge. that is why siblings can look so different even though they have the same parents"
 misconceptions:
   - myth: "Children are a 50/50 mix of their parents"
     why: "We think of inheritance like mixing paint"
-    truth: "Genes are discrete — you get one complete copy from each parent, not half of each. Some are dominant and mask others."
+    truth: "Genes are discrete. you get one complete copy from each parent, not half of each. Some are dominant and mask others."
   - myth: "If both parents have brown eyes, all children will have brown eyes"
     why: "Brown eyes seem dominant"
     truth: "Both parents could carry a recessive blue-eye allele. There is a 25% chance their child will have blue eyes."
@@ -79,7 +79,7 @@ quick_check:
     a: "50% Tt (tall) and 50% tt (short)"
   - type: "extend"
     q: "Humans have about 20,000 genes. How many possible genetic combinations can two parents produce?"
-    a: "Over 8 million from chromosome sorting alone — and recombination makes it effectively infinite"
+    a: "Over 8 million from chromosome sorting alone. and recombination makes it effectively infinite"
 differentiated:
   approaching: "Flip coins to model one gene. Record dominant vs recessive outcomes. Draw the ratio."
   meeting: "Model two genes using two coin pairs. Predict and test the ratio for each. Explain using a Punnett square."
@@ -90,7 +90,7 @@ journal_prompts:
   - "Why is it important that inheritance involves chance?"
 parent_summary: "Your child modelled genetic inheritance using coin flips. They discovered the 3:1 ratio of dominant to recessive traits, learned why siblings look different, and connected coins to Punnett squares. Ask them: why are you not a perfect 50/50 mix of your parents?"
 seo_title: "Why Do We Look Like Our Parents? | MYP Biology Crit B"
-seo_description: "Free MYP Biology investigation pack targeting Criterion B for Grade 8-9. You have your mother's eyes and your father's nose — or so p"
+seo_description: "Free MYP Biology investigation pack targeting Criterion B for Grade 8-9. You have your mother's eyes and your father's nose. or so p"
 ---
 
 ## The Hook
@@ -99,7 +99,7 @@ People say you have your mother's eyes. Your father's nose. Your grandmother's c
 
 But you are not a photocopy of any of them. You are a unique combination that has never existed before and will never exist again.
 
-**How does information travel from parent to child? And why do siblings — who have the same parents — look different from each other?**
+**How does information travel from parent to child? And why do siblings. who have the same parents. look different from each other?**
 
 Two coins and ten minutes will show you.
 
@@ -155,7 +155,7 @@ Draw a 2×2 grid. Put one parent's alleles across the top, the other down the si
 | **B** | BB | Bb |
 | **b** | Bb | bb |
 
-Three out of four boxes show the dominant trait. One shows recessive. **The 3:1 ratio is not luck — it is mathematics.**
+Three out of four boxes show the dominant trait. One shows recessive. **The 3:1 ratio is not luck. it is mathematics.**
 
 ---
 
@@ -163,6 +163,6 @@ Three out of four boxes show the dominant trait. One shows recessive. **The 3:1 
 
 This is a Bruner CPA masterclass. The coins are the **concrete** model. Students physically experience the randomness of inheritance before encountering the abstract Punnett square. The square then becomes a tool for explaining what they already discovered, not a formula to memorise.
 
-Pool the class data on the board — this is where the magic happens. Individual results are noisy (8:12 instead of 15:5), but the class total will be close to 3:1. This naturally teaches the concept of sample size without a single mention of statistics.
+Pool the class data on the board. this is where the magic happens. Individual results are noisy (8:12 instead of 15:5), but the class total will be close to 3:1. This naturally teaches the concept of sample size without a single mention of statistics.
 
 Jo Boaler's influence: there is no speed pressure. Students who need more time can flip more coins. Students who finish early can model three or four genes simultaneously. The investigation has a low floor and no ceiling.

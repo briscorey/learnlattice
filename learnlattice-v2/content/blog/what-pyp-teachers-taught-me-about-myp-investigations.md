@@ -1,7 +1,7 @@
 ---
 title: "What PYP Teachers Taught Me About MYP Investigations"
 date: 2026-03-29
-description: "I spent a semester co-planning with PYP teachers at my school. They changed how I write MYP investigations — not because they know the MYP criteria, but because they never forgot that twelve-year-olds are still children who learn through wonder."
+description: "I spent a semester co-planning with PYP teachers at my school. They changed how I write MYP investigations. not because they know the MYP criteria, but because they never forgot that twelve-year-olds are still children who learn through wonder."
 author: "Corey Zocchi"
 pillar: "Craft"
 tags:
@@ -17,7 +17,7 @@ seo_description: "A secondary MYP teacher shares what changed when he co-planned
 reading_time: 6
 ---
 
-I teach MYP mathematics and science. I am reasonably good at writing investigations that hit the criteria, build conceptual understanding, and produce evidence I can assess. What I was not good at — until this year — was remembering what students did for the six years before they walked into my classroom.
+I teach MYP mathematics and science. I am reasonably good at writing investigations that hit the criteria, build conceptual understanding, and produce evidence I can assess. What I was not good at. until this year. was remembering what students did for the six years before they walked into my classroom.
 
 This semester I started co-planning with PYP teachers at my school. The conversation began as a curriculum alignment task. It turned into something more useful: a fundamental rethink of how I design the opening moves of an MYP investigation.
 
@@ -29,7 +29,7 @@ A Grade 5 student who has been in a PYP programme has spent years inside the inq
 
 Then they arrive in Grade 6 and I hand them a sheet that says *Criterion B: Inquiring and Designing* and ask them to "formulate a testable hypothesis using scientific reasoning."
 
-Same thinking. Completely different vocabulary. And for a twelve-year-old — especially one working in their second or third language — that vocabulary shift can feel like starting over.
+Same thinking. Completely different vocabulary. And for a twelve-year-old. especially one working in their second or third language. that vocabulary shift can feel like starting over.
 
 A PYP colleague pointed this out to me during a planning meeting. She said: "They already know how to do this. They just don't know your words for it yet."
 
@@ -41,11 +41,11 @@ That one sentence changed how I write the first page of every investigation.
 
 This is the uncomfortable one.
 
-PYP teachers start planning a unit by asking: *What will make a child curious about this?* They think about provocations — objects, images, experiences, stories that create a need to know. The inquiry comes from the student's reaction to something genuinely interesting.
+PYP teachers start planning a unit by asking: *What will make a child curious about this?* They think about provocations. objects, images, experiences, stories that create a need to know. The inquiry comes from the student's reaction to something genuinely interesting.
 
-MYP teachers — myself included — often start planning by asking: *Which criteria am I assessing?* The investigation is reverse-engineered from the rubric. The task exists to produce evidence. Curiosity is nice if it happens, but it is not the design driver.
+MYP teachers. myself included. often start planning by asking: *Which criteria am I assessing?* The investigation is reverse-engineered from the rubric. The task exists to produce evidence. Curiosity is nice if it happens, but it is not the design driver.
 
-Both approaches have strengths. The PYP approach produces engagement. The MYP approach produces rigour. But when I watched a PYP teacher launch a unit on materials by silently placing a broken umbrella, a torn raincoat, and a melted ice cream container on a table — and then just waiting — I realised I had stopped provoking wonder a long time ago.
+Both approaches have strengths. The PYP approach produces engagement. The MYP approach produces rigour. But when I watched a PYP teacher launch a unit on materials by silently placing a broken umbrella, a torn raincoat, and a melted ice cream container on a table. and then just waiting. I realised I had stopped provoking wonder a long time ago.
 
 **What I changed:** Every investigation I write now has a provocation before the procedure. Not a warm-up question. Not a video. A genuine moment of surprise or conflict that creates a reason to investigate. The sinking orange. The spoon that feels cold but isn't. The schoolyard that contains two hundred species. The investigation answers a question the student already has.
 
@@ -53,11 +53,11 @@ Both approaches have strengths. The PYP approach produces engagement. The MYP ap
 
 PYP teachers scaffold relentlessly. Sentence frames, word banks, visual cues, graphic organisers, partner talk before individual writing. They do not treat scaffolding as a concession to weakness. They treat it as architecture.
 
-In MYP, I notice a subtle pressure — sometimes from myself, sometimes from colleagues — to reduce scaffolding as students get older. As if a thirteen-year-old needing a sentence frame means we have failed. As if the goal is independence from day one rather than independence as an outcome.
+In MYP, I notice a subtle pressure. sometimes from myself, sometimes from colleagues. to reduce scaffolding as students get older. As if a thirteen-year-old needing a sentence frame means we have failed. As if the goal is independence from day one rather than independence as an outcome.
 
 Watching PYP teachers reminded me: scaffolding is not the opposite of rigour. It is what makes rigour accessible. A student who uses a sentence frame to write their first hypothesis is not doing less science than a student who writes it from scratch. They are doing the same science with a visible support structure that will fade as confidence grows.
 
-**What I changed:** I stopped hiding scaffolds at the back of investigation packs as optional extras. I built them into the main flow — visible, normalised, expected. My EAL students use them. My confident English speakers use them too. Nobody treats them as a crutch because they are presented as a tool.
+**What I changed:** I stopped hiding scaffolds at the back of investigation packs as optional extras. I built them into the main flow. visible, normalised, expected. My EAL students use them. My confident English speakers use them too. Nobody treats them as a crutch because they are presented as a tool.
 
 ## The practical takeaway
 
@@ -77,4 +77,4 @@ The transition between programmes should feel like a continuation, not a reset. 
 
 ---
 
-*I write investigations that try to bridge this gap — low floor, high ceiling, with scaffolding built in and curiosity built first. [Browse all MYP investigations →](/resources/)*
+*I write investigations that try to bridge this gap. low floor, high ceiling, with scaffolding built in and curiosity built first. [Browse all MYP investigations →](/resources/)*

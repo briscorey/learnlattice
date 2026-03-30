@@ -120,7 +120,7 @@ A student claims: "Plants only need water and sunlight to grow."
 
 ---
 
-## Student Response A — Achieving Level 3-4
+## Student Response A. Achieving Level 3-4
 
 > **Design:** I grew one plant with water and sunlight, and one plant with just water (no sunlight). I measured them every 3 days.
 >
@@ -132,13 +132,13 @@ A student claims: "Plants only need water and sunlight to grow."
 
 ### Commentary
 
-The student designs a valid comparison but tests only one variable (light). The data is collected but presented without a proper table or graph. The conclusion follows from the evidence but doesn't address the full claim (which also mentions "only" water and sunlight — what about soil/nutrients?). The evaluation is minimal.
+The student designs a valid comparison but tests only one variable (light). The data is collected but presented without a proper table or graph. The conclusion follows from the evidence but doesn't address the full claim (which also mentions "only" water and sunlight. what about soil/nutrients?). The evaluation is minimal.
 
 **What would move this to 5-6:** Use a proper data table with multiple measurements. Test more than one variable. Present a graph. Explain what "more reliable" means specifically (replication).
 
 ---
 
-## Student Response B — Achieving Level 5-6
+## Student Response B. Achieving Level 5-6
 
 > **Design:** I set up 4 groups of plants (3 plants each):
 > - Group A: Water + sunlight + soil (control)
@@ -152,7 +152,7 @@ The student designs a valid comparison but tests only one variable (light). The 
 >
 > **Data:** [Table with measurements at day 0, 3, 6, 9, 12, 14 for all groups. Line graph with 4 series.]
 >
-> **Conclusion:** Group A (all conditions) grew tallest. Group B (no soil) grew but was smaller and weaker. Group C (no light) grew slightly but was pale and thin. Group D (no water) died by day 6. Plants need water, light, AND soil/nutrients to grow well — the student's claim is partially incorrect.
+> **Conclusion:** Group A (all conditions) grew tallest. Group B (no soil) grew but was smaller and weaker. Group C (no light) grew slightly but was pale and thin. Group D (no water) died by day 6. Plants need water, light, AND soil/nutrients to grow well. the student's claim is partially incorrect.
 >
 > **Evaluation:** 3 plants per group is better than 1, but I should have used more to calculate a meaningful average. Some plants in the same group grew at different rates, which suggests natural variation.
 
@@ -162,24 +162,24 @@ Excellent experimental design testing the full claim systematically. The control
 
 ---
 
-## Student Response C — Achieving Level 7-8
+## Student Response C. Achieving Level 7-8
 
 > [Includes everything from Response B, plus:]
 >
-> **Extended analysis:** I calculated the growth rate for each group (cm per day) and found that Group A grew at 0.86 cm/day while Group B (no soil) grew at 0.54 cm/day — 63% of the control rate. This suggests soil contributes to growth but is not strictly necessary for germination.
+> **Extended analysis:** I calculated the growth rate for each group (cm per day) and found that Group A grew at 0.86 cm/day while Group B (no soil) grew at 0.54 cm/day. 63% of the control rate. This suggests soil contributes to growth but is not strictly necessary for germination.
 >
-> The claim "plants only need water and sunlight" is an oversimplification. Plants can germinate and grow short-term without soil (hydroponics proves this), but they need mineral nutrients for sustained healthy growth. My experiment only lasted 14 days — a longer experiment might show Group B declining further.
+> The claim "plants only need water and sunlight" is an oversimplification. Plants can germinate and grow short-term without soil (hydroponics proves this), but they need mineral nutrients for sustained healthy growth. My experiment only lasted 14 days. a longer experiment might show Group B declining further.
 >
-> **Evaluation:** My biggest source of error was measuring height — I wasn't sure whether to measure to the top of the stem or the top of the highest leaf. I should have defined this before starting. Also, Group D (no water) was next to the other groups and may have received some humidity. Next time I would isolate it completely.
+> **Evaluation:** My biggest source of error was measuring height. I wasn't sure whether to measure to the top of the stem or the top of the highest leaf. I should have defined this before starting. Also, Group D (no water) was next to the other groups and may have received some humidity. Next time I would isolate it completely.
 
 ### Commentary
 
-This response demonstrates scientific maturity: calculating growth rates allows quantitative comparison between groups. The critique of the original claim is nuanced — distinguishing between germination and sustained growth, and connecting to real-world hydroponics. The evaluation identifies specific, non-obvious sources of error (measurement definition, humidity contamination) and proposes practical solutions.
+This response demonstrates scientific maturity: calculating growth rates allows quantitative comparison between groups. The critique of the original claim is nuanced. distinguishing between germination and sustained growth, and connecting to real-world hydroponics. The evaluation identifies specific, non-obvious sources of error (measurement definition, humidity contamination) and proposes practical solutions.
 
 ---
 
 ## Teaching Notes
 
-This task is ideal for Grade 6 because the science is accessible (plants grow) and the experimental design skills transfer to every future investigation. The annotated responses show students that "designing an experiment" is not about following a recipe — it's about making decisions about variables, controls, and reliability.
+This task is ideal for Grade 6 because the science is accessible (plants grow) and the experimental design skills transfer to every future investigation. The annotated responses show students that "designing an experiment" is not about following a recipe. it's about making decisions about variables, controls, and reliability.
 
 Pairs with: "The Seed Race" germination investigation.

@@ -120,11 +120,11 @@ Describe your method. Identify the independent variable, dependent variable, and
 Collect data for at least 5 different drop heights. Present your data in an appropriate format. Process your data to show the relationship.
 
 **Part (iv): Conclusion and evaluation**
-State a conclusion supported by your data. Evaluate the method — what were the sources of error? How could the investigation be improved?
+State a conclusion supported by your data. Evaluate the method. what were the sources of error? How could the investigation be improved?
 
 ---
 
-## Student Response A — Achieving Level 3-4
+## Student Response A. Achieving Level 3-4
 
 > **Hypothesis:** If I drop the ball from higher, it will bounce higher because of more energy.
 >
@@ -142,7 +142,7 @@ The hypothesis is testable but the scientific reasoning ("because of more energy
 
 ---
 
-## Student Response B — Achieving Level 5-6
+## Student Response B. Achieving Level 5-6
 
 > **Research question:** How does drop height affect the bounce height of a tennis ball on a tile floor?
 >
@@ -161,17 +161,17 @@ The hypothesis is testable but the scientific reasoning ("because of more energy
 
 ### Commentary
 
-Strong experimental design with clearly identified variables and a smart methodology choice (slow-motion video). Data processing includes averages, ranges, AND efficiency calculations — showing mathematical thinking applied to scientific data. The conclusion identifies a linear relationship and connects it to energy conservation. The evaluation identifies a genuine limitation and proposes a realistic improvement.
+Strong experimental design with clearly identified variables and a smart methodology choice (slow-motion video). Data processing includes averages, ranges, AND efficiency calculations. showing mathematical thinking applied to scientific data. The conclusion identifies a linear relationship and connects it to energy conservation. The evaluation identifies a genuine limitation and proposes a realistic improvement.
 
 Falls short of 7-8 because the efficiency calculation, while excellent, doesn't explore whether efficiency is truly constant or varies slightly with height. A 7-8 response would test this assumption.
 
 ---
 
-## Student Response C — Achieving Level 7-8
+## Student Response C. Achieving Level 7-8
 
 > [Includes everything from Response B, plus:]
 >
-> **Extended analysis:** I plotted drop height vs. bounce height and drew a line of best fit. The \\(R^2\\) value is 0.997, confirming a very strong linear relationship. However, the efficiency decreases slightly at higher drop heights (64% at 20cm, 61% at 100cm), suggesting that energy losses increase at higher impact speeds — possibly because greater deformation of the ball produces more thermal energy.
+> **Extended analysis:** I plotted drop height vs. bounce height and drew a line of best fit. The \\(R^2\\) value is 0.997, confirming a very strong linear relationship. However, the efficiency decreases slightly at higher drop heights (64% at 20cm, 61% at 100cm), suggesting that energy losses increase at higher impact speeds. possibly because greater deformation of the ball produces more thermal energy.
 >
 > **Evaluation:** My results assume the ball returns to the same point each bounce, but in reality the ball drifts horizontally. At higher drop heights, this horizontal drift is larger, which could slightly reduce the measured vertical bounce height. A controlled improvement would be to drop the ball inside a transparent tube to eliminate horizontal movement.
 >

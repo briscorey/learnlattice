@@ -23,6 +23,6 @@ tags:
   - "Chemistry"
   - "Solids Liquids Gases"
 game_url: "/games/particle-party.html?embed=1"
-seo_title: "Particle Party — Free MYP Science Game | Grade 6-8"
+seo_title: "Particle Party | Free MYP Science Game | Grade 6-8"
 seo_description: "Identify states of matter from particle diagrams, predict state changes, explain properties using the particle model, and apply it to everyday phenomena."
 ---

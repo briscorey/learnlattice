@@ -1,13 +1,13 @@
 ---
 title: "Assessment Toolkit"
-description: "Free MYP assessment resources — rubric cards, annotated student exemplars, comment banks, and moderation guides for all four IB MYP criteria. Designed for mathematics and science teachers."
+description: "Free MYP assessment resources. rubric cards, annotated student exemplars, comment banks, and moderation guides for all four IB MYP criteria. Designed for mathematics and science teachers."
 url: "/assessment/"
 layout: "assessment-hub"
 ---
 
 ## MYP Assessment Made Simple
 
-Assessment in the IB Middle Years Programme can feel overwhelming — four criteria, eight achievement levels, task-specific clarifications, and moderation expectations. The LearnLattice Assessment Toolkit breaks it down into tools you can actually use in your classroom this week.
+Assessment in the IB Middle Years Programme can feel overwhelming. four criteria, eight achievement levels, task-specific clarifications, and moderation expectations. The LearnLattice Assessment Toolkit breaks it down into tools you can actually use in your classroom this week.
 
 ### What You Will Find Here
 

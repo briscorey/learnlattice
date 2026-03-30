@@ -1,6 +1,6 @@
 ---
 title: "Fractions & Ratios"
-description: "Free MYP fractions, ratios, and proportional reasoning investigations for Grades 6-8. Visual, inquiry-based tasks building conceptual understanding — aligned to IB MYP criteria."
+description: "Free MYP fractions, ratios, and proportional reasoning investigations for Grades 6-8. Visual, inquiry-based tasks building conceptual understanding. aligned to IB MYP criteria."
 ---
 
 ## Free MYP Fractions and Ratios Resources

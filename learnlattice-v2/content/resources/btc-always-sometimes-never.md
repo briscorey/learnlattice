@@ -1,7 +1,7 @@
 ---
 title: "Always, Sometimes, Never: Number Properties"
 date: 2026-02-05
-description: "Sort 12 mathematical statements into Always True, Sometimes True, or Never True — then PROVE your classification. A thinking task that develops mathematical reasoning and the critical distinction between examples and proof."
+description: "Sort 12 mathematical statements into Always True, Sometimes True, or Never True. then PROVE your classification. A thinking task that develops mathematical reasoning and the critical distinction between examples and proof."
 subjects:
   - "Mathematics"
 math_topic: "Number Sense"
@@ -22,12 +22,12 @@ key-concepts:
   - "Logic"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Logical reasoning requires distinguishing between what is sometimes true, always true, and never true — and proving which is which."
+statement_of_inquiry: "Logical reasoning requires distinguishing between what is sometimes true, always true, and never true. and proving which is which."
 difficulty: "meeting"
 duration: "1 lesson"
 hook: "Is this ALWAYS true, SOMETIMES true, or NEVER true: 'The sum of two odd numbers is even'? Can you PROVE it?"
 warmup: "The sum of two even numbers is ___? Test with 5 examples. Is that enough to be sure?"
-seo_title: "Always, Sometimes, Never: Number Properties — BTC Thinkin..."
+seo_title: "Always, Sometimes, Never: Number Properties | BTC Thinkin..."
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Sort 12 mathematical statements into Always True, Sometimes True, or Never True "
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -36,7 +36,7 @@ teacher_moves:
     description: "Use random grouping (cards, sticks, app). Students who always work with friends miss the productive discomfort of explaining their thinking to someone new."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "To double a recipe, add the same amount again"
   why: "Additive thinking feels natural"
@@ -104,13 +104,13 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Always, Sometimes, Never: Number Properties" — a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Always, Sometimes, Never: Number Properties". a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
 Sort each statement into **Always True**, **Sometimes True**, or **Never True**.
 
-Then **prove** your classification — examples alone are not enough for "Always" or "Never."
+Then **prove** your classification. examples alone are not enough for "Always" or "Never."
 
 ---
 

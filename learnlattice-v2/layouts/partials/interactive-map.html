@@ -37,7 +37,7 @@
 {{ if eq $sciTopic "Physics" }}{{ $slug = "forces" }}{{ $title = "Forces" }}{{ end }}
 {{ if eq $sciTopic "Earth Science" }}{{ $slug = "plate-tectonics" }}{{ $title = "Plate Tectonics" }}{{ end }}
 
-{{/* Refine by tags for science — order matters: more specific tags last (they win) */}}
+{{/* Refine by tags for science. order matters: more specific tags last (they win) */}}
 {{ if in $tags "Particles" }}{{ $slug = "particles" }}{{ $title = "Particles" }}{{ end }}
 {{ if in $tags "Energy Transfer" }}{{ $slug = "energy" }}{{ $title = "Energy" }}{{ end }}
 {{ if in $tags "Forces" }}{{ $slug = "forces" }}{{ $title = "Forces" }}{{ end }}
@@ -50,7 +50,7 @@
 {{ if in $tags "Chemical Reactions" }}{{ $slug = "chemical-reactions" }}{{ $title = "Chemical Reactions" }}{{ end }}
 {{ if in $tags "Acids" }}{{ $slug = "ph-scale" }}{{ $title = "pH Scale" }}{{ end }}
 
-{{/* Don't link to itself — skip if this IS a visual explainer */}}
+{{/* Don't link to itself. skip if this IS a visual explainer */}}
 {{ if in $tags "Visual Explainer" }}{{ $slug = "" }}{{ end }}
 
 {{ return (dict "slug" $slug "title" $title) }}

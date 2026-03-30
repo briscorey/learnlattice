@@ -1,7 +1,7 @@
 ---
 title: "The Misleading Graph"
 date: 2026-01-07
-description: "Two graphs show exactly the same data — one looks like a crisis, one looks like everything is fine. How? This investigation builds statistical literacy by putting students in the position of both the deceiver and the detective."
+description: "Two graphs show exactly the same data. one looks like a crisis, one looks like everything is fine. How? This investigation builds statistical literacy by putting students in the position of both the deceiver and the detective."
 subjects:
   - "Mathematics"
 math_topic: Statistics
@@ -23,7 +23,7 @@ key-concepts:
   - "Representation"
 global-contexts:
   - "Globalization and Sustainability"
-statement_of_inquiry: "The way data is represented determines what questions it can answer — and what stories it can tell."
+statement_of_inquiry: "The way data is represented determines what questions it can answer. and what stories it can tell."
 formula: "mean ≠ median when data is skewed"
 
 btc_practices:
@@ -58,11 +58,11 @@ listen_for:
 - level: 3-4
   phrase: The graph looks like it's going up a lot
 - level: 5-6
-  phrase: The Y-axis doesn't start at zero — that makes the change look bigger than
+  phrase: The Y-axis doesn't start at zero. that makes the change look bigger than
     it is
 - level: 7-8
   phrase: The actual percentage change is only 2%, but the visual impression suggests
-    a much larger shift — this is deliberate manipulation
+    a much larger shift. this is deliberate manipulation
 self_check:
 - level: Getting started
   items:
@@ -90,8 +90,8 @@ misconceptions:
   truth: Graphs are created by people who make choices about scale, colour, labels,
     and time range. Every choice can emphasise or hide information.
 timeline: '0-3 min: First impression warm-up. | 3-10 min: Identify 3 misleading techniques.
-  | 10-20 min: Groups receive a dataset — half make it look dramatic, half make it
-  look boring. | 20-30 min: Compare — same data, different impression. | 30-40 min:
+  | 10-20 min: Groups receive a dataset. half make it look dramatic, half make it
+  look boring. | 20-30 min: Compare. same data, different impression. | 30-40 min:
   Find real misleading graphs online. | 40-50 min: What should you check before trusting
   a graph?'
 sentence_starters:
@@ -104,7 +104,7 @@ sentence_starters:
   justifying:
   - I can prove this is misleading by showing that...
   - The percentage change calculation shows...
-warmup: Which country is taller — the UK or Germany? Show a bar chart where the UK
+warmup: Which country is taller. the UK or Germany? Show a bar chart where the UK
   bar is 65 million and Germany is 83 million, but the Y-axis starts at 60 million.
   The difference looks massive.
 journal_prompts:
@@ -114,7 +114,7 @@ journal_prompts:
 - Where do you see misleading graphs in your daily life?
 hook: "Same data, opposite conclusions. How?"
 seo_title: "The Misleading Graph | MYP Maths Crit C & Crit D | Grade 8-9"
-seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 8-9. Two graphs show exactly the same data — one looks like a cri"
+seo_description: "Free MYP Mathematics investigation pack targeting Criterion C, Criterion D for Grade 8-9. Two graphs show exactly the same data. one looks like a cri"
 exit_ticket:
 - "What is the key pattern or formula you discovered today?"
 - "Give one example that shows your finding works and explain why."
@@ -129,9 +129,9 @@ differentiated:
 
 Show these two graphs side by side. Give no explanation.
 
-**Graph A:** A bar chart of annual test scores at a fictional school, with the y-axis starting at 0. The bars go from about 72% to 79% over 5 years — a modest, barely visible upward trend.
+**Graph A:** A bar chart of annual test scores at a fictional school, with the y-axis starting at 0. The bars go from about 72% to 79% over 5 years. a modest, barely visible upward trend.
 
-**Graph B:** The exact same data, with the y-axis starting at 70%. The bars now appear to rise dramatically — the last bar appears to be more than four times the height of the first.
+**Graph B:** The exact same data, with the y-axis starting at 70%. The bars now appear to rise dramatically. the last bar appears to be more than four times the height of the first.
 
 Ask: "Which school would you send your child to based on these graphs?"
 
@@ -172,7 +172,7 @@ The silence after this reveal is the beginning of statistical thinking.
   <span class="tm-phase-time">4–8 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Build your own misleading graph</div>
-    <p>Give each group a small dataset (5 numbers). Task: "Make two graphs of this data — one that makes it look like nothing is changing, and one that makes it look dramatic." This reversal — asking them to mislead deliberately — builds deeper understanding than any lecture about graph literacy.</p>
+    <p>Give each group a small dataset (5 numbers). Task: "Make two graphs of this data. one that makes it look like nothing is changing, and one that makes it look dramatic." This reversal. asking them to mislead deliberately. builds deeper understanding than any lecture about graph literacy.</p>
   </div>
 </div>
 
@@ -186,12 +186,12 @@ The silence after this reveal is the beginning of statistical thinking.
 
 <div class="tm-callout tm-callout--listen">
   <strong>What you're listening for</strong>
-  <p>"They changed where the y-axis starts" — they've identified the key manipulation. "The bars look taller but the numbers are the same" — they're distinguishing visual impression from data. "Neither graph is lying, but one is more misleading" — they're thinking about honesty as a spectrum.</p>
+  <p>"They changed where the y-axis starts". they've identified the key manipulation. "The bars look taller but the numbers are the same". they're distinguishing visual impression from data. "Neither graph is lying, but one is more misleading". they're thinking about honesty as a spectrum.</p>
 </div>
 
 <div class="tm-callout tm-callout--eal">
   <strong>EAL scaffold</strong>
-  <p>Graphs are inherently visual — EAL students often spot the manipulation faster than strong English speakers because they're reading the image, not the labels. Point at the y-axis on each graph. Use fingers to show "starts here" vs "starts here." The key vocabulary — axis, scale, bar — can be labelled directly on a printed copy with arrows.</p>
+  <p>Graphs are inherently visual. EAL students often spot the manipulation faster than strong English speakers because they're reading the image, not the labels. Point at the y-axis on each graph. Use fingers to show "starts here" vs "starts here." The key vocabulary. axis, scale, bar. can be labelled directly on a printed copy with arrows.</p>
 </div>
 
 <div class="tm-callout tm-callout--say">
@@ -206,9 +206,9 @@ The silence after this reveal is the beginning of statistical thinking.
 
 ## Why This Investigation Matters
 
-Most students who learn statistics learn to calculate. They can find a mean, draw a histogram, and define standard deviation. But very few develop the ability to *interrogate* statistics — to ask who made this graph, what choice they made, what they might want you to conclude.
+Most students who learn statistics learn to calculate. They can find a mean, draw a histogram, and define standard deviation. But very few develop the ability to *interrogate* statistics. to ask who made this graph, what choice they made, what they might want you to conclude.
 
-This matters beyond mathematics. Students encounter manipulated statistics in news, advertising, political argument, and social media every day. The skills in this investigation are not mathematics skills in a narrow sense — they are citizenship skills.
+This matters beyond mathematics. Students encounter manipulated statistics in news, advertising, political argument, and social media every day. The skills in this investigation are not mathematics skills in a narrow sense. they are citizenship skills.
 
 ---
 
@@ -227,11 +227,11 @@ This matters beyond mathematics. Students encounter manipulated statistics in ne
 | 2022 | 76% |
 | 2023 | 79% |
 
-On a y-axis from 0–100%, the bars look nearly identical. On a y-axis from 70–80%, the 2023 bar *appears* to be about 7 times taller than the 2019 bar — even though the actual value is only 9.7% higher.
+On a y-axis from 0–100%, the bars look nearly identical. On a y-axis from 70–80%, the 2023 bar *appears* to be about 7 times taller than the 2019 bar. even though the actual value is only 9.7% higher.
 
 > **Formative checkpoint:** Give students a graph with a truncated y-axis and ask: "What percentage change does this graph *look* like it's showing? What is the actual percentage change?" The discrepancy reveals the manipulation.
 
-### Mean vs Median — When the "average" lies
+### Mean vs Median. When the "average" lies
 
 The **mean** (arithmetic average) is easily pulled by extreme values. The **median** (middle value) is resistant to them.
 
@@ -261,7 +261,7 @@ A result from 6 people is not the same as a result from 6,000. But both can be p
 
 **Critical questions to ask of any statistic:**
 1. How large was the sample?
-2. How was the sample selected — randomly, or conveniently?
+2. How was the sample selected. randomly, or conveniently?
 3. Who funded or ran the study?
 4. What was the exact question asked?
 5. What data *wasn't* shown?
@@ -270,14 +270,14 @@ A result from 6 people is not the same as a result from 6,000. But both can be p
 
 ## Investigation Tasks
 
-### Part A — The Detective Work
+### Part A. The Detective Work
 
 Each item below contains a statistical claim. For each:
 - Identify what's misleading
 - Explain the manipulation using mathematical language
 - Rewrite the claim as a fair and accurate statement
 
-**Item 1:** A graph shows that chocolate sales increased by 400% — but the y-axis starts at 95% of the original value.
+**Item 1:** A graph shows that chocolate sales increased by 400%. but the y-axis starts at 95% of the original value.
 
 **Item 2:** "9 out of 10 dentists recommend this toothpaste." The study involved 10 dentists. 
 
@@ -285,22 +285,22 @@ Each item below contains a statistical claim. For each:
 
 **Item 4:** A school claims its student wellbeing score improved from 6.2 to 6.8 out of 10. The graph makes this look like a near-doubling. How?
 
-### Part B — Mean and Median Decisions
+### Part B. Mean and Median Decisions
 
 For each dataset, calculate both mean and median, then decide which better represents the "typical" value. Write a sentence justifying your choice.
 
-**Dataset 1 — Marathon finishing times (minutes):**
+**Dataset 1. Marathon finishing times (minutes):**
 218, 224, 231, 235, 240, 244, 251, 268, 612
 
-**Dataset 2 — Number of books read last month:**
+**Dataset 2. Number of books read last month:**
 0, 0, 1, 1, 1, 2, 2, 2, 3, 4
 
-**Dataset 3 — Monthly rainfall in a coastal city (mm):**
+**Dataset 3. Monthly rainfall in a coastal city (mm):**
 12, 18, 14, 22, 15, 19, 16, 21, 14, 17, 15, 220
 
 **Reflection:** In which dataset is the mean most misleading? Why? What feature of the data causes this?
 
-### Part C — The Design Challenge (Making a Misleading Graph)
+### Part C. The Design Challenge (Making a Misleading Graph)
 
 This sounds counterintuitive, but it works: **students who have created a misleading graph understand manipulation better than students who have only critiqued one.**
 
@@ -315,7 +315,7 @@ Datasets to choose from:
 
 **Annotate both graphs:** Label the specific choices you made (y-axis range, scale, colour, whether to include error bars or omit them) and explain how each choice affects interpretation.
 
-### Part D — The Criterion D Task
+### Part D. The Criterion D Task
 
 > *A government minister claims: "Our education policy is working. Average test scores rose 12% over the past four years."*
 > *An opposition politician claims: "Our schools are in crisis. The majority of students are still below the national benchmark."*
@@ -331,11 +331,11 @@ You are given the full dataset (provided on the insert sheet): test scores for 8
 
 ## Formative Assessment Checkpoints
 
-**Checkpoint 1:** Show a real graph from a news source (many politicians' social media feeds are a rich source). Ask: "What question is this graph trying to answer? What would you need to check before you trusted it?" — Surfaces prior statistical literacy.
+**Checkpoint 1:** Show a real graph from a news source (many politicians' social media feeds are a rich source). Ask: "What question is this graph trying to answer? What would you need to check before you trusted it?". Surfaces prior statistical literacy.
 
-**Checkpoint 2:** After Part A. "You identified the manipulation. Now explain why it works — what assumption is the designer hoping the reader makes?" — Moves from identification to mechanism.
+**Checkpoint 2:** After Part A. "You identified the manipulation. Now explain why it works. what assumption is the designer hoping the reader makes?". Moves from identification to mechanism.
 
-**Checkpoint 3:** After Part B. "Your friend says: 'Mean and median are just two different ways of saying average.' Is that accurate? What's important to add?" — Pushes toward understanding when to use which measure.
+**Checkpoint 3:** After Part B. "Your friend says: 'Mean and median are just two different ways of saying average.' Is that accurate? What's important to add?". Pushes toward understanding when to use which measure.
 
 ---
 
@@ -343,8 +343,8 @@ You are given the full dataset (provided on the insert sheet): test scores for 8
 
 | What students often believe | What's accurate |
 |-----------------------------|----------------|
-| "Statistics don't lie — they're numbers" | Statistics can be accurate and misleading simultaneously. The manipulation is in framing, not usually in calculation. |
-| "The mean is the most accurate average" | No single measure of central tendency is most accurate — it depends on the distribution and the question |
+| "Statistics don't lie. they're numbers" | Statistics can be accurate and misleading simultaneously. The manipulation is in framing, not usually in calculation. |
+| "The mean is the most accurate average" | No single measure of central tendency is most accurate. it depends on the distribution and the question |
 | "If a graph looks professional, it's probably accurate" | Professional presentation is completely independent of accuracy. Many of the most misleading graphs are beautifully designed. |
 | "Bigger sample size always means better research" | Sample size matters, but so does *how* the sample was selected. A survey of 10,000 people who all read the same magazine may be less representative than 500 randomly selected people. |
 | "I'm not a statistics person so I can't evaluate this" | Statistical literacy requires reasoning, not calculation. The most important skills here are asking questions and checking assumptions. |
@@ -355,7 +355,7 @@ You are given the full dataset (provided on the insert sheet): test scores for 8
 
 **On Part C:** Some teachers are nervous about asking students to make misleading graphs. Don't be. The pedagogical principle is well established: making something is the fastest route to understanding it. A student who has *constructed* a manipulated y-axis can never be fooled by one again in the same way.
 
-**On real-world sources:** Use actual news graphs whenever possible. The ONS, World Bank, OECD, and national education ministries publish graphs regularly. During an election period, political parties' social media accounts are a particularly rich — and motivating — source.
+**On real-world sources:** Use actual news graphs whenever possible. The ONS, World Bank, OECD, and national education ministries publish graphs regularly. During an election period, political parties' social media accounts are a particularly rich. and motivating. source.
 
 **On Part D:** The scenario where both politicians are technically right but telling different stories is the crux. The mean rose because high performers improved significantly. The median barely moved because most students saw almost no change. Both statistics are accurate. Neither, alone, tells the full story. This is the most important statistical insight in the entire investigation.
 
@@ -375,7 +375,7 @@ Let the room argue for 90 seconds before confirming: yes, same data, same number
 
 ### During the Investigation (Minutes 3–25)
 
-**Watch for:** Students who think the "zoomed-in" graph is simply "wrong." It's not wrong — it's technically accurate but visually misleading. The distinction between accuracy and honesty is the conceptual core.
+**Watch for:** Students who think the "zoomed-in" graph is simply "wrong." It's not wrong. it's technically accurate but visually misleading. The distinction between accuracy and honesty is the conceptual core.
 
 **Watch for:** Students who discover that mean and median tell different stories. Give them a dataset where these diverge dramatically (e.g., income data with outliers). Ask: "If you wanted to make people think salaries are high, which would you use?"
 
@@ -385,15 +385,15 @@ Let the room argue for 90 seconds before confirming: yes, same data, same number
 
 ### Pulling It Together (Minutes 25–35)
 
-Give each group the same dataset. Challenge: "Make two graphs — one that makes this data look great, and one that makes it look terrible. Both must be technically accurate." Share and vote on most convincing/most misleading.
+Give each group the same dataset. Challenge: "Make two graphs. one that makes this data look great, and one that makes it look terrible. Both must be technically accurate." Share and vote on most convincing/most misleading.
 
 **EAL move:** The graph-making task is hands-on and visual. Provide graph paper and rulers. The output speaks for itself without requiring written explanation.
 
 ### What You Are Listening For
 
-- "That's not fair" — the ethical dimension is engaging; lean into it
-- "But the numbers are the same!" — the core insight about presentation vs. data
-- Students debating which average is "better" — there's no single answer, and that's the point
+- "That's not fair". the ethical dimension is engaging; lean into it
+- "But the numbers are the same!". the core insight about presentation vs. data
+- Students debating which average is "better". there's no single answer, and that's the point
 
 ---
 
@@ -408,4 +408,4 @@ Give each group the same dataset. Challenge: "Make two graphs — one that makes
 
 ---
 
-> **The bigger idea:** Statistics is the discipline that sits at the boundary between mathematics and argumentation. Numbers don't speak for themselves — they speak through the choices made in selecting, representing, and framing them. A student who leaves this investigation asking "what data isn't shown?" at every graph they encounter has developed one of the most important critical thinking skills available. And that skill is entirely transferable outside mathematics.
+> **The bigger idea:** Statistics is the discipline that sits at the boundary between mathematics and argumentation. Numbers don't speak for themselves. they speak through the choices made in selecting, representing, and framing them. A student who leaves this investigation asking "what data isn't shown?" at every graph they encounter has developed one of the most important critical thinking skills available. And that skill is entirely transferable outside mathematics.

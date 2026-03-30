@@ -16,7 +16,7 @@ reading_time: 6
 
 There is a version of MYP investigations that goes like this: a fictional company needs students to analyse data. A made-up town has a pollution problem. A generic sports league provides statistics.
 
-Students see through it immediately. They know the scenario is fabricated because it has no friction. Real contexts are messy, incomplete, and specific. Fake contexts are clean, complete, and generic. When a student can smell the artifice, the investigation becomes a compliance exercise — something to get through, not something to think about.
+Students see through it immediately. They know the scenario is fabricated because it has no friction. Real contexts are messy, incomplete, and specific. Fake contexts are clean, complete, and generic. When a student can smell the artifice, the investigation becomes a compliance exercise. something to get through, not something to think about.
 
 The fix is cheaper than you think: use the place you are already standing.
 
@@ -35,11 +35,11 @@ None of these require special equipment or permissions. They require a teacher w
 
 **The Pond Investigation (Grade 7 Science, Criterion B + C)**
 
-Our campus has a small pond near the science block. I gave each group a thermometer, a pH strip, and a turbidity disc. They measured at three locations and three times of day. That is nine data points per group — enough to spot patterns, not enough to be overwhelming.
+Our campus has a small pond near the science block. I gave each group a thermometer, a pH strip, and a turbidity disc. They measured at three locations and three times of day. That is nine data points per group. enough to spot patterns, not enough to be overwhelming.
 
 The investigation prompt: *Does the location within the pond affect water quality, and what does this suggest about the ecosystem?*
 
-Students who measured near the inlet found different pH values than students who measured in the centre. That discrepancy — which I did not engineer — became the entire lesson. Why would two parts of the same pond have different chemistry? The conversation moved from data to ecology without me having to force it.
+Students who measured near the inlet found different pH values than students who measured in the centre. That discrepancy. which I did not engineer. became the entire lesson. Why would two parts of the same pond have different chemistry? The conversation moved from data to ecology without me having to force it.
 
 The same investigation using a hypothetical pond would have worked procedurally. But no student would have walked back to the actual pond at lunch to check whether their reading still held. Three of my students did that. Context creates ownership.
 
@@ -55,7 +55,7 @@ One student plotted the break-even point and announced, genuinely irritated, tha
 
 Nanjing has a publicly accessible AQI (Air Quality Index) feed that updates hourly. I pulled thirty days of data, printed it on A3 sheets, and asked: *What patterns exist in Nanjing's air quality, and what factors might explain them?*
 
-This is deliberately open. Students could analyse by time of day, day of the week, weather conditions, or wind direction. Each angle produces different patterns. Groups that correlated AQI with wind direction discovered that pollution often arrives from industrial zones to the northwest — a finding they could verify with a map and five minutes of research.
+This is deliberately open. Students could analyse by time of day, day of the week, weather conditions, or wind direction. Each angle produces different patterns. Groups that correlated AQI with wind direction discovered that pollution often arrives from industrial zones to the northwest. a finding they could verify with a map and five minutes of research.
 
 The Criterion C connection is natural here: students have to discuss the reliability of a single monitoring station, the limitations of correlation without controlled variables, and the extent to which their conclusions can be generalised. They do this willingly because the data describes the air they are breathing.
 
@@ -77,12 +77,12 @@ Start with three questions:
 
 Yes. That is exactly the point.
 
-The MYP assessment criteria — particularly Criterion C (Communicating) and Criterion D (Applying) in mathematics, and Criterion C (Processing and Evaluating) in science — explicitly reward students who can work with imperfect data, acknowledge limitations, and connect findings to real situations. Clean data lets students practise procedures. Messy data lets students practise thinking.
+The MYP assessment criteria. particularly Criterion C (Communicating) and Criterion D (Applying) in mathematics, and Criterion C (Processing and Evaluating) in science. explicitly reward students who can work with imperfect data, acknowledge limitations, and connect findings to real situations. Clean data lets students practise procedures. Messy data lets students practise thinking.
 
-A student who analyses perfect textbook data and writes "the results support the hypothesis" has followed a script. A student who analyses campus pond data, notices an anomalous reading near the drainage pipe, and writes "this outlier may indicate contamination from surface runoff, which means our conclusion about average pH should be treated with caution" — that student is doing science.
+A student who analyses perfect textbook data and writes "the results support the hypothesis" has followed a script. A student who analyses campus pond data, notices an anomalous reading near the drainage pipe, and writes "this outlier may indicate contamination from surface runoff, which means our conclusion about average pH should be treated with caution". that student is doing science.
 
 The messiness is not a bug. It is the entire curriculum.
 
 ---
 
-*This post is part of the **IB Practice** series on LearnLattice — connecting MYP assessment frameworks to the messy, specific, local realities of international school teaching.*
+*This post is part of the **IB Practice** series on LearnLattice. connecting MYP assessment frameworks to the messy, specific, local realities of international school teaching.*

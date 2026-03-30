@@ -1,7 +1,7 @@
 ---
 title: "The Circular Prison Problem"
 date: 2025-09-03
-description: "Prisoners standing in a circle eliminate every second person. Where should you stand to survive? A thinking task connecting patterns, modular arithmetic, and powers of 2 — known as the Josephus problem."
+description: "Prisoners standing in a circle eliminate every second person. Where should you stand to survive? A thinking task connecting patterns, modular arithmetic, and powers of 2. known as the Josephus problem."
 subjects:
   - "Mathematics"
 math_topic: "Number Sense"
@@ -26,7 +26,7 @@ difficulty: "exceeding"
 duration: "1 lesson"
 hook: "41 prisoners stand in a circle. Starting from prisoner 1, every second prisoner is eliminated. Where would you stand to be the last one remaining?"
 warmup: "Try with 5 prisoners. Number them 1-5 in a circle. Eliminate every second one. Who survives?"
-seo_title: "The Circular Prison Problem — BTC Thinking Task | MYP Maths"
+seo_title: "The Circular Prison Problem | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Prisoners standing in a circle eliminate every second person. Where should you s"
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -138,7 +138,7 @@ For 41 prisoners: 32 ≤ 41, so 2ᵏ = 32, L = 41 − 32 = 9. Survivor = 2(9) + 
 
 After the first round of eliminations, the problem reduces to a smaller circle starting from a different position. The power-of-2 structure appears because each complete elimination round halves the group.
 
-> This is the **Josephus Problem** — studied for over 2000 years and connected to binary number representations.
+> This is the **Josephus Problem**. studied for over 2000 years and connected to binary number representations.
 
 ---
 
@@ -148,4 +148,4 @@ After the first round of eliminations, the problem reduces to a smaller circle s
 
 **MYP Criterion B Connection:** The investigation builds from physical simulation (concrete) through tabulation (pattern recognition) to the formula involving powers of 2 (generalisation) and its justification.
 
-**Extension:** What if every third person is eliminated instead of every second? The pattern becomes dramatically more complex — but still investigable.
+**Extension:** What if every third person is eliminated instead of every second? The pattern becomes dramatically more complex. but still investigable.

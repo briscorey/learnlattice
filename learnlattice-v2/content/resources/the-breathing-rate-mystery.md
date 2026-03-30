@@ -19,16 +19,16 @@ key-concepts:
   - "Systems"
 global-contexts:
   - "Identities and Relationships"
-statement_of_inquiry: "The human body is a system of interconnected parts — and exercise reveals how those parts communicate."
+statement_of_inquiry: "The human body is a system of interconnected parts. and exercise reveals how those parts communicate."
 difficulty: "meeting"
-hook: "You breathe without thinking. But try holding your breath after sprinting. Your body takes over. Who is really in charge — you or your cells?"
+hook: "You breathe without thinking. But try holding your breath after sprinting. Your body takes over. Who is really in charge. you or your cells?"
 warmup: "Hold your breath. Time it. Now do 20 star jumps and try again. What changed? Why?"
-timeline: "0-5 min: Warmup — breath hold challenge | 5-10 min: Measure resting breathing rate in pairs | 10-15 min: Exercise — 2 min of step-ups | 15-20 min: Measure recovery rate every 30 seconds | 20-30 min: Graph results — rate vs time | 30-40 min: Explain the pattern using respiration | 40-50 min: Gallery walk and exit ticket"
+timeline: "0-5 min: Warmup. breath hold challenge | 5-10 min: Measure resting breathing rate in pairs | 10-15 min: Exercise. 2 min of step-ups | 15-20 min: Measure recovery rate every 30 seconds | 20-30 min: Graph results. rate vs time | 30-40 min: Explain the pattern using respiration | 40-50 min: Gallery walk and exit ticket"
 teacher_moves:
   - title: "Use visible timers"
     description: "Project a stopwatch. Students count breaths in 30-second windows. This keeps the whole class synchronised and makes the data collection feel scientific, not chaotic."
   - title: "The 'why' comes after the data"
-    description: "Resist explaining respiration before the experiment. Let students see the pattern first. When they ask 'but WHY does breathing rate go up?' — that is when you teach cellular respiration."
+    description: "Resist explaining respiration before the experiment. Let students see the pattern first. When they ask 'but WHY does breathing rate go up?'. that is when you teach cellular respiration."
   - title: "Connect to the orange investigation"
     description: "If students have done the density investigation, connect: 'Your body needs oxygen like a fire needs air. What happens when you cover a candle?'"
 listen_for:
@@ -37,7 +37,7 @@ listen_for:
   - level: "5-6"
     phrase: "Your muscles need more oxygen for respiration to release energy"
   - level: "7-8"
-    phrase: "Increased CO₂ in the blood triggers the brain to increase breathing rate — it is a feedback loop"
+    phrase: "Increased CO₂ in the blood triggers the brain to increase breathing rate. it is a feedback loop"
 misconceptions:
   - myth: "We breathe in oxygen and breathe out carbon dioxide"
     why: "This is what most diagrams show"
@@ -75,7 +75,7 @@ exit_ticket:
 quick_check:
   - type: "recall"
     q: "What gas does your body need more of during exercise?"
-    a: "Oxygen — for aerobic respiration in muscle cells"
+    a: "Oxygen. for aerobic respiration in muscle cells"
   - type: "apply"
     q: "A student's breathing rate was 14/min at rest and 28/min after running. What is the percentage increase?"
     a: "100% increase (doubled)"
@@ -162,8 +162,8 @@ This is a **feedback loop**: more exercise → more CO₂ → faster breathing �
 
 ## Teaching Notes
 
-This is a Liljedahl-style investigation — students generate real data from their own bodies before encountering the theory. The emotional hook is powerful: "Who is in charge of your breathing?" creates genuine curiosity.
+This is a Liljedahl-style investigation. students generate real data from their own bodies before encountering the theory. The emotional hook is powerful: "Who is in charge of your breathing?" creates genuine curiosity.
 
-Buy a class set of cheap step platforms or just use the bottom stair. The data is messy and real — perfect for discussing reliability, variables, and the difference between a trend and noise.
+Buy a class set of cheap step platforms or just use the bottom stair. The data is messy and real. perfect for discussing reliability, variables, and the difference between a trend and noise.
 
 The misconception about "running out of oxygen" is almost universal. The CO₂ trigger revelation is a genuine surprise for most students and creates a memorable learning moment.

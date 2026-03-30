@@ -32,7 +32,7 @@
     href="{{ .url }}"
     data-color="{{ $color }}"
     role="listitem"
-    aria-label="{{ .name }}{{ if gt $count 0 }} — {{ $count }} resource{{ if gt $count 1 }}s{{ end }}{{ end }}"
+    aria-label="{{ .name }}{{ if gt $count 0 }} ({{ $count }} resource{{ if gt $count 1 }}s{{ end }}){{ end }}"
   >
     <div class="bcg-card-head">
       <span class="bcg-card-icon" aria-hidden="true">{{ .icon }}</span>

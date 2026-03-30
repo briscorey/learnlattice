@@ -1,4 +1,4 @@
-# LearnLattice — Deployment Guide
+# LearnLattice. Deployment Guide
 
 Your site is built with Hugo and deployed on Cloudflare Pages. A Decap CMS admin UI is included, but GitHub authentication for `/admin` requires a separate OAuth gateway and is not provided by Cloudflare Pages on its own.
 
@@ -100,13 +100,13 @@ If you want a browser-based CMS on Cloudflare, plan that explicitly as a separat
 ### If you later wire up Decap auth
 
 The resource editor should use:
-- **Subject** — Mathematics, Science, Biology, Ecology, Space Science, Earth Science, or Chemistry
-- **Year Level** — MYP Year 1-5
-- **Resource Type** — Unit Plan, Worksheet, Lab Activity, etc.
-- **Tags** — topic tags such as Algebra, Cells, Ecology, Space Science, or Reaction Rates
-- **Formula** — short text shown on the card thumbnail
-- **Download File** — optional file upload
-- **Body** — Markdown content
+- **Subject**. Mathematics, Science, Biology, Ecology, Space Science, Earth Science, or Chemistry
+- **Year Level**. MYP Year 1-5
+- **Resource Type**. Unit Plan, Worksheet, Lab Activity, etc.
+- **Tags**. topic tags such as Algebra, Cells, Ecology, Space Science, or Reaction Rates
+- **Formula**. short text shown on the card thumbnail
+- **Download File**. optional file upload
+- **Body**. Markdown content
 
 ---
 

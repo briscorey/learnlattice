@@ -1,7 +1,7 @@
 ---
 title: "Where Does the Energy Go?"
 date: 2026-01-12
-description: "A ball bounces lower each time. A car brakes and the tyres get hot. A phone charges and warms up. Energy is never created or destroyed — so where does it go? This investigation traces energy transfers through systems to build the law of conservation."
+description: "A ball bounces lower each time. A car brakes and the tyres get hot. A phone charges and warms up. Energy is never created or destroyed. so where does it go? This investigation traces energy transfers through systems to build the law of conservation."
 hook: "A ball bounces lower each time"
 subjects:
   - "Physics"
@@ -24,7 +24,7 @@ key-concepts:
   - "Systems"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "In any system, energy transformations follow predictable patterns — and the energy that seems to disappear has always gone somewhere."
+statement_of_inquiry: "In any system, energy transformations follow predictable patterns. and the energy that seems to disappear has always gone somewhere."
 formula: "E_total = E_kinetic + E_potential + E_thermal"
 download_url: ""
 download_label: "Investigation Pack PDF"
@@ -32,7 +32,7 @@ hints:
   - "Drop the ball from a measured height. Measure how high it bounces. What fraction of the height is recovered?"
   - "Try different drop heights. Is the fraction constant? Make a table."
   - "If the fraction is constant (say 0.6), that means 60% of the energy is recovered. Where did the other 40% go?"
-  - "The 'missing' energy became heat (the ball and floor warmed slightly) and sound (you heard the bounce). Energy is conserved — it just changed form."
+  - "The 'missing' energy became heat (the ball and floor warmed slightly) and sound (you heard the bounce). Energy is conserved. it just changed form."
 
 teacher_moves:
   - title: "Write the question before the drop"
@@ -105,7 +105,7 @@ journal_prompts:
 
 ## The Hook
 
-Drop a ball from shoulder height. It bounces back — but not as high. Drop it again. Lower again. Again. Lower.
+Drop a ball from shoulder height. It bounces back. but not as high. Drop it again. Lower again. Again. Lower.
 
 Ask: **"Where is the energy going?"**
 
@@ -115,7 +115,7 @@ Write every student answer on the board. You will get: "friction," "air," "heat,
 
 ## Core Concept: Energy Conservation and Transfer
 
-Energy cannot be created or destroyed — only transferred between stores and dissipated. When the ball bounces lower, the "missing" kinetic energy has been transferred to:
+Energy cannot be created or destroyed. only transferred between stores and dissipated. When the ball bounces lower, the "missing" kinetic energy has been transferred to:
 - Thermal energy (the ball and floor warm slightly)
 - Sound energy (you can hear the bounce)
 - Deformation energy (the ball briefly squashes)
@@ -134,18 +134,18 @@ The total energy in the system has not changed. But the *useful* energy (kinetic
 
 ## Tiered Tasks
 
-### Part A — Criterion C: Communicating (Levels 1-4)
+### Part A. Criterion C: Communicating (Levels 1-4)
 
 Draw a Sankey diagram for the bouncing ball showing: gravitational potential energy → kinetic energy → (split into) kinetic energy + thermal energy + sound energy.
 
-### Part B — Criterion B: Investigating patterns (Levels 3-6)
+### Part B. Criterion B: Investigating patterns (Levels 3-6)
 
 Using your bounce height data from 5 different drop heights:
 1. Calculate the efficiency of each bounce
 2. Is the efficiency constant regardless of drop height? Describe the pattern.
 3. Predict the bounce height if you dropped the ball from 2 metres.
 
-### Part C — Criterion B: Justification (Levels 5-8)
+### Part C. Criterion B: Justification (Levels 5-8)
 
 A student says: "Eventually the ball stops bouncing, so the energy is destroyed." Using the law of conservation of energy, explain why this statement is wrong. Where has ALL the energy gone by the time the ball is stationary?
 
@@ -153,6 +153,6 @@ A student says: "Eventually the ball stops bouncing, so the energy is destroyed.
 
 ## Teaching Notes
 
-The ball drop is one of the most effective physics hooks because every student can see the pattern immediately — no instruments, no reading, no calculation required. The key move is writing "Where does the energy go?" on the board and letting students generate hypotheses before any instruction.
+The ball drop is one of the most effective physics hooks because every student can see the pattern immediately. no instruments, no reading, no calculation required. The key move is writing "Where does the energy go?" on the board and letting students generate hypotheses before any instruction.
 
 The Sankey diagram activity in Part A is deliberately placed before the investigation in Part B. Students who can draw the energy flow will design better experiments.

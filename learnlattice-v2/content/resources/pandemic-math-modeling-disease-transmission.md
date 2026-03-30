@@ -1,7 +1,7 @@
 ---
 title: "Pandemic Math: Modeling Disease Transmission"
 date: 2026-02-09
-description: "Students use real WHO epidemiological data to explore how diseases spread exponentially, build SIR models in spreadsheets, and evaluate how mathematical models informed public health decisions — discovering that exponential growth is the most dangerous pattern humans consistently fail to understand."
+description: "Students use real WHO epidemiological data to explore how diseases spread exponentially, build SIR models in spreadsheets, and evaluate how mathematical models informed public health decisions. discovering that exponential growth is the most dangerous pattern humans consistently fail to understand."
 subjects:
   - "Mathematics"
   - "Science"
@@ -37,26 +37,26 @@ download_url: ""
 download_label: "Investigation Pack"
 duration: "2–3 lessons"
 hook: "If one person infects two others, and each of them infects two more, how many people are infected after 30 rounds? Most people guess around 100. The real answer is over one billion."
-warmup: "The Rice and Chessboard Problem — place 1 grain on square 1, 2 grains on square 2, 4 grains on square 3. How many grains on square 64? Students calculate in pairs. When they discover the answer exceeds the world's annual rice production, they've felt exponential growth in their gut. Now ask: What else grows this way?"
-timeline: "0-5 min: Rice and chessboard — feel exponential growth | 5-15 min: Build a simple doubling model — if R₀=2, how many infected after 10 rounds? | 15-30 min: Introduce the SIR model in a spreadsheet — students adjust R₀ and recovery rate, observe how curves change | 30-40 min: Compare model predictions to real WHO data from a past outbreak | 40-50 min: Reflection — when should governments act, and how does math help them decide?"
+warmup: "The Rice and Chessboard Problem. place 1 grain on square 1, 2 grains on square 2, 4 grains on square 3. How many grains on square 64? Students calculate in pairs. When they discover the answer exceeds the world's annual rice production, they've felt exponential growth in their gut. Now ask: What else grows this way?"
+timeline: "0-5 min: Rice and chessboard. feel exponential growth | 5-15 min: Build a simple doubling model. if R₀=2, how many infected after 10 rounds? | 15-30 min: Introduce the SIR model in a spreadsheet. students adjust R₀ and recovery rate, observe how curves change | 30-40 min: Compare model predictions to real WHO data from a past outbreak | 40-50 min: Reflection. when should governments act, and how does math help them decide?"
 teacher_moves:
   - title: "Start with the gut punch, not the formula"
     description: "Students must FEEL exponential growth before they see the equation. The rice problem does this. The 30-round infection chain does this. Do NOT begin with y = 2ˣ. Begin with the shock that human intuition is linear but disease spread is exponential."
   - title: "Let the spreadsheet be the teacher"
-    description: "Students don't need to derive the SIR equations. They need to build them in a spreadsheet and watch what happens when they change R₀ from 2 to 3 to 15. The visual — the curve steepening, the peak moving, the 'flatten the curve' moment — teaches more than any lecture."
+    description: "Students don't need to derive the SIR equations. They need to build them in a spreadsheet and watch what happens when they change R₀ from 2 to 3 to 15. The visual. the curve steepening, the peak moving, the 'flatten the curve' moment. teaches more than any lecture."
   - title: "Use the model-vs-reality gap"
-    description: "When students compare their model predictions to actual WHO data, the model will be wrong. This is the most important moment. Ask: Why is the model wrong? What did we leave out? (Behaviour change, vaccination, population density, reporting delays.) The imperfection of models is not a weakness — it's the lesson."
+    description: "When students compare their model predictions to actual WHO data, the model will be wrong. This is the most important moment. Ask: Why is the model wrong? What did we leave out? (Behaviour change, vaccination, population density, reporting delays.) The imperfection of models is not a weakness. it's the lesson."
 listen_for:
   - level: "Approaching"
     phrase: "The number keeps getting bigger really fast."
   - level: "Meeting"
-    phrase: "With R₀ of 2, the number of new infections doubles each generation. After n generations there are 2ⁿ total infections — that's exponential growth."
+    phrase: "With R₀ of 2, the number of new infections doubles each generation. After n generations there are 2ⁿ total infections. that's exponential growth."
   - level: "Exceeding"
-    phrase: "The SIR model shows that reducing R₀ below 1 — through vaccination or social measures — causes the epidemic to decay rather than grow. The threshold R₀ = 1 is the tipping point, and reaching it depends on the proportion of the population that is immune."
+    phrase: "The SIR model shows that reducing R₀ below 1. through vaccination or social measures. causes the epidemic to decay rather than grow. The threshold R₀ = 1 is the tipping point, and reaching it depends on the proportion of the population that is immune."
 misconceptions:
   - myth: "Exponential growth continues forever"
     why: "Students see the doubling pattern and assume it never stops."
-    truth: "Exponential growth is always constrained — by population size, resource limits, or behaviour change. The SIR model shows exactly how: as more people recover (and become immune), there are fewer susceptible people to infect, and the growth slows. This is logistic growth, not unbounded exponential."
+    truth: "Exponential growth is always constrained. by population size, resource limits, or behaviour change. The SIR model shows exactly how: as more people recover (and become immune), there are fewer susceptible people to infect, and the growth slows. This is logistic growth, not unbounded exponential."
   - myth: "R₀ is fixed for a disease"
     why: "Students treat R₀ as a permanent property of a virus."
     truth: "R₀ (basic reproduction number) is the average number of people one infected person infects in a fully susceptible population. But Rₑ (effective reproduction number) changes constantly based on behaviour, vaccination, population density, and policy. Masks and distancing reduce Rₑ without changing the virus."
@@ -107,7 +107,7 @@ journal_prompts:
   - "Before today, I thought diseases spread ___ (linearly/exponentially/randomly). Now I understand..."
   - "The moment in this investigation that surprised me most was..."
   - "If I were advising a government during an outbreak, the first thing I would tell them based on the mathematics is..."
-parent_summary: "Students explored how diseases spread using mathematical models. They discovered that disease transmission follows exponential growth — each infected person infects multiple others, creating a rapidly accelerating pattern that human intuition consistently underestimates. Using spreadsheets, they built simplified epidemic models, adjusted parameters to see how interventions change outcomes, and compared their models to real-world data. This investigation connects mathematics (exponential functions, modelling, data analysis) to science (disease transmission, public health) and social studies (policy decisions, ethics of intervention)."
+parent_summary: "Students explored how diseases spread using mathematical models. They discovered that disease transmission follows exponential growth. each infected person infects multiple others, creating a rapidly accelerating pattern that human intuition consistently underestimates. Using spreadsheets, they built simplified epidemic models, adjusted parameters to see how interventions change outcomes, and compared their models to real-world data. This investigation connects mathematics (exponential functions, modelling, data analysis) to science (disease transmission, public health) and social studies (policy decisions, ethics of intervention)."
 quick_check:
   - type: "recall"
     q: "What does R₀ = 3 mean?"
@@ -117,7 +117,7 @@ quick_check:
     a: "1 - 1/4 = 0.75 = 75% of the population needs to be immune."
   - type: "extension"
     q: "Why might a government choose to act when cases are still very low, even though it looks like overreaction?"
-    a: "Because exponential growth means that by the time cases look large, the doubling has already happened many times. Acting at 100 cases vs 1000 cases might seem like a small difference, but with R₀ = 2, waiting 3 more generations means 8x more infections. Early action exploits the mathematics — small interventions early produce large effects later."
+    a: "Because exponential growth means that by the time cases look large, the doubling has already happened many times. Acting at 100 cases vs 1000 cases might seem like a small difference, but with R₀ = 2, waiting 3 more generations means 8x more infections. Early action exploits the mathematics. small interventions early produce large effects later."
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
@@ -175,19 +175,19 @@ Plot your table on a graph. Use "Day" on the x-axis and "Total infected" on the 
 
 What shape do you see? Why does it look flat at the start and then suddenly explode?
 
-*(This is why pandemics feel like they come out of nowhere — the early stages look like nothing is happening.)*
+*(This is why pandemics feel like they come out of nowhere. the early stages look like nothing is happening.)*
 
 ---
 
-## Part B: The SIR Model — Build It Yourself (Criterion B)
+## Part B: The SIR Model. Build It Yourself (Criterion B)
 
 ### What Is SIR?
 
 Every person in a population is in one of three states:
 
-- **S**usceptible — can catch the disease
-- **I**nfected — currently sick and spreading the disease
-- **R**ecovered — immune (can't catch or spread it)
+- **S**usceptible. can catch the disease
+- **I**nfected. currently sick and spreading the disease
+- **R**ecovered. immune (can't catch or spread it)
 
 The model tracks how people move between these states:
 
@@ -206,7 +206,7 @@ Open a new spreadsheet. Set up these columns:
 
 **Parameters:**
 - **Transmission rate (β):** 0.0003 (probability of infection per contact per day)
-- **Recovery rate (γ):** 0.1 (10% of infected people recover each day — meaning average illness lasts 10 days)
+- **Recovery rate (γ):** 0.1 (10% of infected people recover each day. meaning average illness lasts 10 days)
 
 **Formulas for each day:**
 - New Infections = β × S × I
@@ -226,7 +226,7 @@ Now change the parameters and observe what happens:
 | 1 | Increase β to 0.0005 (more infectious) | |
 | 2 | Decrease β to 0.0001 (less infectious) | |
 | 3 | Increase γ to 0.2 (faster recovery) | |
-| 4 | Start with S₀ = 5,000 (half already immune — vaccination) | |
+| 4 | Start with S₀ = 5,000 (half already immune. vaccination) | |
 | 5 | Reduce β by 50% after day 30 (intervention) | |
 
 For each experiment, describe: How does the **peak** change? How does the **timing** of the peak change? How does the **total number infected** change?
@@ -248,7 +248,7 @@ List every reason your model might differ from reality:
 Think about:
 - Do people behave the same way throughout an epidemic?
 - Does everyone have equal contact rates?
-- What about geography — do diseases spread evenly?
+- What about geography. do diseases spread evenly?
 - How reliable is the reported data?
 - What did your model assume that isn't true in real life?
 
@@ -264,11 +264,11 @@ Your response must:
 - Explain what the SIR model does well (and show evidence from your experiments)
 - Explain what it misses (and give specific examples)
 - Discuss how the model helps decision-makers even though it's imperfect
-- Consider the ethical implications: models inform decisions that restrict individual freedom (lockdowns, mandatory vaccination) — is imperfect math good enough for that?
+- Consider the ethical implications: models inform decisions that restrict individual freedom (lockdowns, mandatory vaccination). is imperfect math good enough for that?
 
 ---
 
-## Extension: Herd Immunity — The Mathematics of Protection
+## Extension: Herd Immunity. The Mathematics of Protection
 
 The herd immunity threshold is the proportion of the population that must be immune to stop an epidemic from growing.
 
@@ -290,19 +290,19 @@ The herd immunity threshold is the proportion of the population that must be imm
 
 ### Why This Investigation Matters
 
-Exponential growth is the single most important mathematical concept that humans consistently fail to intuit. Every student who builds an SIR model and watches the curve change shape has permanently upgraded their ability to think about compound interest, population growth, viral marketing, climate feedback loops, and — yes — pandemics. This isn't a niche investigation. It's the mathematical concept most likely to affect their lives.
+Exponential growth is the single most important mathematical concept that humans consistently fail to intuit. Every student who builds an SIR model and watches the curve change shape has permanently upgraded their ability to think about compound interest, population growth, viral marketing, climate feedback loops, and. yes. pandemics. This isn't a niche investigation. It's the mathematical concept most likely to affect their lives.
 
 ### Spreadsheet Guidance
 
 **Google Sheets or Excel both work.** The key is that students build the model from formulas, not use a pre-built simulation. The act of typing `=B2 - E2` and dragging down IS the learning. Pre-built simulations remove exactly the part that creates understanding.
 
-Provide a template with headers and starting values, but leave the formulas blank. Students who get stuck should look at the formulas written on the board and translate them to spreadsheet notation — this is Criterion C (communicating mathematics in different forms).
+Provide a template with headers and starting values, but leave the formulas blank. Students who get stuck should look at the formulas written on the board and translate them to spreadsheet notation. this is Criterion C (communicating mathematics in different forms).
 
 ### Cross-Disciplinary Connections
 
-**Science (Criterion A):** Students explain how pathogens spread, how the immune system responds, and how vaccines create immunity — the biological mechanism behind the mathematical model.
+**Science (Criterion A):** Students explain how pathogens spread, how the immune system responds, and how vaccines create immunity. the biological mechanism behind the mathematical model.
 
-**Science (Criterion D):** Students evaluate the social, ethical, and political implications of using mathematical models to inform public health policy — including tensions between individual freedom and collective protection.
+**Science (Criterion D):** Students evaluate the social, ethical, and political implications of using mathematical models to inform public health policy. including tensions between individual freedom and collective protection.
 
 ### Sensitivity Note
 

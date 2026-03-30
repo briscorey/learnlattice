@@ -24,12 +24,12 @@ tags:
   - "Reflections"
   - "Rotations"
 game_url: "/games/transform.html?embed=1"
-seo_title: "Transform! — Free MYP Maths Game | Grade 6-8"
+seo_title: "Transform! | Free MYP Maths Game | Grade 6-8"
 seo_description: "Identify, apply, and describe geometric transformations. Visual grid-based game covering translations, reflections, and rotations."
 ---
 A 4-stage geometry transformations game with interactive coordinate grids:
 
-1. **Identify** — Name the transformation (translation, reflection, rotation) from visual examples
-2. **Translate** — Apply translation vectors to move points on a grid
-3. **Reflect** — Reflect points across the x-axis and y-axis
-4. **Describe** — Describe transformations using correct mathematical language, including combined transformations
+1. **Identify**. Name the transformation (translation, reflection, rotation) from visual examples
+2. **Translate**. Apply translation vectors to move points on a grid
+3. **Reflect**. Reflect points across the x-axis and y-axis
+4. **Describe**. Describe transformations using correct mathematical language, including combined transformations

@@ -18,13 +18,13 @@
   </div>
 </div>
 
-{{/* ── ASSESSMENT BUILDER — featured ── */}}
+{{/* ── ASSESSMENT BUILDER. featured ── */}}
 <section style="max-width:1200px;margin:24px auto 0;padding:0 48px">
   <a href="/assessment/builder/" style="display:flex;align-items:center;gap:20px;padding:20px 24px;background:linear-gradient(135deg,rgba(13,148,136,.06),rgba(124,58,237,.04));border:2px solid var(--teal);border-radius:16px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s">
     <span style="font-size:2.2rem">🏗️</span>
     <div style="flex:1">
       <strong style="display:block;font-size:1.05rem;color:var(--ink);margin-bottom:2px">Assessment Builder</strong>
-      <span style="font-size:.82rem;color:var(--ink-muted);line-height:1.4">Build criterion-aligned tasks in minutes. Get a task prompt, task-specific rubric, printable student sheet, and marking guide — all in one workflow.</span>
+      <span style="font-size:.82rem;color:var(--ink-muted);line-height:1.4">Build criterion-aligned tasks in minutes. Get a task prompt, task-specific rubric, printable student sheet, and marking guide. All in one workflow.</span>
     </div>
     <span style="font-size:.82rem;font-weight:600;color:var(--teal);white-space:nowrap">Build now →</span>
   </a>
@@ -79,7 +79,7 @@
 <section class="assess-exemplars-section">
   <div class="assess-exemplars-inner">
     <h2>Annotated Student Work</h2>
-    <p>Real student responses at levels 3-4, 5-6, and 7-8 — with detailed annotations explaining every level.</p>
+    <p>Real student responses at levels 3-4, 5-6, and 7-8, with detailed annotations explaining every level.</p>
 
     {{ $allExemplars := where (where .Site.RegularPages "Section" "resources") "Params.tags" "intersect" (slice "Annotated Student Work") }}
 

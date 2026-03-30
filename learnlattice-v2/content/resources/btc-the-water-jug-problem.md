@@ -25,7 +25,7 @@ difficulty: "approaching"
 duration: "1 lesson"
 hook: "You have a 5-litre jug and a 3-litre jug. No markings. How can you measure EXACTLY 4 litres?"
 warmup: "Can you measure exactly 2 litres using a 5-litre jug and a 3-litre jug? How many steps?"
-seo_title: "The Water Jug Problem — BTC Thinking Task | MYP Maths"
+seo_title: "The Water Jug Problem | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. You have a 5-litre jug and a 3-litre jug. How can you measure exactly 4 litres? "
 teacher_moves:
   - title: "Let them measure before you explain"
@@ -34,7 +34,7 @@ teacher_moves:
     description: "Use random grouping (cards, sticks, app). Students who always work with friends miss the productive discomfort of explaining their thinking to someone new."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "All acids are dangerous"
   why: "Students associate acids with burning and corrosion"
@@ -105,7 +105,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Water Jug Problem" — a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Water Jug Problem". a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -144,7 +144,7 @@ You need to measure **exactly 4 litres** of water. You can only fill, empty, or 
 
 ## Teaching Notes
 
-**BTC Practices Used:** Thinking task with accessible entry, random groups, vertical non-permanent surfaces, oral delivery (do not write the problem down — tell it as a story).
+**BTC Practices Used:** Thinking task with accessible entry, random groups, vertical non-permanent surfaces, oral delivery (do not write the problem down. tell it as a story).
 
 **MYP Criterion C Connection:** The step-by-step tracking table requires precise communication. Students must describe each action unambiguously.
 

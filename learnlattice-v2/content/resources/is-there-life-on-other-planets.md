@@ -1,7 +1,7 @@
 ---
 title: "Is There Life on Other Planets?"
 date: 2026-02-18
-description: "This is the biggest question in science. Students use real exoplanet data from NASA's archive to evaluate which discovered planets might be habitable — and in doing so, learn what 'habitable' actually means, why water matters, and how scientists search for life without visiting."
+description: "This is the biggest question in science. Students use real exoplanet data from NASA's archive to evaluate which discovered planets might be habitable. and in doing so, learn what 'habitable' actually means, why water matters, and how scientists search for life without visiting."
 subjects:
   - "Space Science"
   - "Science"
@@ -35,7 +35,7 @@ download_url: ""
 download_label: "Investigation Pack PDF"
 teacher_moves:
   - title: "Start with the definition"
-    description: "Before students can evaluate other planets, they must define habitable. What does life need? (Liquid water, energy source, organic molecules, stable conditions.) This is not obvious — let students build the list before you refine it."
+    description: "Before students can evaluate other planets, they must define habitable. What does life need? (Liquid water, energy source, organic molecules, stable conditions.) This is not obvious. let students build the list before you refine it."
   - title: "The habitable zone diagram"
     description: "Draw a star with concentric rings. Too close: water boils. Too far: water freezes. In between: the habitable zone. Different stars have different habitable zones. Students should understand this is necessary but not sufficient for life."
   - title: "Real exoplanet data"
@@ -76,8 +76,8 @@ misconceptions:
   truth: "Life on Earth thrives in extreme environments: boiling hot springs, acidic lakes, deep ocean vents, Antarctic ice. The range of conditions that support life is wider than most people assume."
 - myth: "We would recognise alien life if we saw it"
   why: "Science fiction shows humanoid aliens"
-  truth: "Life on other planets might look nothing like Earth life. It might not use DNA. It might not be carbon-based. Detecting life means detecting biosignatures — chemical signs in a planet's atmosphere — not seeing organisms."
-timeline: "0-5 min: How many planets have we found? (Over 5,000.) Are any of them alive? How would we know? | 5-15 min: Define habitable — what does life need? Build the criteria list. | 15-25 min: The habitable zone — draw, calculate, understand the limits. | 25-40 min: Real exoplanet data — filter for rocky, habitable-zone candidates. Evaluate each. | 40-50 min: The detection problem — how do you find life on a planet you cannot visit?"
+  truth: "Life on other planets might look nothing like Earth life. It might not use DNA. It might not be carbon-based. Detecting life means detecting biosignatures. chemical signs in a planet's atmosphere. not seeing organisms."
+timeline: "0-5 min: How many planets have we found? (Over 5,000.) Are any of them alive? How would we know? | 5-15 min: Define habitable. what does life need? Build the criteria list. | 15-25 min: The habitable zone. draw, calculate, understand the limits. | 25-40 min: Real exoplanet data. filter for rocky, habitable-zone candidates. Evaluate each. | 40-50 min: The detection problem. how do you find life on a planet you cannot visit?"
 sentence_starters:
   describing:
   - "The habitable zone is the region around a star where..."
@@ -93,9 +93,9 @@ listen_for:
 - level: 3-4
   phrase: "It needs to have water"
 - level: 5-6
-  phrase: "Being the right distance is not enough — it also needs an atmosphere to keep water liquid and a magnetic field to protect the atmosphere"
+  phrase: "Being the right distance is not enough. it also needs an atmosphere to keep water liquid and a magnetic field to protect the atmosphere"
 - level: 7-8
-  phrase: "We would look for biosignatures like oxygen and methane in the atmosphere — methane is destroyed by UV light, so if it is present, something must be producing it, which suggests biological activity"
+  phrase: "We would look for biosignatures like oxygen and methane in the atmosphere. methane is destroyed by UV light, so if it is present, something must be producing it, which suggests biological activity"
 journal_prompts:
 - "If we discovered microbial life on Mars tomorrow, how would that change your view of the universe?"
 - "Should we be trying to contact extraterrestrial civilisations? What are the risks?"
@@ -116,7 +116,7 @@ differentiated:
 
 Project a number on the board: **5,786.**
 
-That is the number of confirmed exoplanets — planets orbiting other stars — as of early 2026. There are hundreds of billions more in our galaxy alone.
+That is the number of confirmed exoplanets. planets orbiting other stars. as of early 2026. There are hundreds of billions more in our galaxy alone.
 
 Now: **"Some of these planets are rocky, about the size of Earth, orbiting at the right distance from their star for liquid water to exist on the surface. The question is simple: Is anything alive on any of them?"**
 
@@ -139,7 +139,7 @@ This is not science fiction. This is the research question driving a major branc
   <span class="tm-phase-time">0–5 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">The number</div>
-    <p>5,786 confirmed planets. Let the number sit. "Every one of these was discovered in the last 30 years. Before 1992, we had zero confirmed exoplanets. Now we have nearly 6,000. And that is only the ones we have found — there are billions more." Ask: are any of them alive?</p>
+    <p>5,786 confirmed planets. Let the number sit. "Every one of these was discovered in the last 30 years. Before 1992, we had zero confirmed exoplanets. Now we have nearly 6,000. And that is only the ones we have found. there are billions more." Ask: are any of them alive?</p>
   </div>
 </div>
 
@@ -169,17 +169,17 @@ This is not science fiction. This is the research question driving a major branc
 
 <div class="tm-callout tm-callout--listen">
   <strong>What you are listening for</strong>
-  <p>"It is in the habitable zone but it is too big — probably a gas giant" — they are using multiple criteria. "Mars is in our habitable zone but it is not habitable" — they understand necessary vs sufficient. "We cannot see life directly, we have to look for its effects on the atmosphere" — they understand biosignatures. "Even if we find a perfect candidate, we cannot know for sure without going there" — scientific honesty.</p>
+  <p>"It is in the habitable zone but it is too big. probably a gas giant". they are using multiple criteria. "Mars is in our habitable zone but it is not habitable". they understand necessary vs sufficient. "We cannot see life directly, we have to look for its effects on the atmosphere". they understand biosignatures. "Even if we find a perfect candidate, we cannot know for sure without going there". scientific honesty.</p>
 </div>
 
 <div class="tm-callout tm-callout--eal">
   <strong>EAL scaffold</strong>
-  <p>The data table uses numbers and units — minimal English. Provide the criteria as a visual checklist with icons: water droplet (liquid water), sun (energy), hexagon (organic chemistry), shield (protection). Students evaluate each planet by checking boxes. The ranking task requires comparison, not composition. "More habitable" and "less habitable" can be demonstrated by physical sorting of planet cards.</p>
+  <p>The data table uses numbers and units. minimal English. Provide the criteria as a visual checklist with icons: water droplet (liquid water), sun (energy), hexagon (organic chemistry), shield (protection). Students evaluate each planet by checking boxes. The ranking task requires comparison, not composition. "More habitable" and "less habitable" can be demonstrated by physical sorting of planet cards.</p>
 </div>
 
 <div class="tm-callout tm-callout--dontsay">
   <strong>Do not say this</strong>
-  <p>"There is probably life out there" — this is a scientific question, not a belief. The honest answer is: we do not know yet. "The habitable zone means it is habitable" — the name is misleading. Mars proves that zone membership is not enough. "Aliens look like humans" — there is no reason to expect this. If life exists elsewhere, it may be microbial, and it may use chemistry we do not recognise.</p>
+  <p>"There is probably life out there". this is a scientific question, not a belief. The honest answer is: we do not know yet. "The habitable zone means it is habitable". the name is misleading. Mars proves that zone membership is not enough. "Aliens look like humans". there is no reason to expect this. If life exists elsewhere, it may be microbial, and it may use chemistry we do not recognise.</p>
 </div>
 
     </div>
@@ -197,30 +197,30 @@ This investigation teaches the scientific method applied to the biggest question
 
 ### The habitable zone
 
-The habitable zone (also called the Goldilocks zone) is the range of distances from a star where a planet's surface temperature could allow liquid water. This depends on the star's luminosity — brighter stars have habitable zones further out. Being in the zone is necessary but not sufficient for habitability.
+The habitable zone (also called the Goldilocks zone) is the range of distances from a star where a planet's surface temperature could allow liquid water. This depends on the star's luminosity. brighter stars have habitable zones further out. Being in the zone is necessary but not sufficient for habitability.
 
 ### Biosignatures
 
-A biosignature is a measurable indicator of life. For exoplanets, the most promising biosignatures are atmospheric gases that should not coexist without biological activity — for example, oxygen and methane together are unstable and would react away without continuous replenishment. If both are detected in an exoplanet atmosphere, something is producing them.
+A biosignature is a measurable indicator of life. For exoplanets, the most promising biosignatures are atmospheric gases that should not coexist without biological activity. for example, oxygen and methane together are unstable and would react away without continuous replenishment. If both are detected in an exoplanet atmosphere, something is producing them.
 
 ### Detection methods
 
-Exoplanets are detected primarily by two methods: the transit method (the planet passes in front of its star, dimming the light slightly) and the radial velocity method (the planet's gravity causes the star to wobble). The transit method also allows atmospheric analysis — as light passes through the planet's atmosphere, specific wavelengths are absorbed, revealing the atmospheric composition.
+Exoplanets are detected primarily by two methods: the transit method (the planet passes in front of its star, dimming the light slightly) and the radial velocity method (the planet's gravity causes the star to wobble). The transit method also allows atmospheric analysis. as light passes through the planet's atmosphere, specific wavelengths are absorbed, revealing the atmospheric composition.
 
 ## Investigation Tasks
 
-**Part A — Define habitability criteria**
+**Part A. Define habitability criteria**
 
 Working in groups, develop a list of conditions necessary for life as we know it. For each condition, explain why it is important and give an example from Earth. Present your criteria as a checklist that could be applied to any planet.
 
-**Part B — The habitable zone**
+**Part B. The habitable zone**
 
 Draw a scale diagram of our solar system's habitable zone. Mark the positions of Venus, Earth, and Mars. Which planets are in the zone? For each, evaluate whether they are actually habitable. What additional factors beyond distance determine habitability?
 
-**Part C — Exoplanet evaluation**
+**Part C. Exoplanet evaluation**
 
 Using the provided dataset, evaluate 20 confirmed exoplanets against your habitability criteria. Rank the top 5 candidates and justify your ranking with specific data. Identify which criteria are most important and which have the most uncertainty.
 
-**Part D — The implications**
+**Part D. The implications**
 
 Write a scientific argument (Criterion D) addressing: "What are the scientific, ethical, and social implications of discovering microbial life on an exoplanet?" Consider: how would it change our understanding of biology? What ethical responsibilities would we have? How should the discovery be communicated to the public?

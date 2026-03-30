@@ -20,13 +20,13 @@ tags:
   - "Equivalent Fractions"
   - "Number"
 game_url: "/games/fraction-fighter.html?embed=1"
-seo_title: "Fraction Fighter — Free MYP Maths Game | Grade 6-7"
+seo_title: "Fraction Fighter | Free MYP Maths Game | Grade 6-7"
 seo_description: "See fractions, find equivalents, compare them, calculate with them, and use them in real life. A 5-stage visual journey through fractions."
 ---
 A 5-stage fraction mastery game with visual bar models:
 
-1. **See It** — Identify fractions from shaded bar models
-2. **Same Value** — Find equivalent fractions (with visual proof)
-3. **Compare** — Which fraction is bigger? Convert to compare
-4. **Calculate** — Add and subtract fractions with different denominators
-5. **Real World** — Pizza slices, recipes, batteries, and running distances
+1. **See It**. Identify fractions from shaded bar models
+2. **Same Value**. Find equivalent fractions (with visual proof)
+3. **Compare**. Which fraction is bigger? Convert to compare
+4. **Calculate**. Add and subtract fractions with different denominators
+5. **Real World**. Pizza slices, recipes, batteries, and running distances

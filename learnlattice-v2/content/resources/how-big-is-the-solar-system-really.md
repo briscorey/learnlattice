@@ -15,7 +15,7 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Orientation in Space and Time"
-statement_of_inquiry: "The solar system is far larger and emptier than any diagram suggests — and building a scale model is the only way to feel the vastness."
+statement_of_inquiry: "The solar system is far larger and emptier than any diagram suggests. and building a scale model is the only way to feel the vastness."
 difficulty: "approaching"
 hook: "If Earth were the size of a marble, Jupiter would be a basketball. And the Sun would be over a kilometre away. Can you build a scale model that fits in your school?"
 warmup: "Draw the solar system from memory. Now compare with your neighbour. What did you get wrong?"
@@ -28,11 +28,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Claim-evidence-reasoning"
     description: "Push students beyond description. Ask: What is your claim? What evidence supports it? Why does that evidence support your claim? This structure separates 3-4 work from 5-6 work."
-timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation — students collect data or work through the task. | 35-45 min: Class discussion — share findings, address misconceptions. | 45-50 min: Exit ticket.'
+timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation. students collect data or work through the task. | 35-45 min: Class discussion. share findings, address misconceptions. | 45-50 min: Exit ticket.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -83,7 +83,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -99,7 +99,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "How Big Is the Solar System, Really?" — a space science investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "How Big Is the Solar System, Really?". a space science investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -146,6 +146,6 @@ Most schools run out of space around Jupiter. That IS the lesson.
 
 ## Teaching Notes
 
-This investigation makes the abstract concrete in a way that no diagram, video, or lecture ever can. The physical act of walking 32 metres from the Sun to Earth — and realising that Earth is a speck of sand — creates a visceral understanding of cosmic scale.
+This investigation makes the abstract concrete in a way that no diagram, video, or lecture ever can. The physical act of walking 32 metres from the Sun to Earth. and realising that Earth is a speck of sand. creates a visceral understanding of cosmic scale.
 
 The calculation practice is real mathematics: division, unit conversion, and proportional reasoning. But it serves a scientific purpose, which makes it meaningful rather than mechanical.

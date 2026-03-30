@@ -21,10 +21,10 @@ key-concepts:
   - "Form"
 global-contexts:
   - "Personal and Cultural Expression"
-statement_of_inquiry: "Maintaining proportional relationships preserves form — and breaking them distorts the world in predictable ways."
+statement_of_inquiry: "Maintaining proportional relationships preserves form. and breaking them distorts the world in predictable ways."
 difficulty: "approaching"
 duration: "1 lesson"
-hook: "A student resizes a 4:3 photo to fit a 16:9 screen. It looks stretched. What went wrong — and how do you fix it?"
+hook: "A student resizes a 4:3 photo to fit a 16:9 screen. It looks stretched. What went wrong. and how do you fix it?"
 warmup: "Draw a rectangle that is 4 cm × 3 cm. Now draw one that is 8 cm × 6 cm. Do they look the same shape? What if you drew 8 cm × 3 cm?"
 seo_title: "3-Act Task: Photo Ratios | MYP Maths Proportion & Ratio"
 seo_description: "Free 3-Act maths task for MYP. Students investigate why resized photos look distorted using ratio, proportion, and scale factors. Criterion D."
@@ -111,11 +111,11 @@ These ratios are NOT the same. 4:3 ≠ 16:9 (because 4/3 ≈ 1.33 but 16/9 ≈ 1
 
 > **Three options to investigate:**
 >
-> **Option A — Stretch to fit:** Change both dimensions independently. Width scale factor = 1920/2400 = 0.8. Height scale factor = 1080/1800 = 0.6. Different scale factors = distortion.
+> **Option A. Stretch to fit:** Change both dimensions independently. Width scale factor = 1920/2400 = 0.8. Height scale factor = 1080/1800 = 0.6. Different scale factors = distortion.
 >
-> **Option B — Fit width, crop height:** Scale width to 1920 (factor = 0.8). New height = 1800 × 0.8 = 1440. Crop 1440 to 1080 (lose 360 pixels = 25% of the image).
+> **Option B. Fit width, crop height:** Scale width to 1920 (factor = 0.8). New height = 1800 × 0.8 = 1440. Crop 1440 to 1080 (lose 360 pixels = 25% of the image).
 >
-> **Option C — Fit height, add bars:** Scale height to 1080 (factor = 0.6). New width = 2400 × 0.6 = 1440. Display width is 1920, so add black bars (240 pixels each side).
+> **Option C. Fit height, add bars:** Scale height to 1080 (factor = 0.6). New width = 2400 × 0.6 = 1440. Display width is 1920, so add black bars (240 pixels each side).
 
 Which option preserves the image best? Which loses the most information?
 
@@ -123,7 +123,7 @@ Which option preserves the image best? Which loses the most information?
 
 ## Act 3: The Reveal
 
-Professional image editing always uses **uniform scale factors** — the same multiplier for width and height. This preserves the aspect ratio and prevents distortion.
+Professional image editing always uses **uniform scale factors**. the same multiplier for width and height. This preserves the aspect ratio and prevents distortion.
 
 > **The rule:** If the scale factor for width ≠ the scale factor for height, the image distorts. Proportional reasoning tells us when this will happen.
 
@@ -146,6 +146,6 @@ Professional image editing always uses **uniform scale factors** — the same mu
 
 **MYP Criterion C Connection:** Communicating the difference between the three options requires clear mathematical explanation with supporting calculations.
 
-**Global Context — Personal and Cultural Expression:** Digital media, photography, and visual communication are central to students' lives. This task connects mathematics to their everyday experience of screens, social media, and image editing.
+**Global Context. Personal and Cultural Expression:** Digital media, photography, and visual communication are central to students' lives. This task connects mathematics to their everyday experience of screens, social media, and image editing.
 
-**EAL Scaffold:** Visual demonstration is essential — show actual distorted vs. proportional images side by side. The mathematics of ratio is accessible through visual comparison before any calculation.
+**EAL Scaffold:** Visual demonstration is essential. show actual distorted vs. proportional images side by side. The mathematics of ratio is accessible through visual comparison before any calculation.

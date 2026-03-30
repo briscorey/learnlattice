@@ -145,13 +145,13 @@ This diagnostic problem is the investigation.
 
 ## Tiered Tasks
 
-### Part A — Criterion A (Levels 1-4)
+### Part A. Criterion A (Levels 1-4)
 
 1. Draw a series circuit with a battery and 3 bulbs. Draw a parallel circuit with a battery and 3 bulbs.
 2. In which circuit does removing one bulb turn off all the others? Explain why.
 3. A circuit has a 12V battery and a resistance of 4Ω. Calculate the current using \\(I = \frac{V}{R}\\).
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 
 Build a series circuit with 3 identical bulbs and measure the voltage across each bulb. Then build a parallel circuit with 3 identical bulbs and measure the voltage across each.
 
@@ -159,7 +159,7 @@ Build a series circuit with 3 identical bulbs and measure the voltage across eac
 2. Describe the pattern: how does voltage divide in series vs. parallel?
 3. State a general rule for voltage distribution in each type of circuit
 
-### Part C — Criterion D (Levels 5-8)
+### Part C. Criterion D (Levels 5-8)
 
 You are designing the lighting system for a new school building. The principal wants:
 - If one light breaks, the others must stay on
@@ -172,6 +172,6 @@ Design the system. Draw the circuit diagram. Explain your choices using Ohm's La
 
 ## Teaching Notes
 
-If you have access to circuit kits, build both circuits physically. If not, use PhET's Circuit Construction Kit (free online simulation). The Christmas lights hook requires no equipment — just describe the scenario or show a photo. Students who have decorated a Christmas tree have encountered this problem.
+If you have access to circuit kits, build both circuits physically. If not, use PhET's Circuit Construction Kit (free online simulation). The Christmas lights hook requires no equipment. just describe the scenario or show a photo. Students who have decorated a Christmas tree have encountered this problem.
 
 The diagnostic problem ("find the broken bulb in 100") is a genuine computer science problem (binary search). Students who discover the half-and-half strategy have independently invented one of the most important algorithms in computing.

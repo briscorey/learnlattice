@@ -1,7 +1,7 @@
 ---
 title: The Recipe Problem
 date: 2025-10-08
-description: A recipe for 4 people uses 300g of flour. You need to feed 7. How much flour? This investigation builds proportional reasoning through cooking — the most natural context for ratios that exists.
+description: A recipe for 4 people uses 300g of flour. You need to feed 7. How much flour? This investigation builds proportional reasoning through cooking. the most natural context for ratios that exists.
 subjects:
 - Mathematics
 math_topic: Fractions
@@ -21,7 +21,7 @@ tags:
 - Criterion D
 key_concept: Relationships
 global_context: Identities and Relationships
-statement_of_inquiry: Proportional relationships allow us to scale quantities while preserving the essential ratios — and this principle connects mathematics to everyday decisions.
+statement_of_inquiry: Proportional relationships allow us to scale quantities while preserving the essential ratios. and this principle connects mathematics to everyday decisions.
 formula: scale factor = new amount ÷ original amount
 download_url: ''
 download_label: Investigation Pack PDF
@@ -121,12 +121,12 @@ Scaling up is comfortable. Scaling to an awkward number (3 from 4, or 7 from 4) 
 
 ## Tiered Tasks
 
-### Part A — Criterion D (Levels 1-4)
+### Part A. Criterion D (Levels 1-4)
 1. Scale the pancake recipe for 8 people, 12 people, and 2 people.
 2. You need to serve exactly 6 people. Calculate the exact quantity of each ingredient.
 3. Eggs come in whole numbers. If the recipe calls for 2 eggs for 4 people, what do you do when serving 6? Discuss practical solutions.
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 A bakery sells three sizes of the same cake recipe:
 - Small (serves 4): 200g flour, 100g sugar, 150g butter
 - Medium (serves 8): 380g flour, 195g sugar, 290g butter
@@ -136,7 +136,7 @@ A bakery sells three sizes of the same cake recipe:
 2. If not, which ingredients are off? By how much? What might explain the differences?
 3. State a general rule about whether scaling always produces exact proportions in real-life contexts.
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 1. A recipe uses a ratio of flour:sugar:butter = 4:2:3. Express this ratio as fractions of the total.
 2. If you have exactly 450g of butter and unlimited flour and sugar, what is the maximum amount of mixture you can make while maintaining the ratio? Show your method.
 3. Two different recipes both claim to make "chocolate cake." Recipe A uses a cocoa-to-flour ratio of 1:4. Recipe B uses 1:6. Which cake will taste more chocolatey? By what percentage is one more concentrated than the other?
@@ -145,6 +145,6 @@ A bakery sells three sizes of the same cake recipe:
 
 ## Teaching Notes
 
-If your school has a kitchen, actually make the pancakes. Scaling a recipe and then eating the result is the most authentic mathematics lesson possible. If not, the calculation alone is sufficient — but the motivation is weaker.
+If your school has a kitchen, actually make the pancakes. Scaling a recipe and then eating the result is the most authentic mathematics lesson possible. If not, the calculation alone is sufficient. but the motivation is weaker.
 
 The bakery problem in Part B is deliberately designed to NOT scale perfectly. Real-world ratios are messy. This is an important mathematical lesson: proportional reasoning is a model, and models have limits.

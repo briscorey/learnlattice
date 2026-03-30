@@ -1,7 +1,7 @@
 ---
 title: "The Staircase Problem"
 date: 2025-12-29
-description: "How many blocks does it take to build a staircase 100 steps high? This investigation moves students from counting to pattern to formula to argument — the complete arc of algebraic thinking — using nothing but a question a six-year-old could understand."
+description: "How many blocks does it take to build a staircase 100 steps high? This investigation moves students from counting to pattern to formula to argument. the complete arc of algebraic thinking. using nothing but a question a six-year-old could understand."
 hook: "How many blocks does it take to build a staircase 100 steps high? This investigation moves students from counting to ..."
 subjects:
   - "Mathematics"
@@ -41,7 +41,7 @@ teacher_moves:
   - title: "The rectangle trick"
     description: "If a student is stuck, ask them to build two identical staircases and fit them together. They make a rectangle. The area of the rectangle is n(n+1)."
   - title: "The formula comes from the shape"
-    description: "T(n) = n(n+1)/2 is not a formula to memorise — it is half a rectangle. Students who see this never forget the formula because they understand where it came from."
+    description: "T(n) = n(n+1)/2 is not a formula to memorise. it is half a rectangle. Students who see this never forget the formula because they understand where it came from."
 
 hints:
   - "Build the first 4 staircases with blocks. Count the total blocks in each. Look for a pattern."
@@ -72,7 +72,7 @@ misconceptions:
 - myth: The formula is just the pattern of differences
   why: The differences are 1, 2, 3, 4 so it seems like the formula should be n
   truth: 'The differences tell you about the formula but they ARE not the formula.
-    The totals are 1, 3, 6, 10 — these are triangular numbers: n(n+1)/2.'
+    The totals are 1, 3, 6, 10. these are triangular numbers: n(n+1)/2.'
 - myth: Checking 5 cases proves a formula
   why: If it works for 5 values it must always work
   truth: Verification is not proof. A formula must work for ALL values of n, not just
@@ -83,7 +83,7 @@ misconceptions:
     problem. Guess-and-check finds the answer but does not explain WHY it works.
 timeline: '0-5 min: Build staircase 1-3 with blocks. | 5-15 min: Groups build up to
   staircase 8, record in table. | 15-25 min: Find the pattern, write a formula. |
-  25-35 min: Test your formula — predict staircase 20 and 100. | 35-45 min: Gallery
+  25-35 min: Test your formula. predict staircase 20 and 100. | 35-45 min: Gallery
   walk. | 45-50 min: Can anyone explain WHY the formula works?'
 sentence_starters:
   describing:
@@ -114,7 +114,7 @@ warm_up:
   time: 5 minutes
 exit_ticket:
 - What is the 50th triangular number? Show your working.
-- How did you find your formula — guess and check, or reasoning?
+- How did you find your formula. guess and check, or reasoning?
 - Where else might triangular numbers appear in real life?
 quick_check:
 - type: recall
@@ -156,7 +156,7 @@ Ask: **"How many blocks for 100 steps?"**
 
 Then: **"How did you work it out? What's the method?"**
 
-The raw counting approach collapses by step 10. Students who look for a pattern will find it faster. And one approach — arguably the most elegant solution in all of mathematics — was discovered by a 10-year-old named Carl Friedrich Gauss, who used it to add the integers from 1 to 100 in seconds while his teacher expected it to take an hour.
+The raw counting approach collapses by step 10. Students who look for a pattern will find it faster. And one approach. arguably the most elegant solution in all of mathematics. was discovered by a 10-year-old named Carl Friedrich Gauss, who used it to add the integers from 1 to 100 in seconds while his teacher expected it to take an hour.
 
 Students don't need to know who Gauss was yet. They need to find his method themselves first.
 
@@ -177,7 +177,7 @@ Students don't need to know who Gauss was yet. They need to find his method them
   <span class="tm-phase-time">0–1 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Launch</div>
-    <p>Draw the staircase diagram on the board silently. Steps 1, 2, 3 — nothing else. Write the question: <strong>"How many blocks for 100 steps?"</strong> Read it aloud once. Point at the diagram as you read. Set a 2-minute silent timer.</p>
+    <p>Draw the staircase diagram on the board silently. Steps 1, 2, 3. nothing else. Write the question: <strong>"How many blocks for 100 steps?"</strong> Read it aloud once. Point at the diagram as you read. Set a 2-minute silent timer.</p>
   </div>
 </div>
 
@@ -193,7 +193,7 @@ Students don't need to know who Gauss was yet. They need to find his method them
   <span class="tm-phase-time">3–4 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Random grouping</div>
-    <p>Use a random name generator on screen. Students move to numbered vertical whiteboards. Hand each group ONE marker to start — this forces turn-taking without you explaining it.</p>
+    <p>Use a random name generator on screen. Students move to numbered vertical whiteboards. Hand each group ONE marker to start. this forces turn-taking without you explaining it.</p>
   </div>
 </div>
 
@@ -215,12 +215,12 @@ Students don't need to know who Gauss was yet. They need to find his method them
 
 <div class="tm-callout tm-callout--listen">
   <strong>What you're listening for</strong>
-  <p>"It goes up by one more each time" — they've found the pattern. "If I double it and make a rectangle..." — they're approaching Gauss's method. "The differences keep increasing" — they're noticing the quadratic structure. Any of these means they're ready to formalise.</p>
+  <p>"It goes up by one more each time". they've found the pattern. "If I double it and make a rectangle...". they're approaching Gauss's method. "The differences keep increasing". they're noticing the quadratic structure. Any of these means they're ready to formalise.</p>
 </div>
 
 <div class="tm-callout tm-callout--eal">
   <strong>EAL scaffold</strong>
-  <p>The staircase is inherently visual — most EAL students will access it through drawing. If a student is stuck on the English, draw Step 4 on their paper and point back at the board. The word "pattern" can be replaced with a gesture: point at 1, 3, 6 and raise an eyebrow. For the formula stage, write n = 5 and draw an arrow to 15. The notation carries the meaning.</p>
+  <p>The staircase is inherently visual. most EAL students will access it through drawing. If a student is stuck on the English, draw Step 4 on their paper and point back at the board. The word "pattern" can be replaced with a gesture: point at 1, 3, 6 and raise an eyebrow. For the formula stage, write n = 5 and draw an arrow to 15. The notation carries the meaning.</p>
 </div>
 
 <div class="tm-callout tm-callout--say">
@@ -230,7 +230,7 @@ Students don't need to know who Gauss was yet. They need to find his method them
 
 <div class="tm-callout tm-callout--dontsay">
   <strong>Don't say this</strong>
-  <p>"The formula is n(n+1)/2" — let them build it. "This is called a triangular number" — vocabulary comes after understanding. "Gauss figured this out when he was 10" — save this for after they've found it themselves.</p>
+  <p>"The formula is n(n+1)/2". let them build it. "This is called a triangular number". vocabulary comes after understanding. "Gauss figured this out when he was 10". save this for after they've found it themselves.</p>
 </div>
 
     </div>
@@ -247,7 +247,7 @@ The staircase problem is an ideal vehicle for algebraic thinking because it has 
 - Write a generalisation (use algebra to express the pattern)
 - Verify the formula (substitute and check)
 
-Each path teaches something different. The goal is not the formula — it's the movement between representations, and the idea that algebra is not a set of rules to memorise but a language for expressing structure.
+Each path teaches something different. The goal is not the formula. it's the movement between representations, and the idea that algebra is not a set of rules to memorise but a language for expressing structure.
 
 ---
 
@@ -271,13 +271,13 @@ Start by counting. Then look for the pattern.
 - The totals (1, 3, 6, 10, 15, 21) are called *triangular numbers*
 - The difference between consecutive totals goes: 1, 2, 3, 4, 5, ... (it increases by 1 each time)
 
-This is a **quadratic pattern** — the differences of the differences are constant.
+This is a **quadratic pattern**. the differences of the differences are constant.
 
 ### Gauss's Method: The Double Staircase
 
 Here is the geometric insight. Take a staircase of n steps. Make an identical second staircase and flip it upside down. Push the two together.
 
-What do you get? A **rectangle** — n steps wide, (n+1) blocks tall.
+What do you get? A **rectangle**. n steps wide, (n+1) blocks tall.
 
 $$\text{Area of rectangle} = n \times (n+1)$$
 
@@ -296,13 +296,13 @@ The formula \\(\frac{n(n+1)}{2}\\) can be expanded:
 
 $$\frac{n(n+1)}{2} = \frac{n^2 + n}{2}$$
 
-This is a **quadratic expression** in \\(n\\) — the highest power is \\(n^2\\). This is why the second differences in the table are constant (a property of all quadratic sequences).
+This is a **quadratic expression** in \\(n\\). the highest power is \\(n^2\\). This is why the second differences in the table are constant (a property of all quadratic sequences).
 
 > **Formative checkpoint:** Give students this table with two missing values and one wrong value. Ask them to identify and correct the error, and explain how they know.
 
 | n | Total blocks | Second differences |
 |---|-------------|-------------------|
-| 1 | 1 | — |
+| 1 | 1 |. |
 | 2 | 3 | 1 |
 | 3 | 6 | 1 |
 | 4 | 11 | **?** |
@@ -314,35 +314,35 @@ This is a **quadratic expression** in \\(n\\) — the highest power is \\(n^2\\)
 
 ## Investigation Tasks
 
-### Part A — The Discovery
+### Part A. The Discovery
 
 1. Build the table up to n=8 using actual block-counting or drawing.
 2. Describe the pattern you see in the *total blocks* column in words.
 3. Try to predict the total for n=9 *before* you calculate it. Check.
 4. Find the total for n=100 without counting every step. Show your method.
 
-### Part B — Multiple Methods
+### Part B. Multiple Methods
 
 At least two of these methods should produce the same answer. Try all three, then compare.
 
-**Method 1 — The pairing trick (Gauss's approach):**
+**Method 1. The pairing trick (Gauss's approach):**
 Add the sequence 1 + 2 + 3 + ... + 100 by pairing first with last, second with second-last, and so on. What do you get?
 
-**Method 2 — The rectangle method:**
+**Method 2. The rectangle method:**
 Draw a 100 × 101 grid of squares. Show how this connects to two staircases. Use this to find the formula.
 
-**Method 3 — The formula:**
+**Method 3. The formula:**
 Use \\(\frac{n(n+1)}{2}\\) with n = 100. Verify it gives the same answer as Methods 1 and 2.
 
-### Part C — Extensions and New Problems
+### Part C. Extensions and New Problems
 
 1. **Triangular numbers:** The sequence 1, 3, 6, 10, 15, 21... These are called triangular numbers. Find the 50th triangular number.
 
-2. **Rectangular variation:** A builder builds not staircases but pyramids — each layer is a complete row. The first layer has 1 block wide, the second has 2 blocks, but now arranged in *two rows* (so 2×2 = 4 blocks). What formula describes the total blocks for an n-layer pyramid? *[Answer: n² — this leads to perfect square numbers]*
+2. **Rectangular variation:** A builder builds not staircases but pyramids. each layer is a complete row. The first layer has 1 block wide, the second has 2 blocks, but now arranged in *two rows* (so 2×2 = 4 blocks). What formula describes the total blocks for an n-layer pyramid? *[Answer: n². this leads to perfect square numbers]*
 
-3. **The difference method:** If you know that a sequence has constant *second differences* of 2, and the sequence starts 3, 7, 13, 21... what is the 20th term? Use your understanding of quadratic patterns to find a formula. *(Extension — appropriate for MYP Year 3–4)*
+3. **The difference method:** If you know that a sequence has constant *second differences* of 2, and the sequence starts 3, 7, 13, 21... what is the 20th term? Use your understanding of quadratic patterns to find a formula. *(Extension. appropriate for MYP Year 3–4)*
 
-### Part D — The Generalisation Task (Criterion B)
+### Part D. The Generalisation Task (Criterion B)
 
 A different architect designs a staircase where each step is 2 blocks wide instead of 1. 
 
@@ -356,11 +356,11 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 
 ## Formative Assessment Checkpoints
 
-**Checkpoint 1:** After students find the pattern numerically, but before showing Gauss's method. "Can you prove your formula works — not just for n=5, but for any n?" This surfaces the idea that pattern-checking isn't the same as proof.
+**Checkpoint 1:** After students find the pattern numerically, but before showing Gauss's method. "Can you prove your formula works. not just for n=5, but for any n?" This surfaces the idea that pattern-checking isn't the same as proof.
 
-**Checkpoint 2:** After the rectangle method. "The formula \\(\frac{n(n+1)}{2}\\) — why is there a 2 in the denominator? What does the 2 represent in the diagram?" Students who understand the geometry will answer: we made two staircases and divided by 2.
+**Checkpoint 2:** After the rectangle method. "The formula \\(\frac{n(n+1)}{2}\\). why is there a 2 in the denominator? What does the 2 represent in the diagram?" Students who understand the geometry will answer: we made two staircases and divided by 2.
 
-**Checkpoint 3:** After Part C. "Is the sequence 1, 3, 6, 10, 15 arithmetic, geometric, or neither? How do you know?" — This connects staircase numbers to the broader classification of sequences.
+**Checkpoint 3:** After Part C. "Is the sequence 1, 3, 6, 10, 15 arithmetic, geometric, or neither? How do you know?". This connects staircase numbers to the broader classification of sequences.
 
 ---
 
@@ -369,10 +369,10 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 | What students often believe | What's accurate |
 |-----------------------------|----------------|
 | "Algebra is about finding x" | Algebra is about expressing and manipulating *structure*. Finding x is one application. |
-| "I can only use the formula once I've proved it" | In mathematics, we often use formulas before we can fully prove them — and then prove them later. That's a legitimate mathematical process. |
-| "Quadratic means it involves x²" | Quadratic means the second differences are constant, and any such pattern can be expressed with an n² term — whether or not we write x. |
+| "I can only use the formula once I've proved it" | In mathematics, we often use formulas before we can fully prove them. and then prove them later. That's a legitimate mathematical process. |
+| "Quadratic means it involves x²" | Quadratic means the second differences are constant, and any such pattern can be expressed with an n² term. whether or not we write x. |
 | "There is one correct method" | Gauss's pairing method, the geometric rectangle method, and the algebraic formula are all correct and illuminate different aspects of the problem |
-| "The formula only works for whole numbers" | The formula works for any value of n — but the problem only makes physical sense for positive integers |
+| "The formula only works for whole numbers" | The formula works for any value of n. but the problem only makes physical sense for positive integers |
 
 ---
 
@@ -380,9 +380,9 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 
 **On the initial hook:** Do not show Gauss's method. Let students discover it or approach it. The discovery is the lesson. A student who invents "pair the first and last numbers" has done mathematics, not performed it.
 
-**On multiple representations:** This is one of the richest problems in middle school mathematics precisely because drawing, counting, algebra, and proof all converge on the same answer. Use that convergence explicitly — "two completely different methods give 5050, which increases our confidence that 5050 is correct."
+**On multiple representations:** This is one of the richest problems in middle school mathematics precisely because drawing, counting, algebra, and proof all converge on the same answer. Use that convergence explicitly. "two completely different methods give 5050, which increases our confidence that 5050 is correct."
 
-**On the Gauss story:** After students have found the answer, tell them that a 10-year-old found this method in the 1780s, and it didn't make him famous — he went on to make contributions to mathematics and physics that changed both fields. The story is motivational not because "even a child can do it" but because the impulse to find a smarter method rather than just grind through is exactly what mathematical thinking looks like.
+**On the Gauss story:** After students have found the answer, tell them that a 10-year-old found this method in the 1780s, and it didn't make him famous. he went on to make contributions to mathematics and physics that changed both fields. The story is motivational not because "even a child can do it" but because the impulse to find a smarter method rather than just grind through is exactly what mathematical thinking looks like.
 
 **On extension to Part C:** The pyramid problem connects the staircase to perfect squares. Students who see that a square is "two triangular numbers stacked" are making a deep connection that recurs throughout mathematics.
 
@@ -394,7 +394,7 @@ A different architect designs a staircase where each step is 2 blocks wide inste
 
 Draw Steps 1–3 on the board (the staircase pattern). Write: **"How many blocks in Step 10? Step 100? Step n?"**
 
-Set a 2-minute silent timer. Every student sketches Steps 4 and 5 individually before joining a group. This silent start is critical — it means every person arrives at their group with something to contribute.
+Set a 2-minute silent timer. Every student sketches Steps 4 and 5 individually before joining a group. This silent start is critical. it means every person arrives at their group with something to contribute.
 
 **Do not** say "find the pattern" or "look for a formula." These phrases shut down exploration by telling students what the destination is before they've started the journey.
 
@@ -404,9 +404,9 @@ Set a 2-minute silent timer. Every student sketches Steps 4 and 5 individually b
 
 **Watch for:** Groups who build a table but don't see the pattern. Point at the "blocks added" column (1, 2, 3, 4...) and raise your eyebrows. That's usually enough.
 
-**Watch for:** The student who tries to double the staircase and make a rectangle. This is Gauss's method. If only one group finds it, let them present later — don't broadcast it early.
+**Watch for:** The student who tries to double the staircase and make a rectangle. This is Gauss's method. If only one group finds it, let them present later. don't broadcast it early.
 
-**Do not say:** "n(n+1)/2." If you give the formula, you steal the discovery. The formula is not the point — the process of finding it is the point.
+**Do not say:** "n(n+1)/2." If you give the formula, you steal the discovery. The formula is not the point. the process of finding it is the point.
 
 **Key moment:** When a group gets Step 100 = 5050 by brute-force addition AND another group gets 5050 by formula. Bring both to the board. Ask: "You got the same answer by completely different methods. Why does that make us more confident it's correct?" This is mathematical reasoning, not answer-getting.
 
@@ -418,9 +418,9 @@ Show the rectangle method on the board: two staircases forming an n × (n+1) rec
 
 ### What You Are Listening For
 
-- "It's going up by one more each time" — the first pattern; build on it
-- "What if I flip it?" — the geometric insight that leads to Gauss
-- "Does this work for any number?" — the generalisation impulse; this is the transition to algebra
+- "It's going up by one more each time". the first pattern; build on it
+- "What if I flip it?". the geometric insight that leads to Gauss
+- "Does this work for any number?". the generalisation impulse; this is the transition to algebra
 
 ---
 
@@ -434,4 +434,4 @@ Show the rectangle method on the board: two staircases forming an n × (n+1) rec
 
 ---
 
-> **The bigger idea:** The staircase problem introduces students to the most powerful move in mathematics: replacing a specific calculation with a general argument. Once you have \\(\frac{n(n+1)}{2}\\), you never have to count blocks again — for any staircase. The formula doesn't just solve the problem; it solves *all problems of this type at once*. This is what algebra is. Not "find x." Replace counting with understanding.
+> **The bigger idea:** The staircase problem introduces students to the most powerful move in mathematics: replacing a specific calculation with a general argument. Once you have \\(\frac{n(n+1)}{2}\\), you never have to count blocks again. for any staircase. The formula doesn't just solve the problem; it solves *all problems of this type at once*. This is what algebra is. Not "find x." Replace counting with understanding.

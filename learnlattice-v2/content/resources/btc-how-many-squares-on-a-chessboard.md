@@ -26,8 +26,8 @@ statement_of_inquiry: "Looking beyond the obvious reveals hidden mathematical st
 difficulty: "meeting"
 duration: "1 lesson"
 hook: "A chessboard has 64 small squares. But how many squares of ALL sizes can you find?"
-warmup: "How many squares on a 2×2 grid? Draw it. Count carefully — there are more than you think."
-seo_title: "How Many Squares on a Chessboard? — BTC Thinking Task | M..."
+warmup: "How many squares on a 2×2 grid? Draw it. Count carefully. there are more than you think."
+seo_title: "How Many Squares on a Chessboard? | BTC Thinking Task | M..."
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. A chessboard has 64 small squares. But how many squares of ALL sizes? This visua"
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -96,7 +96,7 @@ journal_prompts:
 
 Everyone knows a chessboard has 64 small squares.
 
-But how many squares of **all sizes** — 1×1, 2×2, 3×3, ... up to 8×8?
+But how many squares of **all sizes**. 1×1, 2×2, 3×3, ... up to 8×8?
 
 > **The answer is NOT 64.** Grab your whiteboard and start counting.
 
@@ -108,8 +108,8 @@ Start small and work up:
 
 | Grid Size | 1×1 squares | 2×2 squares | 3×3 squares | ... | Total |
 |---|---|---|---|---|---|
-| 1×1 | 1 | — | — | | **1** |
-| 2×2 | 4 | 1 | — | | **5** |
+| 1×1 | 1 |. |. | | **1** |
+| 2×2 | 4 | 1 |. | | **5** |
 | 3×3 | 9 | 4 | 1 | | **14** |
 | 4×4 | 16 | 9 | 4 | | **30** |
 | n×n | ? | ? | ? | | **?** |

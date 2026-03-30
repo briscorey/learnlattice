@@ -16,7 +16,7 @@ key-concepts:
   - "Logic"
 global-contexts:
   - "Fairness and Development"
-statement_of_inquiry: "Data does not lie — but the way it is collected, presented, and interpreted can be deeply misleading."
+statement_of_inquiry: "Data does not lie. but the way it is collected, presented, and interpreted can be deeply misleading."
 difficulty: "meeting"
 hook: "90% of students prefer our school lunches! (Survey of 10 students. All were on the school council. The question was: 'Don't you love the new menu?') Can you spot every trick?"
 warmup: "Which question is better? A) 'Do you agree our school is the best?' B) 'How would you rate your school on a scale of 1-10?' Why?"
@@ -29,11 +29,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -84,7 +84,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -100,17 +100,17 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Survey That Lies" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Survey That Lies". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
 Here are three survey results. All are true. All are misleading.
 
-1. **"90% of students love our school lunches!"** — Surveyed 10 students. All from school council. Question: "Don't you agree the new menu is great?"
+1. **"90% of students love our school lunches!"**. Surveyed 10 students. All from school council. Question: "Don't you agree the new menu is great?"
 
-2. **"Students spend an average of 4 hours on homework each night"** — The average was pulled up by one student who reported 15 hours. The median was 1.5 hours.
+2. **"Students spend an average of 4 hours on homework each night"**. The average was pulled up by one student who reported 15 hours. The median was 1.5 hours.
 
-3. **"Screen time has increased 300% since 2010!"** — True, but the graph starts at 1.5 hours instead of zero, making the increase look enormous.
+3. **"Screen time has increased 300% since 2010!"**. True, but the graph starts at 1.5 hours instead of zero, making the increase look enormous.
 
 **Your job:** Design a survey that is actually honest. And learn to spot when others cheat.
 
@@ -118,13 +118,13 @@ Here are three survey results. All are true. All are misleading.
 
 ## The Seven Sins of Surveys
 
-1. **Biased sample** — Only asking people who agree with you
-2. **Leading questions** — "Don't you think..." pushes toward yes
-3. **Small sample** — 10 people cannot represent a school
-4. **Mean vs median** — Outliers distort the average
-5. **Misleading graphs** — Axes that don't start at zero, stretched scales
-6. **Cherry-picking** — Reporting only the results you like
-7. **Correlation ≠ causation** — Ice cream sales and drowning both rise in summer
+1. **Biased sample**. Only asking people who agree with you
+2. **Leading questions**. "Don't you think..." pushes toward yes
+3. **Small sample**. 10 people cannot represent a school
+4. **Mean vs median**. Outliers distort the average
+5. **Misleading graphs**. Axes that don't start at zero, stretched scales
+6. **Cherry-picking**. Reporting only the results you like
+7. **Correlation ≠ causation**. Ice cream sales and drowning both rise in summer
 
 ---
 
@@ -144,6 +144,6 @@ Requirements:
 
 ## Teaching Notes
 
-This is a Dylan Wiliam investigation — the survey design IS the assessment. Students demonstrate understanding by building something honest, and demonstrate critical thinking by deliberately building something misleading.
+This is a Dylan Wiliam investigation. the survey design IS the assessment. Students demonstrate understanding by building something honest, and demonstrate critical thinking by deliberately building something misleading.
 
 The misleading graph exercise is counterintuitively effective. By creating a dishonest graph on purpose, students internalise what to look for when they encounter one in the real world.

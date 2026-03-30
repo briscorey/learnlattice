@@ -6,7 +6,7 @@ layout: "science"
 
 ## Free MYP Science Resources
 
-LearnLattice provides over 100 free MYP science resources spanning biology, chemistry, physics, earth science, ecology, and space science. Every investigation is designed around the inquiry cycle that the IB MYP framework requires — students do not simply follow a method, they formulate questions, design experiments, process data, and evaluate their conclusions.
+LearnLattice provides over 100 free MYP science resources spanning biology, chemistry, physics, earth science, ecology, and space science. Every investigation is designed around the inquiry cycle that the IB MYP framework requires. students do not simply follow a method, they formulate questions, design experiments, process data, and evaluate their conclusions.
 
 ## Inquiry-Based, Not Recipe-Based
 

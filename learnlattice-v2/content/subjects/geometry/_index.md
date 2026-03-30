@@ -1,11 +1,11 @@
 ---
 title: "Geometry"
-description: "Free MYP geometry investigations for Grades 6-9. Visual, hands-on tasks covering angles, transformations, tessellations, similarity, and measurement — aligned to IB MYP criteria."
+description: "Free MYP geometry investigations for Grades 6-9. Visual, hands-on tasks covering angles, transformations, tessellations, similarity, and measurement. aligned to IB MYP criteria."
 ---
 
 ## Free MYP Geometry Resources
 
-Geometry on LearnLattice is visual and hands-on. Students explore spatial relationships through construction, transformation, and proof — not just formula application.
+Geometry on LearnLattice is visual and hands-on. Students explore spatial relationships through construction, transformation, and proof. not just formula application.
 
 ### Topics Covered
 

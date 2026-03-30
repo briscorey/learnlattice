@@ -1,7 +1,7 @@
 ---
 title: "The Fairness Problem"
 date: 2025-12-11
-description: "Three people share 2 pizzas. Two people share 1 pizza. Who gets more? This single question opens an investigation into fractions as division, fair sharing, and the multiple representations that make fractions so powerful — and so confusing."
+description: "Three people share 2 pizzas. Two people share 1 pizza. Who gets more? This single question opens an investigation into fractions as division, fair sharing, and the multiple representations that make fractions so powerful. and so confusing."
 hook: "Three people share 2 pizzas"
 subjects:
   - "Mathematics"
@@ -87,11 +87,11 @@ misconceptions:
   why: 'They look different: 1/4 vs 0.25'
   truth: They are different representations of the same value. 1/4 = 0.25 = 25%. Understanding
     this equivalence is essential.
-timeline: '0-5 min: Paper circle warm-up — divide into thirds and fifths. | 5-15 min:
-  Sharing pizzas — 3 pizzas for 7 people. | 15-25 min: Groups explore different sharing
+timeline: '0-5 min: Paper circle warm-up. divide into thirds and fifths. | 5-15 min:
+  Sharing pizzas. 3 pizzas for 7 people. | 15-25 min: Groups explore different sharing
   scenarios. | 25-35 min: Equivalent fractions emerge from the sharing. | 35-45 min:
-  Gallery walk — who found the most creative sharing? | 45-50 min: The big question
-  — is any share ever truly fair?'
+  Gallery walk. who found the most creative sharing? | 45-50 min: The big question
+ . is any share ever truly fair?'
 sentence_starters:
   describing:
   - Each person gets...
@@ -120,7 +120,7 @@ quick_check:
   a: 2/3 vs 3/5. 2/3 ≈ 0.667, 3/5 = 0.6. First group gets more.
 - type: extend
   q: Can two different fractions ALWAYS be compared? What method works every time?
-  a: Yes — find a common denominator, or convert both to decimals.
+  a: Yes. find a common denominator, or convert both to decimals.
 journal_prompts:
 - What was confusing about comparing fractions at first?
 - What method did you find most reliable for comparing?
@@ -142,9 +142,9 @@ Write exactly this on the board. Nothing else.
 > **Group B: 2 people share 1 pizza.**
 > **Who gets more pizza per person?**
 
-Silent thinking time: 90 seconds. Then: show your reasoning — on paper, on a whiteboard, any way you choose. No answer is wrong yet. Every representation is interesting.
+Silent thinking time: 90 seconds. Then: show your reasoning. on paper, on a whiteboard, any way you choose. No answer is wrong yet. Every representation is interesting.
 
-You will see: area models. Drawings. Guesses. And — importantly — some students who intuitively sense the answer without being able to explain why.
+You will see: area models. Drawings. Guesses. And. importantly. some students who intuitively sense the answer without being able to explain why.
 
 The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Group B gets ½ pizza. And ⅔ > ½. But the path from the sharing scenario to that comparison is exactly what this investigation builds.
 
@@ -165,7 +165,7 @@ The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Gro
   <span class="tm-phase-time">0–2 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Launch</div>
-    <p>Write on the board: Group A — 3 people share 2 pizzas. Group B — 2 people share 1 pizza. Who gets more? Read aloud once, slowly. 90 seconds of silent thinking. Every student must have something on paper before grouping.</p>
+    <p>Write on the board: Group A. 3 people share 2 pizzas. Group B. 2 people share 1 pizza. Who gets more? Read aloud once, slowly. 90 seconds of silent thinking. Every student must have something on paper before grouping.</p>
   </div>
 </div>
 
@@ -181,7 +181,7 @@ The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Gro
   <span class="tm-phase-time">4–9 min</span>
   <div class="tm-phase-body">
     <div class="tm-phase-title">Circulate</div>
-    <p>You'll see drawings of circles cut into pieces, number lines, written calculations. All are valid. If a group says "Group B, because ½ is bigger" — point at Group A and draw two circles, cut into thirds. If a group says "Group A" without showing why ⅔ > ½ — draw a question mark next to their claim.</p>
+    <p>You'll see drawings of circles cut into pieces, number lines, written calculations. All are valid. If a group says "Group B, because ½ is bigger". point at Group A and draw two circles, cut into thirds. If a group says "Group A" without showing why ⅔ > ½. draw a question mark next to their claim.</p>
   </div>
 </div>
 
@@ -195,7 +195,7 @@ The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Gro
 
 <div class="tm-callout tm-callout--listen">
   <strong>What you're listening for</strong>
-  <p>"Each person gets two thirds" — correct division model. "Half is the same as three sixths" — common denominator thinking emerging. "I drew it and Group A's piece is bigger" — valid area reasoning. "It depends on the size of the pizza" — excellent critical thinking; acknowledge it, then clarify we assume equal size.</p>
+  <p>"Each person gets two thirds". correct division model. "Half is the same as three sixths". common denominator thinking emerging. "I drew it and Group A's piece is bigger". valid area reasoning. "It depends on the size of the pizza". excellent critical thinking; acknowledge it, then clarify we assume equal size.</p>
 </div>
 
 <div class="tm-callout tm-callout--eal">
@@ -210,7 +210,7 @@ The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Gro
 
 <div class="tm-callout tm-callout--dontsay">
   <strong>Don't say this</strong>
-  <p>"Convert to a common denominator" — they'll find the need for this themselves. "⅔ is approximately 0.67" — the decimal conversion is a later discovery, not a starting point.</p>
+  <p>"Convert to a common denominator". they'll find the need for this themselves. "⅔ is approximately 0.67". the decimal conversion is a later discovery, not a starting point.</p>
 </div>
 
     </div>
@@ -222,11 +222,11 @@ The answer is Group A. Each person in Group A gets ⅔ pizza. Each person in Gro
 
 Most students who struggle with fractions are not struggling with arithmetic. They are struggling with what a fraction *means*. Research on fraction understanding identifies three core meanings that students need to develop:
 
-1. **Fraction as part-whole** — ¾ means 3 out of 4 equal parts
-2. **Fraction as division** — ¾ means 3 ÷ 4
-3. **Fraction as ratio** — ¾ means 3 for every 4, a multiplicative relationship
+1. **Fraction as part-whole**. ¾ means 3 out of 4 equal parts
+2. **Fraction as division**. ¾ means 3 ÷ 4
+3. **Fraction as ratio**. ¾ means 3 for every 4, a multiplicative relationship
 
-All three meanings are correct and useful. But most teaching focuses almost exclusively on the first. This investigation develops all three, and particularly the second — which is the most powerful and the most neglected.
+All three meanings are correct and useful. But most teaching focuses almost exclusively on the first. This investigation develops all three, and particularly the second. which is the most powerful and the most neglected.
 
 ---
 
@@ -242,11 +242,11 @@ This is not a shorthand. It is a definition. And it gives students a second entr
 
 **Problem:** 4 people share 3 sandwiches equally. How much does each person get?
 
-**Method 1 — Draw and divide:**
+**Method 1. Draw and divide:**
 Draw 3 rectangles. Divide each into 4 equal parts. Colour one part from each rectangle per person.
 Each person gets 3 pieces, each of size ¼. Total = ¾.
 
-**Method 2 — Use the definition:**
+**Method 2. Use the definition:**
 3 ÷ 4 = ¾. Each person gets ¾ of a sandwich.
 
 Both methods reach the same answer. Method 2 is faster. Method 1 shows *why* Method 2 is true.
@@ -269,7 +269,7 @@ Both methods work. The second method generalises more powerfully and is harder t
 
 ## Investigation Tasks
 
-### Part A — The Sharing Table (Building the model)
+### Part A. The Sharing Table (Building the model)
 
 Complete this table without a calculator. Show drawings for the first four rows.
 
@@ -283,7 +283,7 @@ Complete this table without a calculator. Show drawings for the first four rows.
 
 **Discuss:** Which rows gave you exactly one whole? Exactly half? What determines whether each person gets more than 1 or less than 1?
 
-### Part B — The Comparison Challenge
+### Part B. The Comparison Challenge
 
 Each pair of groups below is sharing food. For each, determine which group gets more per person. Show your reasoning in more than one way.
 
@@ -293,7 +293,7 @@ Each pair of groups below is sharing food. For each, determine which group gets 
 
 **Extension:** Can you find two groups that get *exactly the same* amount per person, even though the numbers are different? What do you notice about those pairs?
 
-### Part C — The Representation Web
+### Part C. The Representation Web
 
 Take the fraction ⅝. Represent it in at least five different ways:
 - As a point on a number line
@@ -304,7 +304,7 @@ Take the fraction ⅝. Represent it in at least five different ways:
 
 **Then:** Which representation is most useful for comparing ⅝ with ⅞? Which is most useful for adding ⅝ + ¼? Which is most useful for multiplying ⅝ × 4? The representation you choose *determines what you can see*.
 
-### Part D — The Criterion D Task
+### Part D. The Criterion D Task
 
 > *Two running clubs are reporting their training completion rates.*
 > *Club A: 7 out of 9 members completed their long run.*
@@ -338,23 +338,23 @@ This metacognitive question reveals which meaning of fraction students are still
 
 | What students often believe | What's accurate |
 |-----------------------------|----------------|
-| "⅗ is bigger than ⅔ because 3 and 5 are bigger numbers than 2 and 3" | Larger numbers in a fraction don't mean larger quantity — you must consider the relationship between numerator and denominator |
-| "Fractions always represent less than one whole" | A fraction like 7/3 represents more than one whole — the numerator can be larger than the denominator |
+| "⅗ is bigger than ⅔ because 3 and 5 are bigger numbers than 2 and 3" | Larger numbers in a fraction don't mean larger quantity. you must consider the relationship between numerator and denominator |
+| "Fractions always represent less than one whole" | A fraction like 7/3 represents more than one whole. the numerator can be larger than the denominator |
 | "You can only compare fractions by finding a common denominator" | Common denominators are one method; benchmark comparisons and division reasoning are often faster and more meaningful |
-| "Dividing always makes things smaller" | Dividing by a fraction less than 1 makes things *larger* — this surprises most students and is worth a dedicated discussion |
+| "Dividing always makes things smaller" | Dividing by a fraction less than 1 makes things *larger*. this surprises most students and is worth a dedicated discussion |
 | "Equal parts means equal-looking parts" | Equal means equal *area* (or equal *quantity*), not equal appearance. A rectangle cut diagonally still gives two equal-area pieces |
 
 ---
 
 ## Teaching Notes
 
-**On running the hook:** The sharing scenario is deliberately ambiguous about pizza *size*. Students sometimes ask: "But what size is the pizza?" Accept this question — write it on the board — and then say: "Let's assume they're all the same size. But that's a great thing to notice: the problem only makes sense if we define what's being shared and how equal the pieces are." This is mathematical modelling thinking, and it's worth naming.
+**On running the hook:** The sharing scenario is deliberately ambiguous about pizza *size*. Students sometimes ask: "But what size is the pizza?" Accept this question. write it on the board. and then say: "Let's assume they're all the same size. But that's a great thing to notice: the problem only makes sense if we define what's being shared and how equal the pieces are." This is mathematical modelling thinking, and it's worth naming.
 
-**On Part B:** Students who convert everything to decimals have found a valid method, but push them to also reason proportionally — "which is a better deal: 3 for 5 people or 2 for 4 people?" The decimal method tells you *that* ⅗ > ½. The proportional reasoning tells you *why*, and it generalises to situations where exact calculation is harder.
+**On Part B:** Students who convert everything to decimals have found a valid method, but push them to also reason proportionally. "which is a better deal: 3 for 5 people or 2 for 4 people?" The decimal method tells you *that* ⅗ > ½. The proportional reasoning tells you *why*, and it generalises to situations where exact calculation is harder.
 
-**On the representation web:** Some students will find the number line hardest. This is diagnostic. A student who can't place ⅝ on a number line doesn't yet have a continuous model of fractions — they only have a discrete, "pieces of a pie" model. The number line is where that shift happens.
+**On the representation web:** Some students will find the number line hardest. This is diagnostic. A student who can't place ⅝ on a number line doesn't yet have a continuous model of fractions. they only have a discrete, "pieces of a pie" model. The number line is where that shift happens.
 
-**On Part D:** This task deliberately gives students a statement that is technically true but functionally misleading — exactly the kind of thing they'll encounter in media, sport, and later in statistics. The mathematics and the communication are inseparable here.
+**On Part D:** This task deliberately gives students a statement that is technically true but functionally misleading. exactly the kind of thing they'll encounter in media, sport, and later in statistics. The mathematics and the communication are inseparable here.
 
 ---
 
@@ -372,7 +372,7 @@ Draw three circles on the board, each a different size. Write: **"3 people. 1 pi
 
 **Watch for:** Students who immediately cut into thirds using vertical lines. Ask: "Is that the only way?" Hand them a second paper circle and a different colour marker.
 
-**Watch for:** Students who argue about whether oddly-shaped but equal-area pieces are "fair." This is the key distinction — congruent vs. equal area — and it's worth stopping the class for if the debate gets heated.
+**Watch for:** Students who argue about whether oddly-shaped but equal-area pieces are "fair." This is the key distinction. congruent vs. equal area. and it's worth stopping the class for if the debate gets heated.
 
 **Do not say:** "A fraction is a part of a whole." Many students carry this as their only definition, and it breaks when fractions are greater than 1 or used as operators. Let the investigation build a richer understanding.
 
@@ -380,15 +380,15 @@ Draw three circles on the board, each a different size. Write: **"3 people. 1 pi
 
 ### Pulling It Together (Minutes 25–35)
 
-Ask each group to hold up their cut circles. Project the question: **"Which group's method would you trust to be fair? Why?"** The word "trust" forces justification — it's not enough to look fair, you need to prove it.
+Ask each group to hold up their cut circles. Project the question: **"Which group's method would you trust to be fair? Why?"** The word "trust" forces justification. it's not enough to look fair, you need to prove it.
 
 **EAL move:** Give each group a sentence frame on a card: "Our method is fair because ___." Even one-word answers ("equal," "same") are valid contributions.
 
 ### What You Are Listening For
 
-- "It depends what you mean by equal" — this is the lesson
-- Students comparing their method to another group's method — this is mathematical argumentation
-- "What if there are 7 people?" — the generalisation impulse is emerging; feed it
+- "It depends what you mean by equal". this is the lesson
+- Students comparing their method to another group's method. this is mathematical argumentation
+- "What if there are 7 people?". the generalisation impulse is emerging; feed it
 
 ---
 
@@ -402,4 +402,4 @@ Ask each group to hold up their cut circles. Project the question: **"Which grou
 
 ---
 
-> **The bigger idea:** Fractions are the first time mathematics forces students to confront the idea that numbers have multiple valid representations, and that the choice of representation matters. A student who can fluidly move between part-whole, division, and ratio models of fractions has developed a flexibility of mathematical thinking that carries into algebra, statistics, and beyond. The goal is never a student who can find common denominators — it's a student who knows *when* finding a common denominator is the right move.
+> **The bigger idea:** Fractions are the first time mathematics forces students to confront the idea that numbers have multiple valid representations, and that the choice of representation matters. A student who can fluidly move between part-whole, division, and ratio models of fractions has developed a flexibility of mathematical thinking that carries into algebra, statistics, and beyond. The goal is never a student who can find common denominators. it's a student who knows *when* finding a common denominator is the right move.

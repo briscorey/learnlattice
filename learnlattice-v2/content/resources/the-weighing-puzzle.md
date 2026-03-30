@@ -1,7 +1,7 @@
 ---
 title: "The Weighing Puzzle"
 date: 2026-03-12
-description: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation — without writi"
+description: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation. without writi"
 subjects:
   - "Mathematics"
 math_topic: Algebra
@@ -16,9 +16,9 @@ key-concepts:
   - "Logic"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Equations are statements about balance — and the physical balance scale is the concrete model that makes algebraic manipulation intuitive."
+statement_of_inquiry: "Equations are statements about balance. and the physical balance scale is the concrete model that makes algebraic manipulation intuitive."
 difficulty: "meeting"
-hook: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation — without writing one."
+hook: "Two bags of marbles balance three pencil cases on a scale. One bag of marbles balances one pencil case plus one eraser. How heavy is the eraser? You just solved a simultaneous equation. without writing one."
 warmup: "A bag of marbles weighs the same as 5 erasers. Another bag weighs the same as 3 erasers. If I put both bags on one side, how many erasers balance them?"
 seo_title: "The Weighing Puzzle | Free MYP Maths Investigation"
 seo_description: "Free MYP mathematics investigation for Grade 7-8. Inquiry-based, classroom-ready with EAL scaffolds. Two bags of marbles balance three pencil"
@@ -29,11 +29,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -84,7 +84,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -100,7 +100,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Weighing Puzzle" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Weighing Puzzle". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 

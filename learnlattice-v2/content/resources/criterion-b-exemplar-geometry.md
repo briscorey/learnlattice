@@ -107,7 +107,7 @@ This exemplar presents three student responses to the same Criterion B investiga
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 Identifies basic features but cannot explain why. Description is qualitative. No mathematical or scientific reasoning beyond surface observations.
 
@@ -115,7 +115,7 @@ Identifies basic features but cannot explain why. Description is qualitative. No
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 Uses correct terminology and shows logical reasoning. Verifies findings against data. Explains patterns using subject-specific knowledge. May not yet distinguish between checking specific cases and proving a general rule.
 
@@ -123,7 +123,7 @@ Uses correct terminology and shows logical reasoning. Verifies findings against 
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 Provides structural justification. Connects findings to underlying principles. Acknowledges limitations. Distinguishes between what the data shows and what it cannot show. Uses precise language throughout.
 

@@ -1,5 +1,5 @@
 ---
-title: "IDU: The Packaging Problem — Geometry Meets Sustainability"
+title: "IDU: The Packaging Problem. Geometry Meets Sustainability"
 date: 2025-11-13
 description: "Students design product packaging that minimises material waste while maximising volume. They calculate surface area to volume ratios, test structural integrity, and evaluate environmental impact. A math-science IDU connecting geometry, materials science, and sustainability."
 subjects:
@@ -30,7 +30,7 @@ related_concepts:
   - "Consequences"
 global-contexts:
   - "Globalization and Sustainability"
-statement_of_inquiry: "The form of a container determines both its mathematical efficiency and its environmental impact — and optimising one often requires compromising the other."
+statement_of_inquiry: "The form of a container determines both its mathematical efficiency and its environmental impact. and optimising one often requires compromising the other."
 difficulty: "meeting"
 duration: "4–5 lessons"
 hook: "A Pringles tube uses 40% less material per chip than a standard rectangular crisp packet. But why are most products still sold in boxes? Is the most mathematically efficient shape always the best design?"
@@ -41,7 +41,7 @@ teacher_moves:
   - title: "Start with real packaging"
     description: "Bring in 5-6 different product packages. Students measure dimensions and calculate SA:V ratios before any instruction. The discovery that a sphere has the lowest ratio (most efficient) but is never used commercially creates the tension that drives the unit."
   - title: "The optimisation challenge"
-    description: "Given exactly 600cm² of material, design a container with maximum volume. Students discover that the optimal rectangular box is a cube, and that a cylinder beats a cube, and that a sphere beats everything — but cannot stand on a shelf."
+    description: "Given exactly 600cm² of material, design a container with maximum volume. Students discover that the optimal rectangular box is a cube, and that a cylinder beats a cube, and that a sphere beats everything. but cannot stand on a shelf."
   - title: "Materials science adds the science dimension"
     description: "Not all materials are equal. Students test the structural strength of different shapes and materials, discovering that a cylinder resists crushing better than a box of the same material thickness."
 btc_practices:
@@ -124,7 +124,7 @@ Students bring in or are given 5-6 commercial product packages of different shap
 - Triangular prism (Toblerone)
 - Irregular shape (chip packet, bottle)
 
-For each package, students measure dimensions, calculate surface area and volume, and compute the **SA:V ratio** — the amount of material needed per unit of product stored.
+For each package, students measure dimensions, calculate surface area and volume, and compute the **SA:V ratio**. the amount of material needed per unit of product stored.
 
 **Key discovery:** The SA:V ratio varies dramatically. A sphere has the lowest possible ratio (most efficient) but no commercial product uses spherical packaging. Why not?
 
@@ -182,5 +182,5 @@ Each group designs a final package for a specific product, justifying their choi
 
 - Physical manipulation of real packages provides a tactile, language-light entry point
 - Provide SA and volume formula reference sheets with visual diagrams
-- The design challenge (Lesson 5) can incorporate visual presentation — drawings, models, and labelled diagrams reduce the writing burden
+- The design challenge (Lesson 5) can incorporate visual presentation. drawings, models, and labelled diagrams reduce the writing burden
 - Bilingual glossary: surface area, volume, ratio, efficiency, biodegradable, renewable, recyclable

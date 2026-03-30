@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "Pick any four consecutive numbers. Add them. Try again. And again. What do you notice?"
 warmup: "Add 1 + 2 + 3 + 4. Now add 5 + 6 + 7 + 8. What is special about each answer?"
-seo_title: "Four Consecutive Numbers — BTC Thinking Task | MYP Maths"
+seo_title: "Four Consecutive Numbers | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Pick any four consecutive numbers and add them. Try again. What do you notice? C"
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -35,11 +35,11 @@ teacher_moves:
     description: "Use random grouping (cards, sticks, app). Students who always work with friends miss the productive discomfort of explaining their thinking to someone new."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -90,7 +90,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -106,7 +106,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Four Consecutive Numbers" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Four Consecutive Numbers". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -137,7 +137,7 @@ Once you have a conjecture:
 
 n + (n+1) + (n+2) + (n+3) = 4n + 6 = **2(2n + 3)**
 
-Since 2n + 3 is always odd (odd + even = odd), the sum is always **2 × an odd number** — always even, never divisible by 4.
+Since 2n + 3 is always odd (odd + even = odd), the sum is always **2 × an odd number**. always even, never divisible by 4.
 
 > This is the difference between *checking* and *proving*. You checked 5 examples. The algebra proves it for ALL cases.
 
@@ -147,8 +147,8 @@ Since 2n + 3 is always odd (odd + even = odd), the sum is always **2 × an odd n
 
 **BTC Practices Used:** Thinking task (non-curricular entry), random groups, vertical non-permanent surfaces, oral delivery.
 
-**MYP Criterion B Connection:** This task spans all four Criterion B strands — discovering the pattern, describing it, verifying it, and proving it algebraically. The proof is accessible to Grade 7-8 students who have met algebraic expression expansion.
+**MYP Criterion B Connection:** This task spans all four Criterion B strands. discovering the pattern, describing it, verifying it, and proving it algebraically. The proof is accessible to Grade 7-8 students who have met algebraic expression expansion.
 
 **Why This Works as a Thinking Task:** The entry point is arithmetic (everyone can add four numbers). The exit point is algebraic proof. The gap between is where thinking happens.
 
-**Extension:** What about the PRODUCT of three consecutive numbers? (Always divisible by 6 — why?)
+**Extension:** What about the PRODUCT of three consecutive numbers? (Always divisible by 6. why?)

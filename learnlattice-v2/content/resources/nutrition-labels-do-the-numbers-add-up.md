@@ -1,7 +1,7 @@
 ---
 title: "Nutrition Labels: Do the Numbers Add Up?"
 date: 2026-03-02
-description: "Students analyse real nutrition labels from foods across different countries, calculate percentages and ratios, compare energy content, and explain the biological role of macronutrients — connecting the mathematics of proportional reasoning to the science of nutrition through something they hold in their hands every day."
+description: "Students analyse real nutrition labels from foods across different countries, calculate percentages and ratios, compare energy content, and explain the biological role of macronutrients. connecting the mathematics of proportional reasoning to the science of nutrition through something they hold in their hands every day."
 subjects:
   - "Mathematics"
   - "Science"
@@ -37,30 +37,30 @@ flagship: true
 download_url: ""
 download_label: "Investigation Pack"
 duration: "2–3 lessons"
-hook: "Your favourite snack says it has 150 calories per serving. But the serving size is 30 grams — about 6 chips. When was the last time you ate only 6 chips?"
+hook: "Your favourite snack says it has 150 calories per serving. But the serving size is 30 grams. about 6 chips. When was the last time you ate only 6 chips?"
 warmup: "Bring 5 packaged food items to class (or photos of nutrition labels). Without looking at the labels, students rank them from most to least energy (calories). Then reveal the labels. Were they right? The most common surprise: fruit juice often has more sugar per 100ml than cola."
-timeline: "0-5 min: Guess the calories — rank 5 foods without seeing labels | 5-10 min: Reveal labels and discuss surprises | 10-25 min: Calculate — what percentage of each food is sugar? Fat? Protein? Convert between per-serving and per-100g | 25-35 min: Compare labels from different countries — why do they look different? | 35-45 min: The Biology — what does your body actually DO with carbohydrates, proteins, and fats? | 45-50 min: Design your ideal snack label"
+timeline: "0-5 min: Guess the calories. rank 5 foods without seeing labels | 5-10 min: Reveal labels and discuss surprises | 10-25 min: Calculate. what percentage of each food is sugar? Fat? Protein? Convert between per-serving and per-100g | 25-35 min: Compare labels from different countries. why do they look different? | 35-45 min: The Biology. what does your body actually DO with carbohydrates, proteins, and fats? | 45-50 min: Design your ideal snack label"
 teacher_moves:
   - title: "Start with the serving size trick"
-    description: "Show students two nearly identical products where one has a smaller serving size. Per serving, it looks healthier. Per 100g, it's identical (or worse). This is the mathematical hook — proportional reasoning isn't just school maths, it's how companies manipulate perception. Students get genuinely annoyed, which is perfect."
+    description: "Show students two nearly identical products where one has a smaller serving size. Per serving, it looks healthier. Per 100g, it's identical (or worse). This is the mathematical hook. proportional reasoning isn't just school maths, it's how companies manipulate perception. Students get genuinely annoyed, which is perfect."
   - title: "Use per-100g as the equaliser"
-    description: "Different products use different serving sizes, making comparison impossible. Per-100g (or per-100ml) standardises everything. This is the mathematical argument for common denominators made tangible. When students ask 'why do we need a common denominator?' you can now say: 'Same reason nutrition labels need per-100g — you can't compare things measured in different units.'"
+    description: "Different products use different serving sizes, making comparison impossible. Per-100g (or per-100ml) standardises everything. This is the mathematical argument for common denominators made tangible. When students ask 'why do we need a common denominator?' you can now say: 'Same reason nutrition labels need per-100g. you can't compare things measured in different units.'"
   - title: "Connect biology naturally, not forcefully"
-    description: "When students calculate that a chocolate bar is 52% sugar, they naturally ask 'is that bad?' This is when the biology enters — not as a separate topic, but as the answer to a question they already have. Carbohydrates provide quick energy, proteins build tissue, fats store energy and protect organs. The biology explains why the numbers matter."
+    description: "When students calculate that a chocolate bar is 52% sugar, they naturally ask 'is that bad?' This is when the biology enters. not as a separate topic, but as the answer to a question they already have. Carbohydrates provide quick energy, proteins build tissue, fats store energy and protect organs. The biology explains why the numbers matter."
 listen_for:
   - level: "Approaching"
     phrase: "This has a lot of sugar because it says 25 grams."
   - level: "Meeting"
-    phrase: "Per serving it looks like less sugar, but when I calculate per 100g, it's actually 52% sugar — more than half the product is sugar."
+    phrase: "Per serving it looks like less sugar, but when I calculate per 100g, it's actually 52% sugar. more than half the product is sugar."
   - level: "Exceeding"
-    phrase: "The Chinese label shows energy in kilojoules while the American label uses calories. Converting between them (1 cal = 4.184 kJ), the actual energy content is the same, but the different units and formats make comparison difficult — which might be intentional."
+    phrase: "The Chinese label shows energy in kilojoules while the American label uses calories. Converting between them (1 cal = 4.184 kJ), the actual energy content is the same, but the different units and formats make comparison difficult. which might be intentional."
 misconceptions:
   - myth: "Calories are bad"
     why: "Diet culture has made 'calories' a negative word for many students."
     truth: "Calories are units of energy. Your body needs energy to breathe, think, move, and grow. The question is never 'does this have calories?' (everything does) but 'does this provide the right amount and type of energy for what I need?' Demonising calories leads to disordered thinking about food."
   - myth: "Per-serving values tell you what's in the whole package"
     why: "Students (and many adults) read 'per serving' as 'per package.'"
-    truth: "A bag of crisps might contain 5 servings. The 150 calories per serving means 750 calories in the bag. Serving sizes are often unrealistically small — a serving of cereal is typically 30g, but most people pour 60-80g."
+    truth: "A bag of crisps might contain 5 servings. The 150 calories per serving means 750 calories in the bag. Serving sizes are often unrealistically small. a serving of cereal is typically 30g, but most people pour 60-80g."
   - myth: "Fat-free means healthy"
     why: "Students apply a simple rule: less fat = healthier."
     truth: "Many fat-free products replace fat with sugar to maintain taste. A fat-free yoghurt might have more total energy than the regular version. Mathematics (comparing actual values per 100g) reveals what marketing hides."
@@ -115,7 +115,7 @@ quick_check:
     a: "Carbohydrates: 4 kcal/g. Protein: 4 kcal/g. Fat: 9 kcal/g."
   - type: "application"
     q: "A cereal has 12g sugar per 40g serving. What percentage of the cereal is sugar? What about per 100g?"
-    a: "12/40 × 100 = 30% sugar. Per 100g: 12/40 × 100 = 30g per 100g (same percentage — it scales proportionally)."
+    a: "12/40 × 100 = 30% sugar. Per 100g: 12/40 × 100 = 30g per 100g (same percentage. it scales proportionally)."
   - type: "extension"
     q: "Why might a product marketed as '90% fat-free' still not be a healthy choice?"
     a: "90% fat-free means 10% fat by mass. But fat has 9 kcal per gram (more than double carbs or protein), so that 10% fat could contribute 50%+ of the product's total energy. Also, the remaining 90% might be mostly sugar. The '90% fat-free' claim is mathematically true but nutritionally misleading."
@@ -139,7 +139,7 @@ That's about **6 crisps.** Or **3 biscuits.** Or **half a muesli bar.**
 
 When was the last time you ate exactly 6 crisps and stopped?
 
-**The numbers on nutrition labels are mathematically correct — but are they mathematically honest?**
+**The numbers on nutrition labels are mathematically correct. but are they mathematically honest?**
 
 ---
 
@@ -152,13 +152,13 @@ Every nutrition label tells you the same core information, but different countri
 | Information | What it means |
 |-------------|--------------|
 | **Energy** (kcal or kJ) | Total energy the food provides |
-| **Carbohydrates** (g) | Sugars and starches — your body's quick fuel |
-| **— of which sugars** (g) | The simple carbohydrates (fast energy, sweet taste) |
+| **Carbohydrates** (g) | Sugars and starches. your body's quick fuel |
+| **  of which sugars** (g) | The simple carbohydrates (fast energy, sweet taste) |
 | **Fat** (g) | Energy storage, cell membranes, vitamin absorption |
-| **— of which saturated** (g) | Solid fats (mainly from animal products) |
+| **  of which saturated** (g) | Solid fats (mainly from animal products) |
 | **Protein** (g) | Building blocks for muscles, enzymes, hormones |
-| **Fibre** (g) | Indigestible plant material — keeps digestion healthy |
-| **Salt/Sodium** (g) | Mineral for nerve function — too much raises blood pressure |
+| **Fibre** (g) | Indigestible plant material. keeps digestion healthy |
+| **Salt/Sodium** (g) | Mineral for nerve function. too much raises blood pressure |
 
 ### The Energy Equation
 
@@ -294,7 +294,7 @@ Consider: Would a traffic-light system (green/amber/red) be more effective than 
 
 ### Why This Investigation Works for MYP Year 1-2
 
-This investigation requires only basic mathematical skills — percentages, ratios, multiplication, division — but applies them to a context every student engages with daily. The low floor (read a label, calculate a percentage) and high ceiling (cross-country comparison, label design, biological justification) make it genuinely accessible for Grade 6 students while challenging for advanced Grade 7s.
+This investigation requires only basic mathematical skills. percentages, ratios, multiplication, division. but applies them to a context every student engages with daily. The low floor (read a label, calculate a percentage) and high ceiling (cross-country comparison, label design, biological justification) make it genuinely accessible for Grade 6 students while challenging for advanced Grade 7s.
 
 ### Handling Food Sensitivity
 
@@ -318,7 +318,7 @@ If a student seems uncomfortable, offer an alternative focus: comparing pet food
 
 ### Adaptation for EAL Learners
 
-- Provide a bilingual label (Chinese + English) as the starting point — many products in Nanjing have both
+- Provide a bilingual label (Chinese + English) as the starting point. many products in Nanjing have both
 - Create a visual vocabulary card with diagrams: carbohydrate → bread/rice image, protein → meat/egg image, fat → oil/butter image
 - Use colour-coding: always show carbohydrates in orange, protein in red, fat in yellow (consistent with many label colour systems)
 - Allow students to present their label design with annotations in their first language alongside English

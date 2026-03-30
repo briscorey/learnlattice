@@ -1,7 +1,7 @@
 ---
 title: "Investigating Golden Ratio in Nature"
 date: 2026-03-04
-description: "Students measure real objects — flowers, shells, body proportions — to investigate whether the golden ratio (≈ 1.618) genuinely appears in nature or whether the claim is overstated."
+description: "Students measure real objects. flowers, shells, body proportions. to investigate whether the golden ratio (≈ 1.618) genuinely appears in nature or whether the claim is overstated."
 subjects:
   - "Mathematics"
 year_levels:
@@ -25,7 +25,7 @@ difficulty: "exceeding"
 duration: "1–2 lessons"
 hook: "People say the golden ratio appears everywhere in nature. Is that actually true, or are we seeing what we want to see?"
 seo_title: "Investigating Golden Ratio in Nature | MYP Resource | Lea..."
-seo_description: "Students measure real objects — flowers, shells, body proportions — to investigate whether the golden ratio (≈ 1.618) genuinely appears in nature or whethe"
+seo_description: "Students measure real objects. flowers, shells, body proportions. to investigate whether the golden ratio (≈ 1.618) genuinely appears in nature or whethe"
 teacher_moves:
   - title: "Let them measure before you explain"
     description: "Students should collect data first. The formula or concept should emerge from their measurements, not precede them. Resist the urge to front-load the theory."
@@ -33,12 +33,12 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 warmup: "Put a related but simpler version of the problem on the board. Give students 2 minutes to discuss in pairs: What do you notice? What do you wonder?"
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -89,7 +89,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -105,7 +105,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Investigating Golden Ratio in Nature" — a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Investigating Golden Ratio in Nature". a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## Overview
@@ -114,7 +114,7 @@ A critical investigation where students measure real objects and body proportion
 
 ## The Investigation
 
-### Phase 1 — Collect Data
+### Phase 1. Collect Data
 Measure at least 10 examples:
 - Arm span ÷ height
 - Distance from navel to floor ÷ total height
@@ -122,12 +122,12 @@ Measure at least 10 examples:
 - Spiral measurements from shells or flowers
 - Rectangle preferences (which rectangle "looks best"?)
 
-### Phase 2 — Calculate and Compare
+### Phase 2. Calculate and Compare
 For each measurement, calculate the ratio and compare to φ ≈ 1.618.
 - How close are the ratios? Calculate percentage error.
 - Create a dot plot or histogram of all ratios.
 
-### Phase 3 — Critical Analysis
+### Phase 3. Critical Analysis
 - "How many of your ratios are actually close to 1.618?"
 - "What counts as 'close enough'? Within 5%? 10%? 20%?"
 - "Could you get similar results with ANY ratio if you measure enough things?"

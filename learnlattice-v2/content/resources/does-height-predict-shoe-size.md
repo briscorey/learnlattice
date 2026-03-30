@@ -1,7 +1,7 @@
 ---
 title: Does Height Predict Shoe Size?
 date: 2025-09-29
-description: The class becomes the data set. Students measure, plot, and argue about whether a relationship exists — and if it does, how strong it is, what direction it goes, and whether it could be used
+description: The class becomes the data set. Students measure, plot, and argue about whether a relationship exists. and if it does, how strong it is, what direction it goes, and whether it could be used
   to predict. A statistics investigation using real data from real people in the room.
 subjects:
 - Mathematics
@@ -108,7 +108,7 @@ seo_description: "Free MYP Mathematics investigation pack targeting Criterion C,
 
 Ask: *"Do you think taller people have bigger feet?"*
 
-Students will say yes. Then ask: *"How would you prove it? And — even if there's a pattern — could you predict someone's shoe size from their height?"*
+Students will say yes. Then ask: *"How would you prove it? And. even if there's a pattern. could you predict someone's shoe size from their height?"*
 
 This triggers the question: how do we describe a relationship between two numerical variables? The class is the data set. The investigation begins immediately.
 
@@ -146,7 +146,7 @@ When examining a scatter plot, describe:
 A **line of best fit** (regression line) is the line that minimises the total squared distance from all data points to the line. It can be used to:
 - Describe the general trend
 - Make predictions within the data range (interpolation)
-- Predict beyond the data range (extrapolation — with caution)
+- Predict beyond the data range (extrapolation. with caution)
 
 ### The Correlation Coefficient r
 
@@ -166,23 +166,23 @@ Two variables can be correlated because:
 3. A third variable Z causes both (confounding variable)
 4. Pure coincidence (especially with small samples)
 
-Classic example: ice cream sales and drowning deaths are positively correlated — not because ice cream causes drowning, but because both increase in hot weather (confounding variable: temperature).
+Classic example: ice cream sales and drowning deaths are positively correlated. not because ice cream causes drowning, but because both increase in hot weather (confounding variable: temperature).
 
 ---
 
 ## Investigation Tasks
 
-### Part A — Data Collection
+### Part A. Data Collection
 
 Collect the following data from your class. Each student provides:
-- Height (cm) — measure with a tape measure
-- Foot length (cm) — trace foot on paper and measure
-- Arm span (cm) — fingertip to fingertip with arms outstretched
-- Hand span (cm) — pinky to thumb of dominant hand
+- Height (cm). measure with a tape measure
+- Foot length (cm). trace foot on paper and measure
+- Arm span (cm). fingertip to fingertip with arms outstretched
+- Hand span (cm). pinky to thumb of dominant hand
 
-Record in a class data table. Note: record gender/biological sex as a categorical variable if students are comfortable — it becomes relevant in Part C.
+Record in a class data table. Note: record gender/biological sex as a categorical variable if students are comfortable. it becomes relevant in Part C.
 
-### Part B — Creating and Describing Scatter Plots
+### Part B. Creating and Describing Scatter Plots
 
 Create a scatter plot for each of these pairs. For each plot:
 1. Describe the direction, strength, and form
@@ -198,7 +198,7 @@ Pairs to plot:
 
 **Prediction question:** Which pair do you expect to show the strongest correlation? Record your prediction before plotting.
 
-### Part C — Lines of Best Fit and Prediction
+### Part C. Lines of Best Fit and Prediction
 
 For the scatter plot with the strongest correlation:
 
@@ -211,7 +211,7 @@ For the scatter plot with the strongest correlation:
 
 **Separate the data by gender/biological sex.** Plot the two groups in different colours on the same axes. Does this change what you see?
 
-### Part D — Correlation, Causation, and Critique (Criterion D)
+### Part D. Correlation, Causation, and Critique (Criterion D)
 
 A newspaper headline reads: *"Children with bigger feet are better at reading. Schools should prioritise foot development."*
 
@@ -230,7 +230,7 @@ The data behind this headline: a study of 300 primary school children found a po
 |--------|----------------|
 | "A strong correlation proves causation" | Correlation only shows the variables move together. It cannot identify direction of causation or rule out confounding variables. |
 | "r = 0 means there's no relationship" | r = 0 means there's no *linear* relationship. A perfect U-shaped curve would give r ≈ 0 while showing a clear relationship. |
-| "The line of best fit passes through most of the points" | The line of best fit minimises squared distances — it typically passes through *no* data points exactly, but is as close as possible to all of them. |
+| "The line of best fit passes through most of the points" | The line of best fit minimises squared distances. it typically passes through *no* data points exactly, but is as close as possible to all of them. |
 | "If there's a pattern for the group, I can predict for an individual" | Population trends don't determine individual outcomes. Even with r = 0.9, a specific individual's value can be far from the predicted value. |
 | "Outliers should always be removed" | Outliers may represent real variation, measurement error, or the most interesting data points. They should be investigated, not automatically deleted. |
 
@@ -240,7 +240,7 @@ The data behind this headline: a study of 300 primary school children found a po
 
 **On using class data:** This is the single most effective feature of this investigation. Students care about their own data in a way they never care about fictional data sets. When a student's height appears on the scatter plot and their foot measurement matches the trend, it is viscerally convincing. When it doesn't, it's a conversation about individual variation vs population trend.
 
-**On the newspaper headline task:** The foot-size/reading example is deliberately absurd on the surface. The confounding variable (age — older children have bigger feet AND read better) is quickly identified. This makes the logic of confounding vivid before applying it to less obvious real-world cases (e.g., research on coffee and health outcomes, where the confounding variable is often lifestyle).
+**On the newspaper headline task:** The foot-size/reading example is deliberately absurd on the surface. The confounding variable (age. older children have bigger feet AND read better) is quickly identified. This makes the logic of confounding vivid before applying it to less obvious real-world cases (e.g., research on coffee and health outcomes, where the confounding variable is often lifestyle).
 
 **On gender/sex split:** Sensitive handling required. The point of the separate colour plot is statistical (two populations may have different regression lines), not normative. Frame it as: "If we have reason to believe the relationship might differ between groups, we can test that by plotting separately."
 
@@ -256,4 +256,4 @@ The data behind this headline: a study of 300 primary school children found a po
 
 ---
 
-> **The bigger idea:** Statistical relationships describe what happens *on average*, across populations, when many cases are aggregated. They do not describe what happens to *you*. The art of statistical literacy — which is not the same as statistical calculation — is knowing when a population pattern is relevant to a specific decision, and when it isn't.
+> **The bigger idea:** Statistical relationships describe what happens *on average*, across populations, when many cases are aggregated. They do not describe what happens to *you*. The art of statistical literacy. which is not the same as statistical calculation. is knowing when a population pattern is relevant to a specific decision, and when it isn't.

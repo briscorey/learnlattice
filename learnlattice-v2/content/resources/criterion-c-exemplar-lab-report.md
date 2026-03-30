@@ -1,8 +1,8 @@
 ---
 title: "What Does Level 7 Look Like? Lab Report Communication"
 date: 2025-10-01
-description: "Three student lab reports on the same experiment — annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a disorganised report from clear, precise scientific communication."
-hook: "Three student lab reports on the same experiment — annotated at levels 3-4, 5-6, and 7-8"
+description: "Three student lab reports on the same experiment. annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a disorganised report from clear, precise scientific communication."
+hook: "Three student lab reports on the same experiment. annotated at levels 3-4, 5-6, and 7-8"
 subjects:
   - "Science"
   - "Chemistry"
@@ -30,7 +30,7 @@ difficulty: "meeting"
 download_url: ""
 download_label: "Assessment Exemplar PDF"
 seo_title: "What Does Level 7 Look Like? Lab Report Communication | M..."
-seo_description: "Free MYP Chemistry investigation pack targeting Criterion C for Grade 8-9. Three student lab reports on the same experiment — annotated"
+seo_description: "Free MYP Chemistry investigation pack targeting Criterion C for Grade 8-9. Three student lab reports on the same experiment. annotated"
 teacher_moves:
   - title: "Predictions before data"
     description: "Have every student commit to a prediction before any data is collected. Write predictions on the board. The gap between prediction and reality is where learning happens."
@@ -102,7 +102,7 @@ Students investigated the effect of temperature on the rate of dissolving sugar 
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 ### What the student wrote:
 
@@ -114,13 +114,13 @@ Students investigated the effect of temperature on the rate of dissolving sugar 
 
 ### Annotation: Why This Is Level 3-4
 
-The report has a structure (method, results, conclusion) but every section is incomplete. The method lacks quantities, equipment, and controlled variables. The results are qualitative — "fast" and "slow" instead of measured times. The conclusion is correct but unsupported by specific data.
+The report has a structure (method, results, conclusion) but every section is incomplete. The method lacks quantities, equipment, and controlled variables. The results are qualitative. "fast" and "slow" instead of measured times. The conclusion is correct but unsupported by specific data.
 
 **Teaching move:** Ask "If I wanted to repeat your experiment, could I? What information would I need?"
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 ### What the student wrote:
 
@@ -148,7 +148,7 @@ The report is well-structured with correct terminology. The method includes quan
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 ### What the student wrote:
 

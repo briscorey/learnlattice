@@ -1,11 +1,11 @@
 ---
 title: "Chemistry"
-description: "Free MYP chemistry investigations for Grades 6-9. Hands-on lab activities covering particle theory, chemical reactions, acids and bases, and separation techniques — aligned to IB MYP criteria."
+description: "Free MYP chemistry investigations for Grades 6-9. Hands-on lab activities covering particle theory, chemical reactions, acids and bases, and separation techniques. aligned to IB MYP criteria."
 ---
 
 ## Free MYP Chemistry Resources
 
-LearnLattice provides 20 free MYP chemistry investigations that put practical work at the centre of learning. Students do not read about reactions — they observe, measure, and explain them.
+LearnLattice provides 20 free MYP chemistry investigations that put practical work at the centre of learning. Students do not read about reactions. they observe, measure, and explain them.
 
 ### Topics Covered
 

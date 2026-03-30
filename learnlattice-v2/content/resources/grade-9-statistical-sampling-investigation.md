@@ -20,11 +20,11 @@ key-concepts:
   - "Logic"
 global-contexts:
   - "Globalization and Sustainability"
-statement_of_inquiry: "Sampling methods allow estimation of quantities too large to count directly — a mathematical tool with real consequences for conservation and policy."
+statement_of_inquiry: "Sampling methods allow estimation of quantities too large to count directly. a mathematical tool with real consequences for conservation and policy."
 difficulty: "meeting"
 hook: "A lake contains thousands of fish. You need to know how many for a conservation report. You cannot drain the lake. You cannot count them. How do you estimate a number you can never directly measure?"
 warmup: "A bag contains an unknown number of blue beads. You pull out 20 beads, mark them with a dot, put them back, and shake. You pull out 20 again. 4 of them have dots. Estimate the total number of beads in the bag."
-timeline: "0-5 min: Warmup — the bead problem | 5-8 min: Reveal the answer and the formula | 8-12 min: Set up the simulation | 12-30 min: Run 5 capture-recapture trials | 30-38 min: Calculate estimates, compare with actual count | 38-45 min: Discuss sources of error and real-world applications | 45-48 min: Exit ticket"
+timeline: "0-5 min: Warmup. the bead problem | 5-8 min: Reveal the answer and the formula | 8-12 min: Set up the simulation | 12-30 min: Run 5 capture-recapture trials | 30-38 min: Calculate estimates, compare with actual count | 38-45 min: Discuss sources of error and real-world applications | 45-48 min: Exit ticket"
 teacher_moves:
   - title: "Start with the bag of beads"
     description: "The warmup IS the method. Put an unknown number of beads in a bag (you know, but students do not). Students take a sample, mark them, return them, remix, resample, and use the proportion of marked beads to estimate the total. The reveal (actual count) creates a satisfying moment."
@@ -36,7 +36,7 @@ listen_for:
   - level: "3-4"
     phrase: "We used the marked ones to guess how many were in the bag"
   - level: "5-6"
-    phrase: "The proportion of marked beads in the recapture sample should be the same as the proportion of marked beads in the whole population — so we can set up an equation"
+    phrase: "The proportion of marked beads in the recapture sample should be the same as the proportion of marked beads in the whole population. so we can set up an equation"
   - level: "7-8"
     phrase: "N = (M × S) / R, where M is the number marked, S is the recapture sample size, and R is the number of marked individuals recaptured. Larger samples and more trials reduce the margin of error."
 misconceptions:
@@ -94,7 +94,7 @@ journal_prompts:
   - "Why would a government need to know how many fish are in a lake before setting fishing quotas?"
   - "Could capture-recapture be used to estimate the number of homeless people in a city? What would the 'marking' step look like?"
   - "What happens to the accuracy of your estimate if the population is changing (births and deaths) between capture and recapture?"
-parent_summary: "Your child learned capture-recapture — a sampling method used by wildlife biologists to estimate animal populations. They simulated it with beads, used proportional reasoning to calculate estimates, and evaluated the assumptions behind the method. Ask them: how many fish are in the lake?"
+parent_summary: "Your child learned capture-recapture. a sampling method used by wildlife biologists to estimate animal populations. They simulated it with beads, used proportional reasoning to calculate estimates, and evaluated the assumptions behind the method. Ask them: how many fish are in the lake?"
 seo_title: "How Many Fish? | Capture-Recapture Sampling | MYP Math Grade 9"
 seo_description: "Free MYP Mathematics investigation for Grade 9. Students simulate capture-recapture sampling, estimate populations, and explore statistical reasoning."
 ---
@@ -167,7 +167,7 @@ Your teacher has placed an **unknown number** of beads in a large opaque bag.
 
 ## What You Should Find
 
-Individual trials will give estimates that vary — some too high, some too low. But the **average of 5 trials** should be reasonably close to the actual number (typically within 15-20%).
+Individual trials will give estimates that vary. some too high, some too low. But the **average of 5 trials** should be reasonably close to the actual number (typically within 15-20%).
 
 Larger samples → better estimates. More trials → better averages. This is the fundamental principle of statistical sampling.
 
@@ -176,12 +176,12 @@ Larger samples → better estimates. More trials → better averages. This is th
 ## The Real-World Connection
 
 Capture-recapture is used worldwide:
-- **Fisheries management** — setting sustainable catch limits
-- **Endangered species monitoring** — tracking population trends for tigers, whales, pandas
-- **Epidemiology** — estimating the number of people with an undiagnosed disease
-- **Ecology** — monitoring biodiversity in habitats
+- **Fisheries management**. setting sustainable catch limits
+- **Endangered species monitoring**. tracking population trends for tigers, whales, pandas
+- **Epidemiology**. estimating the number of people with an undiagnosed disease
+- **Ecology**. monitoring biodiversity in habitats
 
-The method only works if certain assumptions hold: marked individuals mix randomly, the population does not change between captures, and marks do not affect survival. When these assumptions are violated, estimates become unreliable — which is why scientists report ranges, not single numbers.
+The method only works if certain assumptions hold: marked individuals mix randomly, the population does not change between captures, and marks do not affect survival. When these assumptions are violated, estimates become unreliable. which is why scientists report ranges, not single numbers.
 
 ---
 
@@ -191,4 +191,4 @@ Use at least 150 beads in the bag (but count them exactly beforehand). Fewer tha
 
 The most common error: students forget to return ALL beads (including marked ones) before each trial. If marked beads accumulate outside the bag, every subsequent trial overestimates the population.
 
-For the Criterion D extension, the Yangtze River finless porpoise is an excellent case study — capture-recapture surveys estimate fewer than 1,000 individuals remain, directly informing Chinese government conservation policy.
+For the Criterion D extension, the Yangtze River finless porpoise is an excellent case study. capture-recapture surveys estimate fewer than 1,000 individuals remain, directly informing Chinese government conservation policy.

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revision Mode — LearnLattice</title>
+<title>Revision Mode. LearnLattice</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0c0f1a;--s:#151929;--s2:#1c2036;--bd:#2a2e45;--ink:#e2e8f0;--ink2:#94a3b8;--teal:#0D9488;--grn:#22c55e;--red:#ef4444;--amb:#f59e0b;--pur:#a78bfa;--r:16px}
@@ -222,8 +222,8 @@ q:[{q:"Conservation of mass means...",c:"Mass doesn't change in a reaction",w:["
 {q:"Higher temp → faster reaction because...",c:"Particles collide more",w:["More reactant","Removes products","Changes equation"]},
 {q:"Acid + Alkali → ?",c:"Salt + Water",w:["Just water","Just salt","Gas + water"]}],
 m:[{m:"Reactions destroy atoms",t:"Atoms NEVER created/destroyed. They just rearrange."},
-{m:"All acids are dangerous",t:"Citric acid in oranges, acetic acid in vinegar — we eat acids daily."},
-{m:"Dissolving is a chemical reaction",t:"Usually physical — substance recoverable by evaporation."}],
+{m:"All acids are dangerous",t:"Citric acid in oranges, acetic acid in vinegar. we eat acids daily."},
+{m:"Dissolving is a chemical reaction",t:"Usually physical. substance recoverable by evaporation."}],
 f:[{f:"Reactants → Products",n:"General equation",p:"What goes in → What comes out"},
 {f:"Acid+Alkali → Salt+Water",n:"Neutralisation",p:"They cancel each other out."},
 {f:"Rate = Amount / Time",n:"Reaction rate",p:"How fast product forms."}]}
@@ -244,7 +244,7 @@ window.cm=function(b,ans){document.querySelectorAll('.ab').forEach(function(x){x
 function rf(a,f){a.innerHTML='<div class="card"><span class="ct ct-f">Formula Flash</span><div class="cp" style="font-family:\'DM Sans\',sans-serif;font-size:1.6rem;text-align:center;letter-spacing:1px">'+f.f+'</div><div class="cs" style="text-align:center">What does this calculate?</div><button class="rb" onclick="this.style.display=\'none\';document.getElementById(\'FA\').style.display=\'block\';document.getElementById(\'FR\').style.display=\'flex\'">Tap to reveal</button><div class="rev" style="display:none" id="FA"><h4>'+f.n+'</h4><p>'+f.p+'</p></div><div class="rr" style="display:none" id="FR"><button class="rt rt-h" onclick="rate(0)">Didn\'t know</button><button class="rt rt-o" onclick="rate(1)">Kind of</button><button class="rt rt-e" onclick="rate(2)">Knew it</button></div></div>'}
 window.rate=function(l){if(l===0){rd.w++;rd.wk.push(cards[ci].d.t||cards[ci].d.f||'?')}else if(l===1){sc+=5;rd.p++}else{sc+=10;rd.c++}nc()};
 function nc(){ci++;up();if(ci>=cards.length){sr();return}rc()}
-function sr(){document.getElementById('S').style.display='none';document.getElementById('R').style.display='block';var tot=rd.c+rd.p+rd.w;var pct=tot>0?Math.round((rd.c+rd.p*.5)/tot*100):0;document.getElementById('FS').textContent=pct+'%';document.getElementById('SC').textContent=rd.c;document.getElementById('SP').textContent=rd.p;document.getElementById('SW').textContent=rd.w;document.getElementById('FM').textContent=pct>=80?'Excellent — you know this well!':pct>=60?'Good progress — review the items below.':'Keep practising — focus on what you missed.';if(rd.wk.length>0){document.getElementById('WL').style.display='block';document.getElementById('WI').innerHTML=rd.wk.map(function(w){return'<div class="wi">'+w+'</div>'}).join('')}else{document.getElementById('WL').style.display='none'}}
+function sr(){document.getElementById('S').style.display='none';document.getElementById('R').style.display='block';var tot=rd.c+rd.p+rd.w;var pct=tot>0?Math.round((rd.c+rd.p*.5)/tot*100):0;document.getElementById('FS').textContent=pct+'%';document.getElementById('SC').textContent=rd.c;document.getElementById('SP').textContent=rd.p;document.getElementById('SW').textContent=rd.w;document.getElementById('FM').textContent=pct>=80?'Excellent. you know this well!':pct>=60?'Good progress. review the items below.':'Keep practising. focus on what you missed.';if(rd.wk.length>0){document.getElementById('WL').style.display='block';document.getElementById('WI').innerHTML=rd.wk.map(function(w){return'<div class="wi">'+w+'</div>'}).join('')}else{document.getElementById('WL').style.display='none'}}
 window.re=function(){document.getElementById('R').style.display='none';document.getElementById('P').style.display='block'};
 rp();
 })();

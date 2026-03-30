@@ -1,7 +1,7 @@
 ---
 title: "Micro-Habitats"
 date: 2026-03-28
-description: "Students investigate a single square metre of schoolyard — under a rock, at the base of a wall, beneath a tree — and discover that tiny differences in light, moisture, and shelter create completely different communities of organisms. A field investigation that connects observation to ecology."
+description: "Students investigate a single square metre of schoolyard. under a rock, at the base of a wall, beneath a tree. and discover that tiny differences in light, moisture, and shelter create completely different communities of organisms. A field investigation that connects observation to ecology."
 subjects:
   - "Ecology"
   - "Science"
@@ -20,15 +20,15 @@ key-concepts:
   - "Systems"
 global-contexts:
   - "Globalization and Sustainability"
-statement_of_inquiry: "Living things are not randomly distributed — they are found where conditions meet their needs, creating communities shaped by place."
+statement_of_inquiry: "Living things are not randomly distributed. they are found where conditions meet their needs, creating communities shaped by place."
 difficulty: "approaching"
 hook: "Lift a rock in the schoolyard. What lives underneath? Why THOSE organisms and not others? Why HERE and not two metres away?"
-warmup: "Close your eyes. Imagine you are an ant. You need food, water, shelter, and the right temperature. Where in the schoolyard would you live? Why? Now — where would you NEVER live?"
-timeline: "0-5 min: Warmup — think like an ant | 5-12 min: Introduce quadrat method and recording sheet | 12-35 min: Outdoor investigation — 3 micro-habitats | 35-42 min: Return to class — compile data | 42-48 min: Gallery walk of group results + exit ticket"
+warmup: "Close your eyes. Imagine you are an ant. You need food, water, shelter, and the right temperature. Where in the schoolyard would you live? Why? Now. where would you NEVER live?"
+timeline: "0-5 min: Warmup. think like an ant | 5-12 min: Introduce quadrat method and recording sheet | 12-35 min: Outdoor investigation. 3 micro-habitats | 35-42 min: Return to class. compile data | 42-48 min: Gallery walk of group results + exit ticket"
 math_topic: Statistics
 teacher_moves:
   - title: "Do NOT pre-teach habitat vocabulary"
-    description: "Students should observe first, then name what they see. If you front-load terms like 'abiotic factor' and 'biotic factor,' the investigation becomes a vocabulary matching exercise instead of genuine inquiry. Let them describe conditions in their own words first — 'it was damp and dark under the rock' — then introduce the scientific terms."
+    description: "Students should observe first, then name what they see. If you front-load terms like 'abiotic factor' and 'biotic factor,' the investigation becomes a vocabulary matching exercise instead of genuine inquiry. Let them describe conditions in their own words first. 'it was damp and dark under the rock'. then introduce the scientific terms."
   - title: "Choose your three sites carefully"
     description: "Before class, identify three genuinely different micro-habitats within 50 metres of your classroom. The best combinations contrast strongly: sunny concrete path vs. under a bush vs. under a rock or log. If all three sites look similar, the data will be boring and the lesson will fall flat."
   - title: "The comparison is the learning"
@@ -37,13 +37,13 @@ listen_for:
   - level: "3-4"
     phrase: "I found a worm under the rock and ants near the tree"
   - level: "5-6"
-    phrase: "The organisms under the rock like dark and damp conditions — the sunny path has different species because it is dry and exposed"
+    phrase: "The organisms under the rock like dark and damp conditions. the sunny path has different species because it is dry and exposed"
   - level: "7-8"
-    phrase: "Each micro-habitat has specific abiotic factors that determine which organisms can survive there — the community is shaped by the environment"
+    phrase: "Each micro-habitat has specific abiotic factors that determine which organisms can survive there. the community is shaped by the environment"
 misconceptions:
   - myth: "Animals choose where to live"
     why: "Students apply human decision-making to animals"
-    truth: "Organisms do not 'choose' — populations survive where conditions meet their needs. Individuals that end up in unsuitable habitats die or fail to reproduce."
+    truth: "Organisms do not 'choose'. populations survive where conditions meet their needs. Individuals that end up in unsuitable habitats die or fail to reproduce."
   - myth: "More organisms means a better habitat"
     why: "Students equate abundance with quality"
     truth: "A habitat with fewer species but high specialisation can be extremely stable. Biodiversity and abundance are different measures."
@@ -83,7 +83,7 @@ quick_check:
     a: "Biotic = living things (organisms, plants, predators). Abiotic = non-living conditions (light, temperature, moisture, soil pH)."
   - type: "apply"
     q: "Two sites are 3 metres apart. One has moss, the other does not. Suggest why."
-    a: "The site with moss likely has more moisture and shade — moss needs damp conditions and cannot survive direct sun and drying out."
+    a: "The site with moss likely has more moisture and shade. moss needs damp conditions and cannot survive direct sun and drying out."
   - type: "extend"
     q: "A new building is constructed and its shadow now covers an area that used to be sunny. Predict the changes over 2 years."
     a: "Sun-loving plants would decline. Shade-tolerant and moisture-loving species (moss, ferns, woodlice) would gradually colonise as the area becomes cooler and damper."
@@ -95,14 +95,14 @@ journal_prompts:
   - "Why might the same species of ant be found at two different sites but not at the third?"
   - "If you visited your sites at night, would you find the same organisms? Why or why not?"
   - "What would happen to the organisms under a rock if you permanently removed the rock?"
-parent_summary: "Your child investigated different micro-habitats in the school grounds — places like under rocks, in shade, and on sunny paths. They discovered that tiny differences in conditions (moisture, light, temperature) determine which organisms live where. Ask them: what was the most surprising thing they found?"
+parent_summary: "Your child investigated different micro-habitats in the school grounds. places like under rocks, in shade, and on sunny paths. They discovered that tiny differences in conditions (moisture, light, temperature) determine which organisms live where. Ask them: what was the most surprising thing they found?"
 seo_title: "Micro-Habitats Investigation | MYP Science Grade 6 | Free Investigation Pack"
 seo_description: "Free MYP Science investigation for Grade 6. Students investigate micro-habitats in the schoolyard, comparing organisms and abiotic factors across sites."
 ---
 
 ## The Hook
 
-Lift a rock in the schoolyard. An entire world appears — woodlice, earwigs, maybe a centipede, definitely some unnamed things that scatter from the light.
+Lift a rock in the schoolyard. An entire world appears. woodlice, earwigs, maybe a centipede, definitely some unnamed things that scatter from the light.
 
 Walk three metres to the sunny path. Nothing. Just concrete and heat.
 
@@ -158,9 +158,9 @@ Walk three metres to the sunny path. Nothing. Just concrete and heat.
 
 ## What You Should Find
 
-The three sites will have **different communities**. Under the rock: woodlice, earwigs, maybe slugs — organisms that need moisture and darkness. The sunny path: very few invertebrates, perhaps ants. The shaded wall: something in between.
+The three sites will have **different communities**. Under the rock: woodlice, earwigs, maybe slugs. organisms that need moisture and darkness. The sunny path: very few invertebrates, perhaps ants. The shaded wall: something in between.
 
-The key insight: **organisms are not randomly distributed.** Their presence is determined by abiotic factors — light, moisture, temperature, shelter. Change the conditions, change the community.
+The key insight: **organisms are not randomly distributed.** Their presence is determined by abiotic factors. light, moisture, temperature, shelter. Change the conditions, change the community.
 
 ---
 
@@ -168,7 +168,7 @@ The key insight: **organisms are not randomly distributed.** Their presence is d
 
 This investigation targets **Criterion B** (designing a method to compare habitats), **Criterion C** (processing data in a comparison table and drawing conclusions), and **Criterion D** (connecting findings to real-world habitat conservation).
 
-The strongest student work does not just list what was found — it **explains the pattern** by linking organisms to conditions.
+The strongest student work does not just list what was found. it **explains the pattern** by linking organisms to conditions.
 
 ---
 
@@ -176,6 +176,6 @@ The strongest student work does not just list what was found — it **explains t
 
 This is one of the best first investigations for Grade 6 Science. It requires no special equipment, takes one lesson outdoors plus one lesson of analysis, and the data is genuinely surprising to students. They do not expect the schoolyard to contain such variety.
 
-The most common mistake teachers make is choosing sites that are too similar. Walk the grounds beforehand and check that your three sites genuinely differ. If your school has no suitable natural areas, use potted plants vs. bare concrete vs. a drain cover — the principle works anywhere.
+The most common mistake teachers make is choosing sites that are too similar. Walk the grounds beforehand and check that your three sites genuinely differ. If your school has no suitable natural areas, use potted plants vs. bare concrete vs. a drain cover. the principle works anywhere.
 
 Timing: go outside for 25 minutes maximum. Students lose focus after 30 minutes outdoors. The analysis and comparison work better back in the classroom.

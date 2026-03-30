@@ -16,7 +16,7 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Exponential growth starts slowly but eventually overwhelms any linear growth — and recognising the pattern early is one of the most useful skills in mathematics."
+statement_of_inquiry: "Exponential growth starts slowly but eventually overwhelms any linear growth. and recognising the pattern early is one of the most useful skills in mathematics."
 difficulty: "meeting"
 hook: "Choose: $1 million today, or one penny that doubles every day for 30 days? The penny option is worth over $5 million by day 30. But on day 20, it was only worth $5,000. Exponential growth is invisible until it is not."
 warmup: "Fold a piece of paper in half. Fold again. And again. How many layers after 10 folds? Can you fold it 10 times? (You probably cannot fold it more than 7.)"
@@ -91,7 +91,7 @@ Which would you choose?
 
 **Option A:** Receive $1,000,000 today.
 
-**Option B:** Receive 1 cent today, 2 cents tomorrow, 4 cents the next day — doubling every day for 30 days.
+**Option B:** Receive 1 cent today, 2 cents tomorrow, 4 cents the next day. doubling every day for 30 days.
 
 Most people choose A. Let us see if that is wise.
 
@@ -110,13 +110,13 @@ Most people choose A. Let us see if that is wise.
 | 28 | \\(1,342,177.28 | \\)2,684,354.55 |
 | 30 | \\(5,368,709.12 | \\)10,737,418.23 |
 
-**Option B is worth over \\(10 million.** But on day 20 — two thirds of the way through — it was worth only \\)10,000. The growth is invisible for most of the journey, then explodes.
+**Option B is worth over \\(10 million.** But on day 20. two thirds of the way through. it was worth only \\)10,000. The growth is invisible for most of the journey, then explodes.
 
 ---
 
 ## The Chessboard Legend
 
-Legend says the inventor of chess asked the king for a reward: one grain of rice on the first square, two on the second, four on the third — doubling for all 64 squares.
+Legend says the inventor of chess asked the king for a reward: one grain of rice on the first square, two on the second, four on the third. doubling for all 64 squares.
 
 On square 64: \\(2^{63}\\) = 9,223,372,036,854,775,808 grains. That is more rice than has been produced in all of human history.
 
@@ -139,4 +139,4 @@ $$2^n \text{ (where n = number of doublings)}$$
 
 ## Teaching Notes
 
-This investigation creates the visceral understanding that "doubling sounds small but becomes enormous." Students who calculate the penny problem will never forget the shape of exponential growth — and will recognise it in population growth, compound interest, viral spread, and computing power.
+This investigation creates the visceral understanding that "doubling sounds small but becomes enormous." Students who calculate the penny problem will never forget the shape of exponential growth. and will recognise it in population growth, compound interest, viral spread, and computing power.

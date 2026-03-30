@@ -103,7 +103,7 @@ seo_description: "Companion investigation pack for grade 7 earth's dynamic crust
 
 ## Overview
 
-This investigation pack gives students hands-on practice with the core skill of geology: building an explanation from incomplete, indirect evidence. It extends the [Grade 7 Earth's Dynamic Crust Unit]() with two structured investigations — one focused on earthquake triangulation, one on evaluating tectonic evidence quality.
+This investigation pack gives students hands-on practice with the core skill of geology: building an explanation from incomplete, indirect evidence. It extends the [Grade 7 Earth's Dynamic Crust Unit]() with two structured investigations. one focused on earthquake triangulation, one on evaluating tectonic evidence quality.
 
 ---
 
@@ -117,7 +117,7 @@ This investigation replicates that process.
 
 ### Background: P-waves vs S-waves
 
-When rock ruptures along a fault, it sends out two types of seismic waves. P-waves (pressure waves) travel faster — approximately 6 km/s through crustal rock. S-waves (shear waves) travel slower — approximately 3.5 km/s. Because they leave the focus at the same time but travel at different speeds, the time gap between their arrival at a seismograph station tells you how far the station is from the epicentre.
+When rock ruptures along a fault, it sends out two types of seismic waves. P-waves (pressure waves) travel faster. approximately 6 km/s through crustal rock. S-waves (shear waves) travel slower. approximately 3.5 km/s. Because they leave the focus at the same time but travel at different speeds, the time gap between their arrival at a seismograph station tells you how far the station is from the epicentre.
 
 **The formula:**
 Distance (km) = Time gap (seconds) × 34.3
@@ -145,7 +145,7 @@ Three seismograph stations recorded the following arrival times for a mystery ea
 
 **Q2:** Station A is farther from the epicentre than Station B, but recorded the P-wave only 3 seconds later. What does this tell you about how seismic wave speed can vary with rock type?
 
-**Q3:** The earthquake was felt at "intensity VI" in some areas — rattling dishes, cracking plaster — but caused no deaths. A 1700 Cascadia megathrust earthquake was estimated at magnitude 9+. Magnitude 9 releases approximately 1,000 times more energy than magnitude 7, and about **31,600 times** more energy than magnitude 5. Using this scale: if 1 magnitude-5 earthquake = 1 unit of energy, how many magnitude-5 equivalent earthquakes would the 1700 Cascadia event equal?
+**Q3:** The earthquake was felt at "intensity VI" in some areas. rattling dishes, cracking plaster. but caused no deaths. A 1700 Cascadia megathrust earthquake was estimated at magnitude 9+. Magnitude 9 releases approximately 1,000 times more energy than magnitude 7, and about **31,600 times** more energy than magnitude 5. Using this scale: if 1 magnitude-5 earthquake = 1 unit of energy, how many magnitude-5 equivalent earthquakes would the 1700 Cascadia event equal?
 
 ---
 
@@ -153,27 +153,27 @@ Three seismograph stations recorded the following arrival times for a mystery ea
 
 ### The Challenge
 
-Geologists don't use just one type of evidence to support plate tectonics — they use many. But not all evidence is equally strong. This investigation asks students to evaluate a set of evidence pieces and justify a quality ranking.
+Geologists don't use just one type of evidence to support plate tectonics. they use many. But not all evidence is equally strong. This investigation asks students to evaluate a set of evidence pieces and justify a quality ranking.
 
 ### Evidence Cards (for printing or display)
 
-**Card 1 — Continental fit**
+**Card 1. Continental fit**
 When South America and Africa are placed next to each other on a globe (not a flat map), their coastlines align closely, especially if you use the edge of the continental shelf rather than the shoreline itself. Fit is not perfect, but the match is striking.
 *Type of evidence: geometric/observational. Date first noted: 1596 (Abraham Ortelius).*
 
-**Card 2 — Matching fossils**
-Fossils of *Glossopteris* (a fern) have been found in South America, Africa, Antarctica, India, and Australia — all southern continents. *Glossopteris* produced heavy seeds that could not float or be wind-dispersed across oceans. All specimens date to 300–250 million years ago.
+**Card 2. Matching fossils**
+Fossils of *Glossopteris* (a fern) have been found in South America, Africa, Antarctica, India, and Australia. all southern continents. *Glossopteris* produced heavy seeds that could not float or be wind-dispersed across oceans. All specimens date to 300–250 million years ago.
 *Type of evidence: palaeontological. Cross-verified by multiple independent fossil surveys.*
 
-**Card 3 — Rock age and type matching**
+**Card 3. Rock age and type matching**
 The Appalachian Mountains (eastern North America) and the Caledonian Mountains (Scotland/Scandinavia) share the same rock types, metamorphic grades, and radiometric ages (~400–450 million years). They appear to be remnants of a single mountain range split by the opening of the Atlantic.
 *Type of evidence: geological/radiometric. Requires precise dating technology.*
 
-**Card 4 — Seafloor magnetic striping**
-As magma solidifies at mid-ocean ridges, iron-rich minerals align with Earth's magnetic field. Earth's magnetic field has reversed many times. This produces symmetrical bands of normal and reversed magnetism on either side of the ridge — a direct record of spreading rate and direction.
+**Card 4. Seafloor magnetic striping**
+As magma solidifies at mid-ocean ridges, iron-rich minerals align with Earth's magnetic field. Earth's magnetic field has reversed many times. This produces symmetrical bands of normal and reversed magnetism on either side of the ridge. a direct record of spreading rate and direction.
 *Type of evidence: geophysical. First mapped systematically in the 1950s–60s.*
 
-**Card 5 — GPS measurement**
+**Card 5. GPS measurement**
 Since the early 1990s, GPS networks have directly measured plate velocities. The Eurasian and North American plates are moving apart at 2.3–2.5 cm/year. Hawaii is moving northwest toward Japan at ~7.5 cm/year.
 *Type of evidence: direct measurement. Updated continuously.*
 
@@ -201,5 +201,5 @@ Your paragraph must include a specific claim, at least two concrete data points,
 
 ---
 
-> **Teaching Tip:** For the triangulation task, have students use string and a ruler on a printed map rather than a digital tool. The physical act of measuring radius and drawing arcs builds far better spatial intuition about how the method works. Digital accuracy is not the point — the *logic* of triangulation is.
+> **Teaching Tip:** For the triangulation task, have students use string and a ruler on a printed map rather than a digital tool. The physical act of measuring radius and drawing arcs builds far better spatial intuition about how the method works. Digital accuracy is not the point. the *logic* of triangulation is.
 

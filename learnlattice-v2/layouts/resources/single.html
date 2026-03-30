@@ -62,7 +62,7 @@
         <div class="rs-content-left">
           <div class="resource-content">{{ .Content }}</div>
 
-          {{/* ── STUDENT TOOLS — tabbed ── */}}
+          {{/* ── STUDENT TOOLS. tabbed ── */}}
           {{ if or .Params.self_check .Params.sentence_starters .Params.quick_check .Params.journal_prompts .Params.exit_ticket .Params.differentiated }}
           <div class="rs-student-tools">
             <div class="rs-st-tabs" id="studentTabs">
@@ -78,8 +78,8 @@
               {{ with .Params.quick_check }}<div class="rs-st-panel" data-st="quiz"><div class="rs-quickcheck-grid">{{ range . }}<div class="rs-qc-card rs-qc-{{ .type }}"><div class="rs-qc-type">{{ .type }}</div><div class="rs-qc-q">{{ .q }}</div><details class="rs-qc-answer"><summary>Answer</summary><p>{{ .a }}</p></details></div>{{ end }}</div></div>{{ end }}
               {{ with .Params.sentence_starters }}<div class="rs-st-panel" data-st="starters">{{ with .approaching }}<div class="rs-starters-group"><h4>🟢 Approaching</h4>{{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}</div>{{ end }}{{ with .meeting }}<div class="rs-starters-group"><h4>🟡 Meeting</h4>{{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}</div>{{ end }}{{ with .exceeding }}<div class="rs-starters-group"><h4>🔴 Exceeding</h4>{{ range . }}<div class="rs-starter">"{{ . }}"</div>{{ end }}</div>{{ end }}</div>{{ end }}
               {{ with .Params.differentiated }}<div class="rs-st-panel" data-st="diff"><div class="rs-diff-body"><div class="rs-diff-card rs-diff-approaching"><div class="rs-diff-level">🟢 Approaching</div><p>{{ .approaching }}</p></div><div class="rs-diff-card rs-diff-meeting"><div class="rs-diff-level">🟡 Meeting</div><p>{{ .meeting }}</p></div><div class="rs-diff-card rs-diff-exceeding"><div class="rs-diff-level">🔴 Exceeding</div><p>{{ .exceeding }}</p></div></div></div>{{ end }}
-              {{ with .Params.journal_prompts }}<div class="rs-st-panel" data-st="journal"><p class="rs-journal-intro">Pick one or two. Write honestly — there are no wrong answers.</p>{{ range . }}<div class="rs-journal-prompt">{{ . }}</div>{{ end }}</div>{{ end }}
-              {{ with .Params.exit_ticket }}<div class="rs-st-panel" data-st="exit"><div class="rs-exit-header">Last 3 minutes — answer on a sticky note or whiteboard</div>{{ range $i, $q := . }}<div class="rs-exit-q"><span class="rs-exit-num">{{ add $i 1 }}</span><span>{{ $q }}</span></div>{{ end }}</div>{{ end }}
+              {{ with .Params.journal_prompts }}<div class="rs-st-panel" data-st="journal"><p class="rs-journal-intro">Pick one or two. Write honestly. There are no wrong answers.</p>{{ range . }}<div class="rs-journal-prompt">{{ . }}</div>{{ end }}</div>{{ end }}
+              {{ with .Params.exit_ticket }}<div class="rs-st-panel" data-st="exit"><div class="rs-exit-header">Last 3 minutes. Answer on a sticky note or whiteboard</div>{{ range $i, $q := . }}<div class="rs-exit-q"><span class="rs-exit-num">{{ add $i 1 }}</span><span>{{ $q }}</span></div>{{ end }}</div>{{ end }}
             </div>
           </div>
           {{ end }}
@@ -89,7 +89,7 @@
           {{ with .Params.sequence }}<div class="rs-sequence"><div class="rs-seq-label">📍 {{ .unit }}</div><div class="rs-seq-nav">{{ with .prev }}<a href="{{ . }}" class="rs-seq-link rs-seq-prev">← Previous</a>{{ else }}<span class="rs-seq-link rs-seq-start">▶ Start</span>{{ end }}{{ with .next }}<a href="{{ . }}" class="rs-seq-link rs-seq-next">{{ $.Params.sequence.next_label }} →</a>{{ end }}</div></div>{{ end }}
         </div>
 
-        {{/* ── TEACHER TOOLKIT COLUMN — scrolls alongside content ── */}}
+        {{/* ── TEACHER TOOLKIT COLUMN. scrolls alongside content ── */}}
         {{ if or .Params.warmup .Params.timeline .Params.listen_for .Params.teacher_moves .Params.misconceptions }}
         <div class="rs-content-right">
           <div class="rs-toolkit-col">
@@ -214,7 +214,7 @@
           </div>
         </div>
         {{ else }}
-        {{/* ── No toolkit data — still show metadata column ── */}}
+        {{/* ── No toolkit data. still show metadata column ── */}}
         <div class="rs-content-right">
           <div class="rs-toolkit-col">
             <div class="rs-toc" id="rsToc">
@@ -265,7 +265,7 @@
 
 <section class="engagement-strip"><div class="engagement-inner"><div id="random-curiosity"></div><div class="rs-related-games"><h3>🎮 Related Games</h3>{{ $games := where (where .Site.RegularPages "Section" "resources") "Params.resource_types" "intersect" (slice "Interactive Game") }}{{ $subjectGames := where $games "Params.subjects" "intersect" (slice $subject) }}{{ range first 3 $subjectGames }}<a href="{{ .RelPermalink }}" class="rs-game-link"><span>🎮</span><span>{{ .Title }}</span></a>{{ end }}{{ if not $subjectGames }}{{ range first 3 $games }}<a href="{{ .RelPermalink }}" class="rs-game-link"><span>🎮</span><span>{{ .Title }}</span></a>{{ end }}{{ end }}</div></div></section>
 
-{{/* ── LESSON DATA — injected as JSON for Present mode ── */}}
+{{/* ── LESSON DATA. injected as JSON for Present mode ── */}}
 {{ $lessonData := dict
   "title" .Title
   "subject" $subject
@@ -299,8 +299,8 @@
       <span>LearnLattice</span>
     </div>
     <div class="cm-view-toggle" id="cmViewToggle">
-      <button class="cm-view-btn active" data-view="teacher" title="Teacher view — includes pedagogical notes">🧭 Teacher</button>
-      <button class="cm-view-btn" data-view="student" title="Student view — project this for the class">🎓 Student</button>
+      <button class="cm-view-btn active" data-view="teacher" title="Teacher view. Includes pedagogical notes">🧭 Teacher</button>
+      <button class="cm-view-btn" data-view="student" title="Student view. Project this for the class">🎓 Student</button>
     </div>
     <div class="cm-controls">
       <div class="cm-timer-display" id="cmTimerDisplay" style="display:none">
@@ -353,7 +353,7 @@
       tocList.appendChild(li);
     });
 
-    // Scroll spy — highlight current section
+    // Scroll spy. highlight current section
     var tocLinks = tocList.querySelectorAll('.rs-toc-link');
     var spy = function() {
       var current = -1;

@@ -1,7 +1,7 @@
 ---
 title: "Splitting Water"
 date: 2026-03-28
-description: "Pass electricity through water and watch it split into two gases. One relights a glowing splint. The other makes a squeaky pop. Students collect hydrogen and oxygen, test them, and discover that water — the most familiar substance on Earth — is not an element."
+description: "Pass electricity through water and watch it split into two gases. One relights a glowing splint. The other makes a squeaky pop. Students collect hydrogen and oxygen, test them, and discover that water. the most familiar substance on Earth. is not an element."
 subjects:
   - "Chemistry"
   - "Science"
@@ -20,16 +20,16 @@ key-concepts:
   - "Form"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Compounds can be broken down into simpler substances using energy — revealing the hidden elements within familiar materials."
+statement_of_inquiry: "Compounds can be broken down into simpler substances using energy. revealing the hidden elements within familiar materials."
 difficulty: "meeting"
-hook: "Water is everywhere. You drink it, swim in it, are 60% made of it. But water is not an element — it is two gases fused together. We are going to rip it apart."
+hook: "Water is everywhere. You drink it, swim in it, are 60% made of it. But water is not an element. it is two gases fused together. We are going to rip it apart."
 warmup: "Water is H₂O. What does this formula tell you? If water is made of hydrogen and oxygen, why does it not burn or help things burn? How is a compound different from a mixture of its elements?"
-timeline: "0-5 min: Warmup — discuss H₂O formula | 5-15 min: Set up electrolysis apparatus | 15-30 min: Run electrolysis, collect gases | 30-38 min: Test gases — splint tests | 38-45 min: Explain observations, write equations | 45-48 min: Exit ticket"
+timeline: "0-5 min: Warmup. discuss H₂O formula | 5-15 min: Set up electrolysis apparatus | 15-30 min: Run electrolysis, collect gases | 30-38 min: Test gases. splint tests | 38-45 min: Explain observations, write equations | 45-48 min: Exit ticket"
 teacher_moves:
   - title: "Add an electrolyte"
-    description: "Pure water is a poor conductor. Add a small amount of sodium hydroxide (NaOH) or dilute sulfuric acid (H₂SO₄) to make the water conduct. The electrolyte does not appear in the overall equation — it enables the reaction without being consumed."
+    description: "Pure water is a poor conductor. Add a small amount of sodium hydroxide (NaOH) or dilute sulfuric acid (H₂SO₄) to make the water conduct. The electrolyte does not appear in the overall equation. it enables the reaction without being consumed."
   - title: "The 2:1 ratio is the key observation"
-    description: "Students should notice that the tube collecting hydrogen fills approximately twice as fast as the oxygen tube. This 2:1 volume ratio directly reflects the formula H₂O — two parts hydrogen to one part oxygen. Make sure students observe AND explain this."
+    description: "Students should notice that the tube collecting hydrogen fills approximately twice as fast as the oxygen tube. This 2:1 volume ratio directly reflects the formula H₂O. two parts hydrogen to one part oxygen. Make sure students observe AND explain this."
   - title: "Gas tests must be crisp"
     description: "Practice the gas tests yourself before the lesson. The glowing splint relight (oxygen) and the squeaky pop (hydrogen) only work well with concentrated, freshly collected gas. A half-hearted splint test teaches nothing."
 listen_for:
@@ -42,13 +42,13 @@ listen_for:
 misconceptions:
   - myth: "Water is an element"
     why: "Water seems simple and fundamental"
-    truth: "Water is a compound — two hydrogen atoms bonded to one oxygen atom. This experiment proves it by splitting it into two different substances."
+    truth: "Water is a compound. two hydrogen atoms bonded to one oxygen atom. This experiment proves it by splitting it into two different substances."
   - myth: "The electricity breaks water into hydrogen and oxygen atoms"
     why: "Students think of individual atoms"
-    truth: "Electrolysis produces hydrogen GAS (H₂) and oxygen GAS (O₂) — molecules, not individual atoms. Both elements are diatomic in their natural state."
+    truth: "Electrolysis produces hydrogen GAS (H₂) and oxygen GAS (O₂). molecules, not individual atoms. Both elements are diatomic in their natural state."
   - myth: "The bubbles are steam"
     why: "Students associate water + energy with boiling"
-    truth: "The bubbles are hydrogen and oxygen gases — completely different substances from water vapour. The gas tests prove this: steam would not make a squeaky pop."
+    truth: "The bubbles are hydrogen and oxygen gases. completely different substances from water vapour. The gas tests prove this: steam would not make a squeaky pop."
 sentence_starters:
   approaching:
     - "At the positive electrode, I observed..."
@@ -82,10 +82,10 @@ quick_check:
     a: "2H₂O → 2H₂ + O₂"
   - type: "apply"
     q: "If 20 cm³ of oxygen is collected, what volume of hydrogen would you expect? Why?"
-    a: "40 cm³ — the ratio is 2:1 (H₂:O₂), matching the formula H₂O. Two volumes of hydrogen for every one volume of oxygen."
+    a: "40 cm³. the ratio is 2:1 (H₂:O₂), matching the formula H₂O. Two volumes of hydrogen for every one volume of oxygen."
   - type: "extend"
     q: "Hydrogen is being explored as a clean fuel. If we use electrolysis to produce it, why is it only 'clean' if the electricity comes from renewable sources?"
-    a: "Electrolysis requires electrical energy. If that electricity comes from burning fossil fuels, the process still produces CO₂ overall — you have just moved the emissions upstream. Only renewable electricity makes hydrogen production truly carbon-free."
+    a: "Electrolysis requires electrical energy. If that electricity comes from burning fossil fuels, the process still produces CO₂ overall. you have just moved the emissions upstream. Only renewable electricity makes hydrogen production truly carbon-free."
 differentiated:
   approaching: "Observe the electrolysis. Record which gas forms at each electrode. Perform the gas tests and state what each result proves."
   meeting: "Explain the 2:1 volume ratio using the formula H₂O. Write the word equation and balanced symbol equation for the reaction."
@@ -94,7 +94,7 @@ journal_prompts:
   - "If water can be split into hydrogen (a fuel) and oxygen (supports combustion), why does water put out fires?"
   - "Electrolysis requires energy input. Where does this energy go?"
   - "Could electrolysis solve the world's energy crisis? What are the limitations?"
-parent_summary: "Your child used electricity to split water into hydrogen and oxygen gas — proving that water is a compound, not an element. They collected and tested both gases and observed the 2:1 ratio that matches water's chemical formula. Ask them: what happens when you put a glowing splint into oxygen?"
+parent_summary: "Your child used electricity to split water into hydrogen and oxygen gas. proving that water is a compound, not an element. They collected and tested both gases and observed the 2:1 ratio that matches water's chemical formula. Ask them: what happens when you put a glowing splint into oxygen?"
 seo_title: "Splitting Water | Electrolysis Investigation | MYP Chemistry Grade 9"
 seo_description: "Free MYP Chemistry investigation for Grade 9. Students perform electrolysis of water, collect and test gases, and explore the compound nature of water."
 ---
@@ -103,7 +103,7 @@ seo_description: "Free MYP Chemistry investigation for Grade 9. Students perform
 
 Water. You drink it, wash with it, swim in it. It seems like the most basic substance there is.
 
-But water is hiding something. It is made of two gases — **hydrogen** (explosive) and **oxygen** (feeds fire). Two dangerous substances, perfectly bonded into something harmless.
+But water is hiding something. It is made of two gases. **hydrogen** (explosive) and **oxygen** (feeds fire). Two dangerous substances, perfectly bonded into something harmless.
 
 Today we rip them apart.
 
@@ -139,7 +139,7 @@ Light a splint, blow it out so it glows, and insert it into the tube. If the glo
 
 The negative electrode tube fills approximately **twice as fast** as the positive electrode tube.
 
-This 2:1 ratio matches the formula: **H₂O** — two hydrogen atoms for every one oxygen atom.
+This 2:1 ratio matches the formula: **H₂O**. two hydrogen atoms for every one oxygen atom.
 
 ---
 
@@ -155,16 +155,16 @@ $$2\text{H}^+ + 2e^- \rightarrow \text{H}_2$$
 At the **anode** (positive): hydroxide ions lose electrons → oxygen gas + water
 $$4\text{OH}^- \rightarrow \text{O}_2 + 2\text{H}_2\text{O} + 4e^-$$
 
-This proves water is a **compound** — a pure substance that can be broken down into simpler substances by chemical means. Elements cannot be broken down further.
+This proves water is a **compound**. a pure substance that can be broken down into simpler substances by chemical means. Elements cannot be broken down further.
 
 ---
 
 ## Teaching Notes
 
-The Hoffman voltameter gives the cleanest results, but a simple setup with two graphite pencil electrodes in a beaker with inverted test tubes works fine. Use pencil graphite (not metal) electrodes — metal electrodes may react with the electrolyte and contaminate the results.
+The Hoffman voltameter gives the cleanest results, but a simple setup with two graphite pencil electrodes in a beaker with inverted test tubes works fine. Use pencil graphite (not metal) electrodes. metal electrodes may react with the electrolyte and contaminate the results.
 
 Run the electrolysis for 10-15 minutes to collect enough gas for definitive testing. Impatient students will try to test half-filled tubes and get ambiguous results.
 
-Safety: hydrogen is flammable — perform gas tests away from the electrolysis apparatus. Use small quantities. Ensure good ventilation. Dilute sulfuric acid is a mild irritant — goggles required.
+Safety: hydrogen is flammable. perform gas tests away from the electrolysis apparatus. Use small quantities. Ensure good ventilation. Dilute sulfuric acid is a mild irritant. goggles required.
 
-The hydrogen economy extension is excellent for Criterion D: is electrolysis viable for large-scale hydrogen production? Only if powered by renewables — otherwise you are using fossil fuel electricity to split water, which is less efficient than just burning the fossil fuel directly.
+The hydrogen economy extension is excellent for Criterion D: is electrolysis viable for large-scale hydrogen production? Only if powered by renewables. otherwise you are using fossil fuel electricity to split water, which is less efficient than just burning the fossil fuel directly.

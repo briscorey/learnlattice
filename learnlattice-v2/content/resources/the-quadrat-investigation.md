@@ -1,7 +1,7 @@
 ---
 title: "What Lives in One Square Metre?"
 date: 2026-01-13
-description: "One square metre of your school grounds contains an entire ecosystem — plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"
+description: "One square metre of your school grounds contains an entire ecosystem. plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"
 subjects:
   - "Ecology"
 year_levels:
@@ -17,7 +17,7 @@ global-contexts:
   - "Globalization and Sustainability"
 statement_of_inquiry: "Even the smallest patch of ground is an ecosystem with producers, consumers, and decomposers interacting in a web of relationships."
 difficulty: "approaching"
-hook: "One square metre of your school grounds contains an entire ecosystem — plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"
+hook: "One square metre of your school grounds contains an entire ecosystem. plants, insects, decomposers, and fungi, all connected. How many species can you find in a single quadrat?"
 warmup: "Go outside. Stand in one spot. Without moving your feet, list every living thing you can see within arm's reach. How many did you find?"
 seo_title: "What Lives in One Square Metre? | MYP Ecology | Grade 6-7"
 seo_description: "Free MYP ecology investigation for Grade 6-7. Inquiry-based, classroom-ready with EAL scaffolds. One square metre of your school grounds "
@@ -103,7 +103,7 @@ Now get on your hands and knees and **really look**. Count every species of plan
 - Camera (phone)
 
 ### Method
-1. Place quadrat randomly (throw it over your shoulder — genuinely random)
+1. Place quadrat randomly (throw it over your shoulder. genuinely random)
 2. Spend 15 minutes recording EVERYTHING alive inside it
 3. Identify species where possible (use a field guide app)
 4. Estimate percentage cover for each plant species
@@ -143,6 +143,6 @@ Why are some patches more biodiverse than others? Consider:
 
 Get students outside. That is the entire point. Ecology cannot be taught from a textbook.
 
-The random quadrat placement is important — it prevents students from choosing "interesting" spots and biasing their data. Throwing the quadrat over the shoulder is the standard ecological method and students find it memorable.
+The random quadrat placement is important. it prevents students from choosing "interesting" spots and biasing their data. Throwing the quadrat over the shoulder is the standard ecological method and students find it memorable.
 
 The Simpson's Index calculation connects maths to fieldwork in a genuine way. Students who think they "hate maths" will calculate diversity indices happily when the numbers represent real organisms they just discovered.

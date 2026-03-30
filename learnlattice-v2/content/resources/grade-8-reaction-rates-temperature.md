@@ -1,7 +1,7 @@
 ---
 title: "Temperature and Reaction Rate"
 date: 2026-03-28
-description: "Drop an Alka-Seltzer tablet into cold water, warm water, and hot water. Time how long until the fizzing stops. The hot water finishes in seconds. Students discover that temperature is the single most powerful factor affecting reaction rate — and learn to explain WHY using particle theory."
+description: "Drop an Alka-Seltzer tablet into cold water, warm water, and hot water. Time how long until the fizzing stops. The hot water finishes in seconds. Students discover that temperature is the single most powerful factor affecting reaction rate. and learn to explain WHY using particle theory."
 subjects:
   - "Chemistry"
   - "Science"
@@ -21,16 +21,16 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "The rate of chemical change depends on particle energy — a relationship that can be measured, modelled, and predicted."
+statement_of_inquiry: "The rate of chemical change depends on particle energy. a relationship that can be measured, modelled, and predicted."
 difficulty: "meeting"
-hook: "An Alka-Seltzer tablet in ice water fizzes for 2 minutes. The same tablet in hot water finishes in 15 seconds. Same tablet, same water, same reaction — just different temperatures. Why does heat speed things up so dramatically?"
+hook: "An Alka-Seltzer tablet in ice water fizzes for 2 minutes. The same tablet in hot water finishes in 15 seconds. Same tablet, same water, same reaction. just different temperatures. Why does heat speed things up so dramatically?"
 warmup: "Stir sugar into cold water and into hot water. Which dissolves faster? Why do you think temperature makes a difference? Is dissolving a chemical reaction?"
-timeline: "0-5 min: Warmup — sugar dissolving | 5-12 min: Set up 5 temperatures (ice, cold, room, warm, hot) | 12-25 min: Run experiments — time each reaction | 25-35 min: Plot temperature vs time graph | 35-42 min: Explain results using particle theory | 42-48 min: Exit ticket"
+timeline: "0-5 min: Warmup. sugar dissolving | 5-12 min: Set up 5 temperatures (ice, cold, room, warm, hot) | 12-25 min: Run experiments. time each reaction | 25-35 min: Plot temperature vs time graph | 35-42 min: Explain results using particle theory | 42-48 min: Exit ticket"
 teacher_moves:
   - title: "Five temperatures, not three"
-    description: "Many textbooks suggest three temperatures. Use five: ice water (≈5°C), cold tap (≈15°C), room temp (≈22°C), warm (≈40°C), hot (≈60°C). Five points produce a convincing curve. Three points could be a straight line or a curve — five resolves the question."
+    description: "Many textbooks suggest three temperatures. Use five: ice water (≈5°C), cold tap (≈15°C), room temp (≈22°C), warm (≈40°C), hot (≈60°C). Five points produce a convincing curve. Three points could be a straight line or a curve. five resolves the question."
   - title: "The graph shape is the discovery"
-    description: "Students expect a straight line — double the temperature, halve the time. They will not get a straight line. The curve shows that the relationship is non-linear. This is the most important finding and leads to the collision theory explanation."
+    description: "Students expect a straight line. double the temperature, halve the time. They will not get a straight line. The curve shows that the relationship is non-linear. This is the most important finding and leads to the collision theory explanation."
   - title: "Draw the particles"
     description: "After the data is collected, ask students to draw the particles in cold water and hot water. Slow-moving particles (cold) rarely collide with enough energy. Fast-moving particles (hot) collide more often and with more force. Both frequency AND energy of collisions increase."
 listen_for:
@@ -46,7 +46,7 @@ misconceptions:
     truth: "The chemicals themselves do not change. Temperature increases particle kinetic energy, leading to more frequent and more energetic collisions. It is the COLLISIONS that drive the reaction."
   - myth: "Doubling temperature doubles the rate"
     why: "Students assume a linear relationship"
-    truth: "The relationship is exponential. A rough rule: for every 10°C increase, rate approximately doubles. Going from 20°C to 60°C does not double the rate — it increases it by roughly 2⁴ = 16 times."
+    truth: "The relationship is exponential. A rough rule: for every 10°C increase, rate approximately doubles. Going from 20°C to 60°C does not double the rate. it increases it by roughly 2⁴ = 16 times."
   - myth: "Stirring is the same as heating"
     why: "Both speed up dissolving"
     truth: "Stirring brings fresh solvent to the surface (increases contact). Heating increases particle energy. They affect rate through different mechanisms. Dissolving is also a physical change, not a chemical reaction."
@@ -58,7 +58,7 @@ sentence_starters:
     - "The reaction was faster at higher temperatures because particles..."
     - "My graph shows a ___ relationship between temperature and reaction time"
   exceeding:
-    - "The exponential relationship can be explained by activation energy — at higher temperatures, more particles exceed..."
+    - "The exponential relationship can be explained by activation energy. at higher temperatures, more particles exceed..."
     - "The 10°C rule predicts that ___, and my data shows..."
 self_check:
   - level: "Getting started"
@@ -95,7 +95,7 @@ journal_prompts:
   - "Why do we store food in the fridge? Connect your answer to today's investigation."
   - "If you wanted a glow stick to last all night at a concert, what would you do? Why?"
   - "Why do car engines run hot? What would happen if they ran at room temperature?"
-parent_summary: "Your child investigated how temperature affects reaction rate by timing fizzing tablets at five different temperatures. They discovered that hotter water dramatically speeds up reactions and learned to explain this using particle theory — faster particles collide more often with more energy. Ask them: why do we refrigerate food?"
+parent_summary: "Your child investigated how temperature affects reaction rate by timing fizzing tablets at five different temperatures. They discovered that hotter water dramatically speeds up reactions and learned to explain this using particle theory. faster particles collide more often with more energy. Ask them: why do we refrigerate food?"
 seo_title: "Temperature and Reaction Rate | MYP Chemistry Grade 8-9 | Free Investigation"
 seo_description: "Free MYP Chemistry investigation for Grade 8-9. Students time reactions at 5 temperatures, graph the results, and explain using collision theory."
 ---
@@ -159,12 +159,12 @@ Plot temperature (x-axis) against reaction time (y-axis). Draw a smooth curve of
 
 At higher temperatures, particles have more **kinetic energy**. This causes two effects:
 
-1. **More frequent collisions** — particles move faster, so they meet each other more often
-2. **More energetic collisions** — particles hit each other harder, so more collisions have enough energy to break bonds and start the reaction
+1. **More frequent collisions**. particles move faster, so they meet each other more often
+2. **More energetic collisions**. particles hit each other harder, so more collisions have enough energy to break bonds and start the reaction
 
 Both effects combine to dramatically increase the rate. This is **collision theory**.
 
-A useful rule of thumb: for every **10°C increase**, the reaction rate approximately **doubles**. This is why the graph curves — it follows an exponential pattern, not a linear one.
+A useful rule of thumb: for every **10°C increase**, the reaction rate approximately **doubles**. This is why the graph curves. it follows an exponential pattern, not a linear one.
 
 ---
 

@@ -21,7 +21,7 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Fairness and Development"
-statement_of_inquiry: "Mathematical optimisation reveals that the best decision often lies between extremes — and understanding the relationship between variables allows us to find it."
+statement_of_inquiry: "Mathematical optimisation reveals that the best decision often lies between extremes. and understanding the relationship between variables allows us to find it."
 difficulty: "meeting"
 duration: "1-2 lessons"
 hook: "The school dance committee must set ticket prices. Higher prices = more money per ticket but fewer people come. What price makes the most money?"
@@ -137,7 +137,7 @@ The optimal price is **$10**, generating **$1,000** in revenue with 100 attendee
 
 ## The Sequel: When the Model Breaks
 
-- What if the venue costs $600 to rent? Now you need to maximise **profit** (revenue − cost), not just revenue. Does the optimal price change? (No — the fixed cost shifts the curve down but does not change the vertex.)
+- What if the venue costs $600 to rent? Now you need to maximise **profit** (revenue − cost), not just revenue. Does the optimal price change? (No. the fixed cost shifts the curve down but does not change the vertex.)
 - What if you add a $3 cost per attendee (food/drinks)? Now profit = 10(200 − 10p) × (p − 3). The optimal price DOES change. Find it.
 - Is it fair that some students cannot afford the optimal price? Should there be a sliding scale? Discuss the trade-off between revenue maximisation and accessibility.
 - Survey your actual classmates. Does the "10 fewer per dollar" model hold? What would a more accurate demand curve look like?
@@ -148,10 +148,10 @@ The optimal price is **$10**, generating **$1,000** in revenue with 100 attendee
 
 **3-Act Structure:** Act 1 poses a genuine decision. Act 2 builds the mathematical model. Act 3 reveals the optimal answer, then the sequel complicates it with real-world constraints.
 
-**MYP Criterion D Connection:** This is a textbook Criterion D task — students apply mathematics to a real decision, interpret the result, and evaluate the model's limitations. The fairness discussion pushes toward levels 7-8.
+**MYP Criterion D Connection:** This is a textbook Criterion D task. students apply mathematics to a real decision, interpret the result, and evaluate the model's limitations. The fairness discussion pushes toward levels 7-8.
 
 **MYP Criterion B Connection:** The relationship between price and revenue is quadratic. Students investigate the pattern, describe the general rule, and verify the optimum.
 
-**Global Context — Fairness and Development:** The sequel explicitly raises equity questions. Revenue maximisation may conflict with accessibility. This is a genuine tension that students can engage with mathematically and ethically.
+**Global Context. Fairness and Development:** The sequel explicitly raises equity questions. Revenue maximisation may conflict with accessibility. This is a genuine tension that students can engage with mathematically and ethically.
 
 **EAL Scaffold:** The table format makes the pattern visible without requiring extensive reading. Provide vocabulary: revenue, profit, optimal, maximise.

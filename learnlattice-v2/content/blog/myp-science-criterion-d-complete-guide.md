@@ -1,8 +1,8 @@
 ---
 title: "MYP Sciences Criterion D: The Complete Teacher's Guide to Reflecting on the Impacts of Science"
 date: 2026-03-10
-description: "The definitive guide to MYP Science Criterion D — teaching students to evaluate the real-world implications of scientific knowledge, consider ethical dimensions, and propose evidence-based courses of action. The most interdisciplinary of all MYP criteria."
-seo_title: "MYP Science Criterion D Guide — Reflecting on Impacts | L..."
+description: "The definitive guide to MYP Science Criterion D. teaching students to evaluate the real-world implications of scientific knowledge, consider ethical dimensions, and propose evidence-based courses of action. The most interdisciplinary of all MYP criteria."
+seo_title: "MYP Science Criterion D Guide | Reflecting on Impacts | L..."
 seo_description: "Complete free guide to MYP Sciences Criterion D. Teach students to evaluate science in society, discuss ethics, and propose solutions. Free resources and exemplars."
 pillar: "Craft"
 reading_time: 12
@@ -16,7 +16,7 @@ tags:
 
 ## Why Criterion D Is Where Science Meets the Real World
 
-Criterion D — Reflecting on the Impacts of Science — is the most distinctive and powerful of the four MYP science criteria. While Criteria A-C focus on understanding and practising science as a discipline, Criterion D asks students to step back and consider: What are the consequences of this scientific knowledge? Who benefits? Who is harmed? What should we do about it?
+Criterion D. Reflecting on the Impacts of Science. is the most distinctive and powerful of the four MYP science criteria. While Criteria A-C focus on understanding and practising science as a discipline, Criterion D asks students to step back and consider: What are the consequences of this scientific knowledge? Who benefits? Who is harmed? What should we do about it?
 
 The strands are: explaining the ways in which science is applied and used to address a specific problem or issue, discussing and evaluating the various implications of using science and its application to solve a specific problem or issue, applying scientific language to communicate understanding, and documenting sources of information.
 
@@ -38,7 +38,7 @@ At levels 3-4, a student *discusses* implications: "Nuclear power reduces carbon
 
 ## Designing Criterion D Tasks Around Global Contexts
 
-Criterion D tasks work best when anchored in genuine dilemmas — situations where the science is clear but the best course of action is not. The six MYP Global Contexts provide natural framing:
+Criterion D tasks work best when anchored in genuine dilemmas. situations where the science is clear but the best course of action is not. The six MYP Global Contexts provide natural framing:
 
 **Globalization and Sustainability:** Climate change policy, biodiversity conservation vs. economic development, water resource management, plastic pollution solutions.
 
@@ -58,17 +58,17 @@ Criterion D tasks work best when anchored in genuine dilemmas — situations whe
 
 **Mistake 2: Only considering one perspective.** Levels 7-8 require evaluation from multiple stakeholder perspectives. Build this into the task: "Consider the perspective of the local community, the national government, the energy company, and future generations."
 
-**Mistake 3: Ignoring source documentation.** The IB explicitly includes "documenting sources" in the Criterion D descriptors. Teach proper citation practice early and consistently — it is both a Criterion D requirement and an ATL skill (research).
+**Mistake 3: Ignoring source documentation.** The IB explicitly includes "documenting sources" in the Criterion D descriptors. Teach proper citation practice early and consistently. it is both a Criterion D requirement and an ATL skill (research).
 
 ## Free Criterion D Science Resources on LearnLattice
 
-- [Adaptation and Natural Selection Case Study](/resources/adaptation-and-natural-selection-case-study/) — MYP Year 4
-- [What Does Level 7 Look Like? Ecosystem Impact](/resources/criterion-d-exemplar-ecosystem-impact/) — Grade 8, Grade 9
-- [What Does Level 7 Look Like? Physics in Engineering](/resources/criterion-d-exemplar-physics-application/) — Grade 8, Grade 9
-- [Dead or Alive? The Criteria Problem](/resources/dead-or-alive-biology-investigation/) — Grade 6, Grade 7
-- [Ecosystem Energy and Biodiversity Study](/resources/ecosystem-energy-and-biodiversity-study/) — MYP Year 3, MYP Year 4
-- [The Circuit Detective](/resources/electricity-and-circuits-investigation/) — Grade 8, Grade 9
-- [The Feather and the Hammer](/resources/forces-and-falling-investigation/) — Grade 7, Grade 8
-- [Grade 6 Body Systems Inquiry Companion Investigation Pack](/resources/grade-6-body-systems-inquiry-companion-investigation-pack/) — Grade 6, MYP Year 1
+- [Adaptation and Natural Selection Case Study](/resources/adaptation-and-natural-selection-case-study/). MYP Year 4
+- [What Does Level 7 Look Like? Ecosystem Impact](/resources/criterion-d-exemplar-ecosystem-impact/). Grade 8, Grade 9
+- [What Does Level 7 Look Like? Physics in Engineering](/resources/criterion-d-exemplar-physics-application/). Grade 8, Grade 9
+- [Dead or Alive? The Criteria Problem](/resources/dead-or-alive-biology-investigation/). Grade 6, Grade 7
+- [Ecosystem Energy and Biodiversity Study](/resources/ecosystem-energy-and-biodiversity-study/). MYP Year 3, MYP Year 4
+- [The Circuit Detective](/resources/electricity-and-circuits-investigation/). Grade 8, Grade 9
+- [The Feather and the Hammer](/resources/forces-and-falling-investigation/). Grade 7, Grade 8
+- [Grade 6 Body Systems Inquiry Companion Investigation Pack](/resources/grade-6-body-systems-inquiry-companion-investigation-pack/). Grade 6, MYP Year 1
 
 See also: [Criterion D Rubric Reference Card](/assessment/criterion-d/) for a printable desk reference, and our [blog post on designing Criterion D tasks](/blog/five-myp-science-investigations/) for detailed examples.

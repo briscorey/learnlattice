@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Worked Example: Solving a Linear Equation — LearnLattice</title>
+<title>Worked Example: Solving a Linear Equation. LearnLattice</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px}
@@ -149,7 +149,7 @@ function showNext() {
   if (revealed > 0) dots[revealed-1].classList.remove('current');
   revealed++;
   if (revealed >= steps.length) {
-    document.getElementById('nextBtn').textContent = '✓ Complete — try another problem';
+    document.getElementById('nextBtn').textContent = '✓ Complete. try another problem';
     document.getElementById('nextBtn').className = 'btn-next complete';
     document.getElementById('nextBtn').onclick = function() {
       loadProblem((current + 1) % problems.length);

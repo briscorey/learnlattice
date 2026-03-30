@@ -32,7 +32,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Claim-evidence-reasoning"
     description: "Push students beyond description. Ask: What is your claim? What evidence supports it? Why does that evidence support your claim? This structure separates 3-4 work from 5-6 work."
-timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation — students collect data or work through the task. | 35-45 min: Class discussion — share findings, address misconceptions. | 45-50 min: Exit ticket.'
+timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation. students collect data or work through the task. | 35-45 min: Class discussion. share findings, address misconceptions. | 45-50 min: Exit ticket.'
 warmup: "Show students a simple example related to the topic. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion."
 misconceptions:
 - myth: "If I flip heads 5 times, tails is due next"
@@ -104,7 +104,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Investigating Indicators and pH" — a chemistry investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Investigating Indicators and pH". a chemistry investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## Overview

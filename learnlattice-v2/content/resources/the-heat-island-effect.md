@@ -1,7 +1,7 @@
 ---
 title: "The Heat Island Effect: Mapping Temperature in Our Community"
 date: 2025-11-17
-description: "Students measure temperatures across their school and local community — asphalt, grass, shade, buildings — to map urban heat islands, analyse patterns with statistics, and evaluate how urban planning decisions impact local climate and equity."
+description: "Students measure temperatures across their school and local community. asphalt, grass, shade, buildings. to map urban heat islands, analyse patterns with statistics, and evaluate how urban planning decisions impact local climate and equity."
 subjects:
   - "Science"
   - "Mathematics"
@@ -35,14 +35,14 @@ flagship: true
 download_url: ""
 download_label: "Investigation Pack"
 duration: "2–3 lessons"
-hook: "Two students stand 50 metres apart. One is on the school field. One is on the car park. The thermometer readings differ by 8°C. Same time, same school, same air — so why?"
+hook: "Two students stand 50 metres apart. One is on the school field. One is on the car park. The thermometer readings differ by 8°C. Same time, same school, same air. so why?"
 warmup: "Before going outside, ask students: Which 5 locations around our school do you predict will be the hottest? The coolest? Rank them. Write predictions on the board. We will test every single one."
-timeline: "0-5 min: Hook — show thermal image of a city (free NASA images). Ask what the colours mean | 5-10 min: Prediction ranking — students rank 8 school locations by expected temperature | 10-35 min: Fieldwork — groups measure temperature at assigned locations (3 readings per spot, 1 minute apart) | 35-45 min: Pool class data, calculate means, create temperature map | 45-50 min: Compare predictions to results — what surprised you?"
+timeline: "0-5 min: Hook. show thermal image of a city (free NASA images). Ask what the colours mean | 5-10 min: Prediction ranking. students rank 8 school locations by expected temperature | 10-35 min: Fieldwork. groups measure temperature at assigned locations (3 readings per spot, 1 minute apart) | 35-45 min: Pool class data, calculate means, create temperature map | 45-50 min: Compare predictions to results. what surprised you?"
 teacher_moves:
   - title: "Set up the fieldwork properly"
-    description: "Assign each group 3-4 locations. Each location needs 3 temperature readings taken 1 minute apart (to calculate a mean — this teaches data reliability naturally). Thermometers must be held at the same height (1m) and shaded from direct sun. These controls emerge from class discussion, not teacher instruction."
+    description: "Assign each group 3-4 locations. Each location needs 3 temperature readings taken 1 minute apart (to calculate a mean. this teaches data reliability naturally). Thermometers must be held at the same height (1m) and shaded from direct sun. These controls emerge from class discussion, not teacher instruction."
   - title: "Use the prediction-vs-reality gap"
-    description: "Students consistently underestimate the car park and overestimate shaded grass. When their predictions are wrong, they WANT to know why. This is the engine for the science explanation — albedo, thermal mass, evapotranspiration. Let the data create the need for the theory."
+    description: "Students consistently underestimate the car park and overestimate shaded grass. When their predictions are wrong, they WANT to know why. This is the engine for the science explanation. albedo, thermal mass, evapotranspiration. Let the data create the need for the theory."
   - title: "Connect to equity for Criterion D"
     description: "Show a satellite thermal map of any major city. Ask: Which neighbourhoods are hottest? Then overlay income data. The correlation between poverty and heat exposure is one of the most powerful data stories in environmental science. Students who see this pattern never forget it."
 listen_for:
@@ -51,10 +51,10 @@ listen_for:
   - level: "Meeting"
     phrase: "Dark surfaces absorb more radiation and have lower albedo, so they heat up more than light or vegetated surfaces."
   - level: "Exceeding"
-    phrase: "The temperature difference isn't just about surface colour — it's about thermal mass, evapotranspiration from plants, and air circulation patterns created by building geometry."
+    phrase: "The temperature difference isn't just about surface colour. it's about thermal mass, evapotranspiration from plants, and air circulation patterns created by building geometry."
 misconceptions:
   - myth: "Temperature is the same everywhere in a small area"
-    why: "Students think of temperature as a property of 'the weather' — a single number for a whole city."
+    why: "Students think of temperature as a property of 'the weather'. a single number for a whole city."
     truth: "Temperature varies dramatically over just a few metres depending on surface type, shade, wind exposure, and proximity to buildings. A school campus can have 10°C+ variation."
   - myth: "Shade makes things cold"
     why: "Students confuse 'cooler than direct sun' with 'cold.'"
@@ -106,17 +106,17 @@ journal_prompts:
   - "I predicted ___ would be the hottest spot because ___. I was right/wrong because..."
   - "The most interesting thing about the heat island effect is ___ because..."
   - "If I were designing a new school campus, I would ___ to manage temperature because our data showed..."
-parent_summary: "Students conducted a real scientific investigation by measuring temperatures at different locations around the school — car parks, grass, shade, near buildings. They discovered that temperatures can vary by 8-10°C within a small area depending on surface type and vegetation. They learned about the urban heat island effect and connected their findings to real urban planning decisions. This investigation combined science (heat transfer, ecosystems) with mathematics (data collection, averages, graphing) using their own school as the laboratory."
+parent_summary: "Students conducted a real scientific investigation by measuring temperatures at different locations around the school. car parks, grass, shade, near buildings. They discovered that temperatures can vary by 8-10°C within a small area depending on surface type and vegetation. They learned about the urban heat island effect and connected their findings to real urban planning decisions. This investigation combined science (heat transfer, ecosystems) with mathematics (data collection, averages, graphing) using their own school as the laboratory."
 quick_check:
   - type: "recall"
     q: "What is albedo?"
     a: "The proportion of light/radiation reflected by a surface. High albedo = reflects more = stays cooler."
   - type: "application"
     q: "A playground has mean temperature 38°C (range 4°C). A nearby garden has mean 31°C (range 2°C). Which is both cooler and more consistent?"
-    a: "The garden — it has a lower mean AND a smaller range, meaning temperatures are both lower and more stable."
+    a: "The garden. it has a lower mean AND a smaller range, meaning temperatures are both lower and more stable."
   - type: "extension"
     q: "Why might heat islands be an equity issue, not just an environmental issue?"
-    a: "Low-income neighbourhoods often have less green space, more concrete, and fewer trees — making them significantly hotter. Residents may not be able to afford air conditioning, leading to disproportionate heat-related health risks."
+    a: "Low-income neighbourhoods often have less green space, more concrete, and fewer trees. making them significantly hotter. Residents may not be able to afford air conditioning, leading to disproportionate heat-related health risks."
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
@@ -143,7 +143,7 @@ Same moment. Same school. Same air.
 
 ## Background: What Is the Urban Heat Island Effect?
 
-Cities are hotter than the countryside around them. Not by a little — by **2 to 10°C** on a typical summer day. At night, the difference can be even larger.
+Cities are hotter than the countryside around them. Not by a little. by **2 to 10°C** on a typical summer day. At night, the difference can be even larger.
 
 This happens because:
 
@@ -188,7 +188,7 @@ Before collecting data, your group must agree on:
 
 ---
 
-## Part B: Fieldwork — Collect Your Data (Criterion B + C)
+## Part B: Fieldwork. Collect Your Data (Criterion B + C)
 
 ### Data Collection Protocol
 
@@ -206,7 +206,7 @@ At each location, record:
 
 ### Pool Your Class Data
 
-When you return, your teacher will collect means from every group. If 6 groups each measured 4 locations, you now have **24 data points** — far more reliable than any single group's data.
+When you return, your teacher will collect means from every group. If 6 groups each measured 4 locations, you now have **24 data points**. far more reliable than any single group's data.
 
 Calculate the **class mean** for each location.
 
@@ -228,7 +228,7 @@ Add temperature values and a colour key.
 
 For the full class dataset, calculate:
 - **Mean** temperature across all locations
-- **Range** (highest — lowest)
+- **Range** (highest. lowest)
 - **Temperature difference** between the hottest surface type (asphalt) and coolest (shaded grass)
 
 Create a **bar chart** comparing mean temperatures by surface type.
@@ -253,14 +253,14 @@ Research question: **Do all neighbourhoods in a city experience the same tempera
 
 Consider these facts:
 - Wealthier neighbourhoods typically have **2-3x more tree canopy** than low-income areas
-- In many cities, formerly "redlined" neighbourhoods (historically denied investment) are now the hottest areas — by up to **7°C**
+- In many cities, formerly "redlined" neighbourhoods (historically denied investment) are now the hottest areas. by up to **7°C**
 - Heat-related illness disproportionately affects elderly people, outdoor workers, and those without air conditioning
 
 ### Your Reflection
 
 Write a response to:
 
-> **"Based on your investigation, what recommendations would you make to your school (or city) about managing urban heat — and who benefits most from these changes?"**
+> **"Based on your investigation, what recommendations would you make to your school (or city) about managing urban heat. and who benefits most from these changes?"**
 
 Your response must:
 - Reference specific data from your investigation
@@ -287,7 +287,7 @@ Design a modification to reduce its temperature by at least 3°C. Your proposal 
 
 ### Why This Investigation Is Special
 
-This is the rare investigation where students generate their own primary data through genuine fieldwork, then connect local findings to global patterns. The school campus becomes a living laboratory. Students who discover that the car park is 10°C hotter than the garden don't need to be told about climate — they've measured it with their own hands.
+This is the rare investigation where students generate their own primary data through genuine fieldwork, then connect local findings to global patterns. The school campus becomes a living laboratory. Students who discover that the car park is 10°C hotter than the garden don't need to be told about climate. they've measured it with their own hands.
 
 ### The Nanjing Context
 
@@ -295,13 +295,13 @@ For schools in Nanjing (or any city with hot summers), this investigation has im
 
 ### Cross-Disciplinary Connections
 
-**Mathematics (Criterion C):** Students calculate means, ranges, and create multiple representations. The statistical analysis is authentic — they need statistics to make sense of noisy real-world data, not because the teacher told them to calculate a mean.
+**Mathematics (Criterion C):** Students calculate means, ranges, and create multiple representations. The statistical analysis is authentic. they need statistics to make sense of noisy real-world data, not because the teacher told them to calculate a mean.
 
 **Mathematics (Criterion D):** The equity analysis uses real demographic and temperature data to explore proportional reasoning and correlation.
 
 ### Equipment Needed
 
-- Simple thermometers (one per group — digital or alcohol, NOT infrared for air temperature)
+- Simple thermometers (one per group. digital or alcohol, NOT infrared for air temperature)
 - Clipboards and data recording sheets
 - Sketch map of school campus (prepare in advance or have students draw their own)
 - Timer/stopwatch
@@ -309,7 +309,7 @@ For schools in Nanjing (or any city with hot summers), this investigation has im
 
 ### Common Fieldwork Issues
 
-- **Thermometers in direct sun:** Students will forget to shade the bulb. Demonstrate why this matters — put one in sun and one in shade and show the 10°C+ difference
+- **Thermometers in direct sun:** Students will forget to shade the bulb. Demonstrate why this matters. put one in sun and one in shade and show the 10°C+ difference
 - **Not waiting for equilibration:** If students rush between locations, readings will reflect the previous location. Enforce the 60-second wait
 - **Wind effects:** Windy conditions reduce temperature differences between locations. Best results come from calm, sunny days
 

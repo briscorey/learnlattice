@@ -31,14 +31,14 @@ difficulty: "meeting"
 download_url: ""
 download_label: ""
 game_url: "/games/number-climber.html?embed=1"
-seo_title: "Number Climber — Free MYP Maths Game | Grade 6-9"
+seo_title: "Number Climber | Free MYP Maths Game | Grade 6-9"
 seo_description: "Free interactive MYP mathematics game for Grade 6-9. A Phaser 3 physics platformer with 65+ questions, hints on wrong answers, and three difficulty tiers."
 ---
 
 ## How to Play
 Use **arrow keys** (or A/D) to move left and right. Press **Space** (or Up) to jump. On mobile, use the on-screen touch controls.
 
-Every 5 platforms, a **gate** blocks your path. Answer the maths question correctly to unlock it and keep climbing. Questions get harder as you go — from integers and percentages (Foundation) through algebra and sequences (Developing) to standard form and compound interest (Extending).
+Every 5 platforms, a **gate** blocks your path. Answer the maths question correctly to unlock it and keep climbing. Questions get harder as you go. from integers and percentages (Foundation) through algebra and sequences (Developing) to standard form and compound interest (Extending).
 
 **Wrong answers show a hint** targeting the most common misconception for that question. **Correct answers show a brief explanation** so you learn as you play. The lava pauses while you answer, so take your time to think.
 

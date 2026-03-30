@@ -23,7 +23,7 @@ tags:
 - Annotated Responses
 key_concept: Form
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: The forms of polygons follow mathematical rules that connect the number of sides to measurable properties — and discovering these rules requires systematic investigation.
+statement_of_inquiry: The forms of polygons follow mathematical rules that connect the number of sides to measurable properties. and discovering these rules requires systematic investigation.
 formula: Sum of interior angles = (n − 2) × 180°
 btc_practices:
 - Thinking Tasks
@@ -35,7 +35,7 @@ teacher_moves:
   body: 'Ask: ''What is the sum of angles in a triangle?'' (180°). Then: ''What about a square?'' (360°). Write both on the board. ''What about a pentagon? Can you figure it out WITHOUT being told?'' This
     launches the investigation.'
 - title: Drawing triangles inside polygons
-  body: 'If students are stuck, suggest: ''Can you divide the pentagon into triangles by drawing lines from ONE vertex?'' This is the key insight. Don''t tell them the formula — let the triangle decomposition
+  body: 'If students are stuck, suggest: ''Can you divide the pentagon into triangles by drawing lines from ONE vertex?'' This is the key insight. Don''t tell them the formula. let the triangle decomposition
     lead them to it.'
 - title: Predict then verify
   body: 'After students find the formula, ask: ''Predict the angle sum for a 20-sided polygon. Now predict for a 100-sided polygon. What would happen as n approaches infinity?'' This stretches thinking
@@ -128,7 +128,7 @@ seo_description: "Free MYP Mathematics investigation pack targeting Criterion B 
 
 **(d)** Use your rule to predict the angle sum of a decagon (10 sides) and a 20-sided polygon. Verify one of your predictions. *[Criterion B strand iii]*
 
-**(e)** Justify why your rule works for any polygon — not just the ones you tested. *[Criterion B strand iii]*
+**(e)** Justify why your rule works for any polygon. not just the ones you tested. *[Criterion B strand iii]*
 
 ---
 
@@ -170,7 +170,7 @@ Measuring with a protractor shows effort but is imprecise and doesn't reveal the
 
 ### Why this is Level 5–6:
 
-The table includes the triangle count — showing the student has identified the structural relationship, not just the numerical pattern. The formula is correct and properly derived from the triangle decomposition. Verification is done by an independent method (drawing and counting triangles). The work is well-organised and the generalisation is sound. However, the justification is implicit rather than explicit — the student shows the method works but doesn't fully explain WHY any polygon can be decomposed into \\(n - 2\\) triangles.
+The table includes the triangle count. showing the student has identified the structural relationship, not just the numerical pattern. The formula is correct and properly derived from the triangle decomposition. Verification is done by an independent method (drawing and counting triangles). The work is well-organised and the generalisation is sound. However, the justification is implicit rather than explicit. the student shows the method works but doesn't fully explain WHY any polygon can be decomposed into \\(n - 2\\) triangles.
 
 ---
 
@@ -184,9 +184,9 @@ The table includes the triangle count — showing the student has identified the
 >
 > Since each triangle has an angle sum of 180°, and the triangles fill the entire polygon without overlap, the total angle sum must be \\((n - 2) \times 180°\\).
 >
-> This works for ANY polygon — regular or irregular — because the triangle decomposition depends only on the number of vertices, not on the shape of the polygon. Even a very irregular hexagon still decomposes into exactly 4 triangles from any vertex, giving \\(720°\\).
+> This works for ANY polygon. regular or irregular. because the triangle decomposition depends only on the number of vertices, not on the shape of the polygon. Even a very irregular hexagon still decomposes into exactly 4 triangles from any vertex, giving \\(720°\\).
 >
-> **Extension:** As \\(n\\) gets very large, the polygon approaches a circle. The angle sum \\((n - 2) \times 180°\\) grows without bound, but each individual interior angle approaches 180°. This makes sense geometrically — the sides of the polygon become nearly straight, and each 'corner' is barely a corner at all."
+> **Extension:** As \\(n\\) gets very large, the polygon approaches a circle. The angle sum \\((n - 2) \times 180°\\) grows without bound, but each individual interior angle approaches 180°. This makes sense geometrically. the sides of the polygon become nearly straight, and each 'corner' is barely a corner at all."
 
 ### Why this is Level 7–8:
 

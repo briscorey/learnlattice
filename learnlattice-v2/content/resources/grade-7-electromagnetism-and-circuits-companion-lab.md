@@ -41,7 +41,7 @@ This lab activity extends the [Grade 7 Electromagnetism and Circuits Unit]() wit
 
 ### Phenomenon Prompt
 
-> *Maglev trains in Japan travel at over 600 km/h by floating above a magnetic track — never touching it. The electromagnets holding them aloft can be turned on and off instantly. The same basic principle is in the reed switch inside your laptop that detects when the lid is closed. Electromagnet strength is engineered precisely. How do engineers control it?*
+> *Maglev trains in Japan travel at over 600 km/h by floating above a magnetic track. never touching it. The electromagnets holding them aloft can be turned on and off instantly. The same basic principle is in the reed switch inside your laptop that detects when the lid is closed. Electromagnet strength is engineered precisely. How do engineers control it?*
 
 ### Research Question
 
@@ -63,7 +63,7 @@ This lab activity extends the [Grade 7 Electromagnetism and Circuits Unit]() wit
 ### Method
 
 1. Leave 10 cm of wire free at each end for connecting to the battery. Wind 20 tight turns around the nail, leaving no gaps between turns.
-2. Connect both wire ends to the battery terminals. **Only connect when testing — coils draw continuous current and the battery will drain.**
+2. Connect both wire ends to the battery terminals. **Only connect when testing. coils draw continuous current and the battery will drain.**
 3. Touch the nail tip to a cluster of paper clips. Lift slowly. Count how many remain attached when held 5 cm above the surface.
 4. Disconnect battery. Record result. Repeat 3 times, average the results.
 5. Unwind to 30 turns. Repeat steps 2–4.
@@ -97,7 +97,7 @@ Plot **coil turns (x-axis)** vs **average paper clips lifted (y-axis)**. Draw a 
 
 ### Background
 
-A fault in a circuit is any break, short circuit, or incorrect connection that prevents the circuit from working as intended. Electricians and engineers diagnose faults by reasoning through possible causes — not just swapping parts until something works.
+A fault in a circuit is any break, short circuit, or incorrect connection that prevents the circuit from working as intended. Electricians and engineers diagnose faults by reasoning through possible causes. not just swapping parts until something works.
 
 ### The Five Faulty Circuits
 

@@ -6,13 +6,13 @@ layout: "mathematics"
 
 ## Free MYP Mathematics Resources
 
-LearnLattice offers over 90 free, classroom-ready MYP mathematics resources — from inquiry-based investigations to interactive games, worked examples, and annotated student exemplars. Every resource is aligned to the IB Middle Years Programme assessment criteria and designed for teachers who want their students thinking mathematically, not just following procedures.
+LearnLattice offers over 90 free, classroom-ready MYP mathematics resources. from inquiry-based investigations to interactive games, worked examples, and annotated student exemplars. Every resource is aligned to the IB Middle Years Programme assessment criteria and designed for teachers who want their students thinking mathematically, not just following procedures.
 
 ## What Makes These Resources Different
 
 Most MYP mathematics resources available online are either locked behind a paywall or presented as bare worksheets without teacher support. Every investigation on LearnLattice includes the teaching layer that makes it work in a real classroom: a hook question to launch the lesson, a warm-up connector, a suggested investigation timeline, sentence starters at three achievement levels, common misconceptions to watch for, and an exit ticket.
 
-Resources are also designed with multilingual learners in mind. Task language is carefully chosen so that the mathematics is accessible before the English is fully understood. Visual entry points, concrete materials, and context-building scaffolds are built into every investigation — not added as an afterthought.
+Resources are also designed with multilingual learners in mind. Task language is carefully chosen so that the mathematics is accessible before the English is fully understood. Visual entry points, concrete materials, and context-building scaffolds are built into every investigation. not added as an afterthought.
 
 ## Browse by Topic
 

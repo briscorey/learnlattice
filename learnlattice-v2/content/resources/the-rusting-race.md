@@ -1,7 +1,7 @@
 ---
 title: "The Rusting Race"
 date: 2026-02-16
-description: "Iron nails in water, oil, vinegar, and salt water — which rusts first? Students set up a controlled experiment, observe daily for a week, and discover that rusting needs both oxygen and water."
+description: "Iron nails in water, oil, vinegar, and salt water. which rusts first? Students set up a controlled experiment, observe daily for a week, and discover that rusting needs both oxygen and water."
 subjects:
   - "Chemistry"
 year_levels:
@@ -19,14 +19,14 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Chemical change is not random — it depends on specific conditions that can be identified, controlled, and predicted."
+statement_of_inquiry: "Chemical change is not random. it depends on specific conditions that can be identified, controlled, and predicted."
 difficulty: "approaching"
 hook: "A brand-new iron nail and a rusty one weigh different amounts. The rusty one is heavier. Where did the extra mass come from?"
-warmup: "Look at these two nails — one shiny, one rusty. What happened? Where did the rust come from? Did anything get added or removed?"
-timeline: "0-5 min: Warmup — observe the two nails | 5-15 min: Set up 5 test tubes with different conditions | 15-25 min: Predict which will rust fastest | 25-35 min: Discuss variables and controls | 35-45 min: Record Day 1 observations | Day 2-5: Daily 5-min observations | Day 5: Analyse results and conclude"
+warmup: "Look at these two nails. one shiny, one rusty. What happened? Where did the rust come from? Did anything get added or removed?"
+timeline: "0-5 min: Warmup. observe the two nails | 5-15 min: Set up 5 test tubes with different conditions | 15-25 min: Predict which will rust fastest | 25-35 min: Discuss variables and controls | 35-45 min: Record Day 1 observations | Day 2-5: Daily 5-min observations | Day 5: Analyse results and conclude"
 teacher_moves:
   - title: "The mass increase is the hook"
-    description: "Weigh a shiny nail and a heavily rusted nail of the same type. The rusted nail is heavier. This violates students' intuition that things 'break down' and lose mass. The extra mass is oxygen from the air — a perfect bridge to the chemical equation."
+    description: "Weigh a shiny nail and a heavily rusted nail of the same type. The rusted nail is heavier. This violates students' intuition that things 'break down' and lose mass. The extra mass is oxygen from the air. a perfect bridge to the chemical equation."
   - title: "Do not reveal the conditions needed for rusting"
     description: "Dan Meyer's 'be less helpful.' Students should discover that BOTH water and oxygen are needed through their own results. The test tube with oil-covered water (no oxygen access) will not rust. The dry test tube will not rust. Only when both are present does rusting occur."
   - title: "Make it a competition"
@@ -37,7 +37,7 @@ listen_for:
   - level: "5-6"
     phrase: "Rusting needs water AND air because the dry nail and the oil-covered one did not rust"
   - level: "7-8"
-    phrase: "The iron reacted with oxygen and water — the rust is a new substance (iron oxide) with different properties and greater mass"
+    phrase: "The iron reacted with oxygen and water. the rust is a new substance (iron oxide) with different properties and greater mass"
 misconceptions:
   - myth: "Rust eats away at the metal"
     why: "Rust looks like the metal is decaying"
@@ -81,7 +81,7 @@ quick_check:
     a: "Boiling removes dissolved oxygen from the water, and the oil prevents new oxygen from reaching the nail"
   - type: "extend"
     q: "Stainless steel does not rust. Research: what is added to the iron to prevent it?"
-    a: "Chromium — it forms a thin protective oxide layer that prevents oxygen reaching the iron underneath"
+    a: "Chromium. it forms a thin protective oxide layer that prevents oxygen reaching the iron underneath"
 differentiated:
   approaching: "Observe your nails daily. Draw what you see. Rank the conditions from most to least rust."
   meeting: "Compare all conditions. Explain which factor (water or air) matters more and why. Use your results as evidence."
@@ -90,9 +90,9 @@ journal_prompts:
   - "Why do people paint bridges and coat cars in oil? Connect your answer to this investigation."
   - "If rusting adds mass, why does a rusting car eventually fall apart?"
   - "Design a packaging that would keep an iron tool rust-free for 100 years."
-parent_summary: "Your child is investigating rusting — why iron corrodes and what conditions speed it up. They set up nails in different environments and observed changes over a week. Ask them: why is a rusty nail heavier than a new one?"
+parent_summary: "Your child is investigating rusting. why iron corrodes and what conditions speed it up. They set up nails in different environments and observed changes over a week. Ask them: why is a rusty nail heavier than a new one?"
 seo_title: "The Rusting Race | MYP Chemistry Crit B & Crit C | Grade 7-8"
-seo_description: "Free MYP Chemistry investigation pack targeting Criterion B, Criterion C for Grade 7-8. Iron nails in water, oil, vinegar, and salt water — which ru"
+seo_description: "Free MYP Chemistry investigation pack targeting Criterion B, Criterion C for Grade 7-8. Iron nails in water, oil, vinegar, and salt water. which ru"
 ---
 
 ## The Hook
@@ -107,7 +107,7 @@ Something was *added* to the nail. Not removed. Where did the extra mass come fr
 
 ## The Experiment
 
-### Setup — 5 Conditions
+### Setup. 5 Conditions
 
 Prepare 5 test tubes, each with an iron nail:
 
@@ -136,7 +136,7 @@ After 5 days, rank your tubes from most rust to least rust.
 
 This proves that rusting requires **both water AND oxygen**. Remove either one, and the reaction stops.
 
-Salt speeds it up — which is why cars rust faster near the sea.
+Salt speeds it up. which is why cars rust faster near the sea.
 
 ---
 
@@ -148,7 +148,7 @@ $$\text{iron} + \text{oxygen} + \text{water} \rightarrow \text{hydrated iron oxi
 
 $$4\text{Fe} + 3\text{O}_2 + 6\text{H}_2\text{O} \rightarrow 4\text{Fe(OH)}_3$$
 
-The rust is a **new substance**. It has different properties: it is orange, flaky, and brittle. And it contains oxygen atoms — which is why it is heavier than the original nail.
+The rust is a **new substance**. It has different properties: it is orange, flaky, and brittle. And it contains oxygen atoms. which is why it is heavier than the original nail.
 
 ---
 
@@ -156,6 +156,6 @@ The rust is a **new substance**. It has different properties: it is orange, flak
 
 This is a multi-day investigation that teaches patience and observation alongside chemistry. The daily check-in takes 5 minutes and builds scientific habits.
 
-The mass increase revelation is powerful — it directly contradicts the intuition that rusting "destroys" metal. Use this to introduce the law of conservation of mass: atoms are not created or destroyed, they are rearranged. The extra mass is oxygen atoms that joined the iron.
+The mass increase revelation is powerful. it directly contradicts the intuition that rusting "destroys" metal. Use this to introduce the law of conservation of mass: atoms are not created or destroyed, they are rearranged. The extra mass is oxygen atoms that joined the iron.
 
-Buy iron nails in bulk (hardware store). Avoid galvanised nails — the zinc coating prevents rusting, which is actually another great teaching point if students notice.
+Buy iron nails in bulk (hardware store). Avoid galvanised nails. the zinc coating prevents rusting, which is actually another great teaching point if students notice.

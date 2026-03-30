@@ -33,12 +33,12 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 warmup: "Put a related but simpler version of the problem on the board. Give students 2 minutes to discuss in pairs: What do you notice? What do you wonder?"
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -89,7 +89,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -105,7 +105,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Investigating Probability with Spinners" — a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Investigating Probability with Spinners". a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## Overview
@@ -114,19 +114,19 @@ Students create spinners with different sector sizes, predict outcomes, run expe
 
 ## The Investigation
 
-### Phase 1 — Equal Spinner
+### Phase 1. Equal Spinner
 Create a spinner with 4 equal sectors (red, blue, green, yellow).
 - Predict: each colour should appear 25% of the time
 - Spin 40 times and record results
 - Compare predictions to reality
 
-### Phase 2 — Unequal Spinner
+### Phase 2. Unequal Spinner
 Create a spinner where red = 1/2, blue = 1/4, green = 1/8, yellow = 1/8.
 - Predict outcomes for 40 spins
 - Spin and record
 - "How close were your predictions? Why might they differ?"
 
-### Phase 3 — Design Challenge
+### Phase 3. Design Challenge
 "Design a spinner where red appears twice as often as blue, and green appears three times as often as yellow."
 - Calculate the required sector angles
 - Build and test the spinner

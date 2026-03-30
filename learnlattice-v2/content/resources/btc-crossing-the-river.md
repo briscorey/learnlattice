@@ -26,7 +26,7 @@ difficulty: "meeting"
 duration: "1 lesson"
 hook: "Three adults and three children need to cross a river. The boat holds one adult OR two children. What is the fewest number of crossings?"
 warmup: "If there is 1 adult and 2 children, how many crossings? Act it out with your group."
-seo_title: "Crossing the River — BTC Thinking Task | MYP Maths"
+seo_title: "Crossing the River | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. Students find the minimum river crossings using logic and pattern recognition. Grade 6-7."
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -127,7 +127,7 @@ Start small and record your results:
 
 ## Why This Is a Thinking Task
 
-This task follows Peter Liljedahl's principles for Building Thinking Classrooms: it is a **non-curricular thinking task** that creates genuine mathematical thinking from the first minute. There is no procedure to follow — students must reason logically, test strategies, and recognise patterns.
+This task follows Peter Liljedahl's principles for Building Thinking Classrooms: it is a **non-curricular thinking task** that creates genuine mathematical thinking from the first minute. There is no procedure to follow. students must reason logically, test strategies, and recognise patterns.
 
 Use this as a **lesson opener** with random groups at vertical whiteboards. Give the problem verbally. Do not write it down. Let students struggle productively for 5-10 minutes before any hints.
 
@@ -139,6 +139,6 @@ Use this as a **lesson opener** with random groups at vertical whiteboards. Give
 
 **MYP Criterion B Connection:** Students investigate patterns in the number of crossings, describe a general rule, and justify why it works. The extension to n adults creates an opportunity for algebraic generalisation.
 
-**MYP Criterion C Connection:** Students must communicate their strategy clearly — the logical sequence of crossings must be unambiguous enough for another group to verify.
+**MYP Criterion C Connection:** Students must communicate their strategy clearly. the logical sequence of crossings must be unambiguous enough for another group to verify.
 
 **EAL Scaffold:** Provide a visual diagram of the river, boat, and characters. Demonstrate the first crossing. The mathematical reasoning is accessible regardless of English proficiency.

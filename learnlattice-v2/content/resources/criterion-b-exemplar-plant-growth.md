@@ -22,7 +22,7 @@ tags:
 - Annotated Student Work
 key_concept: Change
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: Understanding what causes change in living systems requires controlling variables and analysing data honestly — even when the results don't match our expectations.
+statement_of_inquiry: Understanding what causes change in living systems requires controlling variables and analysing data honestly. even when the results don't match our expectations.
 formula: growth rate = Δheight ÷ Δtime
 difficulty: approaching
 download_url: ''
@@ -130,7 +130,7 @@ seo_description: "Free MYP Biology investigation pack targeting Criterion B for 
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 ### What the student wrote:
 
@@ -142,11 +142,11 @@ seo_description: "Free MYP Biology investigation pack targeting Criterion B for 
 
 ### Annotation: Why This Is Level 3-4
 
-The observations are correct but the description is purely qualitative. There are no numbers, no rates, no comparison of growth phases. The evaluation in (ii) is right but superficial — it doesn't engage with WHY Plant C grew tall initially. The limitation in (iii) is the classic correct-but-generic answer. It's true, but doesn't explain why replication matters.
+The observations are correct but the description is purely qualitative. There are no numbers, no rates, no comparison of growth phases. The evaluation in (ii) is right but superficial. it doesn't engage with WHY Plant C grew tall initially. The limitation in (iii) is the classic correct-but-generic answer. It's true, but doesn't explain why replication matters.
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 ### What the student wrote:
 
@@ -157,7 +157,7 @@ The observations are correct but the description is purely qualitative. There ar
 >
 > The pattern is that more light produces more total growth over time, but darkness produces rapid initial growth that is not sustained.
 >
-> **(ii)** The student's claim is misleading. Plant C did grow tallest in the first 7 days because it was undergoing etiolation — growing tall to try to reach light. But this growth is weak and spindly, not healthy. After day 7, Plant C nearly stopped growing because it ran out of stored energy and couldn't photosynthesise.
+> **(ii)** The student's claim is misleading. Plant C did grow tallest in the first 7 days because it was undergoing etiolation. growing tall to try to reach light. But this growth is weak and spindly, not healthy. After day 7, Plant C nearly stopped growing because it ran out of stored energy and couldn't photosynthesise.
 >
 > The full dataset shows that sustained growth requires light. Plant A grew steadily for the full 14 days.
 >
@@ -171,17 +171,17 @@ Growth rates are calculated. The two-phase pattern in Plant C is identified and 
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 ### What the student wrote:
 
 > **(i)** The data reveals two distinct growth patterns:
 >
-> **Sustained growth (Plants A and B):** Both plants in light show approximately linear growth throughout the 14 days, with Plant A (full sun) growing faster than Plant B (partial shade). Growth rates: A = 0.87 cm/day, B = 0.58 cm/day. The ratio of growth rates (0.87/0.58 = 1.5) roughly matches the ratio of light hours (8/4 = 2), though not exactly — suggesting light is important but not the only factor.
+> **Sustained growth (Plants A and B):** Both plants in light show approximately linear growth throughout the 14 days, with Plant A (full sun) growing faster than Plant B (partial shade). Growth rates: A = 0.87 cm/day, B = 0.58 cm/day. The ratio of growth rates (0.87/0.58 = 1.5) roughly matches the ratio of light hours (8/4 = 2), though not exactly. suggesting light is important but not the only factor.
 >
-> **Unsustained growth (Plant C):** Plant C shows a strikingly different pattern: rapid growth from day 0-7 (rate = 0.76 cm/day — nearly as fast as Plant A) followed by near-zero growth from day 7-14 (rate = 0.13 cm/day). This two-phase pattern is characteristic of etiolation, where the plant expends stored seed energy on rapid stem elongation in search of light.
+> **Unsustained growth (Plant C):** Plant C shows a strikingly different pattern: rapid growth from day 0-7 (rate = 0.76 cm/day. nearly as fast as Plant A) followed by near-zero growth from day 7-14 (rate = 0.13 cm/day). This two-phase pattern is characteristic of etiolation, where the plant expends stored seed energy on rapid stem elongation in search of light.
 >
-> **(ii)** The claim uses a biased reading of the data — selecting only the first 7 days and ignoring the full trend. This is an example of cherry-picking.
+> **(ii)** The claim uses a biased reading of the data. selecting only the first 7 days and ignoring the full trend. This is an example of cherry-picking.
 >
 > The biological reality is more interesting than "more light = more growth." Plant C's initial rapid growth is a survival adaptation. Seeds contain stored energy (starch) that can fuel growth without photosynthesis. The plant "invests" this energy in growing towards light. If it finds light, it survives. If not, it dies when the stored energy runs out.
 >
@@ -192,11 +192,11 @@ Growth rates are calculated. The two-phase pattern in Plant C is identified and 
 > - Leaf colour (indicator of chlorophyll production)
 > - Dry mass at the end (total biomass, not just height)
 >
-> Height alone is misleading as a measure of "growth" because etiolated growth is not the same as healthy development. This limitation doesn't just affect our conclusions — it's the reason the student in part (ii) was misled.
+> Height alone is misleading as a measure of "growth" because etiolated growth is not the same as healthy development. This limitation doesn't just affect our conclusions. it's the reason the student in part (ii) was misled.
 
 ### Annotation: Why This Is Level 7-8
 
-The growth rate analysis in (i) goes beyond calculation to compare ratios (growth rate ratio vs light ratio). The etiolation explanation connects biology to the data pattern, not just labels it. The "cherry-picking" identification in (ii) is a transferable critical thinking skill. The limitation in (iii) is sophisticated — the student identifies that the MEASUREMENT itself was flawed (height ≠ health), connects this back to part (ii), and proposes specific alternative measurements.
+The growth rate analysis in (i) goes beyond calculation to compare ratios (growth rate ratio vs light ratio). The etiolation explanation connects biology to the data pattern, not just labels it. The "cherry-picking" identification in (ii) is a transferable critical thinking skill. The limitation in (iii) is sophisticated. the student identifies that the MEASUREMENT itself was flawed (height ≠ health), connects this back to part (ii), and proposes specific alternative measurements.
 
 **The sentence that makes it Level 7:** *"Height alone is misleading as a measure of 'growth' because etiolated growth is not the same as healthy development."* This challenges the premise of the experiment, not just its execution.
 
@@ -206,4 +206,4 @@ The growth rate analysis in (i) goes beyond calculation to compare ratios (growt
 
 This is the most accessible exemplar for younger students because the context (growing plants) is familiar and the data table is straightforward. Use it with Grade 6-7 before they've done their own plant investigations.
 
-**Key insight for students:** The Level 7 response isn't longer because it says more — it's better because it *thinks* more. Response C asks questions that A and B don't even consider: "Is height really what we should be measuring?"
+**Key insight for students:** The Level 7 response isn't longer because it says more. it's better because it *thinks* more. Response C asks questions that A and B don't even consider: "Is height really what we should be measuring?"

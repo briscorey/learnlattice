@@ -1,7 +1,7 @@
 ---
 title: What Does Level 7 Look Like? Geometric Growth
 date: 2025-10-09
-description: Fold a piece of paper in half. How many times can you fold it? Three student responses — annotated at levels 3-4, 5-6, and 7-8 — explore the power of exponential growth through this deceptively
+description: Fold a piece of paper in half. How many times can you fold it? Three student responses. annotated at levels 3-4, 5-6, and 7-8. explore the power of exponential growth through this deceptively
   simple question.
 subjects:
 - Mathematics
@@ -22,7 +22,7 @@ tags:
 - Annotated Student Work
 key_concept: Relationships
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: Relationships that appear simple at first can produce results that defy human intuition — and mathematical reasoning is the only reliable tool for predicting them.
+statement_of_inquiry: Relationships that appear simple at first can produce results that defy human intuition. and mathematical reasoning is the only reliable tool for predicting them.
 formula: layers = 2^n · thickness = 0.1 × 2^n mm
 difficulty: exceeding
 download_url: ''
@@ -117,7 +117,7 @@ seo_description: "Free MYP Mathematics investigation pack targeting Criterion B 
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 ### What the student wrote:
 
@@ -131,13 +131,13 @@ seo_description: "Free MYP Mathematics investigation pack targeting Criterion B 
 
 ### Annotation: Why This Is Level 3-4
 
-Correct pattern identification and calculation. However, the formula in (ii) is described in words, not written as \\(T = 0.1 \times 2^n\\). The extraordinary answer in (iii) — 439,804 km — is stated without any sense-making. Is that a lot? Compared to what? The justification in (iv) is circular: "the formula is right because it's right."
+Correct pattern identification and calculation. However, the formula in (ii) is described in words, not written as \\(T = 0.1 \times 2^n\\). The extraordinary answer in (iii). 439,804 km. is stated without any sense-making. Is that a lot? Compared to what? The justification in (iv) is circular: "the formula is right because it's right."
 
 **Teaching move:** Ask "Is 439,804 km far? What else is that distance?" The student needs a reference frame.
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 ### What the student wrote:
 
@@ -158,15 +158,15 @@ Correct pattern identification and calculation. However, the formula in (ii) is 
 >
 > The distance from the Earth to the Moon is about 384,400 km. So 42 folds would make the paper thicker than the distance to the Moon! This seems impossible but the mathematics says it's true.
 >
-> **(iv)** You can't fold a real piece of paper more than about 7 times because the folded paper becomes too rigid and the area gets smaller with each fold. But the mathematical model doesn't depend on whether you CAN fold it — it describes what WOULD happen if you could. The formula \\(0.1 \times 2^n\\) is valid for all \\(n\\).
+> **(iv)** You can't fold a real piece of paper more than about 7 times because the folded paper becomes too rigid and the area gets smaller with each fold. But the mathematical model doesn't depend on whether you CAN fold it. it describes what WOULD happen if you could. The formula \\(0.1 \times 2^n\\) is valid for all \\(n\\).
 
 ### Annotation: Why This Is Level 5-6
 
-The table shows systematic data collection. The formula uses proper notation. The Moon comparison in (iii) is excellent — it gives the number meaning. The distinction between physical and mathematical validity in (iv) is insightful. Missing: no algebraic proof that the doubling pattern holds for all \\(n\\). No discussion of why exponential growth is counterintuitive or how quickly it overtakes linear growth.
+The table shows systematic data collection. The formula uses proper notation. The Moon comparison in (iii) is excellent. it gives the number meaning. The distinction between physical and mathematical validity in (iv) is insightful. Missing: no algebraic proof that the doubling pattern holds for all \\(n\\). No discussion of why exponential growth is counterintuitive or how quickly it overtakes linear growth.
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 ### What the student wrote:
 
@@ -182,13 +182,13 @@ The table shows systematic data collection. The formula uses proper notation. Th
 >
 > The reason this feels impossible is that humans are bad at estimating exponential growth. We expect linear growth (each fold adds the same amount), but exponential growth multiplies. The difference between \\(2^{10} = 1,024\\) and \\(2^{20} = 1,048,576\\) is a factor of 1,000 for just 10 additional folds.
 >
-> **(iv)** The physical limitation is that each fold halves the available area while doubling the thickness. After \\(n\\) folds, the area is \\(A_0 / 2^n\\) and the thickness is \\(0.1 \times 2^n\\) mm. The paper cannot be folded when its thickness exceeds its remaining length — roughly when \\(0.1 \times 2^n > L_0 / 2^{n/2}\\).
+> **(iv)** The physical limitation is that each fold halves the available area while doubling the thickness. After \\(n\\) folds, the area is \\(A_0 / 2^n\\) and the thickness is \\(0.1 \times 2^n\\) mm. The paper cannot be folded when its thickness exceeds its remaining length. roughly when \\(0.1 \times 2^n > L_0 / 2^{n/2}\\).
 >
-> The mathematical model remains valid because \\(T_n = 0.1 \times 2^n\\) depends only on the doubling principle, which I proved in part (i). The model describes the *relationship*, not the physical feasibility. This is the power and limitation of mathematical modelling — the formula is true for all \\(n\\), but the physical experiment is only possible for small \\(n\\).
+> The mathematical model remains valid because \\(T_n = 0.1 \times 2^n\\) depends only on the doubling principle, which I proved in part (i). The model describes the *relationship*, not the physical feasibility. This is the power and limitation of mathematical modelling. the formula is true for all \\(n\\), but the physical experiment is only possible for small \\(n\\).
 
 ### Annotation: Why This Is Level 7-8
 
-The inductive proof in (i) is genuine mathematical justification. The extra calculation at 50 folds builds a richer picture. The paragraph about human intuition failing for exponential growth shows metacognitive understanding. The physical analysis in (iv) — area halving while thickness doubles — provides a quantitative explanation for the folding limit, not just "it gets too thick." The final sentence articulates the relationship between models and reality.
+The inductive proof in (i) is genuine mathematical justification. The extra calculation at 50 folds builds a richer picture. The paragraph about human intuition failing for exponential growth shows metacognitive understanding. The physical analysis in (iv). area halving while thickness doubles. provides a quantitative explanation for the folding limit, not just "it gets too thick." The final sentence articulates the relationship between models and reality.
 
 ---
 

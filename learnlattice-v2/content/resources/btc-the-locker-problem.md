@@ -26,7 +26,7 @@ difficulty: "exceeding"
 duration: "1 lesson"
 hook: "1000 students walk past 1000 lockers. Student 1 opens them all. Student 2 closes every second one. Student 3 changes every third. Which lockers end up open?"
 warmup: "Start with 10 lockers and 10 students. Use O and C on your whiteboard to track the state of each locker."
-seo_title: "The Locker Problem — BTC Thinking Task | MYP Maths"
+seo_title: "The Locker Problem | BTC Thinking Task | MYP Maths"
 seo_description: "Free MYP maths thinking task from Building Thinking Classrooms. 1000 students walk past 1000 lockers. Student 1 opens every locker. Student 2 cl"
 teacher_moves:
   - title: "Start with the table, not the formula"
@@ -35,7 +35,7 @@ teacher_moves:
     description: "Use random grouping (cards, sticks, app). Students who always work with friends miss the productive discomfort of explaining their thinking to someone new."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Checking a few cases proves a formula"
   why: "If it works for 5 values it must always work"
@@ -106,7 +106,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Locker Problem" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Locker Problem". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -140,9 +140,9 @@ After all 1000 students have walked past, **which lockers are open?**
 
 ## The Mathematical Insight
 
-Most numbers have factors in pairs: 12 = 1×12, 2×6, 3×4 — six factors (even).
+Most numbers have factors in pairs: 12 = 1×12, 2×6, 3×4. six factors (even).
 
-But **perfect squares** have one unpaired factor: 9 = 1×9, 3×3 — the 3 appears once, giving three factors (odd).
+But **perfect squares** have one unpaired factor: 9 = 1×9, 3×3. the 3 appears once, giving three factors (odd).
 
 So the open lockers are: **1, 4, 9, 16, 25, 36, 49, 64, 81, 100, ..., 961**
 
@@ -152,7 +152,7 @@ There are **31** open lockers (since 31² = 961 ≤ 1000 < 32² = 1024).
 
 ## Teaching Notes
 
-**BTC Practices Used:** Thinking task, random groups, vertical non-permanent surfaces. Start with 10 lockers — the full problem is motivating but the entry point must be accessible.
+**BTC Practices Used:** Thinking task, random groups, vertical non-permanent surfaces. Start with 10 lockers. the full problem is motivating but the entry point must be accessible.
 
 **MYP Criterion B Connection:** The investigation naturally progresses from concrete simulation (drawing lockers) to pattern recognition (which lockers are open?) to the mathematical insight (factors and perfect squares) to justification (why perfect squares have odd factor counts).
 

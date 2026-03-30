@@ -1,7 +1,7 @@
 ---
-title: "IDU: The Mathematics of Music — Sound Waves Meet Number Patterns"
+title: "IDU: The Mathematics of Music. Sound Waves Meet Number Patterns"
 date: 2025-09-22
-description: "Why do some musical notes sound good together and others clash? Students investigate the physics of sound waves and discover that musical harmony is built on simple mathematical ratios — connecting wave physics with fractions, ratios, and number patterns."
+description: "Why do some musical notes sound good together and others clash? Students investigate the physics of sound waves and discover that musical harmony is built on simple mathematical ratios. connecting wave physics with fractions, ratios, and number patterns."
 subjects:
   - "Mathematics"
   - "Science"
@@ -30,7 +30,7 @@ related_concepts:
   - "Models"
 global-contexts:
   - "Personal and Cultural Expression"
-statement_of_inquiry: "The relationship between mathematical ratios and physical frequencies explains why music sounds the way it does — and reveals that beauty has a mathematical structure."
+statement_of_inquiry: "The relationship between mathematical ratios and physical frequencies explains why music sounds the way it does. and reveals that beauty has a mathematical structure."
 difficulty: "meeting"
 duration: "3–4 lessons"
 hook: "Pythagoras discovered that when you cut a string exactly in half, the note goes up by one octave. When you cut it to two-thirds, you get a perfect fifth. Music is built on fractions."
@@ -41,7 +41,7 @@ teacher_moves:
   - title: "Start with sound, not theory"
     description: "Students hear the intervals before they calculate them. Play an octave, a fifth, a fourth, and a dissonant interval. Ask which sounds pleasant and which sounds tense. THEN reveal the mathematical ratios."
   - title: "The string length experiment is the anchor"
-    description: "Using rulers, rubber bands, or online string simulators, students measure how string length relates to pitch. The relationship (frequency ∝ 1/length) is inversely proportional — a key mathematical concept."
+    description: "Using rulers, rubber bands, or online string simulators, students measure how string length relates to pitch. The relationship (frequency ∝ 1/length) is inversely proportional. a key mathematical concept."
   - title: "Connect to cultural music systems"
     description: "Western music uses 12 semitones. Indian classical music uses 22 shruti. Chinese traditional music uses 5 pentatonic notes. All are built on the same mathematical ratios, expressed differently. This is a genuine Global Context connection."
 btc_practices:
@@ -106,7 +106,7 @@ journal_prompts:
 ---
 ## Overview: Why This Works as an IDU
 
-This investigation connects MYP Mathematics (fractions, ratios, proportional reasoning) with MYP Sciences (sound waves, frequency, vibration) through music. The connection between mathematics and music is one of the oldest known interdisciplinary relationships — Pythagoras discovered it ~2,500 years ago — and it remains one of the most accessible and engaging for middle school students.
+This investigation connects MYP Mathematics (fractions, ratios, proportional reasoning) with MYP Sciences (sound waves, frequency, vibration) through music. The connection between mathematics and music is one of the oldest known interdisciplinary relationships. Pythagoras discovered it ~2,500 years ago. and it remains one of the most accessible and engaging for middle school students.
 
 **Mathematics contributes:** Fraction operations, ratio simplification, proportional reasoning, inverse proportion (frequency ∝ 1/length), pattern recognition in number sequences, the harmonic series.
 
@@ -120,7 +120,7 @@ This investigation connects MYP Mathematics (fractions, ratios, proportional rea
 
 **Opening experiment:** Using a monochord, ruler and rubber band, or online string simulator:
 1. Pluck the full string. Record the note.
-2. Press the midpoint (1/2 length). Pluck. What happened? (Pitch went up one octave — the frequency doubled)
+2. Press the midpoint (1/2 length). Pluck. What happened? (Pitch went up one octave. the frequency doubled)
 3. Press at 1/3 length. Pluck. What interval is this? (An octave plus a fifth)
 4. Press at 2/3 length. Pluck. (A perfect fifth above the original)
 
@@ -141,12 +141,12 @@ Record the string length fractions and the musical intervals they produce:
 
 Connect the mathematical ratios to physical wave behaviour:
 1. **Frequency** is the number of vibrations per second (Hz). A shorter string vibrates faster.
-2. **Consonance** occurs when wave peaks align frequently. For a 2:1 ratio, peaks align every cycle. For a 9:8 ratio, peaks align only every 72 cycles — the ear perceives this misalignment as roughness.
+2. **Consonance** occurs when wave peaks align frequently. For a 2:1 ratio, peaks align every cycle. For a 9:8 ratio, peaks align only every 72 cycles. the ear perceives this misalignment as roughness.
 3. Use an oscilloscope app (phone) to visualise the wave patterns of consonant and dissonant intervals.
 
 **MYP Science Criterion A:** Students explain the relationship between string length, frequency, and wavelength.
 
-### Lesson 3: Building a Scale — Pattern Investigation
+### Lesson 3: Building a Scale. Pattern Investigation
 
 Students investigate how the Western 12-note chromatic scale is constructed:
 1. Starting from a frequency of 440 Hz (A4), each semitone multiplies by ¹²√2 ≈ 1.0595
@@ -155,7 +155,7 @@ Students investigate how the Western 12-note chromatic scale is constructed:
 
 **MYP Maths Criterion B:** Students discover the pattern in the frequency sequence, describe the multiplicative relationship, and verify it produces an exact octave after 12 steps.
 
-**The twist:** The equal-tempered scale (¹²√2) does not produce perfect ratios. A "perfect fifth" should be 3:2 = 1.5, but 2⁷/¹² ≈ 1.4983. The difference is tiny but real — this is why piano tuning is an art as well as a science.
+**The twist:** The equal-tempered scale (¹²√2) does not produce perfect ratios. A "perfect fifth" should be 3:2 = 1.5, but 2⁷/¹² ≈ 1.4983. The difference is tiny but real. this is why piano tuning is an art as well as a science.
 
 ### Lesson 4: Cross-Cultural Connections and Evaluation
 
@@ -176,7 +176,7 @@ Students investigate how the Western 12-note chromatic scale is constructed:
 
 ## EAL Scaffolds
 
-- The listening activities are language-free — all students can hear consonance and dissonance
+- The listening activities are language-free. all students can hear consonance and dissonance
 - The string experiments are hands-on and visual
 - Provide fraction-to-interval reference cards with audio examples
 - Sentence frames: "When the string is ___ of its original length, the frequency is ___ times higher. This produces a ___ interval, which sounds ___."

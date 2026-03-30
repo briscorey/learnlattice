@@ -1,7 +1,7 @@
 ---
 title: "Scaling the Solar System"
 date: 2026-01-05
-description: "If Earth were a peppercorn, how far away would Neptune be? This interdisciplinary investigation uses proportional reasoning to build a scale model of the solar system — and reveals why our intuitions about space are always wrong."
+description: "If Earth were a peppercorn, how far away would Neptune be? This interdisciplinary investigation uses proportional reasoning to build a scale model of the solar system. and reveals why our intuitions about space are always wrong."
 hook: "If Earth were a peppercorn, how far away would Neptune be? This interdisciplinary investigation uses proportional rea..."
 subjects:
   - "Mathematics"
@@ -28,13 +28,13 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Orientation in Space and Time"
-statement_of_inquiry: "The relationships between quantities at vastly different scales can only be understood through proportional reasoning — and the results consistently defy our expectations."
+statement_of_inquiry: "The relationships between quantities at vastly different scales can only be understood through proportional reasoning. and the results consistently defy our expectations."
 formula: "scale factor = model size ÷ actual size"
 download_url: ""
 download_label: "Investigation Pack PDF"
 hints:
   - "Start with the scale factor. If the Sun is a basketball (24 cm), divide 0.24 m by 1,392,000,000 m."
-  - "Use that scale factor to calculate Earth is diameter. It should be tiny — about the size of a peppercorn."
+  - "Use that scale factor to calculate Earth is diameter. It should be tiny. about the size of a peppercorn."
   - "Now calculate the distance. Earth should be about 26 metres from the basketball-Sun."
   - "Neptune will be about 780 metres away. That is further than you think. Go outside and walk it."
 
@@ -53,11 +53,11 @@ listen_for:
 - level: 3-4
   phrase: Earth is really small compared to the Sun
 - level: 5-6
-  phrase: The scale factor is the same for both sizes and distances — about 1 to 6
+  phrase: The scale factor is the same for both sizes and distances. about 1 to 6
     billion
 - level: 7-8
   phrase: The same scale that makes Earth a peppercorn makes Neptune 780 metres away
-    — the model reveals that space is mostly empty
+   . the model reveals that space is mostly empty
 self_check:
 - level: Getting started
   items:
@@ -75,10 +75,10 @@ self_check:
   items:
   - I calculated how far the nearest star would be at this scale
   - I reflected on what the model reveals that numbers alone cannot
-timeline: '0-5 min: Guess warm-up — how big is Earth if Sun is a basketball? | 5-15
+timeline: '0-5 min: Guess warm-up. how big is Earth if Sun is a basketball? | 5-15
   min: Calculate the scale factor and all planet diameters. | 15-20 min: Calculate
   all distances. Convert to meaningful units. | 20-40 min: Go outside. Walk the solar
-  system. Place each planet. | 40-45 min: The Proxima Centauri question — how far
+  system. Place each planet. | 40-45 min: The Proxima Centauri question. how far
   at this scale? | 45-50 min: What does this model teach you that numbers cannot?'
 sentence_starters:
   describing:
@@ -93,7 +93,7 @@ sentence_starters:
 warm_up:
   title: How big is Earth?
   activity: If the Sun were a basketball, how big would Earth be? A marble? A pea?
-    A grain of sand? Take guesses. Don't reveal — they'll calculate it in the investigation.
+    A grain of sand? Take guesses. Don't reveal. they'll calculate it in the investigation.
   time: 3 minutes
 misconceptions:
 - myth: Planets are close together in space
@@ -123,11 +123,11 @@ differentiated:
 
 ## The Hook
 
-Show a textbook diagram of the solar system — planets neatly spaced, Sun on the left, Neptune on the right.
+Show a textbook diagram of the solar system. planets neatly spaced, Sun on the left, Neptune on the right.
 
 Ask: **"Is this drawing accurate?"**
 
-Students say yes. Then reveal: **"If the Sun were the size of a basketball, Earth would be the size of a peppercorn — and it would be 26 metres away. Neptune would be over 800 metres away. This diagram is lying to you."**
+Students say yes. Then reveal: **"If the Sun were the size of a basketball, Earth would be the size of a peppercorn. and it would be 26 metres away. Neptune would be over 800 metres away. This diagram is lying to you."**
 
 Ask: **"Can we build the real one?"**
 
@@ -173,13 +173,13 @@ After the walkout, students write answers to:
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 Calculate the scaled diameter and distance for all 8 planets. Present your results in a clear table with correct units.
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 Is there a pattern in the spacing of planets? Plot distance from Sun against planet number (1-8). Describe the pattern. Is it linear? Exponential? Something else?
 
-### Part C — Criterion D (Levels 5-8)
+### Part C. Criterion D (Levels 5-8)
 The nearest star to our Sun (Proxima Centauri) is 4.24 light-years away. Using your scale model, calculate how far away Proxima Centauri would be. Express this distance in a unit that makes sense (metres? kilometres? something else?). Reflect on what this tells us about interstellar travel.
 
 ---

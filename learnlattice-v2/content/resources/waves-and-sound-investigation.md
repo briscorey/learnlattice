@@ -1,8 +1,8 @@
 ---
 title: "Can You See Sound?"
 date: 2026-01-15
-description: "Sound is invisible — but its effects are not. This investigation uses vibrating speakers, water, salt, and flame to make sound waves visible, building the wave model from direct observation."
-hook: "Sound is invisible — but its effects are not"
+description: "Sound is invisible. but its effects are not. This investigation uses vibrating speakers, water, salt, and flame to make sound waves visible, building the wave model from direct observation."
+hook: "Sound is invisible. but its effects are not"
 subjects:
   - "Physics"
   - "Science"
@@ -62,19 +62,19 @@ self_check:
 - level: Building understanding
   items:
   - I made a table of frequency vs number of nodes
-  - I described the relationship — higher frequency means more nodes
+  - I described the relationship. higher frequency means more nodes
 - level: Going deeper
   items:
-  - I connected node count to wavelength — more nodes means shorter wavelength
+  - I connected node count to wavelength. more nodes means shorter wavelength
   - I used v = f × λ to explain the relationship
 - level: Pushing further
   items:
   - I calculated wavelengths from my data and verified v = f × λ
   - I explored why different instruments playing the same note sound different
-timeline: '0-5 min: Hand on throat warm-up — feel the vibrations. | 5-15 min: Salt
-  on speaker experiment — observe patterns at 100 Hz. | 15-25 min: Change frequency
-  — 200 Hz, 400 Hz, 800 Hz. Sketch each pattern. | 25-35 min: Count nodes, make a
-  table, find the pattern. | 35-45 min: Introduce v = fλ — does it explain your data?
+timeline: '0-5 min: Hand on throat warm-up. feel the vibrations. | 5-15 min: Salt
+  on speaker experiment. observe patterns at 100 Hz. | 15-25 min: Change frequency
+ . 200 Hz, 400 Hz, 800 Hz. Sketch each pattern. | 25-35 min: Count nodes, make a
+  table, find the pattern. | 35-45 min: Introduce v = fλ. does it explain your data?
   | 45-50 min: Why do different instruments playing the same note sound different?'
 sentence_starters:
   describing:
@@ -89,20 +89,20 @@ sentence_starters:
 warm_up:
   title: Can you feel sound?
   activity: Put your hand on your throat and hum. What do you feel? Put your hand
-    on a speaker playing bass. Sound is vibration — you can feel it before you understand
+    on a speaker playing bass. Sound is vibration. you can feel it before you understand
     it.
   time: 2 minutes
 misconceptions:
 - myth: Sound travels through empty space
   why: We hear sounds from far away, and space seems empty
-  truth: Sound needs a medium — air, water, or solid. In the vacuum of space, there
+  truth: Sound needs a medium. air, water, or solid. In the vacuum of space, there
     is no sound. This is why the tagline of Alien is scientifically accurate.
 - myth: Louder means higher pitch
   why: We associate 'more' sound with 'higher' sound
   truth: Loudness is amplitude (height of the wave). Pitch is frequency (speed of
     vibration). They are independent.
 seo_title: "Can You See Sound? | MYP Physics Crit A & Crit B | Grade 8-9"
-seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 8-9. Sound is invisible — but its effects are not. This investiga"
+seo_description: "Free MYP Physics investigation pack targeting Criterion A, Criterion B for Grade 8-9. Sound is invisible. but its effects are not. This investiga"
 exit_ticket:
 - "What is the key pattern or formula you discovered today?"
 - "Give one example that shows your finding works and explain why."
@@ -128,13 +128,13 @@ Change the frequency. The patterns change.
 
 Ask: **"What are you looking at?"**
 
-Students are looking at standing wave patterns — sound made visible. The salt collects at the nodes (points of no vibration) and clears from the antinodes (points of maximum vibration).
+Students are looking at standing wave patterns. sound made visible. The salt collects at the nodes (points of no vibration) and clears from the antinodes (points of maximum vibration).
 
 ---
 
 ## Core Concept: Sound as a Wave
 
-Sound is a longitudinal wave — a pattern of compressions and rarefactions in air (or any medium). We cannot see the wave directly, but we can see its effects: vibrating objects, interference patterns, resonance.
+Sound is a longitudinal wave. a pattern of compressions and rarefactions in air (or any medium). We cannot see the wave directly, but we can see its effects: vibrating objects, interference patterns, resonance.
 
 ### Key relationships:
 - **Frequency** (Hz): how many vibrations per second. Higher frequency = higher pitch.
@@ -145,12 +145,12 @@ Sound is a longitudinal wave — a pattern of compressions and rarefactions in a
 
 ## Tiered Tasks
 
-### Part A — Criterion A: Knowing and understanding (Levels 1-4)
+### Part A. Criterion A: Knowing and understanding (Levels 1-4)
 
 1. Define frequency, wavelength, and amplitude in your own words.
 2. A sound wave has a frequency of 440 Hz (the note A). The speed of sound in air is 343 m/s. Calculate the wavelength using \\(\lambda = \frac{v}{f}\\).
 
-### Part B — Criterion B: Investigating patterns (Levels 3-6)
+### Part B. Criterion B: Investigating patterns (Levels 3-6)
 
 Using a tone generator app and the salt-on-speaker setup:
 1. Test 5 different frequencies (e.g., 100 Hz, 200 Hz, 400 Hz, 800 Hz, 1600 Hz)
@@ -158,16 +158,16 @@ Using a tone generator app and the salt-on-speaker setup:
 3. Describe the pattern: as frequency increases, what happens to the number of nodes?
 4. State a general rule connecting frequency and the complexity of the pattern.
 
-### Part C — Criterion B: Generalisation (Levels 5-8)
+### Part C. Criterion B: Generalisation (Levels 5-8)
 
 The patterns you observed are called Chladni figures (named after Ernst Chladni, 1787). Research: these same patterns appear in vibrating metal plates, drum heads, and even the surface of stars.
 
-Explain why the same mathematical relationship (\\(v = f\lambda\\)) applies to sound waves, water waves, and light waves — even though these are very different phenomena. What does this tell us about the nature of waves?
+Explain why the same mathematical relationship (\\(v = f\lambda\\)) applies to sound waves, water waves, and light waves. even though these are very different phenomena. What does this tell us about the nature of waves?
 
 ---
 
 ## Teaching Notes
 
-The salt-on-speaker demonstration is one of the most visually striking in all of middle school science. It requires minimal equipment (any small speaker, cling film, salt, and a free tone generator app). Test it before class — you need the cling film tight and the speaker loud enough.
+The salt-on-speaker demonstration is one of the most visually striking in all of middle school science. It requires minimal equipment (any small speaker, cling film, salt, and a free tone generator app). Test it before class. you need the cling film tight and the speaker loud enough.
 
 The EAL scaffold here is built in: the demonstration is entirely visual. Students who cannot follow verbal instructions can still observe, sketch, and describe the patterns.

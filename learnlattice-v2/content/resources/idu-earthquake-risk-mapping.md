@@ -1,5 +1,5 @@
 ---
-title: "IDU: Earthquake Risk — Where Should We Build?"
+title: "IDU: Earthquake Risk. Where Should We Build?"
 date: 2025-12-01
 description: "Students analyse real seismic data to map earthquake risk zones, calculate statistical probabilities of future events, and evaluate where it is safe to build infrastructure. A math-science IDU connecting earth science, statistics, and real-world decision making."
 subjects:
@@ -30,16 +30,16 @@ related_concepts:
   - "Movement"
 global-contexts:
   - "Orientation in Space and Time"
-statement_of_inquiry: "Statistical analysis of historical data reveals patterns in Earth systems that allow us to assess risk — but the uncertainty inherent in natural systems means our predictions are always probabilistic, never certain."
+statement_of_inquiry: "Statistical analysis of historical data reveals patterns in Earth systems that allow us to assess risk. but the uncertainty inherent in natural systems means our predictions are always probabilistic, never certain."
 difficulty: "meeting"
 duration: "4–5 lessons"
-hook: "In 2011, a magnitude 9.0 earthquake struck Japan — the fourth most powerful ever recorded. Scientists had predicted a major earthquake in the region, but not this big. Could mathematics have predicted it better?"
-warmup: "Here are earthquake magnitudes for a region over the past 100 years. Plot them on a timeline. Do you see a pattern — or is it random?"
+hook: "In 2011, a magnitude 9.0 earthquake struck Japan. the fourth most powerful ever recorded. Scientists had predicted a major earthquake in the region, but not this big. Could mathematics have predicted it better?"
+warmup: "Here are earthquake magnitudes for a region over the past 100 years. Plot them on a timeline. Do you see a pattern. or is it random?"
 seo_title: "IDU Earthquake Risk Mapping | MYP Math-Science Statistics"
 seo_description: "Free MYP interdisciplinary unit: students analyse real seismic data to map earthquake risk using statistics and earth science. 5-lesson investigation pack."
 teacher_moves:
   - title: "Use real USGS data"
-    description: "The US Geological Survey provides free, downloadable earthquake data. Students work with REAL data — magnitudes, locations, depths, dates — not textbook examples. This makes the statistics genuine."
+    description: "The US Geological Survey provides free, downloadable earthquake data. Students work with REAL data. magnitudes, locations, depths, dates. not textbook examples. This makes the statistics genuine."
   - title: "The Gutenberg-Richter law is the pattern"
     description: "Students discover that the relationship between earthquake magnitude and frequency is logarithmic. For every increase of 1.0 in magnitude, earthquakes become approximately 10x less frequent. This is a real and discoverable pattern."
   - title: "The decision is the hook"
@@ -106,7 +106,7 @@ journal_prompts:
 ---
 ## Overview: Why This Works as an IDU
 
-This investigation connects MYP Mathematics (statistics, probability, logarithmic relationships) with MYP Sciences (plate tectonics, seismic waves, geological evidence) through earthquake risk assessment. The interdisciplinary connection is essential — assessing earthquake risk requires both understanding the geological causes AND statistically analysing the historical data to estimate probabilities.
+This investigation connects MYP Mathematics (statistics, probability, logarithmic relationships) with MYP Sciences (plate tectonics, seismic waves, geological evidence) through earthquake risk assessment. The interdisciplinary connection is essential. assessing earthquake risk requires both understanding the geological causes AND statistically analysing the historical data to estimate probabilities.
 
 **Mathematics contributes:** Frequency tables and histograms, measures of central tendency, logarithmic scales (the Richter scale itself is logarithmic), probability estimation from historical data, scatter plots of location data, the Gutenberg-Richter frequency-magnitude relationship.
 
@@ -125,7 +125,7 @@ Tasks:
 2. Colour-code by magnitude: < 4.0 (green), 4.0-5.9 (yellow), 6.0-6.9 (orange), ≥ 7.0 (red)
 3. Identify clusters and patterns
 
-**Key discovery:** Earthquakes are not randomly distributed — they cluster along plate boundaries. The mathematical pattern (clustering) reveals the geological structure.
+**Key discovery:** Earthquakes are not randomly distributed. they cluster along plate boundaries. The mathematical pattern (clustering) reveals the geological structure.
 
 ### Lesson 2: Statistical Analysis of Earthquake Data
 

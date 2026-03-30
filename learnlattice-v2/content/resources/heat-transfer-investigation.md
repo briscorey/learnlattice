@@ -29,10 +29,10 @@ formula: "Rate of heat transfer depends on: thermal conductivity, temperature di
 download_url: ""
 download_label: "Investigation Pack PDF"
 hints:
-  - "Hold a metal spoon and a wooden spoon at the same time. Which feels colder? They are actually the same temperature — room temperature."
+  - "Hold a metal spoon and a wooden spoon at the same time. Which feels colder? They are actually the same temperature. room temperature."
   - "The metal feels colder because it conducts heat away from your hand faster. Your hand is warmer than room temperature."
   - "Now place ice cubes on different surfaces. Which one melts fastest? That surface conducts heat best."
-  - "Good conductors transfer heat quickly (metals). Poor conductors — insulators — transfer heat slowly (wood, plastic, air)."
+  - "Good conductors transfer heat quickly (metals). Poor conductors. insulators. transfer heat slowly (wood, plastic, air)."
 
 teacher_moves:
   - title: "The reveal moment"
@@ -105,7 +105,7 @@ journal_prompts:
 
 ## The Hook
 
-Bring a metal spoon and a wooden spoon to class. Both have been sitting in the room overnight — they are the same temperature.
+Bring a metal spoon and a wooden spoon to class. Both have been sitting in the room overnight. they are the same temperature.
 
 Ask a student to hold one in each hand.
 
@@ -119,7 +119,7 @@ They will say the metal one. Then measure both with an infrared thermometer. **S
 
 ## Core Concept: Thermal Conductivity
 
-The metal spoon doesn't feel colder because it IS colder. It feels colder because metal is a good **thermal conductor** — it transfers heat away from your hand quickly. Wood is a poor conductor (a good insulator) — it transfers heat slowly. Your hand cools faster when touching metal, and your brain interprets faster cooling as "colder."
+The metal spoon doesn't feel colder because it IS colder. It feels colder because metal is a good **thermal conductor**. it transfers heat away from your hand quickly. Wood is a poor conductor (a good insulator). it transfers heat slowly. Your hand cools faster when touching metal, and your brain interprets faster cooling as "colder."
 
 ### Three methods of heat transfer:
 - **Conduction:** Heat transfer through direct contact (the spoon in your hand)
@@ -130,13 +130,13 @@ The metal spoon doesn't feel colder because it IS colder. It feels colder becaus
 
 ## Tiered Tasks
 
-### Part A — Criterion D (Levels 1-4)
+### Part A. Criterion D (Levels 1-4)
 
 1. Explain why the metal spoon feels colder than the wooden spoon, even though they are the same temperature.
 2. Name three good thermal conductors and three good thermal insulators you encounter in daily life.
 3. Why are cooking pot handles made of plastic or wood, but the pot itself is made of metal?
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 
 Place identical ice cubes on 5 different surfaces: metal tray, wooden board, plastic plate, ceramic tile, fabric.
 1. Predict which surface will melt the ice fastest. Explain your prediction.
@@ -144,7 +144,7 @@ Place identical ice cubes on 5 different surfaces: metal tray, wooden board, pla
 3. Rank the surfaces from best conductor to best insulator.
 4. Describe the pattern and state a general rule about material type and thermal conductivity.
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 
 A thermos flask keeps hot drinks hot AND cold drinks cold. It uses a vacuum between two walls, reflective coating, and insulated lid.
 1. Explain how each design feature reduces one of the three types of heat transfer (conduction, convection, radiation).
@@ -156,4 +156,4 @@ A thermos flask keeps hot drinks hot AND cold drinks cold. It uses a vacuum betw
 
 The metal-vs-wooden spoon demonstration takes 30 seconds and produces genuine surprise every time. Have the infrared thermometer ready to prove they're the same temperature. The cognitive dissonance between what students feel and what the thermometer shows is the entire lesson.
 
-The ice cube race (Part B) works brilliantly as a group activity at whiteboards — each group takes one surface and reports back. The class builds the ranking collectively.
+The ice cube race (Part B) works brilliantly as a group activity at whiteboards. each group takes one surface and reports back. The class builds the ranking collectively.

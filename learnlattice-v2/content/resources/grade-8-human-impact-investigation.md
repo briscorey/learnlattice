@@ -1,7 +1,7 @@
 ---
 title: "Before and After"
 date: 2026-03-28
-description: "Students analyse satellite images, biodiversity data, and pollution records from a real location before and after a major human development — a dam, a highway, a housing estate. They quantify the ecological impact and evaluate whether the development was justified."
+description: "Students analyse satellite images, biodiversity data, and pollution records from a real location before and after a major human development. a dam, a highway, a housing estate. They quantify the ecological impact and evaluate whether the development was justified."
 subjects:
   - "Ecology"
   - "Science"
@@ -20,23 +20,23 @@ key-concepts:
   - "Systems"
 global-contexts:
   - "Globalization and Sustainability"
-statement_of_inquiry: "Human development changes ecosystems in measurable ways — understanding the data behind these changes allows us to make more informed decisions about land use."
+statement_of_inquiry: "Human development changes ecosystems in measurable ways. understanding the data behind these changes allows us to make more informed decisions about land use."
 difficulty: "meeting"
 hook: "This satellite image shows a river valley in 2005. This one shows the same place in 2025. The valley is gone. A dam sits where a forest used to be. Was it worth it?"
 warmup: "Look at these two images of the same location 20 years apart. List every change you can see. Now sort your list: which changes helped humans? Which harmed the ecosystem? Are any changes in both categories?"
-timeline: "0-5 min: Warmup — compare before/after images | 5-15 min: Introduce the case study and data sets | 15-30 min: Groups analyse biodiversity and pollution data | 30-40 min: Groups prepare their evaluation | 40-48 min: Structured debate — was the development justified?"
+timeline: "0-5 min: Warmup. compare before/after images | 5-15 min: Introduce the case study and data sets | 15-30 min: Groups analyse biodiversity and pollution data | 30-40 min: Groups prepare their evaluation | 40-48 min: Structured debate. was the development justified?"
 teacher_moves:
   - title: "Use a real case study with real data"
-    description: "Students respond differently to real satellite images than to hypothetical scenarios. Google Earth Timelapse shows dramatic before-and-after comparisons. Choose a development near your school or in your country — the Three Gorges Dam is powerful for Nanjing context."
+    description: "Students respond differently to real satellite images than to hypothetical scenarios. Google Earth Timelapse shows dramatic before-and-after comparisons. Choose a development near your school or in your country. the Three Gorges Dam is powerful for Nanjing context."
   - title: "Force quantification"
     description: "Students will want to say 'the environment was damaged.' Push them to quantify: species count dropped from X to Y, forest cover decreased by Z%, water quality changed from category A to category C. Numbers make the argument rigorous."
   - title: "Make both sides argue"
-    description: "Do not let this become 'development is bad.' The Three Gorges Dam provides clean electricity to 60 million people and prevents floods that killed thousands. Students must weigh ecological cost against human benefit — this is the Criterion D skill."
+    description: "Do not let this become 'development is bad.' The Three Gorges Dam provides clean electricity to 60 million people and prevents floods that killed thousands. Students must weigh ecological cost against human benefit. this is the Criterion D skill."
 listen_for:
   - level: "3-4"
     phrase: "The development destroyed the habitat and many species were lost"
   - level: "5-6"
-    phrase: "Biodiversity decreased by X% but the development provided Y benefit — there are trade-offs"
+    phrase: "Biodiversity decreased by X% but the development provided Y benefit. there are trade-offs"
   - level: "7-8"
     phrase: "The ecological impact could have been reduced through mitigation strategies such as wildlife corridors, while still achieving the human development goals"
 misconceptions:
@@ -48,7 +48,7 @@ misconceptions:
     truth: "Some impacts are irreversible or take centuries to recover. Species extinction is permanent. Soil contamination can persist for decades. Recovery depends on the type and duration of impact."
   - myth: "More species always means a healthier ecosystem"
     why: "Students equate biodiversity with health"
-    truth: "Invasive species can increase species count while destabilising the ecosystem. A healthy ecosystem has appropriate species in balanced relationships — not just the highest count."
+    truth: "Invasive species can increase species count while destabilising the ecosystem. A healthy ecosystem has appropriate species in balanced relationships. not just the highest count."
 sentence_starters:
   approaching:
     - "The data shows that after the development..."
@@ -91,7 +91,7 @@ differentiated:
   meeting: "Analyse the biodiversity and pollution data. Calculate percentage changes. Write a paragraph evaluating whether the benefits outweighed the costs, using data as evidence."
   exceeding: "Research a real-world example of a development where environmental mitigation was successfully implemented. Compare the outcomes with our case study. Propose an evidence-based mitigation plan."
 journal_prompts:
-  - "Who should decide whether a development goes ahead — the government, the local community, or environmental scientists? Why?"
+  - "Who should decide whether a development goes ahead. the government, the local community, or environmental scientists? Why?"
   - "Is it possible to have economic growth without environmental damage? What would that look like?"
   - "If a development helps 10 million people but drives one species to extinction, is it justified?"
 parent_summary: "Your child investigated how human development affects ecosystems by analysing before-and-after data from a real case study. They evaluated trade-offs between human benefit and environmental cost, and explored mitigation strategies. Ask them: was the development justified?"
@@ -158,13 +158,13 @@ Your teacher will provide data sets for the case study location:
 
 ### Step 3: Evaluate
 
-This is the hard part. The development created real human benefits AND real ecological costs. Your job is not to say it was good or bad — your job is to **weigh the evidence and make a reasoned judgement.**
+This is the hard part. The development created real human benefits AND real ecological costs. Your job is not to say it was good or bad. your job is to **weigh the evidence and make a reasoned judgement.**
 
 ---
 
 ## The Criterion D Connection
 
-This investigation is built for Criterion D — reflecting on the implications of science.
+This investigation is built for Criterion D. reflecting on the implications of science.
 
 Strong Criterion D responses:
 - Use **specific data** (not just "biodiversity decreased" but "bird species decreased from 45 to 28, a 38% decline")
@@ -176,7 +176,7 @@ Strong Criterion D responses:
 
 ## Teaching Notes
 
-The Three Gorges Dam is the most powerful case study for schools in China. The data is publicly available: 1,300+ villages submerged, 1.3 million people relocated, 6,000+ plant species affected — but also 22,500 MW of clean power, massive flood protection, and improved navigation. The trade-offs are genuinely complex.
+The Three Gorges Dam is the most powerful case study for schools in China. The data is publicly available: 1,300+ villages submerged, 1.3 million people relocated, 6,000+ plant species affected. but also 22,500 MW of clean power, massive flood protection, and improved navigation. The trade-offs are genuinely complex.
 
 Alternatives if you want something smaller-scale: the Yangtze River dolphin extinction, Nanjing urban sprawl over the past 30 years (use Google Earth), or any local construction project that replaced green space.
 

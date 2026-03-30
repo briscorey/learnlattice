@@ -33,7 +33,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 warmup: "Put a related but simpler version of the problem on the board. Give students 2 minutes to discuss in pairs: What do you notice? What do you wonder?"
 misconceptions:
 - myth: "If I flip heads 5 times, tails is due next"
@@ -105,7 +105,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Is This Game Fair?" — a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Is This Game Fair?". a mathematics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## Overview
@@ -121,18 +121,18 @@ Two players take turns rolling two dice and adding the results.
 
 Play 36 rounds and record results.
 
-### Phase 1 — Experimental Data
+### Phase 1. Experimental Data
 - Tally results: how many times did Player A win vs Player B?
 - Calculate experimental probability for each player
 - "Does this feel fair? What does the data say?"
 
-### Phase 2 — Theoretical Analysis
+### Phase 2. Theoretical Analysis
 - Draw the complete 6×6 sample space (36 outcomes)
 - Count: how many outcomes give an even sum? How many give an odd sum?
 - Even sums: 18/36 = 50%. Odd sums: 18/36 = 50%.
 - "The game IS fair. Does your experimental data match?"
 
-### Phase 3 — Design an Unfair Game
+### Phase 3. Design an Unfair Game
 - Modify the rules to create a game that LOOKS fair but ISN'T
 - Example: "Player A wins if the product is even, Player B wins if odd"
 - Students investigate the new sample space and prove the bias

@@ -15,7 +15,7 @@ key-concepts:
   - "Systems"
 global-contexts:
   - "Orientation in Space and Time"
-statement_of_inquiry: "Earthquake waves travel at predictable speeds — and the time delay between stations reveals the distance to the epicentre."
+statement_of_inquiry: "Earthquake waves travel at predictable speeds. and the time delay between stations reveals the distance to the epicentre."
 difficulty: "meeting"
 hook: "Three seismograph stations detect the same earthquake at different times. Using only the time differences and a compass, can you locate exactly where it happened?"
 warmup: "You hear thunder 3 seconds after you see lightning. Sound travels at 340 m/s. How far away was the lightning strike?"
@@ -88,7 +88,7 @@ journal_prompts:
 
 An earthquake happens somewhere under the ocean. Nobody saw it. Nobody felt it.
 
-But three seismograph stations — one in Tokyo, one in Sydney, one in Manila — each recorded the exact time the waves arrived.
+But three seismograph stations. one in Tokyo, one in Sydney, one in Manila. each recorded the exact time the waves arrived.
 
 Tokyo: 14:03:22. Sydney: 14:05:47. Manila: 14:02:58.
 
@@ -132,13 +132,13 @@ Using the map provided, draw circles and locate the epicentre.
 
 ## Extension: Why Three Stations?
 
-With one station, you know the distance but not the direction — the epicentre could be anywhere on a circle.
+With one station, you know the distance but not the direction. the epicentre could be anywhere on a circle.
 
-With two stations, the circles intersect at two points — you have narrowed it to two possibilities.
+With two stations, the circles intersect at two points. you have narrowed it to two possibilities.
 
 With three stations, there is only one point where all three circles meet. **This is triangulation.**
 
-GPS works on exactly the same principle — but with satellites instead of seismograph stations, and radio waves instead of seismic waves.
+GPS works on exactly the same principle. but with satellites instead of seismograph stations, and radio waves instead of seismic waves.
 
 ---
 

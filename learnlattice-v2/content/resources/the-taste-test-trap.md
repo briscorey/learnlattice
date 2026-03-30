@@ -1,7 +1,7 @@
 ---
 title: "The Taste Test Trap"
 date: 2025-11-28
-description: "A student claims they can tell the difference between two brands of cola. You test them — they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"
+description: "A student claims they can tell the difference between two brands of cola. You test them. they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"
 subjects:
   - "Mathematics"
 math_topic: Statistics
@@ -16,9 +16,9 @@ key-concepts:
   - "Logic"
 global-contexts:
   - "Fairness and Development"
-statement_of_inquiry: "Statistical significance means distinguishing a real effect from random chance — and the threshold for 'convincing' is higher than most people think."
+statement_of_inquiry: "Statistical significance means distinguishing a real effect from random chance. and the threshold for 'convincing' is higher than most people think."
 difficulty: "exceeding"
-hook: "A student claims they can tell the difference between two brands of cola. You test them — they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"
+hook: "A student claims they can tell the difference between two brands of cola. You test them. they get 7 out of 10 correct. Impressive? Or could they have got that by guessing?"
 warmup: "Flip a coin 10 times. Did you get exactly 5 heads? Probably not. How many heads would convince you the coin was unfair?"
 seo_title: "The Taste Test Trap | Free MYP Maths Investigation"
 seo_description: "Free MYP mathematics investigation for Grade 8-9. Inquiry-based, classroom-ready with EAL scaffolds. A student claims they can tell the diffe"
@@ -29,11 +29,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -84,7 +84,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -100,13 +100,13 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Taste Test Trap" — a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Taste Test Trap". a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
 A friend says: "I can always tell Coke from Pepsi."
 
-You decide to test them. You prepare 10 cups — 5 Coke, 5 Pepsi — in random order. They taste each one and guess.
+You decide to test them. You prepare 10 cups. 5 Coke, 5 Pepsi. in random order. They taste each one and guess.
 
 **They get 7 out of 10 correct.**
 
@@ -118,7 +118,7 @@ Are they really tasting the difference? Or did they just get lucky?
 
 If someone is **purely guessing** between two options, they have a 50% chance of being right each time. In 10 trials, we would expect **5 correct by chance alone**.
 
-But getting exactly 5 is not guaranteed. Sometimes a guesser gets 6. Or 7. Even 8 — by pure luck.
+But getting exactly 5 is not guaranteed. Sometimes a guesser gets 6. Or 7. Even 8. by pure luck.
 
 ### How likely is 7 out of 10 by guessing?
 
@@ -133,7 +133,7 @@ Use coin flips to simulate. Flip 10 coins (heads = correct guess). Record how ma
 | 7 | | |
 | 8+ | | |
 
-> **How often did a guesser score 7 or more?** If it happened 15% of the time, then 7/10 is not very impressive — it could easily be luck.
+> **How often did a guesser score 7 or more?** If it happened 15% of the time, then 7/10 is not very impressive. it could easily be luck.
 
 ### The Standard
 
@@ -147,7 +147,7 @@ For 10 trials with p = 0.5: getting **9 or more correct** has probability 1.1%. 
 
 If 10 trials is not enough, how many would you need?
 
-> **Key insight:** More trials = more power to detect a real difference. In 20 trials, scoring 15/20 has a 2.1% probability by chance — now it IS significant.
+> **Key insight:** More trials = more power to detect a real difference. In 20 trials, scoring 15/20 has a 2.1% probability by chance. now it IS significant.
 
 ---
 

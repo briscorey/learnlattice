@@ -1,7 +1,7 @@
 ---
 title: "Is Your Streaming Habit Sustainable?"
 date: 2026-01-12
-description: "Students research the hidden energy cost of streaming video, calculate their personal streaming carbon footprint, and use multiple mathematical representations to compare digital habits — connecting familiar behaviour to invisible environmental impact."
+description: "Students research the hidden energy cost of streaming video, calculate their personal streaming carbon footprint, and use multiple mathematical representations to compare digital habits. connecting familiar behaviour to invisible environmental impact."
 subjects:
   - "Mathematics"
   - "Science"
@@ -36,11 +36,11 @@ download_url: ""
 download_label: "Investigation Pack"
 duration: "2–3 lessons"
 hook: "You watched Netflix for 2 hours last night. How much electricity did that use? Most people guess wrong by a factor of 100."
-warmup: "Show a 60-second clip of a loading screen buffering. Ask: Where is this video right now? How did it get to your screen? Students sketch their best guess of the journey from server to screen. Compare sketches — most will miss the data centre, the undersea cable, the cooling system."
-timeline: "0-5 min: Hook — guess the energy cost of one hour of streaming | 5-15 min: Research phase — data centres, transmission networks, device energy | 15-30 min: Calculate personal streaming footprint using data sheet | 30-40 min: Create comparative displays — streaming vs driving vs lightbulbs | 40-50 min: Gallery walk and reflection — what surprised you?"
+warmup: "Show a 60-second clip of a loading screen buffering. Ask: Where is this video right now? How did it get to your screen? Students sketch their best guess of the journey from server to screen. Compare sketches. most will miss the data centre, the undersea cable, the cooling system."
+timeline: "0-5 min: Hook. guess the energy cost of one hour of streaming | 5-15 min: Research phase. data centres, transmission networks, device energy | 15-30 min: Calculate personal streaming footprint using data sheet | 30-40 min: Create comparative displays. streaming vs driving vs lightbulbs | 40-50 min: Gallery walk and reflection. what surprised you?"
 teacher_moves:
   - title: "Launch the cognitive conflict"
-    description: "Most students will guess streaming uses almost no energy. Show the IEA data: global data centres used ~460 TWh in 2022 — more than France. Let the shock land before moving on."
+    description: "Most students will guess streaming uses almost no energy. Show the IEA data: global data centres used ~460 TWh in 2022. more than France. Let the shock land before moving on."
   - title: "Scaffold the calculation"
     description: "Provide the conversion chain: hours watched → GB transferred → kWh at data centre → kWh in transmission → kWh at device → total kWh → kg CO₂. Students who struggle with multi-step unit conversion can work in pairs with a structured table."
   - title: "Push for Criterion D depth"
@@ -55,7 +55,7 @@ listen_for:
 misconceptions:
   - myth: "Streaming uses no energy because it's wireless"
     why: "Students associate 'wireless' with 'no infrastructure.' They don't see the physical network."
-    truth: "Every byte travels through copper, fibre optic cable, routers, and servers — all consuming electricity. Wireless just means the last few metres are radio waves."
+    truth: "Every byte travels through copper, fibre optic cable, routers, and servers. all consuming electricity. Wireless just means the last few metres are radio waves."
   - myth: "My phone barely uses any electricity"
     why: "Students focus on device energy (which is tiny) and ignore network and data centre energy (which is 5-10x larger)."
     truth: "Your phone uses ~0.003 kWh per hour of streaming. But the data centre serving that stream uses ~0.06 kWh, and the network in between uses another ~0.015 kWh. Most of the energy is invisible to you."
@@ -93,7 +93,7 @@ self_check:
       - "I evaluated the limitations of my data and calculations"
       - "I compared multiple activities using consistent methodology"
       - "I made a justified recommendation supported by my mathematical analysis"
-      - "I discussed the nuance — streaming isn't simply 'good' or 'bad'"
+      - "I discussed the nuance. streaming isn't simply 'good' or 'bad'"
 exit_ticket:
   - "What was the most surprising number you calculated today?"
   - "Will this change your streaming behaviour? Why or why not?"
@@ -116,7 +116,7 @@ quick_check:
     a: "About 4.7 times more (7 ÷ 1.5 = 4.67)"
   - type: "extension"
     q: "Why might streaming actually be MORE sustainable than some alternatives, even though it uses significant energy?"
-    a: "It replaces physical media (DVDs, Blu-rays) that require manufacturing, packaging, and shipping — the total lifecycle cost of physical media may exceed streaming for frequently-watched content."
+    a: "It replaces physical media (DVDs, Blu-rays) that require manufacturing, packaging, and shipping. the total lifecycle cost of physical media may exceed streaming for frequently-watched content."
 btc_practices:
   - "Visibly Random Groups"
   - "Vertical Non-Permanent Surfaces"
@@ -133,7 +133,7 @@ You watched Netflix for 2 hours last night. You scrolled TikTok for another hour
 
 Write your guess on a sticky note. We'll come back to it.
 
-*(Most people guess wrong by a factor of 100. Not because they're bad at guessing — because the energy is invisible.)*
+*(Most people guess wrong by a factor of 100. Not because they're bad at guessing. because the energy is invisible.)*
 
 ---
 
@@ -141,9 +141,9 @@ Write your guess on a sticky note. We'll come back to it.
 
 When you press play on a video, here's what actually happens:
 
-1. **The data centre** — a warehouse the size of a football field, filled with thousands of servers, all cooled by massive air conditioning systems — finds your video and sends it as data packets
-2. **The network** — fibre optic cables (some running under the ocean), routers, switches, and cell towers relay those packets across potentially thousands of kilometres
-3. **Your device** — your phone, laptop, or TV receives the packets, decodes them, and displays the video
+1. **The data centre**. a warehouse the size of a football field, filled with thousands of servers, all cooled by massive air conditioning systems. finds your video and sends it as data packets
+2. **The network**. fibre optic cables (some running under the ocean), routers, switches, and cell towers relay those packets across potentially thousands of kilometres
+3. **Your device**. your phone, laptop, or TV receives the packets, decodes them, and displays the video
 
 Every single stage uses electricity. Your phone's battery drain is the tiny, visible tip of an enormous invisible iceberg.
 
@@ -230,13 +230,13 @@ Your response must:
 - Compare streaming to at least two other activities
 - Consider both individual and aggregate impact (you alone vs. all 2+ billion streamers worldwide)
 - Acknowledge limitations in your data or calculations
-- Arrive at a justified conclusion — not just "yes" or "no"
+- Arrive at a justified conclusion. not just "yes" or "no"
 
 ---
 
 ## Part C: The Design Challenge (Extension)
 
-**Design a "Streaming Sustainability Score"** — a simple metric that streaming platforms could display to users, similar to food nutrition labels.
+**Design a "Streaming Sustainability Score"**. a simple metric that streaming platforms could display to users, similar to food nutrition labels.
 
 What would it show? How would you calculate it? Would it actually change behaviour?
 
@@ -258,7 +258,7 @@ The comparison question in Part B is where Criterion D scores separate. Level 3-
 
 **Science (Criterion A):** Students explain how data centres work, how electricity is generated, and how CO₂ contributes to greenhouse warming.
 
-**Science (Criterion D):** Students evaluate the social and environmental implications of digital technology — connecting to broader discussions about sustainable development, digital equity (not everyone has the same access to streaming), and corporate responsibility.
+**Science (Criterion D):** Students evaluate the social and environmental implications of digital technology. connecting to broader discussions about sustainable development, digital equity (not everyone has the same access to streaming), and corporate responsibility.
 
 ### Adaptation for EAL Learners
 
@@ -272,4 +272,4 @@ The comparison question in Part B is where Criterion D scores separate. Level 3-
 - Calculator
 - Phone/device with Screen Time data
 - Graph paper or graphing software
-- Access to the data table (provided above — no internet research required for core investigation)
+- Access to the data table (provided above. no internet research required for core investigation)

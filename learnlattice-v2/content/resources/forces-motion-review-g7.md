@@ -1,6 +1,6 @@
 ---
 layout: "game"
-title: "Forces & Motion Review — Grade 7"
+title: "Forces & Motion Review. Grade 7"
 date: 2026-03-18
 description: "Interactive 39-question review covering types of forces, net force, Newton's three laws, mass vs weight, gravity, simple machines, levers, and gears. 5 scaffolded stages with 6 question types."
 hook: "Review forces, Newton's laws, and simple machines in 5 interactive stages"
@@ -25,7 +25,7 @@ global-contexts:
   - "Scientific and Technical Innovation"
 statement_of_inquiry: "The relationship between force, mass, and motion determines how objects interact and how machines make work easier."
 game_url: "/games/revision/forces-motion-g7.html?embed=1"
-seo_title: "MYP Forces & Motion Revision Quiz — Grade 7 | Free 39-Question Review"
+seo_title: "MYP Forces & Motion Revision Quiz | Grade 7 | Free 39-Question Review"
 seo_description: "Free interactive MYP Grade 7 Physics revision quiz. 39 questions on forces, Newton's laws, mass vs weight, gravity, levers, gears, and simple machines. Scaffolded stages with instant feedback."
 revision: true
 ---
@@ -36,15 +36,15 @@ revision: true
 
 ### The 5 Stages
 
-**💪 Stage 1 — Types of Forces** — Identify and classify forces as contact or non-contact, balanced or unbalanced. Real-world examples and common misconceptions.
+**💪 Stage 1. Types of Forces**. Identify and classify forces as contact or non-contact, balanced or unbalanced. Real-world examples and common misconceptions.
 
-**➡️ Stage 2 — Net Force & Motion** — Calculate net force from same-direction and opposite-direction forces. Predict motion from net force. Terminal velocity.
+**➡️ Stage 2. Net Force & Motion**. Calculate net force from same-direction and opposite-direction forces. Predict motion from net force. Terminal velocity.
 
-**🚀 Stage 3 — Newton's Laws of Motion** — State and apply all three laws. F = ma calculations. Inertia and action-reaction pairs in everyday situations.
+**🚀 Stage 3. Newton's Laws of Motion**. State and apply all three laws. F = ma calculations. Inertia and action-reaction pairs in everyday situations.
 
-**⚖️ Stage 4 — Mass, Weight & Gravity** — Distinguish mass from weight. Calculate weight using W = mg. Gravity on Earth vs Moon. Free fall and weightlessness.
+**⚖️ Stage 4. Mass, Weight & Gravity**. Distinguish mass from weight. Calculate weight using W = mg. Gravity on Earth vs Moon. Free fall and weightlessness.
 
-**⚙️ Stage 5 — Simple Machines** — Levers (Class 1, 2, 3), gears (direction and ratio), inclined planes, and the force-distance trade-off.
+**⚙️ Stage 5. Simple Machines**. Levers (Class 1, 2, 3), gears (direction and ratio), inclined planes, and the force-distance trade-off.
 
 ### Question Types
 
@@ -56,7 +56,7 @@ This review uses 6 different question types: multiple choice, true/false, orderi
 
 This review supports **Criterion A (Knowing and Understanding)** by testing recall, comprehension, and application of physics concepts. Every wrong answer provides a targeted hint addressing the likely misconception, followed by a full explanation.
 
-**Key Concept:** Relationships — force, mass, and motion are interconnected, and understanding these relationships explains how machines work and how objects behave.
+**Key Concept:** Relationships. force, mass, and motion are interconnected, and understanding these relationships explains how machines work and how objects behave.
 
 ### Estimated Time
 

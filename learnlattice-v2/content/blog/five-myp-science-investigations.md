@@ -27,7 +27,7 @@ Here are five investigations that require almost nothing, work with multilingual
 
 **What happens:** An unpeeled orange floats. Peel it. It sinks. Students lose their minds.
 
-**Why it works:** You just *removed* material — it weighs less — so why does it sink? The answer (the peel contains air pockets that reduce the orange's average density) requires students to think about density as a *relationship* between mass and volume, not just a property of the material.
+**Why it works:** You just *removed* material. it weighs less. so why does it sink? The answer (the peel contains air pockets that reduce the orange's average density) requires students to think about density as a *relationship* between mass and volume, not just a property of the material.
 
 **The investigation:** Give students five different objects and ask them to predict which will float. Then test. Then calculate densities. Then test in salt solutions of different concentrations. By the end, they can predict floating/sinking for any object-fluid combination.
 
@@ -41,7 +41,7 @@ Here are five investigations that require almost nothing, work with multilingual
 
 **What you need:** A metal spoon and a wooden spoon. An infrared thermometer (nice to have, not essential).
 
-**What happens:** Both spoons have been sitting in the room overnight. Both are room temperature. But the metal one *feels* colder. Prove it with the thermometer — same temperature. Students are confused.
+**What happens:** Both spoons have been sitting in the room overnight. Both are room temperature. But the metal one *feels* colder. Prove it with the thermometer. same temperature. Students are confused.
 
 **Why it works:** The metal spoon isn't colder. It *conducts heat away from your hand faster*. Your brain interprets "losing heat quickly" as "touching something cold." This misconception is universal, deeply held, and can be resolved in 30 seconds with a thermometer.
 
@@ -57,7 +57,7 @@ Here are five investigations that require almost nothing, work with multilingual
 
 **What you need:** A small speaker, cling film, salt. A tone generator app (free on any phone).
 
-**What happens:** Stretch cling film over the speaker. Sprinkle salt. Play a low tone. The salt jumps into patterns — Chladni figures. Change the frequency. The patterns change.
+**What happens:** Stretch cling film over the speaker. Sprinkle salt. Play a low tone. The salt jumps into patterns. Chladni figures. Change the frequency. The patterns change.
 
 **Why it works:** Sound is invisible. Waves are abstract. But the salt patterns are concrete, visual, and immediately responsive to changes in frequency. Students can SEE the relationship between pitch and wavelength without a single equation.
 
@@ -95,7 +95,7 @@ Here are five investigations that require almost nothing, work with multilingual
 
 **The investigation:** Each group surveys a different micro-habitat. Pool the data. Compare biodiversity across locations. Discuss what happens if one habitat is paved over.
 
-**EAL note:** Observe. Sketch. Count. The fieldwork phase requires no reading or writing — just careful looking. The data table and graph come afterwards, and by then students have the context to understand what the numbers mean.
+**EAL note:** Observe. Sketch. Count. The fieldwork phase requires no reading or writing. just careful looking. The data table and graph come afterwards, and by then students have the context to understand what the numbers mean.
 
 [Try the full investigation →](/resources/grade-6-schoolyard-ecosystem-investigation/)
 
@@ -107,7 +107,7 @@ All five of these investigations share three properties:
 
 **They start with a surprise.** The orange sinks. The spoons are the same temperature. The salt dances. The paper and book land together. The schoolyard is an ecosystem. In every case, the investigation exists to explain something the student has already seen and wants to understand.
 
-**They require minimal equipment.** Not zero — you need an orange, you need some salt, you need to go outside. But nothing that costs more than a few dollars or requires a lab technician.
+**They require minimal equipment.** Not zero. you need an orange, you need some salt, you need to go outside. But nothing that costs more than a few dollars or requires a lab technician.
 
 **They work before English does.** Every demonstration is visual and physical. Every data collection method involves observing, measuring, or counting. The scientific thinking happens in the student's first language. The English comes later, layered on top of understanding that already exists.
 
@@ -117,4 +117,4 @@ Start with the thing they can see. Let the words follow.
 
 ---
 
-*All five investigations are available as full investigation packs on LearnLattice — with tiered MYP tasks, teaching notes, and assessment alignment. [Browse all science investigations →](/subjects/science/)*
+*All five investigations are available as full investigation packs on LearnLattice. with tiered MYP tasks, teaching notes, and assessment alignment. [Browse all science investigations →](/subjects/science/)*

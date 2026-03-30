@@ -1,7 +1,7 @@
 ---
 title: Why Does Dividing by a Half Make You Bigger?
 date: 2025-10-23
-description: Most students can execute fraction division. Almost none can explain why it works. This investigation dismantles the 'flip and multiply' rule and rebuilds it from scratch — through measurement,
+description: Most students can execute fraction division. Almost none can explain why it works. This investigation dismantles the 'flip and multiply' rule and rebuilds it from scratch. through measurement,
   grouping, and the question that should have been asked years earlier.
 subjects:
 - Mathematics
@@ -113,8 +113,8 @@ Ask: *What does this mean in words?* Students will say: 12 divided by 3 equals 4
 
 Two correct answers exist. Let them find both.
 
-> **Answer 1 — Sharing:** I have 12 cookies and 3 friends. Each friend gets 4.
-> **Answer 2 — Grouping:** How many groups of 3 fit inside 12? Answer: 4 groups.
+> **Answer 1. Sharing:** I have 12 cookies and 3 friends. Each friend gets 4.
+> **Answer 2. Grouping:** How many groups of 3 fit inside 12? Answer: 4 groups.
 
 Now write:
 
@@ -170,7 +170,7 @@ Now try 3 ÷ ¼. How many quarters fit in 3? Mark every ¼. Count: 12.
 
 If dividing by ½ means "how many halves fit in this?", and each whole contains 2 halves, then every time the denominator doubles, you get twice as many groups.
 
-The denominator of the divisor becomes the multiplier. The numerator of the divisor becomes the new denominator. This is exactly what "flip and multiply" does — it captures this counting-groups logic in a single operation.
+The denominator of the divisor becomes the multiplier. The numerator of the divisor becomes the new denominator. This is exactly what "flip and multiply" does. it captures this counting-groups logic in a single operation.
 
 ### Non-Unit Fractions
 
@@ -189,7 +189,7 @@ The procedure is doing step 1 (multiply by the denominator) and step 2 (divide b
 
 ## Investigation Tasks
 
-### Part A — Which Interpretation Works?
+### Part A. Which Interpretation Works?
 
 For each of the following, decide whether *sharing* or *grouping* is the interpretation that makes sense. Draw a diagram or number line to show your reasoning.
 
@@ -198,7 +198,7 @@ For each of the following, decide whether *sharing* or *grouping* is the interpr
 3. I have 2½ pizzas. I want to give everyone ¼ of a pizza. How many people can I feed?
 4. How many times does ⅕ go into 4?
 
-### Part B — The Number Line Method
+### Part B. The Number Line Method
 
 Use a number line to answer each division. Show your counting clearly.
 
@@ -209,7 +209,7 @@ Use a number line to answer each division. Show your counting clearly.
 
 For each one: *Did your answer get bigger or smaller than the starting number? Why?*
 
-### Part C — Deriving the Rule
+### Part C. Deriving the Rule
 
 Complete this table without using flip-and-multiply. Use the grouping method.
 
@@ -225,12 +225,12 @@ Now write a rule in words that describes what you did each time. Compare it to "
 
 **Are they the same rule? Explain why or why not.**
 
-### Part D — The Conceptual Challenge (Criterion C)
+### Part D. The Conceptual Challenge (Criterion C)
 
-A student says: *"Dividing by a fraction less than 1 always gives you a bigger answer. It doesn't make sense — dividing should make things smaller."*
+A student says: *"Dividing by a fraction less than 1 always gives you a bigger answer. It doesn't make sense. dividing should make things smaller."*
 
 1. Is the student correct that the answer is always bigger? Test several cases.
-2. Write an explanation that addresses their confusion — using the grouping interpretation of division.
+2. Write an explanation that addresses their confusion. using the grouping interpretation of division.
 3. Find a case where dividing by a fraction gives you a *smaller* answer. What kind of fraction would that require?
 
 ---
@@ -239,19 +239,19 @@ A student says: *"Dividing by a fraction less than 1 always gives you a bigger a
 
 | Belief | What's accurate |
 |--------|----------------|
-| "Division always makes things smaller" | Division means finding how many groups fit. If the group size is small, you get many groups — a larger answer. |
+| "Division always makes things smaller" | Division means finding how many groups fit. If the group size is small, you get many groups. a larger answer. |
 | "Flip and multiply is a trick" | It is a compressed version of two logical steps: multiply by the denominator, divide by the numerator. |
 | "You can share cookies among half a person" | The sharing model genuinely breaks down for fractional divisors. Grouping is the correct interpretation for fraction division. |
-| "The rule only works for proper fractions" | Flip and multiply works for any rational divisor — proper fractions, improper fractions, and whole numbers (where the reciprocal is simply 1/n). |
+| "The rule only works for proper fractions" | Flip and multiply works for any rational divisor. proper fractions, improper fractions, and whole numbers (where the reciprocal is simply 1/n). |
 | "4 ÷ ⅔ should be less than 4" | 4 divided by something less than 1 always produces more than 4, because you are fitting small groups into a larger whole. |
 
 ---
 
 ## Teaching Notes
 
-**On the hook:** The two interpretations question is not a warm-up — it is the entire lesson. Give students five minutes to argue with each other before resolving. Students who have only ever seen sharing division are genuinely confused by fractional divisors. That confusion is the productive entry point.
+**On the hook:** The two interpretations question is not a warm-up. it is the entire lesson. Give students five minutes to argue with each other before resolving. Students who have only ever seen sharing division are genuinely confused by fractional divisors. That confusion is the productive entry point.
 
-**On number lines:** Physical drawing matters here. Students who jump to the algorithm miss the key insight — that division by a fraction is *counting up*, not *making smaller*. Insist on number lines until the pattern is visible.
+**On number lines:** Physical drawing matters here. Students who jump to the algorithm miss the key insight. that division by a fraction is *counting up*, not *making smaller*. Insist on number lines until the pattern is visible.
 
 **On Part D:** The answer to question 3 is a fraction greater than 1 (an improper fraction). Dividing by 3/2, for instance, gives a smaller answer than you started with. This is counterintuitive and worth spending time on.
 

@@ -1,7 +1,7 @@
 ---
 title: What Does Level 7 Look Like? Number Patterns
 date: 2025-10-23
-description: Three real student responses to the same Criterion B investigation — annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a surface-level answer from genuine mathematical justification.
+description: Three real student responses to the same Criterion B investigation. annotated at levels 3-4, 5-6, and 7-8. See exactly what separates a surface-level answer from genuine mathematical justification.
 subjects:
 - Mathematics
 math_topic: Algebra
@@ -21,7 +21,7 @@ tags:
 - Annotated Student Work
 key_concept: Logic
 global_context: Scientific and Technical Innovation
-statement_of_inquiry: Logical reasoning allows us to move from observing specific cases to justifying general rules — and the quality of that justification defines mathematical achievement.
+statement_of_inquiry: Logical reasoning allows us to move from observing specific cases to justifying general rules. and the quality of that justification defines mathematical achievement.
 formula: T_n = 3n + 1
 difficulty: meeting
 download_url: ''
@@ -128,7 +128,7 @@ This task assesses **Criterion B: Investigating Patterns**.
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 ### What the student wrote:
 
@@ -143,9 +143,9 @@ This task assesses **Criterion B: Investigating Patterns**.
 ### Annotation: Why This Is Level 3-4
 
 **What this student does well:**
-- Correctly identifies the common difference (+3) — this is accurate observation
-- Finds the correct formula (\\(3n + 1\\)) — this shows some problem-solving
-- Correctly calculates the 100th term — applies the rule
+- Correctly identifies the common difference (+3). this is accurate observation
+- Finds the correct formula (\\(3n + 1\\)). this shows some problem-solving
+- Correctly calculates the 100th term. applies the rule
 
 **What's missing for higher levels:**
 
@@ -157,7 +157,7 @@ The justification in (iv) is the critical weakness: "I checked it and it works" 
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 ### What the student wrote:
 
@@ -180,7 +180,7 @@ The justification in (iv) is the critical weakness: "I checked it and it works" 
 
 **What's missing for higher levels:**
 
-The justification in (iv) is **stronger but still incomplete**. The student explains *why the formula produces the right structure* ("+3 each time") — this is genuine reasoning, not just checking. However:
+The justification in (iv) is **stronger but still incomplete**. The student explains *why the formula produces the right structure* ("+3 each time"). this is genuine reasoning, not just checking. However:
 
 - "I verified it for all five given terms" is still leaning on specific cases
 - The student does not explain why the *linear* structure of \\(3n + 1\\) necessarily produces a constant difference of 3 for ALL values of \\(n\\)
@@ -190,7 +190,7 @@ The justification in (iv) is **stronger but still incomplete**. The student expl
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 ### What the student wrote:
 
@@ -208,13 +208,13 @@ The justification in (iv) is **stronger but still incomplete**. The student expl
 >
 > Since \\(T_{n+1} - T_n = 3\\) for ALL values of \\(n\\), the sequence always increases by 3. Combined with \\(T_1 = 3(1) + 1 = 4\\) (which matches the given first term), this proves that \\(T_n = 3n + 1\\) generates the entire sequence.
 >
-> This is not just true for the five terms we were given — it is algebraically true for every natural number \\(n\\).
+> This is not just true for the five terms we were given. it is algebraically true for every natural number \\(n\\).
 
 ### Annotation: Why This Is Level 7-8
 
 **What makes this exceptional:**
 
-**(i) The description is structural, not just observational.** The student doesn't just say "it goes up by 3" — they explain that the \\(n\\)th term involves adding 3 exactly \\((n-1)\\) times to the first term. This reveals understanding of *how* the sequence is built, not just what it looks like.
+**(i) The description is structural, not just observational.** The student doesn't just say "it goes up by 3". they explain that the \\(n\\)th term involves adding 3 exactly \\((n-1)\\) times to the first term. This reveals understanding of *how* the sequence is built, not just what it looks like.
 
 **(ii) The formula is derived, not guessed.** The student builds the formula from first principles: \\(T_n = a + (n-1)d\\), then simplifies. This is the general method, applied to a specific case.
 
@@ -224,7 +224,7 @@ The justification in (iv) is **stronger but still incomplete**. The student expl
 - Anchors the proof at \\(T_1 = 4\\)
 - Explicitly states that this proves the rule for ALL values of \\(n\\), not just the tested cases
 
-**The sentence that makes it Level 7:** *"This is not just true for the five terms we were given — it is algebraically true for every natural number \\(n\\)."* This shows the student understands the difference between testing and proving.
+**The sentence that makes it Level 7:** *"This is not just true for the five terms we were given. it is algebraically true for every natural number \\(n\\)."* This shows the student understands the difference between testing and proving.
 
 ---
 
@@ -240,4 +240,4 @@ Use the annotations to explain achievement levels. Students who received 3-4 can
 These exemplars provide a shared reference point for teachers marking the same task. "Is this student's justification closer to Response B or Response C?" is a clearer question than "What level is this?"
 
 ### EAL note:
-The mathematical notation carries the meaning. Students who cannot write fluent paragraphs can still demonstrate Level 7 thinking through algebraic manipulation. Response C's proof works even without the English sentences — the algebra speaks.
+The mathematical notation carries the meaning. Students who cannot write fluent paragraphs can still demonstrate Level 7 thinking through algebraic manipulation. Response C's proof works even without the English sentences. the algebra speaks.

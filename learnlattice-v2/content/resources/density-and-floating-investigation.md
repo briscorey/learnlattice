@@ -24,7 +24,7 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "The relationship between mass and volume determines whether objects float or sink — and appearances can be misleading."
+statement_of_inquiry: "The relationship between mass and volume determines whether objects float or sink. and appearances can be misleading."
 formula: "density = mass ÷ volume (ρ = m/V)"
 download_url: ""
 download_label: "Investigation Pack PDF"
@@ -73,7 +73,7 @@ misconceptions:
   why: Pure water at room temperature is approximately 1.0 g per cm cubed
   truth: Salt water is denser than fresh water, which is why you float more easily
     in the sea. Temperature also changes water density.
-timeline: '0-5 min: Predict — will the peeled orange float? | 5-10 min: Demo — test
+timeline: '0-5 min: Predict. will the peeled orange float? | 5-10 min: Demo. test
   the prediction. | 10-25 min: Groups measure mass and volume of 5 objects, calculate
   density. | 25-35 min: Predict float or sink for each, then test. | 35-45 min: Why
   does shape matter? The aluminium foil boat. | 45-50 min: Exit reflection.'
@@ -93,10 +93,10 @@ listen_for:
 - level: 3-4
   phrase: The heavy ones sink
 - level: 5-6
-  phrase: It is not about mass, it is about density — mass divided by volume
+  phrase: It is not about mass, it is about density. mass divided by volume
 - level: 7-8
   phrase: The density ratio determines how much of the object sits below the surface
-    — an object with density 0.6 will be 60 percent submerged
+   . an object with density 0.6 will be 60 percent submerged
 warm_up:
   title: Heavy or light?
   activity: 'Rank these 5 objects from heaviest to lightest: a brick, a football,
@@ -113,11 +113,11 @@ quick_check:
   a: Density = mass ÷ volume
 - type: apply
   q: A block has mass 60g and volume 20cm³. Will it float in water?
-  a: Density = 3.0 g/cm³ — it sinks (greater than 1.0)
+  a: Density = 3.0 g/cm³. it sinks (greater than 1.0)
 - type: extend
   q: Why does ice float on water even though both are H₂O?
   a: Ice is less dense because water molecules form a crystal structure with gaps
-parent_summary: 'Your child is learning about density — why some objects float and
+parent_summary: 'Your child is learning about density. why some objects float and
   others sink. They will measure mass and volume, calculate density, and predict whether
   objects float before testing. Ask them: why does a peeled orange sink when the whole
   orange floats?'
@@ -158,7 +158,7 @@ The room goes quiet. Then the theories start. This is the investigation.
 
 Density is the relationship between mass and volume: \\(\rho = \frac{m}{V}\\).
 
-The orange peel is full of tiny air pockets — it acts like a life jacket. The peel is less dense than water. The fruit inside is denser than water. With the peel on, the average density of the whole orange is slightly less than water, so it floats. Remove the peel and the remaining fruit is denser than water, so it sinks.
+The orange peel is full of tiny air pockets. it acts like a life jacket. The peel is less dense than water. The fruit inside is denser than water. With the peel on, the average density of the whole orange is slightly less than water, so it floats. Remove the peel and the remaining fruit is denser than water, so it sinks.
 
 ### Why this matters:
 An object floats if its density is **less** than the fluid it's in. It sinks if its density is **greater**. This is why steel ships float (they contain enough air to make their average density less than water) and why a solid steel ball sinks.
@@ -167,13 +167,13 @@ An object floats if its density is **less** than the fluid it's in. It sinks if 
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 
 1. Measure the mass and volume of 5 different objects (use a balance and water displacement).
 2. Calculate the density of each: \\(\rho = \frac{m}{V}\\).
 3. Predict whether each will float or sink in water (density of water = 1.0 g/cm³). Test your predictions.
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 
 Create 5 different salt solutions with increasing concentration (e.g., 0g, 10g, 20g, 30g, 40g of salt per 200mL of water).
 1. Test whether a grape (or small potato) floats or sinks in each solution
@@ -181,7 +181,7 @@ Create 5 different salt solutions with increasing concentration (e.g., 0g, 10g, 
 3. Describe the pattern between salt concentration and floating/sinking
 4. State a general rule about how dissolved salt affects the density of water
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 
 The Dead Sea has a salt concentration of approximately 34%. Regular seawater is about 3.5%.
 1. Using your experimental data, predict the density of Dead Sea water
@@ -192,6 +192,6 @@ The Dead Sea has a salt concentration of approximately 34%. Regular seawater is 
 
 ## Teaching Notes
 
-Buy oranges for this lesson. It costs almost nothing and the demonstration is genuinely surprising — even teachers are often caught off guard by it. Have students predict before you peel. Write predictions on the board. The reveal is the lesson.
+Buy oranges for this lesson. It costs almost nothing and the demonstration is genuinely surprising. even teachers are often caught off guard by it. Have students predict before you peel. Write predictions on the board. The reveal is the lesson.
 
 This investigation is ideal for Grade 6-7 because it connects mathematics (measurement, calculation, division) to science (density, buoyancy) without requiring advanced concepts. The salt solution experiment in Part B works well as a lab activity with minimal equipment.

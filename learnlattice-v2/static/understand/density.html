@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Understand Density — LearnLattice</title>
+<title>Understand Density. LearnLattice</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0f1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px}
@@ -101,11 +101,11 @@ function dropObject(i){
 
   setTimeout(function(){
     if (obj.density < 1.0) {
-      // Float — sit at water line
+      // Float. sit at water line
       var floatDepth = obj.density / 1.0; // fraction submerged
       el.style.top = (waterTop - obj.size * (1 - floatDepth)) + 'px';
     } else {
-      // Sink — go to bottom
+      // Sink. go to bottom
       el.style.top = tankBottom + 'px';
     }
   }, 50);
@@ -113,9 +113,9 @@ function dropObject(i){
   // Update info
   var card = document.getElementById('infoCard');
   if (obj.density < 1.0) {
-    card.innerHTML = '<strong>' + obj.emoji + ' ' + obj.name + ' floats!</strong><br>Density: ' + obj.density + ' g/cm³ — less than water (1.0), so it floats. About ' + Math.round(obj.density * 100) + '% of it sits below the surface.';
+    card.innerHTML = '<strong>' + obj.emoji + ' ' + obj.name + ' floats!</strong><br>Density: ' + obj.density + ' g/cm³. less than water (1.0), so it floats. About ' + Math.round(obj.density * 100) + '% of it sits below the surface.';
   } else {
-    card.innerHTML = '<strong>' + obj.emoji + ' ' + obj.name + ' sinks!</strong><br>Density: ' + obj.density + ' g/cm³ — more than water (1.0), so it sinks straight to the bottom.';
+    card.innerHTML = '<strong>' + obj.emoji + ' ' + obj.name + ' sinks!</strong><br>Density: ' + obj.density + ' g/cm³. more than water (1.0), so it sinks straight to the bottom.';
   }
 
   renderButtons();

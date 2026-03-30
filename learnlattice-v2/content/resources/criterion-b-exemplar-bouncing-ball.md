@@ -1,7 +1,7 @@
 ---
 title: What Does Level 7 Look Like? Bouncing Ball
 date: 2025-11-03
-description: Three student responses to a Criterion B science investigation — annotated at levels 3-4, 5-6, and 7-8. A ball bounces lower each time. Students investigate the relationship between drop height
+description: Three student responses to a Criterion B science investigation. annotated at levels 3-4, 5-6, and 7-8. A ball bounces lower each time. Students investigate the relationship between drop height
   and bounce height.
 subjects:
 - Physics
@@ -130,7 +130,7 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 ### What the student wrote:
 
@@ -146,17 +146,17 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 
 **Correct:** The direction of the relationship is identified, and the approximate ratio (0.6) is reasonable.
 
-**Missing:** The description in (i) is vague — "higher" is qualitative, not quantitative. The model in (ii) is stated but not tested against data. The prediction has no comment on reliability. The energy explanation in (iv) is correct in principle but offers no mechanism — *how* does it lose energy? To what?
+**Missing:** The description in (i) is vague. "higher" is qualitative, not quantitative. The model in (ii) is stated but not tested against data. The prediction has no comment on reliability. The energy explanation in (iv) is correct in principle but offers no mechanism. *how* does it lose energy? To what?
 
 **Teaching move:** Ask this student: "Your model says bounce = drop × 0.6. Does it work for ALL five data points? Check." This develops the habit of verification.
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 ### What the student wrote:
 
-> **(i)** As drop height increases, bounce height increases proportionally. The bounce height is approximately 59-60% of the drop height. This is a positive linear relationship — for every 20 cm increase in drop height, the bounce height increases by approximately 11-12 cm.
+> **(i)** As drop height increases, bounce height increases proportionally. The bounce height is approximately 59-60% of the drop height. This is a positive linear relationship. for every 20 cm increase in drop height, the bounce height increases by approximately 11-12 cm.
 >
 > **(ii)** Using the first and last data points:
 > gradient = (59 - 12) ÷ (100 - 20) = 47 ÷ 80 = 0.5875
@@ -165,13 +165,13 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 >
 > Model: bounce height = 0.5875 × drop height + 0.25
 >
-> Checking: At 60 cm → 0.5875(60) + 0.25 = 35.5 cm (data says 36 — close but not exact)
+> Checking: At 60 cm → 0.5875(60) + 0.25 = 35.5 cm (data says 36. close but not exact)
 >
 > **(iii)** At 150 cm → 0.5875(150) + 0.25 = 88.4 cm.
 >
 > This prediction is outside the range of our data (extrapolation), so it may be less reliable. At very high drop heights the ball might deform or the surface might behave differently.
 >
-> **(iv)** When the ball hits the ground, some kinetic energy is converted to thermal energy (the ball and floor warm up slightly) and sound energy (you can hear the bounce). So the ball has less kinetic energy after the bounce, which means it can't reach the original height. Energy is conserved — it's not lost, just converted to less useful forms.
+> **(iv)** When the ball hits the ground, some kinetic energy is converted to thermal energy (the ball and floor warm up slightly) and sound energy (you can hear the bounce). So the ball has less kinetic energy after the bounce, which means it can't reach the original height. Energy is conserved. it's not lost, just converted to less useful forms.
 
 ### Annotation: Why This Is Level 5-6
 
@@ -181,7 +181,7 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 ### What the student wrote:
 
@@ -197,7 +197,7 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 >
 > The ratio is approximately constant (mean = 0.591, range = 0.025), which supports a proportional relationship: bounce height ≈ 0.59 × drop height.
 >
-> The slight variation in the ratio (0.575 to 0.600) is likely due to measurement uncertainty — it is difficult to read the exact bounce height by eye.
+> The slight variation in the ratio (0.575 to 0.600) is likely due to measurement uncertainty. it is difficult to read the exact bounce height by eye.
 >
 > **(ii)** Best-fit model: \\(h_b = 0.591 \times h_d\\)
 >
@@ -205,26 +205,26 @@ This task assesses **Criterion B: Investigating Patterns** (Science) and connect
 >
 > **(iii)** At 150 cm: \\(h_b = 0.591 \times 150 = 88.7\\) cm.
 >
-> This is an extrapolation — the prediction lies outside my data range (20-100 cm). I have two concerns: first, at higher drops the ball may deform more on impact, which could change the energy transfer and lower the ratio. Second, my data suggests the ratio may already be slightly decreasing at higher drop heights (0.600 at 20 cm vs 0.590 at 100 cm), which could mean the relationship is not perfectly linear. I would rate this prediction as moderately reliable but would want to test it.
+> This is an extrapolation. the prediction lies outside my data range (20-100 cm). I have two concerns: first, at higher drops the ball may deform more on impact, which could change the energy transfer and lower the ratio. Second, my data suggests the ratio may already be slightly decreasing at higher drop heights (0.600 at 20 cm vs 0.590 at 100 cm), which could mean the relationship is not perfectly linear. I would rate this prediction as moderately reliable but would want to test it.
 >
 > **(iv)** The ball never returns to its original height because energy is transformed during the collision. Before the bounce, the ball has gravitational potential energy \\(E_p = mgh\\). During impact, some of this is converted to:
 > - Thermal energy (ball and surface warm)
 > - Sound energy (audible bounce)
 > - Deformation energy (ball compresses)
 >
-> The approximately constant ratio (0.59) means that approximately 59% of the gravitational potential energy is recovered as kinetic energy after the bounce. The remaining 41% is dissipated. This is the coefficient of restitution — and the fact that it's roughly constant explains why the relationship is proportional. The same fraction of energy is lost at every height.
+> The approximately constant ratio (0.59) means that approximately 59% of the gravitational potential energy is recovered as kinetic energy after the bounce. The remaining 41% is dissipated. This is the coefficient of restitution. and the fact that it's roughly constant explains why the relationship is proportional. The same fraction of energy is lost at every height.
 
 ### Annotation: Why This Is Level 7-8
 
 **What makes this exceptional:**
 
-**(i)** The student doesn't just describe the relationship — they **test** whether it's proportional by computing ratios. They calculate the mean and range, and attribute the variation to measurement uncertainty. This is scientific reasoning applied to mathematical analysis.
+**(i)** The student doesn't just describe the relationship. they **test** whether it's proportional by computing ratios. They calculate the mean and range, and attribute the variation to measurement uncertainty. This is scientific reasoning applied to mathematical analysis.
 
 **(ii)** The model choice is **justified on physical grounds**, not just mathematical ones. The argument against a y-intercept ("0 cm drop should give 0 cm bounce") shows the student understands that models must make physical sense.
 
 **(iii)** The extrapolation critique is **specific and evidence-based**. The student points to a possible trend in their own data (decreasing ratio) and identifies a physical mechanism (deformation) that could explain why the model might fail at higher values.
 
-**(iv)** The energy explanation **connects back to the mathematical pattern**. The constant ratio IS the coefficient of restitution. The proportional relationship isn't an accident — it reflects a physical constant. This is the kind of synthesis that distinguishes Level 7-8.
+**(iv)** The energy explanation **connects back to the mathematical pattern**. The constant ratio IS the coefficient of restitution. The proportional relationship isn't an accident. it reflects a physical constant. This is the kind of synthesis that distinguishes Level 7-8.
 
 ---
 
@@ -237,4 +237,4 @@ Response C's ratio table is the single most useful thing a student can learn fro
 The argument against a y-intercept is the kind of reasoning that separates strong students. Teach students to ask: "Does my model make sense at the extremes?" If the answer is no, the model needs rethinking.
 
 ### EAL note
-The ratio table is entirely numerical — no English required to compute it. Students who struggle to write the paragraph explanations can still demonstrate the mathematical reasoning through the table and calculations.
+The ratio table is entirely numerical. no English required to compute it. Students who struggle to write the paragraph explanations can still demonstrate the mathematical reasoning through the table and calculations.

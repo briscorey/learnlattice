@@ -1,7 +1,7 @@
 ---
 title: "3-Act: How Many Times Can You Fold Paper?"
 date: 2026-02-25
-description: "Can you fold a piece of paper in half more than 7 times? What if you could fold it 42 times — how thick would it be? A 3-Act Task connecting powers of 2, exponential growth, and the difference between mathematical models and physical constraints."
+description: "Can you fold a piece of paper in half more than 7 times? What if you could fold it 42 times. how thick would it be? A 3-Act Task connecting powers of 2, exponential growth, and the difference between mathematical models and physical constraints."
 subjects:
   - "Mathematics"
 math_topic: "Number Sense"
@@ -22,13 +22,13 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Orientation in Space and Time"
-statement_of_inquiry: "Exponential growth creates quantities so large they challenge our sense of scale — mathematics can take us where physical experience cannot."
+statement_of_inquiry: "Exponential growth creates quantities so large they challenge our sense of scale. mathematics can take us where physical experience cannot."
 difficulty: "approaching"
 duration: "1 lesson"
 hook: "How many times can you fold a piece of paper in half? What if you COULD fold it 42 times?"
 warmup: "Fold a piece of paper in half. How many layers? Fold again. How many layers now? What is the pattern?"
 seo_title: "3-Act Task: Paper Folding | MYP Maths Powers & Exponential"
-seo_description: "Free 3-Act maths task for MYP. Students investigate exponential growth through paper folding — how thick after 42 folds? Surprising real-world connections."
+seo_description: "Free 3-Act maths task for MYP. Students investigate exponential growth through paper folding. how thick after 42 folds? Surprising real-world connections."
 teacher_moves:
   - title: "Start with the table, not the formula"
     description: "Students who build a table of values and look for patterns find the generalisation more meaningful than students who are given the formula first."
@@ -127,7 +127,7 @@ A sheet of paper is approximately 0.1 mm (0.0001 m) thick.
 
 ## Act 3: The Reveal
 
-After 42 folds, the paper would be approximately **440,000 km thick** — further than the distance from the Earth to the Moon (384,400 km).
+After 42 folds, the paper would be approximately **440,000 km thick**. further than the distance from the Earth to the Moon (384,400 km).
 
 > **A single sheet of paper, folded 42 times, reaches the Moon.**
 
@@ -150,6 +150,6 @@ After 42 folds, the paper would be approximately **440,000 km thick** — furthe
 
 **MYP Criterion B Connection:** Students investigate the pattern of doubling layers, describe it as a power of 2, and verify their formula.
 
-**Global Context — Orientation in Space and Time:** The comparison to astronomical distances gives students a visceral sense of scale and the power of exponential growth.
+**Global Context. Orientation in Space and Time:** The comparison to astronomical distances gives students a visceral sense of scale and the power of exponential growth.
 
 **EAL Scaffold:** The physical folding activity requires no English. The table structure makes the mathematical pattern visible. Provide a reference card with km equivalents (height of school, aeroplane, Moon).

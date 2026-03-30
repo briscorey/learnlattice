@@ -29,7 +29,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 misconceptions:
 - myth: "A bigger sample always gives a better answer"
   why: "More data seems better"
@@ -100,7 +100,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Shadow Stick" — a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Shadow Stick". a mathematics investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -108,9 +108,9 @@ In 240 BC, Eratosthenes stood in Alexandria, Egypt, and stuck a vertical pole in
 
 The pole cast a shadow at an angle of 7.2°.
 
-He knew that 800 km south, in Syene, a vertical pole cast **no shadow** at the same moment — the Sun was directly overhead.
+He knew that 800 km south, in Syene, a vertical pole cast **no shadow** at the same moment. the Sun was directly overhead.
 
-From this single measurement — one shadow, one angle — he calculated the circumference of the Earth.
+From this single measurement. one shadow, one angle. he calculated the circumference of the Earth.
 
 $$C = \frac{360°}{7.2°} \times 800 \text{ km} = 40{,}000 \text{ km}$$
 
@@ -126,7 +126,7 @@ Measure:
 - Height of the stick: 1m
 - Length of the stick's shadow: ___cm
 
-Now measure the shadow of something you cannot directly measure — a building, a tree, a goalpost.
+Now measure the shadow of something you cannot directly measure. a building, a tree, a goalpost.
 
 $$\frac{\text{your height}}{\text{your shadow}} = \frac{\text{tree height}}{\text{tree shadow}}$$
 
@@ -150,4 +150,4 @@ $$C = \frac{360°}{\text{angle difference}} \times \text{distance between school
 
 This investigation connects mathematics to history in a way that makes geometry feel profound rather than procedural. Eratosthenes had no satellites, no GPS, no calculators. He had a stick, a shadow, and similar triangles.
 
-The partner school connection is ideal but not required. You can simulate it by comparing your shadow measurement with one from a known location at the same latitude — many websites publish this data.
+The partner school connection is ideal but not required. You can simulate it by comparing your shadow measurement with one from a known location at the same latitude. many websites publish this data.

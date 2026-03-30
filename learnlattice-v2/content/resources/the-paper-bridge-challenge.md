@@ -15,7 +15,7 @@ key-concepts:
   - "Form"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "The strength of a structure depends not just on the material, but on its form — and engineers use this principle to build bridges from surprisingly weak materials."
+statement_of_inquiry: "The strength of a structure depends not just on the material, but on its form. and engineers use this principle to build bridges from surprisingly weak materials."
 difficulty: "approaching"
 hook: "A flat sheet of paper cannot support a pencil. But fold it the right way and it holds a textbook. The material did not change. The shape did. How much weight can your paper bridge hold?"
 warmup: "Hold a sheet of paper flat between two books (30cm gap). Place a pencil on it. It collapses. Now fold the paper. Can you make it support the pencil? What about 10 pencils?"
@@ -28,7 +28,7 @@ teacher_moves:
     description: "Use random grouping (cards, sticks, app). Students who always work with friends miss the productive discomfort of explaining their thinking to someone new."
   - title: "Claim-evidence-reasoning"
     description: "Push students beyond description. Ask: What is your claim? What evidence supports it? Why does that evidence support your claim? This structure separates 3-4 work from 5-6 work."
-timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation — students collect data or work through the task. | 35-45 min: Class discussion — share findings, address misconceptions. | 45-50 min: Exit ticket.'
+timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation. students collect data or work through the task. | 35-45 min: Class discussion. share findings, address misconceptions. | 45-50 min: Exit ticket.'
 misconceptions:
 - myth: "Speed and velocity are the same thing"
   why: "In everyday language they are used interchangeably"
@@ -96,7 +96,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Paper Bridge Challenge" — a physics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Paper Bridge Challenge". a physics investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -115,10 +115,10 @@ But engineers build bridges from paper, cardboard, and bamboo that hold thousand
 - **Load:** Add weights (coins, washers, or marbles) until it collapses
 - **No adhesives.** Only folding, rolling, and interlocking
 
-### Round 1 — Individual (10 minutes)
+### Round 1. Individual (10 minutes)
 Each student builds their own bridge. Test it. Record the maximum load.
 
-### Round 2 — Engineering teams (15 minutes)
+### Round 2. Engineering teams (15 minutes)
 Groups of 3. One new sheet. You have seen what works and what fails. Combine ideas. Build the strongest bridge you can.
 
 ### The Weigh-In
@@ -128,11 +128,11 @@ Test every bridge. Record the results on the board. Crown the winner.
 
 ## The Science: Why Shape Matters
 
-A flat sheet bends because all the material is at the same height — there is nothing resisting the downward force.
+A flat sheet bends because all the material is at the same height. there is nothing resisting the downward force.
 
 A **corrugated** sheet (zigzag folds) is strong because the peaks and valleys create depth. The top of each fold resists compression while the bottom resists tension.
 
-A **tube** is even stronger. Roll the paper into a cylinder and it can support remarkable loads — because force is distributed around the entire circumference.
+A **tube** is even stronger. Roll the paper into a cylinder and it can support remarkable loads. because force is distributed around the entire circumference.
 
 This is why bridges use **I-beams** (shaped like the letter I) rather than flat bars. The top and bottom flanges resist bending while the thin web between them saves material.
 
@@ -144,6 +144,6 @@ Doubling the depth of a beam makes it **four times** stronger.
 
 ## Teaching Notes
 
-This is a Liljedahl vertical-surface investigation — groups should be random, working standing up, testing and iterating physically. The competition element drives genuine engineering thinking: students who fail learn from the winning designs.
+This is a Liljedahl vertical-surface investigation. groups should be random, working standing up, testing and iterating physically. The competition element drives genuine engineering thinking: students who fail learn from the winning designs.
 
-No equipment needed beyond paper, coins, and two books. It works in any classroom in any school. The mathematical relationship (strength ∝ depth²) is an extension for high-achieving students — the core lesson is that form affects function.
+No equipment needed beyond paper, coins, and two books. It works in any classroom in any school. The mathematical relationship (strength ∝ depth²) is an extension for high-achieving students. the core lesson is that form affects function.

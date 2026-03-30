@@ -30,20 +30,20 @@ seo_description: "A visual step-by-step explainer for factorising expressions, d
 
 ## Overview
 
-A step-by-step visual guide to factorising expressions for MYP students. Designed with EAL scaffolding — every concept is introduced with a visual model before abstract notation.
+A step-by-step visual guide to factorising expressions for MYP students. Designed with EAL scaffolding. every concept is introduced with a visual model before abstract notation.
 
 ## Key Vocabulary
 Essential terms are introduced with visual definitions before they appear in context.
 
 ## Worked Examples
 
-### Example 1 — Basic
+### Example 1. Basic
 A fully worked example with annotated steps, colour-coded to show the reasoning.
 
-### Example 2 — Intermediate  
+### Example 2. Intermediate  
 A slightly harder example that introduces one new complexity.
 
-### Example 3 — Challenge
+### Example 3. Challenge
 An example that combines multiple skills or requires multi-step reasoning.
 
 ## Common Mistakes

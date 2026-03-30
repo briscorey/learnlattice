@@ -115,7 +115,7 @@ seo_description: "Free MYP Physics investigation pack targeting Criterion B, Cri
 
 Show three images side by side:
 1. A swimmer holding their nose underwater
-2. A sealed bag of chips on an aeroplane — inflated like a balloon
+2. A sealed bag of chips on an aeroplane. inflated like a balloon
 3. A deep-sea submersible with walls 15 cm thick
 
 Ask: **"What do these three situations have in common?"**
@@ -134,19 +134,19 @@ The relationship is linear: \\(P = \rho g h\\), where \\(\rho\\) is the density 
 
 **Demonstration:** Take a plastic bottle with three holes at different heights. Fill with water. The bottom hole shoots water furthest. **"Why?"** More water above = more pressure = more force pushing the water out.
 
-**Key insight:** Pressure acts in ALL directions at any given depth — not just downward. This is why your ears hurt equally whether you tilt your head sideways or stay upright underwater.
+**Key insight:** Pressure acts in ALL directions at any given depth. not just downward. This is why your ears hurt equally whether you tilt your head sideways or stay upright underwater.
 
 ---
 
 ## Tiered Tasks
 
-### Part A — Criterion D (Levels 1-4)
+### Part A. Criterion D (Levels 1-4)
 
 1. Explain why the bottom hole in the bottle demonstration shoots water the furthest.
 2. A diver is at 10 metres depth in seawater (density = 1025 kg/m³). Calculate the water pressure using \\(P = \rho g h\\).
 3. Why do deep-sea submarines need thicker walls than submarines designed for shallow water?
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 
 Using the bottle with holes at 5 different heights:
 1. Measure how far the water stream travels horizontally from each hole
@@ -154,7 +154,7 @@ Using the bottle with holes at 5 different heights:
 3. Describe the pattern between water height and stream distance
 4. State a general rule
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 
 The Mariana Trench is approximately 11,000 metres deep. Seawater density is 1025 kg/m³.
 1. Calculate the pressure at the bottom of the Mariana Trench
@@ -173,4 +173,4 @@ The Mariana Trench is approximately 11,000 metres deep. Seawater density is 1025
 
 ## Teaching Notes
 
-The three-hole bottle is the essential demonstration. Prepare it before class — use a nail to make clean holes. Have a tray underneath. The visual is immediate and requires no English to interpret. For EAL students, draw the bottle on the board and label the heights. The pattern is visible before any calculation.
+The three-hole bottle is the essential demonstration. Prepare it before class. use a nail to make clean holes. Have a tray underneath. The visual is immediate and requires no English to interpret. For EAL students, draw the bottle on the board and label the heights. The pattern is visible before any calculation.

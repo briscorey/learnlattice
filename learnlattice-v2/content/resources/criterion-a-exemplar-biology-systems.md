@@ -28,7 +28,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Claim-evidence-reasoning"
     description: "Push students beyond description. Ask: What is your claim? What evidence supports it? Why does that evidence support your claim? This structure separates 3-4 work from 5-6 work."
-timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation — students collect data or work through the task. | 35-45 min: Class discussion — share findings, address misconceptions. | 45-50 min: Exit ticket.'
+timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation. students collect data or work through the task. | 35-45 min: Class discussion. share findings, address misconceptions. | 45-50 min: Exit ticket.'
 warmup: "Show students a simple example related to the topic. Ask: What do you notice? What do you wonder? Give 2 minutes for pair discussion."
 misconceptions:
 - myth: "Getting the right answer means you understand"
@@ -97,20 +97,20 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "What Does Level 7 Look Like? Explaining Body Systems" — a biology investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "What Does Level 7 Look Like? Explaining Body Systems". a biology investigation designed for Grade 8 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## The Task
 
 This exemplar presents three student responses to the same Criterion A investigation, annotated at levels 3-4, 5-6, and 7-8.
 
-## Student Response A — Level 3-4
+## Student Response A. Level 3-4
 Identifies basic features but cannot explain why. No subject-specific reasoning beyond surface observations.
 
-## Student Response B — Level 5-6
+## Student Response B. Level 5-6
 Uses correct terminology and shows logical reasoning. Verifies findings. May not distinguish between checking and proving.
 
-## Student Response C — Level 7-8
+## Student Response C. Level 7-8
 Provides structural justification. Connects findings to principles. Acknowledges limitations. Precise language throughout.
 
 ## Teaching Notes

@@ -34,7 +34,7 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Vertical non-permanent surfaces"
     description: "Get students working on whiteboards or windows. Standing work is more collaborative than seated work, and erasable surfaces lower the stakes of being wrong."
-timeline: '0-5 min: Present the hook — let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation — students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion — compare approaches. | 40-48 min: Exit ticket and reflection.'
+timeline: '0-5 min: Present the hook. let students wonder before you explain anything. | 5-10 min: Warmup activity in pairs. | 10-30 min: Main investigation. students work in groups on vertical surfaces or at tables. | 30-40 min: Gallery walk or whole-class discussion. compare approaches. | 40-48 min: Exit ticket and reflection.'
 warmup: "Put a related but simpler version of the problem on the board. Give students 2 minutes to discuss in pairs: What do you notice? What do you wonder?"
 misconceptions:
 - myth: "Bigger polygons have bigger angle sums"
@@ -106,7 +106,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "Investigating Angle Sums in Polygons" — a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "Investigating Angle Sums in Polygons". a mathematics investigation designed for Grade 7 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 
 ## Overview
@@ -115,23 +115,23 @@ Students investigate interior angle sums of polygons through drawing, measuring,
 
 ## The Investigation
 
-### Phase 1 — Measure
+### Phase 1. Measure
 Draw and measure all interior angles for: triangle, quadrilateral, pentagon, hexagon.
 Sum the angles for each shape and record in a table.
 
-### Phase 2 — Triangulate
+### Phase 2. Triangulate
 Draw diagonals from ONE vertex of each polygon. Count the triangles formed.
 - Triangle: 1 triangle = 1 × 180° = 180°
 - Quadrilateral: 2 triangles = 2 × 180° = 360°
 - Pentagon: 3 triangles = 3 × 180° = 540°
 
-### Phase 3 — Generalise
+### Phase 3. Generalise
 "For an n-sided polygon, how many triangles can you make from one vertex?"
 Develop the formula: **(n − 2) × 180°**
 
 Test: what is the angle sum of a 10-gon? A 20-gon?
 
-### Phase 4 — Regular Polygons
+### Phase 4. Regular Polygons
 "If a polygon is regular, what is each interior angle?"
 Formula: (n − 2) × 180° ÷ n
 

@@ -120,7 +120,7 @@ A news article claims: **"Teenagers spend an average of 7 hours per day on scree
 
 ---
 
-## Student Response A — Achieving Level 3-4
+## Student Response A. Achieving Level 3-4
 
 > **Method:** I asked 15 students in my class how many hours they use screens per day.
 >
@@ -138,7 +138,7 @@ The survey is conducted but the sample is too small and not randomised (one clas
 
 ---
 
-## Student Response B — Achieving Level 5-6
+## Student Response B. Achieving Level 5-6
 
 > **Method:** Anonymous online survey sent to 60 students across Grades 7-9. Asked for weekday and weekend screen time separately.
 >
@@ -154,24 +154,24 @@ Excellent separation of weekday/weekend data reveals a pattern the task didn't e
 
 ---
 
-## Student Response C — Achieving Level 7-8
+## Student Response C. Achieving Level 7-8
 
 > [Includes everything from Response B, plus:]
 >
-> **Extended analysis:** The IQR for weekday screen time is 3.0-6.5 hours, meaning the newspaper's claim of 7 hours falls just outside our middle 50%. However, 22% of our sample reported 7+ hours on weekdays, so the claim is not impossible — it depends heavily on the population sampled.
+> **Extended analysis:** The IQR for weekday screen time is 3.0-6.5 hours, meaning the newspaper's claim of 7 hours falls just outside our middle 50%. However, 22% of our sample reported 7+ hours on weekdays, so the claim is not impossible. it depends heavily on the population sampled.
 >
 > I also found that Grade 9 students averaged 5.8 hours on weekdays vs. 4.1 hours for Grade 7, suggesting screen time increases with age. If the newspaper surveyed 16-18 year olds rather than 12-15 year olds, 7 hours becomes very plausible.
 >
-> **Evaluation:** A key question is whether the newspaper's "average" means the mean or the median. If screen time is right-skewed (which my data suggests — a few very high users pull the mean up), the mean could be 7 hours even if most teenagers use less. The median would be a more representative measure.
+> **Evaluation:** A key question is whether the newspaper's "average" means the mean or the median. If screen time is right-skewed (which my data suggests. a few very high users pull the mean up), the mean could be 7 hours even if most teenagers use less. The median would be a more representative measure.
 
 ### Commentary
 
-This response demonstrates genuine statistical sophistication. The IQR analysis evaluates the claim probabilistically rather than as true/false. The age-trend analysis shows pattern recognition across subgroups. The discussion of mean vs. median skewness shows deep understanding of how statistical measures can be manipulated — exactly the kind of critical thinking Criterion B targets.
+This response demonstrates genuine statistical sophistication. The IQR analysis evaluates the claim probabilistically rather than as true/false. The age-trend analysis shows pattern recognition across subgroups. The discussion of mean vs. median skewness shows deep understanding of how statistical measures can be manipulated. exactly the kind of critical thinking Criterion B targets.
 
 ---
 
 ## Teaching Notes
 
-This task works best when the newspaper claim is real — find one before the assessment. The authenticity of evaluating a genuine media claim elevates the task from "doing statistics" to "using statistics to think critically about the world."
+This task works best when the newspaper claim is real. find one before the assessment. The authenticity of evaluating a genuine media claim elevates the task from "doing statistics" to "using statistics to think critically about the world."
 
 The three annotated responses are designed for calibration: show all three in class and have students identify what makes each stronger.

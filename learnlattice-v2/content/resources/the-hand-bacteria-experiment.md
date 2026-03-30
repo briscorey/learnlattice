@@ -18,25 +18,25 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Identities and Relationships"
-statement_of_inquiry: "Microorganisms are invisible but their effects are measurable — and understanding them changes our daily behaviour."
+statement_of_inquiry: "Microorganisms are invisible but their effects are measurable. and understanding them changes our daily behaviour."
 difficulty: "approaching"
 hook: "Your hands look clean right now. But there are more bacteria on your fingertips than people in your city. Can soap actually remove them?"
 warmup: "Look at your hands. Are they clean? How do you know? What would 'clean' mean to a scientist?"
-timeline: "0-5 min: Warmup — what does clean mean? | 5-15 min: Swab hands BEFORE washing onto agar plate | 15-20 min: Wash hands with soap for 20 seconds | 20-25 min: Swab hands AFTER washing onto second plate | 25-35 min: Label plates, predict results, seal with tape | 35-45 min: Discussion — what variables matter? | 45-50 min: Exit ticket"
+timeline: "0-5 min: Warmup. what does clean mean? | 5-15 min: Swab hands BEFORE washing onto agar plate | 15-20 min: Wash hands with soap for 20 seconds | 20-25 min: Swab hands AFTER washing onto second plate | 25-35 min: Label plates, predict results, seal with tape | 35-45 min: Discussion. what variables matter? | 45-50 min: Exit ticket"
 teacher_moves:
   - title: "Do NOT open the plates after incubation"
     description: "Safety first. After 48 hours at room temperature, students observe through the sealed lid. Dispose of sealed plates in a biohazard bag or autoclave. Never let students open incubated plates."
   - title: "The prediction is the key moment"
-    description: "Before incubation, ask every student to draw what they think each plate will look like in 3 days. These predictions become powerful when compared to reality — especially when the 'after washing' plate still has colonies."
+    description: "Before incubation, ask every student to draw what they think each plate will look like in 3 days. These predictions become powerful when compared to reality. especially when the 'after washing' plate still has colonies."
   - title: "This is a Dylan Wiliam hinge point"
-    description: "After seeing the results, ask: 'Does this mean washing hands is pointless?' Students who say yes need reteaching. Students who say 'No — washing reduces bacteria, it does not eliminate them' have understood the key idea."
+    description: "After seeing the results, ask: 'Does this mean washing hands is pointless?' Students who say yes need reteaching. Students who say 'No. washing reduces bacteria, it does not eliminate them' have understood the key idea."
 listen_for:
   - level: "3-4"
     phrase: "The plate with unwashed hands has more spots"
   - level: "5-6"
     phrase: "Washing hands reduced the number of bacterial colonies but did not remove all of them"
   - level: "7-8"
-    phrase: "We cannot count individual bacteria, only colonies — each spot represents millions of cells that grew from one original bacterium"
+    phrase: "We cannot count individual bacteria, only colonies. each spot represents millions of cells that grew from one original bacterium"
 misconceptions:
   - myth: "Soap kills bacteria"
     why: "We associate cleanliness with killing germs"
@@ -77,7 +77,7 @@ quick_check:
     a: "Warmth, moisture, nutrients (the agar provides nutrients)"
   - type: "apply"
     q: "Student A washed for 5 seconds. Student B washed for 30 seconds. Predict whose plate will have fewer colonies."
-    a: "Student B — longer washing removes more transient bacteria"
+    a: "Student B. longer washing removes more transient bacteria"
   - type: "extend"
     q: "Why might a surgeon wash their hands differently than you do before lunch?"
     a: "Surgeons scrub for several minutes with antiseptic soap, cleaning under nails and between fingers. The risk of infection during surgery is much higher, so the standard of cleanliness must be much higher."
@@ -118,7 +118,7 @@ Most of them are harmless. Some are helpful. A few could make you sick.
 
 ### Method
 
-**Plate 1 — Before washing:**
+**Plate 1. Before washing:**
 1. Gently press your fingertips onto the agar surface for 5 seconds
 2. OR swab between your fingers with a sterile cotton swab and zigzag it across the plate
 3. Label the plate: your name, "BEFORE", date
@@ -127,7 +127,7 @@ Most of them are harmless. Some are helpful. A few could make you sick.
 4. Wash with soap and water for exactly 20 seconds (sing "Happy Birthday" twice)
 5. Dry with a paper towel
 
-**Plate 2 — After washing:**
+**Plate 2. After washing:**
 6. Repeat step 1-2 with a fresh plate
 7. Label: your name, "AFTER", date
 
@@ -159,14 +159,14 @@ Soap does not kill bacteria. It **lifts them off your skin**.
 
 Soap molecules have two ends: one end attracted to water, one end attracted to oil and grease. The bacteria on your hands are trapped in the natural oils on your skin. Soap breaks up these oils, and the bacteria wash away with the water.
 
-This is why **scrubbing matters more than the type of soap**. You need friction to break the oil layer. And **time matters** — 20 seconds of washing removes far more bacteria than 5 seconds.
+This is why **scrubbing matters more than the type of soap**. You need friction to break the oil layer. And **time matters**. 20 seconds of washing removes far more bacteria than 5 seconds.
 
 ---
 
 ## Teaching Notes
 
-This is a Papert-inspired constructionist investigation — students build evidence through direct experience rather than being told that "hand washing works." The agar plates make the invisible visible in a way that a textbook never can.
+This is a Papert-inspired constructionist investigation. students build evidence through direct experience rather than being told that "hand washing works." The agar plates make the invisible visible in a way that a textbook never can.
 
-Order pre-poured agar plates online (they are inexpensive and last weeks refrigerated). If plates are unavailable, use bread slices in sealed bags — mould growth shows a similar before/after pattern.
+Order pre-poured agar plates online (they are inexpensive and last weeks refrigerated). If plates are unavailable, use bread slices in sealed bags. mould growth shows a similar before/after pattern.
 
 The safety protocol is essential: sealed plates, never opened, disposed of properly. Make this a teaching moment about laboratory practice.

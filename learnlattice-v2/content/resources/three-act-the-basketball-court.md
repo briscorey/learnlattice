@@ -21,7 +21,7 @@ key-concepts:
   - "Relationships"
 global-contexts:
   - "Identities and Relationships"
-statement_of_inquiry: "The shortest path between two points is a straight line — but real movement rarely follows straight lines, and mathematics helps us measure what we cannot easily see."
+statement_of_inquiry: "The shortest path between two points is a straight line. but real movement rarely follows straight lines, and mathematics helps us measure what we cannot easily see."
 difficulty: "meeting"
 duration: "1 lesson"
 hook: "A basketball player runs a full-court fast break. How far did she actually run?"
@@ -107,7 +107,7 @@ Estimate. Write it down. Is it more or less than the length of the court?
 
 Reveal on request:
 - The court is 28 metres long and 15 metres wide.
-- She starts at position (0, 3) — on her baseline, 3 metres from the sideline.
+- She starts at position (0, 3). on her baseline, 3 metres from the sideline.
 - She runs diagonally to half court at position (14, 12) to receive a pass.
 - She curves around a defender, passing through approximately (18, 8).
 - She finishes at the opposite basket at position (28, 7.5).
@@ -120,13 +120,13 @@ Reveal on request:
 
 **Segment 3:** (18,8) to (28,7.5): √(10² + 0.5²) = √100.25 ≈ 10.0 m
 
-**Total ≈ 32.3 metres** — more than the court length of 28 m.
+**Total ≈ 32.3 metres**. more than the court length of 28 m.
 
 ---
 
 ## Act 3: The Reveal
 
-The player ran approximately **32 metres** — about 15% further than the court length.
+The player ran approximately **32 metres**. about 15% further than the court length.
 
 > **Discussion:** Why is the actual distance always MORE than the straight-line court length? Can you ever run exactly 28 metres from baseline to baseline?
 

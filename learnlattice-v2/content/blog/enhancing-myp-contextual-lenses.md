@@ -1,8 +1,8 @@
 ---
 title: "Contextual Lenses in Practice: Individual, Local, and Global"
 date: 2026-03-17
-description: "The Enhanced MYP adds three contextual lenses — individual, local, and global — to the existing global contexts framework. This guide shows how to use them with worked examples for MYP mathematics and sciences, including how the same content changes dramatically at each lens."
-seo_title: "MYP Contextual Lenses Guide — Individual, Local, Global |..."
+description: "The Enhanced MYP adds three contextual lenses. individual, local, and global. to the existing global contexts framework. This guide shows how to use them with worked examples for MYP mathematics and sciences, including how the same content changes dramatically at each lens."
+seo_title: "MYP Contextual Lenses Guide | Individual, Local, Global |..."
 seo_description: "Practical guide to the new MYP contextual lenses. Worked examples showing how individual, local, and global framing transforms math and science units."
 pillar: "IB Practice"
 reading_time: 10
@@ -17,7 +17,7 @@ tags:
 
 ## What Are Contextual Lenses?
 
-The Enhanced MYP introduces three **contextual lenses** — individual, local, and global — that work alongside the existing six global contexts. They answer the question: at what scale is the student engaging with this context?
+The Enhanced MYP introduces three **contextual lenses**. individual, local, and global. that work alongside the existing six global contexts. They answer the question: at what scale is the student engaging with this context?
 
 The six global contexts remain unchanged:
 - Identities and Relationships
@@ -43,19 +43,19 @@ Consider a Grade 7 statistics unit. The global context is "Fairness and Developm
 
 Now apply each lens:
 
-**Individual lens:** "Is the way your teachers grade your work fair? Analyse your own grades across subjects — do you perform consistently, or are some criteria harder than others? What does the data reveal about your own learning patterns?"
+**Individual lens:** "Is the way your teachers grade your work fair? Analyse your own grades across subjects. do you perform consistently, or are some criteria harder than others? What does the data reveal about your own learning patterns?"
 
 **Local lens:** "Is screen time equally distributed across students in our grade? Design and conduct a survey, analyse the data, and determine whether there are statistically significant differences by gender, age, or other factors."
 
-**Global lens:** "Countries report average income, but averages hide inequality. Compare the mean and median income of 10 countries. Which statistic is more 'fair' — and who benefits from each choice?"
+**Global lens:** "Countries report average income, but averages hide inequality. Compare the mean and median income of 10 countries. Which statistic is more 'fair'. and who benefits from each choice?"
 
-Same mathematical content (measures of central tendency, data collection, statistical analysis). Same global context (Fairness and Development). Three completely different units — each compelling in its own way.
+Same mathematical content (measures of central tendency, data collection, statistical analysis). Same global context (Fairness and Development). Three completely different units. each compelling in its own way.
 
 ## The Local Lens Is Your Secret Weapon
 
 In my experience, the local lens consistently produces the most engaging student work. Here is why:
 
-**Students can collect their own data.** The local lens turns students into researchers. They survey classmates, measure their school environment, test local water quality, or count species in the schoolyard. This makes the data real, messy, and interesting — unlike textbook datasets where the answer is predetermined.
+**Students can collect their own data.** The local lens turns students into researchers. They survey classmates, measure their school environment, test local water quality, or count species in the schoolyard. This makes the data real, messy, and interesting. unlike textbook datasets where the answer is predetermined.
 
 **Students see the results in their own community.** A global climate change dataset is important but abstract. A heat map of temperature differences across your school campus is immediate and actionable. Students can literally walk to the data point and feel the difference.
 
@@ -63,7 +63,7 @@ In my experience, the local lens consistently produces the most engaging student
 
 ## Worked Examples: Same Content, Three Lenses
 
-### Example 1: MYP Mathematics — Proportional Reasoning (Grade 7)
+### Example 1: MYP Mathematics. Proportional Reasoning (Grade 7)
 
 **Global Context:** Globalization and Sustainability
 
@@ -75,17 +75,17 @@ In my experience, the local lens consistently produces the most engaging student
 
 All three versions teach proportional reasoning and unit conversion. The lens determines the data source, the scale of analysis, and the nature of the Criterion D reflection.
 
-### Example 2: MYP Sciences — Ecology (Grade 8)
+### Example 2: MYP Sciences. Ecology (Grade 8)
 
 **Global Context:** Globalization and Sustainability
 
 | Lens | Inquiry Question | Investigation | Criterion D Focus |
 |---|---|---|---|
-| Individual | What is my personal ecological footprint — and what single change would reduce it the most? | Ecological footprint calculator + lifestyle analysis | Personal responsibility vs systemic change |
+| Individual | What is my personal ecological footprint. and what single change would reduce it the most? | Ecological footprint calculator + lifestyle analysis | Personal responsibility vs systemic change |
 | Local | How biodiverse is our school grounds compared to a nearby park or natural area? | Quadrat sampling, species identification, Simpson's diversity index | School grounds management |
 | Global | Why did reintroducing 31 wolves to Yellowstone change the course of rivers? | Trophic cascade case study, food web analysis | Rewilding as a global conservation strategy |
 
-### Example 3: MYP Mathematics — Geometry (Grade 7)
+### Example 3: MYP Mathematics. Geometry (Grade 7)
 
 **Global Context:** Personal and Cultural Expression
 
@@ -93,7 +93,7 @@ All three versions teach proportional reasoning and unit conversion. The lens de
 |---|---|---|---|
 | Individual | What geometric transformations can I use to create a design that represents my identity? | Tessellation or transformation art project | Mathematics as creative expression |
 | Local | What mathematical patterns appear in the architecture and art of our city? | Photo walk, measurement, identification of symmetry, tessellation, and proportion | Cultural heritage and design |
-| Global | Islamic geometric art, Japanese sashiko, and Navajo weaving all use different symmetry groups. What mathematics do they share — and what makes each tradition unique? | Cross-cultural pattern analysis | Mathematics as a universal human language |
+| Global | Islamic geometric art, Japanese sashiko, and Navajo weaving all use different symmetry groups. What mathematics do they share. and what makes each tradition unique? | Cross-cultural pattern analysis | Mathematics as a universal human language |
 
 ## How to Choose a Lens
 
@@ -109,8 +109,8 @@ There is no requirement to use all three lenses across a programme, though doing
 
 ## Resources
 
-- [Enhancing the MYP: What Actually Changes](/blog/enhancing-the-myp-what-changes/) — the full overview
-- [Specified Concepts for MYP Maths and Sciences](/blog/enhancing-myp-specified-concepts/) — the new concept system
-- [Inquiry Questions: 20 Before-and-After Examples](/blog/enhancing-myp-inquiry-questions/) — converting SOIs to questions
-- [IDU: Is Our Water Safe?](/resources/idu-water-quality-investigation/) — a complete IDU using the local lens
-- [IDU: Disease Detectives](/resources/idu-disease-detectives/) — an IDU that escalates from local to global
+- [Enhancing the MYP: What Actually Changes](/blog/enhancing-the-myp-what-changes/). the full overview
+- [Specified Concepts for MYP Maths and Sciences](/blog/enhancing-myp-specified-concepts/). the new concept system
+- [Inquiry Questions: 20 Before-and-After Examples](/blog/enhancing-myp-inquiry-questions/). converting SOIs to questions
+- [IDU: Is Our Water Safe?](/resources/idu-water-quality-investigation/). a complete IDU using the local lens
+- [IDU: Disease Detectives](/resources/idu-disease-detectives/). an IDU that escalates from local to global

@@ -15,7 +15,7 @@ key-concepts:
   - "Change"
 global-contexts:
   - "Scientific and Technical Innovation"
-statement_of_inquiry: "Indicators reveal invisible properties of substances — and colour change is evidence of chemical difference."
+statement_of_inquiry: "Indicators reveal invisible properties of substances. and colour change is evidence of chemical difference."
 difficulty: "approaching"
 hook: "Red cabbage juice turns pink in lemon juice and green in baking soda. But it is the same liquid. What is it detecting?"
 warmup: "Sort these into two groups: lemon juice, vinegar, baking soda, soap, orange juice, milk. What rule did you use?"
@@ -28,11 +28,11 @@ teacher_moves:
     description: "30 seconds silent thinking, then pair discussion, then whole-class share. This ensures every student engages with the central question, not just the confident ones."
   - title: "Claim-evidence-reasoning"
     description: "Push students beyond description. Ask: What is your claim? What evidence supports it? Why does that evidence support your claim? This structure separates 3-4 work from 5-6 work."
-timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation — students collect data or work through the task. | 35-45 min: Class discussion — share findings, address misconceptions. | 45-50 min: Exit ticket.'
+timeline: '0-5 min: Present the phenomenon or question. Students predict. | 5-10 min: Warmup discussion in pairs. | 10-35 min: Main investigation. students collect data or work through the task. | 35-45 min: Class discussion. share findings, address misconceptions. | 45-50 min: Exit ticket.'
 misconceptions:
 - myth: "Pi is exactly 3.14"
   why: "Textbooks round pi to 2 decimal places"
-  truth: "Pi is irrational — it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
+  truth: "Pi is irrational. it never terminates or repeats. 3.14 is an approximation. The true value has infinite decimal places."
 - myth: "Pi only appears in circle formulas"
   why: "Students first meet pi in geometry"
   truth: "Pi appears in probability, statistics, physics, and even number theory. It is one of the most fundamental constants in mathematics."
@@ -83,7 +83,7 @@ exit_ticket:
 quick_check:
 - type: recall
   q: "What is the relationship between circumference and diameter?"
-  a: "C = πd — the circumference is always pi times the diameter"
+  a: "C = πd. the circumference is always pi times the diameter"
 - type: apply
   q: "A circular table has circumference 314 cm. What is its diameter?"
   a: "d = C ÷ π = 314 ÷ 3.14 = 100 cm"
@@ -99,7 +99,7 @@ journal_prompts:
 - "What strategy did you use, and would you change it next time?"
 - "How does this investigation connect to something you already knew?"
 - "If you had more time, what would you investigate next?"
-parent_summary: 'Your child is working on "The Colour-Changing Cabbage" — a chemistry investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
+parent_summary: 'Your child is working on "The Colour-Changing Cabbage". a chemistry investigation designed for Grade 6 students. They are learning to find patterns, test ideas, and explain their reasoning. Ask them: what did you discover, and how do you know it works?'
 ---
 ## The Hook
 
@@ -109,13 +109,13 @@ Add a different household substance to each: lemon juice, vinegar, baking soda, 
 
 **Watch the rainbow appear.** Pink. Purple. Blue. Green. Yellow.
 
-The cabbage juice is an **indicator** — it changes colour depending on whether a substance is an acid or a base. You just built a chemistry tool from a vegetable.
+The cabbage juice is an **indicator**. it changes colour depending on whether a substance is an acid or a base. You just built a chemistry tool from a vegetable.
 
 ---
 
 ## The Investigation
 
-### Part A — Testing household substances
+### Part A. Testing household substances
 
 1. Pour 20mL of cabbage indicator into each of 8 test tubes
 2. Add 5 drops of each substance. Record the colour change
@@ -132,13 +132,13 @@ The cabbage juice is an **indicator** — it changes colour depending on whether
 | Cola | | |
 | Toothpaste in water | | |
 
-### Part B — The neutralisation challenge
+### Part B. The neutralisation challenge
 
 Mix an acid and a base together drop by drop. Can you make the indicator turn **exactly purple** (neutral)?
 
 This is harder than it sounds. The balance point is precise.
 
-### Part C — The pH scale
+### Part C. The pH scale
 
 Your colour gradient IS a pH scale. Map your colours to numbers 1-14. Compare with a commercial pH chart.
 
@@ -148,6 +148,6 @@ Your colour gradient IS a pH scale. Map your colours to numbers 1-14. Compare wi
 
 This is the most visually dramatic investigation in chemistry. The rainbow of colours from a single vegetable captures attention instantly and makes the abstract concept of pH tangible.
 
-Red cabbage indicator works because it contains anthocyanins — pigments that change structure (and colour) at different pH levels. You do not need to explain the chemistry of anthocyanins. The investigation works beautifully at the level of "acids make it pink, bases make it green."
+Red cabbage indicator works because it contains anthocyanins. pigments that change structure (and colour) at different pH levels. You do not need to explain the chemistry of anthocyanins. The investigation works beautifully at the level of "acids make it pink, bases make it green."
 
-Buy one red cabbage per class. Boil it the night before and refrigerate the liquid — it lasts a week.
+Buy one red cabbage per class. Boil it the night before and refrigerate the liquid. it lasts a week.

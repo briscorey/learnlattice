@@ -33,7 +33,7 @@ global-contexts:
 layout: "game"
 game_url: "/interactives/join-dots.html"
 difficulty: "Meeting"
-seo_title: "Join Dots — Free MYP Mathematics Game | Grade 6-9"
+seo_title: "Join Dots | Free MYP Mathematics Game | Grade 6-9"
 seo_description: "Free interactive MYP mathematics game for Grade 6-9. Connect 4 meets MYP revision. Answer questions from algebra, science, probabilit"
 ---
 
@@ -41,7 +41,7 @@ seo_description: "Free interactive MYP mathematics game for Grade 6-9. Connect 4
 
 **Join Dots** is Connect 4 with a twist: you have to answer a question correctly to earn your move. Get it wrong, and the AI plays instead.
 
-Pick your topic from the tabs on the right — you can focus on algebra, probability, forces, cells, or any other MYP topic. Or leave it on "All Topics" for a mixed challenge.
+Pick your topic from the tabs on the right. you can focus on algebra, probability, forces, cells, or any other MYP topic. Or leave it on "All Topics" for a mixed challenge.
 
 ### Rules
 

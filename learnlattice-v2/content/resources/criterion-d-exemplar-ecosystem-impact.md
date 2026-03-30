@@ -1,7 +1,7 @@
 ---
 title: What Does Level 7 Look Like? Ecosystem Impact
 date: 2025-10-14
-description: Three student responses applying ecology to a real-world environmental decision — annotated at levels 3-4, 5-6, and 7-8. From 'pollution is bad' to genuine evidence-based argumentation.
+description: Three student responses applying ecology to a real-world environmental decision. annotated at levels 3-4, 5-6, and 7-8. From 'pollution is bad' to genuine evidence-based argumentation.
 subjects:
 - Ecology
 - Science
@@ -108,17 +108,17 @@ seo_description: "Free MYP Ecology investigation pack targeting Criterion D for 
 
 ---
 
-## Student Response A — Achievement Level 3-4
+## Student Response A. Achievement Level 3-4
 
 > Draining the wetland would be bad for the environment. Wetlands are home to many animals and plants. If we drain it, they will lose their habitat. We should not build houses there because nature is important.
 
 ### Annotation: Why This Is Level 3-4
 
-The position is clear but the science is generic. "Many animals and plants" — which ones? "Nature is important" — why, specifically? There is no consideration of the social benefits (affordable housing) and no evaluation of trade-offs. This is an opinion, not a scientific report.
+The position is clear but the science is generic. "Many animals and plants". which ones? "Nature is important". why, specifically? There is no consideration of the social benefits (affordable housing) and no evaluation of trade-offs. This is an opinion, not a scientific report.
 
 ---
 
-## Student Response B — Achievement Level 5-6
+## Student Response B. Achievement Level 5-6
 
 > The wetland provides several ecosystem services: flood control (absorbing excess rainwater), water filtration (removing pollutants before they reach the river), and biodiversity habitat (supporting species including nesting birds and amphibians).
 >
@@ -132,11 +132,11 @@ This identifies specific ecosystem services with concrete examples. It quantifie
 
 ---
 
-## Student Response C — Achievement Level 7-8
+## Student Response C. Achievement Level 7-8
 
 > [Full response includes: specific species inventory of the wetland, carbon sequestration data, flood prevention economic analysis, comparison of natural vs constructed wetland effectiveness with citations, stakeholder analysis (residents, ecologists, city planners), and a recommendation with explicit acknowledgment of what is being sacrificed.]
 >
-> "The decision ultimately depends on whether the council values short-term housing supply over long-term environmental infrastructure. My scientific recommendation is that the ecological costs exceed the social benefits — but I acknowledge this is partly a values judgment, not purely a scientific one."
+> "The decision ultimately depends on whether the council values short-term housing supply over long-term environmental infrastructure. My scientific recommendation is that the ecological costs exceed the social benefits. but I acknowledge this is partly a values judgment, not purely a scientific one."
 
 ### Annotation: Why This Is Level 7-8
 

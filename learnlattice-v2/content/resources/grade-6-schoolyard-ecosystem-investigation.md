@@ -99,7 +99,7 @@ journal_prompts:
 
 Ask: **"How many different living things do you think are in our schoolyard right now?"**
 
-Write every guess on the board. Most students will guess between 5 and 20. The actual number — if you count plants, insects, birds, fungi, and micro-habitats — is typically 50-200+ in even a small urban schoolyard.
+Write every guess on the board. Most students will guess between 5 and 20. The actual number. if you count plants, insects, birds, fungi, and micro-habitats. is typically 50-200+ in even a small urban schoolyard.
 
 **"Let's go find out."**
 
@@ -114,8 +114,8 @@ Write every guess on the board. Most students will guess between 5 and 20. The a
 
 ### Method
 1. Each group places their quadrat in a different area (shade, sun, concrete edge, garden, grass)
-2. Count and identify every living thing within the quadrat — every plant, insect, lichen, fungus
-3. Record observations with sketches (not just names — many organisms won't have names students know)
+2. Count and identify every living thing within the quadrat. every plant, insect, lichen, fungus
+3. Record observations with sketches (not just names. many organisms won't have names students know)
 4. Groups rotate to a second location and repeat
 
 ### Analysis
@@ -127,19 +127,19 @@ Write every guess on the board. Most students will guess between 5 and 20. The a
 
 ## Tiered Tasks
 
-### Part A — Criterion C (Levels 1-4)
+### Part A. Criterion C (Levels 1-4)
 Present your quadrat data in a clear table. Include a bar chart comparing species richness across locations. Write 2-3 sentences describing what you found.
 
-### Part B — Criterion B (Levels 3-6)
+### Part B. Criterion B (Levels 3-6)
 Compare the biodiversity of shaded vs. sunny locations. Is there a pattern? State a hypothesis for why one might have more biodiversity than the other. Describe what additional data you would need to test your hypothesis.
 
-### Part C — Criterion B (Levels 5-8)
+### Part C. Criterion B (Levels 5-8)
 A construction company plans to pave over the grassy area of your schoolyard for a new car park. Using your data, write a scientific argument for or against this decision. Include: what species would be affected, what ecosystem services (shade, drainage, habitat) would be lost, and what the broader ecological impact might be.
 
 ---
 
 ## Teaching Notes
 
-This investigation requires going outside. It takes one full lesson for data collection and one for analysis. The EAL scaffold is built in: students observe, sketch, and count. No reading required during the fieldwork phase. The sketches often reveal more than written descriptions — students draw organisms they cannot name, and the class identifies them together.
+This investigation requires going outside. It takes one full lesson for data collection and one for analysis. The EAL scaffold is built in: students observe, sketch, and count. No reading required during the fieldwork phase. The sketches often reveal more than written descriptions. students draw organisms they cannot name, and the class identifies them together.
 
 Best done in autumn or spring when invertebrate activity is highest.

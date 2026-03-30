@@ -162,7 +162,7 @@ After completing the simulation and graphing results, students answer:
 
 ## Extension: The Vancouver Island Marmot Case
 
-The Vancouver Island marmot is one of the world's most endangered mammals — endemic to BC and found nowhere else on Earth. Populations dropped to around 30 individuals in the early 2000s. A captive breeding program raised numbers to approximately 200 by 2020.
+The Vancouver Island marmot is one of the world's most endangered mammals. endemic to BC and found nowhere else on Earth. Populations dropped to around 30 individuals in the early 2000s. A captive breeding program raised numbers to approximately 200 by 2020.
 
 **Research question for extension students:** The marmot evolved in an environment with wolves and cougars as predators. Both predators still exist in its range. Some biologists argue that reintroduced captive-bred marmots lack the predator-wariness behaviour of wild-born individuals and are easier prey.
 
