@@ -107,3 +107,74 @@ html.dark .rs-sidebar-card{box-shadow:0 2px 12px rgba(0,0,0,.2)!important}
 html.dark .rs-student-tools{box-shadow:0 4px 20px rgba(0,0,0,.2)!important}
 html.dark .rs-formula{background:color-mix(in srgb,var(--sc,var(--teal)) 6%,#1e293b)!important}
 html.dark .resource-content th{background:color-mix(in srgb,var(--sc,var(--teal)) 10%,#1e293b)!important}
+
+/* ══════════════════════════════════════════════════════════
+   TEACHER TOOLKIT — parallel column alongside content
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Two-column content area inside rs-main ── */
+.rs-content-cols{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+.rs-content-left{min-width:0}
+.rs-content-right{position:sticky;top:76px;max-height:calc(100vh - 90px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.rs-content-right::-webkit-scrollbar{width:4px}
+.rs-content-right::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+/* ── Toolkit column container ── */
+.rs-toolkit-col{display:flex;flex-direction:column;gap:12px}
+
+/* ── Toolkit column header ── */
+.rs-toolkit-col-header{display:flex;align-items:center;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--sc,var(--teal)) 6%,var(--surface-warm));border:1px solid color-mix(in srgb,var(--sc,var(--teal)) 15%,var(--border));border-radius:12px;margin-bottom:4px}
+.rs-toolkit-col-icon{font-size:1.2rem}
+.rs-toolkit-col-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);letter-spacing:-.02em}
+
+/* ── Individual toolkit cards ── */
+.rs-toolkit-card{padding:16px 18px;background:var(--surface-card);border:1px solid var(--border);border-radius:12px;border-left:3px solid color-mix(in srgb,var(--sc,var(--teal)) 40%,var(--border))}
+.rs-toolkit-card h4{font-family:Outfit,sans-serif;font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.rs-toolkit-card h4 span{font-weight:400;font-size:.72rem;color:var(--ink-muted)}
+.rs-toolkit-card p{font-size:.82rem;color:var(--ink-muted);line-height:1.6;margin-bottom:0}
+
+/* ── Warm-up: subtle warm tint ── */
+.rs-toolkit-warmup{background:linear-gradient(135deg,rgba(249,115,22,.03),var(--surface-card));border-left-color:rgba(249,115,22,.4)}
+
+/* ── Timeline phases ── */
+.rs-toolkit-timeline{display:flex;flex-direction:column;gap:6px}
+.rs-toolkit-phase{padding:8px 10px;background:var(--surface-warm);border-radius:8px;border-left:3px solid var(--sc,var(--teal));font-size:.78rem}
+.rs-toolkit-phase-time{display:block;font-weight:700;color:var(--sc,var(--teal));font-size:.68rem;margin-bottom:2px}
+.rs-toolkit-phase-desc{color:var(--ink-muted);line-height:1.4}
+
+/* ── Teacher moves ── */
+.rs-toolkit-move{padding:8px 0;border-bottom:1px solid var(--border)}
+.rs-toolkit-move:last-child{border-bottom:none;padding-bottom:0}
+.rs-toolkit-move strong{font-size:.82rem;color:var(--ink);display:block;margin-bottom:4px}
+.rs-toolkit-move p{font-size:.78rem;color:var(--ink-muted);line-height:1.55;margin:0}
+
+/* ── Listen for ── */
+.rs-toolkit-listen{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid rgba(124,58,237,.08);font-size:.82rem}
+.rs-toolkit-listen:last-child{border-bottom:none}
+.rs-toolkit-listen-level{flex-shrink:0;padding:2px 8px;border-radius:5px;font-size:.62rem;font-weight:700;white-space:nowrap;background:var(--surface-warm);color:var(--ink-muted)}
+.rs-toolkit-listen--approaching{background:rgba(34,197,94,.1);color:#16a34a}
+.rs-toolkit-listen--meeting{background:rgba(245,158,11,.1);color:#d97706}
+.rs-toolkit-listen--exceeding{background:rgba(239,68,68,.1);color:#dc2626}
+.rs-toolkit-listen-phrase{color:var(--ink);font-style:italic;line-height:1.45}
+
+/* ── Misconceptions ── */
+.rs-toolkit-misconception{padding:8px 0;border-bottom:1px solid rgba(245,158,11,.1)}
+.rs-toolkit-misconception:last-child{border-bottom:none;padding-bottom:0}
+.rs-toolkit-myth{font-size:.82rem;font-weight:600;color:#dc2626;font-style:italic;margin-bottom:3px}
+.rs-toolkit-truth{font-size:.78rem;color:#16a34a;font-weight:500;line-height:1.45}
+
+/* ── Adjust rs-main to be full width since toolkit is now inside it ── */
+.rs-content-cols .resource-content{max-width:none!important}
+
+/* ── Dark mode ── */
+html.dark .rs-toolkit-col-header{background:color-mix(in srgb,var(--sc,var(--teal)) 8%,#1e293b);border-color:color-mix(in srgb,var(--sc,var(--teal)) 20%,#334155)}
+html.dark .rs-toolkit-card{background:#1e293b;border-color:#334155}
+html.dark .rs-toolkit-warmup{background:linear-gradient(135deg,rgba(249,115,22,.04),#1e293b)}
+html.dark .rs-toolkit-phase{background:#0f172a}
+html.dark .rs-toolkit-listen-level{background:rgba(148,163,184,.1)}
+
+/* ── Responsive: stack on tablet/mobile ── */
+@media(max-width:1024px){
+  .rs-content-cols{grid-template-columns:1fr!important}
+  .rs-content-right{position:static;max-height:none;overflow:visible;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+}
